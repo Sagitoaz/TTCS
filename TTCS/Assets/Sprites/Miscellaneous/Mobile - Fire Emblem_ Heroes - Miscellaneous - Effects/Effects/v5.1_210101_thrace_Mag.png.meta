@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: e40ea82e40bb0224e9495c42a8b0ce27
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -55286076138534212
+    second: v5.1_210101_thrace_Mag_0
+  - first:
+      213: 6982282047844278402
+    second: v5.1_210101_thrace_Mag_1
+  - first:
+      213: -2661722819783393431
+    second: v5.1_210101_thrace_Mag_2
+  - first:
+      213: -893496244950844602
+    second: v5.1_210101_thrace_Mag_3
+  - first:
+      213: 5039269376156268474
+    second: v5.1_210101_thrace_Mag_4
+  - first:
+      213: -182810039800743200
+    second: v5.1_210101_thrace_Mag_5
+  - first:
+      213: -4030152031610129924
+    second: v5.1_210101_thrace_Mag_6
+  - first:
+      213: 8208531912909490324
+    second: v5.1_210101_thrace_Mag_7
+  - first:
+      213: 5052921049683426095
+    second: v5.1_210101_thrace_Mag_8
+  - first:
+      213: -2078633316190508970
+    second: v5.1_210101_thrace_Mag_9
+  - first:
+      213: 1014452855063949538
+    second: v5.1_210101_thrace_Mag_10
+  - first:
+      213: -7058157332225692934
+    second: v5.1_210101_thrace_Mag_11
+  - first:
+      213: -84979096086577552
+    second: v5.1_210101_thrace_Mag_12
+  - first:
+      213: -5742224878109235431
+    second: v5.1_210101_thrace_Mag_13
+  - first:
+      213: 5288319581969088266
+    second: v5.1_210101_thrace_Mag_14
+  - first:
+      213: 6383338425686201992
+    second: v5.1_210101_thrace_Mag_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v5.1_210101_thrace_Mag_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 393
+        width: 106
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbaccbe4b959b3ff0800000000000000
+      internalID: -55286076138534212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210101_thrace_Mag_1
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 455
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 280685f578c06e060800000000000000
+      internalID: 6982282047844278402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210101_thrace_Mag_2
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 455
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96f7244a239af0bd0800000000000000
+      internalID: -2661722819783393431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210101_thrace_Mag_3
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 259
+        width: 248
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64b3f8f26e9a993f0800000000000000
+      internalID: -893496244950844602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210101_thrace_Mag_4
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 363
+        width: 71
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab77c456cc41fe540800000000000000
+      internalID: 5039269376156268474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210101_thrace_Mag_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 257
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ea3d44cc37867df0800000000000000
+      internalID: -182810039800743200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210101_thrace_Mag_6
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 257
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf13f0574160218c0800000000000000
+      internalID: -4030152031610129924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210101_thrace_Mag_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 148
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4988d6cb8409ae170800000000000000
+      internalID: 8208531912909490324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210101_thrace_Mag_8
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 140
+        width: 57
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2b79745ce49f1640800000000000000
+      internalID: 5052921049683426095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210101_thrace_Mag_9
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 138
+        width: 58
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6582c2213063723e0800000000000000
+      internalID: -2078633316190508970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210101_thrace_Mag_10
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 204
+        width: 32
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e0b7733f7f041e00800000000000000
+      internalID: 1014452855063949538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210101_thrace_Mag_11
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 136
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afa6ed35d436c0e90800000000000000
+      internalID: -7058157332225692934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210101_thrace_Mag_12
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 12
+        width: 62
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07efc6c56f712def0800000000000000
+      internalID: -84979096086577552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210101_thrace_Mag_13
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 10
+        width: 59
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91763ef95e48f40b0800000000000000
+      internalID: -5742224878109235431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210101_thrace_Mag_14
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 72
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0f720e14a2e36940800000000000000
+      internalID: 5288319581969088266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210101_thrace_Mag_15
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 5
+        width: 30
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88690205a7c269850800000000000000
+      internalID: 6383338425686201992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v5.1_210101_thrace_Mag_0: -55286076138534212
+      v5.1_210101_thrace_Mag_1: 6982282047844278402
+      v5.1_210101_thrace_Mag_10: 1014452855063949538
+      v5.1_210101_thrace_Mag_11: -7058157332225692934
+      v5.1_210101_thrace_Mag_12: -84979096086577552
+      v5.1_210101_thrace_Mag_13: -5742224878109235431
+      v5.1_210101_thrace_Mag_14: 5288319581969088266
+      v5.1_210101_thrace_Mag_15: 6383338425686201992
+      v5.1_210101_thrace_Mag_2: -2661722819783393431
+      v5.1_210101_thrace_Mag_3: -893496244950844602
+      v5.1_210101_thrace_Mag_4: 5039269376156268474
+      v5.1_210101_thrace_Mag_5: -182810039800743200
+      v5.1_210101_thrace_Mag_6: -4030152031610129924
+      v5.1_210101_thrace_Mag_7: 8208531912909490324
+      v5.1_210101_thrace_Mag_8: 5052921049683426095
+      v5.1_210101_thrace_Mag_9: -2078633316190508970
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

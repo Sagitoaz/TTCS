@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 859e728c536df1f4b86a19b7229d07a7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4342968113198425802
+    second: v4.3_200302_spring_Mag_0
+  - first:
+      213: -8785665923618811422
+    second: v4.3_200302_spring_Mag_1
+  - first:
+      213: 8511308065487971806
+    second: v4.3_200302_spring_Mag_2
+  - first:
+      213: -121631578464247823
+    second: v4.3_200302_spring_Mag_3
+  - first:
+      213: -7298860732154919337
+    second: v4.3_200302_spring_Mag_4
+  - first:
+      213: -2997579546294578667
+    second: v4.3_200302_spring_Mag_5
+  - first:
+      213: 3956540998473778021
+    second: v4.3_200302_spring_Mag_6
+  - first:
+      213: 5051638704947469994
+    second: v4.3_200302_spring_Mag_7
+  - first:
+      213: -7521440193422689300
+    second: v4.3_200302_spring_Mag_8
+  - first:
+      213: 5324255496487356202
+    second: v4.3_200302_spring_Mag_9
+  - first:
+      213: 2067461877257853079
+    second: v4.3_200302_spring_Mag_10
+  - first:
+      213: 5446113637840870667
+    second: v4.3_200302_spring_Mag_11
+  - first:
+      213: -5689809453009574907
+    second: v4.3_200302_spring_Mag_12
+  - first:
+      213: -8366556337838632078
+    second: v4.3_200302_spring_Mag_13
+  - first:
+      213: 5903618509050285993
+    second: v4.3_200302_spring_Mag_14
+  - first:
+      213: -5940950017426468802
+    second: v4.3_200302_spring_Mag_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v4.3_200302_spring_Mag_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 193
+        width: 33
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63995f5d28daab3c0800000000000000
+      internalID: -4342968113198425802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200302_spring_Mag_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 193
+        width: 33
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e15273146b031680800000000000000
+      internalID: -8785665923618811422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200302_spring_Mag_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 193
+        width: 33
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed5e359379d3e1670800000000000000
+      internalID: 8511308065487971806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200302_spring_Mag_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 161
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff1b2c49b0ef4ef0800000000000000
+      internalID: -121631578464247823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200302_spring_Mag_4
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 127
+        width: 128
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 756cbdac5dc35ba90800000000000000
+      internalID: -7298860732154919337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200302_spring_Mag_5
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 134
+        width: 112
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5129225d8457666d0800000000000000
+      internalID: -2997579546294578667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200302_spring_Mag_6
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 140
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5638c41531578e630800000000000000
+      internalID: 3956540998473778021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200302_spring_Mag_7
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 139
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aae120e23a60b1640800000000000000
+      internalID: 5051638704947469994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200302_spring_Mag_8
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 76
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cebf1bf8ef97e9790800000000000000
+      internalID: -7521440193422689300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200302_spring_Mag_9
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 75
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a27cc893a2e83e940800000000000000
+      internalID: 5324255496487356202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200302_spring_Mag_10
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 63
+        width: 64
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 798dd9c9f9911bc10800000000000000
+      internalID: 2067461877257853079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200302_spring_Mag_11
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 99
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0d5ae5bf7b749b40800000000000000
+      internalID: 5446113637840870667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200302_spring_Mag_12
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 4
+        width: 116
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50464b9c27cb901b0800000000000000
+      internalID: -5689809453009574907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200302_spring_Mag_13
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 12
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 273d5d1b65504eb80800000000000000
+      internalID: -8366556337838632078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200302_spring_Mag_14
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 11
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9af0d5951cddde150800000000000000
+      internalID: 5903618509050285993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200302_spring_Mag_15
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e30d1f68f618d8da0800000000000000
+      internalID: -5940950017426468802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v4.3_200302_spring_Mag_0: -4342968113198425802
+      v4.3_200302_spring_Mag_1: -8785665923618811422
+      v4.3_200302_spring_Mag_10: 2067461877257853079
+      v4.3_200302_spring_Mag_11: 5446113637840870667
+      v4.3_200302_spring_Mag_12: -5689809453009574907
+      v4.3_200302_spring_Mag_13: -8366556337838632078
+      v4.3_200302_spring_Mag_14: 5903618509050285993
+      v4.3_200302_spring_Mag_15: -5940950017426468802
+      v4.3_200302_spring_Mag_2: 8511308065487971806
+      v4.3_200302_spring_Mag_3: -121631578464247823
+      v4.3_200302_spring_Mag_4: -7298860732154919337
+      v4.3_200302_spring_Mag_5: -2997579546294578667
+      v4.3_200302_spring_Mag_6: 3956540998473778021
+      v4.3_200302_spring_Mag_7: 5051638704947469994
+      v4.3_200302_spring_Mag_8: -7521440193422689300
+      v4.3_200302_spring_Mag_9: 5324255496487356202
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

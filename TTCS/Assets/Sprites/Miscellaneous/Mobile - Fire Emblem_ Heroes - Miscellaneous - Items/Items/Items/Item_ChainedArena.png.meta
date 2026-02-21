@@ -1,0 +1,676 @@
+fileFormatVersion: 2
+guid: 723a16ea298122446b5676f4a24359a0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6338972830250498650
+    second: Item_ChainedArena_0
+  - first:
+      213: 5231246069226447223
+    second: Item_ChainedArena_1
+  - first:
+      213: -4287083506868711269
+    second: Item_ChainedArena_2
+  - first:
+      213: -1052190691300332380
+    second: Item_ChainedArena_3
+  - first:
+      213: -5439032164736220780
+    second: Item_ChainedArena_4
+  - first:
+      213: 2877380220297297879
+    second: Item_ChainedArena_5
+  - first:
+      213: -3333940345870146175
+    second: Item_ChainedArena_6
+  - first:
+      213: -2858921351068799042
+    second: Item_ChainedArena_7
+  - first:
+      213: 8053709380713414331
+    second: Item_ChainedArena_8
+  - first:
+      213: -2346484216530214929
+    second: Item_ChainedArena_9
+  - first:
+      213: 5040461446563488737
+    second: Item_ChainedArena_10
+  - first:
+      213: -6861701378827977752
+    second: Item_ChainedArena_11
+  - first:
+      213: 3085444511429856775
+    second: Item_ChainedArena_12
+  - first:
+      213: -7285435140153769386
+    second: Item_ChainedArena_13
+  - first:
+      213: 1840162353863795285
+    second: Item_ChainedArena_14
+  - first:
+      213: -1455828586231459032
+    second: Item_ChainedArena_15
+  - first:
+      213: -8844773573975252938
+    second: Item_ChainedArena_16
+  - first:
+      213: 873992637700808384
+    second: Item_ChainedArena_17
+  - first:
+      213: -3439285406228126443
+    second: Item_ChainedArena_18
+  - first:
+      213: 1852393516189582478
+    second: Item_ChainedArena_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Item_ChainedArena_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 599
+        width: 298
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a50114dbc17708a0800000000000000
+      internalID: -6338972830250498650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_1
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 609
+        width: 296
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 771a6e8659e199840800000000000000
+      internalID: 5231246069226447223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_2
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 631
+        width: 304
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9097a2b3483184c0800000000000000
+      internalID: -4287083506868711269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_3
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 807
+        width: 88
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ac2219142ed561f0800000000000000
+      internalID: -1052190691300332380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_4
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 721
+        width: 88
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49149fa301da484b0800000000000000
+      internalID: -5439032164736220780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_5
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 667
+        width: 87
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7df3e8ab0128ee720800000000000000
+      internalID: 2877380220297297879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 303
+        width: 298
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 185211e5be67bb1d0800000000000000
+      internalID: -3333940345870146175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_7
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 305
+        width: 267
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebfa3ccad221358d0800000000000000
+      internalID: -2858921351068799042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_8
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 305
+        width: 199
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbe77a9e20684cf60800000000000000
+      internalID: 8053709380713414331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_9
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 339
+        width: 174
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fefd7aa890d9f6fd0800000000000000
+      internalID: -2346484216530214929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_10
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 245
+        width: 80
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e3e77aeaf053f540800000000000000
+      internalID: 5040461446563488737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_11
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 267
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eb762863f656c0a0800000000000000
+      internalID: -6861701378827977752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_12
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 0
+        width: 267
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70e84fd8f63b1da20800000000000000
+      internalID: 3085444511429856775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_13
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 15
+        width: 274
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6528cf4075fe4ea90800000000000000
+      internalID: -7285435140153769386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_14
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 247
+        width: 90
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 552291749e1998910800000000000000
+      internalID: 1840162353863795285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_15
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 153
+        width: 80
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82390d73d9bdbcbe0800000000000000
+      internalID: -1455828586231459032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_16
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 155
+        width: 94
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 630617ccb4d014580800000000000000
+      internalID: -8844773573975252938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_17
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 61
+        width: 81
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ce96726cab012c00800000000000000
+      internalID: 873992637700808384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_18
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 61
+        width: 80
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 515669825243540d0800000000000000
+      internalID: -3439285406228126443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ChainedArena_19
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 1
+        width: 94
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8487bca61605b910800000000000000
+      internalID: 1852393516189582478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Item_ChainedArena_0: -6338972830250498650
+      Item_ChainedArena_1: 5231246069226447223
+      Item_ChainedArena_10: 5040461446563488737
+      Item_ChainedArena_11: -6861701378827977752
+      Item_ChainedArena_12: 3085444511429856775
+      Item_ChainedArena_13: -7285435140153769386
+      Item_ChainedArena_14: 1840162353863795285
+      Item_ChainedArena_15: -1455828586231459032
+      Item_ChainedArena_16: -8844773573975252938
+      Item_ChainedArena_17: 873992637700808384
+      Item_ChainedArena_18: -3439285406228126443
+      Item_ChainedArena_19: 1852393516189582478
+      Item_ChainedArena_2: -4287083506868711269
+      Item_ChainedArena_3: -1052190691300332380
+      Item_ChainedArena_4: -5439032164736220780
+      Item_ChainedArena_5: 2877380220297297879
+      Item_ChainedArena_6: -3333940345870146175
+      Item_ChainedArena_7: -2858921351068799042
+      Item_ChainedArena_8: 8053709380713414331
+      Item_ChainedArena_9: -2346484216530214929
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

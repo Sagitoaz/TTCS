@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 9066513cb8f446d4e8daa96374365ac1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8219464073219655627
+    second: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_0
+  - first:
+      213: -2111601527972347599
+    second: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_1
+  - first:
+      213: 8178041466731365818
+    second: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_2
+  - first:
+      213: 6754744814485791194
+    second: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_3
+  - first:
+      213: 733440257366774921
+    second: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_4
+  - first:
+      213: 6485266225691656364
+    second: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_5
+  - first:
+      213: 8125510348681279188
+    second: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_6
+  - first:
+      213: 8930219217764994939
+    second: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_7
+  - first:
+      213: 1973983253906330770
+    second: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_8
+  - first:
+      213: 2823897289032331542
+    second: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_9
+  - first:
+      213: 4214658010271026904
+    second: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_10
+  - first:
+      213: 4493974883247938863
+    second: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_11
+  - first:
+      213: -6013089688974693890
+    second: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_12
+  - first:
+      213: 3638615165158961551
+    second: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_13
+  - first:
+      213: 4160442202155194006
+    second: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1488
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc7c758a607611270800000000000000
+      internalID: 8219464073219655627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1487
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 131490a199512b2e0800000000000000
+      internalID: -2111601527972347599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_2
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 1487
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab500f6826d3e7170800000000000000
+      internalID: 8178041466731365818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_3
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 1487
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad166dfde9cadbd50800000000000000
+      internalID: 6754744814485791194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_4
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 1487
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98451543704bd2a00800000000000000
+      internalID: 733440257366774921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_5
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 1487
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca08038954b400a50800000000000000
+      internalID: 6485266225691656364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_6
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 1487
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d678ef7c9c93c070800000000000000
+      internalID: 8125510348681279188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_7
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1487
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7fcf3170138eeb70800000000000000
+      internalID: 8930219217764994939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_8
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1487
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29418a19f4ff46b10800000000000000
+      internalID: 1973983253906330770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_9
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 1487
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 611f5fa6f9f703720800000000000000
+      internalID: 2823897289032331542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_10
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1487
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8de85ff41297d7a30800000000000000
+      internalID: 4214658010271026904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_11
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 1487
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2d5581a85ecd5e30800000000000000
+      internalID: 4493974883247938863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_12
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 1483
+        width: 432
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef9691e59c63d8ca0800000000000000
+      internalID: -6013089688974693890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1215
+        width: 1602
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8136a9e635fe7230800000000000000
+      internalID: 3638615165158961551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1602
+        height: 1215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6961100d32cdcb930800000000000000
+      internalID: 4160442202155194006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_0: 8219464073219655627
+      Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_1: -2111601527972347599
+      Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_10: 4214658010271026904
+      Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_11: 4493974883247938863
+      Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_12: -6013089688974693890
+      Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_13: 3638615165158961551
+      Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_14: 4160442202155194006
+      Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_2: 8178041466731365818
+      Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_3: 6754744814485791194
+      Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_4: 733440257366774921
+      Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_5: 6485266225691656364
+      Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_6: 8125510348681279188
+      Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_7: 8930219217764994939
+      Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_8: 1973983253906330770
+      Mobile - Fire Emblem_ Heroes - UI - Voting Gauntlet_9: 2823897289032331542
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: d4be82612aa502f4eb6feae31d667626
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5780356295379919788
+    second: v2.10_61_halloween_02_Rod_0
+  - first:
+      213: 7077686732691820426
+    second: v2.10_61_halloween_02_Rod_1
+  - first:
+      213: -4180041390208809273
+    second: v2.10_61_halloween_02_Rod_2
+  - first:
+      213: 7145445505053883667
+    second: v2.10_61_halloween_02_Rod_3
+  - first:
+      213: 1684992724119132587
+    second: v2.10_61_halloween_02_Rod_4
+  - first:
+      213: -3568474028589613371
+    second: v2.10_61_halloween_02_Rod_5
+  - first:
+      213: -8877283618124122018
+    second: v2.10_61_halloween_02_Rod_6
+  - first:
+      213: -8840691685225075546
+    second: v2.10_61_halloween_02_Rod_7
+  - first:
+      213: 5165926311906672493
+    second: v2.10_61_halloween_02_Rod_8
+  - first:
+      213: 8838437175534673013
+    second: v2.10_61_halloween_02_Rod_9
+  - first:
+      213: 522295386340821619
+    second: v2.10_61_halloween_02_Rod_10
+  - first:
+      213: 3390057639582879562
+    second: v2.10_61_halloween_02_Rod_11
+  - first:
+      213: 2346587426184201328
+    second: v2.10_61_halloween_02_Rod_12
+  - first:
+      213: 2426492137198961622
+    second: v2.10_61_halloween_02_Rod_13
+  - first:
+      213: 320934176904368903
+    second: v2.10_61_halloween_02_Rod_14
+  - first:
+      213: 5286911668341027650
+    second: v2.10_61_halloween_02_Rod_15
+  - first:
+      213: 5313838525474192108
+    second: v2.10_61_halloween_02_Rod_16
+  - first:
+      213: -8196664360288333952
+    second: v2.10_61_halloween_02_Rod_17
+  - first:
+      213: -4764426348134563533
+    second: v2.10_61_halloween_02_Rod_18
+  - first:
+      213: -7326491489497047015
+    second: v2.10_61_halloween_02_Rod_19
+  - first:
+      213: -5603243287830530287
+    second: v2.10_61_halloween_02_Rod_20
+  - first:
+      213: 6615528208025392725
+    second: v2.10_61_halloween_02_Rod_21
+  - first:
+      213: -6685060113628571280
+    second: v2.10_61_halloween_02_Rod_22
+  - first:
+      213: 8095936384076986762
+    second: v2.10_61_halloween_02_Rod_23
+  - first:
+      213: 5967127634468379296
+    second: v2.10_61_halloween_02_Rod_24
+  - first:
+      213: 3958218257423902888
+    second: v2.10_61_halloween_02_Rod_25
+  - first:
+      213: 3114799447151143718
+    second: v2.10_61_halloween_02_Rod_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 174
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45cdfa2339c08cfa0800000000000000
+      internalID: -5780356295379919788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_1
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 211
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8f479d859ef83260800000000000000
+      internalID: 7077686732691820426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_2
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 199
+        width: 23
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c68c2e90828df5c0800000000000000
+      internalID: -4180041390208809273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_3
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 187
+        width: 27
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31df5a224d8b92360800000000000000
+      internalID: 7145445505053883667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_4
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 175
+        width: 26
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba91d3284fb426710800000000000000
+      internalID: 1684992724119132587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_5
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 158
+        width: 27
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ce75bf07cb3a7ec0800000000000000
+      internalID: -3568474028589613371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_6
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 139
+        width: 55
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e58315b459d8dc480800000000000000
+      internalID: -8877283618124122018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_7
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 172
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ace86590cd8f4580800000000000000
+      internalID: -8840691685225075546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_8
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 180
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6f7a054c9e01b740800000000000000
+      internalID: 5165926311906672493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_9
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 123
+        width: 27
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57cd95978cf68aa70800000000000000
+      internalID: 8838437175534673013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_10
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 122
+        width: 28
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37a8baaf2e09f3700800000000000000
+      internalID: 522295386340821619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_11
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 165
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4fcf6f3677eb0f20800000000000000
+      internalID: 3390057639582879562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_12
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 144
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0748b14d4d0c09020800000000000000
+      internalID: 2346587426184201328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_13
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 145
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d3c5002eb1aca120800000000000000
+      internalID: 2426492137198961622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_14
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 132
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 703daaafeef247400800000000000000
+      internalID: 320934176904368903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_15
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 134
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 243b55ea622ee5940800000000000000
+      internalID: 5286911668341027650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_16
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 84
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceabca82cfb8eb940800000000000000
+      internalID: 5313838525474192108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_17
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 72
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08fc8ed21399f3e80800000000000000
+      internalID: -8196664360288333952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_18
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 73
+        width: 21
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3318de8ba7b51edb0800000000000000
+      internalID: -4764426348134563533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_19
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 50
+        width: 40
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9102b96cec2135a90800000000000000
+      internalID: -7326491489497047015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_20
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 50
+        width: 25
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 117f4cebae74d32b0800000000000000
+      internalID: -5603243287830530287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_21
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 7
+        width: 26
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5561ee8cad31fcb50800000000000000
+      internalID: 6615528208025392725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_22
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 37
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0795901ee35e933a0800000000000000
+      internalID: -6685060113628571280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_23
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 9
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a89b1194f3b8a5070800000000000000
+      internalID: 8095936384076986762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_24
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 11
+        width: 26
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aa97e5e7fe7fc250800000000000000
+      internalID: 5967127634468379296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_25
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 0
+        width: 26
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a8a739988a6ee630800000000000000
+      internalID: 3958218257423902888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.10_61_halloween_02_Rod_26
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 0
+        width: 25
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62be602289df93b20800000000000000
+      internalID: 3114799447151143718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v2.10_61_halloween_02_Rod_0: -5780356295379919788
+      v2.10_61_halloween_02_Rod_1: 7077686732691820426
+      v2.10_61_halloween_02_Rod_10: 522295386340821619
+      v2.10_61_halloween_02_Rod_11: 3390057639582879562
+      v2.10_61_halloween_02_Rod_12: 2346587426184201328
+      v2.10_61_halloween_02_Rod_13: 2426492137198961622
+      v2.10_61_halloween_02_Rod_14: 320934176904368903
+      v2.10_61_halloween_02_Rod_15: 5286911668341027650
+      v2.10_61_halloween_02_Rod_16: 5313838525474192108
+      v2.10_61_halloween_02_Rod_17: -8196664360288333952
+      v2.10_61_halloween_02_Rod_18: -4764426348134563533
+      v2.10_61_halloween_02_Rod_19: -7326491489497047015
+      v2.10_61_halloween_02_Rod_2: -4180041390208809273
+      v2.10_61_halloween_02_Rod_20: -5603243287830530287
+      v2.10_61_halloween_02_Rod_21: 6615528208025392725
+      v2.10_61_halloween_02_Rod_22: -6685060113628571280
+      v2.10_61_halloween_02_Rod_23: 8095936384076986762
+      v2.10_61_halloween_02_Rod_24: 5967127634468379296
+      v2.10_61_halloween_02_Rod_25: 3958218257423902888
+      v2.10_61_halloween_02_Rod_26: 3114799447151143718
+      v2.10_61_halloween_02_Rod_3: 7145445505053883667
+      v2.10_61_halloween_02_Rod_4: 1684992724119132587
+      v2.10_61_halloween_02_Rod_5: -3568474028589613371
+      v2.10_61_halloween_02_Rod_6: -8877283618124122018
+      v2.10_61_halloween_02_Rod_7: -8840691685225075546
+      v2.10_61_halloween_02_Rod_8: 5165926311906672493
+      v2.10_61_halloween_02_Rod_9: 8838437175534673013
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

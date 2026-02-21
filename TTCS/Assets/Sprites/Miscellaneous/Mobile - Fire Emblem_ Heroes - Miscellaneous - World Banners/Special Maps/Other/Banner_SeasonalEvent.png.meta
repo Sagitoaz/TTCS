@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: a14e39a585a427a41b41656849ccf697
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8053108659332652588
+    second: Banner_SeasonalEvent_0
+  - first:
+      213: -6392148886329332428
+    second: Banner_SeasonalEvent_1
+  - first:
+      213: 5514572032585415499
+    second: Banner_SeasonalEvent_2
+  - first:
+      213: 2209685232991854524
+    second: Banner_SeasonalEvent_3
+  - first:
+      213: -4532123368470923358
+    second: Banner_SeasonalEvent_4
+  - first:
+      213: -6980779301623094371
+    second: Banner_SeasonalEvent_5
+  - first:
+      213: 3343252101264878083
+    second: Banner_SeasonalEvent_6
+  - first:
+      213: 5901819916453742654
+    second: Banner_SeasonalEvent_7
+  - first:
+      213: -8425567903193860595
+    second: Banner_SeasonalEvent_8
+  - first:
+      213: 213992033161385731
+    second: Banner_SeasonalEvent_9
+  - first:
+      213: -2031719372311094149
+    second: Banner_SeasonalEvent_10
+  - first:
+      213: -1585578492378090860
+    second: Banner_SeasonalEvent_11
+  - first:
+      213: -1737602564215643167
+    second: Banner_SeasonalEvent_12
+  - first:
+      213: 4891984448607624334
+    second: Banner_SeasonalEvent_13
+  - first:
+      213: 4341498139560716226
+    second: Banner_SeasonalEvent_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Banner_SeasonalEvent_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1041
+        width: 277
+        height: 886
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2e152198a362cf60800000000000000
+      internalID: 8053108659332652588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banner_SeasonalEvent_1
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 1649
+        width: 886
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43d6ee674768a47a0800000000000000
+      internalID: -6392148886329332428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banner_SeasonalEvent_2
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 1371
+        width: 886
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4bbe82db02b78c40800000000000000
+      internalID: 5514572032585415499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banner_SeasonalEvent_3
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 1041
+        width: 278
+        height: 886
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbfd7e113016aae10800000000000000
+      internalID: 2209685232991854524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banner_SeasonalEvent_4
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 1041
+        width: 278
+        height: 886
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a73b000fc9aa11c0800000000000000
+      internalID: -4532123368470923358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banner_SeasonalEvent_5
+      rect:
+        serializedVersion: 2
+        x: 1721
+        y: 1047
+        width: 272
+        height: 880
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d932b5ff53a4f1f90800000000000000
+      internalID: -6980779301623094371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banner_SeasonalEvent_6
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 1093
+        width: 886
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30aa872a21e956e20800000000000000
+      internalID: 3343252101264878083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banner_SeasonalEvent_7
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 815
+        width: 886
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e380d80e1f977e150800000000000000
+      internalID: 5901819916453742654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banner_SeasonalEvent_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 153
+        width: 277
+        height: 886
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d067233f1ae521b80800000000000000
+      internalID: -8425567903193860595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banner_SeasonalEvent_9
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 543
+        width: 880
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3071951de9048f200800000000000000
+      internalID: 213992033161385731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banner_SeasonalEvent_10
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 271
+        width: 880
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c1e12def1edc3e0800000000000000
+      internalID: -2031719372311094149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banner_SeasonalEvent_11
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 153
+        width: 278
+        height: 886
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 492fd4e03c4eef9e0800000000000000
+      internalID: -1585578492378090860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banner_SeasonalEvent_12
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 153
+        width: 278
+        height: 886
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e36e1f8cabc2e7e0800000000000000
+      internalID: -1737602564215643167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banner_SeasonalEvent_13
+      rect:
+        serializedVersion: 2
+        x: 1721
+        y: 165
+        width: 272
+        height: 880
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8c1ef9efe1d3e340800000000000000
+      internalID: 4891984448607624334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banner_SeasonalEvent_14
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 0
+        width: 880
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c729814e89104c30800000000000000
+      internalID: 4341498139560716226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Banner_SeasonalEvent_0: 8053108659332652588
+      Banner_SeasonalEvent_1: -6392148886329332428
+      Banner_SeasonalEvent_10: -2031719372311094149
+      Banner_SeasonalEvent_11: -1585578492378090860
+      Banner_SeasonalEvent_12: -1737602564215643167
+      Banner_SeasonalEvent_13: 4891984448607624334
+      Banner_SeasonalEvent_14: 4341498139560716226
+      Banner_SeasonalEvent_2: 5514572032585415499
+      Banner_SeasonalEvent_3: 2209685232991854524
+      Banner_SeasonalEvent_4: -4532123368470923358
+      Banner_SeasonalEvent_5: -6980779301623094371
+      Banner_SeasonalEvent_6: 3343252101264878083
+      Banner_SeasonalEvent_7: 5901819916453742654
+      Banner_SeasonalEvent_8: -8425567903193860595
+      Banner_SeasonalEvent_9: 213992033161385731
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

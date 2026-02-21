@@ -1,0 +1,1404 @@
+fileFormatVersion: 2
+guid: a4bdc8b8e85ec1f4b9cc49bf492f0436
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3087224537457482089
+    second: v3.2_77_valentine02_Mag_0
+  - first:
+      213: -8352266400366504328
+    second: v3.2_77_valentine02_Mag_1
+  - first:
+      213: -3630561820798659171
+    second: v3.2_77_valentine02_Mag_2
+  - first:
+      213: -7549587569745850714
+    second: v3.2_77_valentine02_Mag_3
+  - first:
+      213: 404889973630846156
+    second: v3.2_77_valentine02_Mag_4
+  - first:
+      213: -2616418902198362796
+    second: v3.2_77_valentine02_Mag_5
+  - first:
+      213: -1698462918360736375
+    second: v3.2_77_valentine02_Mag_6
+  - first:
+      213: -2095882224294606430
+    second: v3.2_77_valentine02_Mag_7
+  - first:
+      213: 7345956951676444364
+    second: v3.2_77_valentine02_Mag_8
+  - first:
+      213: -4421403887676012733
+    second: v3.2_77_valentine02_Mag_9
+  - first:
+      213: 2191324964130052351
+    second: v3.2_77_valentine02_Mag_10
+  - first:
+      213: 509893413534520043
+    second: v3.2_77_valentine02_Mag_11
+  - first:
+      213: -1577960858245725121
+    second: v3.2_77_valentine02_Mag_12
+  - first:
+      213: -721374226679912460
+    second: v3.2_77_valentine02_Mag_13
+  - first:
+      213: 5483474557601693257
+    second: v3.2_77_valentine02_Mag_14
+  - first:
+      213: 801404791546775829
+    second: v3.2_77_valentine02_Mag_15
+  - first:
+      213: -2546364288660953576
+    second: v3.2_77_valentine02_Mag_16
+  - first:
+      213: -616157828306860634
+    second: v3.2_77_valentine02_Mag_17
+  - first:
+      213: 111648379138087121
+    second: v3.2_77_valentine02_Mag_18
+  - first:
+      213: -8998946793284638878
+    second: v3.2_77_valentine02_Mag_19
+  - first:
+      213: -6485786292433982575
+    second: v3.2_77_valentine02_Mag_20
+  - first:
+      213: -5804328714062140992
+    second: v3.2_77_valentine02_Mag_21
+  - first:
+      213: 547986525679529539
+    second: v3.2_77_valentine02_Mag_22
+  - first:
+      213: 6406282161559350239
+    second: v3.2_77_valentine02_Mag_23
+  - first:
+      213: 5673696365752089006
+    second: v3.2_77_valentine02_Mag_24
+  - first:
+      213: 7590401241351536785
+    second: v3.2_77_valentine02_Mag_25
+  - first:
+      213: 8676752495385679503
+    second: v3.2_77_valentine02_Mag_26
+  - first:
+      213: -5056183579928409612
+    second: v3.2_77_valentine02_Mag_27
+  - first:
+      213: 3294707714110067443
+    second: v3.2_77_valentine02_Mag_28
+  - first:
+      213: -7660831953607258276
+    second: v3.2_77_valentine02_Mag_29
+  - first:
+      213: 964534757868592156
+    second: v3.2_77_valentine02_Mag_30
+  - first:
+      213: 5535971425292706768
+    second: v3.2_77_valentine02_Mag_31
+  - first:
+      213: -3494968961908944230
+    second: v3.2_77_valentine02_Mag_32
+  - first:
+      213: -4548441377998936337
+    second: v3.2_77_valentine02_Mag_33
+  - first:
+      213: 7972028761936217954
+    second: v3.2_77_valentine02_Mag_34
+  - first:
+      213: -8986133821778525180
+    second: v3.2_77_valentine02_Mag_35
+  - first:
+      213: -931351452414777062
+    second: v3.2_77_valentine02_Mag_36
+  - first:
+      213: -2723885797694462984
+    second: v3.2_77_valentine02_Mag_37
+  - first:
+      213: 3685390049383020622
+    second: v3.2_77_valentine02_Mag_38
+  - first:
+      213: 9296540843999370
+    second: v3.2_77_valentine02_Mag_39
+  - first:
+      213: 1318889720524697001
+    second: v3.2_77_valentine02_Mag_40
+  - first:
+      213: 1047413249318150785
+    second: v3.2_77_valentine02_Mag_41
+  - first:
+      213: -4483162429530389228
+    second: v3.2_77_valentine02_Mag_42
+  - first:
+      213: -3478584854683622330
+    second: v3.2_77_valentine02_Mag_43
+  - first:
+      213: -7294717109893146565
+    second: v3.2_77_valentine02_Mag_44
+  - first:
+      213: -5131184074851536971
+    second: v3.2_77_valentine02_Mag_45
+  - first:
+      213: 4317296263912005017
+    second: v3.2_77_valentine02_Mag_46
+  - first:
+      213: -3526679766301759032
+    second: v3.2_77_valentine02_Mag_47
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 420
+        width: 89
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 969d5092c5608da20800000000000000
+      internalID: 3087224537457482089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_1
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 416
+        width: 93
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87659b806f9c61c80800000000000000
+      internalID: -8352266400366504328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_2
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 419
+        width: 58
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9553307247ad9dc0800000000000000
+      internalID: -3630561820798659171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_3
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 456
+        width: 15
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ae0890da1a7a3790800000000000000
+      internalID: -7549587569745850714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_4
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 382
+        width: 59
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc4426b29457e9500800000000000000
+      internalID: 404889973630846156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_5
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 319
+        width: 382
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45d59deeedc90bbd0800000000000000
+      internalID: -2616418902198362796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_6
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 496
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98d5fee79f8dd68e0800000000000000
+      internalID: -1698462918360736375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_7
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 495
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a94dd1b83ee9e2e0800000000000000
+      internalID: -2095882224294606430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_8
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 483
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cce5cff4de412f560800000000000000
+      internalID: 7345956951676444364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_9
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 472
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3474a8af69404a2c0800000000000000
+      internalID: -4421403887676012733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_10
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 474
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff8da6ad176296e10800000000000000
+      internalID: 2191324964130052351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_11
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 460
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be2590bab51831700800000000000000
+      internalID: 509893413534520043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_12
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 465
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f340bc6b5f4f91ae0800000000000000
+      internalID: -1577960858245725121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_13
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 461
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f72f9c76f92df5f0800000000000000
+      internalID: -721374226679912460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_14
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 448
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94ebdb4be07391c40800000000000000
+      internalID: 5483474557601693257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_15
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 447
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 519017179692f1b00800000000000000
+      internalID: 801404791546775829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_16
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 418
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 816af91bb2f79acd0800000000000000
+      internalID: -2546364288660953576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_17
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 439
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a5813e38b7f277f0800000000000000
+      internalID: -616157828306860634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_18
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 417
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d8164afb97ac8100800000000000000
+      internalID: 111648379138087121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_19
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 419
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 267e0a9e1915d1380800000000000000
+      internalID: -8998946793284638878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_20
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 325
+        width: 83
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19bef5eeabbddf5a0800000000000000
+      internalID: -6485786292433982575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_21
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 325
+        width: 91
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c9e9b689c1e27fa0800000000000000
+      internalID: -5804328714062140992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_22
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 320
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e24dc77d6da9700800000000000000
+      internalID: 547986525679529539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_23
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 385
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdbaaaa1fafa7e850800000000000000
+      internalID: 6406282161559350239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_24
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 223
+        width: 158
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea9f31cb8c40dbe40800000000000000
+      internalID: 5673696365752089006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_25
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 330
+        width: 15
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 190417d96b5865960800000000000000
+      internalID: 7590401241351536785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_26
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 0
+        width: 232
+        height: 365
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8692735c640a6870800000000000000
+      internalID: 8676752495385679503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99
+        width: 131
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f94437a2d3d4d9b0800000000000000
+      internalID: -5056183579928409612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 196
+        width: 32
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f2154ab53729bd20800000000000000
+      internalID: 3294707714110067443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 196
+        width: 32
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5f07415de14fa590800000000000000
+      internalID: -7660831953607258276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_30
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 192
+        width: 65
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1c56408047b26d00800000000000000
+      internalID: 964534757868592156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_31
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 256
+        width: 66
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d3e8433ea8b3dc40800000000000000
+      internalID: 5535971425292706768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_32
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 260
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a92d66c0f306f7fc0800000000000000
+      internalID: -3494968961908944230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_33
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 278
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe66fa65aa0b0e0c0800000000000000
+      internalID: -4548441377998936337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_34
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 282
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 267c76edbe552ae60800000000000000
+      internalID: 7972028761936217954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_35
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 235
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40484c056e6da4380800000000000000
+      internalID: -8986133821778525180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_36
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 226
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a19e5cdd9cc2313f0800000000000000
+      internalID: -931351452414777062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_37
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 196
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f3a0bb7c40d23ad0800000000000000
+      internalID: -2723885797694462984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_38
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 0
+        width: 110
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e48fb3059b2252330800000000000000
+      internalID: 3685390049383020622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_39
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 96
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8085a69727012000800000000000000
+      internalID: 9296540843999370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_40
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 127
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ade9c98633ad4210800000000000000
+      internalID: 1318889720524697001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_41
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 162
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18265a20dc8298e00800000000000000
+      internalID: 1047413249318150785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_42
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 0
+        width: 109
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 415c67de58b98c1c0800000000000000
+      internalID: -4483162429530389228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_43
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6446787418599bfc0800000000000000
+      internalID: -3478584854683622330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_44
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 98
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b38dad70075f3ca90800000000000000
+      internalID: -7294717109893146565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 192
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf2555254f5ac8b0800000000000000
+      internalID: -5131184074851536971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_46
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99d9898f31e1aeb30800000000000000
+      internalID: 4317296263912005017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.2_77_valentine02_Mag_47
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 0
+        width: 108
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c9a60d0077be0fc0800000000000000
+      internalID: -3526679766301759032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v3.2_77_valentine02_Mag_0: 3087224537457482089
+      v3.2_77_valentine02_Mag_1: -8352266400366504328
+      v3.2_77_valentine02_Mag_10: 2191324964130052351
+      v3.2_77_valentine02_Mag_11: 509893413534520043
+      v3.2_77_valentine02_Mag_12: -1577960858245725121
+      v3.2_77_valentine02_Mag_13: -721374226679912460
+      v3.2_77_valentine02_Mag_14: 5483474557601693257
+      v3.2_77_valentine02_Mag_15: 801404791546775829
+      v3.2_77_valentine02_Mag_16: -2546364288660953576
+      v3.2_77_valentine02_Mag_17: -616157828306860634
+      v3.2_77_valentine02_Mag_18: 111648379138087121
+      v3.2_77_valentine02_Mag_19: -8998946793284638878
+      v3.2_77_valentine02_Mag_2: -3630561820798659171
+      v3.2_77_valentine02_Mag_20: -6485786292433982575
+      v3.2_77_valentine02_Mag_21: -5804328714062140992
+      v3.2_77_valentine02_Mag_22: 547986525679529539
+      v3.2_77_valentine02_Mag_23: 6406282161559350239
+      v3.2_77_valentine02_Mag_24: 5673696365752089006
+      v3.2_77_valentine02_Mag_25: 7590401241351536785
+      v3.2_77_valentine02_Mag_26: 8676752495385679503
+      v3.2_77_valentine02_Mag_27: -5056183579928409612
+      v3.2_77_valentine02_Mag_28: 3294707714110067443
+      v3.2_77_valentine02_Mag_29: -7660831953607258276
+      v3.2_77_valentine02_Mag_3: -7549587569745850714
+      v3.2_77_valentine02_Mag_30: 964534757868592156
+      v3.2_77_valentine02_Mag_31: 5535971425292706768
+      v3.2_77_valentine02_Mag_32: -3494968961908944230
+      v3.2_77_valentine02_Mag_33: -4548441377998936337
+      v3.2_77_valentine02_Mag_34: 7972028761936217954
+      v3.2_77_valentine02_Mag_35: -8986133821778525180
+      v3.2_77_valentine02_Mag_36: -931351452414777062
+      v3.2_77_valentine02_Mag_37: -2723885797694462984
+      v3.2_77_valentine02_Mag_38: 3685390049383020622
+      v3.2_77_valentine02_Mag_39: 9296540843999370
+      v3.2_77_valentine02_Mag_4: 404889973630846156
+      v3.2_77_valentine02_Mag_40: 1318889720524697001
+      v3.2_77_valentine02_Mag_41: 1047413249318150785
+      v3.2_77_valentine02_Mag_42: -4483162429530389228
+      v3.2_77_valentine02_Mag_43: -3478584854683622330
+      v3.2_77_valentine02_Mag_44: -7294717109893146565
+      v3.2_77_valentine02_Mag_45: -5131184074851536971
+      v3.2_77_valentine02_Mag_46: 4317296263912005017
+      v3.2_77_valentine02_Mag_47: -3526679766301759032
+      v3.2_77_valentine02_Mag_5: -2616418902198362796
+      v3.2_77_valentine02_Mag_6: -1698462918360736375
+      v3.2_77_valentine02_Mag_7: -2095882224294606430
+      v3.2_77_valentine02_Mag_8: 7345956951676444364
+      v3.2_77_valentine02_Mag_9: -4421403887676012733
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

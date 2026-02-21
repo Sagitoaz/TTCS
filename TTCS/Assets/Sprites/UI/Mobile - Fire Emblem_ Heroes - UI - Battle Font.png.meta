@@ -1,0 +1,1196 @@
+fileFormatVersion: 2
+guid: 864e79b036f1111489dd22106b0c27cf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1948909180367261754
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_0
+  - first:
+      213: 5002372626088456824
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_1
+  - first:
+      213: -4576325920185021611
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_2
+  - first:
+      213: 2285618647523482318
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_3
+  - first:
+      213: -1425565086913518857
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_4
+  - first:
+      213: 4782643985071366830
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_5
+  - first:
+      213: 5815519790644465439
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_6
+  - first:
+      213: 6059125948300831740
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_7
+  - first:
+      213: -1880242722860849540
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_8
+  - first:
+      213: -1454819959878298725
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_9
+  - first:
+      213: 9212818193265858717
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_10
+  - first:
+      213: -8307089302249188577
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_11
+  - first:
+      213: -3423561826408414476
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_12
+  - first:
+      213: 5383740867794283135
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_13
+  - first:
+      213: -1681317487623139683
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_14
+  - first:
+      213: -843416184519414934
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_15
+  - first:
+      213: 506831825469918865
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_16
+  - first:
+      213: 9090070503509726957
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_17
+  - first:
+      213: 4379242714280355845
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_18
+  - first:
+      213: 5754904589388310731
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_19
+  - first:
+      213: 4269735595757053895
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_20
+  - first:
+      213: -2252763188272205145
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_21
+  - first:
+      213: 3119035595827074278
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_22
+  - first:
+      213: -835133702236779577
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_23
+  - first:
+      213: -2420050226147193445
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_24
+  - first:
+      213: -5053432557317802307
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_25
+  - first:
+      213: 7621128462303883515
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_26
+  - first:
+      213: -792002309288159958
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_27
+  - first:
+      213: 5561664552993366989
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_28
+  - first:
+      213: 4803421178337647318
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_29
+  - first:
+      213: 4785022223566695090
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_30
+  - first:
+      213: -1809197955390792970
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_31
+  - first:
+      213: -3831879654609368202
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_32
+  - first:
+      213: 3607801568722461162
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_33
+  - first:
+      213: -160200309591593601
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_34
+  - first:
+      213: 6246384015911607868
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_35
+  - first:
+      213: -6602414637458494665
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_36
+  - first:
+      213: 1460303596750298595
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_37
+  - first:
+      213: 4506814662886234142
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_38
+  - first:
+      213: -476025636395680447
+    second: Mobile - Fire Emblem_ Heroes - UI - Battle Font_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 196
+        width: 64
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a30d943e29aeb0b10800000000000000
+      internalID: 1948909180367261754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 197
+        width: 47
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 872f324566ffb6540800000000000000
+      internalID: 5002372626088456824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_2
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 197
+        width: 60
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55b85fe62df9d70c0800000000000000
+      internalID: -4576325920185021611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_3
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 196
+        width: 60
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eca55a9dc0628bf10800000000000000
+      internalID: 2285618647523482318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_4
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 197
+        width: 64
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f2225e3b10673ce0800000000000000
+      internalID: -1425565086913518857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_5
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 196
+        width: 59
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea266596d5d5f5240800000000000000
+      internalID: 4782643985071366830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_6
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 196
+        width: 62
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1f0e990070e4b050800000000000000
+      internalID: 5815519790644465439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_7
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 197
+        width: 60
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfba2d582f6561450800000000000000
+      internalID: 6059125948300831740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_8
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 196
+        width: 64
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c76ad5c943908e5e0800000000000000
+      internalID: -1880242722860849540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_9
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 196
+        width: 62
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b935e4754f07fcbe0800000000000000
+      internalID: -1454819959878298725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_10
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 128
+        width: 56
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d981eddc5518adf70800000000000000
+      internalID: 9212818193265858717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_11
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 129
+        width: 43
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f135dfdda4a47bc80800000000000000
+      internalID: -8307089302249188577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_12
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 129
+        width: 52
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f2c65e58a01d70d0800000000000000
+      internalID: -3423561826408414476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_13
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 128
+        width: 52
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7aa1a38bc3e6ba40800000000000000
+      internalID: 5383740867794283135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_14
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 129
+        width: 56
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9e029b27a2caa8e0800000000000000
+      internalID: -1681317487623139683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_15
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 128
+        width: 52
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6ba7e3e2759b44f0800000000000000
+      internalID: -843416184519414934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_16
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 128
+        width: 55
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19e4ff52cd0a80700800000000000000
+      internalID: 506831825469918865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_17
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 129
+        width: 52
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de614f036fa662e70800000000000000
+      internalID: 9090070503509726957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_18
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 128
+        width: 55
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 508e5e1eb0236cc30800000000000000
+      internalID: 4379242714280355845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_19
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 128
+        width: 54
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc861c6bb378ddf40800000000000000
+      internalID: 5754904589388310731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_20
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 69
+        width: 48
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c7a0fdf6e5214b30800000000000000
+      internalID: 4269735595757053895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_21
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 71
+        width: 38
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a275ffd0d39cb0e0800000000000000
+      internalID: -2252763188272205145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_22
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 69
+        width: 45
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e4521b595a094b20800000000000000
+      internalID: 3119035595827074278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_23
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 69
+        width: 45
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cb483292520964f0800000000000000
+      internalID: -835133702236779577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_24
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 69
+        width: 48
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9d84eb24214a6ed0800000000000000
+      internalID: -2420050226147193445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_25
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 69
+        width: 44
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db6bda40dd99ed9b0800000000000000
+      internalID: -5053432557317802307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_26
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 69
+        width: 47
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf0fd3f35ffa3c960800000000000000
+      internalID: 7621128462303883515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_27
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 69
+        width: 45
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a25179d881e3205f0800000000000000
+      internalID: -792002309288159958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_28
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 69
+        width: 48
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc32d09a1700f2d40800000000000000
+      internalID: 5561664552993366989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_29
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 69
+        width: 47
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6da5761bc1e29a240800000000000000
+      internalID: 4803421178337647318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_30
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 56
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2baea063c50d76240800000000000000
+      internalID: 4785022223566695090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_31
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1
+        width: 43
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fa919c8b0074e6e0800000000000000
+      internalID: -1809197955390792970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_32
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1
+        width: 52
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67b46fc91cd62dac0800000000000000
+      internalID: -3831879654609368202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_33
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 0
+        width: 52
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae1accb696c711230800000000000000
+      internalID: 3607801568722461162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_34
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1
+        width: 56
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7da2edcaaad6cdf0800000000000000
+      internalID: -160200309591593601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_35
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 0
+        width: 52
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3ed61fea2d9fa650800000000000000
+      internalID: 6246384015911607868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_36
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 0
+        width: 55
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73b627a4ed28f54a0800000000000000
+      internalID: -6602414637458494665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_37
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 1
+        width: 52
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3edd68c526a044410800000000000000
+      internalID: 1460303596750298595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_38
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 0
+        width: 55
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e181bd9ce0c6b8e30800000000000000
+      internalID: 4506814662886234142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Battle Font_39
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 0
+        width: 54
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14df7aea431d469f0800000000000000
+      internalID: -476025636395680447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_0: 1948909180367261754
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_1: 5002372626088456824
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_10: 9212818193265858717
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_11: -8307089302249188577
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_12: -3423561826408414476
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_13: 5383740867794283135
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_14: -1681317487623139683
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_15: -843416184519414934
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_16: 506831825469918865
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_17: 9090070503509726957
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_18: 4379242714280355845
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_19: 5754904589388310731
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_2: -4576325920185021611
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_20: 4269735595757053895
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_21: -2252763188272205145
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_22: 3119035595827074278
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_23: -835133702236779577
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_24: -2420050226147193445
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_25: -5053432557317802307
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_26: 7621128462303883515
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_27: -792002309288159958
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_28: 5561664552993366989
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_29: 4803421178337647318
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_3: 2285618647523482318
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_30: 4785022223566695090
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_31: -1809197955390792970
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_32: -3831879654609368202
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_33: 3607801568722461162
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_34: -160200309591593601
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_35: 6246384015911607868
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_36: -6602414637458494665
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_37: 1460303596750298595
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_38: 4506814662886234142
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_39: -476025636395680447
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_4: -1425565086913518857
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_5: 4782643985071366830
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_6: 5815519790644465439
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_7: 6059125948300831740
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_8: -1880242722860849540
+      Mobile - Fire Emblem_ Heroes - UI - Battle Font_9: -1454819959878298725
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

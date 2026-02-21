@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 6a2ab7ece4bf9794e9a767a4b82e5132
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1481476147440177914
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_0
+  - first:
+      213: -5709082663246723211
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_1
+  - first:
+      213: 3595860911842687906
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_2
+  - first:
+      213: 7567031643829128602
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_3
+  - first:
+      213: 2043162617943941694
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_4
+  - first:
+      213: 4237276161657464626
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_5
+  - first:
+      213: -7056350158391575613
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_6
+  - first:
+      213: 2575812258452971102
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_7
+  - first:
+      213: 7729464698206377675
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_8
+  - first:
+      213: -3111470260498179505
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_9
+  - first:
+      213: 1658351187190034131
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_10
+  - first:
+      213: 8569318347671796320
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_11
+  - first:
+      213: -9177133952699240322
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_12
+  - first:
+      213: 2849817252315839719
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_13
+  - first:
+      213: 5474554343032172632
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_14
+  - first:
+      213: -7278067209415967921
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_15
+  - first:
+      213: -8647340679188526921
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_16
+  - first:
+      213: -8103784634327896523
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_17
+  - first:
+      213: 7300154088383231389
+    second: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 927
+        width: 266
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60d2d980b4db07be0800000000000000
+      internalID: -1481476147440177914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_1
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 933
+        width: 262
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57786d7d09345c0b0800000000000000
+      internalID: -5709082663246723211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_2
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 933
+        width: 262
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ab7818927017e130800000000000000
+      internalID: 3595860911842687906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_3
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 954
+        width: 207
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9d439e203f730960800000000000000
+      internalID: 7567031643829128602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 702
+        width: 263
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e32e7ec6395ca5c10800000000000000
+      internalID: 2043162617943941694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_5
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 702
+        width: 261
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 237e2de0834ddca30800000000000000
+      internalID: 4237276161657464626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_6
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 702
+        width: 261
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cb7c46caeec21e90800000000000000
+      internalID: -7056350158391575613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_7
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 750
+        width: 136
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5e9f211a9f1fb320800000000000000
+      internalID: 2575812258452971102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 451
+        width: 267
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc65388c033944b60800000000000000
+      internalID: 7729464698206377675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_9
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 457
+        width: 262
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4a50d98846d1d4d0800000000000000
+      internalID: -3111470260498179505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_10
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 457
+        width: 262
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3de2f415e95a30710800000000000000
+      internalID: 1658351187190034131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_11
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 533
+        width: 123
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06af63092a55ce670800000000000000
+      internalID: 8569318347671796320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 267
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e707f25ea4544a080800000000000000
+      internalID: -9177133952699240322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_13
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 230
+        width: 260
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ecb01721b59c8720800000000000000
+      internalID: 2849817252315839719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_14
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 229
+        width: 265
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85031086b2689fb40800000000000000
+      internalID: 5474554343032172632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_15
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 316
+        width: 123
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4bb7531f6c1ffa90800000000000000
+      internalID: -7278067209415967921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 267
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b8ce25c7797ef780800000000000000
+      internalID: -8647340679188526921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_17
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 0
+        width: 259
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53eed9e8fc2998f80800000000000000
+      internalID: -8103784634327896523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - World Map Objects_18
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 3
+        width: 265
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d95b2bb277b5f4560800000000000000
+      internalID: 7300154088383231389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_0: -1481476147440177914
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_1: -5709082663246723211
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_10: 1658351187190034131
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_11: 8569318347671796320
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_12: -9177133952699240322
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_13: 2849817252315839719
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_14: 5474554343032172632
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_15: -7278067209415967921
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_16: -8647340679188526921
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_17: -8103784634327896523
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_18: 7300154088383231389
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_2: 3595860911842687906
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_3: 7567031643829128602
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_4: 2043162617943941694
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_5: 4237276161657464626
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_6: -7056350158391575613
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_7: 2575812258452971102
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_8: 7729464698206377675
+      Mobile - Fire Emblem_ Heroes - UI - World Map Objects_9: -3111470260498179505
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

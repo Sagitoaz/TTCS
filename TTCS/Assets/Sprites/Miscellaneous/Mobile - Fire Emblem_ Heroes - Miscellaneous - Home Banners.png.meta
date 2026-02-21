@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: b374ab6ef8c20b2478df3804f9995e3e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8539830043757386202
+    second: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_0
+  - first:
+      213: 7268756525968943974
+    second: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_1
+  - first:
+      213: 4602037357867395868
+    second: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_2
+  - first:
+      213: -5868031858994521419
+    second: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_3
+  - first:
+      213: -2857699474845641237
+    second: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_4
+  - first:
+      213: 8058411882719277850
+    second: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_5
+  - first:
+      213: 7199213730476716684
+    second: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_6
+  - first:
+      213: -3128425659446999537
+    second: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_7
+  - first:
+      213: -1913183304925575094
+    second: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_8
+  - first:
+      213: 2893179171997868957
+    second: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_9
+  - first:
+      213: -2887578499229905740
+    second: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_10
+  - first:
+      213: -4954027288016740989
+    second: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_11
+  - first:
+      213: -1955592076702038536
+    second: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_12
+  - first:
+      213: -6511483449227930673
+    second: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2251
+        width: 2240
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad91e58cd22938670800000000000000
+      internalID: 8539830043757386202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2101
+        width: 2240
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66b6e218c8fcfd460800000000000000
+      internalID: 7268756525968943974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1950
+        width: 2240
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1b63c62898bddf30800000000000000
+      internalID: 4602037357867395868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1801
+        width: 2240
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bad4f94d10909ea0800000000000000
+      internalID: -5868031858994521419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1650
+        width: 2240
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be55107e7796758d0800000000000000
+      internalID: -2857699474845641237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1500
+        width: 2240
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a13f44b79ea35df60800000000000000
+      internalID: 8058411882719277850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1350
+        width: 2240
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c82fd2baebeb8e360800000000000000
+      internalID: 7199213730476716684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1200
+        width: 2240
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f06c17610799594d0800000000000000
+      internalID: -3128425659446999537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1050
+        width: 2240
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4804bfabe10375e0800000000000000
+      internalID: -1913183304925575094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 900
+        width: 2240
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d93ed72d023a62820800000000000000
+      internalID: 2893179171997868957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 749
+        width: 2240
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bc885c67a24de7d0800000000000000
+      internalID: -2887578499229905740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 2240
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38d9b2add62cf3bb0800000000000000
+      internalID: -4954027288016740989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 149
+        width: 2240
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f54b9e0e575cd4e0800000000000000
+      internalID: -1955592076702038536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1681
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc31fef5d4092a5a0800000000000000
+      internalID: -6511483449227930673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_0: 8539830043757386202
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_1: 7268756525968943974
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_10: -2887578499229905740
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_11: -4954027288016740989
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_12: -1955592076702038536
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_13: -6511483449227930673
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_2: 4602037357867395868
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_3: -5868031858994521419
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_4: -2857699474845641237
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_5: 8058411882719277850
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_6: 7199213730476716684
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_7: -3128425659446999537
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_8: -1913183304925575094
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Home Banners_9: 2893179171997868957
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
