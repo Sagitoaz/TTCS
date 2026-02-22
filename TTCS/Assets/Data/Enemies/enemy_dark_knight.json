@@ -1,0 +1,119 @@
+{
+  "id": "enemy_dark_knight",
+  "nameKey": "Enemy_DarkKnight",
+  "description": "An elite enemy with powerful attacks and defensive capabilities",
+  "type": "elite",
+  
+  "baseStats": {
+    "hp": 5000,
+    "atk": 320,
+    "def": 200,
+    "spd": 100,
+    "crit": 0.15,
+    "resist": 0.30
+  },
+  
+  "resistances": {
+    "physical": 0.2,
+    "fire": -0.3,
+    "ice": 0.0,
+    "lightning": 0.1,
+    "dark": 0.5
+  },
+  
+  "moveSet": [
+    {
+      "skillId": "skill_knight_slash",
+      "weight": 40,
+      "conditions": []
+    },
+    {
+      "skillId": "skill_knight_guard",
+      "weight": 30,
+      "conditions": [
+        {
+          "type": "hp_below",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "skillId": "skill_knight_counter",
+      "weight": 30,
+      "conditions": [
+        {
+          "type": "hp_below",
+          "value": 0.3
+        }
+      ]
+    }
+  ],
+  
+  "phases": [
+    {
+      "phaseId": 1,
+      "hpRange": [1.0, 0.6],
+      "moves": ["slash", "guard"],
+      "weights": [60, 40],
+      "behavior": "balanced"
+    },
+    {
+      "phaseId": 2,
+      "hpRange": [0.6, 0.0],
+      "moves": ["slash", "counter", "rage"],
+      "weights": [30, 40, 30],
+      "behavior": "aggressive"
+    }
+  ],
+  
+  "telegraph": {
+    "enabled": true,
+    "defaultDuration": 1.2,
+    "cueType": "visual_and_sfx",
+    "overrideByCue": {
+      "counter": 1.5
+    }
+  },
+  
+  "aiProfile": {
+    "aggression": 0.7,
+    "targetPriority": ["lowest_hp", "highest_threat"],
+    "useSkillsWisely": true,
+    "retreatThreshold": 0.0
+  },
+  
+  "loot": {
+    "guaranteed": [
+      {
+        "type": "currency",
+        "id": "gold",
+        "amount": [100, 200]
+      },
+      {
+        "type": "currency",
+        "id": "exp",
+        "amount": [150, 150]
+      }
+    ],
+    "possible": [
+      {
+        "type": "item",
+        "id": "item_dark_sword",
+        "chance": 0.15,
+        "amount": [1, 1]
+      },
+      {
+        "type": "item",
+        "id": "item_rare_gem",
+        "chance": 0.05,
+        "amount": [1, 2]
+      }
+    ]
+  },
+  
+  "visual": {
+    "spritePath": "Enemies/dark_knight_sprite",
+    "animatorController": "Enemies/dark_knight_animator",
+    "scale": 1.3
+  }
+}

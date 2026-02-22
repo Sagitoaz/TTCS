@@ -1,0 +1,55 @@
+{
+  "id": "char_mage",
+  "nameKey": "Character_Mage",
+  "description": "A powerful spellcaster specializing in fire magic and healing",
+  
+  "metadata": {
+    "rarity": "SSR",
+    "factionTag": "Forgotten",
+    "roleTag": "Support",
+    "element": "Fire"
+  },
+  
+  "baseStats": {
+    "level": 1,
+    "hp": 2000,
+    "atk": 400,
+    "def": 100,
+    "spd": 140,
+    "crit": 0.30,
+    "critDmg": 1.8,
+    "resist": 0.35
+  },
+  
+  "growthCurve": {
+    "hpPerLevel": 100,
+    "atkPerLevel": 20,
+    "defPerLevel": 5,
+    "spdPerLevel": 2
+  },
+  
+  "skills": [
+    "skill_mage_fireball",
+    "skill_mage_heal",
+    "skill_mage_shield",
+    "skill_mage_lightning"
+  ],
+  
+  "passive": {
+    "id": "passive_mage_arcane_mastery",
+    "nameKey": "Passive_ArcaneMastery",
+    "description": "Increase all magic damage by 15%"
+  },
+  
+  "visual": {
+    "spritePath": "Characters/mage_sprite",
+    "portraitPath": "Characters/mage_portrait",
+    "animatorController": "Characters/mage_animator"
+  },
+  
+  "aiHints": {
+    "priority": "offense",
+    "preferredTargets": ["lowest_hp", "highest_threat"],
+    "defensiveThreshold": 0.3
+  }
+}

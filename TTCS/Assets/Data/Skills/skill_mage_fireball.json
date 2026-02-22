@@ -1,0 +1,86 @@
+{
+  "id": "skill_mage_fireball",
+  "nameKey": "Skill_Fireball",
+  "description": "Launch a fireball that deals fire damage and may inflict burn",
+  "type": "attack",
+  
+  "targetRule": {
+    "type": "single_enemy",
+    "count": 1,
+    "filter": [],
+    "canTargetSelf": false
+  },
+  
+  "cost": {
+    "mana": 30,
+    "cooldown": 2,
+    "limitPerFight": -1
+  },
+  
+  "damage": {
+    "formula": "ATK * 1.5",
+    "element": "fire",
+    "canCrit": true,
+    "ignoreDefense": 0
+  },
+  
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 1.5",
+      "element": "fire",
+      "chance": 1.0
+    },
+    {
+      "type": "status_effect",
+      "effectId": "effect_burn",
+      "duration": 3,
+      "chance": 0.6,
+      "stacks": 1
+    }
+  ],
+  
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 200,
+        "endMs": 400,
+        "type": "cast"
+      }
+    ],
+    "grades": {
+      "perfect": {
+        "threshold": 50,
+        "bonus": {
+          "damageMultiplier": 1.2,
+          "effectChanceBonus": 0.2
+        }
+      },
+      "good": {
+        "threshold": 150,
+        "bonus": {
+          "damageMultiplier": 1.0
+        }
+      },
+      "miss": {
+        "threshold": 999,
+        "penalty": {
+          "damageMultiplier": 1.0
+        }
+      }
+    }
+  },
+  
+  "actionCost": {
+    "timelineUnits": 100,
+    "description": "Standard action"
+  },
+  
+  "visual": {
+    "animation": "mage_cast_fireball",
+    "vfxPrefab": "VFX/fireball_explosion",
+    "sfx": "SFX/fire_whoosh",
+    "cameraShake": 0.3
+  }
+}

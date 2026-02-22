@@ -1,0 +1,55 @@
+{
+  "id": "char_warrior",
+  "nameKey": "Character_Warrior",
+  "description": "A frontline fighter with balanced offense and defense capabilities",
+  
+  "metadata": {
+    "rarity": "SR",
+    "factionTag": "Forgotten",
+    "roleTag": "Tank",
+    "element": "Physical"
+  },
+  
+  "baseStats": {
+    "level": 1,
+    "hp": 3000,
+    "atk": 280,
+    "def": 180,
+    "spd": 120,
+    "crit": 0.15,
+    "critDmg": 1.5,
+    "resist": 0.20
+  },
+  
+  "growthCurve": {
+    "hpPerLevel": 150,
+    "atkPerLevel": 14,
+    "defPerLevel": 9,
+    "spdPerLevel": 1
+  },
+  
+  "skills": [
+    "skill_warrior_slash",
+    "skill_warrior_power_strike",
+    "skill_warrior_guard",
+    "skill_warrior_taunt"
+  ],
+  
+  "passive": {
+    "id": "passive_warrior_endurance",
+    "nameKey": "Passive_Endurance",
+    "description": "Reduce damage taken by 10% when HP is below 50%"
+  },
+  
+  "visual": {
+    "spritePath": "Characters/warrior_sprite",
+    "portraitPath": "Characters/warrior_portrait",
+    "animatorController": "Characters/warrior_animator"
+  },
+  
+  "aiHints": {
+    "priority": "defense",
+    "preferredTargets": ["random"],
+    "defensiveThreshold": 0.5
+  }
+}

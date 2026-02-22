@@ -1,0 +1,89 @@
+{
+  "id": "enemy_goblin",
+  "nameKey": "Enemy_Goblin",
+  "description": "A common weak enemy found in early stages",
+  "type": "common",
+  
+  "baseStats": {
+    "hp": 1500,
+    "atk": 180,
+    "def": 80,
+    "spd": 110,
+    "crit": 0.05,
+    "resist": 0.10
+  },
+  
+  "resistances": {
+    "physical": 0.0,
+    "fire": 0.0,
+    "ice": 0.0,
+    "lightning": 0.0,
+    "dark": 0.0
+  },
+  
+  "moveSet": [
+    {
+      "skillId": "skill_goblin_claw",
+      "weight": 70,
+      "conditions": []
+    },
+    {
+      "skillId": "skill_goblin_flee",
+      "weight": 30,
+      "conditions": [
+        {
+          "type": "hp_below",
+          "value": 0.3
+        }
+      ]
+    }
+  ],
+  
+  "phases": [
+    {
+      "phaseId": 1,
+      "hpRange": [1.0, 0.0],
+      "moves": ["claw", "flee"],
+      "weights": [70, 30],
+      "behavior": "cowardly"
+    }
+  ],
+  
+  "telegraph": {
+    "enabled": true,
+    "defaultDuration": 0.8,
+    "cueType": "visual",
+    "overrideByCue": {}
+  },
+  
+  "aiProfile": {
+    "aggression": 0.4,
+    "targetPriority": ["random"],
+    "useSkillsWisely": false,
+    "retreatThreshold": 0.3
+  },
+  
+  "loot": {
+    "guaranteed": [
+      {
+        "type": "currency",
+        "id": "gold",
+        "amount": [20, 40]
+      }
+    ],
+    "possible": [
+      {
+        "type": "item",
+        "id": "item_health_potion",
+        "chance": 0.2,
+        "amount": [1, 1]
+      }
+    ]
+  },
+  
+  "visual": {
+    "spritePath": "Enemies/goblin_sprite",
+    "animatorController": "Enemies/goblin_animator",
+    "scale": 0.8
+  }
+}
