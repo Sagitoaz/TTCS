@@ -164,3 +164,7 @@ plastic.changes
 # Temporary files
 *.tmp
 .utmp/
+
+.aidlc-rule-details/
+.copilot/
+aidlc-docs/
