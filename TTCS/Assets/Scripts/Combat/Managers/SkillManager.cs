@@ -5,6 +5,7 @@ using TTCS.Core.Events;
 using TTCS.Core.Data;
 using TTCS.Data;
 using TTCS.Debugging;
+using static TTCS.Debugging.DebugLogger;
 
 namespace TTCS.Combat.Managers
 {
