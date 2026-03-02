@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 106269b8a896b464f80f2891cefbe63c, type: 3}
+  m_Name: CharacterData_Warrior
+  m_EditorClassIdentifier: Assembly-CSharp::TTCS.Data.CharacterData
+  id: char_warrior
+  nameKey: Warrior
+  rarity: SR
+  roleTag: Attacker
+  factionTag: Human
+  baseHP: 1200
+  baseATK: 140
+  baseDEF: 90
+  baseSPD: 105
+  baseCritRate: 0.08
+  baseResist: 0
+  skillIds:
+  - skill_warrior_slash
+  - skill_warrior_power_strike
+  bodySprite: {fileID: 0}
+  headSprite: {fileID: 0}
+  weaponSprite: {fileID: 0}
