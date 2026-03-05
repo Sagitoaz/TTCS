@@ -9,7 +9,7 @@ namespace TTCS.Core.Utilities
     /// Service quản lý random number generation với seed
     /// Dùng để đảm bảo reproducible combat và testing
     /// </summary>
-    public class RNGService
+    public class RNGService : MonoBehaviour
     {
         private static RNGService _instance;
         public static RNGService Instance

@@ -10,7 +10,7 @@ namespace TTCS.Core.Events
     /// Central event bus cho toàn bộ game
     /// Sử dụng để decouple các systems với nhau
     /// </summary>
-    public class EventBus
+    public class EventBus : MonoBehaviour
     {
         private static EventBus _instance;
         public static EventBus Instance
@@ -19,7 +19,9 @@ namespace TTCS.Core.Events
             {
                 if (_instance == null)
                 {
-                    _instance = new EventBus();
+                    var go = new GameObject("[EventBus]");
+                    _instance = go.AddComponent<EventBus>();
+                    DontDestroyOnLoad(go);
                 }
                 return _instance;
             }
