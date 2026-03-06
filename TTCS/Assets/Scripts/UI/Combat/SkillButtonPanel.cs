@@ -180,11 +180,13 @@ namespace TTCS.UI.Combat
             {
                 if (i >= _currentSkillIds.Count || _skillModels[i] == null) continue;
 
-                string skillId = _currentSkillIds[i];
-                bool canUse    = SkillManager.Instance?.CanUseSkill(_currentEntityId, skillId) ?? true;
-                int  cooldown  = SkillManager.Instance?.GetCooldown(_currentEntityId, skillId) ?? 0;
+                string skillId   = _currentSkillIds[i];
+                bool   canUse    = SkillManager.Instance?.CanUseSkill(_currentEntityId, skillId) ?? true;
+                int    cooldown  = SkillManager.Instance?.GetCooldown(_currentEntityId, skillId) ?? 0;
+                // BUG-4 FIX: truyền maxCooldown từ SkillDataModel để SkillButton tính fill ratio
+                int    maxCd     = Mathf.Max(1, _skillModels[i].cost?.cooldown ?? 1);
 
-                _buttons[i].Refresh(canUse, cooldown);
+                _buttons[i].Refresh(canUse, cooldown, maxCd);
             }
         }
 

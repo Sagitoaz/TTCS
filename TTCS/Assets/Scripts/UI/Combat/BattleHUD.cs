@@ -45,7 +45,7 @@ namespace TTCS.UI.Combat
                     ? (float)TTCS.Combat.Managers.SkillManager.Instance.GetMana(entity.ID) / _maxMP
                     : 1f;
 
-                SetHPText();
+                SetHPText(entity.HPPercent);
                 SlotGroup.alpha = 1f;
                 gameObject.SetActive(true);
             }
@@ -53,18 +53,22 @@ namespace TTCS.UI.Combat
             public void AnimateHP(float newPercent)
             {
                 HPSlider.DOValue(newPercent, 0.4f).SetEase(Ease.OutCubic);
-                SetHPText();
+                // BUG-1 FIX: truyền newPercent vào SetHPText thay vì đọc HPSlider.value cũ
+                SetHPText(newPercent);
             }
 
             public void SetDead()
             {
-                SlotGroup.DOFade(0.4f, 0.5f);
+                // BUG-3 FIX: animate HP bar về 0 và cập nhật text trước khi fade
+                HPSlider.DOValue(0f, 0.3f).SetEase(Ease.OutCubic);
+                SetHPText(0f);
+                SlotGroup.DOFade(0.4f, 0.5f).SetDelay(0.2f);
             }
 
-            private void SetHPText()
+            private void SetHPText(float percent)
             {
                 if (HPText != null)
-                    HPText.text = $"{Mathf.RoundToInt(HPSlider.value * _maxHP)}/{Mathf.RoundToInt(_maxHP)}";
+                    HPText.text = $"{Mathf.RoundToInt(percent * _maxHP)}/{Mathf.RoundToInt(_maxHP)}";
             }
 
             private GameObject gameObject => HPSlider.gameObject.transform.parent.gameObject;
@@ -158,7 +162,8 @@ namespace TTCS.UI.Combat
                 ? CombatUIController.Instance.GetEntityHPPercent(e.TargetId)
                 : Mathf.Min(1f, slot.HPSlider.value + 0.1f);
 
-            slot.HPSlider.DOValue(newPercent, 0.4f).SetEase(Ease.OutCubic);
+            // BUG-2 FIX: dùng AnimateHP để cập nhật cả bar lẫn text
+            slot.AnimateHP(newPercent);
         }
 
         private void OnEntityDeath(EntityDeathEvent e)

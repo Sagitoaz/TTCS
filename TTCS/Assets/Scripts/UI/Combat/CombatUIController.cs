@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TTCS.Combat.Entities;
 using TTCS.Core.Events;
@@ -167,6 +168,13 @@ namespace TTCS.UI.Combat
             if (_resultText != null)
                 _resultText.text = e.Victory ? "VICTORY!" : "DEFEAT...";
 
+            // Wire nút result lần đầu (tránh duplicate listener)
+            if (_resultButton != null)
+            {
+                _resultButton.onClick.RemoveAllListeners();
+                _resultButton.onClick.AddListener(OnResultButtonClicked);
+            }
+
             // Fade in result panel
             var cg = _resultPanel.GetComponent<CanvasGroup>();
             if (cg != null)
@@ -174,6 +182,16 @@ namespace TTCS.UI.Combat
                 cg.alpha = 0f;
                 cg.DOFade(1f, 0.5f).SetEase(Ease.OutQuad);
             }
+        }
+
+        /// <summary>
+        /// Xử lý nút trên result screen — reload scene hiện tại (Sprint 2).
+        /// Khi Main Menu hoàn thiện (Sprint 3+), thay bằng SceneManager.LoadScene("MainMenu").
+        /// </summary>
+        private void OnResultButtonClicked()
+        {
+            var scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.buildIndex);
         }
 
         #endregion

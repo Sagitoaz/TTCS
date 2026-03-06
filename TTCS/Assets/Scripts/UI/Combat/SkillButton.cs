@@ -63,22 +63,27 @@ namespace TTCS.UI.Combat
         /// </summary>
         /// <param name="canUse">True nếu đủ mana và không on cooldown</param>
         /// <param name="cooldownRemaining">Số lượt cooldown còn lại (0 = sẵn sàng)</param>
-        public void Refresh(bool canUse, int cooldownRemaining)
+        /// <param name="maxCooldown">Cooldown tối đa của skill (để tính fill ratio; mặc định 1)</param>
+        public void Refresh(bool canUse, int cooldownRemaining, int maxCooldown = 1)
         {
             _button.interactable = canUse;
 
             // Icon dim khi không dùng được
             _icon.color = canUse ? _enabledAlpha : _disabledAlpha;
 
-            // Cooldown overlay: fill = cooldown / maxCooldown — dùng 0 khi không có cooldown
+            // BUG-4 FIX: set fillAmount theo % cooldown còn lại
             if (cooldownRemaining > 0)
             {
                 _cooldownOverlay.gameObject.SetActive(true);
+                _cooldownOverlay.fillAmount = maxCooldown > 0
+                    ? (float)cooldownRemaining / maxCooldown
+                    : 1f;
                 _cooldownText.text = cooldownRemaining.ToString();
             }
             else
             {
                 _cooldownOverlay.gameObject.SetActive(false);
+                _cooldownOverlay.fillAmount = 0f;
                 _cooldownText.text = string.Empty;
             }
         }
