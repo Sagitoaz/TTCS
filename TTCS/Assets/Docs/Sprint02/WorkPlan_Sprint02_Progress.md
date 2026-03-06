@@ -11,10 +11,10 @@
 
 | Team Member | Số file | Hoàn thành | Còn lại | Trạng thái |
 |-------------|---------|------------|---------|------------|
-| **Developer A** | 16 files | 16 | 0 | ✅ HOÀN THÀNH |
+| **Developer A** | 15 files | 15 | 0 | ✅ HOÀN THÀNH |
 | **Developer B** | 9 files | 0 | 9 | 🔄 ĐANG LÀM |
 | **Shared (Scene)** | 1 scene | 0 | 1 | ⏳ CHỜ DEV B |
-| **Tổng cộng** | 26 items | 16 | 10 | 🔄 62% |
+| **Tổng cộng** | 25 items | 15 | 10 | 🔄 60% |
 
 ---
 

@@ -242,7 +242,7 @@ Các events từ Sprint 1 (`Assets/Scripts/Core/Events/CombatEvents.cs`) đượ
 |-------|--------------|
 | `DamageTakenEvent` | BattleHUD, ActionResultDisplay, CombatBridge, AudioController |
 | `HealingReceivedEvent` | BattleHUD, ActionResultDisplay |
-| `EntityDiedEvent` | BattleHUD, CombatBridge, AudioController |
+| `EntityDeathEvent` | BattleHUD, CombatBridge, AudioController |
 | `SkillCastEvent` | CombatBridge, AudioController |
 | `TurnStartedEvent` | SkillButtonPanel, CombatBridge, AudioController |
 | `TurnEndedEvent` | SkillButtonPanel |
