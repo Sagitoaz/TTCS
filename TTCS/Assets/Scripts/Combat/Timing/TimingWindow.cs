@@ -1,3 +1,6 @@
+using System;
+using System.Diagnostics;
+
 namespace TTCS.Combat.Timing
 {
     /// <summary>
@@ -35,8 +38,8 @@ namespace TTCS.Combat.Timing
         /// <param name="perfectThreshold">Offset từ điểm lý tưởng để đạt Perfect (giây)</param>
         /// <param name="goodThreshold">Offset từ điểm lý tưởng để đạt Good (giây)</param>
         public TimingWindow(float openTime, float duration,
-                            float perfectThreshold = 0.05f,
-                            float goodThreshold    = 0.15f)
+                            float perfectThreshold = 0.5f,
+                            float goodThreshold    = 0.8f)
         {
             OpenTime         = openTime;
             Duration         = duration;
@@ -48,6 +51,7 @@ namespace TTCS.Combat.Timing
         /// <summary>Tạo window với giá trị từ Constants.</summary>
         public static TimingWindow CreateDefault(float openTime, float duration)
         {
+            
             return new TimingWindow(
                 openTime,
                 duration,
@@ -65,6 +69,7 @@ namespace TTCS.Combat.Timing
         public TTCS.UI.Combat.TimingGrade EvaluateInput(float inputTime)
         {
             float offset = UnityEngine.Mathf.Abs(inputTime - IdealTime);
+            
 
             if (offset <= PerfectThreshold)
                 return TTCS.UI.Combat.TimingGrade.Perfect;

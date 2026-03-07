@@ -52,10 +52,10 @@ namespace TTCS.Core
         #region Timing Windows (milliseconds)
         
         /// <summary>Khung thời gian Perfect timing (ms)</summary>
-        public const int PERFECT_TIMING_WINDOW = 50;
+        public const int PERFECT_TIMING_WINDOW = 500;
         
         /// <summary>Khung thời gian Good timing (ms)</summary>
-        public const int GOOD_TIMING_WINDOW = 100;
+        public const int GOOD_TIMING_WINDOW = 800;
         
         /// <summary>Khung thời gian Normal timing (ms)</summary>
         public const int NORMAL_TIMING_WINDOW = 200;

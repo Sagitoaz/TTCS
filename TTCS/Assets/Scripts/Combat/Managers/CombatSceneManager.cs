@@ -184,6 +184,7 @@ namespace TTCS.Combat.Managers
             if (Keyboard.current[Key.T].wasPressedThisFrame)
             {
                 var window = TTCS.Combat.Timing.TimingWindow.CreateDefault(Time.time, 2.0f);
+                
                 TTCS.Combat.Timing.TimingSystem.Instance?.OpenWindow(window);
             }
             // F/G/M: Test trực tiếp TimingFeedbackUI (không cần qua TimingSystem)

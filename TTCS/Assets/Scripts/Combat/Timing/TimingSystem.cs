@@ -61,6 +61,7 @@ namespace TTCS.Combat.Timing
         /// </summary>
         public void OpenWindow(TimingWindow window)
         {
+            Debug.Log("WINDOW OPENING AT " + window.OpenTime);
             if (_windowActive)
             {
                 LogWarning("TimingSystem: Window đang mở — ForceClose trước.", LogCategory.Combat);
@@ -127,6 +128,7 @@ namespace TTCS.Combat.Timing
         private IEnumerator WindowLifecycle(TimingWindow window)
         {
             float elapsed = 0f;
+            
 
             while (elapsed < window.Duration)
             {
@@ -137,6 +139,8 @@ namespace TTCS.Combat.Timing
 
             // Window kết thúc — evaluate
             TimingGrade grade;
+            Debug.Log(UnityEngine.Mathf.Abs(_inputTime.Value - (window.OpenTime + window.Duration*0.5f)) + " " + window.PerfectThreshold);
+            
             if (_inputTime.HasValue)
             {
                 grade = window.EvaluateInput(_inputTime.Value);

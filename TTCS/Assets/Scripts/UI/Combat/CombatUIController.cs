@@ -8,6 +8,7 @@ using TTCS.Combat.Entities;
 using TTCS.Core.Events;
 using TTCS.Debugging;
 using static TTCS.Debugging.DebugLogger;
+using TTCS.Combat.Timing;
 
 namespace TTCS.UI.Combat
 {
@@ -114,6 +115,7 @@ namespace TTCS.UI.Combat
 
             // Ẩn result panel
             _resultPanel?.SetActive(false);
+            TimingSystem.Instance.OnTimingResult += ShowTimingResult;
 
             EventBus.Instance.Subscribe<CombatEndedEvent>(OnCombatEnded);
             EventBus.Instance.Subscribe<TurnStartedEvent>(OnPlayerTurnStarted);

@@ -96,7 +96,17 @@ namespace TTCS.UI.Combat
             _sequence = DOTween.Sequence();
             _sequence.Append(_flashOverlay.DOFade(0.8f, 0.04f));
             _sequence.Append(_flashOverlay.DOFade(0f, _goodDuration * 0.8f).SetEase(Ease.OutQuad));
-            _sequence.Join(_gradeText.DOFade(1f, 0.05f));
+            // Grade text: scale bounce + fade
+            _sequence.Join(
+                _gradeText.DOFade(1f, 0.05f)
+            );
+            _sequence.Join(
+                _gradeText.transform.DOScale(1.5f, 0.15f)
+                          .SetEase(Ease.OutBack)
+                          .OnComplete(() =>
+                              _gradeText.transform.DOScale(1f, 0.1f))
+            );
+            
             _sequence.AppendInterval(_goodDuration * 0.4f);
             _sequence.Append(_gradeText.DOFade(0f, 0.15f));
             _sequence.SetAutoKill(true);
@@ -108,10 +118,26 @@ namespace TTCS.UI.Combat
             SetFlashColor(_missColor);
 
             _sequence = DOTween.Sequence();
-            _sequence.Append(_gradeText.DOFade(1f, 0.03f));
+            _sequence.Append(_flashOverlay.DOFade(0.6f, 0.03f));
+            _sequence.Append(_flashOverlay.DOFade(0f, _missDuration * 0.8f).SetEase(Ease.OutQuad));
+            // Grade text: scale bounce + fade
+            _sequence.Join(
+                _gradeText.DOFade(1f, 0.05f)
+            );
+            _sequence.Join(
+                _gradeText.transform.DOScale(1.5f, 0.15f)
+                          .SetEase(Ease.OutBack)
+                          .OnComplete(() =>
+                              _gradeText.transform.DOScale(1f, 0.1f))
+            );
             // Screen shake qua Camera (chỉ khi Camera.main tồn tại)
             if (Camera.main != null)
-                _sequence.Join(Camera.main.transform.DOShakePosition(_missDuration, 0.3f, 15, 90f));
+            {
+                Debug.Log("SHAKE CAMERA");
+                Vector3 shakeStrength = new Vector3(0.5f, 0.5f, 0f);
+                _sequence.Join(Camera.main.transform.DOShakePosition(_missDuration, shakeStrength, 15, 90f));
+            }
+                
             _sequence.AppendInterval(_missDuration);
             _sequence.Append(_gradeText.DOFade(0f, 0.12f));
             _sequence.SetAutoKill(true);
