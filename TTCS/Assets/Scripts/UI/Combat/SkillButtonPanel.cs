@@ -42,13 +42,11 @@ namespace TTCS.UI.Combat
 
         private void OnEnable()
         {
-            EventBus.Instance.Subscribe<TurnStartedEvent>(OnTurnStarted);
             EventBus.Instance.Subscribe<TurnEndedEvent>(OnTurnEnded);
         }
 
         private void OnDisable()
         {
-            EventBus.Instance.Unsubscribe<TurnStartedEvent>(OnTurnStarted);
             EventBus.Instance.Unsubscribe<TurnEndedEvent>(OnTurnEnded);
         }
 
@@ -92,15 +90,6 @@ namespace TTCS.UI.Combat
 
         // ──────────────────────────────────────────────────────────────────
         #region Event Handlers
-
-        private void OnTurnStarted(TurnStartedEvent e)
-        {
-            // Chỉ hiện panel khi đến lượt entity được quản lý bởi panel này
-            if (e.EntityId != _currentEntityId) return;
-
-            SetVisible(true);
-            RefreshButtons();
-        }
 
         private void OnTurnEnded(TurnEndedEvent e)
         {
@@ -173,6 +162,20 @@ namespace TTCS.UI.Combat
 
         // ──────────────────────────────────────────────────────────────────
         #region Refresh & Visibility
+
+        /// <summary>
+        /// Gọi từ CombatUIController sau khi Initialize() — hiện panel và refresh trạng thái buttons.
+        /// </summary>
+        public void ShowForTurn()
+        {
+            SetVisible(true);
+            RefreshButtons();
+        }
+
+        public void Hide()
+        {
+            SetVisible(false);
+        }
 
         private void RefreshButtons()
         {

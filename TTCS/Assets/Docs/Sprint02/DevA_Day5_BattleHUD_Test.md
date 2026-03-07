@@ -269,7 +269,8 @@ CombatSceneManager.Start()
 2. **Add Component → `TimingSystem`**
 3. **Add Component → `TimingInputHandler`**
 4. Trong `TimingInputHandler` Inspector:
-   - `Use New Input System` → **❌ false** (dùng Space key trực tiếp, chưa cần setup InputAction)
+   - `Action Name` → `"Guard"` (tên action trong InputSystem_Actions)
+   - `Fallback Key` → `Space` (dùng khi không tìm thấy PlayerInput component)
 
 ---
 
@@ -359,8 +360,11 @@ Quan sát Hierarchy **trong khi Play**: mở `BattleHUD > AllySlots > AllySlot_0
 **Test thủ công — nhận damage:** thêm script test tạm hoặc chạy từ Console unityscripting:
 
 ```csharp
-// Dán vào bất kỳ MonoBehaviour test nào, gọi từ Update()
-if (Input.GetKeyDown(KeyCode.H))
+// Nhớ thêm using UnityEngine.InputSystem; ở đầu file
+using UnityEngine.InputSystem;
+
+// Gọi từ Update()
+if (Keyboard.current[Key.H].wasPressedThisFrame)
 {
     EventBus.Instance.Publish(new TTCS.Core.Events.DamageTakenEvent(
         targetId: "char_warrior",
@@ -380,7 +384,7 @@ Nhấn **H** khi đang Play → `char_warrior` HP bar (AllySlot_0) phải:
 **Test Heal:**
 
 ```csharp
-if (Input.GetKeyDown(KeyCode.Y))
+if (Keyboard.current[Key.Y].wasPressedThisFrame)
 {
     EventBus.Instance.Publish(new TTCS.Core.Events.HealingReceivedEvent(
         targetId: "char_warrior",
@@ -423,7 +427,7 @@ Publish `EntityDeathEvent` cho `char_warrior`:
 ### 7.6 Verify Result Screen
 
 ```csharp
-if (Input.GetKeyDown(KeyCode.V))
+if (Keyboard.current[Key.V].wasPressedThisFrame)
     EventBus.Instance.Publish(new TTCS.Core.Events.CombatEndedEvent(victory: true));
 ```
 

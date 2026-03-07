@@ -18,7 +18,7 @@ namespace TTCS.UI.Combat
         // ─── Inspector ────────────────────────────────────────────────────
         [SerializeField] private TurnOrderSlot _slotPrefab;
         [SerializeField] private Transform     _slotContainer;
-        [SerializeField] private int           _previewCount = 8;
+        [SerializeField] private int           _previewCount = 5;
 
         // ─── Pool ─────────────────────────────────────────────────────────
         private readonly List<TurnOrderSlot> _pool = new();
@@ -103,7 +103,7 @@ namespace TTCS.UI.Combat
                 if (!_entityCache.TryGetValue(entityId, out var info))
                     info = (entityId, isPlayer: false); // fallback
 
-                bool isCurrentActor = (entityId == currentId) && i == 0;
+                bool isCurrentActor =  i == 0;
                 _pool[i].SetData(entityId, info.displayName, info.isPlayer, isCurrentActor);
             }
         }

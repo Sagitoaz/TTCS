@@ -9,6 +9,8 @@ using TTCS.Data;
 using TTCS.Debugging;
 using TTCS.UI.Combat;
 using static TTCS.Debugging.DebugLogger;
+using TTCS.Core.Events;
+using UnityEngine.InputSystem;
 
 namespace TTCS.Combat.Managers
 {
@@ -34,7 +36,7 @@ namespace TTCS.Combat.Managers
     {
         // ─── Singleton ────────────────────────────────────────────────────
         private static CombatSceneManager _instance;
-        public  static CombatSceneManager Instance => _instance;
+        public static CombatSceneManager Instance => _instance;
 
         private void Awake()
         {
@@ -50,26 +52,28 @@ namespace TTCS.Combat.Managers
         // ─── Inspector ────────────────────────────────────────────────────
         [Header("Default Stage (for testing)")]
         [SerializeField] private string _defaultStageId = "stage_01_tutorial";
-        [SerializeField] private int    _defaultSeed    = 0;
-        [SerializeField] private bool   _autoStartOnPlay = false;
+        [SerializeField] private int _defaultSeed = 0;
+        [SerializeField] private bool _autoStartOnPlay = false;
 
         [Header("Default Party (for testing)")]
-        [SerializeField] private List<string> _defaultPartyIds = new List<string>
+        [SerializeField]
+        private List<string> _defaultPartyIds = new List<string>
         {
             "char_warrior",
             "char_mage"
         };
 
         // ─── Runtime State ────────────────────────────────────────────────
-        private List<Character>    _playerTeam = new();
-        private List<Enemy>        _enemyTeam  = new();
-        private StageDataModel     _currentStage;
+        private List<Character> _playerTeam = new();
+        private List<Enemy> _enemyTeam = new();
+        private StageDataModel _currentStage;
 
         // ──────────────────────────────────────────────────────────────────
         #region Unity Lifecycle
 
         private void Start()
         {
+
             if (_autoStartOnPlay)
                 StartCoroutine(InitializeCombat(_defaultStageId, _defaultPartyIds, _defaultSeed));
         }
@@ -112,9 +116,18 @@ namespace TTCS.Combat.Managers
 
             Log($"CombatSceneManager: {_playerTeam.Count} players, {_enemyTeam.Count} enemies.", LogCategory.Combat);
 
-            // ─── 3. Khởi tạo CombatUIController ──────────────────────────
-            var allies  = _playerTeam.Cast<CombatEntity>().ToList();
+            // ─── 3. Pre-register entities vào SkillManager ───────────────
+            // Cần làm trước khi HUD init để BattleHUD đọc được mana đúng (không bị 0)
+            var allies = _playerTeam.Cast<CombatEntity>().ToList();
             var enemies = _enemyTeam.Cast<CombatEntity>().ToList();
+            if (SkillManager.Instance != null)
+            {
+                SkillManager.Instance.ResetCombat();
+                foreach (var e in allies.Concat(enemies))
+                    SkillManager.Instance.RegisterEntity(e.ID);
+            }
+
+            // ─── 4. Khởi tạo CombatUIController ──────────────────────────
             CombatUIController.Instance?.Initialize(allies, enemies);
 
             // ─── 4. Chờ một frame để Developer B spawn CharacterViews ─────
@@ -147,6 +160,41 @@ namespace TTCS.Combat.Managers
             // Future: scene transition, reward screen, etc.
         }
 
+        void Update()
+        {
+            if (Keyboard.current[Key.H].wasPressedThisFrame)
+            {
+                // Gọi TakeDamage() trực tiếp: HealthComponent cập nhật _currentHP rồi mới publish event
+                // → BattleHUD đọc GetEntityHPPercent() sẽ thấy giá trị đã thay đổi
+                CombatEntity target = _playerTeam.Find(e => e.ID == "char_warrior");
+                if (target == null) target = _enemyTeam.Find(e => e.ID == "char_warrior");
+                target?.Health.TakeDamage(500, "enemy_goblin");
+            }
+            if (Keyboard.current[Key.Y].wasPressedThisFrame)
+            {
+                CombatEntity target = _playerTeam.Find(e => e.ID == "char_warrior");
+                if (target == null) target = _enemyTeam.Find(e => e.ID == "char_warrior");
+                target?.Health.Heal(300, "char_mage");
+            }
+            if (Keyboard.current[Key.V].wasPressedThisFrame)
+                EventBus.Instance.Publish(new TTCS.Core.Events.CombatEndedEvent(victory: true));
+
+            // ── Week 2 Timing Tests ──────────────────────────────────────
+            // T: Mở timing window 2 giây (sau đó nhấn Space để register input)
+            if (Keyboard.current[Key.T].wasPressedThisFrame)
+            {
+                var window = TTCS.Combat.Timing.TimingWindow.CreateDefault(Time.time, 2.0f);
+                TTCS.Combat.Timing.TimingSystem.Instance?.OpenWindow(window);
+            }
+            // F/G/M: Test trực tiếp TimingFeedbackUI (không cần qua TimingSystem)
+            if (Keyboard.current[Key.F].wasPressedThisFrame)
+                CombatUIController.Instance?.ShowTimingResult(TTCS.UI.Combat.TimingGrade.Perfect);
+            if (Keyboard.current[Key.G].wasPressedThisFrame)
+                CombatUIController.Instance?.ShowTimingResult(TTCS.UI.Combat.TimingGrade.Good);
+            if (Keyboard.current[Key.M].wasPressedThisFrame)
+                CombatUIController.Instance?.ShowTimingResult(TTCS.UI.Combat.TimingGrade.Miss);
+        }
+
         #endregion
 
         // ──────────────────────────────────────────────────────────────────
@@ -171,6 +219,7 @@ namespace TTCS.Combat.Managers
 
             return ids;
         }
+
 
         #endregion
     }

@@ -43,6 +43,7 @@ namespace TTCS.UI.Combat
             {
                 _instance = null;
                 EventBus.Instance?.Unsubscribe<CombatEndedEvent>(OnCombatEnded);
+                EventBus.Instance?.Unsubscribe<TurnStartedEvent>(OnPlayerTurnStarted);
             }
         }
 
@@ -65,6 +66,9 @@ namespace TTCS.UI.Combat
 
         /// <summary>Mapping entityId → CombatEntity (để query HP).</summary>
         private readonly Dictionary<string, CombatEntity> _entityMap = new();
+
+        /// <summary>Cache danh sách enemy để re-initialize SkillButtonPanel khi đổi lượt player.</summary>
+        private List<CombatEntity> _enemyList = new();
 
         // ──────────────────────────────────────────────────────────────────
         #region Initialization
@@ -93,6 +97,9 @@ namespace TTCS.UI.Combat
             // BattleHUD
             _battleHUD?.InitializeSlots(playerTeam, enemyTeam);
 
+            // Cache enemy list để dùng khi re-init skill panel
+            _enemyList = enemyTeam ?? new List<CombatEntity>();
+
             // SkillButtonPanel — khởi tạo cho player đầu tiên còn sống
             var firstPlayer = playerTeam.Find(p => p != null && !p.IsDead);
             if (firstPlayer != null)
@@ -101,7 +108,7 @@ namespace TTCS.UI.Combat
                 _skillButtonPanel?.Initialize(
                     firstPlayer.ID,
                     character?.SkillIds ?? new List<string>(),
-                    enemyTeam
+                    _enemyList
                 );
             }
 
@@ -109,6 +116,7 @@ namespace TTCS.UI.Combat
             _resultPanel?.SetActive(false);
 
             EventBus.Instance.Subscribe<CombatEndedEvent>(OnCombatEnded);
+            EventBus.Instance.Subscribe<TurnStartedEvent>(OnPlayerTurnStarted);
 
             Log("CombatUIController: UI initialized.", LogCategory.UI);
         }
@@ -153,6 +161,30 @@ namespace TTCS.UI.Combat
         public void ShowTimingResult(TimingGrade grade)
         {
             _timingFeedbackUI?.ShowResult(grade);
+        }
+
+        #endregion
+
+        // ──────────────────────────────────────────────────────────────────
+        #region Turn Routing
+
+        /// <summary>
+        /// Khi lượt của bất kỳ player character nào bắt đầu, re-initialize SkillButtonPanel
+        /// với đúng skill của nhân vật đó.
+        /// </summary>
+        private void OnPlayerTurnStarted(TurnStartedEvent e)
+        {
+            if (!_entityMap.TryGetValue(e.EntityId, out var entity)) return;
+            var character = entity as TTCS.Combat.Entities.Character;
+            if (character == null)
+            {
+                // Lượt của enemy — ẩn panel
+                _skillButtonPanel?.Hide();
+                return;
+            }
+
+            _skillButtonPanel?.Initialize(character.ID, character.SkillIds, _enemyList);
+            _skillButtonPanel?.ShowForTurn();
         }
 
         #endregion

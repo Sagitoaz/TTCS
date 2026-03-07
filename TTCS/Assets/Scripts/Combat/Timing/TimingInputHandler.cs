@@ -21,9 +21,9 @@ namespace TTCS.Combat.Timing
         [Tooltip("Action name để tìm trong InputSystem_Actions. Mặc định: 'Guard'")]
         [SerializeField] private string _actionName = "Guard";
 
-        [Header("Fallback (Legacy Input)")]
-        [Tooltip("KeyCode fallback nếu New Input System không tìm thấy action")]
-        [SerializeField] private KeyCode _fallbackKey = KeyCode.Space;
+        [Header("Fallback (New Input System Keyboard)")]
+        [Tooltip("Key fallback nếu New Input System không tìm thấy action")]
+        [SerializeField] private Key _fallbackKey = Key.Space;
 
         // ─── Runtime ──────────────────────────────────────────────────────
         private InputAction _guardAction;
@@ -69,9 +69,13 @@ namespace TTCS.Combat.Timing
 
         private void Update()
         {
-            // Fallback: Legacy Input check mỗi frame
-            if (!_useNewInputSystem && Input.GetKeyDown(_fallbackKey))
-                RegisterInput();
+            // Fallback: dùng New Input System Keyboard khi không có PlayerInput
+            if (!_useNewInputSystem)
+            {
+                var keyboard = Keyboard.current;
+                if (keyboard != null && _fallbackKey != Key.None && keyboard[_fallbackKey].wasPressedThisFrame)
+                    RegisterInput();
+            }
         }
 
         #endregion

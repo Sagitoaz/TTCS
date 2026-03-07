@@ -24,8 +24,8 @@ namespace TTCS.UI.Combat
         private class HUDSlot
         {
             public string EntityId;
-            public Slider         HPSlider;
-            public Slider         MPSlider;
+            public Slider          HPSlider;
+            public Slider          MPSlider;
             public TextMeshProUGUI NameText;
             public TextMeshProUGUI HPText;
             public CanvasGroup    SlotGroup;
@@ -56,6 +56,15 @@ namespace TTCS.UI.Combat
                 // BUG-1 FIX: truyền newPercent vào SetHPText thay vì đọc HPSlider.value cũ
                 SetHPText(newPercent);
             }
+
+            public void AnimateMP(int currentMana, int maxMana)
+            {
+                if (MPSlider == null) return;
+                float ratio = maxMana > 0 ? (float)currentMana / maxMana : 0f;
+                MPSlider.DOValue(ratio, 0.3f).SetEase(Ease.OutCubic);
+            }
+
+            
 
             public void SetDead()
             {
@@ -132,6 +141,8 @@ namespace TTCS.UI.Combat
             bus.Subscribe<DamageTakenEvent>(OnDamageTaken);
             bus.Subscribe<HealingReceivedEvent>(OnHealingReceived);
             bus.Subscribe<EntityDeathEvent>(OnEntityDeath);
+            bus.Subscribe<ManaChangedEvent>(OnManaChanged);
+            
         }
 
         private void UnsubscribeEvents()
@@ -140,16 +151,23 @@ namespace TTCS.UI.Combat
             bus.Unsubscribe<DamageTakenEvent>(OnDamageTaken);
             bus.Unsubscribe<HealingReceivedEvent>(OnHealingReceived);
             bus.Unsubscribe<EntityDeathEvent>(OnEntityDeath);
+            bus.Unsubscribe<ManaChangedEvent>(OnManaChanged);
+            
         }
 
         private void OnDamageTaken(DamageTakenEvent e)
         {
+            
             if (!_slotMap.TryGetValue(e.TargetId, out var slot)) return;
+            
 
             // Tính percent mới dựa trên entity thực — cần lấy từ CombatUIController
             float newPercent = CombatUIController.Instance != null
                 ? CombatUIController.Instance.GetEntityHPPercent(e.TargetId)
                 : Mathf.Max(0f, slot.HPSlider.value - 0.05f);
+            
+
+             
 
             slot.AnimateHP(newPercent);
         }
@@ -171,6 +189,14 @@ namespace TTCS.UI.Combat
             if (_slotMap.TryGetValue(e.EntityId, out var slot))
                 slot.SetDead();
         }
+
+        private void OnManaChanged(ManaChangedEvent e)
+        {
+            if (_slotMap.TryGetValue(e.EntityId, out var slot))
+                slot.AnimateMP(e.CurrentMana, e.MaxMana);
+        }
+
+        
 
         private void OnDestroy()
         {

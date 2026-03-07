@@ -276,6 +276,7 @@ namespace TTCS.Combat.Managers
 
             // Phát SkillCastEvent (target sẽ được truyền vào từ caller nếu cần riêng)
             EventBus.Instance.Publish(new SkillCastEvent(entityId, skill.id));
+            EventBus.Instance.Publish(new ManaChangedEvent(entityId, _currentMana[entityId], _maxMana[entityId]));
 
             return true;
         }
@@ -370,6 +371,8 @@ namespace TTCS.Combat.Managers
             DebugLogger.Log(
                 $"RestoreMana: '{entityId}' +{amount} mana → {_currentMana[entityId]}/{max}",
                 LogCategory.Combat);
+
+            EventBus.Instance.Publish(new ManaChangedEvent(entityId, _currentMana[entityId], max));
         }
 
         /// <summary>
@@ -379,6 +382,7 @@ namespace TTCS.Combat.Managers
         {
             if (!_currentMana.ContainsKey(entityId)) return;
             _currentMana[entityId] = Mathf.Max(0, _currentMana[entityId] - amount);
+            EventBus.Instance.Publish(new ManaChangedEvent(entityId, _currentMana[entityId], GetMaxMana(entityId)));
         }
 
         /// <summary>Hồi đầy mana (khi combat bắt đầu wave mới hoặc item đặc biệt)</summary>
@@ -386,6 +390,7 @@ namespace TTCS.Combat.Managers
         {
             if (!_currentMana.ContainsKey(entityId)) return;
             _currentMana[entityId] = GetMaxMana(entityId);
+            EventBus.Instance.Publish(new ManaChangedEvent(entityId, _currentMana[entityId], GetMaxMana(entityId)));
         }
 
         #endregion
