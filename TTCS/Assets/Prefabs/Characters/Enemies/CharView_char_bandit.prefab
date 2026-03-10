@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6114740926253489080}
-  - component: {fileID: 5444491512836423814}
-  - component: {fileID: 5083743180619069966}
-  - component: {fileID: 6083422612253259801}
+  - component: {fileID: 922832897466025928}
+  - component: {fileID: 3331593649262865715}
+  - component: {fileID: 7121774396314946161}
   m_Layer: 0
   m_Name: CharView_char_bandit
   m_TagString: Untagged
@@ -33,7 +33,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8192593126755021269}
-  - {fileID: 4801133538443137177}
   - {fileID: 8980098569632736704}
   - {fileID: 839095224604775120}
   - {fileID: 5978355111152340507}
@@ -47,24 +46,12 @@ Transform:
   - {fileID: 8693331780439428283}
   - {fileID: 252072117533086251}
   - {fileID: 3347393668484414671}
+  - {fileID: 2604230622961751548}
+  - {fileID: 4801133538443137177}
+  - {fileID: 4365453323854972757}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5444491512836423814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1193208960967802719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cae8c35335af6664d8c49ebca20a13a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TTCS.Visual.CharacterView
-  EntityId: char_bandit
-  _headAnchor: {fileID: 8192593126755021269}
-  _hitAnchor: {fileID: 4801133538443137177}
---- !u!95 &5083743180619069966
+--- !u!95 &922832897466025928
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -86,7 +73,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6083422612253259801
+--- !u!114 &3331593649262865715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193208960967802719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1302ae09af69245adf790202e59bb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TTCS.Visual.EnemyView
+  EntityId: enemy_bandit
+  _headAnchor: {fileID: 2604230622961751548}
+  _hitAnchor: {fileID: 4801133538443137177}
+  _telegraph: {fileID: 8311373845701674188}
+--- !u!114 &7121774396314946161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1195,6 +1198,55 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &6200879487645700878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4365453323854972757}
+  - component: {fileID: 8311373845701674188}
+  m_Layer: 0
+  m_Name: Telegraph
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4365453323854972757
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6200879487645700878}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6114740926253489080}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8311373845701674188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6200879487645700878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53f0f78668c5c64c95fc52a6393a85e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TTCS.Visual.TelegraphVisual
+  _warningIcon: {fileID: 0}
+  _ringObject: {fileID: 0}
+  _warningColor: {r: 1, g: 0.87, b: 0.1, a: 1}
+  _dangerColor: {r: 1, g: 0.25, b: 0.25, a: 1}
+  _colorShiftThreshold: 0.6
 --- !u!1 &6604318824215136161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,6 +1338,37 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &6993448699035803131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2604230622961751548}
+  m_Layer: 0
+  m_Name: HeadAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2604230622961751548
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993448699035803131}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6114740926253489080}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7783704309303461144
 GameObject:
   m_ObjectHideFlags: 0
