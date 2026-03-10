@@ -823,7 +823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &241350657
 Transform:
   m_ObjectHideFlags: 0
@@ -856,7 +856,7 @@ MonoBehaviour:
   - char_mage
   _wave1EnemyIds:
   - enemy_goblin
-  - enemy_goblin
+  - enemy_dark_knight
   _randomSeed: 12345
   _autoStartOnPlay: 0
   _debugSkillId: skill_warrior_slash
@@ -4376,6 +4376,9 @@ MonoBehaviour:
   _defaultPartyIds:
   - char_warrior
   - char_mage
+  _enemyDataAssets:
+  - {fileID: 11400000, guid: 857178a8675bc924999b317822015c58, type: 2}
+  - {fileID: 11400000, guid: 6837021ed89853e468979dfeed8652f2, type: 2}
 --- !u!4 &1132067289
 Transform:
   m_ObjectHideFlags: 0
@@ -7978,6 +7981,9 @@ MonoBehaviour:
   _actionDelay: 0.3
   _betweenTurnDelay: 0.2
   _playerTurnTimeout: 0
+  _guardWindowDuration: 1.5
+  _perfectThresholdMs: 500
+  _goodThresholdMs: 800
 --- !u!1 &2138092761
 GameObject:
   m_ObjectHideFlags: 0

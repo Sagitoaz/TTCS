@@ -108,6 +108,23 @@ namespace TTCS.Combat.Actions
                     LogCategory.Combat);
             }
 
+            // Attacker timing bonus (player attacking)
+            if (actor.IsPlayer)
+            {
+                float attackBonus = guard switch
+                {
+                    TimingGrade.Perfect => 1.2f,
+                    TimingGrade.Good    => 1.0f,
+                    _                   => 0.8f
+                };
+                if (attackBonus > 1.0f)
+                {
+                    damage = Mathf.RoundToInt(damage * attackBonus);
+                    Log($"  → Attack timing: grade={guard}, bonus={attackBonus:F1}x → dmg={damage}",
+                        LogCategory.Combat);
+                }
+            }
+
             target.TakeDamage(damage, actor.ID);
 
             Log($"  → Attack: '{actor.ID}' → '{target.ID}' dmg={damage}{(isCrit ? " [CRIT]" : "")}",

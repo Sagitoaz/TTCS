@@ -314,7 +314,42 @@ namespace TTCS.Combat.Managers
             // Execute player action
             if (!string.IsNullOrEmpty(_pendingSkillId))
             {
-                yield return ExecuteAction(player, _pendingSkillId, _pendingTargetIds, TimingGrade.Miss);
+                TimingGrade attackGrade = TimingGrade.Miss;
+
+                // Open attack timing window for attack-type skills
+                var pendingSkillData = DataManager.Instance?.LoadSkill(_pendingSkillId);
+                bool isAttackSkill = pendingSkillData?.type == "attack";
+
+                if (isAttackSkill && TimingSystem.Instance != null)
+                {
+                    _pendingTimingGrade = TimingGrade.Miss;
+                    bool gradeReceived = false;
+
+                    void OnAttackGrade(TimingGrade grade)
+                    {
+                        _pendingTimingGrade = grade;
+                        gradeReceived = true;
+                    }
+
+                    TimingSystem.Instance.OnTimingResult += OnAttackGrade;
+
+                    var window = new TimingWindow(
+                        openTime: Time.time,
+                        duration: _guardWindowDuration,
+                        perfectThreshold: _perfectThresholdMs,
+                        goodThreshold: _goodThresholdMs);
+
+                    TimingSystem.Instance.OpenWindow(window);
+
+                    yield return new WaitUntil(() => gradeReceived);
+
+                    TimingSystem.Instance.OnTimingResult -= OnAttackGrade;
+
+                    attackGrade = _pendingTimingGrade;
+                    Log($"CombatFlowController: Attack timing grade = {attackGrade}", LogCategory.Combat);
+                }
+
+                yield return ExecuteAction(player, _pendingSkillId, _pendingTargetIds, attackGrade);
             }
         }
 
