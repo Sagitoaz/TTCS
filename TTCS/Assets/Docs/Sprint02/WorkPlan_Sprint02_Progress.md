@@ -3,7 +3,7 @@
 > **Dự án**: TTCS — Those at The Crossroads of Story  
 > **Sprint 2**: Visual Combat Layer  
 > **Thời gian**: 3 tuần (15 ngày làm việc)  
-> **Cập nhật lần cuối**: Dev A hoàn thành, Dev B đang thực hiện
+> **Cập nhật lần cuối**: Dev A Tuần 2 hoàn thành (2026-03-10), Dev B đang thực hiện
 
 ---
 
@@ -136,6 +136,8 @@ CombatBridge.Instance.NotifyTelegraphComplete("enemyId", telegraphDuration);
 | BattleHUD slot management | `BattleHUDTest.cs` | ✅ Done |
 | FloatingText pool behavior | `FloatingTextPoolTest.cs` | ✅ Done |
 | SkillButtonPanel target resolution | `SkillButtonPanelTest.cs` | ✅ Done |
+| **Tuần 1 in-scene** | T/H/Y/V keys in TestCombat | ✅ Done (2026-03-07) |
+| **Tuần 2 in-scene** | T/Space/F/G/M keys in TestCombat | ✅ Done (2026-03-10) |
 
 ---
 

@@ -8,7 +8,7 @@ using TTCS.Core.Utilities;
 using TTCS.Data;
 using TTCS.Debugging;
 using static TTCS.Debugging.DebugLogger;
-
+using TTCS.UI.Combat; // TimingGrade
 namespace TTCS.Combat.Actions
 {
     /// <summary>
@@ -32,9 +32,10 @@ namespace TTCS.Combat.Actions
         /// Resolve một skill: tính damage/heal, áp dụng effects lên tất cả target.
         /// </summary>
         public static void Resolve(
-            CombatEntity       actor,
+            CombatEntity actor,
             List<CombatEntity> targets,
-            SkillDataModel     skill)
+            SkillDataModel skill,
+            TimingGrade guard = TimingGrade.Miss)
         {
             if (actor == null || skill == null || targets == null) return;
 
@@ -55,7 +56,7 @@ namespace TTCS.Combat.Actions
                 switch (skill.type)
                 {
                     case "attack":
-                        ResolveAttack(actor, target, skill, multiplier);
+                        ResolveAttack(actor, target, skill, multiplier, guard);
                         break;
 
                     case "heal":
@@ -83,15 +84,29 @@ namespace TTCS.Combat.Actions
 
         // ─── Attack Resolve ───────────────────────────────────────────────
         private static void ResolveAttack(
-            CombatEntity   actor,
-            CombatEntity   target,
+            CombatEntity actor,
+            CombatEntity target,
             SkillDataModel skill,
-            float          multiplier)
+            float multiplier,
+            TimingGrade guard = TimingGrade.Miss)
         {
             var elementEnum = ParseElement(skill.damage?.element);
 
             var (damage, isCrit) = StatCalculator.CalculateDamage(
                 actor, target, multiplier, elementEnum);
+
+            if (target.IsPlayer)
+            {
+                float guardMultiplier = guard switch
+                {
+                    TimingGrade.Perfect => 0.2f,
+                    TimingGrade.Good => 0.6f,
+                    _ => 1.0f   // Miss
+                };
+                damage = Mathf.RoundToInt(damage * guardMultiplier);
+                Log($"  → Guard: grade={guard}, multiplier={guardMultiplier:F1}x → final dmg={damage}",
+                    LogCategory.Combat);
+            }
 
             target.TakeDamage(damage, actor.ID);
 
@@ -113,10 +128,11 @@ namespace TTCS.Combat.Actions
 
         // ─── Heal Resolve ─────────────────────────────────────────────────
         private static void ResolveHeal(
-            CombatEntity   actor,
-            CombatEntity   target,
+            CombatEntity actor,
+            CombatEntity target,
             SkillDataModel skill,
-            float          multiplier)
+            float multiplier
+            )
         {
             int healAmt = StatCalculator.CalculateHeal(actor, multiplier);
             target.Heal(healAmt, actor.ID);
@@ -136,8 +152,8 @@ namespace TTCS.Combat.Actions
 
         // ─── Effects Only ─────────────────────────────────────────────────
         private static void ResolveEffectsOnly(
-            CombatEntity   actor,
-            CombatEntity   target,
+            CombatEntity actor,
+            CombatEntity target,
             SkillDataModel skill)
         {
             if (skill.effects == null) return;
@@ -152,9 +168,9 @@ namespace TTCS.Combat.Actions
         // ─── Effect Application ───────────────────────────────────────────
         /// <summary>Apply một SkillEffect lên target nếu chance roll thành công</summary>
         private static void TryApplyEffect(
-            SkillEffect    skillEffect,
-            CombatEntity   actor,
-            CombatEntity   target)
+            SkillEffect skillEffect,
+            CombatEntity actor,
+            CombatEntity target)
         {
             float chance = skillEffect.chance <= 0f ? 1f : skillEffect.chance;
 
@@ -172,18 +188,18 @@ namespace TTCS.Combat.Actions
         /// <summary>Tạo StatusEffect từ SkillEffect definition</summary>
         private static StatusEffect BuildStatusEffect(SkillEffect eff, CombatEntity actor)
         {
-            int   duration  = eff.duration > 0 ? eff.duration : 2;
+            int duration = eff.duration > 0 ? eff.duration : 2;
             float intensity = TryParseFloat(eff.value, 30f);
 
             return eff.type switch
             {
-                "bleed"       => new BleedEffect(intensity, duration),
-                "burn"        => new BurnEffect(intensity, duration),
+                "bleed" => new BleedEffect(intensity, duration),
+                "burn" => new BurnEffect(intensity, duration),
                 "heal_regen"
                     or "heal" => new HealEffect(intensity, duration),
-                "shield"      => new ShieldEffect(intensity, duration),
-                "stun"        => new StunEffect(duration),
-                _             => null
+                "shield" => new ShieldEffect(intensity, duration),
+                "stun" => new StunEffect(duration),
+                _ => null
             };
         }
 
@@ -220,12 +236,12 @@ namespace TTCS.Combat.Actions
 
             return elementStr.ToLower() switch
             {
-                "fire"      => Element.Fire,
-                "ice"       => Element.Ice,
+                "fire" => Element.Fire,
+                "ice" => Element.Ice,
                 "lightning" => Element.Lightning,
-                "dark"      => Element.Dark,
-                "light"     => Element.Light,
-                _           => Element.Physical
+                "dark" => Element.Dark,
+                "light" => Element.Light,
+                _ => Element.Physical
             };
         }
 

@@ -1,0 +1,58 @@
+{
+  "id": "skill_knight_rage",
+  "nameKey": "Skill_KnightRage",
+  "description": "The Dark Knight unleashes a dark energy wave, striking all enemies with overwhelming force.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "all_enemies",
+    "count": -1,
+    "filter": [],
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 0,
+    "cooldown": 4,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 1.5",
+    "element": "dark",
+    "canCrit": true,
+    "ignoreDefense": 0.2
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 1.5",
+      "element": "dark",
+      "chance": 1.0,
+      "duration": 0
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 500,
+        "endMs": 1000
+      }
+    ]
+  },
+
+  "actionCost": {
+    "timelineUnits": 130,
+    "description": "Heavy action"
+  },
+
+  "visual": {
+    "animation": "knight_rage",
+    "vfxPrefab": "VFX/knight_rage_effect",
+    "sfx": "SFX/dark_energy_burst",
+    "cameraShake": 0.35
+  }
+}

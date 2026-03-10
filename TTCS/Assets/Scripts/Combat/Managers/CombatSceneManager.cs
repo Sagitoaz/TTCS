@@ -63,6 +63,10 @@ namespace TTCS.Combat.Managers
             "char_mage"
         };
 
+        [Header("Enemy Data Assets")]
+        [Tooltip("Kéo các EnemyData ScriptableObject vào đây. AIBehavior sẽ được lấy từ từng asset.")]
+        [SerializeField] private List<EnemyData> _enemyDataAssets = new List<EnemyData>();
+
         // ─── Runtime State ────────────────────────────────────────────────
         private List<Character> _playerTeam = new();
         private List<Enemy> _enemyTeam = new();
@@ -113,6 +117,14 @@ namespace TTCS.Combat.Managers
             // Lấy wave đầu tiên từ stage, hoặc dùng default enemies
             var enemyIds = GetFirstWaveEnemyIds(_currentStage);
             _enemyTeam = EntityFactory.CreateWave(enemyIds);
+
+            // Gán AIBehavior từ EnemyData ScriptableObject cho từng enemy
+            foreach (var enemy in _enemyTeam)
+            {
+                var data = _enemyDataAssets.FirstOrDefault(d => d != null && d.id == enemy.EnemyTemplateId);
+                if (data != null && data.aiBehavior != null)
+                    enemy.Behavior = data.aiBehavior;
+            }
 
             Log($"CombatSceneManager: {_playerTeam.Count} players, {_enemyTeam.Count} enemies.", LogCategory.Combat);
 

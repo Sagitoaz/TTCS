@@ -12,6 +12,8 @@ using TTCS.Debugging;
 using static TTCS.Debugging.DebugLogger;
 // CombatLogger is in TTCS.Combat — alias to avoid confusion with Unity.Debug
 using CombatLogger = TTCS.Combat.CombatLogger;
+using TTCS.Combat.Timing;  // TimingSystem, TimingWindow
+using TTCS.UI.Combat;      // TimingGrade
 
 namespace TTCS.Combat.Managers
 {
@@ -36,7 +38,7 @@ namespace TTCS.Combat.Managers
     {
         // ─── Singleton ────────────────────────────────────────────────────
         private static CombatFlowController _instance;
-        public  static CombatFlowController Instance => _instance;
+        public static CombatFlowController Instance => _instance;
 
         private void Awake()
         {
@@ -70,31 +72,41 @@ namespace TTCS.Combat.Managers
             _state != CombatState.Idle && _state != CombatState.BattleEnd;
 
         // ─── Entity References ────────────────────────────────────────────
-        private List<Character>    _playerTeam  = new List<Character>();
-        private List<Enemy>        _enemyTeam   = new List<Enemy>();
+        private List<Character> _playerTeam = new List<Character>();
+        private List<Enemy> _enemyTeam = new List<Enemy>();
         private List<CombatEntity> _allEntities = new List<CombatEntity>();
 
         private CombatEntity _currentActor;
 
         // ─── Player Input ─────────────────────────────────────────────────
-        private bool         _playerInputReceived;
-        private string       _pendingSkillId;
+        private bool _playerInputReceived;
+        private string _pendingSkillId;
         private List<string> _pendingTargetIds;
 
         // ─── Battle Metadata ─────────────────────────────────────────────
-        public int  CurrentSeed  { get; private set; }
-        public int  TurnNumber   => TurnManager.Instance?.TurnCounter ?? 0;
+        public int CurrentSeed { get; private set; }
+        public int TurnNumber => TurnManager.Instance?.TurnCounter ?? 0;
 
         // ─── Timing ───────────────────────────────────────────────────────
         [Header("Turn Timing")]
         [Tooltip("Thời gian dừng sau mỗi hành động (giây) — cho UI animation")]
-        [SerializeField] private float _actionDelay  = 0.5f;
+        [SerializeField] private float _actionDelay = 0.5f;
 
         [Tooltip("Thời gian dừng giữa các lượt")]
         [SerializeField] private float _betweenTurnDelay = 0.2f;
 
         [Tooltip("Thời gian chờ tối đa player input (giây, 0 = vô hạn)")]
         [SerializeField] private float _playerTurnTimeout = 0f;
+
+        [Header("Guard Timing Window")]
+        [Tooltip("Duration của timing window khi enemy tấn công (giây)")]
+        [SerializeField] private float _guardWindowDuration = 1.5f;
+
+        [Tooltip("Perfect threshold (ms) — input trong khoảng này = Perfect")]
+        [SerializeField] private float _perfectThresholdMs = 500f;
+
+        [Tooltip("Good threshold (ms)")]
+        [SerializeField] private float _goodThresholdMs = 800f;
 
         // ─── Entry Point ──────────────────────────────────────────────────
         /// <summary>
@@ -119,7 +131,7 @@ namespace TTCS.Combat.Managers
             }
 
             _playerTeam = players.Where(p => p != null).ToList();
-            _enemyTeam  = enemies?.Where(e => e != null).ToList() ?? new List<Enemy>();
+            _enemyTeam = enemies?.Where(e => e != null).ToList() ?? new List<Enemy>();
 
             CurrentSeed = seed > 0 ? seed : UnityEngine.Random.Range(1, int.MaxValue);
 
@@ -139,8 +151,8 @@ namespace TTCS.Combat.Managers
                 return;
             }
 
-            _pendingSkillId    = skillId;
-            _pendingTargetIds  = new List<string>(targetIds ?? new List<string>());
+            _pendingSkillId = skillId;
+            _pendingTargetIds = new List<string>(targetIds ?? new List<string>());
             _playerInputReceived = true;
         }
 
@@ -153,7 +165,7 @@ namespace TTCS.Combat.Managers
             if (_state != CombatState.PlayerTurn || !(_currentActor is Character c)) return;
 
             string skillId = c.SkillIds.Count > 0 ? c.SkillIds[0] : "";
-            var    targets = GetAliveEntityIds(_enemyTeam.Cast<CombatEntity>().ToList(), max: 1);
+            var targets = GetAliveEntityIds(_enemyTeam.Cast<CombatEntity>().ToList(), max: 1);
             SubmitPlayerAction(skillId, targets);
         }
 
@@ -274,13 +286,14 @@ namespace TTCS.Combat.Managers
 
         // ─── Player Turn ──────────────────────────────────────────────────
         private int _lastActionCost = 100;
+        private TimingGrade _pendingTimingGrade = TimingGrade.Miss;
 
         private IEnumerator PlayerTurnRoutine(Character player)
         {
-            _state               = CombatState.PlayerTurn;
+            _state = CombatState.PlayerTurn;
             _playerInputReceived = false;
-            _pendingSkillId      = null;
-            _pendingTargetIds    = null;
+            _pendingSkillId = null;
+            _pendingTargetIds = null;
 
             Log($"CombatFlowController: Player turn — '{player.ID}' waiting for input.", LogCategory.Combat);
 
@@ -301,7 +314,7 @@ namespace TTCS.Combat.Managers
             // Execute player action
             if (!string.IsNullOrEmpty(_pendingSkillId))
             {
-                yield return ExecuteAction(player, _pendingSkillId, _pendingTargetIds);
+                yield return ExecuteAction(player, _pendingSkillId, _pendingTargetIds, TimingGrade.Miss);
             }
         }
 
@@ -324,11 +337,78 @@ namespace TTCS.Combat.Managers
                 enemy.Behavior,
                 SkillManager.Instance);
 
+            // ── Fallback: use moveSet skill list when AIBehavior asset not assigned ─
+            if (!decision.IsValid && enemy.SkillIds.Count > 0)
+            {
+                var alivePlayers = GetAliveEntityIds(_playerTeam.Cast<CombatEntity>().ToList(), max: int.MaxValue);
+                foreach (var fallbackSkillId in enemy.SkillIds)
+                {
+                    if (string.IsNullOrEmpty(fallbackSkillId)) continue;
+                    if (SkillManager.Instance != null &&
+                        !SkillManager.Instance.CanUseSkill(enemy.ID, fallbackSkillId)) continue;
+
+                    var fSkillData = DataManager.Instance?.LoadSkill(fallbackSkillId);
+                    if (fSkillData == null) continue;
+
+                    List<string> fTargets;
+                    if (fSkillData.targetRule?.type == "self")
+                        fTargets = new List<string> { enemy.ID };
+                    else if (fSkillData.targetRule?.type == "all_enemies")
+                        fTargets = alivePlayers;
+                    else
+                        fTargets = GetAliveEntityIds(_playerTeam.Cast<CombatEntity>().ToList(), max: 1);
+
+                    if (fTargets.Count == 0) continue;
+
+                    decision = new AIDecision(fallbackSkillId, fTargets, "moveSet fallback (no AIBehavior)");
+                    Log($"CombatFlowController: '{enemy.ID}' moveSet fallback → '{fallbackSkillId}'",
+                        LogCategory.Combat);
+                    break;
+                }
+            }
+
             if (decision.IsValid)
             {
                 Log($"CombatFlowController: AI '{enemy.ID}' → skill='{decision.skillId}' reason: {decision.reason}",
                     LogCategory.Combat);
-                yield return ExecuteAction(enemy, decision.skillId, decision.targetIds);
+                // Mở timing window cho player guard nếu skill là attack
+                var skillData = DataManager.Instance?.LoadSkill(decision.skillId);
+                bool isAttack = skillData?.type == "attack";
+
+                if (isAttack && TimingSystem.Instance != null)
+                {
+                    _pendingTimingGrade = TimingGrade.Miss; // reset
+                    bool gradeReceived = false;
+
+                    void OnGrade(TimingGrade grade)
+                    {
+                        _pendingTimingGrade = grade;
+                        gradeReceived = true;
+                    }
+
+                    TimingSystem.Instance.OnTimingResult += OnGrade;
+
+                    var window = new TimingWindow(
+                        openTime: Time.time,
+                        duration: _guardWindowDuration,
+                        perfectThreshold: _perfectThresholdMs,
+                        goodThreshold: _goodThresholdMs);
+
+                    TimingSystem.Instance.OpenWindow(window);
+
+                    // Chờ grade (window tự đóng sau Duration)
+                    yield return new WaitUntil(() => gradeReceived);
+
+                    TimingSystem.Instance.OnTimingResult -= OnGrade;
+
+                    Log($"CombatFlowController: Guard grade = {_pendingTimingGrade}", LogCategory.Combat);
+                }
+                else
+                {
+                    _pendingTimingGrade = TimingGrade.Miss;
+                }
+
+                yield return ExecuteAction(enemy, decision.skillId, decision.targetIds, _pendingTimingGrade);
             }
             else
             {
@@ -338,7 +418,7 @@ namespace TTCS.Combat.Managers
         }
 
         // ─── Execute Action ───────────────────────────────────────────────
-        private IEnumerator ExecuteAction(CombatEntity actor, string skillId, List<string> targetIds)
+        private IEnumerator ExecuteAction(CombatEntity actor, string skillId, List<string> targetIds, TimingGrade guard = TimingGrade.Miss)
         {
             _state = CombatState.ExecutingAction;
 
@@ -373,7 +453,7 @@ namespace TTCS.Combat.Managers
             }
 
             // Execute
-            action.Execute(actor, targets, SkillManager.Instance);
+            action.Execute(actor, targets, SkillManager.Instance, guard);
             _lastActionCost = action.TimelineCost;
 
             CombatLogger.LogAction(TurnNumber, actor.ID, skillId,
@@ -448,10 +528,10 @@ namespace TTCS.Combat.Managers
         }
 
         // ─── Query API ────────────────────────────────────────────────────
-        public List<Character>    GetPlayerTeam()    => new List<Character>(_playerTeam);
-        public List<Enemy>        GetEnemyTeam()     => new List<Enemy>(_enemyTeam);
-        public List<CombatEntity> GetAllEntities()   => new List<CombatEntity>(_allEntities);
-        public CombatEntity       GetCurrentActor()  => _currentActor;
-        public bool               IsPlayerTurn()     => _state == CombatState.PlayerTurn;
+        public List<Character> GetPlayerTeam() => new List<Character>(_playerTeam);
+        public List<Enemy> GetEnemyTeam() => new List<Enemy>(_enemyTeam);
+        public List<CombatEntity> GetAllEntities() => new List<CombatEntity>(_allEntities);
+        public CombatEntity GetCurrentActor() => _currentActor;
+        public bool IsPlayerTurn() => _state == CombatState.PlayerTurn;
     }
 }

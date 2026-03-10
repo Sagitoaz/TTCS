@@ -139,7 +139,7 @@ namespace TTCS.Combat.Timing
 
             // Window kết thúc — evaluate
             TimingGrade grade;
-            Debug.Log(UnityEngine.Mathf.Abs(_inputTime.Value - (window.OpenTime + window.Duration*0.5f)) + " " + window.PerfectThreshold);
+           
             
             if (_inputTime.HasValue)
             {
@@ -149,6 +149,7 @@ namespace TTCS.Combat.Timing
             {
                 grade = TimingGrade.Miss;   // Không input → Miss
             }
+             
 
             FinishWindow(grade);
         }

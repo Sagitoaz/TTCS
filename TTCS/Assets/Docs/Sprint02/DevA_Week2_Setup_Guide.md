@@ -26,15 +26,15 @@ Tuần 2 bổ sung **hệ thống động** — timing input của player và br
 
 ## Checklist Tuần 2
 
-- [ ] Thêm `TimingSystem` + `TimingInputHandler` vào scene
-- [ ] Thêm `CombatBridge` vào scene
-- [ ] Tạo `TimingFeedbackUI` panel trong Canvas hierarchy
-- [ ] Gán Inspector references cho `TimingFeedbackUI`
-- [ ] Wire `TimingSystem.OnTimingResult` → `CombatUIController.ShowTimingResult`
-- [ ] Test phím `T` → window mở → `Space` → nhận Perfect/Good/Miss
-- [ ] Test phím `F` / `G` / `M` → flash visual đúng màu/text
-- [ ] Verify Console log đúng grade từ TimingSystem
-- [ ] Test phím `H` / `Y` vẫn hoạt động (không bị break từ Tuần 1)
+- [x] Thêm `TimingSystem` + `TimingInputHandler` vào scene
+- [x] Thêm `CombatBridge` vào scene
+- [x] Tạo `TimingFeedbackUI` panel trong Canvas hierarchy
+- [x] Gán Inspector references cho `TimingFeedbackUI`
+- [x] Wire `TimingSystem.OnTimingResult` → `CombatUIController.ShowTimingResult`
+- [x] Test phím `T` → window mở → `Space` → nhận Perfect/Good/Miss
+- [x] Test phím `F` / `G` / `M` → flash visual đúng màu/text
+- [x] Verify Console log đúng grade từ TimingSystem
+- [x] Test phím `H` / `Y` vẫn hoạt động (không bị break từ Tuần 1)
 
 ---
 
