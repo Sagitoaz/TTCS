@@ -1,0 +1,718 @@
+fileFormatVersion: 2
+guid: 7250d903579e9534a8811b60d2fedac2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6181420796572998000
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_0
+  - first:
+      213: 8724594893295021614
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_1
+  - first:
+      213: 8712049100099000362
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_2
+  - first:
+      213: 2772619334526901903
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_3
+  - first:
+      213: -1738174492157143587
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_4
+  - first:
+      213: -3155791819836624426
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_5
+  - first:
+      213: 8925301208187658332
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_6
+  - first:
+      213: 7198192790629823544
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_7
+  - first:
+      213: 3859724766955573386
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_8
+  - first:
+      213: 5146930779107763473
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_9
+  - first:
+      213: -8811576151276667185
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_10
+  - first:
+      213: 1855438028656065964
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_11
+  - first:
+      213: -4060570521855848581
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_12
+  - first:
+      213: 4734725344583749819
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_13
+  - first:
+      213: -1913926992123549207
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_14
+  - first:
+      213: -6950473764925337106
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_15
+  - first:
+      213: -6928129033563178092
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_16
+  - first:
+      213: 4080633230912879378
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_17
+  - first:
+      213: -8863977396904311455
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_18
+  - first:
+      213: -5227174013906129981
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_19
+  - first:
+      213: -4609905151957508032
+    second: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+      - Barst_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 80
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 417
+        width: 73
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 096ed0d398e273aa0800000000000000
+      internalID: -6181420796572998000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_1
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 417
+        width: 73
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2e6900a4dcf31970800000000000000
+      internalID: 8724594893295021614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_2
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 417
+        width: 73
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2899258f7a67e870800000000000000
+      internalID: 8712049100099000362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_3
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 445
+        width: 50
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8e1bd348925a7620800000000000000
+      internalID: 2772619334526901903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_4
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 398
+        width: 47
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd514553283c0e7e0800000000000000
+      internalID: -1738174492157143587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_5
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 315
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d1fd895f006434d0800000000000000
+      internalID: -3155791819836624426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_6
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 324
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c50e36b192a0ddb70800000000000000
+      internalID: 8925301208187658332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_7
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 311
+        width: 29
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 834b446943e15e360800000000000000
+      internalID: 7198192790629823544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_8
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 325
+        width: 22
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a801a21d93f709530800000000000000
+      internalID: 3859724766955573386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_9
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 313
+        width: 33
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1152e3426429d6740800000000000000
+      internalID: 5146930779107763473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_10
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 321
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fceb9d71d2ef6b580800000000000000
+      internalID: -8811576151276667185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_11
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 314
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cadbbc87e07dfb910800000000000000
+      internalID: 1855438028656065964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_12
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 321
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7f0c5bcf94f5a7c0800000000000000
+      internalID: -4060570521855848581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_13
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 244
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb014f08d9f15b140800000000000000
+      internalID: 4734725344583749819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_14
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 244
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e9a1748a8d5075e0800000000000000
+      internalID: -1913926992123549207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_15
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 244
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee114fc9fe4fa8f90800000000000000
+      internalID: -6950473764925337106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_16
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 242
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49b756cc9575adf90800000000000000
+      internalID: -6928129033563178092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_17
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 157
+        width: 49
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21b773bad4251a830800000000000000
+      internalID: 4080633230912879378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_18
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 110
+        width: 47
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1654d685583dcf480800000000000000
+      internalID: -8863977396904311455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_19
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 34
+        width: 73
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cbe8f9dde85577b0800000000000000
+      internalID: -5227174013906129981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem
+        - Barst_20
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 34
+        width: 73
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 040645940b35600c0800000000000000
+      internalID: -4609905151957508032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_0: -6181420796572998000
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_1: 8724594893295021614
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_10: -8811576151276667185
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_11: 1855438028656065964
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_12: -4060570521855848581
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_13: 4734725344583749819
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_14: -1913926992123549207
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_15: -6950473764925337106
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_16: -6928129033563178092
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_17: 4080633230912879378
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_18: -8863977396904311455
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_19: -5227174013906129981
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_2: 8712049100099000362
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_20: -4609905151957508032
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_3: 2772619334526901903
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_4: -1738174492157143587
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_5: -3155791819836624426
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_6: 8925301208187658332
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_7: 7198192790629823544
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_8: 3859724766955573386
+      Mobile - Fire Emblem_ Heroes - Map Characters_ Mystery of the Emblem - Barst_9: 5146930779107763473
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
