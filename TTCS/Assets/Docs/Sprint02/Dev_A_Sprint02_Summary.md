@@ -2,14 +2,15 @@
 
 > **Dự án**: TTCS — Those at The Crossroads of Story  
 > **Developer**: Developer A — UI + Timing System  
-> **Hoàn thành**: Sprint 2 (Phase 1)  
-> **Scope**: Combat UI, Timing System, Combat Integration Bridge, Audio Controller
+> **Hoàn thành**: Sprint 2 — Tuần 3 (2026-03-11)  
+> **Trạng thái**: ✅ Hoàn thành toàn bộ phần độc lập — ⏳ Chờ merge Dev B cho joint test  
+> **Scope**: Combat UI, Timing System, Combat Integration Bridge, Audio Controller, Combat Flow Integration, Enemy Skill Data
 
 ---
 
 ## 1. Tổng quan những gì đã build
 
-Dev A xây dựng **toàn bộ visual feedback layer và timing system** cho combat:
+Dev A xây dựng **toàn bộ visual feedback layer, timing system và combat flow integration** cho combat:
 
 ```
 UI Layer           → CombatUIController → BattleHUD, SkillButtonPanel, TurnOrderDisplay
@@ -19,7 +20,17 @@ Timing Feedback    → TimingFeedbackUI (Perfect/Good/Miss visual + defines Timi
 Bridge Layer       → CombatBridge (EventBus → Visual) + ICharacterAnimatorBridge (for Dev B)
 Scene Init         → CombatSceneManager (replaces CombatTestLoader)
 Audio              → AudioController (event-driven SFX + BGM)
+Combat Flow        → CombatFlowController + ActionResolver timing integration (Tuần 3)
+Enemy Data         → 4 skill JSON files cho Goblin + Dark Knight (Tuần 3)
 ```
+
+### Tiến độ theo tuần
+
+| Tuần | Nội dung | Trạng thái |
+|------|---------|------------|
+| Tuần 1 (Ngày 1–5) | 9 UI files: BattleHUD, SkillButtonPanel, TurnOrderDisplay, FloatingText, AudioController | ✅ Hoàn thành |
+| Tuần 2 (Ngày 6–10) | 5 Timing files: TimingWindow, TimingSystem, TimingInputHandler, TimingFeedbackUI, CombatBridge | ✅ Hoàn thành |
+| Tuần 3 (Ngày 11–15) | Timing integration vào CombatFlowController + ActionResolver, enemy skill data, attack timing | ✅ Hoàn thành (phần độc lập) |
 
 ---
 
@@ -295,3 +306,43 @@ private IEnumerator PlayTelegraph(string enemyId, float duration)
 - `CombatSceneManager` có `yield return null` sau EntityFactory.CreateParty/CreateWave — đây là "integration hook" để Dev B spawn CharacterViews trong cùng frame trước khi `StartBattle()` được gọi
 - Float text pool size = 10 (ActionResultDisplay), turn order pool size = 8 (TurnOrderDisplay) — hardcoded, đủ cho một trận 3v3
 - `AudioController` là `DontDestroyOnLoad` — nên chỉ có một instance xuyên suốt game, không spawn lại khi load scene
+
+---
+
+## 11. Timing Grade — Damage Multipliers (Tuần 3)
+
+### Guard (enemy tấn công → player defend)
+| Grade | Multiplier | Hiệu ứng |
+|-------|-----------|----------|
+| Perfect | ×0.2 | Nhận 20% damage (chặn 80%) |
+| Good | ×0.6 | Nhận 60% damage (chặn 40%) |
+| Miss | ×1.0 | Nhận full damage |
+
+### Attack (player tấn công)
+| Grade | Multiplier | Hiệu ứng |
+|-------|-----------|----------|
+| Perfect | ×1.5 | Gây 150% damage |
+| Good | ×1.2 | Gây 120% damage |
+| Miss | ×1.0 | Gây damage bình thường |
+
+---
+
+## 12. Enemy Skill Data (Tuần 3)
+
+| File | Type | Target | Formula | Cooldown |
+|------|------|--------|---------|----------|
+| `skill_goblin_strike.json` | attack | single_enemy | ATK×1.0 | 0 |
+| `skill_knight_slash.json` | attack | single_enemy | ATK×1.2, 10% armor pen | 0 |
+| `skill_knight_guard.json` | buff | self | +50% DEF, duration 1 | 3 |
+| `skill_knight_rage.json` | attack | all_enemies | ATK×1.5 dark, 20% armor pen | 4 |
+
+---
+
+## 13. Còn lại sau Sprint 02 (chờ Dev B)
+
+| Việc | Điều kiện |
+|------|-----------|
+| Joint test `CombatScene.unity` full flow | Dev B merge: CharacterView, EnemyView, TelegraphVisual |
+| Verify floating numbers đúng vị trí | Dev B gọi `CombatUIController.RegisterEntityPosition()` |
+| Verify telegraph visual → timing window sync | Dev B gọi `CombatBridge.NotifyTelegraphComplete()` |
+| Turn order slot tên đúng | Dev B gọi `TurnOrderDisplay.RegisterEntity()` |

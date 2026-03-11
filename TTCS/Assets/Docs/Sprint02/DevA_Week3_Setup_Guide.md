@@ -24,15 +24,16 @@ Tuần 3 **kết nối thực sự** — `TimingGrade` ảnh hưởng đến lư
 
 ## Checklist Tuần 3
 
-- [ ] Modify `ActionResolver.Resolve()` — thêm `TimingGrade` parameter
-- [ ] Modify `ActionResolver.ResolveAttack()` — áp dụng grade multiplier
-- [ ] Modify `CombatFlowController.EnemyTurnRoutine()` — mở window trước khi attack resolve
-- [ ] Modify `CombatFlowController.ExecuteAction()` — nhận và pass `TimingGrade`
-- [ ] Thêm `using TTCS.UI.Combat;` và `using TTCS.Combat.Timing;` vào CombatFlowController
-- [ ] Test: enemy attack → timing window mở → Perfect guard → damage giảm 80%
-- [ ] Test: enemy attack → timing window mở → Miss (không không nhấn) → full damage
-- [ ] Verify AudioController phát SFX đúng khi timing result
-- [ ] Khi Dev B xong: setup `CombatScene.unity` joint test (xem BƯỚC 5)
+- [x] Modify `ActionResolver.Resolve()` — thêm `TimingGrade` parameter
+- [x] Modify `ActionResolver.ResolveAttack()` — áp dụng grade multiplier
+- [x] Modify `CombatFlowController.EnemyTurnRoutine()` — mở window trước khi attack resolve
+- [x] Modify `CombatFlowController.ExecuteAction()` — nhận và pass `TimingGrade`
+- [x] Thêm `using TTCS.UI.Combat;` và `using TTCS.Combat.Timing;` vào CombatFlowController
+- [x] Test: enemy attack → timing window mở → Perfect guard → damage giảm 80%
+- [x] Test: enemy attack → timing window mở → Miss (không không nhấn) → full damage
+- [x] Verify AudioController phát SFX đúng khi timing result
+- [ ] Khi Dev B xong: setup `CombatScene.unity` joint test (xem BƯỚC 5) ⏳ Chờ merge Dev B
+- [x] **BONUS** — Player attack cũng có timing window (Perfect=×1.5, Good=×1.2)
 
 ---
 

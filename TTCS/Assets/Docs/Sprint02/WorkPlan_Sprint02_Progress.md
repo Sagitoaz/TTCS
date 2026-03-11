@@ -3,7 +3,7 @@
 > **Dự án**: TTCS — Those at The Crossroads of Story  
 > **Sprint 2**: Visual Combat Layer  
 > **Thời gian**: 3 tuần (15 ngày làm việc)  
-> **Cập nhật lần cuối**: Dev A Tuần 2 hoàn thành (2026-03-10), Dev B đang thực hiện
+> **Cập nhật lần cuối**: Dev A Tuần 3 hoàn thành (2026-03-11), Dev B đang thực hiện
 
 ---
 
@@ -11,7 +11,7 @@
 
 | Team Member | Số file | Hoàn thành | Còn lại | Trạng thái |
 |-------------|---------|------------|---------|------------|
-| **Developer A** | 15 files | 15 | 0 | ✅ HOÀN THÀNH |
+| **Developer A** | 15 files + tuần 3 | 15 | 0 (chờ joint test) | ✅ HOÀN THÀNH (phần độc lập) |
 | **Developer B** | 9 files | 0 | 9 | 🔄 ĐANG LÀM |
 | **Shared (Scene)** | 1 scene | 0 | 1 | ⏳ CHỜ DEV B |
 | **Tổng cộng** | 25 items | 15 | 10 | 🔄 60% |
@@ -138,6 +138,8 @@ CombatBridge.Instance.NotifyTelegraphComplete("enemyId", telegraphDuration);
 | SkillButtonPanel target resolution | `SkillButtonPanelTest.cs` | ✅ Done |
 | **Tuần 1 in-scene** | T/H/Y/V keys in TestCombat | ✅ Done (2026-03-07) |
 | **Tuần 2 in-scene** | T/Space/F/G/M keys in TestCombat | ✅ Done (2026-03-10) |
+| **Tuần 3 in-scene** | Enemy guard window, player attack timing, damage formula verify | ✅ Done (2026-03-11) |
+| **Joint test** | CombatScene.unity full flow với Dev B | ⏳ Chờ merge Dev B |
 
 ---
 
