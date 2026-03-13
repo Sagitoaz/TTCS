@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using TTCS.Combat.Entities;
 using TTCS.Combat.Managers;
 using TTCS.Data;
-
+using TTCS.Combat.Timing;  // TimingSystem, TimingWindow
+using TTCS.UI.Combat;    
 namespace TTCS.Combat.Actions
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace TTCS.Combat.Actions
         /// Chỉ gọi sau khi Validate trả về IsValid = true.
         /// </summary>
         void Execute(CombatEntity actor, List<CombatEntity> targets,
-            SkillManager skillManager);
+            SkillManager skillManager, TimingGrade guard = TimingGrade.Miss);
     }
 
     /// <summary>Kết quả validate action</summary>

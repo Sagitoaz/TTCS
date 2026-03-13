@@ -23,28 +23,19 @@
   
   "moveSet": [
     {
-      "skillId": "skill_goblin_claw",
-      "weight": 70,
+      "skillId": "skill_goblin_strike",
+      "weight": 100,
       "conditions": []
-    },
-    {
-      "skillId": "skill_goblin_flee",
-      "weight": 30,
-      "conditions": [
-        {
-          "type": "hp_below",
-          "value": 0.3
-        }
-      ]
     }
+    
   ],
   
   "phases": [
     {
       "phaseId": 1,
       "hpRange": [1.0, 0.0],
-      "moves": ["claw", "flee"],
-      "weights": [70, 30],
+      "moves": [ "strike"],
+      "weights": [100],
       "behavior": "cowardly"
     }
   ],

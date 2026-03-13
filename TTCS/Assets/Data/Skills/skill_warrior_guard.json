@@ -1,0 +1,70 @@
+{
+  "id": "skill_warrior_guard",
+  "nameKey": "Skill_Guard",
+  "description": "Raise your shield to absorb incoming damage for one turn.",
+  "type": "buff",
+
+  "targetRule": {
+    "type": "self",
+    "count": 1,
+    "filter": [],
+    "canTargetSelf": true
+  },
+
+  "cost": {
+    "mana": 15,
+    "cooldown": 3,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "",
+    "element": "",
+    "canCrit": false,
+    "ignoreDefense": 0
+  },
+
+  "effects": [
+    {
+      "type": "shield",
+      "value": "DEF * 1.5",
+      "element": "",
+      "chance": 1.0,
+      "duration": 1
+    },
+    {
+      "type": "buff_def",
+      "value": "0.3",
+      "element": "",
+      "chance": 1.0,
+      "duration": 1
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 100,
+        "endMs": 400
+      }
+    ],
+    "grades": {
+      "perfect": { "bonusShieldMultiplier": 1.5, "label": "PERFECT" },
+      "good":    { "bonusShieldMultiplier": 1.2, "label": "GOOD" },
+      "miss":    { "bonusShieldMultiplier": 1.0, "label": "" }
+    }
+  },
+
+  "actionCost": {
+    "timelineUnits": 80,
+    "description": "Quick defensive action"
+  },
+
+  "visual": {
+    "animation": "warrior_guard",
+    "vfxPrefab": "VFX/guard_effect",
+    "sfx": "SFX/shield_raise",
+    "cameraShake": 0.0
+  }
+}

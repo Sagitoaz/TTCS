@@ -1,0 +1,53 @@
+{
+  "id": "skill_knight_guard",
+  "nameKey": "Skill_KnightGuard",
+  "description": "The Dark Knight raises his shield, significantly boosting defense for one turn.",
+  "type": "buff",
+
+  "targetRule": {
+    "type": "self",
+    "count": 1,
+    "filter": [],
+    "canTargetSelf": true
+  },
+
+  "cost": {
+    "mana": 0,
+    "cooldown": 3,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "",
+    "element": "",
+    "canCrit": false,
+    "ignoreDefense": 0
+  },
+
+  "effects": [
+    {
+      "type": "buff_def",
+      "value": "0.5",
+      "element": "",
+      "chance": 1.0,
+      "duration": 1
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": false,
+    "windows": []
+  },
+
+  "actionCost": {
+    "timelineUnits": 80,
+    "description": "Defensive stance"
+  },
+
+  "visual": {
+    "animation": "knight_guard",
+    "vfxPrefab": "VFX/knight_guard_effect",
+    "sfx": "SFX/shield_raise",
+    "cameraShake": 0
+  }
+}

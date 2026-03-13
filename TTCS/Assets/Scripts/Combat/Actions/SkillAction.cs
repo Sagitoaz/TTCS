@@ -4,7 +4,8 @@ using TTCS.Combat.Managers;
 using TTCS.Data;
 using TTCS.Debugging;
 using static TTCS.Debugging.DebugLogger;
-
+using TTCS.Combat.Timing;  // TimingSystem, TimingWindow
+using TTCS.UI.Combat;    
 namespace TTCS.Combat.Actions
 {
     /// <summary>
@@ -62,7 +63,8 @@ namespace TTCS.Combat.Actions
         public void Execute(
             CombatEntity       actor,
             List<CombatEntity> targets,
-            SkillManager       skillManager)
+            SkillManager       skillManager,
+            TimingGrade guard = TimingGrade.Miss)
         {
             if (actor == null || _skillData == null)
             {
@@ -74,7 +76,7 @@ namespace TTCS.Combat.Actions
             skillManager?.UseSkill(actor.ID, _skillData);
 
             // ── Step 2: Resolve outcome ──────────────────────────────────
-            ActionResolver.Resolve(actor, targets, _skillData);
+            ActionResolver.Resolve(actor, targets, _skillData, guard);
 
             Log($"SkillAction.Execute: '{actor.ID}' → skill='{_skillData.id}' targets={targets?.Count ?? 0}",
                 LogCategory.Combat);

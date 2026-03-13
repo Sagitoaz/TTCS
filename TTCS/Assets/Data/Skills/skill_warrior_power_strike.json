@@ -1,0 +1,70 @@
+{
+  "id": "skill_warrior_power_strike",
+  "nameKey": "Skill_PowerStrike",
+  "description": "A powerful overhead strike that deals heavy damage to a single enemy.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "single_enemy",
+    "count": 1,
+    "filter": [],
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 25,
+    "cooldown": 2,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 2.2",
+    "element": "physical",
+    "canCrit": true,
+    "ignoreDefense": 0.2
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 2.2",
+      "element": "physical",
+      "chance": 1.0,
+      "duration": 0
+    },
+    {
+      "type": "stun",
+      "value": "1",
+      "element": "",
+      "chance": 0.25,
+      "duration": 1
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 300,
+        "endMs": 550
+      }
+    ],
+    "grades": {
+      "perfect": { "bonusDamageMultiplier": 1.5, "label": "PERFECT" },
+      "good":    { "bonusDamageMultiplier": 1.2, "label": "GOOD" },
+      "miss":    { "bonusDamageMultiplier": 1.0, "label": "" }
+    }
+  },
+
+  "actionCost": {
+    "timelineUnits": 130,
+    "description": "Heavy action"
+  },
+
+  "visual": {
+    "animation": "warrior_power_strike",
+    "vfxPrefab": "VFX/power_strike_effect",
+    "sfx": "SFX/heavy_sword_swing",
+    "cameraShake": 0.3
+  }
+}

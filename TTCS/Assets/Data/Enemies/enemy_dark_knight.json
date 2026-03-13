@@ -24,7 +24,7 @@
   "moveSet": [
     {
       "skillId": "skill_knight_slash",
-      "weight": 40,
+      "weight": 50,
       "conditions": []
     },
     {
@@ -38,12 +38,12 @@
       ]
     },
     {
-      "skillId": "skill_knight_counter",
-      "weight": 30,
+      "skillId": "skill_knight_rage",
+      "weight": 40,
       "conditions": [
         {
           "type": "hp_below",
-          "value": 0.3
+          "value": 0.6
         }
       ]
     }
@@ -54,14 +54,14 @@
       "phaseId": 1,
       "hpRange": [1.0, 0.6],
       "moves": ["slash", "guard"],
-      "weights": [60, 40],
+      "weights": [70, 30],
       "behavior": "balanced"
     },
     {
       "phaseId": 2,
       "hpRange": [0.6, 0.0],
-      "moves": ["slash", "counter", "rage"],
-      "weights": [30, 40, 30],
+      "moves": ["slash", "guard", "rage"],
+      "weights": [30, 30, 40],
       "behavior": "aggressive"
     }
   ],

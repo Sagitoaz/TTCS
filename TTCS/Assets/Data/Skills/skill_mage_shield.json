@@ -1,0 +1,54 @@
+{
+  "id": "skill_mage_shield",
+  "nameKey": "Skill_MageShield",
+  "description": "Conjure a magical barrier that absorbs damage for a single ally.",
+  "type": "buff",
+
+  "targetRule": {
+    "type": "single_ally",
+    "count": 1,
+    "filter": [],
+    "canTargetSelf": true
+  },
+
+  "cost": {
+    "mana": 25,
+    "cooldown": 3,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "",
+    "element": "",
+    "canCrit": false,
+    "ignoreDefense": 0
+  },
+
+  "effects": [
+    {
+      "type": "shield",
+      "value": "ATK * 2.0",
+      "element": "",
+      "chance": 1.0,
+      "duration": 2
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": false,
+    "windows": [],
+    "grades": {}
+  },
+
+  "actionCost": {
+    "timelineUnits": 90,
+    "description": "Barrier spell"
+  },
+
+  "visual": {
+    "animation": "mage_shield",
+    "vfxPrefab": "VFX/mage_shield_effect",
+    "sfx": "SFX/shield_cast",
+    "cameraShake": 0.0
+  }
+}

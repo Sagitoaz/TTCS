@@ -1,0 +1,61 @@
+{
+  "id": "skill_warrior_taunt",
+  "nameKey": "Skill_Taunt",
+  "description": "Let out a battle cry forcing all enemies to target you for one turn.",
+  "type": "debuff",
+
+  "targetRule": {
+    "type": "all_enemies",
+    "count": -1,
+    "filter": [],
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 10,
+    "cooldown": 3,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "",
+    "element": "",
+    "canCrit": false,
+    "ignoreDefense": 0
+  },
+
+  "effects": [
+    {
+      "type": "taunt",
+      "value": "1",
+      "element": "",
+      "chance": 1.0,
+      "duration": 1
+    },
+    {
+      "type": "debuff_atk",
+      "value": "0.15",
+      "element": "",
+      "chance": 0.5,
+      "duration": 1
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": false,
+    "windows": [],
+    "grades": {}
+  },
+
+  "actionCost": {
+    "timelineUnits": 90,
+    "description": "Battle cry"
+  },
+
+  "visual": {
+    "animation": "warrior_taunt",
+    "vfxPrefab": "VFX/taunt_effect",
+    "sfx": "SFX/warrior_battle_cry",
+    "cameraShake": 0.05
+  }
+}

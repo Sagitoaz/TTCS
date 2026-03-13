@@ -133,6 +133,21 @@ namespace TTCS.Core.Events
         }
     }
 
+    /// <summary>Event khi mana của entity thay đổi (dùng skill, restore, drain)</summary>
+    public class ManaChangedEvent : GameEvent
+    {
+        public string EntityId   { get; private set; }
+        public int    CurrentMana { get; private set; }
+        public int    MaxMana     { get; private set; }
+
+        public ManaChangedEvent(string entityId, int currentMana, int maxMana)
+        {
+            EntityId    = entityId;
+            CurrentMana = currentMana;
+            MaxMana     = maxMana;
+        }
+    }
+
     /// <summary>Event khi entity chết</summary>
     public class EntityDeathEvent : GameEvent
     {
