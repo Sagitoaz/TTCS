@@ -14,8 +14,8 @@ public class TurnManagerTest : MonoBehaviour
         {
             ("char_warrior", 120),  // Warrior: SPD 120 — đi trước
             ("char_mage",    95),   // Mage: SPD 95
-            ("enemy_goblin", 110),  // Goblin: SPD 110
-            ("enemy_dark_knight", 85) // Dark Knight: SPD 85 — chậm nhất
+            ("enemy_bandit", 110),  // Bandit: SPD 110
+            ("enemy_henry", 85) // Henry: SPD 85 — chậm nhất
         });
 
         // 2. Chạy thử 8 lượt

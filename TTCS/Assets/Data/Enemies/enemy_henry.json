@@ -1,6 +1,6 @@
 {
-  "id": "enemy_dark_knight",
-  "nameKey": "Enemy_DarkKnight",
+  "id": "enemy_henry",
+  "nameKey": "Enemy_Henry",
   "description": "An elite enemy with powerful attacks and defensive capabilities",
   "type": "elite",
   
@@ -112,8 +112,8 @@
   },
   
   "visual": {
-    "spritePath": "Enemies/dark_knight_sprite",
-    "animatorController": "Enemies/dark_knight_animator",
+    "spritePath": "Enemies/henry_sprite",
+    "animatorController": "Enemies/henry_animator",
     "scale": 1.3
   }
 }

@@ -1,7 +1,7 @@
 {
-  "id": "skill_goblin_strike",
-  "nameKey": "Skill_GoblinStrike",
-  "description": "The goblin lunges forward with a clumsy but swift scratch.",
+  "id": "skill_bandit_strike",
+  "nameKey": "Skill_Banditstrike",
+  "description": "The Bandit lunges forward with a clumsy but swift scratch.",
   "type": "attack",
 
   "targetRule": {
@@ -50,9 +50,9 @@
   },
 
   "visual": {
-    "animation": "goblin_strike",
-    "vfxPrefab": "VFX/goblin_strike_effect",
-    "sfx": "SFX/goblin_attack",
+    "animation": "Bandit_strike",
+    "vfxPrefab": "VFX/Bandit_strike_effect",
+    "sfx": "SFX/Bandit_attack",
     "cameraShake": 0.05
   }
 }

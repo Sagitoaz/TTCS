@@ -1,6 +1,6 @@
 {
-  "id": "enemy_goblin",
-  "nameKey": "Enemy_Goblin",
+  "id": "enemy_bandit",
+  "nameKey": "enemy_bandit",
   "description": "A common weak enemy found in early stages",
   "type": "common",
   
@@ -23,7 +23,7 @@
   
   "moveSet": [
     {
-      "skillId": "skill_goblin_strike",
+      "skillId": "skill_bandit_strike",
       "weight": 100,
       "conditions": []
     }
@@ -73,8 +73,8 @@
   },
   
   "visual": {
-    "spritePath": "Enemies/goblin_sprite",
-    "animatorController": "Enemies/goblin_animator",
+    "spritePath": "Enemies/bandit_sprite",
+    "animatorController": "Enemies/bandit_animator",
     "scale": 0.8
   }
 }

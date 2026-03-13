@@ -16,8 +16,8 @@ Data/
 │   ├── skill_warrior_slash.json
 │   └── skill_mage_fireball.json
 ├── Enemies/           # Enemy definitions
-│   ├── enemy_goblin.json
-│   └── enemy_dark_knight.json
+│   ├── enemy_bandit.json
+│   └── enemy_henry.json
 └── Stages/            # Stage/Battle definitions
     └── stage_01_tutorial.json
 ```
@@ -85,14 +85,14 @@ Data/
 
 | ID | Type | HP | ATK | Special |
 |----|------|-----|-----|---------|
-| `enemy_goblin` | Common | 1500 | 180 | Flees at low HP |
-| `enemy_dark_knight` | Elite | 5000 | 320 | Counter + Guard |
+| `enemy_bandit` | Common | 1500 | 180 | Flees at low HP |
+| `enemy_henry` | Elite | 5000 | 320 | Counter + Guard |
 
 ### Stages (1)
 
 | ID | Name | Waves | Enemies | Difficulty |
 |----|------|-------|---------|------------|
-| `stage_01_tutorial` | Tutorial | 2 | 2 Goblins → 1 Knight | Easy |
+| `stage_01_tutorial` | Tutorial | 2 | 2 Bandits → 1 Knight | Easy |
 
 ---
 
@@ -255,7 +255,7 @@ Assets/Scripts/Data/
 
 ### Create boss enemy
 
-1. Copy `enemy_dark_knight.json`
+1. Copy `enemy_henry.json`
 2. Set higher HP/stats
 3. Add phase transitions
 4. Configure loot table

@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c7717b3f3af5ca4d8087a147c5a986c, type: 3}
-  m_Name: AIBehavior_DarkKnight
+  m_Name: AIBehavior_Bandit
   m_EditorClassIdentifier: Assembly-CSharp::TTCS.Combat.AI.AIBehavior
-  profileName: DarkKnightAI
+  profileName: BanditAI
   hpThresholdHeal: 0.3
-  hpThresholdAggressive: 0.5
-  aggression: 0.7
-  defensiveness: 0.5
-  basicAttackSkillId: skill_dk_slash
-  strongAttackSkillId: skill_dk_slash
+  hpThresholdAggressive: 0.6
+  aggression: 0.5
+  defensiveness: 0.2
+  basicAttackSkillId: skill_bandit_strike
+  strongAttackSkillId: 
   healSkillId: 
-  skillPreferences:
-  - skill_dk_guard
+  skillPreferences: []
   preferredTargetRule: lowest_hp

@@ -16,13 +16,13 @@ MonoBehaviour:
   nameKey: Tutorial Battle
   description: 
   waves:
-  - waveName: Wave 1 - Goblins
+  - waveName: Wave 1 - Bandits
     enemyIds:
-    - enemy_goblin
-    - enemy_goblin
-  - waveName: Wave 2 - Boss
+    - enemy_bandit
+    - enemy_bandit
+  - waveName: Wave 2 - Bandits
     enemyIds:
-    - enemy_dark_knight
+    - enemy_bandit
   rewardGold: 100
   rewardXP: 150
   firstClearBonusGold: 50

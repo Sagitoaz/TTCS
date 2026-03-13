@@ -211,12 +211,12 @@ MonoBehaviour:
   - char_warrior
   - char_mage
   _wave1EnemyIds:
-  - enemy_goblin
-  - enemy_goblin
+  - enemy_bandit
+  - enemy_bandit
   _randomSeed: 12345
   _autoStartOnPlay: 1
   _debugSkillId: skill_warrior_slash
-  _debugTargetId: enemy_goblin_0
+  _debugTargetId: enemy_bandit_0
 --- !u!1 &652447432
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,9 +11,9 @@ namespace TTCS.Combat
     /// Format: [Turn X] Actor: Y | Action: Z | Result: W
     ///
     /// Usage:
-    ///   CombatLogger.LogAction(3, "char_warrior", "skill_warrior_slash", "Hit enemy_goblin for 240 damage");
+    ///   CombatLogger.LogAction(3, "char_warrior", "skill_warrior_slash", "Hit enemy_bandit for 240 damage");
     ///   CombatLogger.LogTurnStart(3, "char_warrior");
-    ///   CombatLogger.LogDamage(3, "char_warrior", "enemy_goblin", 240, isCrit: true);
+    ///   CombatLogger.LogDamage(3, "char_warrior", "enemy_bandit", 240, isCrit: true);
     ///   CombatLogger.LogHeal(3, "char_mage", "char_warrior", 500);
     ///   CombatLogger.LogStatus(3, "char_warrior", "BURN", "applied");
     ///   CombatLogger.LogCombatResult(true, turnCount: 8);

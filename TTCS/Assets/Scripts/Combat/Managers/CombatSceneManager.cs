@@ -11,6 +11,7 @@ using TTCS.UI.Combat;
 using static TTCS.Debugging.DebugLogger;
 using TTCS.Core.Events;
 using UnityEngine.InputSystem;
+using TTCS.Visual;
 
 namespace TTCS.Combat.Managers
 {
@@ -46,7 +47,11 @@ namespace TTCS.Combat.Managers
 
         private void OnDestroy()
         {
-            if (_instance == this) _instance = null;
+            if (_instance == this)
+            {
+                _instance = null;
+                ClearSpawnedViews();
+            }
         }
 
         // ─── Inspector ────────────────────────────────────────────────────
@@ -67,10 +72,16 @@ namespace TTCS.Combat.Managers
         [Tooltip("Kéo các EnemyData ScriptableObject vào đây. AIBehavior sẽ được lấy từ từng asset.")]
         [SerializeField] private List<EnemyData> _enemyDataAssets = new List<EnemyData>();
 
+        [Header("Visual Spawn")]
+        [SerializeField] private bool _spawnViewsOnInitialize = true;
+        [SerializeField] private List<Transform> _playerSlots = new List<Transform>();
+        [SerializeField] private List<Transform> _enemySlots = new List<Transform>();
+
         // ─── Runtime State ────────────────────────────────────────────────
         private List<Character> _playerTeam = new();
         private List<Enemy> _enemyTeam = new();
         private StageDataModel _currentStage;
+        private readonly List<GameObject> _spawnedViews = new List<GameObject>();
 
         // ──────────────────────────────────────────────────────────────────
         #region Unity Lifecycle
@@ -141,13 +152,9 @@ namespace TTCS.Combat.Managers
 
             // ─── 4. Khởi tạo CombatUIController ──────────────────────────
             CombatUIController.Instance?.Initialize(allies, enemies);
-
-            // ─── 4. Chờ một frame để Developer B spawn CharacterViews ─────
-            // Developer B sẽ spawn views và gọi CombatBridge.RegisterView() trong Start()
-            // CombatSceneManager chờ để đảm bảo tất cả views đã đăng ký
+            SpawnAndRegisterViews();
             yield return null;
 
-            // ─── 5. Start battle ──────────────────────────────────────────
             CombatFlowController.Instance?.StartBattle(_playerTeam, _enemyTeam, seed);
 
             Log("CombatSceneManager: Combat started.", LogCategory.Combat);
@@ -180,7 +187,7 @@ namespace TTCS.Combat.Managers
                 // → BattleHUD đọc GetEntityHPPercent() sẽ thấy giá trị đã thay đổi
                 CombatEntity target = _playerTeam.Find(e => e.ID == "char_warrior");
                 if (target == null) target = _enemyTeam.Find(e => e.ID == "char_warrior");
-                target?.Health.TakeDamage(500, "enemy_goblin");
+                target?.Health.TakeDamage(500, "enemy_bandit");
             }
             if (Keyboard.current[Key.Y].wasPressedThisFrame)
             {
@@ -201,11 +208,11 @@ namespace TTCS.Combat.Managers
             }
             // F/G/M: Test trực tiếp TimingFeedbackUI (không cần qua TimingSystem)
             if (Keyboard.current[Key.F].wasPressedThisFrame)
-                CombatUIController.Instance?.ShowTimingResult(TTCS.UI.Combat.TimingGrade.Perfect);
+                CombatUIController.Instance?.ShowTimingResult(TimingGrade.Perfect);
             if (Keyboard.current[Key.G].wasPressedThisFrame)
-                CombatUIController.Instance?.ShowTimingResult(TTCS.UI.Combat.TimingGrade.Good);
+                CombatUIController.Instance?.ShowTimingResult(TimingGrade.Good);
             if (Keyboard.current[Key.M].wasPressedThisFrame)
-                CombatUIController.Instance?.ShowTimingResult(TTCS.UI.Combat.TimingGrade.Miss);
+                CombatUIController.Instance?.ShowTimingResult(TimingGrade.Miss);
         }
 
         #endregion
@@ -213,17 +220,115 @@ namespace TTCS.Combat.Managers
         // ──────────────────────────────────────────────────────────────────
         #region Helpers
 
+        private void SpawnAndRegisterViews()
+        {
+            if (!_spawnViewsOnInitialize)
+                return;
+
+            ClearSpawnedViews();
+            ActionAnimationController.Instance?.ClearRegistry();
+
+            for (int i = 0; i < _playerTeam.Count; i++)
+            {
+                var entity = _playerTeam[i];
+                if (entity == null) continue;
+
+                var model = DataManager.Instance?.LoadCharacter(entity.CharacterId);
+                var slot = ResolveSlotTransform(_playerSlots, i);
+                if (slot == null)
+                    Log($"CombatSceneManager: Missing Player Slot index {i}, using fallback world position.", LogCategory.Combat);
+                var view = CharacterViewFactory.CreateCharacterView(model, slot);
+                if (view == null) continue;
+
+                view.EntityId = entity.ID;
+                if (slot != null)
+                    view.transform.localPosition = Vector3.zero;
+                else
+                    view.transform.position = ResolveFallbackWorldPosition(i, isPlayer: true);
+                _spawnedViews.Add(view.gameObject);
+
+                RegisterViewBindings(entity.ID, view, isPlayer: true);
+            }
+
+            for (int i = 0; i < _enemyTeam.Count; i++)
+            {
+                var entity = _enemyTeam[i];
+                if (entity == null) continue;
+
+                var model = DataManager.Instance?.LoadEnemy(entity.EnemyTemplateId);
+                var slot = ResolveSlotTransform(_enemySlots, i);
+                if (slot == null)
+                    Log($"CombatSceneManager: Missing Enemy Slot index {i}, using fallback world position.", LogCategory.Combat);
+                var view = CharacterViewFactory.CreateEnemyView(model, slot);
+                if (view == null) continue;
+
+                view.EntityId = entity.ID;
+                if (slot != null)
+                    view.transform.localPosition = Vector3.zero;
+                else
+                    view.transform.position = ResolveFallbackWorldPosition(i, isPlayer: false);
+                _spawnedViews.Add(view.gameObject);
+
+                RegisterViewBindings(entity.ID, view, isPlayer: false);
+            }
+        }
+
+        private void RegisterViewBindings(string entityId, CharacterView view, bool isPlayer)
+        {
+            if (string.IsNullOrEmpty(entityId) || view == null)
+                return;
+
+            if (isPlayer)
+                ActionAnimationController.Instance?.RegisterCharacterView(entityId, view);
+            else if (view is EnemyView enemyView)
+                ActionAnimationController.Instance?.RegisterEnemyView(entityId, enemyView);
+
+            CombatBridge.Instance?.RegisterView(entityId, view);
+            CombatUIController.Instance?.RegisterEntityPosition(entityId, view.transform);
+        }
+
+        private void ClearSpawnedViews()
+        {
+            for (int i = 0; i < _spawnedViews.Count; i++)
+            {
+                if (_spawnedViews[i] != null)
+                    Destroy(_spawnedViews[i]);
+            }
+            _spawnedViews.Clear();
+        }
+
+        private static Transform ResolveSlotTransform(List<Transform> slots, int index)
+        {
+            if (slots == null || slots.Count == 0) return null;
+            if (index < 0 || index >= slots.Count) return null;
+            return slots[index];
+        }
+
+        private Vector3 ResolveFallbackWorldPosition(int index, bool isPlayer)
+        {
+            if (isPlayer)
+            {
+                var legacyAnchor = GameObject.Find("PlayerA");
+                if (legacyAnchor != null) return legacyAnchor.transform.position + new Vector3(index * 1.6f, 0f, 0f);
+                return new Vector3(-3.5f + (index * 1.6f), -1.45f, 0f);
+            }
+
+            var namedSlot = GameObject.Find($"EnemySlot_{index}");
+            if (namedSlot != null) return namedSlot.transform.position;
+            return new Vector3(2.4f + (index * 1.35f), 0.55f, 0f);
+        }
+
         public List<string> GetFirstWaveEnemyIds(StageDataModel stage)
         {
             if (stage?.encounters == null || stage.encounters.Count == 0)
             {
                 // Fallback cho testing
-                return new List<string> { "enemy_goblin", "enemy_goblin" };
+                return new List<string> { "enemy_bandit", "enemy_bandit" };
             }
 
             var firstWave = stage.encounters[0];
             if (firstWave?.enemies == null || firstWave.enemies.Count == 0)
-                return new List<string> { "enemy_goblin" };
+                return new List<string> { "enemy_bandit" };
 
             var ids = new List<string>();
             foreach (var e in firstWave.enemies)

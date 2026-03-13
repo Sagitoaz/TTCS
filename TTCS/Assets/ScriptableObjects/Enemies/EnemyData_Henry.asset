@@ -10,20 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f65da49391a63840b84608ade879770, type: 3}
-  m_Name: EnemyData_Goblin
+  m_Name: EnemyData_Henry
   m_EditorClassIdentifier: Assembly-CSharp::TTCS.Data.EnemyData
-  id: enemy_goblin
-  nameKey: Goblin
-  enemyType: common
-  baseHP: 400
-  baseATK: 70
-  baseDEF: 40
-  baseSPD: 85
+  id: enemy_henry
+  nameKey: Henry
+  enemyType: elite
+  baseHP: 1500
+  baseATK: 160
+  baseDEF: 120
+  baseSPD: 70
   baseCritRate: 0.05
   baseResist: 0
   skillIds:
-  - skill_goblin_strike
-  aiBehavior: {fileID: 11400000, guid: c9f8002aeac708b4785937b4039072ce, type: 2}
-  rewardGold: 10
-  rewardXP: 15
+  - skill_dk_slash
+  - skill_dk_guard
+  aiBehavior: {fileID: 11400000, guid: 87b29f75b772db54e89d5acf9e4f4b40, type: 2}
+  rewardGold: 50
+  rewardXP: 80
   bodySprite: {fileID: 0}

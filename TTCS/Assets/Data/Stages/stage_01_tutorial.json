@@ -16,12 +16,12 @@
       "wave": 1,
       "enemies": [
         {
-          "enemyId": "enemy_goblin",
+          "enemyId": "enemy_bandit",
           "level": 1,
           "position": 0
         },
         {
-          "enemyId": "enemy_goblin",
+          "enemyId": "enemy_bandit",
           "level": 1,
           "position": 1
         }
@@ -32,7 +32,7 @@
       "wave": 2,
       "enemies": [
         {
-          "enemyId": "enemy_dark_knight",
+          "enemyId": "enemy_bandit",
           "level": 2,
           "position": 1
         }

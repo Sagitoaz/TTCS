@@ -6,44 +6,44 @@ using TTCS.Combat.Managers;
 public class AIControllerTest : MonoBehaviour
 {
     [Header("AI Behavior to Test")]
-    public AIBehavior goblinBehavior;   // Kéo GoblinAI asset vào đây
+    public AIBehavior BanditBehavior;   // Kéo BanditAI asset vào đây
 
     private void Start()
     {
         var sm = SkillManager.Instance;
 
         // Setup
-        sm.RegisterEntity("enemy_goblin", maxMana: 50, startingMana: 50);
+        sm.RegisterEntity("enemy_bandit", maxMana: 50, startingMana: 50);
         sm.RegisterEntity("char_warrior", maxMana: 100, startingMana: 80);
 
         // Tạo snapshot entities
         var allEntities = new List<CombatEntitySnapshot>
         {
-            AIController.CreateSnapshot("enemy_goblin", currentHP: 800, maxHP: 1500, isAlly: false),
+            AIController.CreateSnapshot("enemy_bandit", currentHP: 800, maxHP: 1500, isAlly: false),
             AIController.CreateSnapshot("char_warrior", currentHP: 2800, maxHP: 3000, isAlly: true)
         };
 
-        var self = allEntities[0]; // enemy_goblin là AI
+        var self = allEntities[0]; // enemy_bandit là AI
 
         // AI quyết định
-        if (goblinBehavior == null)
+        if (BanditBehavior == null)
         {
-            Debug.LogWarning("AIControllerTest: Kéo GoblinAI ScriptableObject vào Inspector trước!");
+            Debug.LogWarning("AIControllerTest: Kéo BanditAI ScriptableObject vào Inspector trước!");
             return;
         }
 
-        AIDecision decision = AIController.DecideAction(self, allEntities, goblinBehavior, sm);
+        AIDecision decision = AIController.DecideAction(self, allEntities, BanditBehavior, sm);
 
         Debug.Log($"AI Decision: skill={decision.skillId}, targets=[{string.Join(", ", decision.targetIds)}], reason={decision.reason}");
 
-        // Goblin HP thấp? Test heal threshold
+        // Bandit HP thấp? Test heal threshold
         var lowHPEntities = new List<CombatEntitySnapshot>
         {
-            AIController.CreateSnapshot("enemy_goblin", currentHP: 300, maxHP: 1500, isAlly: false), // 20% HP → should heal
+            AIController.CreateSnapshot("enemy_bandit", currentHP: 300, maxHP: 1500, isAlly: false), // 20% HP → should heal
             AIController.CreateSnapshot("char_warrior", currentHP: 1200, maxHP: 3000, isAlly: true)
         };
 
-        AIDecision lowHPDecision = AIController.DecideAction(lowHPEntities[0], lowHPEntities, goblinBehavior, sm);
+        AIDecision lowHPDecision = AIController.DecideAction(lowHPEntities[0], lowHPEntities, BanditBehavior, sm);
         Debug.Log($"Low HP Decision: skill={lowHPDecision.skillId} (should attempt heal if configured) | reason={lowHPDecision.reason}");
 
         sm.ResetCombat();

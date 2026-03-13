@@ -24,8 +24,8 @@ namespace TTCS.Combat
         [Header("Enemy Wave Configuration")]
         [SerializeField] private List<string> _wave1EnemyIds = new List<string>
         {
-            "enemy_goblin",
-            "enemy_goblin"
+            "enemy_bandit",
+            "enemy_bandit"
         };
 
         [Header("Combat Settings")]
@@ -39,7 +39,7 @@ namespace TTCS.Combat
         // ── Debug buttons ─────────────────────────────────────────────────
         [Header("Debug — Player Input (Runtime only)")]
         [SerializeField] private string _debugSkillId    = "skill_warrior_slash";
-        [SerializeField] private string _debugTargetId   = "enemy_goblin_0";
+        [SerializeField] private string _debugTargetId   = "enemy_bandit_0";
 
         // ─────────────────────────────────────────────────────────────────
 

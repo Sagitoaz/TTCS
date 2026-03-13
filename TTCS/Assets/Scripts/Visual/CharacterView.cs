@@ -1,4 +1,5 @@
 using UnityEngine;
+using TTCS.Combat.Managers;
 
 namespace TTCS.Visual
 {
@@ -21,7 +22,7 @@ namespace TTCS.Visual
     /// Xem hướng dẫn setup chi tiết tại:
     ///   aidlc-docs/construction/unity-setup/unit-devB-5-character-visual-setup.md
     /// </summary>
-    public class CharacterView : MonoBehaviour
+    public class CharacterView : MonoBehaviour, CombatBridge.ICharacterAnimatorBridge
     {
         // ─── Entity Binding ───────────────────────────────────────────────
         [Header("Entity Binding")]
@@ -137,5 +138,11 @@ namespace TTCS.Visual
         {
             _allRenderers = GetComponentsInChildren<SpriteRenderer>(includeInactive: true);
         }
+
+        public void PlayAttack() => Animator?.PlayAttack();
+        public void PlayHurt() => Animator?.PlayHurt();
+        public void PlayDeath() => Animator?.PlayDeath();
+        public void PlayVictory() => Animator?.PlayVictory();
+        public Transform GetWorldTransform() => transform;
     }
 }
