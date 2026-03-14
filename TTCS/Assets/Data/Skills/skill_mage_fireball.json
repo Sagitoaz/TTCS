@@ -12,8 +12,8 @@
   },
   
   "cost": {
-    "mana": 30,
-    "cooldown": 2,
+    "mana": 0,
+    "cooldown": 1,
     "limitPerFight": -1
   },
   
