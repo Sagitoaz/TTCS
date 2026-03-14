@@ -176,12 +176,19 @@ namespace TTCS.Combat.Managers
 
         private void OnCombatEnded(CombatEndedEvent e)
         {
-            // Trigger victory animation cho toàn bộ player còn sống
-            foreach (var kv in _views)
+            if (!e.Victory || CombatFlowController.Instance == null)
+                return;
+
+            // Chỉ trigger victory cho player còn sống.
+            // Tránh gọi trên enemy vì có thể cắt ngang death sequence khi vừa bị hạ.
+            var players = CombatFlowController.Instance.GetPlayerTeam();
+            for (int i = 0; i < players.Count; i++)
             {
-                // Chỉ play victory nếu đây là view player — heuristic: check với CFC
-                if (e.Victory && CombatFlowController.Instance != null)
-                    kv.Value.PlayVictory();
+                var player = players[i];
+                if (player == null || player.IsDead) continue;
+
+                if (_views.TryGetValue(player.ID, out var view))
+                    view.PlayVictory();
             }
         }
 

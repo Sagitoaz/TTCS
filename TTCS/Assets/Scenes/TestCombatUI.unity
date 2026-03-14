@@ -4309,17 +4309,12 @@ MonoBehaviour:
   _enemyDataAssets:
   - {fileID: 11400000, guid: 857178a8675bc924999b317822015c58, type: 2}
   _spawnViewsOnInitialize: 1
-  _useSlotAnchors: 0
   _playerSlots:
   - {fileID: 1841432877}
   - {fileID: 1838094754}
   _enemySlots:
   - {fileID: 1988952060}
   - {fileID: 412550919}
-  _playerCenter: {x: -2.6, y: -1.45}
-  _enemyCenter: {x: 2.8, y: 0.55}
-  _horizontalSpacing: 1.35
-  _backRowYOffset: 0.3
 --- !u!4 &1132067289
 Transform:
   m_ObjectHideFlags: 0
