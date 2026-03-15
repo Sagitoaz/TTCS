@@ -324,8 +324,42 @@ namespace TTCS.Combat.Managers
             // Execute player action
             if (!string.IsNullOrEmpty(_pendingSkillId))
             {
-                // Guard timing is defensive only (enemy attack -> player guard).
-                yield return ExecuteAction(player, _pendingSkillId, _pendingTargetIds, TimingGrade.Miss);
+                // Player attack timing: mở window để canh nhịp khi dùng skill tấn công.
+                var playerSkillData = DataManager.Instance?.LoadSkill(_pendingSkillId);
+                bool isAttack = playerSkillData?.type == "attack";
+
+                // Fallback neutral = Good (100%) khi không cần timing window.
+                TimingGrade playerTimingGrade = TimingGrade.Good;
+
+                if (isAttack && TimingSystem.Instance != null)
+                {
+                    _pendingTimingGrade = TimingGrade.Miss;
+                    bool gradeReceived = false;
+
+                    void OnGrade(TimingGrade grade)
+                    {
+                        _pendingTimingGrade = grade;
+                        gradeReceived = true;
+                    }
+
+                    TimingSystem.Instance.OnTimingResult += OnGrade;
+
+                    var window = new TimingWindow(
+                        openTime: Time.time,
+                        duration: _guardWindowDuration,
+                        perfectThreshold: _perfectThresholdMs,
+                        goodThreshold: _goodThresholdMs);
+
+                    TimingSystem.Instance.OpenWindow(window);
+                    yield return new WaitUntil(() => gradeReceived);
+
+                    TimingSystem.Instance.OnTimingResult -= OnGrade;
+                    playerTimingGrade = _pendingTimingGrade;
+
+                    Log($"CombatFlowController: Player timing grade = {playerTimingGrade}", LogCategory.Combat);
+                }
+
+                yield return ExecuteAction(player, _pendingSkillId, _pendingTargetIds, playerTimingGrade);
             }
         }
 

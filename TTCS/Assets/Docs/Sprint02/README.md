@@ -23,10 +23,11 @@
 
 ## 🏁 Trạng thái hiện tại
 
-- **Dev A** ✅ Tuần 1–2 hoàn thành — 15 files (UI + Timing + Bridge + Audio), in-scene tested
-- **Dev B** 🔄 Đang thực hiện (Visual System)
-- **Scene** ⏳ Chờ Dev B
+- **Dev A** ✅ Tuần 1–3 hoàn thành phần độc lập (UI + Timing + Bridge + Audio)
+- **Dev B** 🔄 Đã có script Visual core, đang hoàn thiện phần scene demo
+- **Merge** 🔄 Hai nhánh đã bắt đầu tích hợp (view registry + animation flow đã có)
+- **Scene Demo** ⏳ Chờ hoàn tất `CombatScene.unity` để joint test full loop
 
 ---
 
-**Cập nhật lần cuối:** 2026-03-10 — Dev A Tuần 2 hoàn thành
+**Cập nhật lần cuối:** 2026-03-15 — Cập nhật trạng thái merge Dev A + Dev B

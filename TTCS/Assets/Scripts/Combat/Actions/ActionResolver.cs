@@ -70,7 +70,7 @@ namespace TTCS.Combat.Actions
 
                     default:
                         // Default: attack
-                        ResolveAttack(actor, target, skill, multiplier);
+                        ResolveAttack(actor, target, skill, multiplier, guard);
                         break;
                 }
             }
@@ -115,14 +115,11 @@ namespace TTCS.Combat.Actions
                 {
                     TimingGrade.Perfect => 1.2f,
                     TimingGrade.Good    => 1.0f,
-                    _                   => 0.8f
+                    _                   => 0.6f
                 };
-                if (attackBonus > 1.0f)
-                {
-                    damage = Mathf.RoundToInt(damage * attackBonus);
-                    Log($"  → Attack timing: grade={guard}, bonus={attackBonus:F1}x → dmg={damage}",
-                        LogCategory.Combat);
-                }
+                damage = Mathf.RoundToInt(damage * attackBonus);
+                Log($"  → Attack timing: grade={guard}, multiplier={attackBonus:F1}x → dmg={damage}",
+                    LogCategory.Combat);
             }
 
             target.TakeDamage(damage, actor.ID);
