@@ -51,7 +51,7 @@ namespace TTCS.Core.Events
 
                 _subscribers[eventType].Add(handler);
 
-                if (Constants.DEBUG_LOGS_ENABLED)
+                if (Constants.DEBUG_LOGS_ENABLED && Constants.DEBUG_EVENTBUS_LOGS_ENABLED)
                 {
                     Debug.Log($"[EventBus] Subscribed to {eventType.Name}. Total subscribers: {_subscribers[eventType].Count}");
                 }
@@ -78,7 +78,7 @@ namespace TTCS.Core.Events
                         _subscribers.Remove(eventType);
                     }
 
-                    if (Constants.DEBUG_LOGS_ENABLED)
+                    if (Constants.DEBUG_LOGS_ENABLED && Constants.DEBUG_EVENTBUS_LOGS_ENABLED)
                     {
                         Debug.Log($"[EventBus] Unsubscribed from {eventType.Name}");
                     }
@@ -101,7 +101,7 @@ namespace TTCS.Core.Events
                 {
                     var handlers = _subscribers[eventType];
 
-                    if (Constants.DEBUG_LOGS_ENABLED)
+                    if (Constants.DEBUG_LOGS_ENABLED && Constants.DEBUG_EVENTBUS_LOGS_ENABLED)
                     {
                         Debug.Log($"[EventBus] Publishing {eventType.Name} to {handlers.Count} subscribers");
                     }
@@ -123,9 +123,11 @@ namespace TTCS.Core.Events
                 }
                 else
                 {
-                    if (Constants.DEBUG_LOGS_ENABLED)
+                    // Không coi là warning: nhiều event được publish theo kiểu fire-and-forget
+                    // và có thể không có listener ở một số scene/test flow.
+                    if (Constants.DEBUG_LOGS_ENABLED && Constants.DEBUG_EVENTBUS_LOGS_ENABLED)
                     {
-                        Debug.LogWarning($"[EventBus] No subscribers for {eventType.Name}");
+                        Debug.Log($"[EventBus] No subscribers for {eventType.Name}");
                     }
                 }
             }
@@ -139,7 +141,8 @@ namespace TTCS.Core.Events
             lock (_lock)
             {
                 _subscribers.Clear();
-                Debug.Log("[EventBus] Cleared all subscribers");
+                if (Constants.DEBUG_LOGS_ENABLED && Constants.DEBUG_EVENTBUS_LOGS_ENABLED)
+                    Debug.Log("[EventBus] Cleared all subscribers");
             }
         }
 
@@ -154,7 +157,8 @@ namespace TTCS.Core.Events
                 if (_subscribers.ContainsKey(eventType))
                 {
                     _subscribers.Remove(eventType);
-                    Debug.Log($"[EventBus] Cleared subscribers for {eventType.Name}");
+                    if (Constants.DEBUG_LOGS_ENABLED && Constants.DEBUG_EVENTBUS_LOGS_ENABLED)
+                        Debug.Log($"[EventBus] Cleared subscribers for {eventType.Name}");
                 }
             }
         }

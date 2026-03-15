@@ -108,6 +108,10 @@ namespace TTCS.Combat.Managers
         [Tooltip("Good threshold (ms)")]
         [SerializeField] private float _goodThresholdMs = 800f;
 
+        [Header("Opening Turn")]
+        [Tooltip("If enabled, the first player in party order always gets the opening turn.")]
+        [SerializeField] private bool _forceFirstPlayerActsFirst = true;
+
         // ─── Entry Point ──────────────────────────────────────────────────
         /// <summary>
         /// Bắt đầu trận chiến.
@@ -275,6 +279,12 @@ namespace TTCS.Combat.Managers
                 SkillManager.Instance?.RegisterEntity(entity.ID);
             }
 
+            if (_forceFirstPlayerActsFirst && _playerTeam.Count > 0 && TurnManager.Instance != null)
+            {
+                TurnManager.Instance.SetGauge(_playerTeam[0].ID, 100f);
+                Log($"CombatFlowController: Force opening turn for '{_playerTeam[0].ID}'.", LogCategory.Combat);
+            }
+
             // Publish combat started event
             EventBus.Instance.Publish(new CombatStartedEvent(CurrentSeed));
 
@@ -314,42 +324,8 @@ namespace TTCS.Combat.Managers
             // Execute player action
             if (!string.IsNullOrEmpty(_pendingSkillId))
             {
-                TimingGrade attackGrade = TimingGrade.Miss;
-
-                // Open attack timing window for attack-type skills
-                var pendingSkillData = DataManager.Instance?.LoadSkill(_pendingSkillId);
-                bool isAttackSkill = pendingSkillData?.type == "attack";
-
-                if (isAttackSkill && TimingSystem.Instance != null)
-                {
-                    _pendingTimingGrade = TimingGrade.Miss;
-                    bool gradeReceived = false;
-
-                    void OnAttackGrade(TimingGrade grade)
-                    {
-                        _pendingTimingGrade = grade;
-                        gradeReceived = true;
-                    }
-
-                    TimingSystem.Instance.OnTimingResult += OnAttackGrade;
-
-                    var window = new TimingWindow(
-                        openTime: Time.time,
-                        duration: _guardWindowDuration,
-                        perfectThreshold: _perfectThresholdMs,
-                        goodThreshold: _goodThresholdMs);
-
-                    TimingSystem.Instance.OpenWindow(window);
-
-                    yield return new WaitUntil(() => gradeReceived);
-
-                    TimingSystem.Instance.OnTimingResult -= OnAttackGrade;
-
-                    attackGrade = _pendingTimingGrade;
-                    Log($"CombatFlowController: Attack timing grade = {attackGrade}", LogCategory.Combat);
-                }
-
-                yield return ExecuteAction(player, _pendingSkillId, _pendingTargetIds, attackGrade);
+                // Guard timing is defensive only (enemy attack -> player guard).
+                yield return ExecuteAction(player, _pendingSkillId, _pendingTargetIds, TimingGrade.Miss);
             }
         }
 
@@ -555,10 +531,17 @@ namespace TTCS.Combat.Managers
 
         private void CleanupDeadEntities()
         {
-            foreach (var entity in _allEntities.Where(e => e.IsDead).ToList())
+            // Remove dead entities once to avoid repeated "not found in timeline" warnings.
+            var deadEntities = _allEntities.Where(e => e.IsDead).ToList();
+            foreach (var entity in deadEntities)
             {
                 TurnManager.Instance?.RemoveEntity(entity.ID);
                 SkillManager.Instance?.UnregisterEntity(entity.ID);
+            }
+
+            if (deadEntities.Count > 0)
+            {
+                _allEntities.RemoveAll(e => e != null && e.IsDead);
             }
         }
 

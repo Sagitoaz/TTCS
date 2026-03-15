@@ -133,7 +133,6 @@ namespace TTCS.UI.Combat
             // Screen shake qua Camera (chỉ khi Camera.main tồn tại)
             if (Camera.main != null)
             {
-                Debug.Log("SHAKE CAMERA");
                 Vector3 shakeStrength = new Vector3(0.5f, 0.5f, 0f);
                 _sequence.Join(Camera.main.transform.DOShakePosition(_missDuration, shakeStrength, 15, 90f));
             }

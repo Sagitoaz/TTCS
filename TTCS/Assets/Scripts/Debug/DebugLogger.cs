@@ -37,7 +37,9 @@ namespace TTCS.Debugging
         public static void Log(string message, LogCategory category = LogCategory.General)
         {
 #pragma warning disable CS0162 // Unreachable code detected
-            if (!TTCS.Core.Constants.DEBUG_LOGS_ENABLED)
+            if (!TTCS.Core.Constants.DEBUG_LOGS_ENABLED ||
+                !TTCS.Core.Constants.DEBUG_INFO_LOGS_ENABLED ||
+                !IsInfoCategoryEnabled(category))
             {
                 return;
             }
@@ -54,7 +56,8 @@ namespace TTCS.Debugging
         public static void LogWarning(string message, LogCategory category = LogCategory.General)
         {
 #pragma warning disable CS0162 // Unreachable code detected
-            if (!TTCS.Core.Constants.DEBUG_LOGS_ENABLED)
+            if (!TTCS.Core.Constants.DEBUG_LOGS_ENABLED ||
+                !TTCS.Core.Constants.DEBUG_WARNING_LOGS_ENABLED)
             {
                 return;
             }
@@ -63,6 +66,19 @@ namespace TTCS.Debugging
             string color = CategoryColors[(int)category];
             string formattedMessage = $"<color={color}>[{category}]</color> {message}";
             UnityEngine.Debug.LogWarning(formattedMessage);
+        }
+
+        private static bool IsInfoCategoryEnabled(LogCategory category)
+        {
+            return category switch
+            {
+                LogCategory.Combat => TTCS.Core.Constants.DEBUG_COMBAT_LOGS_ENABLED,
+                LogCategory.AI => TTCS.Core.Constants.DEBUG_AI_LOGS_ENABLED,
+                LogCategory.UI => TTCS.Core.Constants.DEBUG_UI_LOGS_ENABLED,
+                LogCategory.Data => TTCS.Core.Constants.DEBUG_DATA_LOGS_ENABLED,
+                LogCategory.Events => false, // EventBus trace được điều khiển riêng trong EventBus
+                _ => TTCS.Core.Constants.DEBUG_GENERAL_LOGS_ENABLED,
+            };
         }
 
         /// <summary>

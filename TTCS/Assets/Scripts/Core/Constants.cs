@@ -150,10 +150,34 @@ namespace TTCS.Core
         
         #endregion
 
-        #region Debug
+                #region Debug
         
         /// <summary>Enable debug logs</summary>
         public const bool DEBUG_LOGS_ENABLED = true;
+
+        /// <summary>Enable info logs (DebugLogger.Log).</summary>
+        public const bool DEBUG_INFO_LOGS_ENABLED = true;
+
+        /// <summary>Enable warning logs (DebugLogger.LogWarning).</summary>
+        public const bool DEBUG_WARNING_LOGS_ENABLED = true;
+
+        /// <summary>Enable EventBus debug logs (subscribe/publish trace).</summary>
+        public const bool DEBUG_EVENTBUS_LOGS_ENABLED = false;
+
+        /// <summary>Enable combat info logs (turn/skill/damage/mana flow).</summary>
+        public const bool DEBUG_COMBAT_LOGS_ENABLED = true;
+
+        /// <summary>Enable AI info logs (decision reasoning).</summary>
+        public const bool DEBUG_AI_LOGS_ENABLED = true;
+
+        /// <summary>Enable UI info logs.</summary>
+        public const bool DEBUG_UI_LOGS_ENABLED = false;
+
+        /// <summary>Enable data loading info logs.</summary>
+        public const bool DEBUG_DATA_LOGS_ENABLED = false;
+
+        /// <summary>Enable generic/system info logs.</summary>
+        public const bool DEBUG_GENERAL_LOGS_ENABLED = false;
         
         /// <summary>Enable combat debug overlay</summary>
         public const bool DEBUG_COMBAT_OVERLAY = true;
@@ -177,3 +201,6 @@ namespace TTCS.Core
         #endregion
     }
 }
+
+
+

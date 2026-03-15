@@ -40,6 +40,10 @@ namespace TTCS.Combat.Timing
         // ─── Events ───────────────────────────────────────────────────────
         /// <summary>Fired khi window kết thúc — trả về grade của lần input (hoặc Miss nếu không input).</summary>
         public event Action<TimingGrade> OnTimingResult;
+        /// <summary>Fired ngay khi timing window mở, truyền vào duration (giây).</summary>
+        public event Action<float> OnWindowOpened;
+        /// <summary>Fired khi timing window đóng (tự đóng hoặc force close).</summary>
+        public event Action OnWindowClosed;
 
         // ─── State ────────────────────────────────────────────────────────
         private TimingWindow _activeWindow;
@@ -61,7 +65,6 @@ namespace TTCS.Combat.Timing
         /// </summary>
         public void OpenWindow(TimingWindow window)
         {
-            Debug.Log("WINDOW OPENING AT " + window.OpenTime);
             if (_windowActive)
             {
                 LogWarning("TimingSystem: Window đang mở — ForceClose trước.", LogCategory.Combat);
@@ -85,6 +88,7 @@ namespace TTCS.Combat.Timing
 
             _windowActive    = true;
             _windowCoroutine = StartCoroutine(WindowLifecycle(window));
+            OnWindowOpened?.Invoke(window.Duration);
         }
 
         /// <summary>
@@ -166,6 +170,7 @@ namespace TTCS.Combat.Timing
             CombatUIController.Instance?.ShowTimingResult(grade);
 
             OnTimingResult?.Invoke(grade);
+            OnWindowClosed?.Invoke();
         }
 
         #endregion

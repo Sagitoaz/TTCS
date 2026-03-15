@@ -316,6 +316,21 @@ namespace TTCS.Combat.Managers
             return _gauges.TryGetValue(entityId, out float gauge) ? gauge : 0f;
         }
 
+        /// <summary>
+        /// Set gauge trực tiếp cho entity (dùng cho setup lượt mở màn).
+        /// </summary>
+        public void SetGauge(string entityId, float gauge)
+        {
+            if (!_gauges.ContainsKey(entityId))
+            {
+                DebugLogger.LogWarning($"SetGauge: '{entityId}' không tồn tại trong timeline.", LogCategory.Combat);
+                return;
+            }
+
+            _gauges[entityId] = gauge;
+            EventBus.Instance.Publish(new TimelineUpdatedEvent());
+        }
+
         /// <summary>Trả về số lượt đã diễn ra từ đầu combat</summary>
         public int TurnCounter => _turnCounter;
 
