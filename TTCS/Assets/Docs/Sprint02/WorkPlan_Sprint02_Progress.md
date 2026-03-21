@@ -3,7 +3,7 @@
 > **Dự án**: TTCS — Those at The Crossroads of Story  
 > **Sprint 2**: Visual Combat Layer  
 > **Thời gian**: 3 tuần (15 ngày làm việc)  
-> **Cập nhật lần cuối**: Dev A Tuần 3 hoàn thành (2026-03-11), Dev B đang thực hiện
+> **Cập nhật lần cuối**: 2026-03-21 — Dev A + Dev B hoàn thành và đã merge
 
 ---
 
@@ -11,10 +11,10 @@
 
 | Team Member | Số file | Hoàn thành | Còn lại | Trạng thái |
 |-------------|---------|------------|---------|------------|
-| **Developer A** | 15 files + tuần 3 | 15 | 0 (chờ joint test) | ✅ HOÀN THÀNH (phần độc lập) |
-| **Developer B** | 9 files | 0 | 9 | 🔄 ĐANG LÀM |
-| **Shared (Scene)** | 1 scene | 0 | 1 | ⏳ CHỜ DEV B |
-| **Tổng cộng** | 25 items | 15 | 10 | 🔄 60% |
+| **Developer A** | 15 files + integration tuần 3 | 15 | 0 | ✅ HOÀN THÀNH |
+| **Developer B** | 9 files | 9 | 0 | ✅ HOÀN THÀNH |
+| **Shared (Scene + Joint Test)** | 1 scene + integration pass | 2 | 0 | ✅ HOÀN THÀNH |
+| **Tổng cộng** | 26 items | 26 | 0 | ✅ 100% |
 
 ---
 
@@ -57,31 +57,31 @@
 
 ---
 
-## 🟢 Developer B — Character Visual System (⏳ ĐANG LÀM)
+## 🟢 Developer B — Character Visual System (✅ HOÀN THÀNH)
 
 ### Unit B — Character Visual System (6 files)
 
 | # | File | Đường dẫn | Trạng thái | Ghi chú |
 |---|------|-----------|------------|---------|
-| B1 | `CharacterView.cs` | `Scripts/Visual/` | ⬜ Chưa làm | Cần cho CombatBridge integration |
-| B2 | `CharacterAnimator.cs` | `Scripts/Visual/` | ⬜ Chưa làm | Cần `OnAttackHitFrame` event |
-| B3 | `EnemyView.cs` | `Scripts/Visual/` | ⬜ Chưa làm | Cần có `ShowPhaseTransition()` |
-| B4 | `TelegraphVisual.cs` | `Scripts/Visual/` | ⬜ Chưa làm | Ring shrink + flash, expose duration |
-| B5 | `CharacterViewFactory.cs` | `Scripts/Visual/` | ⬜ Chưa làm | Instantiate prefabs từ Resources |
-| B6 | `VFXController.cs` | `Scripts/Visual/VFX/` | ⬜ Chưa làm | Particle system pooling |
+| B1 | `CharacterView.cs` | `Scripts/Visual/` | ✅ Done | Bridge-compatible view root cho character |
+| B2 | `CharacterAnimator.cs` | `Scripts/Visual/` | ✅ Done | Attack/Hurt/Death/Victory animation control |
+| B3 | `EnemyView.cs` | `Scripts/Visual/` | ✅ Done | Enemy visual wrapper + helper API |
+| B4 | `TelegraphVisual.cs` | `Scripts/Visual/` | ✅ Done | Telegraph ring + flash timing feedback |
+| B5 | `CharacterViewFactory.cs` | `Scripts/Visual/` | ✅ Done | Spawn/configure views từ prefab/resource |
+| B6 | `VFXController.cs` | `Scripts/Visual/VFX/` | ✅ Done | Visual effect entrypoint cho action hits |
 
 ### Unit D (phần Dev B) — ActionAnimationController (1 file)
 
 | # | File | Đường dẫn | Trạng thái | Ghi chú |
 |---|------|-----------|------------|---------|
-| B7 | `ActionAnimationController.cs` | `Scripts/Combat/Managers/` | ⬜ Chưa làm | Implement `ICharacterAnimatorBridge` |
+| B7 | `ActionAnimationController.cs` | `Scripts/Combat/Managers/` | ✅ Done | Kết nối event animation sequence với bridge |
 
 ### Unit E (phần Dev B) — Scene Setup (2 items)
 
 | # | Item | Đường dẫn | Trạng thái | Ghi chú |
 |---|------|-----------|------------|---------|
-| B8 | Prefabs (characters + enemies) | `Assets/Prefabs/Combat/` | ⬜ Chưa làm | art parts assignment |
-| B9 | `CombatScene.unity` | `Assets/Scenes/` | ⬜ Chưa làm | Canvas hierarchy + camera setup |
+| B8 | Prefabs (characters + enemies) | `Assets/Prefabs/Combat/` | ✅ Done | Đã assign part-based sprites và animator |
+| B9 | `CombatScene.unity` | `Assets/Scenes/` | ✅ Done | Hoàn thành setup visual combat flow |
 
 ---
 
@@ -89,16 +89,16 @@
 
 | Ngày | Điểm tích hợp | Dev A | Dev B | Trạng thái |
 |------|---------------|-------|-------|------------|
-| Ngày 7 | CombatBridge API sync | ✅ `ICharacterAnimatorBridge` defined | ⬜ Cần implement | ⚠️ Pending Dev B |
-| Ngày 10 | Mid-sprint integration test | ✅ CombatBridge ready | ⬜ CharacterView cần | ⚠️ Pending Dev B |
-| Ngày 12 | Timing + Telegraph sync | ✅ `NotifyTelegraphComplete()` ready | ⬜ TelegraphVisual cần | ⚠️ Pending Dev B |
-| Ngày 14–15 | Full integration | ✅ Tất cả hệ thống ready | ⬜ Scene cần hoàn thành | ⚠️ Pending Dev B |
+| Ngày 7 | CombatBridge API sync | ✅ `ICharacterAnimatorBridge` defined | ✅ Interface implemented | ✅ Done |
+| Ngày 10 | Mid-sprint integration test | ✅ CombatBridge ready | ✅ CharacterView wired | ✅ Done |
+| Ngày 12 | Timing + Telegraph sync | ✅ `NotifyTelegraphComplete()` ready | ✅ TelegraphVisual integrated | ✅ Done |
+| Ngày 14–15 | Full integration | ✅ Tất cả hệ thống ready | ✅ Scene + animation completed | ✅ Done |
 
 ---
 
-## 📋 Danh sách việc Dev B cần làm để unblock integration
+## 📋 Kết quả merge & integration
 
-Sau khi Dev B hoàn thành, cần gọi các API Dev A đã chuẩn bị:
+Sau khi merge, các API bridge đã được dùng để hoàn thành visual-combat integration:
 
 ```csharp
 // 1. Implement ICharacterAnimatorBridge trong CharacterView/EnemyView
@@ -112,13 +112,13 @@ public interface ICharacterAnimatorBridge
     Transform GetWorldTransform();
 }
 
-// 2. Đăng ký view với CombatBridge
+// 2. Đăng ký view với CombatBridge (đã wire)
 CombatBridge.Instance.RegisterView("entityId", myCharacterView);
 
-// 3. Đăng ký vị trí với CombatUIController
+// 3. Đăng ký vị trí với CombatUIController (đã wire)
 CombatUIController.Instance.RegisterEntityPosition("entityId", myTransform);
 
-// 4. Gọi NotifyTelegraphComplete khi telegraph animation kết thúc
+// 4. Gọi NotifyTelegraphComplete khi telegraph animation kết thúc (đã wire)
 CombatBridge.Instance.NotifyTelegraphComplete("enemyId", telegraphDuration);
 ```
 
@@ -139,12 +139,12 @@ CombatBridge.Instance.NotifyTelegraphComplete("enemyId", telegraphDuration);
 | **Tuần 1 in-scene** | T/H/Y/V keys in TestCombat | ✅ Done (2026-03-07) |
 | **Tuần 2 in-scene** | T/Space/F/G/M keys in TestCombat | ✅ Done (2026-03-10) |
 | **Tuần 3 in-scene** | Enemy guard window, player attack timing, damage formula verify | ✅ Done (2026-03-11) |
-| **Joint test** | CombatScene.unity full flow với Dev B | ⏳ Chờ merge Dev B |
+| **Joint test** | CombatScene.unity full flow với Dev B | ✅ Done (2026-03-21) |
 
 ---
 
 ## 📌 Ghi chú
 
 - Dev A có thể test độc lập toàn bộ 16 files nhờ đã dùng Interface (`ICharacterAnimatorBridge`) thay vì concrete class của Dev B
-- Khi Dev B xong, chỉ cần: (1) implement interface, (2) đăng ký với `CombatBridge.RegisterView()`, (3) wire trong CombatScene.unity
+- Dev B đã hoàn thành implement interface + wiring trong scene; nhánh đã merge vào codebase hiện tại
 - `CombatSceneManager.cs` có `yield return null` giữa EntityFactory và `StartBattle()` — đây là "hook" cho Dev B để spawn visual trong một frame

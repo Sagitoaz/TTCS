@@ -1,6 +1,6 @@
 # 📋 TÓM TẮT - Tài liệu & Kế hoạch TTCS
 
-> **Cập nhật:** 22 tháng 2, 2026  
+> **Cập nhật:** 21 tháng 3, 2026  
 > **Mục đích:** Tài liệu tổng hợp cho dự án TTCS Game
 
 ---
@@ -26,8 +26,14 @@ Assets/Docs/
 │   ├── QuickSetupGuide.md      - Hướng dẫn setup
 │   └── DataTemplates.md        - Templates cho data
 │
-├── Sprint02/               ← Dự phòng cho tuần 3-4
-│   └── (chưa có)
+├── Sprint02/               ← Tài liệu Sprint 2 (Visual Combat Layer)
+│   ├── README.md
+│   ├── Sprint02_Summary.md
+│   ├── ProjectDescription_Sprint02.md
+│   ├── TechnicalDescription_Sprint02.md
+│   ├── QuickSetupGuide.md
+│   ├── WorkPlan_Sprint02.md
+│   └── WorkPlan_Sprint02_Progress.md
 │
 └── Sprint03/               ← Dự phòng cho tuần 5-6
     └── (chưa có)
@@ -142,6 +148,29 @@ Assets/Docs/
 - Field explanations chi tiết
 - Validation rules
 - Example data với annotations
+
+---
+
+## 📅 Tài liệu SPRINT 02 (Sprint02/)
+
+### 🧾 [README.md](Sprint02/README.md)
+- Tổng quan tài liệu Sprint02 và trạng thái đã merge
+
+### 📦 [Sprint02_Summary.md](Sprint02/Sprint02_Summary.md)
+- Tổng kết sprint theo format tương tự Sprint01
+- Deliverables Dev A + Dev B và kết quả integration
+
+### 🎯 [ProjectDescription_Sprint02.md](Sprint02/ProjectDescription_Sprint02.md)
+- Mô tả dự án Sprint02: mục tiêu, phạm vi, giá trị người chơi
+
+### 🧠 [TechnicalDescription_Sprint02.md](Sprint02/TechnicalDescription_Sprint02.md)
+- Mô tả kỹ thuật Sprint02: kiến trúc, module, runtime flow
+
+### 🚀 [QuickSetupGuide.md](Sprint02/QuickSetupGuide.md)
+- Hướng dẫn setup nhanh scene/test cho dev và QA
+
+### 📊 [WorkPlan_Sprint02_Progress.md](Sprint02/WorkPlan_Sprint02_Progress.md)
+- Trạng thái cuối: Dev A + Dev B đã hoàn thành và kết hợp
 
 ---
 

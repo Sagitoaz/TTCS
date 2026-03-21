@@ -44,7 +44,12 @@ Assets/Docs/
 │   ├── QuickSetupGuide.md          - Setup & workflow
 │   └── DataTemplates.md            - JSON templates
 │
-├── Sprint02/                    📅 Dự phòng tuần 3-4
+├── Sprint02/                    📅 Tài liệu Sprint 2 (Visual Combat Layer)
+│   ├── README.md
+│   ├── Sprint02_Summary.md
+│   ├── ProjectDescription_Sprint02.md
+│   ├── TechnicalDescription_Sprint02.md
+│   └── QuickSetupGuide.md
 └── Sprint03/                    📅 Dự phòng tuần 5-6
 ```
 
