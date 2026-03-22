@@ -124,9 +124,10 @@ namespace TTCS.Combat.Managers
             var bus = EventBus.Instance;
             if (bus == null) return;
 
-            bus.Subscribe<DamageTakenEvent>(OnDamageTaken);
-            bus.Subscribe<EntityDeathEvent>(OnEntityDeath);
+            // DamageTakenEvent: handled by ActionAnimationController (DO NOT subscribe here!)
+            // SkillCastEvent: trigger attacker animation (PlayAttack)
             bus.Subscribe<SkillCastEvent>(OnSkillCast);
+            bus.Subscribe<EntityDeathEvent>(OnEntityDeath);
             bus.Subscribe<TurnStartedEvent>(OnTurnStarted);
             bus.Subscribe<CombatEndedEvent>(OnCombatEnded);
         }
@@ -136,9 +137,9 @@ namespace TTCS.Combat.Managers
             var bus = EventBus.Instance;
             if (bus == null) return;
 
-            bus.Unsubscribe<DamageTakenEvent>(OnDamageTaken);
-            bus.Unsubscribe<EntityDeathEvent>(OnEntityDeath);
+            // DamageTakenEvent: handled by ActionAnimationController (DO NOT subscribe here!)
             bus.Unsubscribe<SkillCastEvent>(OnSkillCast);
+            bus.Unsubscribe<EntityDeathEvent>(OnEntityDeath);
             bus.Unsubscribe<TurnStartedEvent>(OnTurnStarted);
             bus.Unsubscribe<CombatEndedEvent>(OnCombatEnded);
         }
@@ -150,9 +151,10 @@ namespace TTCS.Combat.Managers
 
         private void OnDamageTaken(DamageTakenEvent e)
         {
-            // Target nhận damage → PlayHurt
-            if (_views.TryGetValue(e.TargetId, out var targetView))
-                targetView.PlayHurt();
+            // ❌ REMOVED: PlayHurt đã được xử lý bởi ActionAnimationController
+            // - Normal skill damage: PlayAttackSequence() gọi target.PlayHurt()
+            // - DoT effects: ActionAnimationController.OnDamageTaken() gọi PlayHurt()
+            // Nếu gọi ở đây sẽ trigger 2 lần!
         }
 
         private void OnEntityDeath(EntityDeathEvent e)
