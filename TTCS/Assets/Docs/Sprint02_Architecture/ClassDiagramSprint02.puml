@@ -1,0 +1,406 @@
+@startuml Sprint02_ClassDiagram
+skinparam backgroundColor #FEFEFE
+skinparam classBackgroundColor #F0F0F0
+skinparam classBorderColor #333
+
+' ==================== VISUAL FRAMEWORK ====================
+package "Visual.Views" {
+    abstract class EntityViewBase {
+        # string entityId
+        # SpriteRenderer spriteRenderer
+        # HealthBar healthBar
+        # EffectIndicatorUI effectIndicator
+        + virtual Initialize(entity)
+        + virtual UpdateHealthBar(hp)
+        + virtual AddStatusEffect(effect)
+    }
+
+    class CharacterView {
+        - CharacterAnimator animator
+        + PlayActionAnimation(actionId)
+        + PlayDamageVisual(damage, sourcePos)
+        + PlayHealAnimation()
+        + Shake(intensity)
+    }
+
+    class EnemyView {
+        - EnemyAnimator animator
+        - TelegraphVisual telegraph
+        + ShowTelegraph(skill, targets)
+        + PlayAttackAnimation()
+    }
+
+    class HealthBar {
+        - Image foreground
+        - TextMeshProUGUI hpText
+        + SetHP(hp, maxHp)
+        - AnimateBar(targetFill)
+    }
+
+    class EffectIndicatorUI {
+        - GridLayoutGroup iconGrid
+        - Dictionary activeIcons
+        + AddIcon(effectType, duration)
+        + RemoveIcon(effectType)
+    }
+
+    class EntityViewFactory {
+        - CharacterView characterViewPrefab
+        - EnemyView enemyViewPrefab
+        - Dictionary characterViews
+        - Dictionary enemyViews
+        + InitializeAllCharacters(list)
+        + InitializeAllEnemies(list)
+        + GetCharacterView(entityId)
+        + GetEnemyView(enemyId)
+        + RemoveView(entityId)
+    }
+
+    EntityViewBase <|-- CharacterView
+    EntityViewBase <|-- EnemyView
+    EntityViewBase *-- HealthBar
+    EntityViewBase *-- EffectIndicatorUI
+    EntityViewFactory --> CharacterView
+    EntityViewFactory --> EnemyView
+}
+
+' ==================== ANIMATION SYSTEM ====================
+package "Visual.Animation" {
+    enum AnimationState {
+        Idle
+        Attack
+        AttackHeavy
+        Spell
+        Hit
+        Dodge
+        Heal
+        Die
+    }
+
+    class CharacterAnimator {
+        - Animator animator
+        - AnimationStateManager stateManager
+        - AnimationState currentState
+        - float currentAnimationLength
+        + event Action OnDamageMomentReached
+        + PlayAnimation(stateName)
+        + PlayAttackAnimation(ActionSnapshot)
+        + SetKnockbackDirection(direction)
+        + PlayHitAnimation()
+        + PlayDeath()
+    }
+
+    class AnimationStateManager {
+        - AnimationState currentState
+        - Dictionary stateTransitions
+        - bool isLocked
+        + CanTransitionTo(newState) : bool
+        + TransitionTo(newState)
+        + LockState(duration)
+    }
+
+    class ActionAnimationController {
+        - {static} Dictionary AnimationDatabase
+        + {static} GetConfig(skillId) : ActionSnapshot
+    }
+
+    struct ActionSnapshot {
+        + string ActionId
+        + ActionType ActionType
+        + float AnimationDuration
+        + float DamageFrameTime
+        + float RecoveryFrameTime
+        + Vector3 SourcePosition
+        + string[] TargetIds
+    }
+
+    enum ActionType {
+        PhysicalAttack
+        HeavyAttack
+        Spell
+        Heal
+        Buff
+        Debuff
+    }
+
+    CharacterAnimator --> AnimationStateManager
+    CharacterAnimator --> ActionAnimationController
+    ActionAnimationController --> ActionSnapshot
+}
+
+' ==================== VFX & EFFECTS ====================
+package "Visual.Effects" {
+    class ParticleEffectController {
+        - Dictionary activePSystems
+        - FloatingTextController floatingTextController
+        + PlaySkillVFX(skillId, position)
+        + PlayDamageVFX(damage, position)
+        + PlayHealingVFX(healing, position)
+        + PlayStatusEffectVFX(effectType)
+        + ShowDamageNumber(damage, position, isCritical)
+        + ShowHealingNumber(amount, position)
+        + PlayDeathVFX(position)
+    }
+
+    class FloatingTextController {
+        - Stack pool
+        - int poolSize
+        + ShowDamageNumber(damage, position, isCritical)
+        + ShowHealingNumber(amount, position)
+        - ReturnToPool(text)
+    }
+
+    class FloatingText {
+        - TextMeshProUGUI text
+        - float duration
+        + SetupText(content, color, size)
+        + AnimateFadeOut(duration)
+    }
+
+    class TelegraphVisual {
+        - Renderer targetAreaIndicator
+        - TextMeshProUGUI damagePreview
+        + ShowAOE(targetType, targets)
+        + ShowDamagePreview(baseDamage)
+        + Hide()
+    }
+
+    ParticleEffectController --> FloatingTextController
+    FloatingTextController *-- FloatingText
+    TelegraphVisual --> TelegraphVisual
+}
+
+' ==================== UI LAYER ====================
+package "Visual.UI" {
+    class CombatUIManager {
+        - ActionPanel actionPanel
+        - StatusDisplay statusDisplay
+        - TurnOrderDisplay turnOrderDisplay
+        - BattleLogDisplay battleLogDisplay
+        - CombatUIState uiState
+        + Initialize()
+        + OnPlayerTurnStart(actors)
+        + OnEnemyTurnStart(enemy)
+        + OnSkillCast(evt)
+        + OnDamageTaken(evt)
+        + OnHealing(evt)
+        + OnEntityDied(evt)
+        + EndBattle(result)
+    }
+
+    class ActionPanel {
+        - SkillButton[] skillButtons
+        - CanvasGroup canvasGroup
+        - CombatEntity currentActor
+        + SetupButtons(actor)
+        + RefreshButtonStates()
+        + EnablePanel()
+        + DisablePanel()
+        + event Action OnSkillSelected
+    }
+
+    class SkillButton {
+        - Button button
+        - Image skillIcon
+        - TextMeshProUGUI skillNameText
+        - Image cooldownOverlay
+        - SkillData linkedSkill
+        + SetupButton(skill)
+        + SetButtonState(state)
+        + UpdateCooldown(remaining, total)
+    }
+
+    class StatusDisplay {
+        - Dictionary characterPanels
+        - Dictionary enemyPanels
+        + Initialize()
+        + UpdateHealthBar(entityId, currentHP, maxHP)
+        + AddStatusEffectIcon(entityId, effectType, duration)
+        + RemoveCharacterStatus(entityId)
+    }
+
+    class TurnOrderDisplay {
+        - List activeIndicators
+        + UpdateTurnOrder(actorIds)
+    }
+
+    class BattleLogDisplay {
+        - TextMeshProUGUI logText
+        - Queue logLines
+        + AddLog(message)
+        + Clear()
+    }
+
+    enum CombatUIState {
+        Ready
+        AnimatingAction
+        Waiting
+        BattleEnded
+    }
+
+    CombatUIManager --> ActionPanel
+    CombatUIManager --> StatusDisplay
+    CombatUIManager --> TurnOrderDisplay
+    CombatUIManager --> BattleLogDisplay
+    ActionPanel *-- SkillButton
+}
+
+' ==================== AUDIO SYSTEM ====================
+package "Visual.Audio" {
+    class AudioManager {
+        - AudioSource musicSource
+        - AudioSource[] sfxSources
+        - Dictionary audioDatabase
+        - float masterVolume
+        - float musicVolume
+        - float sfxVolume
+        + Initialize()
+        + PlaySFX(sfxId, volume)
+        + PlayBGM(bgmId, fadeInTime)
+        + StopBGM(fadeOutTime)
+        + SetMasterVolume(volume)
+        + LoadAudioDatabase()
+    }
+
+    class SoundEffectController {
+        - AudioManager audioManager
+        - Dictionary actionSounds
+        - Dictionary effectSounds
+        + OnSkillCast(evt)
+        + OnDamageTaken(evt)
+        + OnHealing(evt)
+        + OnStatusEffectApplied(evt)
+    }
+
+    class MusicController {
+        - AudioManager audioManager
+        - string currentBGM
+        - int battleIntensity
+        + StartBattleMusic()
+        + UpdateIntensity(healthPercent)
+        + OnBattleEnd(victory)
+    }
+
+    AudioManager --> SoundEffectController
+    AudioManager --> MusicController
+}
+
+' ==================== BRIDGE & INTEGRATION ====================
+package "Visual.Bridge" {
+    class CombatEventBridge {
+        - EntityViewFactory viewFactory
+        - ParticleEffectController effectController
+        - CombatUIManager uiManager
+        - AudioManager audioManager
+        - MusicController musicController
+        - CombatFlowController combatFlow
+        + OnSkillCastStarted(evt)
+        + OnDamageTaken(evt)
+        + OnHealing(evt)
+        + OnStatusEffectApplied(evt)
+        + OnEntityDied(evt)
+        + OnTurnChanged(evt)
+        + OnBattleStarted(evt)
+        + OnBattleEnded(evt)
+        - GetEntityView(entityId)
+        - GetActionConfig(skillId)
+    }
+
+    class VisualEventPublisher {
+        + event Action OnAnimationFinished
+        + event Action OnVFXFinished
+        + event Action OnUIActionSelected
+        + PublishAnimationFinished(animationId)
+        + PublishVFXFinished(vfxId)
+        + PublishUIActionSelected(skillId)
+    }
+
+    CombatEventBridge --> EntityViewFactory
+    CombatEventBridge --> ParticleEffectController
+    CombatEventBridge --> CombatUIManager
+    CombatEventBridge --> AudioManager
+    CombatEventBridge --> MusicController
+}
+
+' ==================== SPRINT 01 DEPENDENCIES ====================
+package "Sprint01.Combat" {
+    class CombatEntity {
+        + ID : string
+        + Name : string
+        + CurrentHP : int
+        + MaxHP : int
+        + CurrentMP : int
+        + Skills : List
+    }
+
+    interface IAction {
+        + Validate() : bool
+        + Execute() : ActionResult
+    }
+
+    class EventBus {
+        + {static} Subscribe(handler)
+        + {static} Unsubscribe(handler)
+        + {static} Publish(evt)
+    }
+
+    class CombatFlowController {
+        + {static} Instance : CombatFlowController
+        + StartBattle()
+        + ExecuteAction(action)
+        + GetTurnOrder() : List
+        + IsPlayerTurn() : bool
+    }
+}
+
+' ==================== EVENT CLASSES ====================
+package "Core.Events" {
+    class SkillCastStartedEvent {
+        + CasterId : string
+        + SkillId : string
+        + SkillName : string
+        + TargetIds : List
+    }
+
+    class DamageTakenEvent {
+        + TargetId : string
+        + Damage : int
+        + NewHP : int
+        + MaxHP : int
+        + IsCritical : bool
+        + SourcePosition : Vector3
+    }
+
+    class HealingEvent {
+        + TargetId : string
+        + HealAmount : int
+        + NewHP : int
+        + MaxHP : int
+    }
+
+    class EntityDiedEvent {
+        + EntityId : string
+        + EntityName : string
+    }
+
+    class TurnChangedEvent {
+        + CurrentActorId : string
+        + TurnCount : int
+    }
+}
+
+' ==================== RELATIONSHIPS ====================
+CombatEventBridge --> EventBus
+CombatEventBridge --> CombatEntity
+CombatEventBridge --> CombatFlowController
+
+SkillCastStartedEvent -- CombatEventBridge
+DamageTakenEvent -- CombatEventBridge
+HealingEvent -- CombatEventBridge
+EntityDiedEvent -- CombatEventBridge
+TurnChangedEvent -- CombatEventBridge
+
+CharacterView --> CombatEntity
+EnemyView --> CombatEntity
+
+@enduml
