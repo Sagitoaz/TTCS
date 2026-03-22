@@ -1,0 +1,235 @@
+@startuml
+' --- Enums & Interfaces ---
+enum CombatEventTypes {
+  DamageTaken
+  HealingReceived
+  EntityDied
+  SkillCast
+}
+
+interface IAction {
+  +Validate() : bool
+  +Execute() : ActionResult
+}
+
+interface IEntityComponent {
+  +Initialize(entityId)
+  +Reset()
+}
+
+' --- Core Systems ---
+class ActionValidator {
+  +ValidateMana(caster, cost) : bool
+  +ValidateCooldown(caster, skillId) : bool
+  +ValidateTargets(targets) : bool
+}
+
+class CombatFlowController {
+  -state: FlowState
+  +StartBattle()
+  +ExecuteTurn()
+  +EndBattle(result)
+}
+
+class EventBus {
+  -subscribers: Dictionary
+  +Subscribe(eventType, callback)
+  +Publish(gameEvent)
+  +Unsubscribe(eventType, callback)
+}
+
+class GameEvent {
+  +eventType: CombatEventTypes
+  +Timestamp: Timestamp
+}
+
+class DataManager {
+  -instance: DataManager
+  -cache: DataCache
+  +LoadCharacter(id) : CharacterDataModel
+  +LoadSkill(id) : SkillDataModel
+  +LoadEnemy(id) : EnemyDataModel
+}
+
+class ActionResolver {
+  +Resolve(action) : void
+  +ResolveDamage(attacker, target, skill)
+  +ResolveEffect(target, effect)
+}
+
+class SkillManager {
+  -cooldowns: Dictionary
+  -mana: Dictionary
+  +ReduceCooldown(entityId, skillId, amount)
+  +ConsumeMana(entityId, amount)
+}
+
+class TurnManager {
+  -timeline: Priority Queue
+  +GetCurrentActor() : CombatEntity
+  +AdvanceTurn() : void
+  +RegisterEntity(entity)
+}
+
+class StatCalculator {
+  +CalculateDamage(attacker, target) : float
+  +CalculateHeal(caster, target) : float
+}
+
+' --- Data Models ---
+class CharacterDataModel {
+  +id: string
+  +baseStats: EntityStats
+  +skills: List<string>
+}
+
+class SkillDataModel {
+  +id: string
+  +type: SkillType
+  +targetRule: TargetRule
+  +cost: ResourceCost
+}
+
+class SkillAction {
+  -caster: CombatEntity
+  -skill: SkillDataModel
+  -targets: List<CombatEntity>
+  +Validate() : bool
+  +Execute() : ActionResult
+}
+
+' --- Entities ---
+abstract class CombatEntity {
+  #id: string
+  #health: HealthComponent
+  #stats: StatsComponent
+  #effects: EffectComponent
+  +Initialize()
+  +ApplyEffect(statusEffect)
+}
+
+class Character {
+  +isPlayer: bool
+  +skills: List<SkillDataModel>
+}
+
+class Enemy {
+  -aiBehavior: AIBehavior
+  -rewards: Rewards
+  +DecideAction() : AIDecision
+}
+
+' --- Components ---
+class HealthComponent {
+  -currentHP: int
+  -maxHP: int
+  -shield: int
+  +TakeDamage(amount)
+  +Heal(amount)
+  +AddShield(amount)
+}
+
+class StatsComponent {
+  -baseStats: EntityStats
+  -modifiers: List<StatModifier>
+  +GetEffectiveStat(type) : float
+  +AddModifier(modifier)
+}
+
+class EffectComponent {
+  -effects: List<StatusEffect>
+  +ApplyEffect(effect)
+  +RemoveEffect(effect)
+  +HasEffect(name) : bool
+}
+
+class EntityStats {
+  +hp: int
+  +atk: float
+  +def: float
+  +spd: float
+  +crit: float
+  +resist: float
+}
+
+class StatModifier {
+  +type: StatType
+  +modifierType: ModifierType
+  +value: float
+  +duration: int
+  +source: string
+}
+
+abstract class StatusEffect {
+  #name: string
+  #duration: int
+  #intensity: float
+  +OnApply(entity)
+  +OnTick(entity, timing)
+  +OnRemove(entity)
+}
+
+class BleedEffect {
+  +tickDamage: float
+}
+
+' --- AI ---
+class AIController {
+  +DecideAction(entity) : AIDecision
+  +SelectTarget(candidates) : CombatEntity
+}
+
+class AIBehavior {
+  +priority: int
+  +decisions: List<AIDecision>
+  +Evaluate(entity) : AIDecision
+}
+
+class AIDecision {
+  +skillId: string
+  +targets: List<CombatEntity>
+  +priority: int
+}
+
+' --- Relationships ---
+CombatFlowController --> ActionValidator
+CombatFlowController --> ActionResolver
+CombatFlowController --> SkillManager
+CombatFlowController --> TurnManager
+
+EventBus --> GameEvent
+GameEvent --> CombatEventTypes
+
+DataManager --> CharacterDataModel
+DataManager --> SkillDataModel
+DataManager --> Enemy
+
+ActionResolver --> StatCalculator
+
+TurnManager --> CombatEntity
+
+CombatEntity *-- HealthComponent
+CombatEntity *-- StatsComponent
+CombatEntity *-- EffectComponent
+
+Character --|> CombatEntity
+Enemy --|> CombatEntity
+
+HealthComponent ..|> IEntityComponent
+StatsComponent ..|> IEntityComponent
+EffectComponent ..|> IEntityComponent
+
+EffectComponent --> StatusEffect
+BleedEffect --|> StatusEffect
+
+StatsComponent --> StatModifier
+StatsComponent --> EntityStats
+
+Enemy --> AIBehavior
+AIController --> AIBehavior
+AIBehavior --> AIDecision
+
+SkillAction ..|> IAction
+SkillAction --> SkillDataModel
+CharacterDataModel --> SkillDataModel
+@enduml
