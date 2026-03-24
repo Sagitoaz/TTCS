@@ -50,6 +50,7 @@
   },
 
   "visual": {
+    "attackStyle": "melee",
     "animation": "Bandit_strike",
     "vfxPrefab": "VFX/Bandit_strike_effect",
     "sfx": "SFX/Bandit_attack",

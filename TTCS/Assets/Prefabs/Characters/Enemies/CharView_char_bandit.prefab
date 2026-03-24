@@ -104,6 +104,7 @@ MonoBehaviour:
   _lungeDistance: 0.5
   _lungeSpeed: 0.12
   _returnSpeed: 0.22
+  _meleeStopDistance: 0.9
   _whiteFlashDuration: 0.07
   _redTintDuration: 0.1
 --- !u!1 &1224073280832478483

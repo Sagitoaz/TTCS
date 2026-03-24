@@ -83,6 +83,7 @@ namespace TTCS.Data
     [Serializable]
     public class SkillVisual
     {
+        public string attackStyle;  // "melee" or "ranged" (optional)
         public string animation;
         public string vfxPrefab;
         public string sfx;

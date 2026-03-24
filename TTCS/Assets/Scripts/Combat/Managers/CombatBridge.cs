@@ -165,7 +165,10 @@ namespace TTCS.Combat.Managers
 
         private void OnSkillCast(SkillCastEvent e)
         {
-            // Caster thực hiện tấn công → PlayAttack
+            // ActionAnimationController chịu trách nhiệm chính cho skill cast visuals.
+            // Bridge chỉ fallback khi controller này không tồn tại trong scene.
+            if (ActionAnimationController.Instance != null) return;
+
             if (_views.TryGetValue(e.CasterId, out var casterView))
                 casterView.PlayAttack();
         }

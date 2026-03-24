@@ -89,8 +89,11 @@ namespace TTCS.Combat.Managers
 
         // ─── Timing ───────────────────────────────────────────────────────
         [Header("Turn Timing")]
-        [Tooltip("Thời gian dừng sau mỗi hành động (giây) — cho UI animation")]
+        [Tooltip("Fallback delay khi không có ActionAnimationController/view (giây)")]
         [SerializeField] private float _actionDelay = 0.5f;
+
+        [Tooltip("Thời gian chờ tối đa để animation cast/attack hoàn tất trước khi EndTurn (giây)")]
+        [SerializeField] private float _maxActionAnimationWait = 4f;
 
         [Tooltip("Thời gian dừng giữa các lượt")]
         [SerializeField] private float _betweenTurnDelay = 0.2f;
@@ -499,12 +502,39 @@ namespace TTCS.Combat.Managers
 
             // Execute
             action.Execute(actor, targets, SkillManager.Instance, guard);
+
             _lastActionCost = action.TimelineCost;
 
             CombatLogger.LogAction(TurnNumber, actor.ID, skillId,
                 $"targets: {string.Join(", ", targets.Select(t => t.ID))}");
 
-            yield return new WaitForSeconds(_actionDelay);
+            yield return WaitForActionAnimation(actor.ID);
+        }
+
+        private IEnumerator WaitForActionAnimation(string actorId)
+        {
+            var animationController = ActionAnimationController.Instance;
+
+            // Fallback cho test scene không có visual layer.
+            if (animationController == null || !animationController.HasViewForEntity(actorId))
+            {
+                if (_actionDelay > 0f)
+                    yield return new WaitForSeconds(_actionDelay);
+                yield break;
+            }
+
+            float elapsed = 0f;
+
+            while (animationController.IsActionAnimationRunningFor(actorId) && elapsed < _maxActionAnimationWait)
+            {
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            if (animationController.IsActionAnimationRunningFor(actorId))
+            {
+                Log($"CombatFlowController: WaitForActionAnimation timeout for '{actorId}'.", LogCategory.Combat);
+            }
         }
 
         // ─── Victory / Defeat ──────────────────────────────────────────────

@@ -54,6 +54,16 @@ namespace TTCS.Visual
         [Tooltip("Thời gian quay lại vị trí ban đầu (giây)")]
         [SerializeField] private float _returnSpeed   = 0.22f;
 
+        [Tooltip("Khoảng cách dừng trước mục tiêu cho đòn cận chiến")]
+        [SerializeField] private float _meleeStopDistance = 0.9f;
+
+        [Tooltip("Timeout chờ state Attack kết thúc trước khi quay về vị trí ban đầu")]
+        [SerializeField] private float _attackEndWaitTimeout = 2.5f;
+
+        [Header("Movement Root")]
+        [Tooltip("Nếu bật, tween di chuyển sẽ chạy trên parent transform để tránh Animator ghi đè vị trí root.")]
+        [SerializeField] private bool _useParentAsMotionRoot = true;
+
         [Header("Hurt Flash")]
         [SerializeField] private float _whiteFlashDuration = 0.07f;
         [SerializeField] private float _redTintDuration    = 0.10f;
@@ -80,6 +90,10 @@ namespace TTCS.Visual
             _animator         = GetComponent<Animator>();
             _view             = GetComponent<CharacterView>();
             _originalLocalPos = transform.localPosition;
+
+            // Ensure DOTween-driven movement is not overridden by Animator root motion.
+            if (_animator != null)
+                _animator.applyRootMotion = false;
         }
 
         private void OnDestroy()
@@ -101,23 +115,27 @@ namespace TTCS.Visual
         /// </summary>
         public void PlayAttack()
         {
+            var motionRoot = GetMotionRoot();
+            Vector3 motionRootStartWorld = motionRoot.position;
+
+            _originalLocalPos = transform.localPosition;
             _hitFrameNotified = false;
             _actionSequence?.Kill();
 
             // Lunge direction dựa trên facing (localScale.x âm = nhìn trái)
             float dir       = transform.localScale.x >= 0 ? 1f : -1f;
-            Vector3 lungePos = _originalLocalPos + new Vector3(dir * _lungeDistance, 0f, 0f);
+            Vector3 lungeWorldPos = motionRootStartWorld + new Vector3(dir * _lungeDistance, 0f, 0f);
 
             // DOTween: xử lý movement
             _actionSequence = DOTween.Sequence()
-                .Append(transform.DOLocalMove(lungePos, _lungeSpeed).SetEase(Ease.OutQuint))
+                .Append(motionRoot.DOMove(lungeWorldPos, _lungeSpeed).SetEase(Ease.OutQuint))
                 .AppendInterval(0.05f)   // linger tại điểm attack
-                .Append(transform.DOLocalMove(_originalLocalPos, _returnSpeed).SetEase(Ease.InOutQuad))
+                .Append(motionRoot.DOMove(motionRootStartWorld, _returnSpeed).SetEase(Ease.InOutQuad))
                 .OnComplete(() =>
                 {
                     // Fallback: fire hit frame nếu Animation Event chưa kích hoạt
                     NotifyAttackHitFrame();
-                    transform.localPosition = _originalLocalPos;
+                    motionRoot.position = motionRootStartWorld;
                     OnAnimationComplete?.Invoke();
                 });
 
@@ -125,6 +143,130 @@ namespace TTCS.Visual
             _animator.SetTrigger(HashAttack);
 
             // Fallback timer: fire hit frame khi lunge xong (nếu chưa có Animation Event)
+            StartCoroutine(HitFrameFallback(_lungeSpeed + 0.03f));
+        }
+
+        /// <summary>
+        /// Đòn cận chiến: lao vào gần vị trí target rồi quay về vị trí ban đầu.
+        /// </summary>
+        public void PlayAttackMelee(Vector3 targetWorldPosition)
+        {
+            var motionRoot = GetMotionRoot();
+
+            Debug.Log("LAO TỚI TẤN CÔNG " + targetWorldPosition + " | mover=" + motionRoot.name);
+            _originalLocalPos = transform.localPosition;
+            _hitFrameNotified = false;
+            _actionSequence?.Kill();
+
+            Vector3 startWorldPos = motionRoot.position;
+            Vector3 towardTarget = targetWorldPosition - startWorldPos;
+
+            if (towardTarget.sqrMagnitude < 0.0001f)
+            {
+                float fallbackDir = transform.localScale.x >= 0 ? 1f : -1f;
+                towardTarget = new Vector3(fallbackDir, 0f, 0f);
+            }
+
+            Vector3 moveDir = towardTarget.normalized;
+            Vector3 lungeWorldPos = targetWorldPosition - moveDir * _meleeStopDistance;
+            lungeWorldPos.z = startWorldPos.z;
+
+            float distance = Vector3.Distance(startWorldPos, lungeWorldPos);
+            float lungeDuration = Mathf.Clamp(distance * 0.08f, _lungeSpeed, 0.3f);
+            Debug.Log("Tấn công: " + distance + " " + lungeWorldPos + " " + lungeDuration);
+            _actionSequence = DOTween.Sequence()
+                .Append(motionRoot.DOMove(lungeWorldPos, lungeDuration).SetEase(Ease.OutQuint))
+                .OnComplete(() =>
+                {
+                    _animator.SetTrigger(HashAttack);
+                    StartCoroutine(ReturnAfterAttackFinished(motionRoot, startWorldPos));
+                });
+
+            
+            StartCoroutine(HitFrameFallback(lungeDuration + 0.03f));
+        }
+
+        private IEnumerator ReturnAfterAttackFinished(Transform motionRoot, Vector3 startWorldPos)
+        {
+            yield return WaitUntilAttackStateEnds(_attackEndWaitTimeout);
+
+            _actionSequence = DOTween.Sequence()
+                .Append(motionRoot.DOMove(startWorldPos, _returnSpeed).SetEase(Ease.InOutQuad))
+                .OnComplete(() =>
+                {
+                    NotifyAttackHitFrame();
+                    motionRoot.position = startWorldPos;
+                    OnAnimationComplete?.Invoke();
+                });
+        }
+
+        private IEnumerator WaitUntilAttackStateEnds(float timeout)
+        {
+            if (_animator == null)
+                yield break;
+
+            float elapsed = 0f;
+            bool enteredAttack = false;
+
+            while (elapsed < timeout)
+            {
+                var state = _animator.GetCurrentAnimatorStateInfo(0);
+                if (state.shortNameHash == HashAttack || state.IsName("Attack"))
+                {
+                    enteredAttack = true;
+                    break;
+                }
+
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            if (!enteredAttack)
+                yield break;
+
+            while (elapsed < timeout)
+            {
+                var state = _animator.GetCurrentAnimatorStateInfo(0);
+                bool inAttackState = state.shortNameHash == HashAttack || state.IsName("Attack");
+
+                if (!inAttackState)
+                    yield break;
+
+                if (state.normalizedTime >= 1f && !_animator.IsInTransition(0))
+                    yield break;
+
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+        }
+
+        private Transform GetMotionRoot()
+        {
+            if (_useParentAsMotionRoot && transform.parent != null)
+                return transform.parent;
+
+            return transform;
+        }
+
+        /// <summary>
+        /// Đòn tầm xa: đứng yên cast/attack, không di chuyển vị trí.
+        /// </summary>
+        public void PlayAttackInPlace()
+        {
+            _originalLocalPos = transform.localPosition;
+            _hitFrameNotified = false;
+            _actionSequence?.Kill();
+
+            _actionSequence = DOTween.Sequence()
+                .AppendInterval(_lungeSpeed + 0.12f)
+                .OnComplete(() =>
+                {
+                    NotifyAttackHitFrame();
+                    transform.localPosition = _originalLocalPos;
+                    OnAnimationComplete?.Invoke();
+                });
+
+            _animator.SetTrigger(HashAttack);
             StartCoroutine(HitFrameFallback(_lungeSpeed + 0.03f));
         }
 

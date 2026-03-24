@@ -56,6 +56,7 @@ namespace TTCS.Combat.Managers
         // ─── View Registry ────────────────────────────────────────────────
         private readonly Dictionary<string, CharacterView> _characterViews = new Dictionary<string, CharacterView>();
         private readonly Dictionary<string, EnemyView>     _enemyViews     = new Dictionary<string, EnemyView>();
+        private readonly HashSet<string> _runningActionCasters = new HashSet<string>();
 
         /// <summary>
         /// Đăng ký CharacterView — gọi từ CombatSceneManager sau khi spawn.
@@ -90,6 +91,24 @@ namespace TTCS.Combat.Managers
         {
             _characterViews.Clear();
             _enemyViews.Clear();
+            _runningActionCasters.Clear();
+        }
+
+        /// <summary>
+        /// True khi caster đang chạy sequence cast/attack và chưa hoàn tất return animation.
+        /// CombatFlowController dùng để đồng bộ EndTurn.
+        /// </summary>
+        public bool IsActionAnimationRunningFor(string entityId)
+        {
+            if (string.IsNullOrEmpty(entityId)) return false;
+            return _runningActionCasters.Contains(entityId);
+        }
+
+        /// <summary>Kiểm tra entity có view visual được register trong scene hay không.</summary>
+        public bool HasViewForEntity(string entityId)
+        {
+            if (string.IsNullOrEmpty(entityId)) return false;
+            return _characterViews.ContainsKey(entityId) || _enemyViews.ContainsKey(entityId);
         }
 
         // ─── EventBus Subscription ────────────────────────────────────────
@@ -110,6 +129,7 @@ namespace TTCS.Combat.Managers
             EventBus.Instance.Unsubscribe<EntityDeathEvent>(OnEntityDeath);
             EventBus.Instance.Unsubscribe<TurnStartedEvent>(OnTurnStart);
             EventBus.Instance.Unsubscribe<CombatEndedEvent>(OnCombatEnded);
+            _runningActionCasters.Clear();
         }
 
         // ─── Event Handlers ───────────────────────────────────────────────
@@ -131,18 +151,27 @@ namespace TTCS.Combat.Managers
             var skill = DataManager.Instance?.LoadSkill(e.SkillId);
             string skillType = skill?.type ?? "attack";
             bool isSupportSkill = skillType == "heal" || skillType == "buff";
+            bool isAttackSkill = skillType == "attack" || skillType == "debuff";
+            bool isMeleeAttack = isAttackSkill && ShouldUseMeleeMovement(skill, targetViews.Count);
 
-            // Nếu kẻ tấn công là enemy → hiện telegraph trước
-            if (_enemyViews.TryGetValue(e.CasterId, out var enemyView))
-            {
-                // Telegraph đã được trigger bởi CombatFlowController trước khi fire event
-                // Ở đây chỉ cần play attack animation
-            }
+           
+
+            _runningActionCasters.Add(e.CasterId);
 
             if (isSupportSkill)
-                StartCoroutine(PlaySupportSequence(attackerView, targetViews));
+                StartCoroutine(RunTrackedActionSequence(e.CasterId, PlaySupportSequence(attackerView, targetViews)));
+            else if (isMeleeAttack)
+                StartCoroutine(RunTrackedActionSequence(e.CasterId,
+                    PlayAttackSequence(attackerView, targetViews, useMeleeMovement: true)));
             else
-                StartCoroutine(PlayAttackSequence(attackerView, targetViews));
+                StartCoroutine(RunTrackedActionSequence(e.CasterId,
+                    PlayAttackSequence(attackerView, targetViews, useMeleeMovement: false)));
+        }
+
+        private IEnumerator RunTrackedActionSequence(string casterId, IEnumerator sequence)
+        {
+            yield return sequence;
+            _runningActionCasters.Remove(casterId);
         }
 
         private void OnDamageTaken(DamageTakenEvent e)
@@ -199,17 +228,25 @@ namespace TTCS.Combat.Managers
         ///   2. Chờ OnAttackHitFrame event (timeout 2.5s)
         ///   3. Targets PlayHurt cùng lúc
         /// </summary>
-        private IEnumerator PlayAttackSequence(CharacterView attacker, List<CharacterView> targets)
+        private IEnumerator PlayAttackSequence(CharacterView attacker, List<CharacterView> targets, bool useMeleeMovement)
         {
             bool hitFrameReceived = false;
+            bool animationComplete = false;
 
             // Dùng local method để có thể unsubscribe đúng cách
             void OnHitFrame() => hitFrameReceived = true;
+            void OnAnimationComplete() => animationComplete = true;
 
             if (attacker.Animator != null)
+            {
                 attacker.Animator.OnAttackHitFrame += OnHitFrame;
+                attacker.Animator.OnAnimationComplete += OnAnimationComplete;
+            }
 
-            attacker.Animator?.PlayAttack();
+            if (useMeleeMovement && targets.Count > 0)
+                attacker.Animator?.PlayAttackMelee(GetMeleeApproachPosition(targets));
+            else
+                attacker.Animator?.PlayAttackInPlace();
 
             // Chờ hit frame — timeout phòng Animator không có event
             const float timeout = 2.5f;
@@ -224,9 +261,21 @@ namespace TTCS.Combat.Managers
             foreach (var target in targets)
                 target.Animator?.PlayHurt();
 
+            // Đợi attacker hoàn tất phase quay về vị trí idle trước khi kết thúc sequence.
+            const float completeTimeout = 2.5f;
+            elapsed = 0f;
+            while (!animationComplete && elapsed < completeTimeout)
+            {
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
             // Cleanup event listener
             if (attacker.Animator != null)
+            {
                 attacker.Animator.OnAttackHitFrame -= OnHitFrame;
+                attacker.Animator.OnAnimationComplete -= OnAnimationComplete;
+            }
         }
 
         /// <summary>
@@ -235,13 +284,18 @@ namespace TTCS.Combat.Managers
         private IEnumerator PlaySupportSequence(CharacterView caster, List<CharacterView> targets)
         {
             bool hitFrameReceived = false;
+            bool animationComplete = false;
 
             void OnHitFrame() => hitFrameReceived = true;
+            void OnAnimationComplete() => animationComplete = true;
 
             if (caster.Animator != null)
+            {
                 caster.Animator.OnAttackHitFrame += OnHitFrame;
+                caster.Animator.OnAnimationComplete += OnAnimationComplete;
+            }
 
-            caster.Animator?.PlayAttack();
+            caster.Animator?.PlayAttackInPlace();
 
             const float timeout = 1.2f;
             float elapsed = 0f;
@@ -266,8 +320,19 @@ namespace TTCS.Combat.Managers
                 target.ResetPartsColor();
             }
 
+            const float completeTimeout = 2.5f;
+            elapsed = 0f;
+            while (!animationComplete && elapsed < completeTimeout)
+            {
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
             if (caster.Animator != null)
+            {
                 caster.Animator.OnAttackHitFrame -= OnHitFrame;
+                caster.Animator.OnAnimationComplete -= OnAnimationComplete;
+            }
         }
 
         // ─── Helpers ──────────────────────────────────────────────────────
@@ -279,6 +344,48 @@ namespace TTCS.Combat.Managers
             if (_characterViews.TryGetValue(entityId, out var cv)) return cv;
             if (_enemyViews.TryGetValue(entityId, out var ev))     return ev;
             return null;
+        }
+
+        private static bool ShouldUseMeleeMovement(TTCS.Data.SkillDataModel skill, int targetCount)
+        {
+            if (targetCount <= 0) return false;
+
+            if (skill == null)
+                return true;
+
+            string style = skill.visual?.attackStyle;
+            if (!string.IsNullOrEmpty(style))
+            {
+                style = style.Trim().ToLowerInvariant();
+                if (style == "ranged") return false;
+                if (style == "melee") return true;
+            }
+
+            return true;
+        }
+
+        private static Vector3 GetMeleeApproachPosition(List<CharacterView> targets)
+        {
+            if (targets == null || targets.Count == 0 || targets[0] == null)
+                return Vector3.zero;
+
+            if (targets.Count == 1)
+                return targets[0].WorldPosition;
+
+            Vector3 sum = Vector3.zero;
+            int validCount = 0;
+            for (int i = 0; i < targets.Count; i++)
+            {
+                var t = targets[i];
+                if (t == null) continue;
+                sum += t.WorldPosition;
+                validCount++;
+            }
+
+            if (validCount == 0)
+                return targets[0].WorldPosition;
+
+            return sum / validCount;
         }
     }
 }

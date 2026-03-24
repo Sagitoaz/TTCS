@@ -50,6 +50,7 @@
   },
 
   "visual": {
+    "attackStyle": "melee",
     "animation": "knight_slash",
     "vfxPrefab": "VFX/knight_slash_effect",
     "sfx": "SFX/heavy_sword_swing",

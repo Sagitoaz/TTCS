@@ -62,6 +62,7 @@
   },
 
   "visual": {
+    "attackStyle": "melee",
     "animation": "warrior_power_strike",
     "vfxPrefab": "VFX/power_strike_effect",
     "sfx": "SFX/heavy_sword_swing",

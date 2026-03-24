@@ -274,8 +274,8 @@ namespace TTCS.Combat.Managers
                 $"UseSkill: '{entityId}' used '{skill.id}' — mana={_currentMana[entityId]}/{_maxMana[entityId]}, cd={skill.cost.cooldown}, used={_usageCount[entityId][skill.id]} times",
                 LogCategory.Combat);
 
-            // Phát SkillCastEvent (target sẽ được truyền vào từ caller nếu cần riêng)
-            EventBus.Instance.Publish(new SkillCastEvent(entityId, skill.id));
+            // KHÔNG publish SkillCastEvent tại đây: event này cần target IDs thật.
+            // ActionResolver sẽ publish sau khi targets đã được resolve đầy đủ.
             EventBus.Instance.Publish(new ManaChangedEvent(entityId, _currentMana[entityId], _maxMana[entityId]));
 
             return true;
