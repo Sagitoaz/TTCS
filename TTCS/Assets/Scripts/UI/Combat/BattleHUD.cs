@@ -39,6 +39,9 @@ namespace TTCS.UI.Combat
                 _maxHP    = entity.Health.MaxHP;
                 _maxMP    = Mathf.Max(1, maxMP);
 
+                LockSliderInput(HPSlider);
+                LockSliderInput(MPSlider);
+
                 NameText.text = entity.DisplayName;
                 HPSlider.value = entity.HPPercent;
                 MPSlider.value = TTCS.Combat.Managers.SkillManager.Instance != null
@@ -48,6 +51,16 @@ namespace TTCS.UI.Combat
                 SetHPText(entity.HPPercent);
                 SlotGroup.alpha = 1f;
                 gameObject.SetActive(true);
+            }
+
+            private static void LockSliderInput(Slider slider)
+            {
+                if (slider == null) return;
+
+                slider.interactable = false;
+                var nav = slider.navigation;
+                nav.mode = Navigation.Mode.None;
+                slider.navigation = nav;
             }
 
             public void AnimateHP(float newPercent)

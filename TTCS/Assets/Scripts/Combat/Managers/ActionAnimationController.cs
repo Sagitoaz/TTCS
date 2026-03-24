@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TTCS.Core.Data;
 using TTCS.Core.Events;
 using TTCS.Visual;
 
@@ -127,6 +128,10 @@ namespace TTCS.Combat.Managers
                 }
             }
 
+            var skill = DataManager.Instance?.LoadSkill(e.SkillId);
+            string skillType = skill?.type ?? "attack";
+            bool isSupportSkill = skillType == "heal" || skillType == "buff";
+
             // Nếu kẻ tấn công là enemy → hiện telegraph trước
             if (_enemyViews.TryGetValue(e.CasterId, out var enemyView))
             {
@@ -134,7 +139,10 @@ namespace TTCS.Combat.Managers
                 // Ở đây chỉ cần play attack animation
             }
 
-            StartCoroutine(PlayAttackSequence(attackerView, targetViews));
+            if (isSupportSkill)
+                StartCoroutine(PlaySupportSequence(attackerView, targetViews));
+            else
+                StartCoroutine(PlayAttackSequence(attackerView, targetViews));
         }
 
         private void OnDamageTaken(DamageTakenEvent e)
@@ -219,6 +227,47 @@ namespace TTCS.Combat.Managers
             // Cleanup event listener
             if (attacker.Animator != null)
                 attacker.Animator.OnAttackHitFrame -= OnHitFrame;
+        }
+
+        /// <summary>
+        /// Support skills (buff/heal): không phát hurt đỏ, thay bằng flash xanh để dễ phân biệt.
+        /// </summary>
+        private IEnumerator PlaySupportSequence(CharacterView caster, List<CharacterView> targets)
+        {
+            bool hitFrameReceived = false;
+
+            void OnHitFrame() => hitFrameReceived = true;
+
+            if (caster.Animator != null)
+                caster.Animator.OnAttackHitFrame += OnHitFrame;
+
+            caster.Animator?.PlayAttack();
+
+            const float timeout = 1.2f;
+            float elapsed = 0f;
+            while (!hitFrameReceived && elapsed < timeout)
+            {
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            var supportColor = new Color(0.35f, 1f, 0.45f, 1f);
+            foreach (var target in targets)
+            {
+                if (target == null) continue;
+                target.SetAllPartsColor(supportColor);
+            }
+
+            yield return new WaitForSeconds(0.18f);
+
+            foreach (var target in targets)
+            {
+                if (target == null) continue;
+                target.ResetPartsColor();
+            }
+
+            if (caster.Animator != null)
+                caster.Animator.OnAttackHitFrame -= OnHitFrame;
         }
 
         // ─── Helpers ──────────────────────────────────────────────────────

@@ -71,6 +71,9 @@ namespace TTCS.UI.Combat
         /// <summary>Cache danh sách enemy để re-initialize SkillButtonPanel khi đổi lượt player.</summary>
         private List<CombatEntity> _enemyList = new();
 
+        /// <summary>Cache danh sách player ally để target single_ally chính xác.</summary>
+        private List<CombatEntity> _allyList = new();
+
         // ──────────────────────────────────────────────────────────────────
         #region Initialization
 
@@ -100,6 +103,7 @@ namespace TTCS.UI.Combat
 
             // Cache enemy list để dùng khi re-init skill panel
             _enemyList = enemyTeam ?? new List<CombatEntity>();
+            _allyList = new List<CombatEntity>(playerTeam ?? new List<CombatEntity>());
 
             // SkillButtonPanel — khởi tạo cho player đầu tiên còn sống
             var firstPlayer = playerTeam.Find(p => p != null && !p.IsDead);
@@ -109,7 +113,8 @@ namespace TTCS.UI.Combat
                 _skillButtonPanel?.Initialize(
                     firstPlayer.ID,
                     character?.SkillIds ?? new List<string>(),
-                    _enemyList
+                    _enemyList,
+                    _allyList
                 );
             }
 
@@ -185,7 +190,7 @@ namespace TTCS.UI.Combat
                 return;
             }
 
-            _skillButtonPanel?.Initialize(character.ID, character.SkillIds, _enemyList);
+            _skillButtonPanel?.Initialize(character.ID, character.SkillIds, _enemyList, _allyList);
             _skillButtonPanel?.ShowForTurn();
         }
 
