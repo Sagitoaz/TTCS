@@ -143,7 +143,7 @@ namespace TTCS.Visual
             _animator.SetTrigger(HashAttack);
 
             // Fallback timer: fire hit frame khi lunge xong (nếu chưa có Animation Event)
-            StartCoroutine(HitFrameFallback(_lungeSpeed + 0.03f));
+            
         }
 
         /// <summary>
@@ -183,7 +183,7 @@ namespace TTCS.Visual
                 });
 
             
-            StartCoroutine(HitFrameFallback(lungeDuration + 0.03f));
+            
         }
 
         private IEnumerator ReturnAfterAttackFinished(Transform motionRoot, Vector3 startWorldPos)
@@ -267,7 +267,7 @@ namespace TTCS.Visual
                 });
 
             _animator.SetTrigger(HashAttack);
-            StartCoroutine(HitFrameFallback(_lungeSpeed + 0.03f));
+            
         }
 
         /// <summary>
