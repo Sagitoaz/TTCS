@@ -1,0 +1,1001 @@
+fileFormatVersion: 2
+guid: 22fc75bf915ab594781c7df64088800b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2163619656197983295
+    second: v2.2_45_valentine01_0
+  - first:
+      213: 8902422727580890021
+    second: v2.2_45_valentine01_1
+  - first:
+      213: -5382513630686895237
+    second: v2.2_45_valentine01_2
+  - first:
+      213: -4286153121602473970
+    second: v2.2_45_valentine01_3
+  - first:
+      213: 1128306239332413873
+    second: v2.2_45_valentine01_4
+  - first:
+      213: -5595566080789834846
+    second: v2.2_45_valentine01_5
+  - first:
+      213: 6548329942615418007
+    second: v2.2_45_valentine01_6
+  - first:
+      213: 5848469195795895429
+    second: v2.2_45_valentine01_7
+  - first:
+      213: 3305034572360143529
+    second: v2.2_45_valentine01_8
+  - first:
+      213: 3041360471015409536
+    second: v2.2_45_valentine01_9
+  - first:
+      213: -2749196530950385383
+    second: v2.2_45_valentine01_10
+  - first:
+      213: 254810679886629274
+    second: v2.2_45_valentine01_11
+  - first:
+      213: 5232351851591679168
+    second: v2.2_45_valentine01_12
+  - first:
+      213: 3171047191397544142
+    second: v2.2_45_valentine01_13
+  - first:
+      213: -2361134517021355630
+    second: v2.2_45_valentine01_14
+  - first:
+      213: 3573414620094725252
+    second: v2.2_45_valentine01_15
+  - first:
+      213: 4491894619239621630
+    second: v2.2_45_valentine01_16
+  - first:
+      213: 6245750611338494996
+    second: v2.2_45_valentine01_17
+  - first:
+      213: 379033568565767302
+    second: v2.2_45_valentine01_18
+  - first:
+      213: -2600436231064528736
+    second: v2.2_45_valentine01_19
+  - first:
+      213: -8237819353887778220
+    second: v2.2_45_valentine01_20
+  - first:
+      213: 4143833294010888628
+    second: v2.2_45_valentine01_21
+  - first:
+      213: 6653742786277595298
+    second: v2.2_45_valentine01_22
+  - first:
+      213: -7079560679887670260
+    second: v2.2_45_valentine01_23
+  - first:
+      213: -2726242086399264737
+    second: v2.2_45_valentine01_24
+  - first:
+      213: 5505331373968868734
+    second: v2.2_45_valentine01_25
+  - first:
+      213: -20766371512319572
+    second: v2.2_45_valentine01_26
+  - first:
+      213: 5575319461489052994
+    second: v2.2_45_valentine01_27
+  - first:
+      213: 4474965772831813074
+    second: v2.2_45_valentine01_28
+  - first:
+      213: -7416679121784636098
+    second: v2.2_45_valentine01_29
+  - first:
+      213: 7380882243234613184
+    second: v2.2_45_valentine01_30
+  - first:
+      213: -6457383571892758345
+    second: v2.2_45_valentine01_31
+  - first:
+      213: -2359306963655122655
+    second: v2.2_45_valentine01_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 132
+        width: 99
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c33443d26749f1e0800000000000000
+      internalID: -2163619656197983295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_1
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 133
+        width: 100
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a3b2ddbd42cb8b70800000000000000
+      internalID: 8902422727580890021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_2
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 224
+        width: 66
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b73a534ee587d45b0800000000000000
+      internalID: -5382513630686895237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_3
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 194
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e00f3f5e1768484c0800000000000000
+      internalID: -4286153121602473970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_4
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 92
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b1f341fb8c88af00800000000000000
+      internalID: 1128306239332413873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_5
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 207
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a31c4dcb4e8852b0800000000000000
+      internalID: -5595566080789834846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_6
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 212
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79465a5636750ea50800000000000000
+      internalID: 6548329942615418007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_7
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 207
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5849a3f3fbfe92150800000000000000
+      internalID: 5848469195795895429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_8
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 206
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a259e7ce67dddd20800000000000000
+      internalID: 3305034572360143529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_9
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 193
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 087c9cc0c35153a20800000000000000
+      internalID: 3041360471015409536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_10
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 175
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91157fa2254e8d9d0800000000000000
+      internalID: -2749196530950385383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_11
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 171
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a994e9b96f4498300800000000000000
+      internalID: 254810679886629274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_12
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 172
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ccbafd694c0d9840800000000000000
+      internalID: 5232351851591679168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_13
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 130
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec03041ae92d10c20800000000000000
+      internalID: 3171047191397544142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_14
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 159
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2915706aaa09b3fd0800000000000000
+      internalID: -2361134517021355630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_15
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 164
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48cfee90aa1579130800000000000000
+      internalID: 3573414620094725252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_16
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 158
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef3244c6b5a665e30800000000000000
+      internalID: 4491894619239621630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_17
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 161
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4148280f61d5da650800000000000000
+      internalID: 6245750611338494996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_18
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 140
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68caf4cb509924500800000000000000
+      internalID: 379033568565767302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_19
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 150
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a8d75a860569ebd0800000000000000
+      internalID: -2600436231064528736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_20
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 152
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45a5ea781f26dad80800000000000000
+      internalID: -8237819353887778220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_21
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 148
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b1b4f90d6ad18930800000000000000
+      internalID: 4143833294010888628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_22
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 66
+        width: 66
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a8d4e2afc7d65c50800000000000000
+      internalID: 6653742786277595298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_23
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 9
+        width: 111
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c04f87d121950cd90800000000000000
+      internalID: -7079560679887670260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_24
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 129
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f18b37444417a2ad0800000000000000
+      internalID: -2726242086399264737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_25
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 77
+        width: 44
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e754a3457bdd66c40800000000000000
+      internalID: 5505331373968868734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_26
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 98
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca10cba581936bff0800000000000000
+      internalID: -20766371512319572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_27
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 96
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24d806bc2838f5d40800000000000000
+      internalID: 5575319461489052994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_28
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 96
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ddeba739a54a1e30800000000000000
+      internalID: 4474965772831813074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3d78fc42a9a21990800000000000000
+      internalID: -7416679121784636098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_30
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 0
+        width: 50
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c7ccfc6b492e6660800000000000000
+      internalID: 7380882243234613184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_31
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 0
+        width: 100
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b893e2aad3c266a0800000000000000
+      internalID: -6457383571892758345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.2_45_valentine01_32
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 6
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1212b3311de024fd0800000000000000
+      internalID: -2359306963655122655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v2.2_45_valentine01_0: -2163619656197983295
+      v2.2_45_valentine01_1: 8902422727580890021
+      v2.2_45_valentine01_10: -2749196530950385383
+      v2.2_45_valentine01_11: 254810679886629274
+      v2.2_45_valentine01_12: 5232351851591679168
+      v2.2_45_valentine01_13: 3171047191397544142
+      v2.2_45_valentine01_14: -2361134517021355630
+      v2.2_45_valentine01_15: 3573414620094725252
+      v2.2_45_valentine01_16: 4491894619239621630
+      v2.2_45_valentine01_17: 6245750611338494996
+      v2.2_45_valentine01_18: 379033568565767302
+      v2.2_45_valentine01_19: -2600436231064528736
+      v2.2_45_valentine01_2: -5382513630686895237
+      v2.2_45_valentine01_20: -8237819353887778220
+      v2.2_45_valentine01_21: 4143833294010888628
+      v2.2_45_valentine01_22: 6653742786277595298
+      v2.2_45_valentine01_23: -7079560679887670260
+      v2.2_45_valentine01_24: -2726242086399264737
+      v2.2_45_valentine01_25: 5505331373968868734
+      v2.2_45_valentine01_26: -20766371512319572
+      v2.2_45_valentine01_27: 5575319461489052994
+      v2.2_45_valentine01_28: 4474965772831813074
+      v2.2_45_valentine01_29: -7416679121784636098
+      v2.2_45_valentine01_3: -4286153121602473970
+      v2.2_45_valentine01_30: 7380882243234613184
+      v2.2_45_valentine01_31: -6457383571892758345
+      v2.2_45_valentine01_32: -2359306963655122655
+      v2.2_45_valentine01_4: 1128306239332413873
+      v2.2_45_valentine01_5: -5595566080789834846
+      v2.2_45_valentine01_6: 6548329942615418007
+      v2.2_45_valentine01_7: 5848469195795895429
+      v2.2_45_valentine01_8: 3305034572360143529
+      v2.2_45_valentine01_9: 3041360471015409536
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

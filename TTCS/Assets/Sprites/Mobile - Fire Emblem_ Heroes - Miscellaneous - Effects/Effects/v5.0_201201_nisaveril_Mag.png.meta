@@ -1,0 +1,1391 @@
+fileFormatVersion: 2
+guid: af8c61c0362a73c4d91ba040202d5e99
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2389354814227238868
+    second: v5.0_201201_nisaveril_Mag_0
+  - first:
+      213: -3412086803498022121
+    second: v5.0_201201_nisaveril_Mag_1
+  - first:
+      213: -1176586033693085406
+    second: v5.0_201201_nisaveril_Mag_2
+  - first:
+      213: -3063107237352530385
+    second: v5.0_201201_nisaveril_Mag_3
+  - first:
+      213: 8963572201551638714
+    second: v5.0_201201_nisaveril_Mag_4
+  - first:
+      213: -6404029699178630862
+    second: v5.0_201201_nisaveril_Mag_5
+  - first:
+      213: -5198338736088975913
+    second: v5.0_201201_nisaveril_Mag_6
+  - first:
+      213: 5442430133122669925
+    second: v5.0_201201_nisaveril_Mag_7
+  - first:
+      213: 2558454377484126585
+    second: v5.0_201201_nisaveril_Mag_8
+  - first:
+      213: 5620245405963139084
+    second: v5.0_201201_nisaveril_Mag_9
+  - first:
+      213: -572803680299161963
+    second: v5.0_201201_nisaveril_Mag_10
+  - first:
+      213: 7364061512297918092
+    second: v5.0_201201_nisaveril_Mag_11
+  - first:
+      213: -1183998181190625325
+    second: v5.0_201201_nisaveril_Mag_12
+  - first:
+      213: -2597623495935405230
+    second: v5.0_201201_nisaveril_Mag_13
+  - first:
+      213: 7728122325278910549
+    second: v5.0_201201_nisaveril_Mag_14
+  - first:
+      213: 503035105213781221
+    second: v5.0_201201_nisaveril_Mag_15
+  - first:
+      213: 4443478200834349629
+    second: v5.0_201201_nisaveril_Mag_16
+  - first:
+      213: 950140129185854284
+    second: v5.0_201201_nisaveril_Mag_17
+  - first:
+      213: -204932416284609498
+    second: v5.0_201201_nisaveril_Mag_18
+  - first:
+      213: -6139186250144413416
+    second: v5.0_201201_nisaveril_Mag_19
+  - first:
+      213: 6062816073948282717
+    second: v5.0_201201_nisaveril_Mag_20
+  - first:
+      213: -541591196674532967
+    second: v5.0_201201_nisaveril_Mag_21
+  - first:
+      213: 4552190146398907829
+    second: v5.0_201201_nisaveril_Mag_22
+  - first:
+      213: 1934695557548506320
+    second: v5.0_201201_nisaveril_Mag_23
+  - first:
+      213: -6720984223429880349
+    second: v5.0_201201_nisaveril_Mag_24
+  - first:
+      213: -1391333317300360490
+    second: v5.0_201201_nisaveril_Mag_25
+  - first:
+      213: 8759745026582011119
+    second: v5.0_201201_nisaveril_Mag_26
+  - first:
+      213: -841018762939753026
+    second: v5.0_201201_nisaveril_Mag_27
+  - first:
+      213: 7653600195102446899
+    second: v5.0_201201_nisaveril_Mag_28
+  - first:
+      213: -2569615910367537960
+    second: v5.0_201201_nisaveril_Mag_29
+  - first:
+      213: -2613187503810798705
+    second: v5.0_201201_nisaveril_Mag_30
+  - first:
+      213: -6092384550384705401
+    second: v5.0_201201_nisaveril_Mag_31
+  - first:
+      213: 1570953051194939797
+    second: v5.0_201201_nisaveril_Mag_32
+  - first:
+      213: 2352149712670313661
+    second: v5.0_201201_nisaveril_Mag_33
+  - first:
+      213: -7072421666523641466
+    second: v5.0_201201_nisaveril_Mag_34
+  - first:
+      213: 7258923297326256923
+    second: v5.0_201201_nisaveril_Mag_35
+  - first:
+      213: -7034797972881536361
+    second: v5.0_201201_nisaveril_Mag_36
+  - first:
+      213: -2031488198401876146
+    second: v5.0_201201_nisaveril_Mag_37
+  - first:
+      213: 2935364294759310948
+    second: v5.0_201201_nisaveril_Mag_38
+  - first:
+      213: 4491840311724653428
+    second: v5.0_201201_nisaveril_Mag_39
+  - first:
+      213: 3523823876500241283
+    second: v5.0_201201_nisaveril_Mag_40
+  - first:
+      213: 7370981294220738632
+    second: v5.0_201201_nisaveril_Mag_41
+  - first:
+      213: 5564362776908061061
+    second: v5.0_201201_nisaveril_Mag_42
+  - first:
+      213: 440609458143624879
+    second: v5.0_201201_nisaveril_Mag_43
+  - first:
+      213: 5967136549309934523
+    second: v5.0_201201_nisaveril_Mag_44
+  - first:
+      213: 2002890601006070233
+    second: v5.0_201201_nisaveril_Mag_45
+  - first:
+      213: 5957413751305547700
+    second: v5.0_201201_nisaveril_Mag_46
+  - first:
+      213: 937700584984295353
+    second: v5.0_201201_nisaveril_Mag_47
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 387
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c20bd9fa47e47ded0800000000000000
+      internalID: -2389354814227238868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 385
+        width: 30
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71bc3b65125d5a0d0800000000000000
+      internalID: -3412086803498022121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_2
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 448
+        width: 61
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 221b9067c3debafe0800000000000000
+      internalID: -1176586033693085406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_3
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 464
+        width: 38
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2e9ca85238ad75d0800000000000000
+      internalID: -3063107237352530385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_4
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 460
+        width: 22
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab03d002d61056c70800000000000000
+      internalID: 8963572201551638714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_5
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 464
+        width: 38
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 231f7692be05027a0800000000000000
+      internalID: -6404029699178630862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_6
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 448
+        width: 61
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d57345267acbd7b0800000000000000
+      internalID: -5198338736088975913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_7
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 324
+        width: 207
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56d98afee55678b40800000000000000
+      internalID: 5442430133122669925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_8
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 408
+        width: 61
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9790cf773b4718320800000000000000
+      internalID: 2558454377484126585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_9
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 384
+        width: 38
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0834fc5b6f1ffd40800000000000000
+      internalID: 5620245405963139084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_10
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 383
+        width: 22
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5966bbd661efc08f0800000000000000
+      internalID: -572803680299161963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_11
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 408
+        width: 61
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8ea4a0dde6623660800000000000000
+      internalID: 7364061512297918092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_12
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 384
+        width: 38
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d79c636de7919fe0800000000000000
+      internalID: -1183998181190625325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 322
+        width: 64
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 253df88713363fbd0800000000000000
+      internalID: -2597623495935405230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_14
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 196
+        width: 35
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 558e30b3f4ecf3b60800000000000000
+      internalID: 7728122325278910549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_15
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 285
+        width: 28
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e491d353c32bf600800000000000000
+      internalID: 503035105213781221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_16
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 330
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3a5cef81e76aad30800000000000000
+      internalID: 4443478200834349629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_17
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 303
+        width: 59
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4377f6d9639f2d00800000000000000
+      internalID: 950140129185854284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_18
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 261
+        width: 62
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 624b46c9d0fe72df0800000000000000
+      internalID: -204932416284609498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_19
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 288
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8190e2ed1aa3dcaa0800000000000000
+      internalID: -6139186250144413416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_20
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 271
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5f373ad813732450800000000000000
+      internalID: 6062816073948282717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_21
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 265
+        width: 50
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9995cb41da1eb78f0800000000000000
+      internalID: -541591196674532967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_22
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 263
+        width: 119
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bde322d1d0ac2f30800000000000000
+      internalID: 4552190146398907829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_23
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 192
+        width: 45
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dc7430fb5b69da10800000000000000
+      internalID: 1934695557548506320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_24
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 207
+        width: 25
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e5157545744ab2a0800000000000000
+      internalID: -6720984223429880349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_25
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 211
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6da652238bdf0bce0800000000000000
+      internalID: -1391333317300360490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_26
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 202
+        width: 76
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fec5a68c0bdd09970800000000000000
+      internalID: 8759745026582011119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_27
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebd998914e91454f0800000000000000
+      internalID: -841018762939753026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_28
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 192
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33511f1b3dc073a60800000000000000
+      internalID: 7653600195102446899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_29
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 197
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d4d955a1f3e65cd0800000000000000
+      internalID: -2569615910367537960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_30
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 191
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8b1edf7fc71cbbd0800000000000000
+      internalID: -2613187503810798705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_31
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 194
+        width: 85
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 780ed3fb780837ba0800000000000000
+      internalID: -6092384550384705401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_32
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 134
+        width: 203
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5995a4f0a752dc510800000000000000
+      internalID: 1570953051194939797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_33
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 11
+        width: 59
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbc404293b384a020800000000000000
+      internalID: 2352149712670313661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_34
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 10
+        width: 58
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 689051137f5b9dd90800000000000000
+      internalID: -7072421666523641466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_35
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 5
+        width: 55
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1350fc8740ecb460800000000000000
+      internalID: 7258923297326256923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_36
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 122
+        width: 22
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79a02cff3806f5e90800000000000000
+      internalID: -7034797972881536361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_37
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 126
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4f9bd03f34bec3e0800000000000000
+      internalID: -2031488198401876146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_38
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 7
+        width: 54
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4666e7b16428cb820800000000000000
+      internalID: 2935364294759310948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_39
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 14
+        width: 48
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47bb028f6f8365e30800000000000000
+      internalID: 4491840311724653428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_40
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 3
+        width: 42
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38b36d9452327e030800000000000000
+      internalID: 3523823876500241283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_41
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 101
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84083181f6cfa4660800000000000000
+      internalID: 7370981294220738632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_42
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 44
+        width: 25
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 589d20fd676983d40800000000000000
+      internalID: 5564362776908061061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_43
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 50
+        width: 22
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faef35db7fb5d1600800000000000000
+      internalID: 440609458143624879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_44
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 71
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbb6edb83178fc250800000000000000
+      internalID: 5967136549309934523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_45
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 49
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d97fecc362bbcb10800000000000000
+      internalID: 2002890601006070233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_46
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 19
+        width: 19
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bf289a3e3cfca250800000000000000
+      internalID: 5957413751305547700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Mag_47
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 23
+        width: 19
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b73aa1c6b1630d00800000000000000
+      internalID: 937700584984295353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v5.0_201201_nisaveril_Mag_0: -2389354814227238868
+      v5.0_201201_nisaveril_Mag_1: -3412086803498022121
+      v5.0_201201_nisaveril_Mag_10: -572803680299161963
+      v5.0_201201_nisaveril_Mag_11: 7364061512297918092
+      v5.0_201201_nisaveril_Mag_12: -1183998181190625325
+      v5.0_201201_nisaveril_Mag_13: -2597623495935405230
+      v5.0_201201_nisaveril_Mag_14: 7728122325278910549
+      v5.0_201201_nisaveril_Mag_15: 503035105213781221
+      v5.0_201201_nisaveril_Mag_16: 4443478200834349629
+      v5.0_201201_nisaveril_Mag_17: 950140129185854284
+      v5.0_201201_nisaveril_Mag_18: -204932416284609498
+      v5.0_201201_nisaveril_Mag_19: -6139186250144413416
+      v5.0_201201_nisaveril_Mag_2: -1176586033693085406
+      v5.0_201201_nisaveril_Mag_20: 6062816073948282717
+      v5.0_201201_nisaveril_Mag_21: -541591196674532967
+      v5.0_201201_nisaveril_Mag_22: 4552190146398907829
+      v5.0_201201_nisaveril_Mag_23: 1934695557548506320
+      v5.0_201201_nisaveril_Mag_24: -6720984223429880349
+      v5.0_201201_nisaveril_Mag_25: -1391333317300360490
+      v5.0_201201_nisaveril_Mag_26: 8759745026582011119
+      v5.0_201201_nisaveril_Mag_27: -841018762939753026
+      v5.0_201201_nisaveril_Mag_28: 7653600195102446899
+      v5.0_201201_nisaveril_Mag_29: -2569615910367537960
+      v5.0_201201_nisaveril_Mag_3: -3063107237352530385
+      v5.0_201201_nisaveril_Mag_30: -2613187503810798705
+      v5.0_201201_nisaveril_Mag_31: -6092384550384705401
+      v5.0_201201_nisaveril_Mag_32: 1570953051194939797
+      v5.0_201201_nisaveril_Mag_33: 2352149712670313661
+      v5.0_201201_nisaveril_Mag_34: -7072421666523641466
+      v5.0_201201_nisaveril_Mag_35: 7258923297326256923
+      v5.0_201201_nisaveril_Mag_36: -7034797972881536361
+      v5.0_201201_nisaveril_Mag_37: -2031488198401876146
+      v5.0_201201_nisaveril_Mag_38: 2935364294759310948
+      v5.0_201201_nisaveril_Mag_39: 4491840311724653428
+      v5.0_201201_nisaveril_Mag_4: 8963572201551638714
+      v5.0_201201_nisaveril_Mag_40: 3523823876500241283
+      v5.0_201201_nisaveril_Mag_41: 7370981294220738632
+      v5.0_201201_nisaveril_Mag_42: 5564362776908061061
+      v5.0_201201_nisaveril_Mag_43: 440609458143624879
+      v5.0_201201_nisaveril_Mag_44: 5967136549309934523
+      v5.0_201201_nisaveril_Mag_45: 2002890601006070233
+      v5.0_201201_nisaveril_Mag_46: 5957413751305547700
+      v5.0_201201_nisaveril_Mag_47: 937700584984295353
+      v5.0_201201_nisaveril_Mag_5: -6404029699178630862
+      v5.0_201201_nisaveril_Mag_6: -5198338736088975913
+      v5.0_201201_nisaveril_Mag_7: 5442430133122669925
+      v5.0_201201_nisaveril_Mag_8: 2558454377484126585
+      v5.0_201201_nisaveril_Mag_9: 5620245405963139084
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

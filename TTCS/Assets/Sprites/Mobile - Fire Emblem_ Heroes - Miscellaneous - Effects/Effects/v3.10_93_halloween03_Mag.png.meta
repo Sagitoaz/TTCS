@@ -1,0 +1,1209 @@
+fileFormatVersion: 2
+guid: bf0534e05e1e0b8479d91423d907a3f8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6625073918192700247
+    second: v3.10_93_halloween03_Mag_0
+  - first:
+      213: 5072076892431737778
+    second: v3.10_93_halloween03_Mag_1
+  - first:
+      213: 6067315625219892488
+    second: v3.10_93_halloween03_Mag_2
+  - first:
+      213: 8278734971619880797
+    second: v3.10_93_halloween03_Mag_3
+  - first:
+      213: 8090878066886679573
+    second: v3.10_93_halloween03_Mag_4
+  - first:
+      213: -2385357725827144902
+    second: v3.10_93_halloween03_Mag_5
+  - first:
+      213: 8631524801494694870
+    second: v3.10_93_halloween03_Mag_6
+  - first:
+      213: 303811829598931410
+    second: v3.10_93_halloween03_Mag_7
+  - first:
+      213: 4770736177335489028
+    second: v3.10_93_halloween03_Mag_8
+  - first:
+      213: -5155521884709840509
+    second: v3.10_93_halloween03_Mag_9
+  - first:
+      213: 2401850370902303614
+    second: v3.10_93_halloween03_Mag_10
+  - first:
+      213: -7799030834629639979
+    second: v3.10_93_halloween03_Mag_11
+  - first:
+      213: 7212994871766798148
+    second: v3.10_93_halloween03_Mag_12
+  - first:
+      213: -3795487797214106331
+    second: v3.10_93_halloween03_Mag_13
+  - first:
+      213: -2172420090227988672
+    second: v3.10_93_halloween03_Mag_14
+  - first:
+      213: -6256539665991951532
+    second: v3.10_93_halloween03_Mag_15
+  - first:
+      213: 6513281862764719812
+    second: v3.10_93_halloween03_Mag_16
+  - first:
+      213: 6370447494610697478
+    second: v3.10_93_halloween03_Mag_17
+  - first:
+      213: -1006917561406909306
+    second: v3.10_93_halloween03_Mag_18
+  - first:
+      213: 3993508091933391291
+    second: v3.10_93_halloween03_Mag_19
+  - first:
+      213: 1607712728177129109
+    second: v3.10_93_halloween03_Mag_20
+  - first:
+      213: -499650148320070244
+    second: v3.10_93_halloween03_Mag_21
+  - first:
+      213: -4662622788896091474
+    second: v3.10_93_halloween03_Mag_22
+  - first:
+      213: -6224540756959010128
+    second: v3.10_93_halloween03_Mag_23
+  - first:
+      213: -2728579266875731054
+    second: v3.10_93_halloween03_Mag_24
+  - first:
+      213: 7381298656083006242
+    second: v3.10_93_halloween03_Mag_25
+  - first:
+      213: -715305222121178871
+    second: v3.10_93_halloween03_Mag_26
+  - first:
+      213: -3624853136197194757
+    second: v3.10_93_halloween03_Mag_27
+  - first:
+      213: 2997258524573318056
+    second: v3.10_93_halloween03_Mag_28
+  - first:
+      213: -9125914995479711056
+    second: v3.10_93_halloween03_Mag_29
+  - first:
+      213: 3662658847780325103
+    second: v3.10_93_halloween03_Mag_30
+  - first:
+      213: 1452048716561112879
+    second: v3.10_93_halloween03_Mag_31
+  - first:
+      213: -8565266570931681027
+    second: v3.10_93_halloween03_Mag_32
+  - first:
+      213: 5518527183165216782
+    second: v3.10_93_halloween03_Mag_33
+  - first:
+      213: -5315777802919944552
+    second: v3.10_93_halloween03_Mag_34
+  - first:
+      213: 3840754019909666922
+    second: v3.10_93_halloween03_Mag_35
+  - first:
+      213: 606096930084984800
+    second: v3.10_93_halloween03_Mag_36
+  - first:
+      213: 2932088565331969181
+    second: v3.10_93_halloween03_Mag_37
+  - first:
+      213: -5087623113284448560
+    second: v3.10_93_halloween03_Mag_38
+  - first:
+      213: -2287934442592239631
+    second: v3.10_93_halloween03_Mag_39
+  - first:
+      213: 5311597044453856390
+    second: v3.10_93_halloween03_Mag_40
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 396
+        width: 105
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75bc490a0adf0fb50800000000000000
+      internalID: 6625073918192700247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_1
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 462
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b36cd68f03a36640800000000000000
+      internalID: 5072076892431737778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_2
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 452
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 805a8654a6f633450800000000000000
+      internalID: 6067315625219892488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_3
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 456
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5fa1051899f3e270800000000000000
+      internalID: 8278734971619880797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_4
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 391
+        width: 75
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51c97c90cb2984070800000000000000
+      internalID: 8090878066886679573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_5
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 426
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a33e6d959c185eed0800000000000000
+      internalID: -2385357725827144902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_6
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 385
+        width: 30
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dbb01f331659c770800000000000000
+      internalID: 8631524801494694870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_7
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 385
+        width: 62
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d94ec5df3b573400800000000000000
+      internalID: 303811829598931410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_8
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 418
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 402df2fd64f053240800000000000000
+      internalID: 4770736177335489028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_9
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 439
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3891e163928e378b0800000000000000
+      internalID: -5155521884709840509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_10
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 383
+        width: 62
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e73a541df26155120800000000000000
+      internalID: 2401850370902303614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_11
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 292
+        width: 61
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d00595e6c644c390800000000000000
+      internalID: -7799030834629639979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_12
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 320
+        width: 103
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44fcf5aae94b91460800000000000000
+      internalID: 7212994871766798148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_13
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 324
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52d29b135f7b35bc0800000000000000
+      internalID: -3795487797214106331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_14
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 324
+        width: 34
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 047e90b10730ad1e0800000000000000
+      internalID: -2172420090227988672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_15
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 324
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45b9865825e4c29a0800000000000000
+      internalID: -6256539665991951532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_16
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 201
+        width: 111
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cee5186853d36a50800000000000000
+      internalID: 6513281862764719812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_17
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 302
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60d3c888e30686850800000000000000
+      internalID: 6370447494610697478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_18
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 293
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6841d3210d5b602f0800000000000000
+      internalID: -1006917561406909306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_19
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 302
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb9765b737acb6730800000000000000
+      internalID: 3993508091933391291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_20
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 227
+        width: 40
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5963fdf453ebf4610800000000000000
+      internalID: 1607712728177129109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_21
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 226
+        width: 45
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c95396d56d2e019f0800000000000000
+      internalID: -499650148320070244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_22
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 227
+        width: 48
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea21532f6490b4fb0800000000000000
+      internalID: -4662622788896091474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_23
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 197
+        width: 61
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b2648b192dfd99a0800000000000000
+      internalID: -6224540756959010128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_24
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 270
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29350680d93222ad0800000000000000
+      internalID: -2728579266875731054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_25
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 263
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22355e81504af6660800000000000000
+      internalID: 7381298656083006242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_26
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 270
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9093c79b0b9b216f0800000000000000
+      internalID: -715305222121178871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_27
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 238
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfb6106274fe1bdc0800000000000000
+      internalID: -3624853136197194757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_28
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 232
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ab34397fb6689920800000000000000
+      internalID: 2997258524573318056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_29
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 238
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b2750ca9ac3a5180800000000000000
+      internalID: -9125914995479711056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_30
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 195
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe6436301d064d230800000000000000
+      internalID: 3662658847780325103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_31
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 99
+        width: 72
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2fdf2b4d96b62410800000000000000
+      internalID: 1452048716561112879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_32
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 99
+        width: 72
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df8c6193f6f022980800000000000000
+      internalID: -8565266570931681027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_33
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 99
+        width: 68
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0856e31c3fb59c40800000000000000
+      internalID: 5518527183165216782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_34
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 89
+        width: 61
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89edc00a0409a36b0800000000000000
+      internalID: -5315777802919944552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_35
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 95
+        width: 60
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a688e529e691d4530800000000000000
+      internalID: 3840754019909666922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_36
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 98
+        width: 26
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e79b2952f9496800800000000000000
+      internalID: 606096930084984800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_37
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 11
+        width: 79
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d94c89ae30fd0b820800000000000000
+      internalID: 2932088565331969181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_38
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 60
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0de0d9ddbb12569b0800000000000000
+      internalID: -5087623113284448560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_39
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 0
+        width: 125
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff78e71fbf9f30e0800000000000000
+      internalID: -2287934442592239631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_93_halloween03_Mag_40
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 0
+        width: 154
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 684dfa0be5596b940800000000000000
+      internalID: 5311597044453856390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v3.10_93_halloween03_Mag_0: 6625073918192700247
+      v3.10_93_halloween03_Mag_1: 5072076892431737778
+      v3.10_93_halloween03_Mag_10: 2401850370902303614
+      v3.10_93_halloween03_Mag_11: -7799030834629639979
+      v3.10_93_halloween03_Mag_12: 7212994871766798148
+      v3.10_93_halloween03_Mag_13: -3795487797214106331
+      v3.10_93_halloween03_Mag_14: -2172420090227988672
+      v3.10_93_halloween03_Mag_15: -6256539665991951532
+      v3.10_93_halloween03_Mag_16: 6513281862764719812
+      v3.10_93_halloween03_Mag_17: 6370447494610697478
+      v3.10_93_halloween03_Mag_18: -1006917561406909306
+      v3.10_93_halloween03_Mag_19: 3993508091933391291
+      v3.10_93_halloween03_Mag_2: 6067315625219892488
+      v3.10_93_halloween03_Mag_20: 1607712728177129109
+      v3.10_93_halloween03_Mag_21: -499650148320070244
+      v3.10_93_halloween03_Mag_22: -4662622788896091474
+      v3.10_93_halloween03_Mag_23: -6224540756959010128
+      v3.10_93_halloween03_Mag_24: -2728579266875731054
+      v3.10_93_halloween03_Mag_25: 7381298656083006242
+      v3.10_93_halloween03_Mag_26: -715305222121178871
+      v3.10_93_halloween03_Mag_27: -3624853136197194757
+      v3.10_93_halloween03_Mag_28: 2997258524573318056
+      v3.10_93_halloween03_Mag_29: -9125914995479711056
+      v3.10_93_halloween03_Mag_3: 8278734971619880797
+      v3.10_93_halloween03_Mag_30: 3662658847780325103
+      v3.10_93_halloween03_Mag_31: 1452048716561112879
+      v3.10_93_halloween03_Mag_32: -8565266570931681027
+      v3.10_93_halloween03_Mag_33: 5518527183165216782
+      v3.10_93_halloween03_Mag_34: -5315777802919944552
+      v3.10_93_halloween03_Mag_35: 3840754019909666922
+      v3.10_93_halloween03_Mag_36: 606096930084984800
+      v3.10_93_halloween03_Mag_37: 2932088565331969181
+      v3.10_93_halloween03_Mag_38: -5087623113284448560
+      v3.10_93_halloween03_Mag_39: -2287934442592239631
+      v3.10_93_halloween03_Mag_4: 8090878066886679573
+      v3.10_93_halloween03_Mag_40: 5311597044453856390
+      v3.10_93_halloween03_Mag_5: -2385357725827144902
+      v3.10_93_halloween03_Mag_6: 8631524801494694870
+      v3.10_93_halloween03_Mag_7: 303811829598931410
+      v3.10_93_halloween03_Mag_8: 4770736177335489028
+      v3.10_93_halloween03_Mag_9: -5155521884709840509
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

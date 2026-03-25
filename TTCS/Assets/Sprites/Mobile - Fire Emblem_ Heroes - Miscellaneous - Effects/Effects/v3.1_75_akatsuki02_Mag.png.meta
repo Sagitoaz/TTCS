@@ -1,15 +1,25 @@
 fileFormatVersion: 2
-guid: aa132439fedd7f64d84b48ee37a93b4d
+guid: 6f8c1ae6eff92454b91e19a909692eb1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3419220630171208360
-    second: Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms -
-      Yggdrasill (Interior)_0
+      213: 6251041207329373028
+    second: v3.1_75_akatsuki02_Mag_0
   - first:
-      213: 6806421536867478430
-    second: Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms -
-      Yggdrasill (Interior)_1
+      213: -3757821379285654413
+    second: v3.1_75_akatsuki02_Mag_1
+  - first:
+      213: 8509296710231601580
+    second: v3.1_75_akatsuki02_Mag_2
+  - first:
+      213: -5447493117804976314
+    second: v3.1_75_akatsuki02_Mag_3
+  - first:
+      213: 2441702334560670019
+    second: v3.1_75_akatsuki02_Mag_4
+  - first:
+      213: -5735278288518103895
+    second: v3.1_75_akatsuki02_Mag_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -56,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,32 +125,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -157,93 +141,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms -
-        Yggdrasill (Interior)_0
+      name: v3.1_75_akatsuki02_Mag_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 450
-        width: 1024
-        height: 450
+        y: 132
+        width: 133
+        height: 120
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 85535f1e3fc7c80d0800000000000000
-      internalID: -3419220630171208360
+      spriteID: 46b323fcbd820c650800000000000000
+      internalID: 6251041207329373028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms -
-        Yggdrasill (Interior)_1
+      name: v3.1_75_akatsuki02_Mag_1
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 450
-        width: 1024
-        height: 450
+        x: 137
+        y: 130
+        width: 117
+        height: 126
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e9bed886354457e50800000000000000
-      internalID: 6806421536867478430
+      spriteID: 3746f468d5989dbc0800000000000000
+      internalID: -3757821379285654413
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms -
-        Yggdrasill (Interior)_2
+      name: v3.1_75_akatsuki02_Mag_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1024
-        height: 450
+        x: 1
+        y: 64
+        width: 54
+        height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 802e0c201fccc8b45a7abf5eafd59bfd
-      internalID: -868049254
+      spriteID: ca131c51648171670800000000000000
+      internalID: 8509296710231601580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms -
-        Yggdrasill (Interior)_3
+      name: v3.1_75_akatsuki02_Mag_3
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 1024
-        height: 450
+        x: 61
+        y: 64
+        width: 68
+        height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ee8bc85d9112ed048a468f080bc5c011
-      internalID: 868628447
+      spriteID: 64769d41fdd9664b0800000000000000
+      internalID: -5447493117804976314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Mag_4
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 95
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3411bba265ba2e120800000000000000
+      internalID: 2441702334560670019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Mag_5
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 5
+        width: 114
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ac3edc88c23860b0800000000000000
+      internalID: -5735278288518103895
       vertices: []
       indices: 
       edges: []
@@ -252,7 +276,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bf51f2d28bb6fd3409942802826ea922
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -260,14 +284,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":2.0},"gridSpriteSize":{"x":1024.0,"y":450.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms - Yggdrasill (Interior)_0: -3419220630171208360
-      Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms - Yggdrasill (Interior)_1: 6806421536867478430
-      Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms - Yggdrasill (Interior)_2: -868049254
-      Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms - Yggdrasill (Interior)_3: 868628447
+      v3.1_75_akatsuki02_Mag_0: 6251041207329373028
+      v3.1_75_akatsuki02_Mag_1: -3757821379285654413
+      v3.1_75_akatsuki02_Mag_2: 8509296710231601580
+      v3.1_75_akatsuki02_Mag_3: -5447493117804976314
+      v3.1_75_akatsuki02_Mag_4: 2441702334560670019
+      v3.1_75_akatsuki02_Mag_5: -5735278288518103895
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

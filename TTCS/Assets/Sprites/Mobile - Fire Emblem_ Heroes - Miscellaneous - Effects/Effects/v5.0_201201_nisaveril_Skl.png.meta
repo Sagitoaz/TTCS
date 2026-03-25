@@ -1,15 +1,22 @@
 fileFormatVersion: 2
-guid: aa132439fedd7f64d84b48ee37a93b4d
+guid: bc5f28c0142ddf444b032d313cd24633
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3419220630171208360
-    second: Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms -
-      Yggdrasill (Interior)_0
+      213: -5372480415196212810
+    second: v5.0_201201_nisaveril_Skl_0
   - first:
-      213: 6806421536867478430
-    second: Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms -
-      Yggdrasill (Interior)_1
+      213: -401111146676184357
+    second: v5.0_201201_nisaveril_Skl_1
+  - first:
+      213: -3194768123841753207
+    second: v5.0_201201_nisaveril_Skl_2
+  - first:
+      213: -9089718906825524033
+    second: v5.0_201201_nisaveril_Skl_3
+  - first:
+      213: 3929110333707269065
+    second: v5.0_201201_nisaveril_Skl_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -56,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,32 +122,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -157,93 +138,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms -
-        Yggdrasill (Interior)_0
+      name: v5.0_201201_nisaveril_Skl_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 450
-        width: 1024
-        height: 450
+        y: 257
+        width: 256
+        height: 255
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 85535f1e3fc7c80d0800000000000000
-      internalID: -3419220630171208360
+      spriteID: 6b19c79e68d1175b0800000000000000
+      internalID: -5372480415196212810
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms -
-        Yggdrasill (Interior)_1
+      name: v5.0_201201_nisaveril_Skl_1
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 450
-        width: 1024
-        height: 450
+        x: 255
+        y: 0
+        width: 257
+        height: 257
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e9bed886354457e50800000000000000
-      internalID: 6806421536867478430
+      spriteID: bda9aea8987fe6af0800000000000000
+      internalID: -401111146676184357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms -
-        Yggdrasill (Interior)_2
+      name: v5.0_201201_nisaveril_Skl_2
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 256
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98fcba66157e9a3d0800000000000000
+      internalID: -3194768123841753207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Skl_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbc338a40d4dad180800000000000000
+      internalID: -9089718906825524033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.0_201201_nisaveril_Skl_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1024
-        height: 450
+        width: 33
+        height: 33
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 802e0c201fccc8b45a7abf5eafd59bfd
-      internalID: -868049254
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms -
-        Yggdrasill (Interior)_3
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 1024
-        height: 450
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee8bc85d9112ed048a468f080bc5c011
-      internalID: 868628447
+      spriteID: 9c330fbf701078630800000000000000
+      internalID: 3929110333707269065
       vertices: []
       indices: 
       edges: []
@@ -252,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bf51f2d28bb6fd3409942802826ea922
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -260,14 +259,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":2.0},"gridSpriteSize":{"x":1024.0,"y":450.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms - Yggdrasill (Interior)_0: -3419220630171208360
-      Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms - Yggdrasill (Interior)_1: 6806421536867478430
-      Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms - Yggdrasill (Interior)_2: -868049254
-      Mobile - Fire Emblem_ Heroes - Combat Backgrounds_ The Nine Realms - Yggdrasill (Interior)_3: 868628447
+      v5.0_201201_nisaveril_Skl_0: -5372480415196212810
+      v5.0_201201_nisaveril_Skl_1: -401111146676184357
+      v5.0_201201_nisaveril_Skl_2: -3194768123841753207
+      v5.0_201201_nisaveril_Skl_3: -9089718906825524033
+      v5.0_201201_nisaveril_Skl_4: 3929110333707269065
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

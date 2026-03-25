@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: 62c4cbf025e53e44886cd9062530992d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4589518746946208405
+    second: Btl_Hit04_0
+  - first:
+      213: 4798873048586041733
+    second: Btl_Hit04_1
+  - first:
+      213: -3647422087281800738
+    second: Btl_Hit04_2
+  - first:
+      213: 8505746517174156240
+    second: Btl_Hit04_3
+  - first:
+      213: 8073070353650134454
+    second: Btl_Hit04_4
+  - first:
+      213: -4894339157999430756
+    second: Btl_Hit04_5
+  - first:
+      213: 1161991390176837605
+    second: Btl_Hit04_6
+  - first:
+      213: -2509887256957174367
+    second: Btl_Hit04_7
+  - first:
+      213: -1816165847744963204
+    second: Btl_Hit04_8
+  - first:
+      213: -3952535686850413766
+    second: Btl_Hit04_9
+  - first:
+      213: 3637758486058519357
+    second: Btl_Hit04_10
+  - first:
+      213: 9115445876892258044
+    second: Btl_Hit04_11
+  - first:
+      213: -5345826717818370008
+    second: Btl_Hit04_12
+  - first:
+      213: -203969084049048673
+    second: Btl_Hit04_13
+  - first:
+      213: -5985867351546922862
+    second: Btl_Hit04_14
+  - first:
+      213: 4266142744084274616
+    second: Btl_Hit04_15
+  - first:
+      213: 7487142241781457262
+    second: Btl_Hit04_16
+  - first:
+      213: 7825807506439071662
+    second: Btl_Hit04_17
+  - first:
+      213: -4436832134241397895
+    second: Btl_Hit04_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Btl_Hit04_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 188
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6d76461401ce40c0800000000000000
+      internalID: -4589518746946208405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Hit04_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 97
+        width: 105
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 589ba27bc95099240800000000000000
+      internalID: 4798873048586041733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Hit04_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 199
+        width: 44
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed987adbfe0c16dc0800000000000000
+      internalID: -3647422087281800738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Hit04_3
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 164
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db7ea9546b7a0670800000000000000
+      internalID: 8505746517174156240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Hit04_4
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 160
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bdad04b6be490070800000000000000
+      internalID: 8073070353650134454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Hit04_5
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 162
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c93d8259770d31cb0800000000000000
+      internalID: -4894339157999430756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Hit04_6
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 110
+        width: 62
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ef7d8b4309302010800000000000000
+      internalID: 1161991390176837605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Hit04_7
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 125
+        width: 28
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1adb9c676d61b2dd0800000000000000
+      internalID: -2509887256957174367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Hit04_8
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 133
+        width: 48
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7d17ffa8ceabc6e0800000000000000
+      internalID: -1816165847744963204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Hit04_9
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 110
+        width: 71
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3bf937fbb5c529c0800000000000000
+      internalID: -3952535686850413766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Hit04_10
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 100
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3b4e24c11aeb7230800000000000000
+      internalID: 3637758486058519357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Hit04_11
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 99
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfe4675bab1908e70800000000000000
+      internalID: 9115445876892258044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Hit04_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 61
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 828c4ad6ceecfc5b0800000000000000
+      internalID: -5345826717818370008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Hit04_13
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 5
+        width: 62
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9b3810e23b5b2df0800000000000000
+      internalID: -203969084049048673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Hit04_14
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 5
+        width: 61
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 298ff66bb5dedeca0800000000000000
+      internalID: -5985867351546922862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Hit04_15
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 5
+        width: 62
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bdd0460932643b30800000000000000
+      internalID: 4266142744084274616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Hit04_16
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 13
+        width: 73
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e61a438433ca7e760800000000000000
+      internalID: 7487142241781457262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Hit04_17
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 14
+        width: 30
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea7e2e5d67ada9c60800000000000000
+      internalID: 7825807506439071662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Hit04_18
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 0
+        width: 36
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 973d0866ea43d62c0800000000000000
+      internalID: -4436832134241397895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Btl_Hit04_0: -4589518746946208405
+      Btl_Hit04_1: 4798873048586041733
+      Btl_Hit04_10: 3637758486058519357
+      Btl_Hit04_11: 9115445876892258044
+      Btl_Hit04_12: -5345826717818370008
+      Btl_Hit04_13: -203969084049048673
+      Btl_Hit04_14: -5985867351546922862
+      Btl_Hit04_15: 4266142744084274616
+      Btl_Hit04_16: 7487142241781457262
+      Btl_Hit04_17: 7825807506439071662
+      Btl_Hit04_18: -4436832134241397895
+      Btl_Hit04_2: -3647422087281800738
+      Btl_Hit04_3: 8505746517174156240
+      Btl_Hit04_4: 8073070353650134454
+      Btl_Hit04_5: -4894339157999430756
+      Btl_Hit04_6: 1161991390176837605
+      Btl_Hit04_7: -2509887256957174367
+      Btl_Hit04_8: -1816165847744963204
+      Btl_Hit04_9: -3952535686850413766
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

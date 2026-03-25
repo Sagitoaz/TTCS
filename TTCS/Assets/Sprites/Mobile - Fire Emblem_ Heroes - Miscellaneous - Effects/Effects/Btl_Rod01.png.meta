@@ -1,0 +1,767 @@
+fileFormatVersion: 2
+guid: 9cff865f54771d045aa9c4deb0762a3f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -34988116735842711
+    second: Btl_Rod01_0
+  - first:
+      213: -585992811658986104
+    second: Btl_Rod01_1
+  - first:
+      213: 4192645751747519890
+    second: Btl_Rod01_2
+  - first:
+      213: 2043516302549593306
+    second: Btl_Rod01_3
+  - first:
+      213: -8097770775870533899
+    second: Btl_Rod01_4
+  - first:
+      213: -4263409174687935200
+    second: Btl_Rod01_5
+  - first:
+      213: 6452424391132976216
+    second: Btl_Rod01_6
+  - first:
+      213: 1137708154788622513
+    second: Btl_Rod01_7
+  - first:
+      213: -7068957318197513864
+    second: Btl_Rod01_8
+  - first:
+      213: 4990069697119865971
+    second: Btl_Rod01_9
+  - first:
+      213: 1746661300562271129
+    second: Btl_Rod01_10
+  - first:
+      213: -8885323286138664206
+    second: Btl_Rod01_11
+  - first:
+      213: -6473855045408072908
+    second: Btl_Rod01_12
+  - first:
+      213: -448965720455447711
+    second: Btl_Rod01_13
+  - first:
+      213: 7899583664029519419
+    second: Btl_Rod01_14
+  - first:
+      213: 4581877485997371611
+    second: Btl_Rod01_15
+  - first:
+      213: 5863952471011975688
+    second: Btl_Rod01_16
+  - first:
+      213: 3231697322377780578
+    second: Btl_Rod01_17
+  - first:
+      213: -225327364962457730
+    second: Btl_Rod01_18
+  - first:
+      213: 7112299505498549389
+    second: Btl_Rod01_19
+  - first:
+      213: -3423969453251694890
+    second: Btl_Rod01_20
+  - first:
+      213: -1844800464586291231
+    second: Btl_Rod01_21
+  - first:
+      213: -7837238139989903154
+    second: Btl_Rod01_22
+  - first:
+      213: -3368926122819613201
+    second: Btl_Rod01_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Btl_Rod01_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 927
+        width: 173
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 966a9924e72b38ff0800000000000000
+      internalID: -34988116735842711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_1
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 931
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d322c74a22ed7f0800000000000000
+      internalID: -585992811658986104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_2
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 955
+        width: 60
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29526fdf8154f2a30800000000000000
+      internalID: 4192645751747519890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_3
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 897
+        width: 24
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adc203a00470c5c10800000000000000
+      internalID: 2043516302549593306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_4
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 927
+        width: 67
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fe82b71260fe9f80800000000000000
+      internalID: -8097770775870533899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_5
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 897
+        width: 126
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0259592b1f355d4c0800000000000000
+      internalID: -4263409174687935200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_6
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 934
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8541c8d1ccd9b8950800000000000000
+      internalID: 6452424391132976216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_7
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 834
+        width: 96
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b0bd38f983f9cf00800000000000000
+      internalID: 1137708154788622513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_8
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 833
+        width: 94
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8717074a5c406ed90800000000000000
+      internalID: -7068957318197513864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_9
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 898
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37c454573f9404540800000000000000
+      internalID: 4990069697119865971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_10
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 901
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99b9fead2336d3810800000000000000
+      internalID: 1746661300562271129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_11
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 768
+        width: 30
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fac2373c8df0b480800000000000000
+      internalID: -8885323286138664206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_12
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 768
+        width: 30
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43bd41bd22f3826a0800000000000000
+      internalID: -6473855045408072908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_13
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 764
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16bfce35e04f4c9f0800000000000000
+      internalID: -448965720455447711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_14
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 776
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3e45f71d75f0ad60800000000000000
+      internalID: 7899583664029519419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_15
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 770
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd0bb353c49169f30800000000000000
+      internalID: 4581877485997371611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_16
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 529
+        width: 224
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 802617e24b1f06150800000000000000
+      internalID: 5863952471011975688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_17
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 519
+        width: 241
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26d98e9a79b49dc20800000000000000
+      internalID: 3231697322377780578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_18
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 270
+        width: 230
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e77ec3594f97fdcf0800000000000000
+      internalID: -225327364962457730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_19
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 357
+        width: 29
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8c6d69b7b6f3b260800000000000000
+      internalID: 7112299505498549389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_20
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 377
+        width: 26
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dee4295ced9b70d0800000000000000
+      internalID: -3423969453251694890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_21
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 401
+        width: 32
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e7cbda60c3f566e0800000000000000
+      internalID: -1844800464586291231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_22
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 405
+        width: 29
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec832c56f698c3390800000000000000
+      internalID: -7837238139989903154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btl_Rod01_23
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 399
+        width: 19
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fed8dc66a8b2f31d0800000000000000
+      internalID: -3368926122819613201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Btl_Rod01_0: -34988116735842711
+      Btl_Rod01_1: -585992811658986104
+      Btl_Rod01_10: 1746661300562271129
+      Btl_Rod01_11: -8885323286138664206
+      Btl_Rod01_12: -6473855045408072908
+      Btl_Rod01_13: -448965720455447711
+      Btl_Rod01_14: 7899583664029519419
+      Btl_Rod01_15: 4581877485997371611
+      Btl_Rod01_16: 5863952471011975688
+      Btl_Rod01_17: 3231697322377780578
+      Btl_Rod01_18: -225327364962457730
+      Btl_Rod01_19: 7112299505498549389
+      Btl_Rod01_2: 4192645751747519890
+      Btl_Rod01_20: -3423969453251694890
+      Btl_Rod01_21: -1844800464586291231
+      Btl_Rod01_22: -7837238139989903154
+      Btl_Rod01_23: -3368926122819613201
+      Btl_Rod01_3: 2043516302549593306
+      Btl_Rod01_4: -8097770775870533899
+      Btl_Rod01_5: -4263409174687935200
+      Btl_Rod01_6: 6452424391132976216
+      Btl_Rod01_7: 1137708154788622513
+      Btl_Rod01_8: -7068957318197513864
+      Btl_Rod01_9: 4990069697119865971
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

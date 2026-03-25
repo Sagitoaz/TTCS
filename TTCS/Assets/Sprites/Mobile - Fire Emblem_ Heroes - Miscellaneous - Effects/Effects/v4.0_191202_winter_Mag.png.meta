@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: b9ab3bc36cb0ca945b301c12b052f78d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7733481706411030734
+    second: v4.0_191202_winter_Mag_0
+  - first:
+      213: 1842007056914674390
+    second: v4.0_191202_winter_Mag_1
+  - first:
+      213: -1069644949504690055
+    second: v4.0_191202_winter_Mag_2
+  - first:
+      213: -3783868571670443241
+    second: v4.0_191202_winter_Mag_3
+  - first:
+      213: -4950360592417840299
+    second: v4.0_191202_winter_Mag_4
+  - first:
+      213: 2362424532412831727
+    second: v4.0_191202_winter_Mag_5
+  - first:
+      213: 8200246553965381434
+    second: v4.0_191202_winter_Mag_6
+  - first:
+      213: 1460262328277141943
+    second: v4.0_191202_winter_Mag_7
+  - first:
+      213: -4952587391551764238
+    second: v4.0_191202_winter_Mag_8
+  - first:
+      213: 8362570534331625636
+    second: v4.0_191202_winter_Mag_9
+  - first:
+      213: -1734803809259556790
+    second: v4.0_191202_winter_Mag_10
+  - first:
+      213: -1309791771664791625
+    second: v4.0_191202_winter_Mag_11
+  - first:
+      213: -6402915653034834041
+    second: v4.0_191202_winter_Mag_12
+  - first:
+      213: 7995067465571438869
+    second: v4.0_191202_winter_Mag_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v4.0_191202_winter_Mag_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 149
+        width: 119
+        height: 346
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec87c9363a8d25b60800000000000000
+      internalID: 7733481706411030734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191202_winter_Mag_1
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 389
+        width: 104
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d2792da8af109910800000000000000
+      internalID: 1842007056914674390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191202_winter_Mag_2
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 416
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9787bfce59bd721f0800000000000000
+      internalID: -1069644949504690055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191202_winter_Mag_3
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 419
+        width: 92
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71b81d4f49ffc7bc0800000000000000
+      internalID: -3783868571670443241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191202_winter_Mag_4
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 330
+        width: 139
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 553a7d2f449cc4bb0800000000000000
+      internalID: -4950360592417840299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191202_winter_Mag_5
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 257
+        width: 158
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe79227789409c020800000000000000
+      internalID: 2362424532412831727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191202_winter_Mag_6
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 257
+        width: 66
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a374ab74bc02dc170800000000000000
+      internalID: 8200246553965381434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191202_winter_Mag_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 254
+        width: 61
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b908dbc9d4e34410800000000000000
+      internalID: 1460262328277141943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191202_winter_Mag_8
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 127
+        width: 87
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f88a7fd100e44bb0800000000000000
+      internalID: -4952587391551764238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191202_winter_Mag_9
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 130
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a03cfb1891dd0470800000000000000
+      internalID: 8362570534331625636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191202_winter_Mag_10
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 9
+        width: 89
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a40f61a702dbce7e0800000000000000
+      internalID: -1734803809259556790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191202_winter_Mag_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 127
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b7c030c25fa2dde0800000000000000
+      internalID: -1309791771664791625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191202_winter_Mag_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 7
+        width: 128
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 787021e33264427a0800000000000000
+      internalID: -6402915653034834041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191202_winter_Mag_13
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 2
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5111ba0108f24fe60800000000000000
+      internalID: 7995067465571438869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v4.0_191202_winter_Mag_0: 7733481706411030734
+      v4.0_191202_winter_Mag_1: 1842007056914674390
+      v4.0_191202_winter_Mag_10: -1734803809259556790
+      v4.0_191202_winter_Mag_11: -1309791771664791625
+      v4.0_191202_winter_Mag_12: -6402915653034834041
+      v4.0_191202_winter_Mag_13: 7995067465571438869
+      v4.0_191202_winter_Mag_2: -1069644949504690055
+      v4.0_191202_winter_Mag_3: -3783868571670443241
+      v4.0_191202_winter_Mag_4: -4950360592417840299
+      v4.0_191202_winter_Mag_5: 2362424532412831727
+      v4.0_191202_winter_Mag_6: 8200246553965381434
+      v4.0_191202_winter_Mag_7: 1460262328277141943
+      v4.0_191202_winter_Mag_8: -4952587391551764238
+      v4.0_191202_winter_Mag_9: 8362570534331625636
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

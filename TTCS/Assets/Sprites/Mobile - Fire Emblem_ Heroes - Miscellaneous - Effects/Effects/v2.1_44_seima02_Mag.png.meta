@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 6e9ba8e4e4e658a4ca9772481d8c6ccf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5452029530083044929
+    second: v2.1_44_seima02_Mag_0
+  - first:
+      213: 8280326013160932029
+    second: v2.1_44_seima02_Mag_1
+  - first:
+      213: -7237879742812403475
+    second: v2.1_44_seima02_Mag_2
+  - first:
+      213: 1346557375246166984
+    second: v2.1_44_seima02_Mag_3
+  - first:
+      213: 6895196233735111082
+    second: v2.1_44_seima02_Mag_4
+  - first:
+      213: 8263963362197565044
+    second: v2.1_44_seima02_Mag_5
+  - first:
+      213: -2888041302344666143
+    second: v2.1_44_seima02_Mag_6
+  - first:
+      213: -2583410678719011173
+    second: v2.1_44_seima02_Mag_7
+  - first:
+      213: 1662272531499631197
+    second: v2.1_44_seima02_Mag_8
+  - first:
+      213: 5747536160265956250
+    second: v2.1_44_seima02_Mag_9
+  - first:
+      213: 4847016834917458016
+    second: v2.1_44_seima02_Mag_10
+  - first:
+      213: -3310652270496342858
+    second: v2.1_44_seima02_Mag_11
+  - first:
+      213: 5931545442832174690
+    second: v2.1_44_seima02_Mag_12
+  - first:
+      213: -8478595182680522821
+    second: v2.1_44_seima02_Mag_13
+  - first:
+      213: 2638920556997318460
+    second: v2.1_44_seima02_Mag_14
+  - first:
+      213: -5441936381982948015
+    second: v2.1_44_seima02_Mag_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v2.1_44_seima02_Mag_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 190
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb1d57a47008654b0800000000000000
+      internalID: -5452029530083044929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.1_44_seima02_Mag_1
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 162
+        width: 93
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db242ee43a0a9e270800000000000000
+      internalID: 8280326013160932029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.1_44_seima02_Mag_2
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 0
+        width: 53
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de8cbaac8b2ed8b90800000000000000
+      internalID: -7237879742812403475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.1_44_seima02_Mag_3
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 194
+        width: 31
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cbea356cceefa210800000000000000
+      internalID: 1346557375246166984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.1_44_seima02_Mag_4
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 150
+        width: 64
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa184683178a0bf50800000000000000
+      internalID: 6895196233735111082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.1_44_seima02_Mag_5
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 190
+        width: 63
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47ee0a0c4ee7fa270800000000000000
+      internalID: 8263963362197565044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.1_44_seima02_Mag_6
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 64
+        width: 75
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e3f61dacbd9be7d0800000000000000
+      internalID: -2888041302344666143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.1_44_seima02_Mag_7
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b96a00adca1e52cd0800000000000000
+      internalID: -2583410678719011173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.1_44_seima02_Mag_8
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 127
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d52ccef6f04911710800000000000000
+      internalID: 1662272531499631197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.1_44_seima02_Mag_9
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 137
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9b6d5e9fa953cf40800000000000000
+      internalID: 5747536160265956250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.1_44_seima02_Mag_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 129
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 060e7997120144340800000000000000
+      internalID: 4847016834917458016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.1_44_seima02_Mag_11
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 5
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bc9932fc433e02d0800000000000000
+      internalID: -3310652270496342858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.1_44_seima02_Mag_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26e49115725115250800000000000000
+      internalID: 5931545442832174690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.1_44_seima02_Mag_13
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 33
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbf3df55a9af55a80800000000000000
+      internalID: -8478595182680522821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.1_44_seima02_Mag_14
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 0
+        width: 135
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c371d46d3445f9420800000000000000
+      internalID: 2638920556997318460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v2.1_44_seima02_Mag_15
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 0
+        width: 30
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 155c1a571bb5a74b0800000000000000
+      internalID: -5441936381982948015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v2.1_44_seima02_Mag_0: -5452029530083044929
+      v2.1_44_seima02_Mag_1: 8280326013160932029
+      v2.1_44_seima02_Mag_10: 4847016834917458016
+      v2.1_44_seima02_Mag_11: -3310652270496342858
+      v2.1_44_seima02_Mag_12: 5931545442832174690
+      v2.1_44_seima02_Mag_13: -8478595182680522821
+      v2.1_44_seima02_Mag_14: 2638920556997318460
+      v2.1_44_seima02_Mag_15: -5441936381982948015
+      v2.1_44_seima02_Mag_2: -7237879742812403475
+      v2.1_44_seima02_Mag_3: 1346557375246166984
+      v2.1_44_seima02_Mag_4: 6895196233735111082
+      v2.1_44_seima02_Mag_5: 8263963362197565044
+      v2.1_44_seima02_Mag_6: -2888041302344666143
+      v2.1_44_seima02_Mag_7: -2583410678719011173
+      v2.1_44_seima02_Mag_8: 1662272531499631197
+      v2.1_44_seima02_Mag_9: 5747536160265956250
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

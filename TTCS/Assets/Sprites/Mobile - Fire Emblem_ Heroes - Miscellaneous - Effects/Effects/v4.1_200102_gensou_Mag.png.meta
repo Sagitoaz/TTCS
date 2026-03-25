@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: db8dbaaf5ed19ff4ebc829b5f5bad8ff
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7207350033387082402
+    second: v4.1_200102_gensou_Mag_0
+  - first:
+      213: -7216695244790958214
+    second: v4.1_200102_gensou_Mag_1
+  - first:
+      213: 2816523176465146359
+    second: v4.1_200102_gensou_Mag_2
+  - first:
+      213: -2312973172551810426
+    second: v4.1_200102_gensou_Mag_3
+  - first:
+      213: 2056073634904193862
+    second: v4.1_200102_gensou_Mag_4
+  - first:
+      213: 853090002806616150
+    second: v4.1_200102_gensou_Mag_5
+  - first:
+      213: -2087229255646203630
+    second: v4.1_200102_gensou_Mag_6
+  - first:
+      213: 7569178442393291362
+    second: v4.1_200102_gensou_Mag_7
+  - first:
+      213: -8653780007278889690
+    second: v4.1_200102_gensou_Mag_8
+  - first:
+      213: 3492549493566439292
+    second: v4.1_200102_gensou_Mag_9
+  - first:
+      213: 796772468428646363
+    second: v4.1_200102_gensou_Mag_10
+  - first:
+      213: -970153232704865948
+    second: v4.1_200102_gensou_Mag_11
+  - first:
+      213: -6208069057671474136
+    second: v4.1_200102_gensou_Mag_12
+  - first:
+      213: 6852617107472187893
+    second: v4.1_200102_gensou_Mag_13
+  - first:
+      213: -3351354742203709447
+    second: v4.1_200102_gensou_Mag_14
+  - first:
+      213: 5602428209613573484
+    second: v4.1_200102_gensou_Mag_15
+  - first:
+      213: -692296383217656645
+    second: v4.1_200102_gensou_Mag_16
+  - first:
+      213: 4456528563750750957
+    second: v4.1_200102_gensou_Mag_17
+  - first:
+      213: -8799530486376104094
+    second: v4.1_200102_gensou_Mag_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 211
+        width: 79
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a2dfef4ba6a50460800000000000000
+      internalID: 7207350033387082402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_1
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 211
+        width: 89
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a77fbf919e529db90800000000000000
+      internalID: -7216695244790958214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_2
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 225
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f12cda08ec461720800000000000000
+      internalID: 2816523176465146359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_3
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 225
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6828a0b772ba6efd0800000000000000
+      internalID: -2312973172551810426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_4
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 193
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64bb280d314a88c10800000000000000
+      internalID: 2056073634904193862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_5
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 193
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 650b9b276d8c6db00800000000000000
+      internalID: 853090002806616150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_6
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 161
+        width: 57
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 211b764fc0ca803e0800000000000000
+      internalID: -2087229255646203630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_7
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 37
+        width: 59
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26a856ca0bf1b0960800000000000000
+      internalID: 7569178442393291362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_8
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 36
+        width: 44
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 625b3cddee897e780800000000000000
+      internalID: -8653780007278889690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_9
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 98
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7f7f749247087030800000000000000
+      internalID: 3492549493566439292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_10
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 149
+        width: 64
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd7208ba654be0b00800000000000000
+      internalID: 796772468428646363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_11
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 136
+        width: 69
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 469fde266c25982f0800000000000000
+      internalID: -970153232704865948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_12
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 116
+        width: 47
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 824d564751288d9a0800000000000000
+      internalID: -6208069057671474136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_13
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 37
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f105a8d3f2691f50800000000000000
+      internalID: 6852617107472187893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_14
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 54
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f780a24e989d71d0800000000000000
+      internalID: -3351354742203709447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_15
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 37
+        width: 41
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6d05a116c2dfbd40800000000000000
+      internalID: 5602428209613573484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbc160f7b187466f0800000000000000
+      internalID: -692296383217656645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_17
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 11
+        width: 90
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deaceb5fd15c8dd30800000000000000
+      internalID: 4456528563750750957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.1_200102_gensou_Mag_18
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 7
+        width: 111
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26ff45105a9c1e580800000000000000
+      internalID: -8799530486376104094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v4.1_200102_gensou_Mag_0: 7207350033387082402
+      v4.1_200102_gensou_Mag_1: -7216695244790958214
+      v4.1_200102_gensou_Mag_10: 796772468428646363
+      v4.1_200102_gensou_Mag_11: -970153232704865948
+      v4.1_200102_gensou_Mag_12: -6208069057671474136
+      v4.1_200102_gensou_Mag_13: 6852617107472187893
+      v4.1_200102_gensou_Mag_14: -3351354742203709447
+      v4.1_200102_gensou_Mag_15: 5602428209613573484
+      v4.1_200102_gensou_Mag_16: -692296383217656645
+      v4.1_200102_gensou_Mag_17: 4456528563750750957
+      v4.1_200102_gensou_Mag_18: -8799530486376104094
+      v4.1_200102_gensou_Mag_2: 2816523176465146359
+      v4.1_200102_gensou_Mag_3: -2312973172551810426
+      v4.1_200102_gensou_Mag_4: 2056073634904193862
+      v4.1_200102_gensou_Mag_5: 853090002806616150
+      v4.1_200102_gensou_Mag_6: -2087229255646203630
+      v4.1_200102_gensou_Mag_7: 7569178442393291362
+      v4.1_200102_gensou_Mag_8: -8653780007278889690
+      v4.1_200102_gensou_Mag_9: 3492549493566439292
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

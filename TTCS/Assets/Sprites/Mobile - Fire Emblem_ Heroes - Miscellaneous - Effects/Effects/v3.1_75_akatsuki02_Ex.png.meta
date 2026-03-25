@@ -1,0 +1,689 @@
+fileFormatVersion: 2
+guid: 9b9c835ee42f65248a13a2f4001c80b5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1926059807922319619
+    second: v3.1_75_akatsuki02_Ex_0
+  - first:
+      213: 5573997400295935173
+    second: v3.1_75_akatsuki02_Ex_1
+  - first:
+      213: 1656149321563578288
+    second: v3.1_75_akatsuki02_Ex_2
+  - first:
+      213: 8498580838046728962
+    second: v3.1_75_akatsuki02_Ex_3
+  - first:
+      213: 6352975568399547230
+    second: v3.1_75_akatsuki02_Ex_4
+  - first:
+      213: -3684446832739770105
+    second: v3.1_75_akatsuki02_Ex_5
+  - first:
+      213: -8831292450431203765
+    second: v3.1_75_akatsuki02_Ex_6
+  - first:
+      213: 2199674478383961146
+    second: v3.1_75_akatsuki02_Ex_7
+  - first:
+      213: -8591016786111233858
+    second: v3.1_75_akatsuki02_Ex_8
+  - first:
+      213: -5634571126556172915
+    second: v3.1_75_akatsuki02_Ex_9
+  - first:
+      213: 7250452503307520703
+    second: v3.1_75_akatsuki02_Ex_10
+  - first:
+      213: -8366273123179943156
+    second: v3.1_75_akatsuki02_Ex_11
+  - first:
+      213: -3074343793951780171
+    second: v3.1_75_akatsuki02_Ex_12
+  - first:
+      213: 2684357912522384303
+    second: v3.1_75_akatsuki02_Ex_13
+  - first:
+      213: -8259284773766217588
+    second: v3.1_75_akatsuki02_Ex_14
+  - first:
+      213: 2926547233193445294
+    second: v3.1_75_akatsuki02_Ex_15
+  - first:
+      213: 174699005641190914
+    second: v3.1_75_akatsuki02_Ex_16
+  - first:
+      213: 5895910950731529430
+    second: v3.1_75_akatsuki02_Ex_17
+  - first:
+      213: -762621488233440914
+    second: v3.1_75_akatsuki02_Ex_18
+  - first:
+      213: -5404794071535385667
+    second: v3.1_75_akatsuki02_Ex_19
+  - first:
+      213: 1292599485706803150
+    second: v3.1_75_akatsuki02_Ex_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 342
+        width: 512
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 301fd5bc03dbaba10800000000000000
+      internalID: 1926059807922319619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 239
+        width: 60
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cc079f6a11da5d40800000000000000
+      internalID: 5573997400295935173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_2
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 191
+        width: 96
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bf1dc68803dbf610800000000000000
+      internalID: 1656149321563578288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_3
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 266
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20387baae3601f570800000000000000
+      internalID: 8498580838046728962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_4
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 203
+        width: 184
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5bb035be9d4a2850800000000000000
+      internalID: 6352975568399547230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_5
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 234
+        width: 111
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 701abbc60273edcc0800000000000000
+      internalID: -3684446832739770105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_6
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 158
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4685787e42f07580800000000000000
+      internalID: -8831292450431203765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a349191a840d68e10800000000000000
+      internalID: 2199674478383961146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 30
+        width: 61
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb00c6c00c396c880800000000000000
+      internalID: -8591016786111233858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_9
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 40
+        width: 149
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8d52f3e96bfdc1b0800000000000000
+      internalID: -5634571126556172915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_10
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 113
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fba8c702328ce9460800000000000000
+      internalID: 7250452503307520703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_11
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 105
+        width: 140
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0b26febbe605eb80800000000000000
+      internalID: -8366273123179943156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_12
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 96
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b2d314ab9cb555d0800000000000000
+      internalID: -3074343793951780171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_13
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 100
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa3e7e19c41c04520800000000000000
+      internalID: 2684357912522384303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_14
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 28
+        width: 52
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c804fd00240216d80800000000000000
+      internalID: -8259284773766217588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_15
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 0
+        width: 60
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea7c5ecf33f2d9820800000000000000
+      internalID: 2926547233193445294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20e6bdde1d7ac6200800000000000000
+      internalID: 174699005641190914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_17
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 0
+        width: 99
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dc30b595cb72d150800000000000000
+      internalID: 5895910950731529430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_18
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 29
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6914c70ccf9a65f0800000000000000
+      internalID: -762621488233440914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_19
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 0
+        width: 139
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db30ff18d605ef4b0800000000000000
+      internalID: -5404794071535385667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.1_75_akatsuki02_Ex_20
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 19
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec7186e326c30f110800000000000000
+      internalID: 1292599485706803150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v3.1_75_akatsuki02_Ex_0: 1926059807922319619
+      v3.1_75_akatsuki02_Ex_1: 5573997400295935173
+      v3.1_75_akatsuki02_Ex_10: 7250452503307520703
+      v3.1_75_akatsuki02_Ex_11: -8366273123179943156
+      v3.1_75_akatsuki02_Ex_12: -3074343793951780171
+      v3.1_75_akatsuki02_Ex_13: 2684357912522384303
+      v3.1_75_akatsuki02_Ex_14: -8259284773766217588
+      v3.1_75_akatsuki02_Ex_15: 2926547233193445294
+      v3.1_75_akatsuki02_Ex_16: 174699005641190914
+      v3.1_75_akatsuki02_Ex_17: 5895910950731529430
+      v3.1_75_akatsuki02_Ex_18: -762621488233440914
+      v3.1_75_akatsuki02_Ex_19: -5404794071535385667
+      v3.1_75_akatsuki02_Ex_2: 1656149321563578288
+      v3.1_75_akatsuki02_Ex_20: 1292599485706803150
+      v3.1_75_akatsuki02_Ex_3: 8498580838046728962
+      v3.1_75_akatsuki02_Ex_4: 6352975568399547230
+      v3.1_75_akatsuki02_Ex_5: -3684446832739770105
+      v3.1_75_akatsuki02_Ex_6: -8831292450431203765
+      v3.1_75_akatsuki02_Ex_7: 2199674478383961146
+      v3.1_75_akatsuki02_Ex_8: -8591016786111233858
+      v3.1_75_akatsuki02_Ex_9: -5634571126556172915
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

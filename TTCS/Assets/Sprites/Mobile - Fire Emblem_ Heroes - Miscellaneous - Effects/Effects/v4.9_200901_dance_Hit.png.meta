@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 63bedefb670810e4da755065a7f4a74a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1122239151556321472
+    second: v4.9_200901_dance_Hit_0
+  - first:
+      213: -4942148674592722724
+    second: v4.9_200901_dance_Hit_1
+  - first:
+      213: 7170682320835918051
+    second: v4.9_200901_dance_Hit_2
+  - first:
+      213: -3303601024353804617
+    second: v4.9_200901_dance_Hit_3
+  - first:
+      213: 8540708077384106802
+    second: v4.9_200901_dance_Hit_4
+  - first:
+      213: -6434332766018594915
+    second: v4.9_200901_dance_Hit_5
+  - first:
+      213: 2842084757913340125
+    second: v4.9_200901_dance_Hit_6
+  - first:
+      213: 1702538515315716424
+    second: v4.9_200901_dance_Hit_7
+  - first:
+      213: 5362297311582320044
+    second: v4.9_200901_dance_Hit_8
+  - first:
+      213: -1932484125206069273
+    second: v4.9_200901_dance_Hit_9
+  - first:
+      213: 7675545403813368297
+    second: v4.9_200901_dance_Hit_10
+  - first:
+      213: 7554455721817495785
+    second: v4.9_200901_dance_Hit_11
+  - first:
+      213: 6361241901278279657
+    second: v4.9_200901_dance_Hit_12
+  - first:
+      213: 6754621920898713649
+    second: v4.9_200901_dance_Hit_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Hit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 191
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c0ec8dff8ef29f00800000000000000
+      internalID: 1122239151556321472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Hit_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 194
+        width: 66
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd0bbbf07f5f96bb0800000000000000
+      internalID: -4942148674592722724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Hit_2
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 194
+        width: 38
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e839923491638360800000000000000
+      internalID: 7170682320835918051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Hit_3
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 195
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7be56cf1f504722d0800000000000000
+      internalID: -3303601024353804617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Hit_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 129
+        width: 64
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2330acaeeb0b68670800000000000000
+      internalID: 8540708077384106802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Hit_5
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 134
+        width: 66
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d971eca9078a4b6a0800000000000000
+      internalID: -6434332766018594915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Hit_6
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 129
+        width: 31
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd80af0870d117720800000000000000
+      internalID: 2842084757913340125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Hit_7
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 130
+        width: 27
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84170dd52c1a0a710800000000000000
+      internalID: 1702538515315716424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Hit_8
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 74
+        width: 62
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca575e48ef4ba6a40800000000000000
+      internalID: 5362297311582320044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Hit_9
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 66
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7efb2074def6e25e0800000000000000
+      internalID: -1932484125206069273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Hit_10
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 68
+        width: 26
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e19da3c0e3058a60800000000000000
+      internalID: 7675545403813368297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Hit_11
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 13
+        width: 56
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e8595a2471d6d860800000000000000
+      internalID: 7554455721817495785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Hit_12
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1
+        width: 39
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e7b5005ecba74850800000000000000
+      internalID: 6361241901278279657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Hit_13
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 4
+        width: 37
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1380c3b79dc3dbd50800000000000000
+      internalID: 6754621920898713649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v4.9_200901_dance_Hit_0: 1122239151556321472
+      v4.9_200901_dance_Hit_1: -4942148674592722724
+      v4.9_200901_dance_Hit_10: 7675545403813368297
+      v4.9_200901_dance_Hit_11: 7554455721817495785
+      v4.9_200901_dance_Hit_12: 6361241901278279657
+      v4.9_200901_dance_Hit_13: 6754621920898713649
+      v4.9_200901_dance_Hit_2: 7170682320835918051
+      v4.9_200901_dance_Hit_3: -3303601024353804617
+      v4.9_200901_dance_Hit_4: 8540708077384106802
+      v4.9_200901_dance_Hit_5: -6434332766018594915
+      v4.9_200901_dance_Hit_6: 2842084757913340125
+      v4.9_200901_dance_Hit_7: 1702538515315716424
+      v4.9_200901_dance_Hit_8: 5362297311582320044
+      v4.9_200901_dance_Hit_9: -1932484125206069273
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

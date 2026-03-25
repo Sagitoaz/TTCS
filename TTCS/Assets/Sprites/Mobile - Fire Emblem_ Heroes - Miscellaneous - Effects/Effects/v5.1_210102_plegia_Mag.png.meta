@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: a35360feb7163f443904b14fdeeb2131
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1908443555854292533
+    second: v5.1_210102_plegia_Mag_0
+  - first:
+      213: 2416777446221642410
+    second: v5.1_210102_plegia_Mag_1
+  - first:
+      213: 8211379759885018616
+    second: v5.1_210102_plegia_Mag_2
+  - first:
+      213: -5699434036541053262
+    second: v5.1_210102_plegia_Mag_3
+  - first:
+      213: 8630455178048232244
+    second: v5.1_210102_plegia_Mag_4
+  - first:
+      213: -6689772574724461785
+    second: v5.1_210102_plegia_Mag_5
+  - first:
+      213: -916531506646429651
+    second: v5.1_210102_plegia_Mag_6
+  - first:
+      213: 6739331197843731972
+    second: v5.1_210102_plegia_Mag_7
+  - first:
+      213: 832674809504382951
+    second: v5.1_210102_plegia_Mag_8
+  - first:
+      213: 2500825862162295821
+    second: v5.1_210102_plegia_Mag_9
+  - first:
+      213: -842554531057049487
+    second: v5.1_210102_plegia_Mag_10
+  - first:
+      213: 7974769869154427464
+    second: v5.1_210102_plegia_Mag_11
+  - first:
+      213: 8294411151372041928
+    second: v5.1_210102_plegia_Mag_12
+  - first:
+      213: 1374983985954144709
+    second: v5.1_210102_plegia_Mag_13
+  - first:
+      213: -4976207610552731275
+    second: v5.1_210102_plegia_Mag_14
+  - first:
+      213: -5530134310500221445
+    second: v5.1_210102_plegia_Mag_15
+  - first:
+      213: -8974835765592311757
+    second: v5.1_210102_plegia_Mag_16
+  - first:
+      213: -6453021423408938829
+    second: v5.1_210102_plegia_Mag_17
+  - first:
+      213: 5694294689720005220
+    second: v5.1_210102_plegia_Mag_18
+  - first:
+      213: 5180339315193843977
+    second: v5.1_210102_plegia_Mag_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 396
+        width: 57
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc9eb6382b8d385e0800000000000000
+      internalID: -1908443555854292533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_1
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 394
+        width: 59
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaa773f584e1a8120800000000000000
+      internalID: 2416777446221642410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_2
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 460
+        width: 32
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f567c7c26ea4f170800000000000000
+      internalID: 8211379759885018616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_3
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 479
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b6233fc0fa87e0b0800000000000000
+      internalID: -5699434036541053262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_4
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 486
+        width: 50
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43bde71224985c770800000000000000
+      internalID: 8630455178048232244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_5
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 268
+        width: 117
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72be56789472923a0800000000000000
+      internalID: -6689772574724461785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_6
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 457
+        width: 43
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d20d2e06373d743f0800000000000000
+      internalID: -916531506646429651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_7
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 392
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 406fe27940ae68d50800000000000000
+      internalID: 6739331197843731972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_8
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 327
+        width: 115
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7efbce9d3514e8b00800000000000000
+      internalID: 832674809504382951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_9
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 268
+        width: 65
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0c2b472fd7b4b220800000000000000
+      internalID: 2500825862162295821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_10
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 266
+        width: 59
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 170e2783e15ae44f0800000000000000
+      internalID: -842554531057049487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_11
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 328
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8422070a1f21cae60800000000000000
+      internalID: 7974769869154427464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_12
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 261
+        width: 30
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ceb19a1ffaab1370800000000000000
+      internalID: 8294411151372041928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_13
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 193
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c1c5a676ace41310800000000000000
+      internalID: 1374983985954144709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_14
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 166
+        width: 59
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 579b8641b85f0fab0800000000000000
+      internalID: -4976207610552731275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_15
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 166
+        width: 57
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfd3f6ef4240143b0800000000000000
+      internalID: -5530134310500221445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_16
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 65
+        width: 117
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33836620c6af27380800000000000000
+      internalID: -8974835765592311757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_17
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 7
+        width: 123
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b089b974334276a0800000000000000
+      internalID: -6453021423408938829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_18
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 38
+        width: 62
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4627723c9d2360f40800000000000000
+      internalID: 5694294689720005220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v5.1_210102_plegia_Mag_19
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 38
+        width: 57
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9019e1a192344e740800000000000000
+      internalID: 5180339315193843977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v5.1_210102_plegia_Mag_0: -1908443555854292533
+      v5.1_210102_plegia_Mag_1: 2416777446221642410
+      v5.1_210102_plegia_Mag_10: -842554531057049487
+      v5.1_210102_plegia_Mag_11: 7974769869154427464
+      v5.1_210102_plegia_Mag_12: 8294411151372041928
+      v5.1_210102_plegia_Mag_13: 1374983985954144709
+      v5.1_210102_plegia_Mag_14: -4976207610552731275
+      v5.1_210102_plegia_Mag_15: -5530134310500221445
+      v5.1_210102_plegia_Mag_16: -8974835765592311757
+      v5.1_210102_plegia_Mag_17: -6453021423408938829
+      v5.1_210102_plegia_Mag_18: 5694294689720005220
+      v5.1_210102_plegia_Mag_19: 5180339315193843977
+      v5.1_210102_plegia_Mag_2: 8211379759885018616
+      v5.1_210102_plegia_Mag_3: -5699434036541053262
+      v5.1_210102_plegia_Mag_4: 8630455178048232244
+      v5.1_210102_plegia_Mag_5: -6689772574724461785
+      v5.1_210102_plegia_Mag_6: -916531506646429651
+      v5.1_210102_plegia_Mag_7: 6739331197843731972
+      v5.1_210102_plegia_Mag_8: 832674809504382951
+      v5.1_210102_plegia_Mag_9: 2500825862162295821
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

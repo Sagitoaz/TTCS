@@ -1,0 +1,1209 @@
+fileFormatVersion: 2
+guid: 10244fcf9a61c0a4b8b0a1470516cd03
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5803593106013955120
+    second: v4.3_200301_abc_Mag_0
+  - first:
+      213: -2994565774434358615
+    second: v4.3_200301_abc_Mag_1
+  - first:
+      213: 502528554685981938
+    second: v4.3_200301_abc_Mag_2
+  - first:
+      213: -1505466563110356055
+    second: v4.3_200301_abc_Mag_3
+  - first:
+      213: 8216156843270713856
+    second: v4.3_200301_abc_Mag_4
+  - first:
+      213: 3109875105569726146
+    second: v4.3_200301_abc_Mag_5
+  - first:
+      213: -8534627827260029442
+    second: v4.3_200301_abc_Mag_6
+  - first:
+      213: -4140199653636156502
+    second: v4.3_200301_abc_Mag_7
+  - first:
+      213: 1193842590504465241
+    second: v4.3_200301_abc_Mag_8
+  - first:
+      213: 8881268940258476591
+    second: v4.3_200301_abc_Mag_9
+  - first:
+      213: -7738674939585568982
+    second: v4.3_200301_abc_Mag_10
+  - first:
+      213: 2202068701446085351
+    second: v4.3_200301_abc_Mag_11
+  - first:
+      213: -4196610148085471103
+    second: v4.3_200301_abc_Mag_12
+  - first:
+      213: 8095323559527233745
+    second: v4.3_200301_abc_Mag_13
+  - first:
+      213: 2830099880032348840
+    second: v4.3_200301_abc_Mag_14
+  - first:
+      213: 9041991220294006801
+    second: v4.3_200301_abc_Mag_15
+  - first:
+      213: -689387353598905226
+    second: v4.3_200301_abc_Mag_16
+  - first:
+      213: 8036467287754434091
+    second: v4.3_200301_abc_Mag_17
+  - first:
+      213: 6043841575579335709
+    second: v4.3_200301_abc_Mag_18
+  - first:
+      213: 8495774866725501460
+    second: v4.3_200301_abc_Mag_19
+  - first:
+      213: 1111576335810844706
+    second: v4.3_200301_abc_Mag_20
+  - first:
+      213: -4352888884153124755
+    second: v4.3_200301_abc_Mag_21
+  - first:
+      213: -8276148779592021319
+    second: v4.3_200301_abc_Mag_22
+  - first:
+      213: 7420494845627666509
+    second: v4.3_200301_abc_Mag_23
+  - first:
+      213: -2872492932226084828
+    second: v4.3_200301_abc_Mag_24
+  - first:
+      213: 4958662313788892765
+    second: v4.3_200301_abc_Mag_25
+  - first:
+      213: 7525855566996219718
+    second: v4.3_200301_abc_Mag_26
+  - first:
+      213: 7569338410301825022
+    second: v4.3_200301_abc_Mag_27
+  - first:
+      213: 6310320472820488807
+    second: v4.3_200301_abc_Mag_28
+  - first:
+      213: -4901048660080408024
+    second: v4.3_200301_abc_Mag_29
+  - first:
+      213: 4941024351306312301
+    second: v4.3_200301_abc_Mag_30
+  - first:
+      213: 4532150516179141583
+    second: v4.3_200301_abc_Mag_31
+  - first:
+      213: 2449950899863136153
+    second: v4.3_200301_abc_Mag_32
+  - first:
+      213: -3568820250457218473
+    second: v4.3_200301_abc_Mag_33
+  - first:
+      213: -2446889632402097176
+    second: v4.3_200301_abc_Mag_34
+  - first:
+      213: -7398197588349638278
+    second: v4.3_200301_abc_Mag_35
+  - first:
+      213: -4981618968183923771
+    second: v4.3_200301_abc_Mag_36
+  - first:
+      213: -2236377058405314745
+    second: v4.3_200301_abc_Mag_37
+  - first:
+      213: -8081181669571633598
+    second: v4.3_200301_abc_Mag_38
+  - first:
+      213: 7162902098851378024
+    second: v4.3_200301_abc_Mag_39
+  - first:
+      213: -280584449543908413
+    second: v4.3_200301_abc_Mag_40
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 128
+        width: 84
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0342ed06e218a8050800000000000000
+      internalID: 5803593106013955120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_1
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 128
+        width: 83
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aa2c464b4a2176d0800000000000000
+      internalID: -2994565774434358615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_2
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 130
+        width: 59
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f46c87de0759f600800000000000000
+      internalID: 502528554685981938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_3
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 130
+        width: 59
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ab349c13228b1be0800000000000000
+      internalID: -1505466563110356055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_4
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 130
+        width: 59
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 002bb0e2e17a50270800000000000000
+      internalID: 8216156843270713856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_5
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 168
+        width: 59
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ce50538eee782b20800000000000000
+      internalID: 3109875105569726146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_6
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 199
+        width: 22
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef58002a539ee8980800000000000000
+      internalID: -8534627827260029442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_7
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 208
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa352d9c95e0b86c0800000000000000
+      internalID: -4140199653636156502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_8
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 226
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95330c4c281619010800000000000000
+      internalID: 1193842590504465241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_9
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 168
+        width: 59
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2201d2db0b904b70800000000000000
+      internalID: 8881268940258476591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_10
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 177
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2fd8c9c424ba9490800000000000000
+      internalID: -7738674939585568982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_11
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 142
+        width: 27
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ea13b021d15f8e10800000000000000
+      internalID: 2202068701446085351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_12
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 149
+        width: 31
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 188e09e0e45a2c5c0800000000000000
+      internalID: -4196610148085471103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_13
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 133
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d8b873f2ed585070800000000000000
+      internalID: 8095323559527233745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_14
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 155
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aa243ca8d8864720800000000000000
+      internalID: 2830099880032348840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_15
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 135
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11833dbbb1b9b7d70800000000000000
+      internalID: 9041991220294006801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_16
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 132
+        width: 37
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 674371cbaddce66f0800000000000000
+      internalID: -689387353598905226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_17
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 125
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2666af4b64478f60800000000000000
+      internalID: 8036467287754434091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_18
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 154
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1cb42f24e900e350800000000000000
+      internalID: 6043841575579335709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_19
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 132
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41a7dde8a3e07e570800000000000000
+      internalID: 8495774866725501460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_20
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 130
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2285cbcb9cc1d6f00800000000000000
+      internalID: 1111576335810844706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_21
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 64
+        width: 62
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d687e495f9e6793c0800000000000000
+      internalID: -4352888884153124755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_22
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 98
+        width: 113
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ba822ca886352d80800000000000000
+      internalID: -8276148779592021319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_23
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 64
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4011432fb4eaf660800000000000000
+      internalID: 7420494845627666509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_24
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 62
+        width: 28
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42018d2b5ead228d0800000000000000
+      internalID: -2872492932226084828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_25
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 79
+        width: 29
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d56e08e2a15b0d440800000000000000
+      internalID: 4958662313788892765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_26
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 90
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 647a4b5b3c5317860800000000000000
+      internalID: 7525855566996219718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_27
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 110
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eff92ca1e21bb0960800000000000000
+      internalID: 7569338410301825022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_28
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 122
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76a17595903c29750800000000000000
+      internalID: 6310320472820488807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 257
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82ac005e53afbfbb0800000000000000
+      internalID: -4901048660080408024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_30
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 64
+        width: 82
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6aea26087b029440800000000000000
+      internalID: 4941024351306312301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_31
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 63
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc30671d1ee65ee30800000000000000
+      internalID: 4532150516179141583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_32
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 6
+        width: 33
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 997ad7fec59fff120800000000000000
+      internalID: 2449950899863136153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_33
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 0
+        width: 66
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 752e64004e0097ec0800000000000000
+      internalID: -3568820250457218473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_34
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 9
+        width: 54
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eb3610f7d6ea0ed0800000000000000
+      internalID: -2446889632402097176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_35
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 28
+        width: 35
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a79a440ad72545990800000000000000
+      internalID: -7398197588349638278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_36
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 54
+        width: 28
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cb9c0331fbbddab0800000000000000
+      internalID: -4981618968183923771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 257
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74f0be90aeac6f0e0800000000000000
+      internalID: -2236377058405314745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_38
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 28
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24ed8c36610e9df80800000000000000
+      internalID: -8081181669571633598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_39
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 4
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 863bfea128db76360800000000000000
+      internalID: 7162902098851378024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.3_200301_abc_Mag_40
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 2
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c3df630ee92b1cf0800000000000000
+      internalID: -280584449543908413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v4.3_200301_abc_Mag_0: 5803593106013955120
+      v4.3_200301_abc_Mag_1: -2994565774434358615
+      v4.3_200301_abc_Mag_10: -7738674939585568982
+      v4.3_200301_abc_Mag_11: 2202068701446085351
+      v4.3_200301_abc_Mag_12: -4196610148085471103
+      v4.3_200301_abc_Mag_13: 8095323559527233745
+      v4.3_200301_abc_Mag_14: 2830099880032348840
+      v4.3_200301_abc_Mag_15: 9041991220294006801
+      v4.3_200301_abc_Mag_16: -689387353598905226
+      v4.3_200301_abc_Mag_17: 8036467287754434091
+      v4.3_200301_abc_Mag_18: 6043841575579335709
+      v4.3_200301_abc_Mag_19: 8495774866725501460
+      v4.3_200301_abc_Mag_2: 502528554685981938
+      v4.3_200301_abc_Mag_20: 1111576335810844706
+      v4.3_200301_abc_Mag_21: -4352888884153124755
+      v4.3_200301_abc_Mag_22: -8276148779592021319
+      v4.3_200301_abc_Mag_23: 7420494845627666509
+      v4.3_200301_abc_Mag_24: -2872492932226084828
+      v4.3_200301_abc_Mag_25: 4958662313788892765
+      v4.3_200301_abc_Mag_26: 7525855566996219718
+      v4.3_200301_abc_Mag_27: 7569338410301825022
+      v4.3_200301_abc_Mag_28: 6310320472820488807
+      v4.3_200301_abc_Mag_29: -4901048660080408024
+      v4.3_200301_abc_Mag_3: -1505466563110356055
+      v4.3_200301_abc_Mag_30: 4941024351306312301
+      v4.3_200301_abc_Mag_31: 4532150516179141583
+      v4.3_200301_abc_Mag_32: 2449950899863136153
+      v4.3_200301_abc_Mag_33: -3568820250457218473
+      v4.3_200301_abc_Mag_34: -2446889632402097176
+      v4.3_200301_abc_Mag_35: -7398197588349638278
+      v4.3_200301_abc_Mag_36: -4981618968183923771
+      v4.3_200301_abc_Mag_37: -2236377058405314745
+      v4.3_200301_abc_Mag_38: -8081181669571633598
+      v4.3_200301_abc_Mag_39: 7162902098851378024
+      v4.3_200301_abc_Mag_4: 8216156843270713856
+      v4.3_200301_abc_Mag_40: -280584449543908413
+      v4.3_200301_abc_Mag_5: 3109875105569726146
+      v4.3_200301_abc_Mag_6: -8534627827260029442
+      v4.3_200301_abc_Mag_7: -4140199653636156502
+      v4.3_200301_abc_Mag_8: 1193842590504465241
+      v4.3_200301_abc_Mag_9: 8881268940258476591
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

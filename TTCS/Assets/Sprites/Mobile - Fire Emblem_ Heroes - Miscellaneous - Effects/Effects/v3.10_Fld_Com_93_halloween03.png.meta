@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: ca742281952fbd44eae8dc59530bfc01
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8563988604924368021
+    second: v3.10_Fld_Com_93_halloween03_0
+  - first:
+      213: 1658725922069758159
+    second: v3.10_Fld_Com_93_halloween03_1
+  - first:
+      213: 4577097062348958548
+    second: v3.10_Fld_Com_93_halloween03_2
+  - first:
+      213: -2293385938946683464
+    second: v3.10_Fld_Com_93_halloween03_3
+  - first:
+      213: -7048145180609648248
+    second: v3.10_Fld_Com_93_halloween03_4
+  - first:
+      213: -5887087423646131863
+    second: v3.10_Fld_Com_93_halloween03_5
+  - first:
+      213: -8137869988552532602
+    second: v3.10_Fld_Com_93_halloween03_6
+  - first:
+      213: 7636153441087417579
+    second: v3.10_Fld_Com_93_halloween03_7
+  - first:
+      213: 6857260548677490257
+    second: v3.10_Fld_Com_93_halloween03_8
+  - first:
+      213: -1026383551671320288
+    second: v3.10_Fld_Com_93_halloween03_9
+  - first:
+      213: 7668577085131236171
+    second: v3.10_Fld_Com_93_halloween03_10
+  - first:
+      213: -8612095284921727786
+    second: v3.10_Fld_Com_93_halloween03_11
+  - first:
+      213: 2188602912510290123
+    second: v3.10_Fld_Com_93_halloween03_12
+  - first:
+      213: -4902740425597166159
+    second: v3.10_Fld_Com_93_halloween03_13
+  - first:
+      213: -6028487122549032874
+    second: v3.10_Fld_Com_93_halloween03_14
+  - first:
+      213: -290611776526347400
+    second: v3.10_Fld_Com_93_halloween03_15
+  - first:
+      213: 8249922582018488670
+    second: v3.10_Fld_Com_93_halloween03_16
+  - first:
+      213: 1251360612163885288
+    second: v3.10_Fld_Com_93_halloween03_17
+  - first:
+      213: -5670933473489624306
+    second: v3.10_Fld_Com_93_halloween03_18
+  - first:
+      213: -3446233700434502191
+    second: v3.10_Fld_Com_93_halloween03_19
+  - first:
+      213: -8304925982824490445
+    second: v3.10_Fld_Com_93_halloween03_20
+  - first:
+      213: 2666194816416617664
+    second: v3.10_Fld_Com_93_halloween03_21
+  - first:
+      213: -8503488511295517333
+    second: v3.10_Fld_Com_93_halloween03_22
+  - first:
+      213: 7113574378853900386
+    second: v3.10_Fld_Com_93_halloween03_23
+  - first:
+      213: 4811355966650276706
+    second: v3.10_Fld_Com_93_halloween03_24
+  - first:
+      213: 5537894024851761228
+    second: v3.10_Fld_Com_93_halloween03_25
+  - first:
+      213: -7018938037710948635
+    second: v3.10_Fld_Com_93_halloween03_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 446
+        width: 27
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5949201234669d670800000000000000
+      internalID: 8563988604924368021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 449
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc043b4107af40710800000000000000
+      internalID: 1658725922069758159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_2
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 446
+        width: 27
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45b2bc7178d158f30800000000000000
+      internalID: 4577097062348958548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_3
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 449
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bd0530b3a14c20e0800000000000000
+      internalID: -2293385938946683464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_4
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 446
+        width: 27
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88961680d45ff2e90800000000000000
+      internalID: -7048145180609648248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_5
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 449
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96917e7ed2ddc4ea0800000000000000
+      internalID: -5887087423646131863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_6
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 446
+        width: 27
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68d93089c5a701f80800000000000000
+      internalID: -8137869988552532602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_7
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 449
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bec646ab81119f960800000000000000
+      internalID: 7636153441087417579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_8
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 480
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 156d8304322e92f50800000000000000
+      internalID: 6857260548677490257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_9
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 447
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 021c357099d81c1f0800000000000000
+      internalID: -1026383551671320288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_10
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 383
+        width: 37
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b43a2f3aa324c6a60800000000000000
+      internalID: 7668577085131236171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 97
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d48c6a97f0bb7880800000000000000
+      internalID: -8612095284921727786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_12
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 191
+        width: 32
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc8af82d0ca7f5e10800000000000000
+      internalID: 2188602912510290123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_13
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 318
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bd555a0f87f5fbb0800000000000000
+      internalID: -4902740425597166159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_14
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 318
+        width: 125
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 658b27ff6e2865ca0800000000000000
+      internalID: -6028487122549032874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_15
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 415
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8731a94012a87fbf0800000000000000
+      internalID: -290611776526347400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_16
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 383
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e597fadd0ec9d7270800000000000000
+      internalID: 8249922582018488670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_17
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 351
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e891f5c8d9bd5110800000000000000
+      internalID: 1251360612163885288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_18
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 192
+        width: 125
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0367cf3d0ccc41b0800000000000000
+      internalID: -5670933473489624306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_19
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 192
+        width: 125
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dd1f9855b48c20d0800000000000000
+      internalID: -3446233700434502191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_20
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 238
+        width: 96
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33a95dbe1d9febc80800000000000000
+      internalID: -8304925982824490445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 97
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c410863f0a300520800000000000000
+      internalID: 2666194816416617664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_22
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 289
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6d8d9c904a8df980800000000000000
+      internalID: -8503488511295517333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_23
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 97
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26028ee453e78b260800000000000000
+      internalID: 7113574378853900386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_24
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 97
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26b552092ce55c240800000000000000
+      internalID: 4811355966650276706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_25
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 97
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c482c0b464d8adc40800000000000000
+      internalID: 5537894024851761228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v3.10_Fld_Com_93_halloween03_26
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 6
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e6f2c9ea09b79e90800000000000000
+      internalID: -7018938037710948635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v3.10_Fld_Com_93_halloween03_0: 8563988604924368021
+      v3.10_Fld_Com_93_halloween03_1: 1658725922069758159
+      v3.10_Fld_Com_93_halloween03_10: 7668577085131236171
+      v3.10_Fld_Com_93_halloween03_11: -8612095284921727786
+      v3.10_Fld_Com_93_halloween03_12: 2188602912510290123
+      v3.10_Fld_Com_93_halloween03_13: -4902740425597166159
+      v3.10_Fld_Com_93_halloween03_14: -6028487122549032874
+      v3.10_Fld_Com_93_halloween03_15: -290611776526347400
+      v3.10_Fld_Com_93_halloween03_16: 8249922582018488670
+      v3.10_Fld_Com_93_halloween03_17: 1251360612163885288
+      v3.10_Fld_Com_93_halloween03_18: -5670933473489624306
+      v3.10_Fld_Com_93_halloween03_19: -3446233700434502191
+      v3.10_Fld_Com_93_halloween03_2: 4577097062348958548
+      v3.10_Fld_Com_93_halloween03_20: -8304925982824490445
+      v3.10_Fld_Com_93_halloween03_21: 2666194816416617664
+      v3.10_Fld_Com_93_halloween03_22: -8503488511295517333
+      v3.10_Fld_Com_93_halloween03_23: 7113574378853900386
+      v3.10_Fld_Com_93_halloween03_24: 4811355966650276706
+      v3.10_Fld_Com_93_halloween03_25: 5537894024851761228
+      v3.10_Fld_Com_93_halloween03_26: -7018938037710948635
+      v3.10_Fld_Com_93_halloween03_3: -2293385938946683464
+      v3.10_Fld_Com_93_halloween03_4: -7048145180609648248
+      v3.10_Fld_Com_93_halloween03_5: -5887087423646131863
+      v3.10_Fld_Com_93_halloween03_6: -8137869988552532602
+      v3.10_Fld_Com_93_halloween03_7: 7636153441087417579
+      v3.10_Fld_Com_93_halloween03_8: 6857260548677490257
+      v3.10_Fld_Com_93_halloween03_9: -1026383551671320288
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1235 @@
+fileFormatVersion: 2
+guid: 3ad89d549f8c4724cb88e2063bfb485a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5351174265729383162
+    second: v4.9_200901_dance_Mag_0
+  - first:
+      213: -7660250091902794422
+    second: v4.9_200901_dance_Mag_1
+  - first:
+      213: 2662248155820040602
+    second: v4.9_200901_dance_Mag_2
+  - first:
+      213: -3578304995648543373
+    second: v4.9_200901_dance_Mag_3
+  - first:
+      213: 9091495034180906507
+    second: v4.9_200901_dance_Mag_4
+  - first:
+      213: -6424009316651799842
+    second: v4.9_200901_dance_Mag_5
+  - first:
+      213: 491164612166132770
+    second: v4.9_200901_dance_Mag_6
+  - first:
+      213: -2335772952958379606
+    second: v4.9_200901_dance_Mag_7
+  - first:
+      213: -70757456879716044
+    second: v4.9_200901_dance_Mag_8
+  - first:
+      213: 2516189196465280859
+    second: v4.9_200901_dance_Mag_9
+  - first:
+      213: -5122951014244579834
+    second: v4.9_200901_dance_Mag_10
+  - first:
+      213: -8189540915728492967
+    second: v4.9_200901_dance_Mag_11
+  - first:
+      213: -1622118068779746174
+    second: v4.9_200901_dance_Mag_12
+  - first:
+      213: 5908167573085664932
+    second: v4.9_200901_dance_Mag_13
+  - first:
+      213: -1337438602055359225
+    second: v4.9_200901_dance_Mag_14
+  - first:
+      213: -4749517949929203433
+    second: v4.9_200901_dance_Mag_15
+  - first:
+      213: -9085404150611966889
+    second: v4.9_200901_dance_Mag_16
+  - first:
+      213: -8813590705231574500
+    second: v4.9_200901_dance_Mag_17
+  - first:
+      213: 6443548456734839668
+    second: v4.9_200901_dance_Mag_18
+  - first:
+      213: 4445682802843196235
+    second: v4.9_200901_dance_Mag_19
+  - first:
+      213: -8202376713021683157
+    second: v4.9_200901_dance_Mag_20
+  - first:
+      213: 6521126757094203585
+    second: v4.9_200901_dance_Mag_21
+  - first:
+      213: 5264678730383848333
+    second: v4.9_200901_dance_Mag_22
+  - first:
+      213: -6657355878194389642
+    second: v4.9_200901_dance_Mag_23
+  - first:
+      213: 7017048491226330616
+    second: v4.9_200901_dance_Mag_24
+  - first:
+      213: 641535076647870166
+    second: v4.9_200901_dance_Mag_25
+  - first:
+      213: 2762615073518613051
+    second: v4.9_200901_dance_Mag_26
+  - first:
+      213: -585742071560250287
+    second: v4.9_200901_dance_Mag_27
+  - first:
+      213: 8957760340051219276
+    second: v4.9_200901_dance_Mag_28
+  - first:
+      213: -6407237610862912391
+    second: v4.9_200901_dance_Mag_29
+  - first:
+      213: 5878247679663928438
+    second: v4.9_200901_dance_Mag_30
+  - first:
+      213: 3586796071592585691
+    second: v4.9_200901_dance_Mag_31
+  - first:
+      213: -5371856158770615320
+    second: v4.9_200901_dance_Mag_32
+  - first:
+      213: -6472787078609265113
+    second: v4.9_200901_dance_Mag_33
+  - first:
+      213: 6934708664207339813
+    second: v4.9_200901_dance_Mag_34
+  - first:
+      213: -8587197242225934890
+    second: v4.9_200901_dance_Mag_35
+  - first:
+      213: -7261939620087690843
+    second: v4.9_200901_dance_Mag_36
+  - first:
+      213: -8813228086617377948
+    second: v4.9_200901_dance_Mag_37
+  - first:
+      213: -7858574305442296109
+    second: v4.9_200901_dance_Mag_38
+  - first:
+      213: 2512982990565284763
+    second: v4.9_200901_dance_Mag_39
+  - first:
+      213: -6447193679721493102
+    second: v4.9_200901_dance_Mag_40
+  - first:
+      213: -5013383379962814109
+    second: v4.9_200901_dance_Mag_41
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 235
+        width: 90
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afaf20894a0334a40800000000000000
+      internalID: 5351174265729383162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 223
+        width: 121
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a450b7d802351b590800000000000000
+      internalID: -7660250091902794422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_2
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 224
+        width: 122
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a91a79fa79432f420800000000000000
+      internalID: 2662248155820040602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_3
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 375ec5ca09e475ec0800000000000000
+      internalID: -3578304995648543373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_4
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 194
+        width: 38
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0ea495909a7b2e70800000000000000
+      internalID: 9091495034180906507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_5
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 195
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eda6b27ff8559d6a0800000000000000
+      internalID: -6424009316651799842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_6
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 129
+        width: 30
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 224a76acc97f0d600800000000000000
+      internalID: 491164612166132770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_7
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 130
+        width: 47
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa953feefdaa59fd0800000000000000
+      internalID: -2335772952958379606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_8
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 128
+        width: 38
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4397975c77e940ff0800000000000000
+      internalID: -70757456879716044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_9
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 210
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b571dfa2ebc4be220800000000000000
+      internalID: 2516189196465280859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_10
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 215
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6068932f13f97e8b0800000000000000
+      internalID: -5122951014244579834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_11
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 210
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 956d97c5de7e85e80800000000000000
+      internalID: -8189540915728492967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_12
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 209
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28cf3a6f5341d79e0800000000000000
+      internalID: -1622118068779746174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_13
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 196
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a6b04bda170ef150800000000000000
+      internalID: 5908167573085664932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_14
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 178
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 705689f6da6707de0800000000000000
+      internalID: -1337438602055359225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_15
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 139
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 719d02ca692561eb0800000000000000
+      internalID: -4749517949929203433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_16
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 174
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7540ae1cf092ae180800000000000000
+      internalID: -9085404150611966889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_17
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 175
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1accf233f5dfa580800000000000000
+      internalID: -8813590705231574500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_18
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 129
+        width: 31
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47352b89e251c6950800000000000000
+      internalID: 6443548456734839668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_19
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 130
+        width: 27
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4b188774fc32bd30800000000000000
+      internalID: 4445682802843196235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_20
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 162
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2a086a66dd4b2e80800000000000000
+      internalID: -8202376713021683157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_21
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 167
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c025e33c32bf7a50800000000000000
+      internalID: 6521126757094203585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_22
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 161
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d83751d6965ef0940800000000000000
+      internalID: 5264678730383848333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_23
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 164
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67d5dd8d9125c93a0800000000000000
+      internalID: -6657355878194389642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_24
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 130
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f57c33cc60916160800000000000000
+      internalID: 7017048491226330616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_25
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 153
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6de9c82d0c037e800800000000000000
+      internalID: 641535076647870166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_26
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 155
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b32773cb5c7c65620800000000000000
+      internalID: 2762615073518613051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_27
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 151
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15c56a670b60fd7f0800000000000000
+      internalID: -585742071560250287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_28
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 132
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c43d5dba19b505c70800000000000000
+      internalID: 8957760340051219276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_29
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 73
+        width: 46
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97c5ef4075be417a0800000000000000
+      internalID: -6407237610862912391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_30
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 76
+        width: 66
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 674f120de1bb39150800000000000000
+      internalID: 5878247679663928438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_31
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 20
+        width: 105
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd9ea01060cd6c130800000000000000
+      internalID: 3586796071592585691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_32
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 68
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ebabffe8455375b0800000000000000
+      internalID: -5371856158770615320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_33
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 66
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72e91c0427a0c26a0800000000000000
+      internalID: -6472787078609265113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_34
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 68
+        width: 26
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 521f6e6d9c80d3060800000000000000
+      internalID: 6934708664207339813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_35
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 0
+        width: 20
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ddb8e8ea9524d880800000000000000
+      internalID: -8587197242225934890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_36
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0
+        width: 27
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a986541468683b90800000000000000
+      internalID: -7261939620087690843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_37
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 12
+        width: 64
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 463fcacefbf11b580800000000000000
+      internalID: -8813228086617377948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_38
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 37
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3de89134e4cb0f290800000000000000
+      internalID: -7858574305442296109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_39
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 1
+        width: 86
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9b1e3f27b8efd220800000000000000
+      internalID: 2512982990565284763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_40
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1
+        width: 39
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d8e0ac187f686a0800000000000000
+      internalID: -6447193679721493102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.9_200901_dance_Mag_41
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 4
+        width: 37
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3612872c062ec6ab0800000000000000
+      internalID: -5013383379962814109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v4.9_200901_dance_Mag_0: 5351174265729383162
+      v4.9_200901_dance_Mag_1: -7660250091902794422
+      v4.9_200901_dance_Mag_10: -5122951014244579834
+      v4.9_200901_dance_Mag_11: -8189540915728492967
+      v4.9_200901_dance_Mag_12: -1622118068779746174
+      v4.9_200901_dance_Mag_13: 5908167573085664932
+      v4.9_200901_dance_Mag_14: -1337438602055359225
+      v4.9_200901_dance_Mag_15: -4749517949929203433
+      v4.9_200901_dance_Mag_16: -9085404150611966889
+      v4.9_200901_dance_Mag_17: -8813590705231574500
+      v4.9_200901_dance_Mag_18: 6443548456734839668
+      v4.9_200901_dance_Mag_19: 4445682802843196235
+      v4.9_200901_dance_Mag_2: 2662248155820040602
+      v4.9_200901_dance_Mag_20: -8202376713021683157
+      v4.9_200901_dance_Mag_21: 6521126757094203585
+      v4.9_200901_dance_Mag_22: 5264678730383848333
+      v4.9_200901_dance_Mag_23: -6657355878194389642
+      v4.9_200901_dance_Mag_24: 7017048491226330616
+      v4.9_200901_dance_Mag_25: 641535076647870166
+      v4.9_200901_dance_Mag_26: 2762615073518613051
+      v4.9_200901_dance_Mag_27: -585742071560250287
+      v4.9_200901_dance_Mag_28: 8957760340051219276
+      v4.9_200901_dance_Mag_29: -6407237610862912391
+      v4.9_200901_dance_Mag_3: -3578304995648543373
+      v4.9_200901_dance_Mag_30: 5878247679663928438
+      v4.9_200901_dance_Mag_31: 3586796071592585691
+      v4.9_200901_dance_Mag_32: -5371856158770615320
+      v4.9_200901_dance_Mag_33: -6472787078609265113
+      v4.9_200901_dance_Mag_34: 6934708664207339813
+      v4.9_200901_dance_Mag_35: -8587197242225934890
+      v4.9_200901_dance_Mag_36: -7261939620087690843
+      v4.9_200901_dance_Mag_37: -8813228086617377948
+      v4.9_200901_dance_Mag_38: -7858574305442296109
+      v4.9_200901_dance_Mag_39: 2512982990565284763
+      v4.9_200901_dance_Mag_4: 9091495034180906507
+      v4.9_200901_dance_Mag_40: -6447193679721493102
+      v4.9_200901_dance_Mag_41: -5013383379962814109
+      v4.9_200901_dance_Mag_5: -6424009316651799842
+      v4.9_200901_dance_Mag_6: 491164612166132770
+      v4.9_200901_dance_Mag_7: -2335772952958379606
+      v4.9_200901_dance_Mag_8: -70757456879716044
+      v4.9_200901_dance_Mag_9: 2516189196465280859
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

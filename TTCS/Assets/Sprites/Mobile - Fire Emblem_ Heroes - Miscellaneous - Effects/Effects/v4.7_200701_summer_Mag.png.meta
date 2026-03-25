@@ -1,0 +1,1157 @@
+fileFormatVersion: 2
+guid: a7f45c2cf7ca5464081ff6c124ad1dc1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6766235995461522356
+    second: v4.7_200701_summer_Mag_0
+  - first:
+      213: 219669382328572957
+    second: v4.7_200701_summer_Mag_1
+  - first:
+      213: -7875258205326410902
+    second: v4.7_200701_summer_Mag_2
+  - first:
+      213: 970229302638034130
+    second: v4.7_200701_summer_Mag_3
+  - first:
+      213: 3282034738899949274
+    second: v4.7_200701_summer_Mag_4
+  - first:
+      213: -1615235076673491095
+    second: v4.7_200701_summer_Mag_5
+  - first:
+      213: 889877872275571211
+    second: v4.7_200701_summer_Mag_6
+  - first:
+      213: 8674932479342550451
+    second: v4.7_200701_summer_Mag_7
+  - first:
+      213: -8907704349775572491
+    second: v4.7_200701_summer_Mag_8
+  - first:
+      213: -4633938006240802967
+    second: v4.7_200701_summer_Mag_9
+  - first:
+      213: 7148415466916857010
+    second: v4.7_200701_summer_Mag_10
+  - first:
+      213: -5520756612202325626
+    second: v4.7_200701_summer_Mag_11
+  - first:
+      213: -530207551403176508
+    second: v4.7_200701_summer_Mag_12
+  - first:
+      213: 1775862813618669565
+    second: v4.7_200701_summer_Mag_13
+  - first:
+      213: -4202019404531679892
+    second: v4.7_200701_summer_Mag_14
+  - first:
+      213: -878611065932620213
+    second: v4.7_200701_summer_Mag_15
+  - first:
+      213: 1251617199340841950
+    second: v4.7_200701_summer_Mag_16
+  - first:
+      213: -235999807494638385
+    second: v4.7_200701_summer_Mag_17
+  - first:
+      213: -5894552134158499986
+    second: v4.7_200701_summer_Mag_18
+  - first:
+      213: -1081335847658139294
+    second: v4.7_200701_summer_Mag_19
+  - first:
+      213: -178514328133680588
+    second: v4.7_200701_summer_Mag_20
+  - first:
+      213: 3176168939327747274
+    second: v4.7_200701_summer_Mag_21
+  - first:
+      213: 7424497254042797791
+    second: v4.7_200701_summer_Mag_22
+  - first:
+      213: 4649547418738195828
+    second: v4.7_200701_summer_Mag_23
+  - first:
+      213: -4383102834840202861
+    second: v4.7_200701_summer_Mag_24
+  - first:
+      213: -3979541850717613838
+    second: v4.7_200701_summer_Mag_25
+  - first:
+      213: -2885917409117241776
+    second: v4.7_200701_summer_Mag_26
+  - first:
+      213: -1459535782269287587
+    second: v4.7_200701_summer_Mag_27
+  - first:
+      213: 4527250541718346524
+    second: v4.7_200701_summer_Mag_28
+  - first:
+      213: -1516868535512568828
+    second: v4.7_200701_summer_Mag_29
+  - first:
+      213: -6863763522968372566
+    second: v4.7_200701_summer_Mag_30
+  - first:
+      213: -8988177748519861476
+    second: v4.7_200701_summer_Mag_31
+  - first:
+      213: 326266711641468841
+    second: v4.7_200701_summer_Mag_32
+  - first:
+      213: 499252381926608790
+    second: v4.7_200701_summer_Mag_33
+  - first:
+      213: -7619790060252443415
+    second: v4.7_200701_summer_Mag_34
+  - first:
+      213: -4411926889632219403
+    second: v4.7_200701_summer_Mag_35
+  - first:
+      213: -4939594432375980256
+    second: v4.7_200701_summer_Mag_36
+  - first:
+      213: 7103604081425460503
+    second: v4.7_200701_summer_Mag_37
+  - first:
+      213: 1386520272146463310
+    second: v4.7_200701_summer_Mag_38
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 357
+        width: 76
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4ced0016308912a0800000000000000
+      internalID: -6766235995461522356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_1
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 354
+        width: 76
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1c59bda32c6c0300800000000000000
+      internalID: 219669382328572957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_2
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 354
+        width: 76
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6bf90d136675b290800000000000000
+      internalID: -7875258205326410902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_3
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 481
+        width: 107
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dc3a660962f67d00800000000000000
+      internalID: 970229302638034130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_4
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 423
+        width: 53
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad69f90c4312c8d20800000000000000
+      internalID: 3282034738899949274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_5
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 424
+        width: 37
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96f202271488599e0800000000000000
+      internalID: -1615235076673491095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_6
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 361
+        width: 54
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b024776c53b795c00800000000000000
+      internalID: 889877872275571211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 353
+        width: 63
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bd16b1d02d836870800000000000000
+      internalID: 8674932479342550451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_8
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 230
+        width: 42
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f1dc63c61a716480800000000000000
+      internalID: -8907704349775572491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 289
+        width: 62
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 967c5da5fe1f0bfb0800000000000000
+      internalID: -4633938006240802967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_10
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 323
+        width: 23
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b4cc744ef5443360800000000000000
+      internalID: 7148415466916857010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_11
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 323
+        width: 72
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6899a468c155263b0800000000000000
+      internalID: -5520756612202325626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_12
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 325
+        width: 30
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd42698a0354a8f0800000000000000
+      internalID: -530207551403176508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_13
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 223
+        width: 34
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df7019fe1d125a810800000000000000
+      internalID: 1775862813618669565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_14
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 227
+        width: 44
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6d37956d9d6fa5c0800000000000000
+      internalID: -4202019404531679892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_15
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 294
+        width: 97
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4edb5ff3eb8ec3f0800000000000000
+      internalID: -878611065932620213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_16
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 229
+        width: 51
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edbea712633ae5110800000000000000
+      internalID: 1251617199340841950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_17
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 200
+        width: 77
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc4b83bec6f89bcf0800000000000000
+      internalID: -235999807494638385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_18
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 271
+        width: 84
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6f367d8018523ea0800000000000000
+      internalID: -5894552134158499986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_19
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 231
+        width: 77
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 261d07596c25ef0f0800000000000000
+      internalID: -1081335847658139294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 190
+        width: 97
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43246441a2ac58df0800000000000000
+      internalID: -178514328133680588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_21
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 199
+        width: 78
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac4724f72d4041c20800000000000000
+      internalID: 3176168939327747274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_22
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 165
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd685177aec190760800000000000000
+      internalID: 7424497254042797791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_23
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 171
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47d79343eb2868040800000000000000
+      internalID: 4649547418738195828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_24
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 169
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3919753c1371c23c0800000000000000
+      internalID: -4383102834840202861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 39
+        width: 97
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f01d2375c3d5c8c0800000000000000
+      internalID: -3979541850717613838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_26
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 132
+        width: 42
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05e737a186923f7d0800000000000000
+      internalID: -2885917409117241776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_27
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 142
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d530ed060ffaebbe0800000000000000
+      internalID: -1459535782269287587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_28
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 142
+        width: 38
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1b115c916604de30800000000000000
+      internalID: 4527250541718346524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_29
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 130
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40c6ec98a1003fae0800000000000000
+      internalID: -1516868535512568828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_30
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 127
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaabf2f01730fb0a0800000000000000
+      internalID: -6863763522968372566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_31
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 102
+        width: 49
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c13476985f3934380800000000000000
+      internalID: -8988177748519861476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_32
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 11
+        width: 51
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9afac6978d1278400800000000000000
+      internalID: 326266711641468841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_33
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 50
+        width: 108
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69fc00e6563bde600800000000000000
+      internalID: 499252381926608790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_34
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 20
+        width: 105
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ecc993cf41114690800000000000000
+      internalID: -7619790060252443415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_35
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 37
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fe3a788edfa5c2c0800000000000000
+      internalID: -4411926889632219403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_36
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 5
+        width: 35
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02f7bbbe809037bb0800000000000000
+      internalID: -4939594432375980256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_37
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 0
+        width: 234
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71d216a8642159260800000000000000
+      internalID: 7103604081425460503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.7_200701_summer_Mag_38
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 12
+        width: 64
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4afa2767d8ed3310800000000000000
+      internalID: 1386520272146463310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v4.7_200701_summer_Mag_0: -6766235995461522356
+      v4.7_200701_summer_Mag_1: 219669382328572957
+      v4.7_200701_summer_Mag_10: 7148415466916857010
+      v4.7_200701_summer_Mag_11: -5520756612202325626
+      v4.7_200701_summer_Mag_12: -530207551403176508
+      v4.7_200701_summer_Mag_13: 1775862813618669565
+      v4.7_200701_summer_Mag_14: -4202019404531679892
+      v4.7_200701_summer_Mag_15: -878611065932620213
+      v4.7_200701_summer_Mag_16: 1251617199340841950
+      v4.7_200701_summer_Mag_17: -235999807494638385
+      v4.7_200701_summer_Mag_18: -5894552134158499986
+      v4.7_200701_summer_Mag_19: -1081335847658139294
+      v4.7_200701_summer_Mag_2: -7875258205326410902
+      v4.7_200701_summer_Mag_20: -178514328133680588
+      v4.7_200701_summer_Mag_21: 3176168939327747274
+      v4.7_200701_summer_Mag_22: 7424497254042797791
+      v4.7_200701_summer_Mag_23: 4649547418738195828
+      v4.7_200701_summer_Mag_24: -4383102834840202861
+      v4.7_200701_summer_Mag_25: -3979541850717613838
+      v4.7_200701_summer_Mag_26: -2885917409117241776
+      v4.7_200701_summer_Mag_27: -1459535782269287587
+      v4.7_200701_summer_Mag_28: 4527250541718346524
+      v4.7_200701_summer_Mag_29: -1516868535512568828
+      v4.7_200701_summer_Mag_3: 970229302638034130
+      v4.7_200701_summer_Mag_30: -6863763522968372566
+      v4.7_200701_summer_Mag_31: -8988177748519861476
+      v4.7_200701_summer_Mag_32: 326266711641468841
+      v4.7_200701_summer_Mag_33: 499252381926608790
+      v4.7_200701_summer_Mag_34: -7619790060252443415
+      v4.7_200701_summer_Mag_35: -4411926889632219403
+      v4.7_200701_summer_Mag_36: -4939594432375980256
+      v4.7_200701_summer_Mag_37: 7103604081425460503
+      v4.7_200701_summer_Mag_38: 1386520272146463310
+      v4.7_200701_summer_Mag_4: 3282034738899949274
+      v4.7_200701_summer_Mag_5: -1615235076673491095
+      v4.7_200701_summer_Mag_6: 889877872275571211
+      v4.7_200701_summer_Mag_7: 8674932479342550451
+      v4.7_200701_summer_Mag_8: -8907704349775572491
+      v4.7_200701_summer_Mag_9: -4633938006240802967
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

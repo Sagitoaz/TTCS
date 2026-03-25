@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: eab62a7adb624fb40933d7e47cd0f031
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3897854776446672810
+    second: v4.5_200502_bride_Mag_0
+  - first:
+      213: -3532300255497676205
+    second: v4.5_200502_bride_Mag_1
+  - first:
+      213: 8336624815627631183
+    second: v4.5_200502_bride_Mag_2
+  - first:
+      213: 8280809290283625533
+    second: v4.5_200502_bride_Mag_3
+  - first:
+      213: -1667857535691958252
+    second: v4.5_200502_bride_Mag_4
+  - first:
+      213: -6239344101402800380
+    second: v4.5_200502_bride_Mag_5
+  - first:
+      213: 8613249186596455804
+    second: v4.5_200502_bride_Mag_6
+  - first:
+      213: 9085999183145098791
+    second: v4.5_200502_bride_Mag_7
+  - first:
+      213: -7520461264315356313
+    second: v4.5_200502_bride_Mag_8
+  - first:
+      213: 8300151896417303183
+    second: v4.5_200502_bride_Mag_9
+  - first:
+      213: -5401240447022399705
+    second: v4.5_200502_bride_Mag_10
+  - first:
+      213: -6685293555859340165
+    second: v4.5_200502_bride_Mag_11
+  - first:
+      213: 324957758756700809
+    second: v4.5_200502_bride_Mag_12
+  - first:
+      213: 2137125107096874456
+    second: v4.5_200502_bride_Mag_13
+  - first:
+      213: -1277645825191888734
+    second: v4.5_200502_bride_Mag_14
+  - first:
+      213: 1147440082118762739
+    second: v4.5_200502_bride_Mag_15
+  - first:
+      213: -6795310171884958196
+    second: v4.5_200502_bride_Mag_16
+  - first:
+      213: -240478204471272946
+    second: v4.5_200502_bride_Mag_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v4.5_200502_bride_Mag_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 196
+        width: 80
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65026d78bb908e9c0800000000000000
+      internalID: -3897854776446672810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.5_200502_bride_Mag_1
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 192
+        width: 90
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35a1a0fe1afbafec0800000000000000
+      internalID: -3532300255497676205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.5_200502_bride_Mag_2
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 192
+        width: 65
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4af039b914a1b370800000000000000
+      internalID: 8336624815627631183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.5_200502_bride_Mag_3
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 135
+        width: 72
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3c2c180d285be270800000000000000
+      internalID: 8280809290283625533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.5_200502_bride_Mag_4
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 130
+        width: 82
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4185f1178649ad8e0800000000000000
+      internalID: -1667857535691958252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.5_200502_bride_Mag_5
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 128
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40f0574e8956969a0800000000000000
+      internalID: -6239344101402800380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.5_200502_bride_Mag_6
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 70
+        width: 62
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7501011088688770800000000000000
+      internalID: 8613249186596455804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.5_200502_bride_Mag_7
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 65
+        width: 70
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72e5adc0e14f71e70800000000000000
+      internalID: 9085999183145098791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.5_200502_bride_Mag_8
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 5
+        width: 30
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76be5614354f1a790800000000000000
+      internalID: -7520461264315356313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.5_200502_bride_Mag_9
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 5
+        width: 30
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8afcb77c20103370800000000000000
+      internalID: 8300151896417303183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.5_200502_bride_Mag_10
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 33
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72ff1c03e60fa05b0800000000000000
+      internalID: -5401240447022399705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.5_200502_bride_Mag_11
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 37
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b74cbcf5ee01933a0800000000000000
+      internalID: -6685293555859340165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.5_200502_bride_Mag_12
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 33
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98243b12c5b728400800000000000000
+      internalID: 324957758756700809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.5_200502_bride_Mag_13
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 37
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dde31146f798ad10800000000000000
+      internalID: 2137125107096874456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.5_200502_bride_Mag_14
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 0
+        width: 66
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a83da824e3e44ee0800000000000000
+      internalID: -1277645825191888734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.5_200502_bride_Mag_15
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f0ebbfdca68cef00800000000000000
+      internalID: 1147440082118762739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.5_200502_bride_Mag_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ec23ad66532b1a0800000000000000
+      internalID: -6795310171884958196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.5_200502_bride_Mag_17
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0a144ed856a9acf0800000000000000
+      internalID: -240478204471272946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v4.5_200502_bride_Mag_0: -3897854776446672810
+      v4.5_200502_bride_Mag_1: -3532300255497676205
+      v4.5_200502_bride_Mag_10: -5401240447022399705
+      v4.5_200502_bride_Mag_11: -6685293555859340165
+      v4.5_200502_bride_Mag_12: 324957758756700809
+      v4.5_200502_bride_Mag_13: 2137125107096874456
+      v4.5_200502_bride_Mag_14: -1277645825191888734
+      v4.5_200502_bride_Mag_15: 1147440082118762739
+      v4.5_200502_bride_Mag_16: -6795310171884958196
+      v4.5_200502_bride_Mag_17: -240478204471272946
+      v4.5_200502_bride_Mag_2: 8336624815627631183
+      v4.5_200502_bride_Mag_3: 8280809290283625533
+      v4.5_200502_bride_Mag_4: -1667857535691958252
+      v4.5_200502_bride_Mag_5: -6239344101402800380
+      v4.5_200502_bride_Mag_6: 8613249186596455804
+      v4.5_200502_bride_Mag_7: 9085999183145098791
+      v4.5_200502_bride_Mag_8: -7520461264315356313
+      v4.5_200502_bride_Mag_9: 8300151896417303183
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

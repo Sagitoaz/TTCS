@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: 528bbdcbbdc5843498cb75445e6fad23
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5932131050277872985
+    second: v4.0_191201_alf_Mag_0
+  - first:
+      213: 3607243373523869951
+    second: v4.0_191201_alf_Mag_1
+  - first:
+      213: -2422684986197664748
+    second: v4.0_191201_alf_Mag_2
+  - first:
+      213: 898476675195314059
+    second: v4.0_191201_alf_Mag_3
+  - first:
+      213: -4919791109302454041
+    second: v4.0_191201_alf_Mag_4
+  - first:
+      213: -3337073526494988858
+    second: v4.0_191201_alf_Mag_5
+  - first:
+      213: -5020731625476746953
+    second: v4.0_191201_alf_Mag_6
+  - first:
+      213: -3758970153270805892
+    second: v4.0_191201_alf_Mag_7
+  - first:
+      213: -712347478295338725
+    second: v4.0_191201_alf_Mag_8
+  - first:
+      213: 4214457469516193756
+    second: v4.0_191201_alf_Mag_9
+  - first:
+      213: 3639612830816396877
+    second: v4.0_191201_alf_Mag_10
+  - first:
+      213: -3684696189502422936
+    second: v4.0_191201_alf_Mag_11
+  - first:
+      213: -8705383518273573119
+    second: v4.0_191201_alf_Mag_12
+  - first:
+      213: -2094102301675549291
+    second: v4.0_191201_alf_Mag_13
+  - first:
+      213: 3529572491359986700
+    second: v4.0_191201_alf_Mag_14
+  - first:
+      213: 7177659001862296931
+    second: v4.0_191201_alf_Mag_15
+  - first:
+      213: 7044880147464961558
+    second: v4.0_191201_alf_Mag_16
+  - first:
+      213: -4706457823100823621
+    second: v4.0_191201_alf_Mag_17
+  - first:
+      213: 1725017508620579972
+    second: v4.0_191201_alf_Mag_18
+  - first:
+      213: -2874433534475491961
+    second: v4.0_191201_alf_Mag_19
+  - first:
+      213: -2350241246959768789
+    second: v4.0_191201_alf_Mag_20
+  - first:
+      213: -183196419813078645
+    second: v4.0_191201_alf_Mag_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 452
+        width: 94
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aa5f135d36dcada0800000000000000
+      internalID: -5932131050277872985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 453
+        width: 93
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff0a5497cb08f0230800000000000000
+      internalID: 3607243373523869951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 453
+        width: 93
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41c140b47d4e06ed0800000000000000
+      internalID: -2422684986197664748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_3
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 386
+        width: 30
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8f9df796c7087c00800000000000000
+      internalID: 898476675195314059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_4
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 386
+        width: 38
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e8f6e06d0469bbb0800000000000000
+      internalID: -4919791109302454041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_5
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 511
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c5f7e7ee4550b1d0800000000000000
+      internalID: -3337073526494988858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 387
+        width: 60
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73193e60037c25ab0800000000000000
+      internalID: -5020731625476746953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_7
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 388
+        width: 58
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7a7ffcbf8475dbc0800000000000000
+      internalID: -3758970153270805892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_8
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 386
+        width: 62
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b11af8f1ebb3d16f0800000000000000
+      internalID: -712347478295338725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_9
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 387
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdf11874db2cc7a30800000000000000
+      internalID: 4214457469516193756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_10
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 293
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d46e3cc0690828230800000000000000
+      internalID: 3639612830816396877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_11
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 293
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 860097786545ddcc0800000000000000
+      internalID: -3684696189502422936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_12
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 323
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10f63cf20d3403780800000000000000
+      internalID: -8705383518273573119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_13
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 323
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59d0d493d0140f2e0800000000000000
+      internalID: -2094102301675549291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_14
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 259
+        width: 42
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c04a08cfa7f8bf030800000000000000
+      internalID: 3529572491359986700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 195
+        width: 319
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36513e455da2c9360800000000000000
+      internalID: 7177659001862296931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_16
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 210
+        width: 47
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61eb9d23b2174c160800000000000000
+      internalID: 7044880147464961558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_17
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 99
+        width: 314
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb797b7bb8d4faeb0800000000000000
+      internalID: -4706457823100823621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_18
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 146
+        width: 43
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 484b8a8d84e70f710800000000000000
+      internalID: 1725017508620579972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 319
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7852e170ee5fb18d0800000000000000
+      internalID: -2874433534475491961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_20
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 68
+        width: 49
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2bed7ab904426fd0800000000000000
+      internalID: -2350241246959768789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.0_191201_alf_Mag_21
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 9
+        width: 46
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b890be8a3d7257df0800000000000000
+      internalID: -183196419813078645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v4.0_191201_alf_Mag_0: -5932131050277872985
+      v4.0_191201_alf_Mag_1: 3607243373523869951
+      v4.0_191201_alf_Mag_10: 3639612830816396877
+      v4.0_191201_alf_Mag_11: -3684696189502422936
+      v4.0_191201_alf_Mag_12: -8705383518273573119
+      v4.0_191201_alf_Mag_13: -2094102301675549291
+      v4.0_191201_alf_Mag_14: 3529572491359986700
+      v4.0_191201_alf_Mag_15: 7177659001862296931
+      v4.0_191201_alf_Mag_16: 7044880147464961558
+      v4.0_191201_alf_Mag_17: -4706457823100823621
+      v4.0_191201_alf_Mag_18: 1725017508620579972
+      v4.0_191201_alf_Mag_19: -2874433534475491961
+      v4.0_191201_alf_Mag_2: -2422684986197664748
+      v4.0_191201_alf_Mag_20: -2350241246959768789
+      v4.0_191201_alf_Mag_21: -183196419813078645
+      v4.0_191201_alf_Mag_3: 898476675195314059
+      v4.0_191201_alf_Mag_4: -4919791109302454041
+      v4.0_191201_alf_Mag_5: -3337073526494988858
+      v4.0_191201_alf_Mag_6: -5020731625476746953
+      v4.0_191201_alf_Mag_7: -3758970153270805892
+      v4.0_191201_alf_Mag_8: -712347478295338725
+      v4.0_191201_alf_Mag_9: 4214457469516193756
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

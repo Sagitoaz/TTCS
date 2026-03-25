@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: dc1fe0789d5eca3458dd0f6a29d9b1d6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7768919683349656850
+    second: v4.2_200201_valentine_Mag_0
+  - first:
+      213: -3197606618793751551
+    second: v4.2_200201_valentine_Mag_1
+  - first:
+      213: -1399789127105250383
+    second: v4.2_200201_valentine_Mag_2
+  - first:
+      213: -2967982961805774439
+    second: v4.2_200201_valentine_Mag_3
+  - first:
+      213: 7085957282648873231
+    second: v4.2_200201_valentine_Mag_4
+  - first:
+      213: -4539052513620166862
+    second: v4.2_200201_valentine_Mag_5
+  - first:
+      213: 5240496312486483337
+    second: v4.2_200201_valentine_Mag_6
+  - first:
+      213: -4620945719287663345
+    second: v4.2_200201_valentine_Mag_7
+  - first:
+      213: 4672285357981888320
+    second: v4.2_200201_valentine_Mag_8
+  - first:
+      213: 2448672809363973271
+    second: v4.2_200201_valentine_Mag_9
+  - first:
+      213: 8057083125480685687
+    second: v4.2_200201_valentine_Mag_10
+  - first:
+      213: 8348235988144174361
+    second: v4.2_200201_valentine_Mag_11
+  - first:
+      213: -5985327679204916741
+    second: v4.2_200201_valentine_Mag_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: v4.2_200201_valentine_Mag_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 159
+        width: 105
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 215b89e5a4fb0db60800000000000000
+      internalID: 7768919683349656850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.2_200201_valentine_Mag_1
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 167
+        width: 101
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10c4c5bc8b1df93d0800000000000000
+      internalID: -3197606618793751551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.2_200201_valentine_Mag_2
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 186
+        width: 85
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bbff6e8433f29ce0800000000000000
+      internalID: -1399789127105250383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.2_200201_valentine_Mag_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 991b726a83b9fc6d0800000000000000
+      internalID: -2967982961805774439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.2_200201_valentine_Mag_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 81
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f09d0e50b90665260800000000000000
+      internalID: 7085957282648873231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.2_200201_valentine_Mag_5
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 74
+        width: 84
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23773dca9cb0201c0800000000000000
+      internalID: -4539052513620166862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.2_200201_valentine_Mag_6
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 94
+        width: 74
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 985508081abf9b840800000000000000
+      internalID: 5240496312486483337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.2_200201_valentine_Mag_7
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 64
+        width: 118
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f053f73e95a1fdfb0800000000000000
+      internalID: -4620945719287663345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.2_200201_valentine_Mag_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 121
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04fe4cb37ca47d040800000000000000
+      internalID: 4672285357981888320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.2_200201_valentine_Mag_9
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 119
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7942c4d42fe6bf120800000000000000
+      internalID: 2448672809363973271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.2_200201_valentine_Mag_10
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 1
+        width: 117
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77002141a6280df60800000000000000
+      internalID: 8057083125480685687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.2_200201_valentine_Mag_11
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 31
+        width: 125
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 915377e7664ead370800000000000000
+      internalID: 8348235988144174361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v4.2_200201_valentine_Mag_12
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf18da8ff28dfeca0800000000000000
+      internalID: -5985327679204916741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      v4.2_200201_valentine_Mag_0: 7768919683349656850
+      v4.2_200201_valentine_Mag_1: -3197606618793751551
+      v4.2_200201_valentine_Mag_10: 8057083125480685687
+      v4.2_200201_valentine_Mag_11: 8348235988144174361
+      v4.2_200201_valentine_Mag_12: -5985327679204916741
+      v4.2_200201_valentine_Mag_2: -1399789127105250383
+      v4.2_200201_valentine_Mag_3: -2967982961805774439
+      v4.2_200201_valentine_Mag_4: 7085957282648873231
+      v4.2_200201_valentine_Mag_5: -4539052513620166862
+      v4.2_200201_valentine_Mag_6: 5240496312486483337
+      v4.2_200201_valentine_Mag_7: -4620945719287663345
+      v4.2_200201_valentine_Mag_8: 4672285357981888320
+      v4.2_200201_valentine_Mag_9: 2448672809363973271
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
