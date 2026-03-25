@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,14 +28,14 @@ namespace TTCS.UI.Combat
             public string EntityId;
             public Slider          HPSlider;
             public Slider          MPSlider;
-            public TextMeshProUGUI NameText;
+            public Image           PortraitImage;
             public TextMeshProUGUI HPText;
             public CanvasGroup    SlotGroup;
 
             private float _maxHP = 1f;
             private float _maxMP = 1f;
 
-            public void Initialize(CombatEntity entity, int maxMP)
+            public void Initialize(CombatEntity entity, int maxMP, Sprite portraitSprite)
             {
                 EntityId  = entity.ID;
                 _maxHP    = entity.Health.MaxHP;
@@ -42,11 +44,17 @@ namespace TTCS.UI.Combat
                 LockSliderInput(HPSlider);
                 LockSliderInput(MPSlider);
 
-                NameText.text = entity.DisplayName;
                 HPSlider.value = entity.HPPercent;
                 MPSlider.value = TTCS.Combat.Managers.SkillManager.Instance != null
                     ? (float)TTCS.Combat.Managers.SkillManager.Instance.GetMana(entity.ID) / _maxMP
                     : 1f;
+
+                if (PortraitImage != null)
+                {
+                    PortraitImage.sprite = portraitSprite;
+                    PortraitImage.color = portraitSprite != null ? Color.white : new Color(1f, 1f, 1f, 0f);
+                    PortraitImage.preserveAspect = true;
+                }
 
                 SetHPText(entity.HPPercent);
                 SlotGroup.alpha = 1f;
@@ -105,6 +113,7 @@ namespace TTCS.UI.Combat
 
         // ─── Slot Lookup ──────────────────────────────────────────────────
         private readonly Dictionary<string, HUDSlot> _slotMap = new();
+        private readonly Dictionary<string, Sprite> _portraitCache = new();
 
         // ──────────────────────────────────────────────────────────────────
         #region Initialization
@@ -128,10 +137,11 @@ namespace TTCS.UI.Combat
             {
                 if (i < entities.Count && entities[i] != null)
                 {
+                    Sprite portrait = ResolvePortraitSprite(entities[i]);
                     int maxMP = TTCS.Combat.Managers.SkillManager.Instance != null
                         ? TTCS.Combat.Managers.SkillManager.Instance.GetMaxMana(entities[i].ID)
                         : 100;
-                    slots[i].Initialize(entities[i], maxMP);
+                    slots[i].Initialize(entities[i], maxMP, portrait);
                     _slotMap[entities[i].ID] = slots[i];
                 }
                 else
@@ -141,6 +151,146 @@ namespace TTCS.UI.Combat
                         slots[i].HPSlider.gameObject.transform.parent.gameObject.SetActive(false);
                 }
             }
+        }
+
+        private Sprite ResolvePortraitSprite(CombatEntity entity)
+        {
+            if (entity == null || DataManager.Instance == null) return null;
+
+            string portraitPath = null;
+
+            if (entity is Character character)
+            {
+                var data = DataManager.Instance.LoadCharacter(character.CharacterId);
+                portraitPath = data?.visual?.portraitPath;
+
+                if (string.IsNullOrWhiteSpace(portraitPath))
+                    portraitPath = data?.visual?.spritePath;
+            }
+            else if (entity is Enemy)
+            {
+                // Theo yêu cầu hiện tại: enemy chưa hiển thị portrait trên BattleHUD.
+                return null;
+            }
+
+            if (string.IsNullOrWhiteSpace(portraitPath))
+            {
+                LogWarning($"BattleHUD: Missing portrait path for entity '{entity.ID}'.", LogCategory.UI);
+                return null;
+            }
+
+            string cacheKey = portraitPath.Trim();
+            if (_portraitCache.TryGetValue(cacheKey, out var cachedSprite))
+                return cachedSprite;
+
+            var sprite = LoadCharacterPortraitFromProjectPath(portraitPath);
+            if (sprite == null)
+                sprite = LoadSpriteFromResourcesPath(portraitPath);
+
+            _portraitCache[cacheKey] = sprite;
+
+            if (sprite == null)
+                LogWarning($"BattleHUD: Could not load portrait sprite from 'Assets/Sprites/Characters' or Resources path '{portraitPath}' for entity '{entity.ID}'.", LogCategory.UI);
+
+            return sprite;
+        }
+
+        private Sprite LoadSpriteFromResourcesPath(string rawPath)
+        {
+            string normalizedPath = NormalizeResourcesPath(rawPath);
+            if (string.IsNullOrWhiteSpace(normalizedPath))
+                return null;
+
+            if (_portraitCache.TryGetValue(normalizedPath, out var cachedSprite))
+                return cachedSprite;
+
+            var sprite = Resources.Load<Sprite>(normalizedPath);
+            _portraitCache[normalizedPath] = sprite;
+            return sprite;
+        }
+
+        private static Sprite LoadCharacterPortraitFromProjectPath(string rawPath)
+        {
+#if UNITY_EDITOR
+            string normalized = NormalizeAssetLikePath(rawPath);
+            if (string.IsNullOrWhiteSpace(normalized))
+                return null;
+
+            foreach (var candidate in BuildAssetCandidates(normalized))
+            {
+                var sprite = UnityEditor.AssetDatabase.LoadAssetAtPath<Sprite>(candidate);
+                if (sprite != null)
+                    return sprite;
+            }
+#endif
+            return null;
+        }
+
+        private static List<string> BuildAssetCandidates(string normalized)
+        {
+            var candidates = new List<string>();
+
+            if (normalized.StartsWith("Assets/", StringComparison.OrdinalIgnoreCase))
+            {
+                candidates.AddRange(WithCommonImageExtensions(normalized));
+                return candidates;
+            }
+
+            if (normalized.StartsWith("Characters/", StringComparison.OrdinalIgnoreCase))
+            {
+                candidates.AddRange(WithCommonImageExtensions($"Assets/Sprites/{normalized}"));
+                return candidates;
+            }
+
+            candidates.AddRange(WithCommonImageExtensions($"Assets/Sprites/Characters/{normalized}"));
+            return candidates;
+        }
+
+        private static IEnumerable<string> WithCommonImageExtensions(string path)
+        {
+            if (HasImageExtension(path))
+            {
+                yield return path;
+                yield break;
+            }
+
+            yield return path + ".png";
+            yield return path + ".jpg";
+            yield return path + ".jpeg";
+        }
+
+        private static bool HasImageExtension(string path)
+        {
+            string ext = Path.GetExtension(path);
+            return ext.Equals(".png", StringComparison.OrdinalIgnoreCase)
+                || ext.Equals(".jpg", StringComparison.OrdinalIgnoreCase)
+                || ext.Equals(".jpeg", StringComparison.OrdinalIgnoreCase);
+        }
+
+        private static string NormalizeAssetLikePath(string rawPath)
+        {
+            if (string.IsNullOrWhiteSpace(rawPath)) return null;
+
+            string path = rawPath.Trim().Replace('\\', '/');
+            if (path.StartsWith("Resources/", StringComparison.OrdinalIgnoreCase))
+                path = path.Substring("Resources/".Length);
+
+            return path;
+        }
+
+        private static string NormalizeResourcesPath(string rawPath)
+        {
+            if (string.IsNullOrWhiteSpace(rawPath)) return null;
+
+            string path = rawPath.Trim().Replace('\\', '/');
+            if (path.StartsWith("Resources/", StringComparison.OrdinalIgnoreCase))
+                path = path.Substring("Resources/".Length);
+
+            int extensionIndex = path.LastIndexOf('.');
+            if (extensionIndex > 0)
+                path = path.Substring(0, extensionIndex);
+
+            return path;
         }
 
         #endregion

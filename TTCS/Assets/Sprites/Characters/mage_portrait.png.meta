@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 0a30eadb969250a458fd599c369c91ab
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3645311313696037104
+    second: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_0
+  - first:
+      213: 6564965672915009810
+    second: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_1
+  - first:
+      213: 5440981452826684812
+    second: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_2
+  - first:
+      213: -8468974509189362650
+    second: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_3
+  - first:
+      213: 4218060995853686892
+    second: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_4
+  - first:
+      213: 5531359853062045742
+    second: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_5
+  - first:
+      213: 4229455954441631874
+    second: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_6
+  - first:
+      213: 4380402765523469250
+    second: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_7
+  - first:
+      213: -3648856239408428101
+    second: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_8
+  - first:
+      213: -789752593367254282
+    second: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_9
+  - first:
+      213: -6027346068027796288
+    second: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_10
+  - first:
+      213: -6179747448395369961
+    second: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_11
+  - first:
+      213: -7021095385200083021
+    second: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_12
+  - first:
+      213: -7140803304724308657
+    second: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 2284
+        width: 1196
+        height: 1771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0176f638ca0496dc0800000000000000
+      internalID: -3645311313696037104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_1
+      rect:
+        serializedVersion: 2
+        x: 1905
+        y: 2246
+        width: 960
+        height: 1747
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2118bb03f717b1b50800000000000000
+      internalID: 6564965672915009810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 326
+        width: 1575
+        height: 1795
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8d2935cdcf328b40800000000000000
+      internalID: 5440981452826684812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_3
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 385
+        width: 1367
+        height: 1641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62c0eefed88287a80800000000000000
+      internalID: -8468974509189362650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 403
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c681ac2a020998a30800000000000000
+      internalID: 4218060995853686892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_5
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 0
+        width: 381
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e20ce9eda7653cc40800000000000000
+      internalID: 5531359853062045742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_6
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 158
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28877ad28cb02ba30800000000000000
+      internalID: 4229455954441631874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_7
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 144
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c34a2c5b115acc30800000000000000
+      internalID: 4380402765523469250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_8
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 0
+        width: 153
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbbc79d2598ac5dc0800000000000000
+      internalID: -3648856239408428101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_9
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 111
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fab6eb533c3a05f0800000000000000
+      internalID: -789752593367254282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_10
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 88
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c41bd47fa09a5ca0800000000000000
+      internalID: -6027346068027796288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_11
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 0
+        width: 92
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71274c8ff602d3aa0800000000000000
+      internalID: -6179747448395369961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_12
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 0
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bfb30f42fe009e90800000000000000
+      internalID: -7021095385200083021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_13
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 0
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4dd8fa5a35c6ec90800000000000000
+      internalID: -7140803304724308657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_0: -3645311313696037104
+      Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_1: 6564965672915009810
+      Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_10: -6027346068027796288
+      Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_11: -6179747448395369961
+      Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_12: -7021095385200083021
+      Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_13: -7140803304724308657
+      Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_2: 5440981452826684812
+      Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_3: -8468974509189362650
+      Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_4: 4218060995853686892
+      Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_5: 5531359853062045742
+      Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_6: 4229455954441631874
+      Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_7: 4380402765523469250
+      Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_8: -3648856239408428101
+      Mobile - Fire Emblem_ Heroes - Portraits_ Heroes - Fjorm (Summer Firsts)_9: -789752593367254282
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
