@@ -53,6 +53,9 @@ namespace TTCS.Combat.Managers
         /// <summary>Mana ban đầu khi combat bắt đầu (% của max)</summary>
         private const float STARTING_MANA_RATIO = 0.8f; // Bắt đầu với 80% mana
 
+        /// <summary>Hồi mana mỗi khi bắt đầu lượt (% của max mana)</summary>
+        private const float TURN_START_MANA_RESTORE_RATIO = 0.15f;
+
         // ─── State ────────────────────────────────────────────────────
         /// <summary>Cooldown còn lại (entityId → skillId → turns remaining)</summary>
         private readonly Dictionary<string, Dictionary<string, int>> _cooldowns = new();
@@ -81,9 +84,39 @@ namespace TTCS.Combat.Managers
             DebugLogger.Log("SkillManager initialized.", LogCategory.Combat);
         }
 
+        private void OnEnable()
+        {
+            EventBus.Instance?.Subscribe<TurnStartedEvent>(OnTurnStarted);
+        }
+
+        private void OnDisable()
+        {
+            EventBus.Instance?.Unsubscribe<TurnStartedEvent>(OnTurnStarted);
+        }
+
         private void OnDestroy()
         {
+            EventBus.Instance?.Unsubscribe<TurnStartedEvent>(OnTurnStarted);
             if (_instance == this) _instance = null;
+        }
+
+        private void OnTurnStarted(TurnStartedEvent e)
+        {
+            if (e == null || string.IsNullOrEmpty(e.EntityId))
+                return;
+
+            if (!_maxMana.ContainsKey(e.EntityId) || !_currentMana.ContainsKey(e.EntityId))
+                return;
+
+            int maxMana = GetMaxMana(e.EntityId);
+            if (maxMana <= 0)
+                return;
+
+            int restoreAmount = Mathf.CeilToInt(maxMana * TURN_START_MANA_RESTORE_RATIO);
+            if (restoreAmount <= 0)
+                restoreAmount = 1;
+
+            RestoreMana(e.EntityId, restoreAmount);
         }
 
         #endregion

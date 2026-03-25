@@ -94,9 +94,9 @@ namespace TTCS.UI.Combat
 
             // Register entity names với TurnOrderDisplay
             foreach (var entity in playerTeam)
-                if (entity != null) _turnOrderDisplay?.RegisterEntity(entity.ID, entity.DisplayName, isPlayer: true);
+                if (entity != null) _turnOrderDisplay?.RegisterEntity(entity);
             foreach (var entity in enemyTeam)
-                if (entity != null) _turnOrderDisplay?.RegisterEntity(entity.ID, entity.DisplayName, isPlayer: false);
+                if (entity != null) _turnOrderDisplay?.RegisterEntity(entity);
 
             // BattleHUD
             _battleHUD?.InitializeSlots(playerTeam, enemyTeam);
@@ -159,6 +159,21 @@ namespace TTCS.UI.Combat
                 : 0f;
         }
 
+        public void BeginEnemyTargetingHUD(List<string> candidateEnemyIds, string currentTargetId)
+        {
+            _battleHUD?.BeginEnemyTargeting(candidateEnemyIds, currentTargetId);
+        }
+
+        public void UpdateEnemyTargetingHUD(string currentTargetId)
+        {
+            _battleHUD?.UpdateEnemyTargeting(currentTargetId);
+        }
+
+        public void EndEnemyTargetingHUD()
+        {
+            _battleHUD?.EndEnemyTargeting();
+        }
+
         #endregion
 
         // ──────────────────────────────────────────────────────────────────
@@ -187,6 +202,7 @@ namespace TTCS.UI.Combat
             {
                 // Lượt của enemy — ẩn panel
                 _skillButtonPanel?.Hide();
+                _battleHUD?.EndEnemyTargeting();
                 return;
             }
 

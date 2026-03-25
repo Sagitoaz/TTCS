@@ -58,7 +58,11 @@ namespace TTCS.UI.Combat
 
                 SetHPText(entity.HPPercent);
                 SlotGroup.alpha = 1f;
-                gameObject.SetActive(true);
+                if (SlotRectTransform != null)
+                    SlotRectTransform.localScale = Vector3.one;
+                var root = SlotRootObject;
+                if (root != null)
+                    root.SetActive(true);
             }
 
             private static void LockSliderInput(Slider slider)
@@ -85,7 +89,27 @@ namespace TTCS.UI.Combat
                 MPSlider.DOValue(ratio, 0.3f).SetEase(Ease.OutCubic);
             }
 
-            
+            public void SetVisible(bool visible)
+            {
+                var root = SlotRootObject;
+                if (root != null)
+                    root.SetActive(visible);
+            }
+
+            public void SetHighlight(bool isCurrentTarget)
+            {
+                if (SlotGroup != null)
+                    SlotGroup.alpha = isCurrentTarget ? 1f : 0.82f;
+
+                if (SlotRectTransform != null)
+                    SlotRectTransform.localScale = isCurrentTarget ? Vector3.one * 1.08f : Vector3.one;
+            }
+
+            public void SetScreenPosition(Vector3 screenPosition)
+            {
+                if (SlotRectTransform != null)
+                    SlotRectTransform.position = screenPosition;
+            }
 
             public void SetDead()
             {
@@ -101,7 +125,13 @@ namespace TTCS.UI.Combat
                     HPText.text = $"{Mathf.RoundToInt(percent * _maxHP)}/{Mathf.RoundToInt(_maxHP)}";
             }
 
-            private GameObject gameObject => HPSlider.gameObject.transform.parent.gameObject;
+            private RectTransform SlotRectTransform => HPSlider != null
+                ? HPSlider.gameObject.transform.parent as RectTransform
+                : null;
+
+            private GameObject SlotRootObject => HPSlider != null
+                ? HPSlider.gameObject.transform.parent.gameObject
+                : null;
         }
 
         // ─── Inspector ────────────────────────────────────────────────────
@@ -111,12 +141,33 @@ namespace TTCS.UI.Combat
         [Header("Enemy Slots (max 3)")]
         [SerializeField] private HUDSlot[] _enemySlots = new HUDSlot[3];
 
+        [Header("Enemy Floating HUD")]
+        [SerializeField] private Camera _worldCamera;
+        [SerializeField] private float _enemyWorldOffsetY = 1.2f;
+        [SerializeField] private RectTransform _enemyHudCanvasRoot;
+        [SerializeField] private float _enemyDamageHudDuration = 1.6f;
+
         // ─── Slot Lookup ──────────────────────────────────────────────────
         private readonly Dictionary<string, HUDSlot> _slotMap = new();
         private readonly Dictionary<string, Sprite> _portraitCache = new();
+        private readonly HashSet<string> _enemyEntityIds = new();
+        private readonly HashSet<string> _targetingEnemyIds = new();
+        private readonly Dictionary<string, float> _enemyVisibleUntil = new();
+        private bool _isEnemyTargetingActive;
+        private string _currentTargetEnemyId;
+        private bool _isEnemyTurnActive;
+        private string _enemyTurnActorId;
+        private Canvas _rootCanvas;
 
         // ──────────────────────────────────────────────────────────────────
         #region Initialization
+
+        private void Awake()
+        {
+            _rootCanvas = GetComponentInParent<Canvas>();
+            if (_enemyHudCanvasRoot == null)
+                _enemyHudCanvasRoot = _rootCanvas != null ? _rootCanvas.transform as RectTransform : null;
+        }
 
         /// <summary>
         /// Gán entity vào các slot và bắt đầu lắng nghe events.
@@ -124,14 +175,21 @@ namespace TTCS.UI.Combat
         public void InitializeSlots(List<CombatEntity> allies, List<CombatEntity> enemies)
         {
             _slotMap.Clear();
+            _enemyEntityIds.Clear();
+            _targetingEnemyIds.Clear();
+            _enemyVisibleUntil.Clear();
+            _isEnemyTargetingActive = false;
+            _currentTargetEnemyId = null;
+            _isEnemyTurnActive = false;
+            _enemyTurnActorId = null;
 
-            InitGroup(allies,  _allySlots);
-            InitGroup(enemies, _enemySlots);
+            InitGroup(allies,  _allySlots, isEnemyGroup: false);
+            InitGroup(enemies, _enemySlots, isEnemyGroup: true);
 
             SubscribeEvents();
         }
 
-        private void InitGroup(List<CombatEntity> entities, HUDSlot[] slots)
+        private void InitGroup(List<CombatEntity> entities, HUDSlot[] slots, bool isEnemyGroup)
         {
             for (int i = 0; i < slots.Length; i++)
             {
@@ -143,12 +201,171 @@ namespace TTCS.UI.Combat
                         : 100;
                     slots[i].Initialize(entities[i], maxMP, portrait);
                     _slotMap[entities[i].ID] = slots[i];
+
+                    if (isEnemyGroup)
+                    {
+                        _enemyEntityIds.Add(entities[i].ID);
+                        slots[i].SetVisible(false);
+                    }
                 }
                 else
                 {
                     // Ẩn slot thừa
                     if (slots[i].HPSlider != null)
                         slots[i].HPSlider.gameObject.transform.parent.gameObject.SetActive(false);
+                }
+            }
+        }
+
+        public void BeginEnemyTargeting(List<string> candidateEnemyIds, string currentTargetId)
+        {
+            _isEnemyTargetingActive = true;
+            _targetingEnemyIds.Clear();
+
+            if (candidateEnemyIds != null)
+            {
+                foreach (var id in candidateEnemyIds)
+                {
+                    if (!string.IsNullOrWhiteSpace(id))
+                        _targetingEnemyIds.Add(id);
+                }
+            }
+
+            _currentTargetEnemyId = currentTargetId;
+            RefreshEnemyVisibility();
+            UpdateEnemyFloatingHUDPosition();
+        }
+
+        public void UpdateEnemyTargeting(string currentTargetId)
+        {
+            if (!_isEnemyTargetingActive) return;
+
+            _currentTargetEnemyId = currentTargetId;
+            RefreshEnemyVisibility();
+            UpdateEnemyFloatingHUDPosition();
+        }
+
+        public void EndEnemyTargeting()
+        {
+            _isEnemyTargetingActive = false;
+            _currentTargetEnemyId = null;
+            _targetingEnemyIds.Clear();
+
+            RefreshEnemyVisibility();
+        }
+
+        private void OnTurnStarted(TurnStartedEvent e)
+        {
+            if (e == null || string.IsNullOrWhiteSpace(e.EntityId)) return;
+            if (!_enemyEntityIds.Contains(e.EntityId)) return;
+
+            _isEnemyTurnActive = true;
+            _enemyTurnActorId = e.EntityId;
+            RefreshEnemyVisibility();
+        }
+
+        private void OnTurnEnded(TurnEndedEvent e)
+        {
+            if (e == null || string.IsNullOrWhiteSpace(e.EntityId)) return;
+            if (!_enemyEntityIds.Contains(e.EntityId)) return;
+
+            _isEnemyTurnActive = false;
+            _enemyTurnActorId = null;
+            RefreshEnemyVisibility();
+        }
+
+        private void MarkEnemyVisibleByDamage(string enemyId)
+        {
+            if (string.IsNullOrWhiteSpace(enemyId) || !_enemyEntityIds.Contains(enemyId))
+                return;
+
+            float until = Time.time + Mathf.Max(0.1f, _enemyDamageHudDuration);
+            if (_enemyVisibleUntil.TryGetValue(enemyId, out var oldUntil))
+                _enemyVisibleUntil[enemyId] = Mathf.Max(oldUntil, until);
+            else
+                _enemyVisibleUntil[enemyId] = until;
+
+            RefreshEnemyVisibility();
+        }
+
+        private bool IsEnemyVisibleByDamage(string enemyId)
+        {
+            return _enemyVisibleUntil.TryGetValue(enemyId, out var until) && Time.time <= until;
+        }
+
+        private bool ShouldShowEnemyHud(string enemyId)
+        {
+            if (_isEnemyTargetingActive && _targetingEnemyIds.Contains(enemyId))
+                return true;
+
+            if (_isEnemyTurnActive && enemyId == _enemyTurnActorId)
+                return true;
+
+            if (IsEnemyVisibleByDamage(enemyId))
+                return true;
+
+            return false;
+        }
+
+        private void RefreshEnemyVisibility()
+        {
+            foreach (var id in _enemyEntityIds)
+            {
+                if (_slotMap.TryGetValue(id, out var slot))
+                {
+                    bool shouldShow = ShouldShowEnemyHud(id);
+                    slot.SetVisible(shouldShow);
+
+                    if (shouldShow)
+                    {
+                        bool isCurrentTarget = _isEnemyTargetingActive && id == _currentTargetEnemyId;
+                        slot.SetHighlight(isCurrentTarget);
+                    }
+                }
+            }
+        }
+
+        private void LateUpdate()
+        {
+            RefreshEnemyVisibility();
+            UpdateEnemyFloatingHUDPosition();
+        }
+
+        private void UpdateEnemyFloatingHUDPosition()
+        {
+            if (_enemyEntityIds.Count == 0)
+                return;
+
+            var cam = _worldCamera != null ? _worldCamera : Camera.main;
+            if (cam == null || _enemyHudCanvasRoot == null)
+                return;
+
+            Camera canvasCamera = null;
+            if (_rootCanvas != null && _rootCanvas.renderMode != RenderMode.ScreenSpaceOverlay)
+                canvasCamera = _rootCanvas.worldCamera;
+
+            foreach (var enemyId in _enemyEntityIds)
+            {
+                if (!_slotMap.TryGetValue(enemyId, out var slot))
+                    continue;
+
+                if (!ShouldShowEnemyHud(enemyId))
+                    continue;
+
+                Vector3 worldPos = CombatUIController.Instance?.GetEntityWorldPos(enemyId) ?? Vector3.zero;
+                worldPos.y += _enemyWorldOffsetY;
+
+                Vector3 screenPos = cam.WorldToScreenPoint(worldPos);
+                if (screenPos.z <= 0f)
+                    continue;
+
+                if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                        _enemyHudCanvasRoot,
+                        screenPos,
+                        canvasCamera,
+                        out var localPoint))
+                {
+                    slot.SetScreenPosition(_enemyHudCanvasRoot.TransformPoint(localPoint));
                 }
             }
         }
@@ -305,6 +522,8 @@ namespace TTCS.UI.Combat
             bus.Subscribe<HealingReceivedEvent>(OnHealingReceived);
             bus.Subscribe<EntityDeathEvent>(OnEntityDeath);
             bus.Subscribe<ManaChangedEvent>(OnManaChanged);
+            bus.Subscribe<TurnStartedEvent>(OnTurnStarted);
+            bus.Subscribe<TurnEndedEvent>(OnTurnEnded);
             
         }
 
@@ -315,6 +534,8 @@ namespace TTCS.UI.Combat
             bus.Unsubscribe<HealingReceivedEvent>(OnHealingReceived);
             bus.Unsubscribe<EntityDeathEvent>(OnEntityDeath);
             bus.Unsubscribe<ManaChangedEvent>(OnManaChanged);
+            bus.Unsubscribe<TurnStartedEvent>(OnTurnStarted);
+            bus.Unsubscribe<TurnEndedEvent>(OnTurnEnded);
             
         }
 
@@ -333,6 +554,9 @@ namespace TTCS.UI.Combat
              
 
             slot.AnimateHP(newPercent);
+
+            // Enemy nào bị dính damage sẽ hiện HUD trong một khoảng thời gian ngắn.
+            MarkEnemyVisibleByDamage(e.TargetId);
         }
 
         private void OnHealingReceived(HealingReceivedEvent e)
@@ -351,6 +575,14 @@ namespace TTCS.UI.Combat
         {
             if (_slotMap.TryGetValue(e.EntityId, out var slot))
                 slot.SetDead();
+
+            _enemyVisibleUntil.Remove(e.EntityId);
+            if (_enemyTurnActorId == e.EntityId)
+            {
+                _enemyTurnActorId = null;
+                _isEnemyTurnActive = false;
+            }
+            RefreshEnemyVisibility();
         }
 
         private void OnManaChanged(ManaChangedEvent e)
@@ -364,6 +596,7 @@ namespace TTCS.UI.Combat
         private void OnDestroy()
         {
             UnsubscribeEvents();
+            EndEnemyTargeting();
         }
 
         #endregion

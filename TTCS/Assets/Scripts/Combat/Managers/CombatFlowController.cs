@@ -500,8 +500,22 @@ namespace TTCS.Combat.Managers
                 yield break;
             }
 
-            // Execute
-            action.Execute(actor, targets, SkillManager.Instance, guard);
+            // Step 1: commit resource/cooldown
+            if (SkillManager.Instance != null && !SkillManager.Instance.UseSkill(actor.ID, skillData))
+            {
+                Log($"ExecuteAction: UseSkill failed for '{actor.ID}' skill '{skillId}'.", LogCategory.Combat);
+                _lastActionCost = action.TimelineCost;
+                yield break;
+            }
+
+            // Step 2: trigger attack/cast animation first
+            EventBus.Instance.Publish(new SkillCastEvent(actor.ID, skillData.id, targets.Select(t => t.ID).ToArray()));
+
+            // Step 3: wait hit-frame notify from animation before applying outcome
+            yield return WaitForActionHitFrame(actor.ID);
+
+            // Step 4: apply actual damage/heal/effects
+            ActionResolver.Resolve(actor, targets, skillData, guard);
 
             _lastActionCost = action.TimelineCost;
 
@@ -509,6 +523,37 @@ namespace TTCS.Combat.Managers
                 $"targets: {string.Join(", ", targets.Select(t => t.ID))}");
 
             yield return WaitForActionAnimation(actor.ID);
+        }
+
+        private IEnumerator WaitForActionHitFrame(string actorId)
+        {
+            var animationController = ActionAnimationController.Instance;
+
+            if (animationController == null || !animationController.HasViewForEntity(actorId))
+                yield break;
+
+            float elapsed = 0f;
+
+            // Chờ sequence bắt đầu để tránh race ngay sau khi publish SkillCastEvent.
+            while (!animationController.IsActionAnimationRunningFor(actorId) && elapsed < 0.2f)
+            {
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            elapsed = 0f;
+            while (!animationController.HasHitFrameTriggeredFor(actorId)
+                   && animationController.IsActionAnimationRunningFor(actorId)
+                   && elapsed < _maxActionAnimationWait)
+            {
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            if (!animationController.HasHitFrameTriggeredFor(actorId))
+            {
+                Log($"CombatFlowController: HitFrame wait timeout for '{actorId}', resolving action immediately.", LogCategory.Combat);
+            }
         }
 
         private IEnumerator WaitForActionAnimation(string actorId)

@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 46669760ed65e284a98e16d779421540
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8938468088719807645
+    second: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_0
+  - first:
+      213: 3407975905151874939
+    second: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_1
+  - first:
+      213: -7866684752510218562
+    second: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_2
+  - first:
+      213: -6202552959365942735
+    second: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_3
+  - first:
+      213: -8052336940612375412
+    second: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_4
+  - first:
+      213: 3573441859639437751
+    second: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_5
+  - first:
+      213: 148527624127927059
+    second: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_6
+  - first:
+      213: 4070587927105772002
+    second: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_7
+  - first:
+      213: -2525335549025043437
+    second: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_8
+  - first:
+      213: -4571668978588595007
+    second: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_9
+  - first:
+      213: 7708392132638881751
+    second: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_10
+  - first:
+      213: 7320476007963577624
+    second: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_11
+  - first:
+      213: -8516029190329774305
+    second: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_12
+  - first:
+      213: -7500500438236271526
+    second: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_13
+  - first:
+      213: -642259580290345540
+    second: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1033
+        width: 878
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d941f406e51db0c70800000000000000
+      internalID: 8938468088719807645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_1
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 1307
+        width: 96
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b77faad87009b4f20800000000000000
+      internalID: 3407975905151874939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_2
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 1185
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebe85a6a5ebe3d290800000000000000
+      internalID: -7866684752510218562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_3
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 1247
+        width: 94
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 132f17c22fa1ce9a0800000000000000
+      internalID: -6202552959365942735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_4
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 1152
+        width: 94
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8c2b03373a504090800000000000000
+      internalID: -8052336940612375412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_5
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 983
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b9e15d307a679130800000000000000
+      internalID: 3573441859639437751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_6
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 1070
+        width: 96
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3135a73561daf0200800000000000000
+      internalID: 148527624127927059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_7
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 681
+        width: 878
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e9122e1722ad7830800000000000000
+      internalID: 4070587927105772002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_8
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 987
+        width: 94
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31c32bda2b434fcd0800000000000000
+      internalID: -2525335549025043437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_9
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 911
+        width: 96
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cccd84294b2e80c0800000000000000
+      internalID: -4571668978588595007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_10
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 828
+        width: 96
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d73b57cdc5b9fa60800000000000000
+      internalID: 7708392132638881751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_11
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 750
+        width: 93
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81d4079c42e879560800000000000000
+      internalID: 7320476007963577624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 1265
+        height: 679
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1f498d329cf0d980800000000000000
+      internalID: -8516029190329774305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_13
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 668
+        width: 96
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5ce34d379ed8e790800000000000000
+      internalID: -7500500438236271526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_14
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 50
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb5d337805c3617f0800000000000000
+      internalID: -642259580290345540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_0: 8938468088719807645
+      Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_1: 3407975905151874939
+      Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_10: 7708392132638881751
+      Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_11: 7320476007963577624
+      Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_12: -8516029190329774305
+      Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_13: -7500500438236271526
+      Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_14: -642259580290345540
+      Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_2: -7866684752510218562
+      Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_3: -6202552959365942735
+      Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_4: -8052336940612375412
+      Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_5: 3573441859639437751
+      Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_6: 148527624127927059
+      Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_7: 4070587927105772002
+      Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_8: -2525335549025043437
+      Mobile - Fire Emblem_ Heroes - UI - Tactics Drills_9: -4571668978588595007
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

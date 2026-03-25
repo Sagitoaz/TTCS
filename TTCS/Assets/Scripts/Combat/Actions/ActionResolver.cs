@@ -23,7 +23,7 @@ namespace TTCS.Combat.Actions
     ///   Type "buff"    → only apply effects to ally
     ///   Type "debuff"  → only apply effects to enemy
     ///
-    /// Publish events: ActionExecutedEvent, SkillCastEvent
+    /// Publish events: ActionExecutedEvent
     /// </summary>
     public static class ActionResolver
     {
@@ -39,9 +39,7 @@ namespace TTCS.Combat.Actions
         {
             if (actor == null || skill == null || targets == null) return;
 
-            // Publish skill cast event
             var targetIds = GetTargetIds(targets);
-            EventBus.Instance.Publish(new SkillCastEvent(actor.ID, skill.id, targetIds));
 
             float multiplier = ParseMultiplier(skill.damage?.formula);
 

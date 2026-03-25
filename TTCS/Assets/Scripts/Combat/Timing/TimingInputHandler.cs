@@ -91,6 +91,11 @@ namespace TTCS.Combat.Timing
         private void RegisterInput()
         {
             if (TimingSystem.Instance == null) return;
+
+            // Tránh dính input từ UI khác (vd: confirm target bằng Space)
+            // chỉ forward khi timing window đang mở.
+            if (!TimingSystem.Instance.IsWindowActive) return;
+
             TimingSystem.Instance.RegisterInput(Time.time);
         }
 

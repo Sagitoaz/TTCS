@@ -3,6 +3,7 @@ using TTCS.Combat.Entities;
 using TTCS.Combat.Managers;
 using TTCS.Data;
 using TTCS.Debugging;
+using TTCS.Core.Events;
 using static TTCS.Debugging.DebugLogger;
 using TTCS.Combat.Timing;  // TimingSystem, TimingWindow
 using TTCS.UI.Combat;    
@@ -75,7 +76,10 @@ namespace TTCS.Combat.Actions
             // ── Step 1: Commit cost ──────────────────────────────────────
             skillManager?.UseSkill(actor.ID, _skillData);
 
-            // ── Step 2: Resolve outcome ──────────────────────────────────
+            // ── Step 2: Trigger cast event (để visual layer play attack animation) ──
+            EventBus.Instance.Publish(new SkillCastEvent(actor.ID, _skillData.id, GetTargetIds(targets)));
+
+            // ── Step 3: Resolve outcome ──────────────────────────────────
             ActionResolver.Resolve(actor, targets, _skillData, guard);
 
             Log($"SkillAction.Execute: '{actor.ID}' → skill='{_skillData.id}' targets={targets?.Count ?? 0}",
@@ -83,6 +87,17 @@ namespace TTCS.Combat.Actions
         }
 
         public SkillDataModel GetSkillData() => _skillData;
+
+        private static string[] GetTargetIds(List<CombatEntity> targets)
+        {
+            if (targets == null) return new string[0];
+
+            var ids = new string[targets.Count];
+            for (int i = 0; i < targets.Count; i++)
+                ids[i] = targets[i]?.ID ?? string.Empty;
+
+            return ids;
+        }
 
         public override string ToString() =>
             $"[SkillAction: {ActionId}, cost={TimelineCost}]";

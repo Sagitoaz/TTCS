@@ -41,6 +41,16 @@ namespace TTCS.UI.Combat
             // TimingSystem có thể spawn sau UI, nên thử subscribe lại.
             if (!_subscribed)
                 TrySubscribe();
+
+            // Failsafe: nếu window đã đóng mà UI vẫn còn, ép tắt ngay.
+            if (_subscribed && TimingSystem.Instance != null && !TimingSystem.Instance.IsWindowActive)
+            {
+                if (_progressRoutine != null || (_root != null && _root.alpha > 0f))
+                {
+                    StopProgress();
+                    Hide();
+                }
+            }
         }
 
         private void OnDisable()

@@ -87,6 +87,17 @@ namespace TTCS.Combat.Timing
             }
 
             _windowActive    = true;
+
+            // Nếu đã có input buffer hợp lệ thì trả kết quả ngay, không chạy countdown UI.
+            if (_inputTime.HasValue)
+            {
+                TimingGrade bufferedGrade = _activeWindow != null
+                    ? _activeWindow.EvaluateInput(_inputTime.Value)
+                    : TimingGrade.Miss;
+                FinishWindow(bufferedGrade);
+                return;
+            }
+
             _windowCoroutine = StartCoroutine(WindowLifecycle(window));
             OnWindowOpened?.Invoke(window.Duration);
         }
@@ -101,12 +112,24 @@ namespace TTCS.Combat.Timing
             {
                 _inputTime = inputGameTime;
                 Log($"TimingSystem: Input registered at t={inputGameTime:F3}s.", LogCategory.Combat);
+
+                // Yêu cầu mới: nhận input xong thì đóng window và trả kết quả ngay.
+                if (_windowCoroutine != null)
+                {
+                    StopCoroutine(_windowCoroutine);
+                    _windowCoroutine = null;
+                }
+
+                TimingGrade immediateGrade = _activeWindow != null
+                    ? _activeWindow.EvaluateInput(_inputTime.Value)
+                    : TimingGrade.Miss;
+
+                FinishWindow(immediateGrade);
             }
             else if (!_windowActive)
             {
-                // Buffer input cho lần mở window tới
-                _bufferedInputTime = inputGameTime;
-                Log($"TimingSystem: Input buffered (no active window).", LogCategory.Combat);
+                // Không nhận input khi chưa mở window để tránh dính phím từ UI khác.
+                Log($"TimingSystem: Ignored input (no active window).", LogCategory.Combat);
             }
         }
 
@@ -136,7 +159,6 @@ namespace TTCS.Combat.Timing
 
             while (elapsed < window.Duration)
             {
-                // Nếu đã nhận input, có thể đóng sớm (optional — hiện tại chờ hết duration)
                 elapsed += Time.deltaTime;
                 yield return null;
             }
@@ -160,6 +182,7 @@ namespace TTCS.Combat.Timing
 
         private void FinishWindow(TimingGrade grade)
         {
+            _windowCoroutine = null;
             _windowActive    = false;
             _activeWindow    = null;
             _inputTime       = null;

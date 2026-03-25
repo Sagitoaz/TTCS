@@ -39,6 +39,7 @@ namespace TTCS.UI.Combat
 
         // ─── Manual Target Selection State ─────────────────────────────
         private bool _isSelectingTarget;
+        private bool _isSelectingEnemyTarget;
         private string _pendingSkillId;
         private List<CombatEntity> _targetCandidates = new();
         private int _currentTargetIndex;
@@ -95,6 +96,8 @@ namespace TTCS.UI.Combat
             if (_isSelectingTarget)
             {
                 HandleFallbackKeyboardInput();
+                if (_isSelectingEnemyTarget)
+                    NotifyEnemyTargetingState();
             }
         }
 
@@ -250,10 +253,12 @@ namespace TTCS.UI.Combat
             _pendingSkillId = skillId;
             _currentTargetIndex = 0;
             _isSelectingTarget = true;
+            _isSelectingEnemyTarget = rule == "single_enemy";
 
             SetButtonsInteractable(false);
             ApplySelectionHighlight();
             FocusCameraOnCurrentTarget();
+            NotifyEnemyTargetingState();
 
             Log($"SkillButtonPanel: Enter target selection for '{skillId}' ({rule})", LogCategory.UI);
         }
@@ -283,9 +288,11 @@ namespace TTCS.UI.Combat
 
         private void SubmitResolvedSkill(string skillId, List<string> targetIds)
         {
+            ShowEnemyHudForTargets(targetIds);
             Log($"SkillButtonPanel: Player chọn '{skillId}' → {targetIds.Count} target(s).", LogCategory.UI);
             CombatFlowController.Instance?.SubmitPlayerAction(skillId, targetIds);
-            ExitTargetSelectionMode(resetCamera: true, restoreButtons: true);
+            // Giữ enemy HUD trong lúc action đang resolve; sẽ tắt khi turn kết thúc.
+            ExitTargetSelectionMode(resetCamera: true, restoreButtons: true, keepEnemyHudVisible: true);
         }
 
         private void ConfirmCurrentTarget()
@@ -317,9 +324,10 @@ namespace TTCS.UI.Combat
             _currentTargetIndex = (_currentTargetIndex + direction + count) % count;
             ApplySelectionHighlight();
             FocusCameraOnCurrentTarget();
+            NotifyEnemyTargetingState();
         }
 
-        private void ExitTargetSelectionMode(bool resetCamera, bool restoreButtons)
+        private void ExitTargetSelectionMode(bool resetCamera, bool restoreButtons, bool keepEnemyHudVisible = false)
         {
             if (_targetCandidates.Count > 0)
             {
@@ -331,9 +339,12 @@ namespace TTCS.UI.Combat
             }
 
             _isSelectingTarget = false;
+            _isSelectingEnemyTarget = false;
             _pendingSkillId = null;
             _targetCandidates.Clear();
             _currentTargetIndex = 0;
+            if (!keepEnemyHudVisible)
+                CombatUIController.Instance?.EndEnemyTargetingHUD();
 
             if (restoreButtons)
             {
@@ -344,6 +355,51 @@ namespace TTCS.UI.Combat
             {
                 RestoreCamera();
             }
+        }
+
+        private void ShowEnemyHudForTargets(List<string> targetIds)
+        {
+            if (targetIds == null || targetIds.Count == 0)
+            {
+                CombatUIController.Instance?.EndEnemyTargetingHUD();
+                return;
+            }
+
+            var enemyIds = new List<string>();
+            foreach (var targetId in targetIds)
+            {
+                if (string.IsNullOrWhiteSpace(targetId)) continue;
+
+                var enemy = _enemies.Find(e => e != null && !e.IsDead && e.ID == targetId);
+                if (enemy != null)
+                    enemyIds.Add(targetId);
+            }
+
+            if (enemyIds.Count == 0)
+            {
+                CombatUIController.Instance?.EndEnemyTargetingHUD();
+                return;
+            }
+
+            CombatUIController.Instance?.BeginEnemyTargetingHUD(enemyIds, enemyIds[0]);
+        }
+
+        private void NotifyEnemyTargetingState()
+        {
+            if (!_isSelectingTarget || !_isSelectingEnemyTarget || _targetCandidates.Count == 0)
+            {
+                CombatUIController.Instance?.EndEnemyTargetingHUD();
+                return;
+            }
+
+            string currentId = _targetCandidates[_currentTargetIndex]?.ID;
+            if (string.IsNullOrWhiteSpace(currentId))
+            {
+                CombatUIController.Instance?.EndEnemyTargetingHUD();
+                return;
+            }
+
+            CombatUIController.Instance?.BeginEnemyTargetingHUD(new List<string> { currentId }, currentId);
         }
 
         private void ApplySelectionHighlight()
@@ -364,7 +420,7 @@ namespace TTCS.UI.Combat
 
         private void BindInputActions()
         {
-            _playerInput = FindObjectOfType<PlayerInput>();
+            _playerInput = FindFirstObjectByType<PlayerInput>();
             if (_playerInput?.actions == null) return;
 
             _previousAction = _playerInput.actions.FindAction("Previous", throwIfNotFound: false);

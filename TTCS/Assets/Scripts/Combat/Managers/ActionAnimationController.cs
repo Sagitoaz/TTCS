@@ -57,6 +57,7 @@ namespace TTCS.Combat.Managers
         private readonly Dictionary<string, CharacterView> _characterViews = new Dictionary<string, CharacterView>();
         private readonly Dictionary<string, EnemyView>     _enemyViews     = new Dictionary<string, EnemyView>();
         private readonly HashSet<string> _runningActionCasters = new HashSet<string>();
+        private readonly HashSet<string> _hitFrameReachedCasters = new HashSet<string>();
 
         /// <summary>
         /// Đăng ký CharacterView — gọi từ CombatSceneManager sau khi spawn.
@@ -92,6 +93,7 @@ namespace TTCS.Combat.Managers
             _characterViews.Clear();
             _enemyViews.Clear();
             _runningActionCasters.Clear();
+            _hitFrameReachedCasters.Clear();
         }
 
         /// <summary>
@@ -102,6 +104,15 @@ namespace TTCS.Combat.Managers
         {
             if (string.IsNullOrEmpty(entityId)) return false;
             return _runningActionCasters.Contains(entityId);
+        }
+
+        /// <summary>
+        /// True nếu action hiện tại của caster đã nhận NotifyAttackHitFrame từ animation.
+        /// </summary>
+        public bool HasHitFrameTriggeredFor(string entityId)
+        {
+            if (string.IsNullOrEmpty(entityId)) return false;
+            return _hitFrameReachedCasters.Contains(entityId);
         }
 
         /// <summary>Kiểm tra entity có view visual được register trong scene hay không.</summary>
@@ -130,6 +141,7 @@ namespace TTCS.Combat.Managers
             EventBus.Instance.Unsubscribe<TurnStartedEvent>(OnTurnStart);
             EventBus.Instance.Unsubscribe<CombatEndedEvent>(OnCombatEnded);
             _runningActionCasters.Clear();
+            _hitFrameReachedCasters.Clear();
         }
 
         // ─── Event Handlers ───────────────────────────────────────────────
@@ -157,6 +169,7 @@ namespace TTCS.Combat.Managers
            
 
             _runningActionCasters.Add(e.CasterId);
+            _hitFrameReachedCasters.Remove(e.CasterId);
 
             if (isSupportSkill)
                 StartCoroutine(RunTrackedActionSequence(e.CasterId, PlaySupportSequence(attackerView, targetViews)));
@@ -234,7 +247,12 @@ namespace TTCS.Combat.Managers
             bool animationComplete = false;
 
             // Dùng local method để có thể unsubscribe đúng cách
-            void OnHitFrame() => hitFrameReceived = true;
+            void OnHitFrame()
+            {
+                hitFrameReceived = true;
+                if (!string.IsNullOrEmpty(attacker.EntityId))
+                    _hitFrameReachedCasters.Add(attacker.EntityId);
+            }
             void OnAnimationComplete() => animationComplete = true;
 
             if (attacker.Animator != null)
@@ -286,7 +304,12 @@ namespace TTCS.Combat.Managers
             bool hitFrameReceived = false;
             bool animationComplete = false;
 
-            void OnHitFrame() => hitFrameReceived = true;
+            void OnHitFrame()
+            {
+                hitFrameReceived = true;
+                if (!string.IsNullOrEmpty(caster.EntityId))
+                    _hitFrameReachedCasters.Add(caster.EntityId);
+            }
             void OnAnimationComplete() => animationComplete = true;
 
             if (caster.Animator != null)
