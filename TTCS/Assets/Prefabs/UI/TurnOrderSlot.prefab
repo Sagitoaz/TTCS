@@ -141,9 +141,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3645311313696037104, guid: 0a30eadb969250a458fd599c369c91ab, type: 3}
+  m_Sprite: {fileID: 4855697678153967189, guid: ed05681121d8d36419a0084a368f8d64, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -292,6 +292,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TTCS.UI.Combat.TurnOrderSlot
   _portrait: {fileID: 3914466596701812512}
   _frameImage: {fileID: 4995039084960428613}
-  _slotRootRect: {fileID: 0}
   _currentScale: 1.18
   _scaleDuration: 0.16

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 using TTCS.Core.Data;
 using TTCS.Core.Events;
 using TTCS.Visual;
@@ -58,6 +59,7 @@ namespace TTCS.Combat.Managers
         private readonly Dictionary<string, EnemyView>     _enemyViews     = new Dictionary<string, EnemyView>();
         private readonly HashSet<string> _runningActionCasters = new HashSet<string>();
         private readonly HashSet<string> _hitFrameReachedCasters = new HashSet<string>();
+        private Tween _cameraShakeTween;
 
         /// <summary>
         /// Đăng ký CharacterView — gọi từ CombatSceneManager sau khi spawn.
@@ -175,10 +177,10 @@ namespace TTCS.Combat.Managers
                 StartCoroutine(RunTrackedActionSequence(e.CasterId, PlaySupportSequence(attackerView, targetViews)));
             else if (isMeleeAttack)
                 StartCoroutine(RunTrackedActionSequence(e.CasterId,
-                    PlayAttackSequence(attackerView, targetViews, useMeleeMovement: true)));
+                    PlayAttackSequence(attackerView, targetViews, useMeleeMovement: true, skill)));
             else
                 StartCoroutine(RunTrackedActionSequence(e.CasterId,
-                    PlayAttackSequence(attackerView, targetViews, useMeleeMovement: false)));
+                    PlayAttackSequence(attackerView, targetViews, useMeleeMovement: false, skill)));
         }
 
         private IEnumerator RunTrackedActionSequence(string casterId, IEnumerator sequence)
@@ -241,10 +243,12 @@ namespace TTCS.Combat.Managers
         ///   2. Chờ OnAttackHitFrame event (timeout 2.5s)
         ///   3. Targets PlayHurt cùng lúc
         /// </summary>
-        private IEnumerator PlayAttackSequence(CharacterView attacker, List<CharacterView> targets, bool useMeleeMovement)
+        private IEnumerator PlayAttackSequence(CharacterView attacker, List<CharacterView> targets, bool useMeleeMovement, TTCS.Data.SkillDataModel skill)
         {
             bool hitFrameReceived = false;
             bool animationComplete = false;
+            float freeFrameDuration = ResolveFreeFrameDuration(skill);
+            float cameraShakeStrength = ResolveCameraShakeStrength(skill);
 
             // Dùng local method để có thể unsubscribe đúng cách
             void OnHitFrame()
@@ -278,6 +282,17 @@ namespace TTCS.Combat.Managers
             // Play hurt trên tất cả targets đồng thời
             foreach (var target in targets)
                 target.Animator?.PlayHurt();
+
+            if (cameraShakeStrength > 0f)
+                TriggerCameraShake(cameraShakeStrength);
+
+            if (freeFrameDuration > 0f)
+            {
+                attacker.Animator?.ApplyFreeFrame(freeFrameDuration);
+                foreach (var target in targets)
+                    target.Animator?.ApplyFreeFrame(freeFrameDuration);
+                yield return new WaitForSecondsRealtime(freeFrameDuration);
+            }
 
             // Đợi attacker hoàn tất phase quay về vị trí idle trước khi kết thúc sequence.
             const float completeTimeout = 2.5f;
@@ -409,6 +424,43 @@ namespace TTCS.Combat.Managers
                 return targets[0].WorldPosition;
 
             return sum / validCount;
+        }
+
+        private static float ResolveCameraShakeStrength(TTCS.Data.SkillDataModel skill)
+        {
+            if (skill?.visual != null)
+                return Mathf.Max(0f, skill.visual.cameraShake);
+
+            return 0f;
+        }
+
+        private static float ResolveFreeFrameDuration(TTCS.Data.SkillDataModel skill)
+        {
+            if (skill?.visual != null && skill.visual.freeFrame > 0f)
+                return Mathf.Clamp(skill.visual.freeFrame, 0f, 0.2f);
+
+            float shake = ResolveCameraShakeStrength(skill);
+
+            if (shake <= 0.08f) return 0f;      // basic/light: gần như không có free frame
+            if (shake <= 0.16f) return 0.025f;  // light-medium
+            if (shake <= 0.28f) return 0.05f;   // medium-heavy
+            return 0.085f;                      // heavy
+        }
+
+        private void TriggerCameraShake(float strength)
+        {
+            var cam = Camera.main;
+            if (cam == null)
+                return;
+
+            _cameraShakeTween?.Kill();
+
+            float duration = Mathf.Lerp(0.08f, 0.22f, Mathf.InverseLerp(0.05f, 0.45f, strength));
+            int vibrato = Mathf.RoundToInt(Mathf.Lerp(8f, 18f, Mathf.InverseLerp(0.05f, 0.45f, strength)));
+            Vector3 shake = new Vector3(strength, strength * 0.7f, 0f);
+
+            _cameraShakeTween = cam.transform.DOShakePosition(duration, shake, vibrato, 90f, false, true)
+                .SetUpdate(true);
         }
     }
 }

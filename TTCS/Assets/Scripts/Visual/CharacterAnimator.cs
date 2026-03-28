@@ -60,6 +60,9 @@ namespace TTCS.Visual
         [Tooltip("Timeout chờ state Attack kết thúc trước khi quay về vị trí ban đầu")]
         [SerializeField] private float _attackEndWaitTimeout = 2.5f;
 
+        [Tooltip("Khoảng chờ ngắn sau khi attack kết thúc trước khi quay về (giây)")]
+        [SerializeField] private float _postAttackReturnDelay = 0.1f;
+
         [Header("Movement Root")]
         [Tooltip("Nếu bật, tween di chuyển sẽ chạy trên parent transform để tránh Animator ghi đè vị trí root.")]
         [SerializeField] private bool _useParentAsMotionRoot = true;
@@ -76,6 +79,7 @@ namespace TTCS.Visual
         private Vector3  _originalLocalPos;
         private Sequence _actionSequence;
         private bool     _hitFrameNotified;
+        private Coroutine _freeFrameCoroutine;
 
         // ─── Animator Parameter Hashes (nhanh hơn string lookup) ─────────
         private static readonly int HashAttack   = Animator.StringToHash("Attack");
@@ -100,6 +104,8 @@ namespace TTCS.Visual
         {
             _actionSequence?.Kill();
             DOTween.Kill(transform);
+            if (_freeFrameCoroutine != null)
+                StopCoroutine(_freeFrameCoroutine);
         }
 
         // ─── ATTACK ───────────────────────────────────────────────────────
@@ -188,7 +194,10 @@ namespace TTCS.Visual
 
         private IEnumerator ReturnAfterAttackFinished(Transform motionRoot, Vector3 startWorldPos)
         {
-            yield return WaitUntilAttackStateEnds(_attackEndWaitTimeout);
+            float waitTimeout = Mathf.Min(_attackEndWaitTimeout, 1.2f);
+            yield return WaitUntilAttackStateEnds(waitTimeout);
+            if (_postAttackReturnDelay > 0f)
+                yield return new WaitForSeconds(_postAttackReturnDelay);
 
             _actionSequence = DOTween.Sequence()
                 .Append(motionRoot.DOMove(startWorldPos, _returnSpeed).SetEase(Ease.InOutQuad))
@@ -280,6 +289,40 @@ namespace TTCS.Visual
             if (_hitFrameNotified) return;
             _hitFrameNotified = true;
             OnAttackHitFrame?.Invoke();
+        }
+
+        /// <summary>
+        /// Free frame/hit-stop ngắn để tăng cảm giác impact theo từng đòn.
+        /// </summary>
+        public void ApplyFreeFrame(float duration)
+        {
+            if (duration <= 0f || _animator == null)
+                return;
+
+            if (_freeFrameCoroutine != null)
+                StopCoroutine(_freeFrameCoroutine);
+
+            _freeFrameCoroutine = StartCoroutine(FreeFrameCoroutine(duration));
+        }
+
+        private IEnumerator FreeFrameCoroutine(float duration)
+        {
+            float cachedAnimatorSpeed = _animator.speed;
+            bool pausedSequence = _actionSequence != null && _actionSequence.IsActive() && _actionSequence.IsPlaying();
+
+            _animator.speed = 0f;
+            if (pausedSequence)
+                _actionSequence.Pause();
+
+            yield return new WaitForSecondsRealtime(duration);
+
+            if (_animator != null)
+                _animator.speed = cachedAnimatorSpeed <= 0f ? 1f : cachedAnimatorSpeed;
+
+            if (pausedSequence && _actionSequence != null && _actionSequence.IsActive())
+                _actionSequence.Play();
+
+            _freeFrameCoroutine = null;
         }
 
         private IEnumerator HitFrameFallback(float delay)
@@ -384,6 +427,7 @@ namespace TTCS.Visual
             _actionSequence?.Kill();
             StopAllCoroutines();
             DOTween.Kill(transform);
+            _freeFrameCoroutine = null;
             transform.localPosition = _originalLocalPos;
             _view.ResetPartsColor();
             _view.SetAlpha(1f);

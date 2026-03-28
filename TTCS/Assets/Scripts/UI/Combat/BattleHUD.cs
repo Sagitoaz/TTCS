@@ -27,6 +27,7 @@ namespace TTCS.UI.Combat
         {
             public string EntityId;
             public Slider          HPSlider;
+            public Slider          HPDelayedSlider;
             public Slider          MPSlider;
             public Image           PortraitImage;
             public TextMeshProUGUI HPText;
@@ -34,6 +35,7 @@ namespace TTCS.UI.Combat
 
             private float _maxHP = 1f;
             private float _maxMP = 1f;
+            private float _lastHPPercent = 1f;
 
             public void Initialize(CombatEntity entity, int maxMP, Sprite portraitSprite)
             {
@@ -41,10 +43,16 @@ namespace TTCS.UI.Combat
                 _maxHP    = entity.Health.MaxHP;
                 _maxMP    = Mathf.Max(1, maxMP);
 
+                EnsureDelayedHpSlider();
+
                 LockSliderInput(HPSlider);
+                LockSliderInput(HPDelayedSlider);
                 LockSliderInput(MPSlider);
 
-                HPSlider.value = entity.HPPercent;
+                _lastHPPercent = Mathf.Clamp01(entity.HPPercent);
+                HPSlider.value = _lastHPPercent;
+                if (HPDelayedSlider != null)
+                    HPDelayedSlider.value = _lastHPPercent;
                 MPSlider.value = TTCS.Combat.Managers.SkillManager.Instance != null
                     ? (float)TTCS.Combat.Managers.SkillManager.Instance.GetMana(entity.ID) / _maxMP
                     : 1f;
@@ -65,6 +73,31 @@ namespace TTCS.UI.Combat
                     root.SetActive(true);
             }
 
+            private void EnsureDelayedHpSlider()
+            {
+                if (HPDelayedSlider != null || HPSlider == null)
+                    return;
+
+                var parent = HPSlider.transform.parent;
+                if (parent == null)
+                    return;
+
+                var delayedObj = UnityEngine.Object.Instantiate(HPSlider.gameObject, parent);
+                delayedObj.name = HPSlider.gameObject.name + "_DelayedAuto";
+
+                HPDelayedSlider = delayedObj.GetComponent<Slider>();
+                if (HPDelayedSlider == null)
+                    return;
+
+                var delayedFill = HPDelayedSlider.fillRect != null ? HPDelayedSlider.fillRect.GetComponent<Image>() : null;
+                if (delayedFill != null)
+                    delayedFill.color = new Color(1f, 0.85f, 0.55f, 0.95f);
+
+                int baseIndex = HPSlider.transform.GetSiblingIndex();
+                delayedObj.transform.SetSiblingIndex(baseIndex);
+                HPSlider.transform.SetSiblingIndex(baseIndex + 1);
+            }
+
             private static void LockSliderInput(Slider slider)
             {
                 if (slider == null) return;
@@ -77,8 +110,30 @@ namespace TTCS.UI.Combat
 
             public void AnimateHP(float newPercent)
             {
-                HPSlider.DOValue(newPercent, 0.4f).SetEase(Ease.OutCubic);
-                // BUG-1 FIX: truyền newPercent vào SetHPText thay vì đọc HPSlider.value cũ
+                if (HPSlider == null) return;
+
+                newPercent = Mathf.Clamp01(newPercent);
+                float oldPercent = _lastHPPercent;
+                _lastHPPercent = newPercent;
+
+                HPSlider.DOKill();
+                HPSlider.value = newPercent;
+
+                if (HPDelayedSlider != null)
+                {
+                    HPDelayedSlider.DOKill();
+
+                    if (newPercent < oldPercent)
+                    {
+                        HPDelayedSlider.value = oldPercent;
+                        HPDelayedSlider.DOValue(newPercent, 0.5f).SetEase(Ease.OutCubic);
+                    }
+                    else
+                    {
+                        HPDelayedSlider.value = newPercent;
+                    }
+                }
+
                 SetHPText(newPercent);
             }
 
@@ -99,7 +154,7 @@ namespace TTCS.UI.Combat
             public void SetHighlight(bool isCurrentTarget)
             {
                 if (SlotGroup != null)
-                    SlotGroup.alpha = isCurrentTarget ? 1f : 0.82f;
+                    SlotGroup.alpha = 1f;
 
                 if (SlotRectTransform != null)
                     SlotRectTransform.localScale = isCurrentTarget ? Vector3.one * 1.08f : Vector3.one;
@@ -113,8 +168,20 @@ namespace TTCS.UI.Combat
 
             public void SetDead()
             {
-                // BUG-3 FIX: animate HP bar về 0 và cập nhật text trước khi fade
-                HPSlider.DOValue(0f, 0.3f).SetEase(Ease.OutCubic);
+                _lastHPPercent = 0f;
+
+                if (HPSlider != null)
+                {
+                    HPSlider.DOKill();
+                    HPSlider.value = 0f;
+                }
+
+                if (HPDelayedSlider != null)
+                {
+                    HPDelayedSlider.DOKill();
+                    HPDelayedSlider.DOValue(0f, 0.5f).SetEase(Ease.OutCubic);
+                }
+
                 SetHPText(0f);
                 SlotGroup.DOFade(0.4f, 0.5f).SetDelay(0.2f);
             }
@@ -206,6 +273,9 @@ namespace TTCS.UI.Combat
                     {
                         _enemyEntityIds.Add(entities[i].ID);
                         slots[i].SetVisible(false);
+                        // Bỏ hiển thị thanh mana của enemy
+                        if (slots[i].MPSlider != null)
+                            slots[i].MPSlider.gameObject.SetActive(false);
                     }
                 }
                 else
@@ -587,6 +657,10 @@ namespace TTCS.UI.Combat
 
         private void OnManaChanged(ManaChangedEvent e)
         {
+            // Bỏ qua cập nhật mana cho enemy
+            if (_enemyEntityIds.Contains(e.EntityId))
+                return;
+
             if (_slotMap.TryGetValue(e.EntityId, out var slot))
                 slot.AnimateMP(e.CurrentMana, e.MaxMana);
         }

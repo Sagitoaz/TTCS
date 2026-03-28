@@ -73,6 +73,7 @@
   },
   
   "visual": {
+    "portraitPath": "Characters/Bandit_portrait",
     "spritePath": "Enemies/bandit_sprite",
     "animatorController": "Enemies/bandit_animator",
     "scale": 0.8

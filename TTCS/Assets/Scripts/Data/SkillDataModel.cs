@@ -88,5 +88,6 @@ namespace TTCS.Data
         public string vfxPrefab;
         public string sfx;
         public float cameraShake;
+        public float freeFrame;     // optional hit-stop duration (seconds)
     }
 }
