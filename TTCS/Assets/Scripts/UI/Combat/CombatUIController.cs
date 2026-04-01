@@ -58,8 +58,11 @@ namespace TTCS.UI.Combat
 
         [Header("Result Screen")]
         [SerializeField] private GameObject          _resultPanel;
-        [SerializeField] private TextMeshProUGUI     _resultText;
         [SerializeField] private Button              _resultButton;
+        [SerializeField] private TextMeshProUGUI     _resultButtonLabel;
+        [SerializeField] private ResultCardController _resultCardController;
+        [SerializeField] private string              _victoryButtonLabel = "Continue";
+        [SerializeField] private string              _defeatButtonLabel = "Retry";
 
         // ─── Entity Position Registry ─────────────────────────────────────
         /// <summary>Mapping entityId → World Transform (set bởi Dev B CharacterView).</summary>
@@ -220,8 +223,7 @@ namespace TTCS.UI.Combat
             if (_resultPanel == null) return;
 
             _resultPanel.SetActive(true);
-            if (_resultText != null)
-                _resultText.text = e.Victory ? "VICTORY!" : "DEFEAT...";
+            ApplyResultVisual(e.Victory);
 
             // Wire nút result lần đầu (tránh duplicate listener)
             if (_resultButton != null)
@@ -237,6 +239,14 @@ namespace TTCS.UI.Combat
                 cg.alpha = 0f;
                 cg.DOFade(1f, 0.5f).SetEase(Ease.OutQuad);
             }
+        }
+
+        private void ApplyResultVisual(bool victory)
+        {
+            _resultCardController?.ShowResult(victory);
+
+            if (_resultButtonLabel != null)
+                _resultButtonLabel.text = victory ? _victoryButtonLabel : _defeatButtonLabel;
         }
 
         /// <summary>
