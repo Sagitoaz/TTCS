@@ -23,6 +23,10 @@ namespace TTCS.Flow.LevelSelect
 
         private void Start()
         {
+            _selectedChapterId = string.IsNullOrWhiteSpace(FlowRuntimeContext.SelectedChapterId)
+                ? "chapter_01"
+                : FlowRuntimeContext.SelectedChapterId;
+
             Debug.Log($"[LevelSelect] Level select scene loaded for chapter: {_selectedChapterId}");
 
             // Get progression service
@@ -47,11 +51,19 @@ namespace TTCS.Flow.LevelSelect
 
         private void PopulateChapterLevels()
         {
+            ClearLevelButtons();
+
             // TODO: Load chapter data from JSON or DataManager
             // For now, create mock levels
             var chapterState = _progressionService.GetChapterState(_selectedChapterId);
 
             Debug.Log($"[LevelSelect] Populating levels for chapter {_selectedChapterId}: unlocked={chapterState.Unlocked}");
+
+            if (!chapterState.Unlocked)
+            {
+                Debug.LogWarning($"[LevelSelect] Chapter locked: {_selectedChapterId}");
+                return;
+            }
 
             // Mock: Create 5 levels
             for (int i = 1; i <= 5; i++)
@@ -71,6 +83,13 @@ namespace TTCS.Flow.LevelSelect
             var buttonGo = Instantiate(_levelButtonPrefab, _levelButtonContainer);
             var button = buttonGo.GetComponent<Button>();
             var text = buttonGo.GetComponentInChildren<Text>();
+
+            if (button == null)
+            {
+                Debug.LogWarning("[LevelSelect] Level button prefab is missing Button component");
+                Destroy(buttonGo);
+                return;
+            }
 
             if (text != null)
                 text.text = $"Level {displayNumber}";
@@ -109,6 +128,19 @@ namespace TTCS.Flow.LevelSelect
             Debug.Log("[LevelSelect] Back button clicked - returning to main menu");
             FlowController.Instance.OpenMainMenu();
         }
+
+        private void ClearLevelButtons()
+        {
+            if (_levelButtonContainer == null)
+            {
+                return;
+            }
+
+            for (int i = _levelButtonContainer.childCount - 1; i >= 0; i--)
+            {
+                Destroy(_levelButtonContainer.GetChild(i).gameObject);
+            }
+        }
     }
 
     /// <summary>
@@ -119,18 +151,20 @@ namespace TTCS.Flow.LevelSelect
         public void UpdateLevelButtonState(GameObject buttonGo, LevelState levelState)
         {
             var image = buttonGo.GetComponent<Image>();
-            if (image == null)
+            var label = buttonGo.GetComponentInChildren<Text>();
+
+            if (image == null || label == null)
                 return;
 
             if (!levelState.Unlocked)
             {
                 image.color = new Color(0.5f, 0.5f, 0.5f); // Gray for locked
-                buttonGo.GetComponentInChildren<Text>().text += " [LOCKED]";
+                label.text += " [LOCKED]";
             }
             else if (levelState.Cleared)
             {
                 image.color = new Color(0.7f, 1f, 0.7f); // Green for cleared
-                buttonGo.GetComponentInChildren<Text>().text += $" [{levelState.BestStars}★]";
+                label.text += $" [{levelState.BestStars}*]";
             }
             else
             {

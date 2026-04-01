@@ -1,4 +1,5 @@
 using UnityEngine;
+using TTCS.Core.Events;
 
 namespace TTCS.Flow.Tutorial
 {
@@ -44,13 +45,7 @@ namespace TTCS.Flow.Tutorial
 
             _tutorialCompleted = true;
             Debug.Log("[Tutorial] Tutorial completed");
-
-            // Save tutorial completion state
-            PlayerPrefs.SetInt("TutorialCompleted", 1);
-            PlayerPrefs.Save();
-
-            // After a short delay, go to main menu
-            Invoke(nameof(GoToMainMenu), 1f);
+            EventBus.Instance.Publish(new TutorialCompletedEvent(false));
         }
 
         /// <summary>
@@ -59,13 +54,11 @@ namespace TTCS.Flow.Tutorial
         public void SkipTutorial()
         {
             Debug.Log("[Tutorial] Tutorial skipped by player");
-            CompleteTutorial();
-        }
+            if (_tutorialCompleted)
+                return;
 
-        private void GoToMainMenu()
-        {
-            Debug.Log("[Tutorial] Transitioning to main menu");
-            FlowController.Instance.OpenMainMenu();
+            _tutorialCompleted = true;
+            EventBus.Instance.Publish(new TutorialCompletedEvent(true));
         }
     }
 }

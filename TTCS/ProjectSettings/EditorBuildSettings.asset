@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/TestCombatUI.unity
+    path: Assets/Scenes/CombatScene.unity
     guid: b8b1a7901f6e4a2448003a6c289f3932
   - enabled: 1
     path: Assets/Scenes/Flow/Boot.unity
@@ -23,6 +23,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Flow/LevelSelectScene.unity
     guid: 06a549f859671024a91ec93fc6605913
+  - enabled: 1
+    path: Assets/Scenes/Flow/CombatResultScene.unity
+    guid: 8a08c3f6d9ee14f4982a62dae2ec4343
+  - enabled: 1
+    path: Assets/Scenes/Flow/GachaScene.unity
+    guid: a09bb9997ea4eb54e9b06b2f551074ad
+  - enabled: 1
+    path: Assets/Scenes/Flow/InventoryScene.unity
+    guid: 08e17c794ae71214c946a0bf6b6405d0
+  - enabled: 1
+    path: Assets/Scenes/Flow/TeamFormationScene.unity
+    guid: 3133863edb9e482459b3f57b9b2dfa48
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

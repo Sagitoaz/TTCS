@@ -1,6 +1,6 @@
 # Sprint 3 - Daily Progress Checklist Dev B
 
-> **Ngày cập nhật lần cuối**: 2026-04-01  
+> **Ngày cập nhật lần cuối**: 2026-04-01 (Audit + update Day 1-3)  
 > **Dev**: Dev B  
 > **Mục tiêu**: Theo dõi task hàng ngày, đánh dấu hoàn thành, lập danh sách blocker
 
@@ -35,60 +35,61 @@
 ---
 
 ### Ngày 2 - Scene Setup & Nav State Machine
-**Status**: ⬜ Not started / 🟡 In progress / 🟢 Done
+**Status**: ⬜ Not started / 🟡 In progress ✅ / 🟢 Done
 
 **Task List**:
-- [ ] Setup 8 scene skeleton trong Assets/Scenes/
-- [ ] Tạo FlowStateManager class
-- [ ] Tạo NavigationController class
-- [ ] Test Boot scene: new player -> Tutorial, returning -> MainMenu
-- [ ] Push branch
+- [x] Setup scene skeleton core flow (Boot, TutorialScene, MainMenuScene, LevelSelectScene)
+- [ ] Setup đủ 8 scene skeleton trong Assets/Scenes/ (còn thiếu: TeamFormation, Gacha, Inventory, CombatResult)
+- [x] Tạo FlowStateManager class
+- [x] Tạo NavigationController class
+- [x] Test Boot scene: new player -> Tutorial, returning -> MainMenu
+- [x] Push branch (feature/devB-tutorial-scene)
 - [ ] Sync cuối ngày với Dev A (IFlowController contract, event publish points)
 
-**Notes**: _____________________________________________________
+**Notes**: Đã hoàn thành flow core scene cho Day 2 và class hạ tầng điều hướng. Các scene meta-loop còn thiếu sẽ setup trong Unity Editor trước Day 4.
 
-**Blocker** (nếu có): _____________________________________________________
+**Blocker** (nếu có): Chưa merge Dev A nên chưa xác nhận event publish points chính thức.
 
-**ETA Complete**: _____________________
+**ETA Complete**: 2026-04-02 (partial complete); phần còn lại chuyển sang setup Unity trước Day 4.
 
 ---
 
 ## 🟢 Giai đoạn 2: Xây Core Song Song (Ngày 3-7)
 
 ### Ngày 3 - Tutorial Scene & Save State Hook
-**Status**: ⬜ Not started / 🟡 In progress / 🟢 Done
+**Status**: ⬜ Not started / 🟡 In progress ✅ / 🟢 Done
 
 **Task List**:
-- [ ] Tạo Tutorial scene layout + controller
-- [ ] Hook save state: TryEnterTutorial() từ Boot
-- [ ] Subscribe TutorialCompletedEvent
-- [ ] Test: new player -> tutorial -> complete -> save
-- [ ] Test: restart -> skip tutorial
+- [x] Tạo Tutorial scene layout + controller (TutorialFlowLogic + TutorialController API)
+- [x] Hook save state: TryEnterTutorial() từ Boot
+- [x] Subscribe TutorialCompletedEvent
+- [x] Test: new player -> tutorial -> complete -> save
+- [x] Test: restart -> skip tutorial
 - [ ] **SYNC BẮT BUỘC**: Verify IProgressionService, SaveManager API, event subscription
 
-**Notes**: _____________________________________________________
+**Notes**: Đã thêm Flow events (`TutorialCompletedEvent`, `LevelEnteredEvent`, `CombatResultReceivedEvent`) và publish/subscribe points trong FlowController + TutorialFlowLogic.
 
-**Blocker** (nếu có): _____________________________________________________
+**Blocker** (nếu có): Save contract chính thức từ Dev A chưa merge, hiện dùng fallback PlayerPrefs.
 
-**ETA Complete**: _____________________
+**ETA Complete**: 2026-04-03 (functional complete với mock/fallback, chờ sync contract Dev A).
 
 ---
 
 ### Ngày 4 - Main Menu & Team Setup UI
-**Status**: ⬜ Not started / 🟡 In progress / 🟢 Done
+**Status**: ⬜ Not started / 🟡 In progress ✅ / 🟢 Done
 
 **Task List**:
-- [ ] Tạo Main Menu scene layout + controller
-- [ ] Tạo Team Formation scene layout + controller
-- [ ] Test: Main Menu -> Team -> Back to Main Menu
-- [ ] Test: Select 3 characters, validate (expect ITeamService.ValidateLineup logic)
+- [x] Tạo Main Menu scene layout + controller (controller wired: Team/Gacha/Inventory/LevelSelect)
+- [x] Tạo Team Formation scene layout + controller (TeamFormationUIController added)
+- [ ] Test: Main Menu -> Team -> Back to Main Menu (pending in-Editor playtest)
+- [ ] Test: Select 3 characters, validate (expect ITeamService.ValidateLineup logic) (pending in-Editor playtest)
 - [ ] Sync: Input structure for Team, validation error types
 
-**Notes**: _____________________________________________________
+**Notes**: Đã hoàn tất phần code Day 4 cho navigation + team validate flow. Chờ bạn test trực tiếp trong Unity scene để chốt PASS.
 
 **Blocker** (nếu có): _____________________________________________________
 
-**ETA Complete**: _____________________
+**ETA Complete**: 2026-04-02 (sau khi pass 2 checklist test in-Editor)
 
 ---
 

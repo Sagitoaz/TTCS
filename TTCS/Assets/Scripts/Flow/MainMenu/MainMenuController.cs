@@ -48,19 +48,19 @@ namespace TTCS.Flow.MainMenu
         private void OnTeamClicked()
         {
             Debug.Log("[MainMenu] Team button clicked");
-            // TODO: Open TeamScene (Nav day 2+)
+            FlowController.Instance.OpenTeamSelection();
         }
 
         private void OnGachaClicked()
         {
             Debug.Log("[MainMenu] Gacha button clicked");
-            // TODO: Open GachaScene
+            FlowController.Instance.OpenGacha();
         }
 
         private void OnInventoryClicked()
         {
             Debug.Log("[MainMenu] Inventory button clicked");
-            // TODO: Open InventoryScene
+            FlowController.Instance.OpenInventory();
         }
 
         private void OnSettingsClicked()
