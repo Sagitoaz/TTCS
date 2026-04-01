@@ -293,6 +293,8 @@
   - [ ] Sort level asc/desc
   - [ ] Detail panel: tên, rare, level, portrait, stats, HP hiện tại, Mana hiện tại
   - [ ] Feed button để tăng level nhân vật
+  - [ ] Rule bắt buộc: level-up sẽ hồi full HP + full Mana
+  - [ ] Ownership: DevB tự triển khai end-to-end (không phụ thuộc sync contract DevA cho feature này)
 
 - [ ] Tạo `CharacterCollectionUIController`:
   ```csharp

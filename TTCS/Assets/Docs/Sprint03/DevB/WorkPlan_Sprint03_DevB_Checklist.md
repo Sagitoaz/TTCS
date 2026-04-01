@@ -147,8 +147,8 @@
 - [ ] Verify: No crash, no compile error, event sequence correct
 - [ ] PR #1 ready: feature/devB-tutorial-scene
 - [ ] PR #2 ready: feature/devB-menu-team-gacha-inventory-character
-- [ ] Prepare bug list for Giai đoạn 3
-- [ ] Sync Dev A: API feed level + contract cập nhật HP/Mana hiện tại sau level up
+- [ ] Prepare bug list cho Giai đoạn 3
+- [ ] DevB tự triển khai feed level + cập nhật HP/Mana hiện tại sau level up (không phụ thuộc sync contract DevA)
 
 **Notes**: _____________________________________________________
 

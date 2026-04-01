@@ -182,13 +182,13 @@ Sprint 3 được xem là hoàn thành khi thỏa tất cả điều kiện sau:
 - [ ] Baseline balance data cho chapter/level đầu.
 - [ ] Chuẩn hóa trường dữ liệu cân bằng nhanh.
 - [ ] Implement `InventoryService` v1 và item-use rules cơ bản.
-- [ ] Expose API/contract cho character progression feed (consume item/exp), cập nhật level + full HP/Mana on level-up.
 
 **Dev B**
 - [ ] Hook level select -> vào combat với dữ liệu đúng.
 - [ ] Hook combat end -> quay lại progression flow.
 - [ ] Inventory UI v1 (list item + hành động dùng item cơ bản).
 - [ ] Character Collection scene v1 (grid ô vuông avatar + rare badge góc phải trên, search name, sort rare asc/desc, sort level asc/desc, detail panel, feed button).
+- [ ] Implement feed level flow cho Character Collection (consume resource, tăng level, hồi full HP/Mana khi level-up).
 
 ### Ngày 7
 **Cả 2 Dev (Sync lớn)**
@@ -253,7 +253,7 @@ Sprint 3 được xem là hoàn thành khi thỏa tất cả điều kiện sau:
 | Team formation flow | Dev B | TeamService contract | Ngày 4-5 |
 | Gacha logic + UI | Dev A + Dev B | Rarity config + result panel | Ngày 5-6 |
 | Inventory logic + UI | Dev A + Dev B | Item rules + UI action | Ngày 6-7 |
-| Character collection flow | Dev A + Dev B | Roster save data + character stat API + feed API | Ngày 6-10 |
+| Character collection flow | Dev B | Roster save data + character stat read/write + feed level logic | Ngày 6-10 |
 | Full integration v1 | Both | Tất cả trên | Ngày 7 |
 
 ---
