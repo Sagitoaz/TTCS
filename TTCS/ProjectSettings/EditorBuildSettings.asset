@@ -11,6 +11,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestCombatUI.unity
     guid: b8b1a7901f6e4a2448003a6c289f3932
+  - enabled: 1
+    path: Assets/Scenes/Flow/Boot.unity
+    guid: 70dc30c89c87a984889c288d3ec04c47
+  - enabled: 1
+    path: Assets/Scenes/Flow/TutorialScene.unity
+    guid: d4cbe32d1f9ce804ebf05145ccc9ed4d
+  - enabled: 1
+    path: Assets/Scenes/Flow/MainMenuScene.unity
+    guid: 4563c5586d75a4c4e8ae5299c06d3694
+  - enabled: 1
+    path: Assets/Scenes/Flow/LevelSelectScene.unity
+    guid: 06a549f859671024a91ec93fc6605913
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
