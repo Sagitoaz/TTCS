@@ -1,0 +1,9 @@
+﻿{
+  "id": "item_energy",
+  "nameKey": "item_energy_name",
+  "itemType": "consumable",
+  "usableOutsideCombat": true,
+  "stackable": true,
+  "maxStack": 99,
+  "healAmount": 0
+}

@@ -1,0 +1,28 @@
+﻿{
+  "id": "pool_standard",
+  "nameKey": "gacha_pool_standard",
+  "pityThreshold": 10,
+  "entries": [
+    {
+      "rewardId": "char_mage",
+      "rewardType": "character",
+      "weight": 5,
+      "isRare": true,
+      "amount": 1
+    },
+    {
+      "rewardId": "item_potion",
+      "rewardType": "item",
+      "weight": 70,
+      "isRare": false,
+      "amount": 2
+    },
+    {
+      "rewardId": "item_energy",
+      "rewardType": "item",
+      "weight": 25,
+      "isRare": false,
+      "amount": 1
+    }
+  ]
+}
