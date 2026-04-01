@@ -1,0 +1,14 @@
+﻿{
+  "schemaVersion": "1",
+  "fallbackIconPath": "Icons/skill_default",
+  "entries": [
+    {
+      "skillId": "skill_warrior_slash",
+      "iconPath": "Icons/Skills/warrior_slash"
+    },
+    {
+      "skillId": "skill_mage_fireball",
+      "iconPath": "Icons/Skills/mage_fireball"
+    }
+  ]
+}

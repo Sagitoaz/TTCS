@@ -1,0 +1,9 @@
+﻿{
+  "id": "item_potion",
+  "nameKey": "item_potion_name",
+  "itemType": "consumable",
+  "usableOutsideCombat": true,
+  "stackable": true,
+  "maxStack": 99,
+  "healAmount": 100
+}

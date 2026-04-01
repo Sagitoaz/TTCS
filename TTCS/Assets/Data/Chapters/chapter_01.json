@@ -1,0 +1,11 @@
+﻿{
+  "id": "chapter_01",
+  "nameKey": "chapter_01_name",
+  "order": 1,
+  "unlockRule": "default_unlocked",
+  "requiredTotalStars": 0,
+  "levelIds": [
+    "chapter_01_level_01",
+    "chapter_01_level_02"
+  ]
+}

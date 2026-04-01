@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 using UnityEngine;
 using TTCS.Core.Events;
@@ -6,11 +6,6 @@ using TTCS.Debugging;
 
 namespace TTCS.Core.Save
 {
-    /// <summary>
-    /// 🔵 Dev A - Save Manager Singleton.
-    /// Đọc/ghi SaveData dưới dạng JSON vào Application.persistentDataPath.
-    /// Hỗ trợ 3 save slots (index 0-2).
-    /// </summary>
     public class SaveManager : MonoBehaviour
     {
         private static SaveManager _instance;
@@ -19,22 +14,21 @@ namespace TTCS.Core.Save
             get
             {
                 if (_instance == null)
+                {
                     Debug.LogWarning("[SaveManager] Instance accessed before Awake().");
+                }
+
                 return _instance;
             }
         }
 
-        /// <summary>SaveData đang active trong memory (slot đang chơi)</summary>
         public SaveData CurrentSave { get; private set; }
-
-        /// <summary>Slot index đang được load (−1 nếu chưa load)</summary>
         public int ActiveSlotIndex { get; private set; } = -1;
 
-        private const int   MAX_SLOTS    = 3;
-        private const string SAVE_PREFIX = "ttcs_save_slot_";
-        private const string SAVE_EXT    = ".json";
-
-        // ─── Unity Lifecycle ──────────────────────────────────────────────────
+        private const int MaxSlots = 3;
+        private const string SavePrefix = "ttcs_save_slot_";
+        private const string SaveExt = ".json";
+        private const int CurrentSchemaVersion = 1;
 
         private void Awake()
         {
@@ -43,18 +37,13 @@ namespace TTCS.Core.Save
                 Destroy(gameObject);
                 return;
             }
+
             _instance = this;
             DontDestroyOnLoad(gameObject);
 
             DebugLogger.Log($"[SaveManager] Initialized. Save path: {Application.persistentDataPath}", DebugLogger.LogCategory.Save);
         }
 
-        // ─── Public API ───────────────────────────────────────────────────────
-
-        /// <summary>
-        /// Bắt đầu game mới — tạo SaveData mặc định và set làm CurrentSave.
-        /// Chưa ghi file cho đến khi gọi Save().
-        /// </summary>
         public void NewGame()
         {
             CurrentSave = CreateDefaultSaveData();
@@ -62,20 +51,23 @@ namespace TTCS.Core.Save
             DebugLogger.Log("[SaveManager] New game created.", DebugLogger.LogCategory.Save);
         }
 
-        /// <summary>
-        /// Lưu CurrentSave vào slot chỉ định.
-        /// </summary>
         public void Save(int slotIndex = 0)
         {
-            if (!ValidateSlotIndex(slotIndex)) return;
+            if (!ValidateSlotIndex(slotIndex))
+            {
+                return;
+            }
+
             if (CurrentSave == null)
             {
                 DebugLogger.LogWarning("[SaveManager] CurrentSave is null. Call NewGame() or Load() first.", DebugLogger.LogCategory.Save);
                 return;
             }
 
+            EnsureSaveDefaults(CurrentSave);
+            CurrentSave.schemaVersion = CurrentSchemaVersion;
             CurrentSave.lastSavedTimestamp = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
-            CurrentSave.isNewGame          = false;
+            CurrentSave.isNewGame = false;
 
             try
             {
@@ -91,16 +83,14 @@ namespace TTCS.Core.Save
             }
         }
 
-        /// <summary>
-        /// Load SaveData từ slot. Set làm CurrentSave và trả về.
-        /// Trả về null nếu file không tồn tại hoặc lỗi parse.
-        /// </summary>
         public SaveData Load(int slotIndex = 0)
         {
-            if (!ValidateSlotIndex(slotIndex)) return null;
+            if (!ValidateSlotIndex(slotIndex))
+            {
+                return null;
+            }
 
             string filePath = GetFilePath(slotIndex);
-
             if (!File.Exists(filePath))
             {
                 DebugLogger.LogWarning($"[SaveManager] No save file at slot {slotIndex}.", DebugLogger.LogCategory.Save);
@@ -109,13 +99,21 @@ namespace TTCS.Core.Save
 
             try
             {
-                string   json = File.ReadAllText(filePath);
+                string json = File.ReadAllText(filePath);
                 SaveData data = JsonUtility.FromJson<SaveData>(json);
+                if (data == null)
+                {
+                    DebugLogger.LogError($"[SaveManager] Save file at slot {slotIndex} is invalid JSON.", DebugLogger.LogCategory.Save);
+                    return null;
+                }
 
-                CurrentSave     = data;
+                ApplyMigrations(data);
+                EnsureSaveDefaults(data);
+
+                CurrentSave = data;
                 ActiveSlotIndex = slotIndex;
 
-                DebugLogger.Log($"[SaveManager] Loaded slot {slotIndex} — Level {data.playerLevel}.", DebugLogger.LogCategory.Save);
+                DebugLogger.Log($"[SaveManager] Loaded slot {slotIndex} - Level {data.playerLevel}.", DebugLogger.LogCategory.Save);
                 EventBus.Instance.Publish(new GameLoadedEvent(slotIndex));
 
                 return data;
@@ -127,13 +125,14 @@ namespace TTCS.Core.Save
             }
         }
 
-        /// <summary>Xóa file save của slot.</summary>
         public void DeleteSave(int slotIndex)
         {
-            if (!ValidateSlotIndex(slotIndex)) return;
+            if (!ValidateSlotIndex(slotIndex))
+            {
+                return;
+            }
 
             string filePath = GetFilePath(slotIndex);
-
             if (File.Exists(filePath))
             {
                 File.Delete(filePath);
@@ -141,32 +140,34 @@ namespace TTCS.Core.Save
 
                 if (ActiveSlotIndex == slotIndex)
                 {
-                    CurrentSave     = null;
+                    CurrentSave = null;
                     ActiveSlotIndex = -1;
                 }
             }
         }
 
-        /// <summary>Kiểm tra slot có save file không.</summary>
         public bool HasSaveData(int slotIndex)
         {
-            if (!ValidateSlotIndex(slotIndex)) return false;
-            return File.Exists(GetFilePath(slotIndex));
+            return ValidateSlotIndex(slotIndex) && File.Exists(GetFilePath(slotIndex));
         }
 
-        /// <summary>Lấy metadata tóm tắt của một slot để hiển thị ở UI.</summary>
         public SaveSlot GetSlotInfo(int slotIndex)
         {
-            if (!ValidateSlotIndex(slotIndex)) return SaveSlot.Empty(slotIndex);
+            if (!ValidateSlotIndex(slotIndex))
+            {
+                return SaveSlot.Empty(slotIndex);
+            }
 
-            if (!HasSaveData(slotIndex)) return SaveSlot.Empty(slotIndex);
+            if (!HasSaveData(slotIndex))
+            {
+                return SaveSlot.Empty(slotIndex);
+            }
 
-            // Load tạm để lấy metadata (không set CurrentSave)
             try
             {
-                string   json = File.ReadAllText(GetFilePath(slotIndex));
+                string json = File.ReadAllText(GetFilePath(slotIndex));
                 SaveData data = JsonUtility.FromJson<SaveData>(json);
-                return SaveSlot.FromSaveData(slotIndex, data);
+                return data == null ? SaveSlot.Empty(slotIndex) : SaveSlot.FromSaveData(slotIndex, data);
             }
             catch
             {
@@ -174,26 +175,30 @@ namespace TTCS.Core.Save
             }
         }
 
-        /// <summary>Lấy info tất cả 3 slots.</summary>
         public SaveSlot[] GetAllSlots()
         {
-            SaveSlot[] slots = new SaveSlot[MAX_SLOTS];
-            for (int i = 0; i < MAX_SLOTS; i++)
+            SaveSlot[] slots = new SaveSlot[MaxSlots];
+            for (int i = 0; i < MaxSlots; i++)
+            {
                 slots[i] = GetSlotInfo(i);
+            }
+
             return slots;
         }
 
-        // ─── Private Helpers ─────────────────────────────────────────────────
-
         private string GetFilePath(int slotIndex)
         {
-            return Path.Combine(Application.persistentDataPath, $"{SAVE_PREFIX}{slotIndex}{SAVE_EXT}");
+            return Path.Combine(Application.persistentDataPath, $"{SavePrefix}{slotIndex}{SaveExt}");
         }
 
         private bool ValidateSlotIndex(int slotIndex)
         {
-            if (slotIndex >= 0 && slotIndex < MAX_SLOTS) return true;
-            DebugLogger.LogWarning($"[SaveManager] Invalid slot index: {slotIndex} (must be 0-{MAX_SLOTS - 1})", DebugLogger.LogCategory.Save);
+            if (slotIndex >= 0 && slotIndex < MaxSlots)
+            {
+                return true;
+            }
+
+            DebugLogger.LogWarning($"[SaveManager] Invalid slot index: {slotIndex} (must be 0-{MaxSlots - 1})", DebugLogger.LogCategory.Save);
             return false;
         }
 
@@ -201,21 +206,85 @@ namespace TTCS.Core.Save
         {
             var data = new SaveData
             {
+                schemaVersion = CurrentSchemaVersion,
                 playerLevel = 1,
-                totalExp    = 0,
-                gold        = 500,  // Starting gold
-                isNewGame   = true,
-                lastSavedTimestamp = ""
+                totalExp = 0,
+                gold = 500,
+                isNewGame = true,
+                lastSavedTimestamp = "",
+                tutorialCompleted = false
             };
 
-            // Mở khóa nhân vật đầu tiên mặc định
             data.unlockedCharacters.Add("char_warrior");
             data.currentParty.Add("char_warrior");
+            data.lineup.Add("char_warrior");
 
-            // Mở khóa stage đầu tiên
             data.unlockedStages.Add("stage_01_tutorial");
+            data.unlockedChapters.Add("chapter_01");
+            data.unlockedLevels.Add("chapter_01_level_01");
 
             return data;
+        }
+
+        private void ApplyMigrations(SaveData data)
+        {
+            if (data.schemaVersion >= CurrentSchemaVersion)
+            {
+                return;
+            }
+
+            // Migration v0 -> v1 (Sprint 3 meta-loop fields)
+            if (data.schemaVersion <= 0)
+            {
+                if (data.lineup.Count == 0 && data.currentParty.Count > 0)
+                {
+                    data.lineup.AddRange(data.currentParty);
+                }
+
+                if (data.unlockedLevels.Count == 0 && data.unlockedStages.Count > 0)
+                {
+                    for (var i = 0; i < data.unlockedStages.Count; i++)
+                    {
+                        var stageId = data.unlockedStages[i];
+                        data.unlockedLevels.Add(stageId);
+                    }
+                }
+
+                if (data.unlockedChapters.Count == 0)
+                {
+                    data.unlockedChapters.Add("chapter_01");
+                }
+
+                data.schemaVersion = 1;
+            }
+        }
+
+        private static void EnsureSaveDefaults(SaveData data)
+        {
+            data.unlockedCharacters ??= new System.Collections.Generic.List<string>();
+            data.unlockedStages ??= new System.Collections.Generic.List<string>();
+            data.currentParty ??= new System.Collections.Generic.List<string>();
+            data.unlockedChapters ??= new System.Collections.Generic.List<string>();
+            data.unlockedLevels ??= new System.Collections.Generic.List<string>();
+            data.lineup ??= new System.Collections.Generic.List<string>();
+            data.levelProgress ??= new System.Collections.Generic.List<SaveLevelProgress>();
+            data.inventoryItems ??= new System.Collections.Generic.List<SaveItemStack>();
+            data.gachaPity ??= new System.Collections.Generic.List<SavePityState>();
+
+            if (data.lineup.Count == 0 && data.currentParty.Count > 0)
+            {
+                data.lineup.AddRange(data.currentParty);
+            }
+
+            if (data.currentParty.Count == 0 && data.lineup.Count > 0)
+            {
+                data.currentParty.AddRange(data.lineup);
+            }
+
+            if (data.unlockedChapters.Count == 0)
+            {
+                data.unlockedChapters.Add("chapter_01");
+            }
         }
     }
 }

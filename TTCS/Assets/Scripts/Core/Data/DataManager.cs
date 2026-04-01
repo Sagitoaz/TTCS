@@ -1,18 +1,17 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using TTCS.Core.Events;
 using TTCS.Data;
 using TTCS.Debugging;
+using TTCS.Meta.Gacha;
+using TTCS.Meta.Inventory;
+using TTCS.Meta.Progression;
 
 namespace TTCS.Core.Data
 {
-    /// <summary>
-    /// 🔵 Dev A - Data Manager Singleton.
-    /// Tải, cache và cung cấp tất cả game data từ JSON files.
-    /// Đặt GameObject này vào scene với tag "DataManager".
-    /// </summary>
     public class DataManager : MonoBehaviour
     {
         private static DataManager _instance;
@@ -21,24 +20,27 @@ namespace TTCS.Core.Data
             get
             {
                 if (_instance == null)
+                {
                     Debug.LogWarning("[DataManager] Instance accessed before Awake(). Make sure DataManager is in scene.");
+                }
+
                 return _instance;
             }
         }
 
-        // ─── Caches ───────────────────────────────────────────────────────────
         private readonly DataCache<CharacterDataModel> _characterCache = new DataCache<CharacterDataModel>();
-        private readonly DataCache<SkillDataModel>     _skillCache     = new DataCache<SkillDataModel>();
-        private readonly DataCache<EnemyDataModel>     _enemyCache     = new DataCache<EnemyDataModel>();
-        private readonly DataCache<StageDataModel>     _stageCache     = new DataCache<StageDataModel>();
+        private readonly DataCache<SkillDataModel> _skillCache = new DataCache<SkillDataModel>();
+        private readonly DataCache<EnemyDataModel> _enemyCache = new DataCache<EnemyDataModel>();
+        private readonly DataCache<StageDataModel> _stageCache = new DataCache<StageDataModel>();
 
-        /// <summary>True sau khi LoadAllData() hoàn thành</summary>
+        private readonly DataCache<ChapterDataModel> _chapterCache = new DataCache<ChapterDataModel>();
+        private readonly DataCache<LevelDataModel> _levelCache = new DataCache<LevelDataModel>();
+        private readonly DataCache<GachaPoolDataModel> _gachaPoolCache = new DataCache<GachaPoolDataModel>();
+        private readonly DataCache<ItemDataModel> _itemCache = new DataCache<ItemDataModel>();
+        private SkillIconMapDataModel _skillIconMap;
+
         public bool IsLoaded { get; private set; }
-
-        // Thư mục gốc của data files (relative to Application.dataPath)
-        private const string DATA_ROOT = "Data";
-
-        // ─── Unity Lifecycle ──────────────────────────────────────────────────
+        private const string DataRoot = "Data";
 
         private void Awake()
         {
@@ -47,92 +49,121 @@ namespace TTCS.Core.Data
                 Destroy(gameObject);
                 return;
             }
+
             _instance = this;
             DontDestroyOnLoad(gameObject);
 
             LoadAllData();
         }
 
-        // ─── Public API ───────────────────────────────────────────────────────
-
-        /// <summary>Tải toàn bộ data từ Assets/Data/. Gọi tự động trong Awake().</summary>
         public void LoadAllData()
         {
             DebugLogger.Log("[DataManager] Loading all data...", DebugLogger.LogCategory.Data);
 
-            LoadFolder<CharacterDataModel>("Characters", _characterCache, DataValidator.ValidateCharacter);
-            LoadFolder<SkillDataModel>    ("Skills",     _skillCache,     DataValidator.ValidateSkill);
-            LoadFolder<EnemyDataModel>    ("Enemies",    _enemyCache,     DataValidator.ValidateEnemy);
-            LoadFolder<StageDataModel>    ("Stages",     _stageCache,     DataValidator.ValidateStage);
+            LoadFolder("Characters", _characterCache, DataValidator.ValidateCharacter);
+            LoadFolder("Skills", _skillCache, DataValidator.ValidateSkill);
+            LoadFolder("Enemies", _enemyCache, DataValidator.ValidateEnemy);
+            LoadFolder("Stages", _stageCache, DataValidator.ValidateStage);
+
+            LoadFolder("Chapters", _chapterCache, DataValidator.ValidateChapter);
+            LoadFolder("Levels", _levelCache, DataValidator.ValidateLevel);
+            LoadFolder("Gacha", _gachaPoolCache, DataValidator.ValidateGachaPool);
+            LoadFolder("Items", _itemCache, DataValidator.ValidateItem);
+            LoadSkillIconMap();
 
             IsLoaded = true;
 
             DebugLogger.Log(
-                $"[DataManager] Load complete — Characters:{_characterCache.Count} " +
-                $"Skills:{_skillCache.Count} Enemies:{_enemyCache.Count} Stages:{_stageCache.Count}",
+                $"[DataManager] Load complete - Characters:{_characterCache.Count} Skills:{_skillCache.Count} Enemies:{_enemyCache.Count} Stages:{_stageCache.Count} Chapters:{_chapterCache.Count} Levels:{_levelCache.Count} GachaPools:{_gachaPoolCache.Count} Items:{_itemCache.Count}",
                 DebugLogger.LogCategory.Data);
 
             EventBus.Instance.Publish(new DataLoadedEvent(
-                _characterCache.Count, _skillCache.Count,
-                _enemyCache.Count,     _stageCache.Count));
+                _characterCache.Count,
+                _skillCache.Count,
+                _enemyCache.Count,
+                _stageCache.Count));
         }
 
-        // ─── Character ───
-
-        /// <summary>Lấy character theo id. Trả về null nếu không tìm thấy.</summary>
-        public CharacterDataModel LoadCharacter(string id)
-        {
-            return GetOrLoad<CharacterDataModel>(id, "Characters", _characterCache, DataValidator.ValidateCharacter);
-        }
-
-        /// <summary>Trả về tất cả characters đã load</summary>
+        public CharacterDataModel LoadCharacter(string id) => GetOrLoad(id, "Characters", _characterCache, DataValidator.ValidateCharacter);
         public IReadOnlyCollection<CharacterDataModel> GetAllCharacters() => _characterCache.GetAll();
 
-        // ─── Skill ───
-
-        /// <summary>Lấy skill theo id. Trả về null nếu không tìm thấy.</summary>
-        public SkillDataModel LoadSkill(string id)
-        {
-            return GetOrLoad<SkillDataModel>(id, "Skills", _skillCache, DataValidator.ValidateSkill);
-        }
-
-        /// <summary>Trả về tất cả skills đã load</summary>
+        public SkillDataModel LoadSkill(string id) => GetOrLoad(id, "Skills", _skillCache, DataValidator.ValidateSkill);
         public IReadOnlyCollection<SkillDataModel> GetAllSkills() => _skillCache.GetAll();
 
-        // ─── Enemy ───
-
-        /// <summary>Lấy enemy theo id. Trả về null nếu không tìm thấy.</summary>
-        public EnemyDataModel LoadEnemy(string id)
-        {
-            return GetOrLoad<EnemyDataModel>(id, "Enemies", _enemyCache, DataValidator.ValidateEnemy);
-        }
-
-        /// <summary>Trả về tất cả enemies đã load</summary>
+        public EnemyDataModel LoadEnemy(string id) => GetOrLoad(id, "Enemies", _enemyCache, DataValidator.ValidateEnemy);
         public IReadOnlyCollection<EnemyDataModel> GetAllEnemies() => _enemyCache.GetAll();
 
-        // ─── Stage ───
-
-        /// <summary>Lấy stage theo id. Trả về null nếu không tìm thấy.</summary>
-        public StageDataModel LoadStage(string id)
-        {
-            return GetOrLoad<StageDataModel>(id, "Stages", _stageCache, DataValidator.ValidateStage);
-        }
-
-        /// <summary>Trả về tất cả stages đã load</summary>
+        public StageDataModel LoadStage(string id) => GetOrLoad(id, "Stages", _stageCache, DataValidator.ValidateStage);
         public IReadOnlyCollection<StageDataModel> GetAllStages() => _stageCache.GetAll();
 
-        // ─── Private Helpers ─────────────────────────────────────────────────
+        public ChapterDataModel LoadChapter(string id) => GetOrLoad(id, "Chapters", _chapterCache, DataValidator.ValidateChapter);
+        public IReadOnlyCollection<ChapterDataModel> GetAllChapters() => _chapterCache.GetAll();
 
-        /// <summary>
-        /// Tải tất cả .json files trong subfolder và lưu vào cache.
-        /// </summary>
-        private void LoadFolder<T>(
-            string subfolder,
-            DataCache<T> cache,
-            Func<T, bool> validator) where T : class
+        public LevelDataModel LoadLevel(string id) => GetOrLoad(id, "Levels", _levelCache, DataValidator.ValidateLevel);
+        public IReadOnlyCollection<LevelDataModel> GetAllLevels() => _levelCache.GetAll();
+
+        public GachaPoolDataModel LoadGachaPool(string id) => GetOrLoad(id, "Gacha", _gachaPoolCache, DataValidator.ValidateGachaPool);
+        public IReadOnlyCollection<GachaPoolDataModel> GetAllGachaPools() => _gachaPoolCache.GetAll();
+
+        public ItemDataModel LoadItem(string id) => GetOrLoad(id, "Items", _itemCache, DataValidator.ValidateItem);
+        public IReadOnlyCollection<ItemDataModel> GetAllItems() => _itemCache.GetAll();
+
+        public string ResolveSkillIcon(string skillId)
         {
-            string folderPath = Path.Combine(Application.dataPath, DATA_ROOT, subfolder);
+            if (_skillIconMap?.entries == null)
+            {
+                return string.Empty;
+            }
 
+            for (var i = 0; i < _skillIconMap.entries.Count; i++)
+            {
+                var entry = _skillIconMap.entries[i];
+                if (entry.skillId == skillId)
+                {
+                    return entry.iconPath;
+                }
+            }
+
+            return _skillIconMap.fallbackIconPath;
+        }
+
+        public string ResolveLevelIdByStageId(string stageId)
+        {
+            if (string.IsNullOrWhiteSpace(stageId))
+            {
+                return string.Empty;
+            }
+
+            var levels = GetAllLevels();
+            foreach (var level in levels)
+            {
+                if (level != null && level.stageId == stageId)
+                {
+                    return level.id;
+                }
+            }
+
+            return stageId;
+        }
+
+        private void LoadSkillIconMap()
+        {
+            string filePath = Path.Combine(Application.dataPath, DataRoot, "Meta", "skill_icon_map.json");
+            _skillIconMap = ReadJsonFile<SkillIconMapDataModel>(filePath);
+            if (_skillIconMap == null)
+            {
+                _skillIconMap = new SkillIconMapDataModel();
+            }
+
+            if (!DataValidator.ValidateSkillIconMap(_skillIconMap))
+            {
+                _skillIconMap = new SkillIconMapDataModel();
+            }
+        }
+
+        private void LoadFolder<T>(string subfolder, DataCache<T> cache, Func<T, bool> validator) where T : class
+        {
+            string folderPath = Path.Combine(Application.dataPath, DataRoot, subfolder);
             if (!Directory.Exists(folderPath))
             {
                 DebugLogger.LogWarning($"[DataManager] Data folder not found: {folderPath}", DebugLogger.LogCategory.Data);
@@ -140,14 +171,14 @@ namespace TTCS.Core.Data
             }
 
             string[] files = Directory.GetFiles(folderPath, "*.json");
-
             foreach (string filePath in files)
             {
                 T data = ReadJsonFile<T>(filePath);
-                if (data == null) continue;
-                if (!validator(data)) continue;
+                if (data == null || !validator(data))
+                {
+                    continue;
+                }
 
-                // Lấy id qua reflection để dùng làm cache key
                 string id = GetIdField(data);
                 if (string.IsNullOrEmpty(id))
                 {
@@ -159,27 +190,24 @@ namespace TTCS.Core.Data
             }
         }
 
-        /// <summary>
-        /// Lấy object từ cache; nếu chưa có thì load file theo pattern {subfolder}/{id}.json
-        /// </summary>
-        private T GetOrLoad<T>(
-            string id,
-            string subfolder,
-            DataCache<T> cache,
-            Func<T, bool> validator) where T : class
+        private T GetOrLoad<T>(string id, string subfolder, DataCache<T> cache, Func<T, bool> validator) where T : class
         {
-            if (cache.Has(id)) return cache.Get(id);
+            if (cache.Has(id))
+            {
+                return cache.Get(id);
+            }
 
-            string filePath = Path.Combine(Application.dataPath, DATA_ROOT, subfolder, $"{id}.json");
+            string filePath = Path.Combine(Application.dataPath, DataRoot, subfolder, $"{id}.json");
             T data = ReadJsonFile<T>(filePath);
-
-            if (data == null || !validator(data)) return null;
+            if (data == null || !validator(data))
+            {
+                return null;
+            }
 
             cache.Set(id, data);
             return data;
         }
 
-        /// <summary>Đọc và deserialize một file JSON. Trả về null nếu lỗi.</summary>
         private T ReadJsonFile<T>(string filePath) where T : class
         {
             try
@@ -191,8 +219,7 @@ namespace TTCS.Core.Data
                 }
 
                 string json = File.ReadAllText(filePath);
-                T result = JsonUtility.FromJson<T>(json);
-                return result;
+                return JsonUtility.FromJson<T>(json);
             }
             catch (Exception e)
             {
@@ -201,12 +228,10 @@ namespace TTCS.Core.Data
             }
         }
 
-        /// <summary>Đọc field 'id' từ object bằng reflection (tránh dùng interface).</summary>
-        private string GetIdField<T>(T obj) where T : class
+        private static string GetIdField<T>(T obj) where T : class
         {
             var field = typeof(T).GetField("id");
-            if (field == null) return null;
-            return field.GetValue(obj) as string;
+            return field?.GetValue(obj) as string;
         }
     }
 }

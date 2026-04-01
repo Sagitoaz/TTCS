@@ -338,6 +338,11 @@ namespace TTCS.Combat.Managers
             return ids;
         }
 
+        public StageDataModel GetCurrentStageData()
+        {
+            return _currentStage;
+        }
+
 
         #endregion
     }
