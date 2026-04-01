@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using TTCS.Meta;
+using TTCS.Meta.Common;
+using TTCS.Meta.Team;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,7 +22,7 @@ namespace TTCS.Flow.TeamFormation
 
         private void Start()
         {
-            _teamService = FlowController.Instance.GetComponent<ITeamService>();
+            _teamService = MetaServiceHub.Instance?.TeamService;
             if (_teamService == null)
             {
                 Debug.LogWarning("[TeamFormation] TeamService not found, using local validation fallback");
@@ -80,15 +82,15 @@ namespace TTCS.Flow.TeamFormation
                 return;
             }
 
-            ValidationResult result = _teamService != null
+            TTCS.Meta.Common.ValidationResult result = _teamService != null
                 ? _teamService.ValidateLineup(_selectedLineup)
                 : LocalValidate(_selectedLineup);
 
-            if (!result.Valid)
+            if (!result.IsValid)
             {
-                UpdateStatus(string.IsNullOrWhiteSpace(result.ErrorMessage)
+                UpdateStatus(string.IsNullOrWhiteSpace(result.Message)
                     ? "Invalid lineup"
-                    : result.ErrorMessage);
+                    : result.Message);
                 return;
             }
 
@@ -101,18 +103,14 @@ namespace TTCS.Flow.TeamFormation
             FlowController.Instance.OpenMainMenu();
         }
 
-        private static ValidationResult LocalValidate(IReadOnlyList<string> lineup)
+        private static TTCS.Meta.Common.ValidationResult LocalValidate(IReadOnlyList<string> lineup)
         {
             if (lineup.Count > 3)
             {
-                return new ValidationResult
-                {
-                    Valid = false,
-                    ErrorMessage = "Lineup must have at most 3 characters"
-                };
+                return TTCS.Meta.Common.ValidationResult.Invalid("Lineup must have at most 3 characters");
             }
 
-            return new ValidationResult { Valid = true };
+            return TTCS.Meta.Common.ValidationResult.Valid();
         }
 
         private void UpdateStatus(string message)

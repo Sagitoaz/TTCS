@@ -26,6 +26,7 @@
 - Team Formation: chọn/tách đội hình trước khi vào level.
 - Gacha flow cơ bản: roll, nhận kết quả, cập nhật inventory/character roster.
 - Item & Inventory flow: xem item, dùng item hợp lệ, cập nhật save.
+- Character Collection scene: xem toàn bộ nhân vật đã mở khóa/quay được, search theo tên, filter/sort theo rare và level, xem chi tiết nhân vật, feed tăng level.
 
 ---
 
@@ -44,6 +45,7 @@ Sprint 3 được xem là hoàn thành khi thỏa tất cả điều kiện sau:
 - [ ] Team formation lưu đúng đội hình và dùng đúng khi vào combat.
 - [ ] Gacha roll cập nhật đúng roster/item, không mất dữ liệu.
 - [ ] Inventory hiển thị và dùng item đúng rule, đồng bộ save/load.
+- [ ] Character Collection hiển thị đúng roster đã mở khóa, có search/filter/sort, mở detail card đúng dữ liệu, feed tăng level và hồi full HP/Mana sau khi level up.
 
 ---
 
@@ -73,6 +75,7 @@ Sprint 3 được xem là hoàn thành khi thỏa tất cả điều kiện sau:
 - Team setup UI (chọn đội hình trước trận).
 - Gacha UI (roll screen + result panel).
 - Inventory UI (list item, filter cơ bản, action dùng item).
+- Character Collection UI (grid nhân vật đã mở khóa, search/filter/sort, detail panel, feed level).
 - Wiring scene/prefab/UI để chạy full flow.
 - Checklist test scene và regression UI flow.
 
@@ -179,11 +182,13 @@ Sprint 3 được xem là hoàn thành khi thỏa tất cả điều kiện sau:
 - [ ] Baseline balance data cho chapter/level đầu.
 - [ ] Chuẩn hóa trường dữ liệu cân bằng nhanh.
 - [ ] Implement `InventoryService` v1 và item-use rules cơ bản.
+- [ ] Expose API/contract cho character progression feed (consume item/exp), cập nhật level + full HP/Mana on level-up.
 
 **Dev B**
 - [ ] Hook level select -> vào combat với dữ liệu đúng.
 - [ ] Hook combat end -> quay lại progression flow.
 - [ ] Inventory UI v1 (list item + hành động dùng item cơ bản).
+- [ ] Character Collection scene v1 (grid ô vuông avatar + rare badge góc phải trên, search name, sort rare asc/desc, sort level asc/desc, detail panel, feed button).
 
 ### Ngày 7
 **Cả 2 Dev (Sync lớn)**
@@ -217,6 +222,7 @@ Sprint 3 được xem là hoàn thành khi thỏa tất cả điều kiện sau:
 **Dev B**
 - [ ] Hoàn thiện UX tutorial scene (rõ bước, không gây rối).
 - [ ] Hoàn thiện fallback visuals/icon states.
+- [ ] Polish Character Collection UX (scroll performance, trạng thái selected card, phản hồi sau feed level-up).
 
 ## Giai đoạn 4 - Core freeze (Ngày 13-14)
 
@@ -247,6 +253,7 @@ Sprint 3 được xem là hoàn thành khi thỏa tất cả điều kiện sau:
 | Team formation flow | Dev B | TeamService contract | Ngày 4-5 |
 | Gacha logic + UI | Dev A + Dev B | Rarity config + result panel | Ngày 5-6 |
 | Inventory logic + UI | Dev A + Dev B | Item rules + UI action | Ngày 6-7 |
+| Character collection flow | Dev A + Dev B | Roster save data + character stat API + feed API | Ngày 6-10 |
 | Full integration v1 | Both | Tất cả trên | Ngày 7 |
 
 ---
@@ -264,6 +271,7 @@ Sprint 3 được xem là hoàn thành khi thỏa tất cả điều kiện sau:
 - [ ] Team setup chọn đội hợp lệ và dùng đúng khi vào level.
 - [ ] Gacha roll trả kết quả hợp lệ và cập nhật roster/item.
 - [ ] Inventory dùng item đúng điều kiện, state cập nhật đúng.
+- [ ] Character collection: search theo tên, sort rare/level, mở detail đúng stat/portrait, feed level-up hồi full HP/Mana.
 
 ## Technical
 - [ ] Không lỗi compile.

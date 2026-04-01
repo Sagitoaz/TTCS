@@ -1,9 +1,13 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
-using TTCS.Core;
 using TTCS.Meta;
 using UnityEngine.SceneManagement;
 using TTCS.Core.Events;
+using TTCS.Meta.Gacha;
+using TTCS.Meta.Inventory;
+using TTCS.Meta.Progression;
+using TTCS.Meta.Team;
 
 namespace TTCS.Flow
 {
@@ -79,6 +83,32 @@ namespace TTCS.Flow
 
         private void Start()
         {
+            StartCoroutine(BootstrapAndRoute());
+        }
+
+        private IEnumerator BootstrapAndRoute()
+        {
+            // Wait a few frames for SaveManager/MetaServiceHub boot order.
+            const int maxWaitFrames = 120;
+            int waited = 0;
+
+            while (_progressionService == null && waited < maxWaitFrames)
+            {
+                InitializeServices();
+                if (_progressionService != null)
+                {
+                    break;
+                }
+
+                waited++;
+                yield return null;
+            }
+
+            if (_progressionService == null)
+            {
+                Debug.LogWarning("[Flow] ProgressionService still null after startup wait; using tutorial fallback mode.");
+            }
+
             TryRouteFromBoot();
         }
 
@@ -105,23 +135,27 @@ namespace TTCS.Flow
 
         private void InitializeServices()
         {
-            PlayerPrefs.DeleteKey("TutorialCompleted");
-            // TODO: When DevA merges, these will be injected from ServiceManager
-            // For now, use mock implementations
-            _progressionService = GetComponent<IProgressionService>() ?? new MockProgressionService();
-            _teamService = GetComponent<ITeamService>() ?? new MockTeamService();
-            _gachaService = GetComponent<IGachaService>() ?? new MockGachaService();
-            _inventoryService = GetComponent<IInventoryService>() ?? new MockInventoryService();
+            var hub = MetaServiceHub.Instance;
+            if (hub == null)
+            {
+                Debug.LogWarning("[Flow] MetaServiceHub not found. Services can be null until hub is initialized.");
+                return;
+            }
 
-            
+            hub.EnsureInitialized();
+            _progressionService = hub.ProgressionService;
+            _teamService = hub.TeamService;
+            _gachaService = hub.GachaService;
+            _inventoryService = hub.InventoryService;
 
-            Debug.Log("[Flow] FlowController initialized with services");
+            Debug.Log("[Flow] FlowController initialized with DevA services from MetaServiceHub");
         }
 
         public bool TryEnterTutorial()
         {
-            // Check if tutorial was already completed
-            bool tutorialCompleted = PlayerPrefs.GetInt("TutorialCompleted", 0) == 1;
+            bool tutorialCompleted = _progressionService != null
+                ? _progressionService.IsTutorialCompleted()
+                : PlayerPrefs.GetInt("TutorialCompleted", 0) == 1;
 
             if (!tutorialCompleted)
             {
@@ -191,9 +225,16 @@ namespace TTCS.Flow
 
             if (result.Victory)
             {
-                _progressionService.MarkLevelCompleted(result.LevelId, result.Stars, result.Score);
-                _progressionService.TryUnlockNextContent();
-                Debug.Log("[Flow] Progression updated");
+                if (_progressionService != null)
+                {
+                    _progressionService.MarkLevelCompleted(result.LevelId, result.Stars, result.Score);
+                    _progressionService.TryUnlockNextContent();
+                    Debug.Log("[Flow] Progression updated");
+                }
+                else
+                {
+                    Debug.LogWarning("[Flow] ProgressionService is null, skipping progression update");
+                }
             }
 
             // Return to level select or main menu
@@ -203,148 +244,19 @@ namespace TTCS.Flow
 
         private void OnTutorialCompleted(TutorialCompletedEvent eventData)
         {
-            PlayerPrefs.SetInt("TutorialCompleted", 1);
-            PlayerPrefs.Save();
+            if (_progressionService != null)
+            {
+                _progressionService.MarkTutorialCompleted();
+            }
+            else
+            {
+                // Fallback while save integration is not ready in specific boot order cases.
+                PlayerPrefs.SetInt("TutorialCompleted", 1);
+                PlayerPrefs.Save();
+            }
 
             Debug.Log($"[Flow] Tutorial completion received (skipped={eventData.Skipped})");
             OpenMainMenu();
-        }
-    }
-
-    // ===== Mock Implementations for Dev B to test without DevA =====
-
-    public class MockProgressionService : IProgressionService
-    {
-        public ChapterState GetChapterState(string chapterId)
-        {
-            return new ChapterState
-            {
-                ChapterId = chapterId,
-                Unlocked = true,
-                CompletedLevels = 1,
-                TotalStars = 3
-            };
-        }
-
-        public LevelState GetLevelState(string levelId)
-        {
-            int levelNumber = ParseLevelNumber(levelId);
-            bool unlocked = levelNumber <= 2;
-            bool cleared = levelNumber == 1;
-
-            return new LevelState
-            {
-                LevelId = levelId,
-                Unlocked = unlocked,
-                Cleared = cleared,
-                BestStars = cleared ? 3 : 0,
-                BestScore = cleared ? 1200 : 0
-            };
-        }
-
-        public bool CanEnterLevel(string levelId) => GetLevelState(levelId).Unlocked;
-
-        public void MarkLevelCompleted(string levelId, int stars, int score)
-        {
-            Debug.Log($"[Mock] Level {levelId} completed: stars={stars}, score={score}");
-        }
-
-        public UnlockResult TryUnlockNextContent() => new UnlockResult { Success = true };
-
-        private static int ParseLevelNumber(string levelId)
-        {
-            if (string.IsNullOrEmpty(levelId))
-            {
-                return 0;
-            }
-
-            string[] parts = levelId.Split('_');
-            if (parts.Length == 0)
-            {
-                return 0;
-            }
-
-            if (int.TryParse(parts[parts.Length - 1], out int levelNumber))
-            {
-                return levelNumber;
-            }
-
-            return 0;
-        }
-    }
-
-    public class MockTeamService : ITeamService
-    {
-        public IReadOnlyList<string> GetCurrentLineup()
-        {
-            return new List<string> { "char_warrior", "char_mage" };
-        }
-
-        public ValidationResult ValidateLineup(IReadOnlyList<string> lineup)
-        {
-            return new ValidationResult { Valid = true };
-        }
-
-        public void SaveLineup(IReadOnlyList<string> lineup)
-        {
-            Debug.Log($"[Mock] Lineup saved: {string.Join(", ", lineup)}");
-        }
-    }
-
-    public class MockGachaService : IGachaService
-    {
-        public GachaPoolInfo GetPoolInfo(string poolId)
-        {
-            return new GachaPoolInfo
-            {
-                PoolId = poolId,
-                Name = "Standard Pool",
-                CurrencyId = "gem",
-                CostPer1 = 160,
-                CostPer10 = 1600
-            };
-        }
-
-        public GachaRollResult Roll(string poolId, int count)
-        {
-            return new GachaRollResult
-            {
-                PoolId = poolId,
-                PullCount = count,
-                Items = new List<GachaItem>
-                {
-                    new GachaItem { ItemId = "char_001", Rarity = "common", Quantity = 1 }
-                }
-            };
-        }
-
-        public void ApplyRollResult(GachaRollResult result)
-        {
-            Debug.Log($"[Mock] Gacha result applied: {result.Items.Count} items");
-        }
-    }
-
-    public class MockInventoryService : IInventoryService
-    {
-        public IReadOnlyList<ItemStack> GetItems()
-        {
-            return new List<ItemStack>
-            {
-                new ItemStack { ItemId = "potion", Quantity = 5 },
-                new ItemStack { ItemId = "ether", Quantity = 2 }
-            };
-        }
-
-        public bool CanUseItem(string itemId, string targetContext) => true;
-
-        public UseItemResult UseItem(string itemId, int quantity, string targetContext)
-        {
-            return new UseItemResult
-            {
-                Success = true,
-                Message = "Item used",
-                QuantityUsed = quantity
-            };
         }
     }
 }

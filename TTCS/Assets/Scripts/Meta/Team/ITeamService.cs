@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using TTCS.Meta.Common;
 
-namespace TTCS.Meta
+namespace TTCS.Meta.Team
 {
     /// <summary>
     /// Manages player team/lineup management.
@@ -23,14 +24,5 @@ namespace TTCS.Meta
         /// Should validate before saving.
         /// </summary>
         void SaveLineup(IReadOnlyList<string> lineup);
-    }
-
-    /// <summary>
-    /// Result of lineup validation.
-    /// </summary>
-    public class ValidationResult
-    {
-        public bool Valid { get; set; }
-        public string ErrorMessage { get; set; }
     }
 }

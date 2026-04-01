@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using TTCS.Core;
 using TTCS.Meta;
+using TTCS.Meta.Progression;
 
 namespace TTCS.Flow.LevelSelect
 {
@@ -29,17 +30,44 @@ namespace TTCS.Flow.LevelSelect
 
             Debug.Log($"[LevelSelect] Level select scene loaded for chapter: {_selectedChapterId}");
 
-            // Get progression service
-            _progressionService = FlowController.Instance.GetComponent<IProgressionService>();
-            if (_progressionService == null)
-            {
-                Debug.LogWarning("[LevelSelect] ProgressionService not found, using mock");
-                _progressionService = new MockProgressionService();
-            }
+            TryBindServices();
 
             _uiStateManager = GetComponent<UIStateManager>() ?? gameObject.AddComponent<UIStateManager>();
 
             WireButtons();
+            StartCoroutine(DeferredPopulate());
+        }
+
+        private void TryBindServices()
+        {
+            var hub = MetaServiceHub.Instance;
+            hub?.EnsureInitialized();
+            _progressionService = hub?.ProgressionService;
+        }
+
+        private IEnumerator DeferredPopulate()
+        {
+            const int maxWaitFrames = 60;
+            int waited = 0;
+
+            while (_progressionService == null && waited < maxWaitFrames)
+            {
+                TryBindServices();
+                if (_progressionService != null)
+                {
+                    break;
+                }
+
+                waited++;
+                yield return null;
+            }
+
+            if (_progressionService == null)
+            {
+                Debug.LogWarning("[LevelSelect] ProgressionService not available after startup wait");
+                yield break;
+            }
+
             PopulateChapterLevels();
         }
 
@@ -55,11 +83,16 @@ namespace TTCS.Flow.LevelSelect
 
             // TODO: Load chapter data from JSON or DataManager
             // For now, create mock levels
+            if (_progressionService == null)
+            {
+                return;
+            }
+
             var chapterState = _progressionService.GetChapterState(_selectedChapterId);
 
-            Debug.Log($"[LevelSelect] Populating levels for chapter {_selectedChapterId}: unlocked={chapterState.Unlocked}");
+            Debug.Log($"[LevelSelect] Populating levels for chapter {_selectedChapterId}: unlocked={chapterState.IsUnlocked}");
 
-            if (!chapterState.Unlocked)
+            if (!chapterState.IsUnlocked)
             {
                 Debug.LogWarning($"[LevelSelect] Chapter locked: {_selectedChapterId}");
                 return;
@@ -101,13 +134,13 @@ namespace TTCS.Flow.LevelSelect
             button.onClick.AddListener(() => OnLevelClicked(levelId, levelState));
 
             // Disable if locked
-            if (!levelState.Unlocked)
+            if (!levelState.IsUnlocked)
                 button.interactable = false;
         }
 
         private void OnLevelClicked(string levelId, LevelState levelState)
         {
-            if (!levelState.Unlocked)
+            if (!levelState.IsUnlocked)
             {
                 Debug.LogWarning($"[LevelSelect] Cannot enter locked level: {levelId}");
                 return;
@@ -116,7 +149,7 @@ namespace TTCS.Flow.LevelSelect
             Debug.Log($"[LevelSelect] Level clicked: {levelId}");
 
             // Get current team lineup
-            var teamService = FlowController.Instance.GetComponent<ITeamService>();
+            var teamService = MetaServiceHub.Instance?.TeamService;
             IReadOnlyList<string> lineup = teamService?.GetCurrentLineup() ?? new List<string>();
 
             // Enter combat
@@ -156,15 +189,15 @@ namespace TTCS.Flow.LevelSelect
             if (image == null || label == null)
                 return;
 
-            if (!levelState.Unlocked)
+            if (!levelState.IsUnlocked)
             {
                 image.color = new Color(0.5f, 0.5f, 0.5f); // Gray for locked
                 label.text += " [LOCKED]";
             }
-            else if (levelState.Cleared)
+            else if (levelState.IsCleared)
             {
                 image.color = new Color(0.7f, 1f, 0.7f); // Green for cleared
-                label.text += $" [{levelState.BestStars}*]";
+                label.text += $" [{levelState.Stars}*]";
             }
             else
             {

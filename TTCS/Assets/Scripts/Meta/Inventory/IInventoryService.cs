@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace TTCS.Meta
+namespace TTCS.Meta.Inventory
 {
     /// <summary>
     /// Manages player inventory (items, consumables, etc.).
@@ -22,24 +22,8 @@ namespace TTCS.Meta
         /// Uses an item from inventory. Returns result of the action.
         /// </summary>
         UseItemResult UseItem(string itemId, int quantity, string targetContext);
+
+        void AddItem(string itemId, int quantity);
     }
 
-    /// <summary>
-    /// A stack of items in inventory.
-    /// </summary>
-    public class ItemStack
-    {
-        public string ItemId { get; set; }
-        public int Quantity { get; set; }
-    }
-
-    /// <summary>
-    /// Result of using an item.
-    /// </summary>
-    public class UseItemResult
-    {
-        public bool Success { get; set; }
-        public string Message { get; set; }
-        public int QuantityUsed { get; set; }
-    }
 }

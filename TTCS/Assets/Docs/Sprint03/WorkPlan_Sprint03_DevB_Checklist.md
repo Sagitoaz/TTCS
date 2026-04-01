@@ -1,6 +1,6 @@
 # Sprint 3 - Daily Progress Checklist Dev B
 
-> **Ngày cập nhật lần cuối**: 2026-04-01 (Audit + update Day 1-3)  
+> **Ngày cập nhật lần cuối**: 2026-04-01  
 > **Dev**: Dev B  
 > **Mục tiêu**: Theo dõi task hàng ngày, đánh dấu hoàn thành, lập danh sách blocker
 
@@ -35,61 +35,60 @@
 ---
 
 ### Ngày 2 - Scene Setup & Nav State Machine
-**Status**: ⬜ Not started / 🟡 In progress ✅ / 🟢 Done
+**Status**: ⬜ Not started / 🟡 In progress / 🟢 Done
 
 **Task List**:
-- [x] Setup scene skeleton core flow (Boot, TutorialScene, MainMenuScene, LevelSelectScene)
-- [ ] Setup đủ 8 scene skeleton trong Assets/Scenes/ (còn thiếu: TeamFormation, Gacha, Inventory, CombatResult)
-- [x] Tạo FlowStateManager class
-- [x] Tạo NavigationController class
-- [x] Test Boot scene: new player -> Tutorial, returning -> MainMenu
-- [x] Push branch (feature/devB-tutorial-scene)
+- [ ] Setup 8 scene skeleton trong Assets/Scenes/
+- [ ] Tạo FlowStateManager class
+- [ ] Tạo NavigationController class
+- [ ] Test Boot scene: new player -> Tutorial, returning -> MainMenu
+- [ ] Push branch
 - [ ] Sync cuối ngày với Dev A (IFlowController contract, event publish points)
 
-**Notes**: Đã hoàn thành flow core scene cho Day 2 và class hạ tầng điều hướng. Các scene meta-loop còn thiếu sẽ setup trong Unity Editor trước Day 4.
+**Notes**: _____________________________________________________
 
-**Blocker** (nếu có): Chưa merge Dev A nên chưa xác nhận event publish points chính thức.
+**Blocker** (nếu có): _____________________________________________________
 
-**ETA Complete**: 2026-04-02 (partial complete); phần còn lại chuyển sang setup Unity trước Day 4.
+**ETA Complete**: _____________________
 
 ---
 
 ## 🟢 Giai đoạn 2: Xây Core Song Song (Ngày 3-7)
 
 ### Ngày 3 - Tutorial Scene & Save State Hook
-**Status**: ⬜ Not started / 🟡 In progress ✅ / 🟢 Done
+**Status**: ⬜ Not started / 🟡 In progress / 🟢 Done
 
 **Task List**:
-- [x] Tạo Tutorial scene layout + controller (TutorialFlowLogic + TutorialController API)
-- [x] Hook save state: TryEnterTutorial() từ Boot
-- [x] Subscribe TutorialCompletedEvent
-- [x] Test: new player -> tutorial -> complete -> save
-- [x] Test: restart -> skip tutorial
+- [ ] Tạo Tutorial scene layout + controller
+- [ ] Hook save state: TryEnterTutorial() từ Boot
+- [ ] Subscribe TutorialCompletedEvent
+- [ ] Test: new player -> tutorial -> complete -> save
+- [ ] Test: restart -> skip tutorial
 - [ ] **SYNC BẮT BUỘC**: Verify IProgressionService, SaveManager API, event subscription
 
-**Notes**: Đã thêm Flow events (`TutorialCompletedEvent`, `LevelEnteredEvent`, `CombatResultReceivedEvent`) và publish/subscribe points trong FlowController + TutorialFlowLogic.
+**Notes**: _____________________________________________________
 
-**Blocker** (nếu có): Save contract chính thức từ Dev A chưa merge, hiện dùng fallback PlayerPrefs.
+**Blocker** (nếu có): _____________________________________________________
 
-**ETA Complete**: 2026-04-03 (functional complete với mock/fallback, chờ sync contract Dev A).
+**ETA Complete**: _____________________
 
 ---
 
 ### Ngày 4 - Main Menu & Team Setup UI
-**Status**: ⬜ Not started / 🟡 In progress ✅ / 🟢 Done
+**Status**: ⬜ Not started / 🟡 In progress / 🟢 Done
 
 **Task List**:
-- [x] Tạo Main Menu scene layout + controller (controller wired: Team/Gacha/Inventory/LevelSelect)
-- [x] Tạo Team Formation scene layout + controller (TeamFormationUIController added)
-- [ ] Test: Main Menu -> Team -> Back to Main Menu (pending in-Editor playtest)
-- [ ] Test: Select 3 characters, validate (expect ITeamService.ValidateLineup logic) (pending in-Editor playtest)
+- [ ] Tạo Main Menu scene layout + controller
+- [ ] Tạo Team Formation scene layout + controller
+- [ ] Test: Main Menu -> Team -> Back to Main Menu
+- [ ] Test: Select 3 characters, validate (expect ITeamService.ValidateLineup logic)
 - [ ] Sync: Input structure for Team, validation error types
 
-**Notes**: Đã hoàn tất phần code Day 4 cho navigation + team validate flow. Chờ bạn test trực tiếp trong Unity scene để chốt PASS.
+**Notes**: _____________________________________________________
 
 **Blocker** (nếu có): _____________________________________________________
 
-**ETA Complete**: 2026-04-02 (sau khi pass 2 checklist test in-Editor)
+**ETA Complete**: _____________________
 
 ---
 
@@ -117,14 +116,6 @@
 **Task List**:
 - [ ] Tạo Inventory scene layout + controller
 - [ ] Tạo Level Select scene layout + controller (mock data: 3 chapters x 3 levels)
-- [ ] Tạo Character Collection scene layout + controller
-- [ ] Tạo list ô vuông character card (avatar + rare badge góc phải trên)
-- [ ] Tạo search theo tên character
-- [ ] Tạo sort/filter rare asc/desc
-- [ ] Tạo sort/filter level asc/desc
-- [ ] Tạo detail panel khi click card (name, rare, level, portrait, stats, HP hiện tại, Mana hiện tại)
-- [ ] Tạo feed button tăng level character
-- [ ] Rule: mỗi lần level up thì hồi full HP + Mana
 - [ ] Test: Click level -> call EnterCombat()
 - [ ] Verify skill icon appear trong UI
 
@@ -142,13 +133,12 @@
 **Task List**:
 - [ ] Full flow integration test (with Dev A):
   - [ ] Boot -> Tutorial -> Complete -> Save -> Restart -> Skip -> Main Menu
-  - [ ] Main Menu -> Team -> Gacha -> Inventory -> Character Collection -> Level Select -> Combat
+  - [ ] Main Menu -> Team -> Gacha -> Inventory -> Level Select -> Combat
 - [ ] Lập danh sách lỗi (classify: C0, C1, C2, C3)
 - [ ] Verify: No crash, no compile error, event sequence correct
 - [ ] PR #1 ready: feature/devB-tutorial-scene
-- [ ] PR #2 ready: feature/devB-menu-team-gacha-inventory-character
+- [ ] PR #2 ready: feature/devB-menu-team-gacha-inventory
 - [ ] Prepare bug list for Giai đoạn 3
-- [ ] Sync Dev A: API feed level + contract cập nhật HP/Mana hiện tại sau level up
 
 **Notes**: _____________________________________________________
 
@@ -210,8 +200,6 @@
 - [ ] Tạo JSON sample: Levels (với unlock condition)
 - [ ] Tạo JSON sample: Gacha pool config
 - [ ] Tạo JSON sample: Item list config
-- [ ] Polish Character Collection UX (search/filter/sort mượt, giữ state)
-- [ ] Polish feedback feed level-up (toast/effect + refresh stat card)
 - [ ] Tạo README.md cho UI folder
 - [ ] Tạo diagram/table: UI states & transitions
 - [ ] PR #4: Scene finalization + content data
@@ -360,7 +348,6 @@
 - [ ] Team formation: select, validate, save
 - [ ] Gacha UI: roll, show result, update
 - [ ] Inventory UI: list, use item, save
-- [ ] Character Collection UI: search/filter/sort/detail/feed level hoạt động đúng
 - [ ] Level select: show chapters, levels, unlock state, enter combat
 - [ ] Skill icon: load + fallback stable
 - [ ] Full loop: boot -> tutorial? -> menu -> sub-scenes -> combat -> result -> menu

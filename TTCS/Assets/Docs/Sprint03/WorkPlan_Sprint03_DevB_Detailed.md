@@ -17,7 +17,6 @@
 - ✅ Team setup UI (chọn đội hình trước trận)
 - ✅ Gacha UI (roll screen + result panel)
 - ✅ Inventory UI (list item, filter cơ bản, action dùng item)
-- ✅ Character Collection UI (roster grid + detail + feed level)
 - ✅ Wiring scene/prefab/UI để chạy full flow
 - ✅ Checklist test scene và regression UI flow
 
@@ -286,31 +285,9 @@
   }
   ```
 
-- [ ] Character Collection scene layout:
-  - [ ] Grid list ô vuông như inventory (avatar + rare badge ở góc trên phải)
-  - [ ] Search bar theo tên nhân vật
-  - [ ] Sort rare asc/desc
-  - [ ] Sort level asc/desc
-  - [ ] Detail panel: tên, rare, level, portrait, stats, HP hiện tại, Mana hiện tại
-  - [ ] Feed button để tăng level nhân vật
-
-- [ ] Tạo `CharacterCollectionUIController`:
-  ```csharp
-  public class CharacterCollectionUIController : MonoBehaviour
-  {
-      public void DisplayUnlockedCharacters();
-      public void OnSearchChanged(string keyword);
-      public void OnSortRareChanged(bool ascending);
-      public void OnSortLevelChanged(bool ascending);
-      public void OnCharacterCardClicked(string characterId);
-      public void OnFeedButtonClicked(string characterId);
-  }
-  ```
-
 **Deliverables ngày 6**
 - [ ] Inventory scene layout + controller
 - [ ] Level Select scene layout + controller (mock data for 3 chapters, 3 levels each)
-- [ ] Character Collection scene layout + controller v1
 - [ ] Test: Click level -> call `EnterCombat()` from FlowController
 - [ ] Skill icon appear in character select (if visible in team formation)
 
@@ -325,7 +302,6 @@
   - [ ] [ ] Main Menu -> Team -> Select lineup -> Validate -> Back
   - [ ] [ ] Main Menu -> Gacha -> Roll -> Show result -> Back
   - [ ] [ ] Main Menu -> Inventory -> Use item -> Back
-  - [ ] [ ] Main Menu -> Character Collection -> search/filter/sort -> open detail -> feed level -> back
   - [ ] [ ] Main Menu -> Level Select -> Click level -> Enter combat
 
 **Chiều (Afternoon)**
@@ -343,7 +319,7 @@
 **Deliverables ngày 7**
 - [ ] Full flow end-to-end integration test (pass hoặc danh sách lỗi)
 - [ ] PR #1 ready: `feature/devB-tutorial-scene` (Ngày 1-3)
-- [ ] PR #2 ready: `feature/devB-menu-team-gacha-inventory-character` (Ngày 4-7)
+- [ ] PR #2 ready: `feature/devB-menu-team-gacha-inventory` (Ngày 4-7)
 - [ ] Checklist kiểm thử UI flow (bắt đầu fix lỗi từ Giai đoạn 3)
 
 ---
@@ -371,11 +347,6 @@
   - [ ] No UI glitch
   - [ ] Event sequence correct
   - [ ] No null reference exceptions
-
-**Bổ sung Ngày 11-12 (Character Collection polish)**
-- [ ] UI card states rõ ràng (selected/hover/feedable)
-- [ ] Search/filter giữ trạng thái khi quay lại scene
-- [ ] Feedback khi feed thành công (level tăng + HP/Mana đầy)
 
 **Deliverables Ngày 8-9**
 - [ ] Top 5 issues resolved
