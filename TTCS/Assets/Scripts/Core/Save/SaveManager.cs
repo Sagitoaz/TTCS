@@ -2,6 +2,7 @@
 using System.IO;
 using UnityEngine;
 using TTCS.Core.Events;
+using TTCS.Core.Data;
 using TTCS.Debugging;
 
 namespace TTCS.Core.Save
@@ -49,6 +50,29 @@ namespace TTCS.Core.Save
             CurrentSave = CreateDefaultSaveData();
             ActiveSlotIndex = -1;
             DebugLogger.Log("[SaveManager] New game created.", DebugLogger.LogCategory.Save);
+        }
+
+        public SaveData EnsureCurrentSave(int fallbackSlotIndex = 0)
+        {
+            if (CurrentSave != null)
+            {
+                EnsureSaveDefaults(CurrentSave);
+                return CurrentSave;
+            }
+
+            if (HasSaveData(fallbackSlotIndex))
+            {
+                var loaded = Load(fallbackSlotIndex);
+                if (loaded != null)
+                {
+                    return loaded;
+                }
+            }
+
+            NewGame();
+            Save(fallbackSlotIndex);
+            ActiveSlotIndex = fallbackSlotIndex;
+            return CurrentSave;
         }
 
         public void Save(int slotIndex = 0)
@@ -112,6 +136,9 @@ namespace TTCS.Core.Save
 
                 CurrentSave = data;
                 ActiveSlotIndex = slotIndex;
+
+                // Auto-save after applying defaults to persist any new data
+                Save(slotIndex);
 
                 DebugLogger.Log($"[SaveManager] Loaded slot {slotIndex} - Level {data.playerLevel}.", DebugLogger.LogCategory.Save);
                 EventBus.Instance.Publish(new GameLoadedEvent(slotIndex));
@@ -264,12 +291,78 @@ namespace TTCS.Core.Save
             data.unlockedCharacters ??= new System.Collections.Generic.List<string>();
             data.unlockedStages ??= new System.Collections.Generic.List<string>();
             data.currentParty ??= new System.Collections.Generic.List<string>();
+            data.characterLevelKeys ??= new System.Collections.Generic.List<string>();
+            data.characterLevelValues ??= new System.Collections.Generic.List<int>();
+            data.characterExpKeys ??= new System.Collections.Generic.List<string>();
+            data.characterExpValues ??= new System.Collections.Generic.List<int>();
+            data.characterCurrentHpKeys ??= new System.Collections.Generic.List<string>();
+            data.characterCurrentHpValues ??= new System.Collections.Generic.List<int>();
+            data.deployedCharacters ??= new System.Collections.Generic.List<string>();
             data.unlockedChapters ??= new System.Collections.Generic.List<string>();
             data.unlockedLevels ??= new System.Collections.Generic.List<string>();
             data.lineup ??= new System.Collections.Generic.List<string>();
             data.levelProgress ??= new System.Collections.Generic.List<SaveLevelProgress>();
             data.inventoryItems ??= new System.Collections.Generic.List<SaveItemStack>();
             data.gachaPity ??= new System.Collections.Generic.List<SavePityState>();
+
+            // Ensure all unlocked characters have level and HP set
+            for (var i = 0; i < data.unlockedCharacters.Count; i++)
+            {
+                var characterId = data.unlockedCharacters[i];
+                if (string.IsNullOrWhiteSpace(characterId))
+                {
+                    continue;
+                }
+
+                // Ensure character has level (default 1)
+                if (!data.characterLevelKeys.Contains(characterId))
+                {
+                    data.SetCharacterLevel(characterId, 1);
+                }
+
+                // Ensure character has full HP based on character data
+                var character = DataManager.Instance?.LoadCharacter(characterId);
+                if (character != null && !data.characterCurrentHpKeys.Contains(characterId))
+                {
+                    var baseHp = Math.Max(1, character.baseStats?.hp ?? 1000);
+                    data.SetCharacterCurrentHp(characterId, baseHp);
+                }
+            }
+
+            // Ensure test characters are available for day 4 testing.
+            if (!data.unlockedCharacters.Contains("char_warrior"))
+            {
+                data.unlockedCharacters.Add("char_warrior");
+            }
+
+            if (!data.unlockedCharacters.Contains("char_mage"))
+            {
+                data.unlockedCharacters.Add("char_mage");
+            }
+
+            if (!data.characterLevelKeys.Contains("char_warrior"))
+            {
+                data.SetCharacterLevel("char_warrior", 1);
+            }
+
+            if (!data.characterLevelKeys.Contains("char_mage"))
+            {
+                data.SetCharacterLevel("char_mage", 1);
+            }
+
+            if (!data.characterCurrentHpKeys.Contains("char_warrior"))
+            {
+                var warrior = DataManager.Instance?.LoadCharacter("char_warrior");
+                var warriorHp = Math.Max(1, warrior?.baseStats?.hp ?? 3000);
+                data.SetCharacterCurrentHp("char_warrior", warriorHp);
+            }
+
+            if (!data.characterCurrentHpKeys.Contains("char_mage"))
+            {
+                var mage = DataManager.Instance?.LoadCharacter("char_mage");
+                var mageHp = Math.Max(1, mage?.baseStats?.hp ?? 2000);
+                data.SetCharacterCurrentHp("char_mage", mageHp);
+            }
 
             if (data.lineup.Count == 0 && data.currentParty.Count > 0)
             {

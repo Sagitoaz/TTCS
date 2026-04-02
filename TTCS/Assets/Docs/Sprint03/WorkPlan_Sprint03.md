@@ -62,6 +62,12 @@ Sprint 3 được xem là hoàn thành khi thỏa tất cả điều kiện sau:
 - Inventory domain logic: item use rules, stack/update state.
 - Logging + checklist test kỹ thuật cho core flow.
 
+**Trạng thái cập nhật theo code thực tế (2026-04-02)**
+- Xong: progression service, save migration, data validator, reward bridge, team service, gacha service, inventory service.
+- Xong: save fields cho tutorial/chapter/level/lineup/roster/inventory/gacha pity đã có trong `SaveData`.
+- Xong: logging core flow đã có trong các service meta và bridge.
+- Đang chờ xác nhận thêm: dedicated unit test cho unlock theo chapter, full integration/regression test, baseline balance data riêng, integrity/anti-tamper.
+
 **Không phụ trách chính**
 - Setup scene tutorial trực quan.
 - UI layout chapter/level và icon rendering cụ thể.
@@ -115,9 +121,9 @@ Sprint 3 được xem là hoàn thành khi thỏa tất cả điều kiện sau:
 
 ### Ngày 1
 **Dev A**
-- [ ] Định nghĩa contract progression và save state mới.
-- [ ] Draft schema JSON cho chapter/level/unlock.
-- [ ] Định nghĩa contract player meta-state (lineup, roster, inventory snapshot).
+- [x] Định nghĩa contract progression và save state mới.
+- [x] Draft schema JSON cho chapter/level/unlock.
+- [x] Định nghĩa contract player meta-state (lineup, roster, inventory snapshot).
 
 **Dev B**
 - [ ] Draft flow tutorial scene và level select scene.
@@ -129,9 +135,9 @@ Sprint 3 được xem là hoàn thành khi thỏa tất cả điều kiện sau:
 
 ### Ngày 2
 **Dev A**
-- [ ] Cài validator cho schema data mới.
-- [ ] Chuẩn bị migration save data.
-- [ ] Draft service interfaces: `TeamService`, `GachaService`, `InventoryService`.
+- [x] Cài validator cho schema data mới.
+- [x] Chuẩn bị migration save data.
+- [x] Draft service interfaces: `TeamService`, `GachaService`, `InventoryService`.
 
 **Dev B**
 - [ ] Setup khung scene tutorial và level select.
@@ -145,7 +151,7 @@ Sprint 3 được xem là hoàn thành khi thỏa tất cả điều kiện sau:
 
 ### Ngày 3
 **Dev A**
-- [ ] Implement progression service (unlock logic).
+- [x] Implement progression service (unlock logic).
 - [ ] Unit test logic unlock theo chapter.
 
 **Dev B**
@@ -157,20 +163,20 @@ Sprint 3 được xem là hoàn thành khi thỏa tất cả điều kiện sau:
 
 ### Ngày 4
 **Dev A**
-- [ ] Mở rộng save/load: tutorial, chapter progress, level stars.
-- [ ] Test migrate save cũ -> save mới.
-- [ ] Implement save fields cho lineup/roster/inventory meta-state.
+- [x] Mở rộng save/load: tutorial, chapter progress, level stars.
+- [~] Test migrate save cũ -> save mới.
+- [x] Implement save fields cho lineup/roster/inventory meta-state.
 
 **Dev B**
 - [ ] Level select UI bind dữ liệu chapter/level.
 - [ ] Trạng thái khóa/mở/đã clear hiển thị đúng.
-- [ ] Team Formation UI v1 (chọn nhân vật vào đội trước combat).
+- [ ] Team Formation UI v1: 3 slot + picker panel + confirm add + filter (level/rarity/role) + loai tru character het HP/da ra tran.
 
 ### Ngày 5
 **Dev A**
-- [ ] Reward bridge cập nhật inventory/gacha progression.
-- [ ] Log đầy đủ đường đi reward.
-- [ ] Implement `GachaService` v1 và rarity table config.
+- [x] Reward bridge cập nhật inventory/gacha progression.
+- [x] Log đầy đủ đường đi reward.
+- [x] Implement `GachaService` v1 và rarity table config.
 
 **Dev B**
 - [ ] Skill icon mapping vào UI chiến đấu/chọn nhân vật.
@@ -181,7 +187,7 @@ Sprint 3 được xem là hoàn thành khi thỏa tất cả điều kiện sau:
 **Dev A**
 - [ ] Baseline balance data cho chapter/level đầu.
 - [ ] Chuẩn hóa trường dữ liệu cân bằng nhanh.
-- [ ] Implement `InventoryService` v1 và item-use rules cơ bản.
+- [x] Implement `InventoryService` v1 và item-use rules cơ bản.
 
 **Dev B**
 - [ ] Hook level select -> vào combat với dữ liệu đúng.
@@ -192,16 +198,16 @@ Sprint 3 được xem là hoàn thành khi thỏa tất cả điều kiện sau:
 
 ### Ngày 7
 **Cả 2 Dev (Sync lớn)**
-- [ ] Integration lần 1: tutorial + level select + combat + reward + save.
+- [~] Integration lần 1: tutorial + level select + combat + reward + save.
 - [ ] Lập danh sách lỗi blocker và phân công fix.
-- [ ] Integration lần 1 cho meta-loop: menu -> team -> gacha -> inventory -> level select.
+- [~] Integration lần 1 cho meta-loop: menu -> team -> gacha -> inventory -> level select.
 
 ## Giai đoạn 3 - Ổn định và hoàn thiện (Ngày 8-12)
 
 ### Ngày 8-9
 **Dev A**
-- [ ] Fix lỗi logic progression/reward/save.
-- [ ] Tăng độ bền validator + xử lý dữ liệu lỗi.
+- [~] Fix lỗi logic progression/reward/save.
+- [x] Tăng độ bền validator + xử lý dữ liệu lỗi.
 
 **Dev B**
 - [ ] Fix lỗi UI flow/tutorial/icon.
@@ -216,7 +222,7 @@ Sprint 3 được xem là hoàn thành khi thỏa tất cả điều kiện sau:
 
 ### Ngày 11-12
 **Dev A**
-- [ ] Hoàn thiện logging/debug checkpoints cho core flow.
+- [x] Hoàn thiện logging/debug checkpoints cho core flow.
 - [ ] Rà soát integrity dữ liệu (anti-tamper mức tối thiểu).
 
 **Dev B**

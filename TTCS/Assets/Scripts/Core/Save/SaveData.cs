@@ -25,6 +25,9 @@ namespace TTCS.Core.Save
         public List<int> characterLevelValues = new List<int>();
         public List<string> characterExpKeys = new List<string>();
         public List<int> characterExpValues = new List<int>();
+        public List<string> characterCurrentHpKeys = new List<string>();
+        public List<int> characterCurrentHpValues = new List<int>();
+        public List<string> deployedCharacters = new List<string>();
 
         public List<string> clearedStages = new List<string>();
         public List<string> stageFirstClearKeys = new List<string>();
@@ -47,6 +50,46 @@ namespace TTCS.Core.Save
         {
             int idx = characterLevelKeys.IndexOf(characterId);
             return idx >= 0 ? characterLevelValues[idx] : 1;
+        }
+
+        public int GetCharacterCurrentHp(string characterId, int defaultHp)
+        {
+            int idx = characterCurrentHpKeys.IndexOf(characterId);
+            return idx >= 0 ? characterCurrentHpValues[idx] : defaultHp;
+        }
+
+        public void SetCharacterCurrentHp(string characterId, int hp)
+        {
+            int idx = characterCurrentHpKeys.IndexOf(characterId);
+            if (idx >= 0)
+            {
+                characterCurrentHpValues[idx] = hp;
+            }
+            else
+            {
+                characterCurrentHpKeys.Add(characterId);
+                characterCurrentHpValues.Add(hp);
+            }
+        }
+
+        public bool IsCharacterDeployed(string characterId)
+        {
+            return deployedCharacters.Contains(characterId);
+        }
+
+        public void SetCharacterDeployed(string characterId, bool deployed)
+        {
+            if (deployed)
+            {
+                if (!deployedCharacters.Contains(characterId))
+                {
+                    deployedCharacters.Add(characterId);
+                }
+
+                return;
+            }
+
+            deployedCharacters.Remove(characterId);
         }
 
         public void SetCharacterLevel(string characterId, int level)

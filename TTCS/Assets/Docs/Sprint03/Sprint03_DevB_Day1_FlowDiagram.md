@@ -100,16 +100,15 @@
 ### Team Formation Scene
 - **Entry Point**: From Main Menu (Team button)
 - **UI**:
-  - Character list (scrollable)
-  - 3 Slots (selected lineup display)
-  - Validate button
+  - Team panel with 3 slot buttons
+  - Picker panel (scrollable character list)
+  - Confirm add panel (Yes/No)
   - Back button
 - **Logic**:
-  - Display available characters
-  - Select/deselect character to slots
-  - Validate lineup (call TeamService.ValidateLineup)
-  - If valid: save + navigate back to Main Menu
-  - If invalid: show error + allow retry
+  - Click slot button to open picker
+  - Picker excludes dead characters (HP <= 0), deployed characters, and already-selected characters
+  - Picker supports sorting (level/rarity asc-desc) and role filtering
+  - Click character -> show confirm add dialog -> on Yes save lineup and return to team panel
 - **Exit**: Back to Main Menu
 
 ### Gacha Scene

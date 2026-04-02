@@ -2,18 +2,18 @@
 
 Muc tieu Day 4:
 - Hoan thien Main Menu UI wiring.
-- Hoan thien Team Formation UI wiring.
-- Test flow Main Menu -> Team -> Back -> Main Menu.
-- Test validate lineup (toi da 3 nhan vat).
+- Hoan thien Team Formation UI wiring theo cau truc moi.
+- Team Formation khong dung StatusText/ValidateButton.
+- Dung flow 3 slot -> picker panel (highlight cell) -> confirm trong picker -> quay lai team panel.
 
-Code lien quan da co:
+Code lien quan:
 - Assets/Scripts/Flow/Common/FlowController.cs
 - Assets/Scripts/Flow/MainMenu/MainMenuController.cs
 - Assets/Scripts/Flow/TeamFormation/TeamFormationUIController.cs
 
 ## 1) Kiem tra ten scene trong Build Settings
 
-Mo File -> Build Settings, dam bao co cac scene sau (ten phai dung y nhu ben duoi):
+Mo File -> Build Settings, dam bao co cac scene sau:
 - Boot
 - MainMenuScene
 - TeamFormationScene
@@ -22,7 +22,7 @@ Mo File -> Build Settings, dam bao co cac scene sau (ten phai dung y nhu ben duo
 - LevelSelectScene
 
 Luu y:
-- FlowController dang load scene bang ten chuoi, sai ten se bi khong load duoc.
+- FlowController load scene bang ten chuoi, sai ten se khong load duoc.
 
 ## 2) Setup MainMenuScene
 
@@ -31,113 +31,205 @@ Luu y:
 2. Tao Empty GameObject: MainMenuManager.
 3. Add component: MainMenuController.
 
-### 2.2 Tao cac button trong Canvas
-Tao cac Button sau:
+### 2.2 Tao button trong Canvas
+Tao cac button:
 - PlayButton
 - TeamButton
 - GachaButton
 - InventoryButton
 - SettingsButton
 
-### 2.3 Gan reference trong Inspector
-Chon MainMenuManager, trong MainMenuController drag dung cac button vao field:
+### 2.3 Gan reference MainMenuController
+Gan dung cac field:
 - Play Button <- PlayButton
 - Team Button <- TeamButton
 - Gacha Button <- GachaButton
 - Inventory Button <- InventoryButton
 - Settings Button <- SettingsButton
 
-### 2.4 Kiem tra FlowController scene name
-Mo Boot scene, chon object co FlowController, kiem tra:
-- Main Menu Scene Name = MainMenuScene
-- Team Formation Scene Name = TeamFormationScene
-- Gacha Scene Name = GachaScene
-- Inventory Scene Name = InventoryScene
-- Level Select Scene Name = LevelSelectScene
-
-## 3) Setup TeamFormationScene
+## 3) Setup TeamFormationScene theo flow moi
 
 ### 3.1 Tao TeamFormationManager
 1. Mo scene TeamFormationScene.
 2. Tao Empty GameObject: TeamFormationManager.
 3. Add component: TeamFormationUIController.
 
-### 3.2 Tao UI co ban
-Trong Canvas tao:
-- 1 Text: StatusText (hien thong bao validate).
-- 1 Button: ValidateButton.
-- 1 Button: BackButton.
-- Danh sach button nhan vat (vi du Character_A, Character_B, Character_C, Character_D).
+### 3.2 Tao Team Panel (panel chinh)
+Trong Canvas tao TeamPanel gom:
+- BackButton
+- SlotButton_1, SlotButton_2, SlotButton_3
+- SlotView_1, SlotView_2, SlotView_3 (moi slot view gom):
+  - SlotHighlight (GameObject con, bat/tat khi slot dang active)
+  - Portrait Image
+  - Name Text
+  - HP Text
+  - HP Slider
+  - Level Text
 
-### 3.3 Gan reference TeamFormationUIController
-Chon TeamFormationManager, gan:
-- Validate Button <- ValidateButton
+Luu y:
+- Moi SlotButton mo picker cho dung slot tuong ung.
+- Khong dung StatusText va khong dung ValidateButton.
+
+### 3.3 Tao Picker Panel
+Tao PickerPanel (ban dau inactive), gom:
+- CharacterListRoot (VerticalLayoutGroup + ContentSizeFitter)
+- CharacterItemPrefab (TeamFormationPickerCellView)
+  - Portrait
+  - Name text
+  - Level text
+  - Rarity text
+  - Highlight GameObject
+- Filter controls (co the la button hoac dropdown):
+  - Sort Level Asc
+  - Sort Level Desc
+  - Sort Rarity Asc
+  - Sort Rarity Desc
+  - Role filter (All/Tank/Attacker/Support hoac role custom)
+- ConfirmButton (xac nhan character dang highlight vao slot)
+- ClosePickerButton (goi ham ClosePicker)
+
+### 3.4 Tao QuickInfo panel (ben trai picker)
+Trong PickerPanel tao QuickInfo gom:
+- QuickInfoNameText
+- QuickInfoRoleText
+- QuickInfoElementText
+- QuickInfoPortrait
+- QuickInfoSkillRoot (list root)
+- QuickInfoSkillItemPrefab (TeamFormationSkillQuickItemView)
+  - Skill icon
+  - Skill name
+
+### 3.5 Gan reference TeamFormationUIController
+Gan cac field trong Inspector:
 - Back Button <- BackButton
-- Status Text <- StatusText
+- Slot Buttons <- SlotButton_1, SlotButton_2, SlotButton_3
+- Slot Views <- SlotView_1, SlotView_2, SlotView_3
+- Team Panel <- TeamPanel
+- Picker Panel <- PickerPanel
+- Picker List Root <- CharacterListRoot
+- Picker Item Prefab <- CharacterItemPrefab
+- Picker Confirm Button <- ConfirmButton
+- Picker Close Button <- ClosePickerButton
+- Quick Info Name Text <- QuickInfoNameText
+- Quick Info Role Text <- QuickInfoRoleText
+- Quick Info Element Text <- QuickInfoElementText
+- Quick Info Portrait <- QuickInfoPortrait
+- Quick Info Skill Root <- QuickInfoSkillRoot
+- Quick Info Skill Item Prefab <- QuickInfoSkillItemPrefab
+- Sort Dropdown / Role Dropdown (neu dung dropdown)
 
-### 3.4 Wire character buttons
-Voi moi button nhan vat:
-1. OnClick -> add listener.
-2. Drag TeamFormationManager vao object.
-3. Chon function: TeamFormationUIController.OnCharacterClicked(string).
-4. Nhap string characterId tuong ung, vi du:
-   - "char_warrior"
-   - "char_mage"
-   - "char_archer"
+## 4) Wire OnClick trong Unity
 
-Khuyen nghi:
-- Dat ten characterId on dinh theo convention cua du an de sau nay map voi data that.
+### 4.1 Slot buttons
+- SlotButton_1 -> TeamFormationUIController.OnSlotClicked(0)
+- SlotButton_2 -> TeamFormationUIController.OnSlotClicked(1)
+- SlotButton_3 -> TeamFormationUIController.OnSlotClicked(2)
 
-## 4) Test checklist Day 4
+### 4.2 Filter buttons (neu dung button)
+- Level asc -> SetSortByLevelAsc()
+- Level desc -> SetSortByLevelDesc()
+- Rarity asc -> SetSortByRarityAsc()
+- Rarity desc -> SetSortByRarityDesc()
+- Role all -> SetRoleFilterAll()
+- Role theo nhom -> SetRoleFilter("Tank") / SetRoleFilter("Attacker") / SetRoleFilter("Support")
 
-### 4.1 Test navigation Main Menu -> Team -> Back
+### 4.3 Picker buttons
+- ConfirmButton -> duoc controller gan listener trong Start()
+- ClosePickerButton -> duoc controller gan listener trong Start()
+
+Ghi chu:
+- Character cua slot dang active duoc uu tien len dau danh sach picker.
+- Character o slot khac khong hien trong picker.
+- Character dang o slot active van hien trong picker.
+
+## 5) Rule duoc ap dung trong picker
+
+Danh sach picker chi hien thi nhan vat:
+- Thuoc unlocked roster cua player.
+- Chua duoc chon o slot khac.
+- Chua bi danh dau da ra tran.
+- Current HP > 0.
+
+Filter duoc ho tro:
+- Level asc/desc.
+- Rarity asc/desc.
+- Role.
+
+## 6) Test checklist Day 4 (flow moi)
+
+### 6.1 Navigation
 1. Play tu Boot.
 2. Vao MainMenuScene.
-3. Bam Team -> phai vao TeamFormationScene.
+3. Bam Team -> vao TeamFormationScene.
 4. Bam Back -> quay lai MainMenuScene.
 
-Expected console logs:
+Expected logs:
 - [MainMenu] Team button clicked
 - [Flow] Opening team formation scene
 
-### 4.2 Test lineup selection
-1. Vao TeamFormationScene.
-2. Bam 3 character buttons khac nhau.
-3. Bam them character thu 4.
-4. Bam Validate.
+### 6.2 Team slot flow
+1. Bam Slot 1.
+2. PickerPanel mo ra voi danh sach character hop le.
+3. Chon 1 character (cell duoc highlight).
+4. QuickInfo ben trai cap nhat (ten, role, element, portrait, skills).
+5. Bam Confirm trong picker.
 
 Expected:
-- Khi vuot qua 3 slots: StatusText hien "Lineup full (max 3)".
-- Validate thanh cong: StatusText hien "Lineup validated and saved".
+- Picker dong lai.
+- TeamPanel hien lai.
+- Slot 1 cap nhat portrait + HP slider + HP text + Level.
 
-### 4.3 Test toggle chon/bo chon
-1. Bam vao 1 character da chon lan nua.
-2. Character do bi remove khoi lineup.
+Toggle unequip:
+- Neu bam vao cell dang highlight va do la character dang mang o slot active thi slot bi unequip ngay.
+
+### 6.3 Filter flow
+1. Mo picker.
+2. Doi sort level/rarity.
+3. Doi role filter.
 
 Expected:
-- StatusText hien "Removed: <id> (.../3)".
+- List reorder dung sort.
+- List chi con role da chon.
 
-## 5) Loi thuong gap va cach xu ly
+### 6.4 Exclusion rules
+1. Tao case character HP = 0 trong save.
+2. Tao case character da nam trong deployedCharacters.
+3. Mo picker.
 
-1. Bam Team khong chuyen scene:
-- Kiem tra TeamFormationScene da add vao Build Settings.
-- Kiem tra dung ten TeamFormationScene trong FlowController inspector.
+Expected:
+- Character HP = 0 khong hien.
+- Character da ra tran khong hien.
 
-2. Validate/Back khong hoat dong:
-- Kiem tra ValidateButton va BackButton da drag vao TeamFormationUIController.
+## 7) Loi thuong gap va cach xu ly
 
-3. Bam character khong thay doi status:
-- Kiem tra OnClick cua button character da wire den OnCharacterClicked(string).
-- Kiem tra parameter string khong rong.
+1. Bam slot nhung picker khong hien:
+- Kiem tra TeamPanel/PickerPanel da drag vao controller.
+- Kiem tra SlotButton goi dung OnSlotClicked(index).
 
-4. Console bao TeamService not found:
-- Day la fallback expected khi chua gan implementation that tu DevA.
-- Van test duoc flow bang local validation.
+2. Picker list trong:
+- Kiem tra SaveManager co CurrentSave.
+- Kiem tra unlockedCharacters co data.
+- Kiem tra character khong bi loai bo boi dieu kien HP/deployed.
 
-## 6) Definition of Done Day 4 (phan setup)
+3. Confirm khong hien:
+- Kiem tra ConfirmPanel, ConfirmText, Yes/No da drag dung.
 
-- MainMenuController duoc wire day du 5 button.
-- TeamFormationUIController duoc wire day du Validate/Back/StatusText.
-- Character buttons goi duoc OnCharacterClicked(string).
-- Flow Main Menu -> Team -> Back chay on dinh.
-- Validate lineup toi da 3 nhan vat hoat dong dung nhu expected.
+4. Slot khong cap nhat portrait/stats:
+- Kiem tra SlotView refs (portrait/name/hpSlider/hpText/level) da gan day du.
+- Kiem tra character data co portraitPath (neu khong co thi portrait co the null).
+
+5. QuickInfo khong hien skills:
+- Kiem tra QuickInfoSkillRoot va QuickInfoSkillItemPrefab da gan.
+- Kiem tra DataManager co load duoc skill data + skill icon map.
+
+## 8) Definition of Done Day 4 (cap nhat)
+
+- MainMenuController wire day du 5 button.
+- TeamFormationUIController wire day du 3 slot + picker + confirm.
+- Khong con su dung StatusText va ValidateButton.
+- Slot click -> picker (highlight) -> confirm trong picker -> slot update hoat dong on dinh.
+- Slot co nhan vat hien portrait + HP slider + HP text + level.
+- Filter level/rarity/role hoat dong dung.
+- Slot highlight bat dung khi dang active.
+- QuickInfo cap nhat dung theo character dang highlight trong picker.
+- Rule loai tru character het HP/da ra tran/da chon o slot khac hoat dong dung.

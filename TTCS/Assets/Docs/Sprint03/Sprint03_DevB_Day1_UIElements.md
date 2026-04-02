@@ -49,24 +49,22 @@
 
 ### Team Formation Scene UI Elements
 
-- [ ] **Characters List Panel**
-  - [ ] Scrollable list container
-  - [ ] Character card prefab (icon, name, rarity, level)
-  - [ ] Selection highlight
-
-- [ ] **Lineup Display Panel**
-  - [ ] 3 Slot displays (Slot 1, Slot 2, Slot 3)
+- [ ] **Team Panel**
+  - [ ] 3 Slot buttons (Slot 1, Slot 2, Slot 3)
   - [ ] Selected character display per slot
-  - [ ] Remove character button (per slot)
-
-- [ ] **Action Buttons**
-  - [ ] Validate button
+  - [ ] Slot stat display (portrait, HP, mana, level)
   - [ ] Back button
 
-- [ ] **Feedback Panel**
-  - [ ] Error message display (red text)
-  - [ ] Success message (optional)
-  - [ ] Validation status indicator
+- [ ] **Character Picker Panel**
+  - [ ] Scrollable list container
+  - [ ] Character item prefab (name, rarity, role, level, HP, mana)
+  - [ ] Sort controls (level asc/desc, rarity asc/desc)
+  - [ ] Role filter control
+
+- [ ] **Confirm Add Panel**
+  - [ ] Confirm text
+  - [ ] Yes button
+  - [ ] No button
 
 ---
 

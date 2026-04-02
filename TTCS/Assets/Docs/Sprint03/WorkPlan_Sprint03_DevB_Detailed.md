@@ -171,19 +171,24 @@
 
 **Chiều (Afternoon)**
 - [ ] Team Formation scene layout:
-  - [ ] Character list (scrollable)
-  - [ ] Slot 1/2/3 (selected lineup)
-  - [ ] Validate button + Back button
-  - [ ] Error message panel (invalid lineup feedback)
+  - [ ] Team panel voi 3 slot nhan vat (moi slot co 1 button de mo picker)
+  - [ ] Character picker panel (scroll list)
+  - [ ] Confirm add panel (Yes/No)
+  - [ ] Filter trong picker: level asc/desc, rarity asc/desc, role
+  - [ ] Rule loai tru trong picker: nhan vat het HP, nhan vat da ra tran, nhan vat da duoc chon o slot khac
 
 - [ ] Tạo `TeamFormationUIController`:
   ```csharp
   public class TeamFormationUIController : MonoBehaviour
   {
       public ITeamService TeamService { get; set; }
-      
-      public void SelectCharacter(string charId)
-      public void ValidateLineup()
+
+      public void OnSlotClicked(int slotIndex)
+      public void SetSortByLevelAsc()
+      public void SetSortByLevelDesc()
+      public void SetSortByRarityAsc()
+      public void SetSortByRarityDesc()
+      public void SetRoleFilter(string roleTag)
       public void Back()
   }
   ```
@@ -192,7 +197,10 @@
 - [ ] Main Menu scene fully wired
 - [ ] Team Formation scene layout + basic controller
 - [ ] Navigation Main Menu -> Team -> Back to Main Menu working
-- [ ] Test: Select 3 characters, validate (check logic from Dev A)
+- [ ] Test: Slot button -> picker -> chon nhan vat -> confirm Yes -> quay lai team panel
+- [ ] Test: Slot co nhan vat phai hien portrait + HP slider + HP text + level
+- [ ] Test: Filter level/rarity/role trong picker hoat dong dung
+- [ ] Test: Picker loai tru dung nhan vat het HP/da ra tran/da co o slot khac
 
 **Sync bắt buộc**
 - [ ] Input structure cho Team (expect `IReadOnlyList<string>` lineup)
@@ -584,11 +592,13 @@
 - [ ] Back button (trong sub-scene) -> back to main menu
 
 #### Team Formation
-- [ ] Display character list
-- [ ] Select 3 characters
-- [ ] Validate button -> check valid rules từ Dev A
-- [ ] Invalid message -> show error + allow retry
-- [ ] Valid confirm -> save + go back to main menu
+- [ ] Display 3 slot buttons (slot 1/2/3)
+- [ ] Slot click -> open picker panel
+- [ ] Picker excludes dead/deployed/already-selected characters
+- [ ] Picker filter works: level asc/desc, rarity asc/desc, role
+- [ ] Character click -> show confirm Yes/No
+- [ ] Confirm Yes -> save lineup + return to team panel
+- [ ] Slot displays portrait + current HP + mana + level
 
 #### Gacha UI
 - [ ] Display pool list

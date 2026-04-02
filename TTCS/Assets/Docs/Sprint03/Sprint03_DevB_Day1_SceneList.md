@@ -189,7 +189,7 @@ public class MainMenuUIController : MonoBehaviour
 
 **Purpose**:
 - Allow player to form a team (lineup) for upcoming level
-- Validate lineup before confirming
+- Pick 3-slot lineup through picker + confirm flow
 
 **Entry Point**: From Main Menu (Team button)
 
@@ -198,21 +198,27 @@ public class MainMenuUIController : MonoBehaviour
 public class TeamFormationUIController : MonoBehaviour
 {
     public ITeamService TeamService { get; set; }
-    
-    public void DisplayCharacters()
-    public void SelectCharacter(string charId)
-    public void DeselectCharacter(int slotIndex)
-    public void ValidateLineup()
-    public void ConfirmAndBack()
+
+    public void OnSlotClicked(int slotIndex)
+    public void SetSortByLevelAsc()
+    public void SetSortByLevelDesc()
+    public void SetSortByRarityAsc()
+    public void SetSortByRarityDesc()
+    public void SetRoleFilter(string roleTag)
+    public void ClosePicker()
 }
 ```
 
 **UI Elements**:
-- [ ] Available characters list (scrollable)
-  - [ ] Character card (icon, name, rarity, level)
-- [ ] Lineup slots (3 slots)
-  - [ ] Slot 1, 2, 3 (display selected character or "empty")
-- [ ] Validate button
+- [ ] Team panel with lineup slots (3 slots)
+  - [ ] Slot button 1, 2, 3
+  - [ ] Slot view shows portrait, HP, mana, level
+- [ ] Picker panel
+  - [ ] Character list (scrollable)
+  - [ ] Filter controls: level asc/desc, rarity asc/desc, role
+- [ ] Confirm panel
+  - [ ] Confirm text
+  - [ ] Yes button / No button
 - [ ] Back button
 - [ ] Error message panel (show validation error)
 

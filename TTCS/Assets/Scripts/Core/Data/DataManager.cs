@@ -9,6 +9,9 @@ using TTCS.Debugging;
 using TTCS.Meta.Gacha;
 using TTCS.Meta.Inventory;
 using TTCS.Meta.Progression;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace TTCS.Core.Data
 {
@@ -41,6 +44,8 @@ namespace TTCS.Core.Data
 
         public bool IsLoaded { get; private set; }
         private const string DataRoot = "Data";
+        private const string SpriteRoot = "Sprites";
+        private const string CharacterSpriteFolder = "Characters";
 
         private void Awake()
         {
@@ -144,6 +149,90 @@ namespace TTCS.Core.Data
             }
 
             return stageId;
+        }
+
+        public Sprite LoadCharacterPortraitSprite(string portraitPath)
+        {
+            if (string.IsNullOrWhiteSpace(portraitPath))
+            {
+                return null;
+            }
+
+            var normalized = NormalizePortraitPath(portraitPath);
+
+            // Backward-compatible: allow loading from Resources if available.
+            var resourcePath = normalized.Replace("\\", "/");
+            if (resourcePath.StartsWith("Assets/", StringComparison.OrdinalIgnoreCase))
+            {
+                resourcePath = resourcePath.Substring("Assets/".Length);
+            }
+
+            if (resourcePath.StartsWith("Resources/", StringComparison.OrdinalIgnoreCase))
+            {
+                resourcePath = resourcePath.Substring("Resources/".Length);
+            }
+
+            resourcePath = Path.ChangeExtension(resourcePath, null)?.Replace("\\", "/");
+            var resourceSprite = Resources.Load<Sprite>(resourcePath);
+            if (resourceSprite != null)
+            {
+                return resourceSprite;
+            }
+
+#if UNITY_EDITOR
+            var editorPath = normalized.Replace("\\", "/");
+            if (!editorPath.StartsWith("Assets/", StringComparison.OrdinalIgnoreCase))
+            {
+                editorPath = $"Assets/{editorPath}";
+            }
+
+            var sprite = AssetDatabase.LoadAssetAtPath<Sprite>(editorPath);
+            if (sprite != null)
+            {
+                return sprite;
+            }
+
+            var exts = new[] { ".png", ".jpg", ".jpeg", ".tga", ".psd" };
+            for (var i = 0; i < exts.Length; i++)
+            {
+                var withExt = Path.ChangeExtension(editorPath, exts[i]);
+                sprite = AssetDatabase.LoadAssetAtPath<Sprite>(withExt);
+                if (sprite != null)
+                {
+                    return sprite;
+                }
+            }
+#endif
+
+            return null;
+        }
+
+        private static string NormalizePortraitPath(string rawPath)
+        {
+            var path = rawPath.Replace("\\", "/").Trim();
+            path = Path.ChangeExtension(path, null)?.Replace("\\", "/") ?? path;
+
+            if (path.StartsWith("Assets/Sprites/", StringComparison.OrdinalIgnoreCase))
+            {
+                return path;
+            }
+
+            if (path.StartsWith("Sprites/", StringComparison.OrdinalIgnoreCase))
+            {
+                return $"Assets/{path}";
+            }
+
+            if (path.StartsWith("Characters/", StringComparison.OrdinalIgnoreCase))
+            {
+                return $"Assets/{SpriteRoot}/{path}";
+            }
+
+            if (path.StartsWith("Assets/", StringComparison.OrdinalIgnoreCase))
+            {
+                return path;
+            }
+
+            return $"Assets/{SpriteRoot}/{CharacterSpriteFolder}/{path}";
         }
 
         private void LoadSkillIconMap()

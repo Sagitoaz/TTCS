@@ -1073,6 +1073,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Gameplay Menu_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1498
+        width: 1444
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 738bf962e7e372148aeb097bdf86e751
+      internalID: -177434440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1118,6 +1140,7 @@ TextureImporter:
       Mobile - Fire Emblem_ Heroes - UI - Gameplay Menu_34: -1130273181629039546
       Mobile - Fire Emblem_ Heroes - UI - Gameplay Menu_35: -4669375824700199787
       Mobile - Fire Emblem_ Heroes - UI - Gameplay Menu_36: 8331492295946941291
+      Mobile - Fire Emblem_ Heroes - UI - Gameplay Menu_37: -177434440
       Mobile - Fire Emblem_ Heroes - UI - Gameplay Menu_4: 1439781390438390042
       Mobile - Fire Emblem_ Heroes - UI - Gameplay Menu_5: 4577118777422184785
       Mobile - Fire Emblem_ Heroes - UI - Gameplay Menu_6: 6834386878702757204

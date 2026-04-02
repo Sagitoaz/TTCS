@@ -81,7 +81,11 @@
 - [ ] Tạo Main Menu scene layout + controller
 - [ ] Tạo Team Formation scene layout + controller
 - [ ] Test: Main Menu -> Team -> Back to Main Menu
-- [ ] Test: Select 3 characters, validate (expect ITeamService.ValidateLineup logic)
+- [ ] Team panel co 3 slot, moi slot co button mo picker
+- [ ] Picker panel hien list nhan vat so huu, co confirm Yes/No truoc khi add vao slot
+- [ ] Picker filter: level asc/desc, rarity asc/desc, role
+- [ ] Rule loai tru picker: character het HP, character da ra tran, character da duoc chon o slot khac
+- [ ] Slot da chon phai hien portrait + HP slider + HP text + level
 - [ ] Sync: Input structure for Team, validation error types
 
 **Notes**: _____________________________________________________
