@@ -1,0 +1,54 @@
+{
+  "id": "skill_support_mystic_barrier",
+  "nameKey": "Skill_SupportMysticBarrier",
+  "description": "Summon a layered barrier around one ally, granting temporary shield.",
+  "type": "buff",
+
+  "targetRule": {
+    "type": "single_ally",
+    "count": 1,
+    "filter": [],
+    "canTargetSelf": true
+  },
+
+  "cost": {
+    "mana": 28,
+    "cooldown": 3,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "",
+    "element": "",
+    "canCrit": false,
+    "ignoreDefense": 0
+  },
+
+  "effects": [
+    {
+      "type": "shield",
+      "value": "ATK * 2.2",
+      "element": "",
+      "chance": 1.0,
+      "duration": 2
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": false,
+    "windows": [],
+    "grades": {}
+  },
+
+  "actionCost": {
+    "timelineUnits": 90,
+    "description": "Single-target protective barrier"
+  },
+
+  "visual": {
+    "animation": "support_mystic_barrier",
+    "vfxPrefab": "VFX/support_mystic_barrier",
+    "sfx": "SFX/support_mystic_barrier",
+    "cameraShake": 0.0
+  }
+}

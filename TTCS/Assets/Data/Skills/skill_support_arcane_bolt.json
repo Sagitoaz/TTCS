@@ -1,0 +1,80 @@
+{
+  "id": "skill_support_arcane_bolt",
+  "nameKey": "Skill_SupportArcaneBolt",
+  "description": "Fire a condensed magic bolt from the tome, dealing arcane damage to one enemy.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "single_enemy",
+    "count": 1,
+    "filter": [],
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 0,
+    "cooldown": 1,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 1.35",
+    "element": "light",
+    "canCrit": true,
+    "ignoreDefense": 0
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 1.35",
+      "element": "light",
+      "chance": 1.0,
+      "duration": 0
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 180,
+        "endMs": 360,
+        "type": "cast"
+      }
+    ],
+    "grades": {
+      "perfect": {
+        "threshold": 50,
+        "bonus": {
+          "damageMultiplier": 1.2
+        }
+      },
+      "good": {
+        "threshold": 150,
+        "bonus": {
+          "damageMultiplier": 1.0
+        }
+      },
+      "miss": {
+        "threshold": 999,
+        "penalty": {
+          "damageMultiplier": 0.9
+        }
+      }
+    }
+  },
+
+  "actionCost": {
+    "timelineUnits": 95,
+    "description": "Quick ranged tome attack"
+  },
+
+  "visual": {
+    "attackStyle": "ranged",
+    "animation": "support_arcane_bolt",
+    "vfxPrefab": "VFX/support_arcane_bolt",
+    "sfx": "SFX/support_arcane_bolt",
+    "cameraShake": 0.15
+  }
+}

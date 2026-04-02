@@ -9,6 +9,22 @@
     {
       "skillId": "skill_mage_fireball",
       "iconPath": "Icons/Skills/mage_fireball"
+    },
+    {
+      "skillId": "skill_support_arcane_bolt",
+      "iconPath": "Icons/Skills/support_arcane_bolt"
+    },
+    {
+      "skillId": "skill_support_restoration",
+      "iconPath": "Icons/Skills/support_restoration"
+    },
+    {
+      "skillId": "skill_support_mystic_barrier",
+      "iconPath": "Icons/Skills/support_mystic_barrier"
+    },
+    {
+      "skillId": "skill_support_astral_prayer",
+      "iconPath": "Icons/Skills/support_astral_prayer"
     }
   ]
 }

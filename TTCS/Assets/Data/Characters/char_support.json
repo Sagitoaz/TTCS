@@ -1,0 +1,55 @@
+{
+  "id": "char_support",
+  "nameKey": "Lunera",
+  "description": "A mystic support who channels arcane tomes to heal allies and control enemy tempo.",
+
+  "metadata": {
+    "rarity": "SSR",
+    "factionTag": "Forgotten",
+    "roleTag": "Support",
+    "element": "Arcane"
+  },
+
+  "baseStats": {
+    "level": 1,
+    "hp": 2250,
+    "atk": 360,
+    "def": 120,
+    "spd": 145,
+    "crit": 0.20,
+    "critDmg": 1.6,
+    "resist": 0.35
+  },
+
+  "growthCurve": {
+    "hpPerLevel": 105,
+    "atkPerLevel": 17,
+    "defPerLevel": 6,
+    "spdPerLevel": 2
+  },
+
+  "skills": [
+    "skill_support_arcane_bolt",
+    "skill_support_restoration",
+    "skill_support_mystic_barrier",
+    "skill_support_astral_prayer"
+  ],
+
+  "passive": {
+    "id": "passive_support_tome_resonance",
+    "nameKey": "Passive_TomeResonance",
+    "description": "When Lunera casts a support skill, increase target resist by 10% for 1 turn."
+  },
+
+  "visual": {
+    "spritePath": "Characters/support_sprite",
+    "portraitPath": "Characters/support_portrait",
+    "animatorController": "Characters/support_animator"
+  },
+
+  "aiHints": {
+    "priority": "support",
+    "preferredTargets": ["lowest_hp", "ally_lowest_hp"],
+    "defensiveThreshold": 0.45
+  }
+}
