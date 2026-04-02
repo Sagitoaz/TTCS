@@ -25,6 +25,22 @@
     {
       "skillId": "skill_support_astral_prayer",
       "iconPath": "Icons/Skills/support_astral_prayer"
+    },
+    {
+      "skillId": "skill_arden_sword_swing",
+      "iconPath": "Icons/Skills/arden_sword_swing"
+    },
+    {
+      "skillId": "skill_arden_guard_breaker",
+      "iconPath": "Icons/Skills/arden_guard_breaker"
+    },
+    {
+      "skillId": "skill_arden_iron_bulwark",
+      "iconPath": "Icons/Skills/arden_iron_bulwark"
+    },
+    {
+      "skillId": "skill_arden_shield_wall",
+      "iconPath": "Icons/Skills/arden_shield_wall"
     }
   ]
 }

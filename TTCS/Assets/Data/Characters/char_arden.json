@@ -1,0 +1,55 @@
+{
+  "id": "char_arden",
+  "nameKey": "Arden",
+  "description": "A heavy frontline tank wielding a greatsword and shield, built to absorb pressure and control the pace of battle.",
+
+  "metadata": {
+    "rarity": "SSR",
+    "factionTag": "Forgotten",
+    "roleTag": "Tank",
+    "element": "Physical"
+  },
+
+  "baseStats": {
+    "level": 1,
+    "hp": 3600,
+    "atk": 250,
+    "def": 260,
+    "spd": 95,
+    "crit": 0.10,
+    "critDmg": 1.5,
+    "resist": 0.30
+  },
+
+  "growthCurve": {
+    "hpPerLevel": 185,
+    "atkPerLevel": 12,
+    "defPerLevel": 13,
+    "spdPerLevel": 1
+  },
+
+  "skills": [
+    "skill_arden_sword_swing",
+    "skill_arden_guard_breaker",
+    "skill_arden_iron_bulwark",
+    "skill_arden_shield_wall"
+  ],
+
+  "passive": {
+    "id": "passive_arden_unyielding",
+    "nameKey": "Passive_ArdenUnyielding",
+    "description": "When Arden falls below 50% HP, gain a shield equal to 12% of max HP once per battle."
+  },
+
+  "visual": {
+    "spritePath": "Characters/arden_sprite",
+    "portraitPath": "Characters/arden_portrait",
+    "animatorController": "Characters/arden_animator"
+  },
+
+  "aiHints": {
+    "priority": "defense",
+    "preferredTargets": ["highest_threat", "lowest_hp"],
+    "defensiveThreshold": 0.55
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "id": "skill_arden_sword_swing",
+  "nameKey": "Skill_ArdenSwordSwing",
+  "description": "Swing the greatsword in a heavy arc, dealing physical damage to one enemy.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "single_enemy",
+    "count": 1,
+    "filter": [],
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 0,
+    "cooldown": 1,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 1.45",
+    "element": "physical",
+    "canCrit": true,
+    "ignoreDefense": 0
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 1.45",
+      "element": "physical",
+      "chance": 1.0,
+      "duration": 0
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 220,
+        "endMs": 430,
+        "type": "hit"
+      }
+    ],
+    "grades": {
+      "perfect": {
+        "threshold": 50,
+        "bonus": {
+          "damageMultiplier": 1.2
+        }
+      },
+      "good": {
+        "threshold": 150,
+        "bonus": {
+          "damageMultiplier": 1.0
+        }
+      },
+      "miss": {
+        "threshold": 999,
+        "penalty": {
+          "damageMultiplier": 0.9
+        }
+      }
+    }
+  },
+
+  "actionCost": {
+    "timelineUnits": 105,
+    "description": "Standard heavy melee swing"
+  },
+
+  "visual": {
+    "attackStyle": "melee",
+    "animation": "arden_sword_swing",
+    "vfxPrefab": "VFX/arden_sword_swing",
+    "sfx": "SFX/arden_sword_swing",
+    "cameraShake": 0.18
+  }
+}

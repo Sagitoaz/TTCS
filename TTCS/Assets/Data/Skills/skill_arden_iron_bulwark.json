@@ -1,0 +1,54 @@
+{
+  "id": "skill_arden_iron_bulwark",
+  "nameKey": "Skill_ArdenIronBulwark",
+  "description": "Raise the shield and brace, generating a strong personal barrier.",
+  "type": "buff",
+
+  "targetRule": {
+    "type": "self",
+    "count": 1,
+    "filter": [],
+    "canTargetSelf": true
+  },
+
+  "cost": {
+    "mana": 24,
+    "cooldown": 3,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "",
+    "element": "",
+    "canCrit": false,
+    "ignoreDefense": 0
+  },
+
+  "effects": [
+    {
+      "type": "shield",
+      "value": "DEF * 2.3",
+      "element": "",
+      "chance": 1.0,
+      "duration": 2
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": false,
+    "windows": [],
+    "grades": {}
+  },
+
+  "actionCost": {
+    "timelineUnits": 85,
+    "description": "Defensive shield raise"
+  },
+
+  "visual": {
+    "animation": "arden_shield_raise",
+    "vfxPrefab": "VFX/arden_iron_bulwark",
+    "sfx": "SFX/arden_shield_raise",
+    "cameraShake": 0.0
+  }
+}
