@@ -236,7 +236,7 @@ namespace TTCS.Core.Save
                 schemaVersion = CurrentSchemaVersion,
                 playerLevel = 1,
                 totalExp = 0,
-                gold = 500,
+                gold = 9999999,
                 isNewGame = true,
                 lastSavedTimestamp = "",
                 tutorialCompleted = false
@@ -304,6 +304,12 @@ namespace TTCS.Core.Save
             data.levelProgress ??= new System.Collections.Generic.List<SaveLevelProgress>();
             data.inventoryItems ??= new System.Collections.Generic.List<SaveItemStack>();
             data.gachaPity ??= new System.Collections.Generic.List<SavePityState>();
+
+            // Test-friendly default gold for gacha UI development.
+            if (data.gold <= 0)
+            {
+                data.gold = 9999999;
+            }
 
             // Ensure all unlocked characters have level and HP set
             for (var i = 0; i < data.unlockedCharacters.Count; i++)

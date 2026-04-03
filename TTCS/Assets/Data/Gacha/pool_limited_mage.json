@@ -1,22 +1,22 @@
-﻿{
-  "id": "pool_standard",
-  "nameKey": "Standard Banner",
-  "bannerBackgroundPath": "Banners/Gacha/banner_standard",
+{
+  "id": "pool_limited_mage",
+  "nameKey": "Limited Mage Banner",
+  "bannerBackgroundPath": "Banners/Gacha/banner_limited_mage",
   "pityThreshold": 10,
-  "rollCostSingle": 160,
-  "rollCostTen": 1600,
+  "rollCostSingle": 200,
+  "rollCostTen": 2000,
   "entries": [
     {
       "rewardId": "char_mage",
       "rewardType": "character",
-      "weight": 5,
+      "weight": 15,
       "isRare": true,
       "amount": 1
     },
     {
       "rewardId": "item_potion",
       "rewardType": "item",
-      "weight": 70,
+      "weight": 60,
       "isRare": false,
       "amount": 2
     },

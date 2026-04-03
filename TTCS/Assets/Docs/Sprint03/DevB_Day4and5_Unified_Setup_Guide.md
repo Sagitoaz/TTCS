@@ -442,160 +442,13 @@ Assets/
 
 File: `Assets/Scripts/Flow/Gacha/GachaUIController.cs`
 
-```csharp
-using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-using System.Collections.Generic;
-using TTCS.Core.Save;
-
-namespace TTCS.Flow.Gacha
-{
-    /// <summary>
-    /// Quản lý Gacha roll UI: pool selection, roll buttons, result display.
-    /// </summary>
-    public class GachaUIController : MonoBehaviour
-    {
-        [SerializeField] private Button rollOnceButton;
-        [SerializeField] private Button rollTenButton;
-        [SerializeField] private Button backButton;
-        [SerializeField] private TextMeshProUGUI poolNameText;
-        [SerializeField] private TextMeshProUGUI pityCountText;
-        [SerializeField] private Image resultCharacterImage;
-        [SerializeField] private TextMeshProUGUI resultCharacterNameText;
-        [SerializeField] private TextMeshProUGUI resultRarityText;
-        [SerializeField] private Panel resultPanel; // Panel hiển thị kết quả
-        [SerializeField] private Button resultConfirmButton;
-
-        private IFlowController _flowController;
-        private DataManager _dataManager;
-        private SkillIconLoader _skillIconLoader;
-        private SaveManager _saveManager;
-
-        void Start()
-        {
-            _flowController = FlowController.Instance;
-            _dataManager = DataManager.Instance;
-            _saveManager = SaveManager.Instance;
-            _skillIconLoader = new SkillIconLoader(_dataManager);
-
-            // Wire up buttons
-            if (rollOnceButton != null)
-                rollOnceButton.onClick.AddListener(() => OnRollButtonClicked(1));
-            if (rollTenButton != null)
-                rollTenButton.onClick.AddListener(() => OnRollButtonClicked(10));
-            if (backButton != null)
-                backButton.onClick.AddListener(OnBackClicked);
-            if (resultConfirmButton != null)
-                resultConfirmButton.onClick.AddListener(OnResultConfirmClicked);
-
-            // Initial display
-            RefreshGachaState();
-        }
-
-        private void OnRollButtonClicked(int count)
-        {
-            Debug.Log($"[Gacha] Rolling {count}x");
-
-            // Mock result (in real game, fetch từ IGachaService)
-            var result = SimulateRoll(count);
-            ShowRollResult(result);
-        }
-
-        private GachaRollResult SimulateRoll(int count)
-        {
-            // Placeholder: Roll random character từ unlocked roster
-            var unlockedCharacters = _saveManager.CurrentSave.unlockedCharacters ?? new List<string>();
-            if (unlockedCharacters.Count == 0)
-            {
-                unlockedCharacters.Add("char_warrior"); // Default untuk testing
-            }
-
-            var randomCharId = unlockedCharacters[Random.Range(0, unlockedCharacters.Count)];
-            var charMeta = _dataManager.Characters.Find(c => c.Id == randomCharId);
-
-            return new GachaRollResult
-            {
-                characterId = randomCharId,
-                characterName = charMeta?.Name ?? "Unknown",
-                rarity = charMeta?.Rarity ?? "R",
-                portraitPath = charMeta?.PortraitPath ?? "",
-                count = count,
-                pityCount = _saveManager.CurrentSave.gachaState?.pityCount ?? 0
-            };
-        }
-
-        private void ShowRollResult(GachaRollResult result)
-        {
-            // Update result panel
-            if (resultCharacterNameText != null)
-                resultCharacterNameText.text = result.characterName;
-
-            if (resultRarityText != null)
-            {
-                resultRarityText.text = result.rarity;
-                resultRarityText.color = GetRarityColor(result.rarity);
-            }
-
-            if (resultCharacterImage != null)
-            {
-                var portraitSprite = _dataManager.LoadCharacterPortrait(result.characterId);
-                resultCharacterImage.sprite = portraitSprite;
-            }
-
-            // Show result panel
-            if (resultPanel != null)
-            {
-                resultPanel.SetActive(true);
-            }
-
-            Debug.Log($"[Gacha] Result: {result.characterName} ({result.rarity}) - Pity: {result.pityCount}");
-        }
-
-        private void OnResultConfirmClicked()
-        {
-            if (resultPanel != null)
-                resultPanel.SetActive(false);
-
-            RefreshGachaState();
-        }
-
-        private void OnBackClicked()
-        {
-            _flowController.OpenMainMenu();
-        }
-
-        private void RefreshGachaState()
-        {
-            var pityCount = _saveManager.CurrentSave.gachaState?.pityCount ?? 0;
-            if (pityCountText != null)
-                pityCountText.text = $"Pity: {pityCount}";
-        }
-
-        private Color GetRarityColor(string rarity)
-        {
-            return rarity switch
-            {
-                "SSR" => Color.yellow,
-                "SR" => new Color(1f, 0.5f, 0f), // Orange
-                "R" => Color.white,
-                _ => Color.gray
-            };
-        }
-    }
-
-    [System.Serializable]
-    public class GachaRollResult
-    {
-        public string characterId;
-        public string characterName;
-        public string rarity;
-        public string portraitPath;
-        public int count;
-        public int pityCount;
-    }
-}
-```
+Controller đã được tạo sẵn và đã tích hợp logic:
+- Chọn banner bằng list bên trái (không dùng dropdown).
+- Hiển thị background banner tương ứng bên phải.
+- Roll 1/10, pity dùng chung cho mọi banner.
+- Dùng chung tiền `gold` (không có currency riêng cho gacha).
+- Roll ra character trùng sẽ convert sang `gold` theo rarity.
+- Roll 10 hiển thị result tuần tự bằng nút mũi tên phải.
 
 ## 3.2 Setup Gacha Scene in Unity
 
@@ -609,21 +462,30 @@ GachaScene
 │   └── (Add: GachaUIController component)
 └── Canvas (Canvas)
     ├── GachaPanel
-    │   ├── Header
-    │   │   └── BackButton
-    │   ├── PoolInfo
-    │   │   └── PoolNameText
-    │   ├── RollSection
-    │   │   ├── RollOnceButton
-    │   │   ├── RollTenButton
-    │   │   └── PityCountText
-    │   └── Controls
-    │       └── BackButton
+    │   ├── TopBar
+    │   │   ├── BackButton
+    │   │   ├── PoolNameText
+    │   │   ├── PityText
+    │   │   ├── GoldText
+    │   │   └── GoldIcon (Image)
+    │   ├── BannerListPanel (left)
+    │   │   └── BannerListRoot (VerticalLayoutGroup)
+    │   │       └── BannerItemPrefab (GachaBannerListItemView)
+    │   ├── BannerPreviewPanel (right)
+    │   │   └── BannerBackgroundImage
+    │   └── RollSection
+    │       ├── RollOneButton
+    │       ├── RollTenButton
+    │       └── RollCostText
     └── ResultPanel (initially inactive)
-        ├── ResultCharacterImage
-        ├── ResultCharacterNameText
+        ├── ResultPortrait
+        ├── ResultNameText
         ├── ResultRarityText
-        └── ResultConfirmButton
+        ├── ResultRoleText
+        ├── ResultElementText
+        ├── ResultExtraText
+        ├── ResultNextButton (arrow right)
+        └── ResultCloseButton
 ```
 
 ### 3.2.2 Setup Components
@@ -636,40 +498,99 @@ GachaScene
    - Anchor: Stretch
    - Layout area cho roll buttons + info display
 
-3. **RollOnceButton**:
+3. **BannerListPanel** (left):
+    - Add `ScrollView` hoặc panel thường.
+    - Bên trong có `BannerListRoot` (Vertical Layout Group).
+    - Tạo prefab item: `BannerItemPrefab` với component `GachaBannerListItemView`.
+
+4. **BannerPreviewPanel** (right):
+    - Add `Image` tên `BannerBackgroundImage` để hiển thị ảnh banner.
+    - Ảnh banner load từ `bannerBackgroundPath` trong mỗi pool JSON.
+
+5. **RollOneButton**:
    - Size: 200x60
    - Text: "Roll 1x"
    - Color: Blue
 
-4. **RollTenButton**:
+6. **RollTenButton**:
    - Size: 200x60
    - Text: "Roll 10x"
    - Color: Green
 
-5. **ResultPanel** (initially inactive):
+7. **RollCostText**:
+    - Hiển thị cost runtime theo pool: `Cost 1x: X | Cost 10x: Y`
+
+8. **ResultPanel** (initially inactive):
    - Anchor: Stretch, Size: Full canvas
    - Background: Semi-transparent black
    - Children:
-     - **ResultCharacterImage** (Image, 300x400)
-     - **ResultCharacterNameText** (TextMeshProUGUI, size 400x80)
-     - **ResultRarityText** (TextMeshProUGUI, size 400x60)
-     - **ResultConfirmButton** (Button, size 200x60, text "OK")
+      - **ResultPortrait** (Image, 300x400)
+      - **ResultNameText** (TextMeshProUGUI, size 400x80)
+        - **ResultRarityText** (TextMeshProUGUI, size 300x60)
+        - **ResultRoleText** (TextMeshProUGUI, size 300x50)
+        - **ResultElementText** (TextMeshProUGUI, size 300x50)
+      - **ResultExtraText** (TextMeshProUGUI, size 600x50)
+        - **ResultNextButton** (Button mũi tên phải)
+      - **ResultCloseButton** (Button, size 200x60, text "OK")
 
-### 3.2.3 Gán Reference vào GachaUIController
+9. **GoldIcon**:
+    - Nếu không có icon thật, script tự fallback icon vàng 1x1.
+    - Nếu có icon thật, đặt file vào `Resources` và script sẽ auto-load theo các path dự phòng.
+
+### 3.3 Gán Reference vào GachaUIController
 
 1. Chọn `GachaManager` GameObject
 2. Inspector -> `GachaUIController` component
 3. Drag UI elements vào các fields:
-   - Roll Once Button <- RollOnceButton
-   - Roll Ten Button <- RollTenButton
-   - Back Button <- BackButton (hoặc thêm vào GachaPanel)
-   - Pool Name Text <- PoolNameText
-   - Pity Count Text <- PityCountText
-   - Result Character Image <- ResultCharacterImage
-   - Result Character Name Text <- ResultCharacterNameText
-   - Result Rarity Text <- ResultRarityText
-   - Result Panel <- ResultPanel (container)
-   - Result Confirm Button <- ResultConfirmButton
+     - Back Button <- BackButton
+     - Pool Name Text <- PoolNameText
+     - Pity Text <- PityText
+     - Gold Text <- GoldText
+     - Gold Icon <- GoldIcon
+     - Banner List Root <- BannerListRoot
+     - Banner Item Prefab <- BannerItemPrefab
+     - Banner Background Image <- BannerBackgroundImage
+     - Roll One Button <- RollOneButton
+     - Roll Ten Button <- RollTenButton
+     - Roll Cost Text <- RollCostText
+     - (Optional) Roll Animator <- Animator trên panel roll
+     - Result Panel <- ResultPanel
+     - Result Portrait <- ResultPortrait
+     - Result Name Text <- ResultNameText
+     - Result Rarity Text <- ResultRarityText
+     - Result Role Text <- ResultRoleText
+     - Result Element Text <- ResultElementText
+     - Result Extra Text <- ResultExtraText
+     - Result Close Button <- ResultCloseButton
+     - Result Next Button <- ResultNextButton
+
+### 3.4 Runtime Notes (quan trọng)
+
+- `GachaUIController` gọi thật `IGachaService` (không mock).
+- Cần có `MetaServiceHub`, `SaveManager`, `DataManager` sẵn trong runtime.
+- Pity dùng chung mọi banner (`shared pity`).
+- Tiền roll dùng chung với `gold` trong save.
+- Nếu character trùng: convert sang gold theo rarity (SSR/SR/R).
+- `ResultNextButton` chỉ hiện khi còn reward tiếp theo trong roll 10.
+- Pool data đặt tại `Assets/Data/Gacha/*.json`.
+
+### 3.5 Data mẫu cho nhiều banner
+
+Mỗi pool cần có:
+
+```json
+{
+    "id": "pool_limited_mage",
+    "nameKey": "Limited Mage Banner",
+    "bannerBackgroundPath": "Banners/Gacha/banner_limited_mage",
+    "pityThreshold": 10,
+    "rollCostSingle": 200,
+    "rollCostTen": 2000,
+    "entries": [ ... ]
+}
+```
+
+`bannerBackgroundPath` là đường dẫn `Resources.Load<Sprite>` nên ảnh cần nằm trong `Assets/Resources/`.
 
 ---
 
@@ -748,20 +669,27 @@ GachaScene
 1. Click "Roll 1x"
 2. **Expected**:
    - Result panel shows
-   - Displays character name
-   - Displays rarity (with color: Yellow=SSR, Orange=SR, White=R)
-   - Displays character portrait
-   - Pity count updates (if logic implemented)
+    - Displays portrait
+    - Displays rarity (đúng màu)
+    - Displays name + role + element
+    - Displays extra text (amount / duplicate convert nếu có)
+    - Pity text updates theo format `Pity: X/Y`
+    - Gold giảm theo cost
 
 **Test Case 3: Roll 10x**
 1. Click "Roll 10x"
-2. **Expected**: Same as Test Case 2, but count = 10
+2. **Expected**:
+    - Result panel shows reward #1
+    - Click `ResultNextButton` -> reward #2 ... #10
+    - Reward cuối cùng: `ResultNextButton` auto hidden
+    - Gold giảm theo cost 10x
 
 **Test Case 4: Result confirm**
-1. Click "OK" button in result panel
+1. Click "OK" (ResultCloseButton) trong result panel
 2. **Expected**:
    - Result panel closes
-   - Pity count refreshed
+    - Pity text ngoài panel vẫn giữ state mới nhất
+    - Gold text ngoài panel vẫn giữ state mới nhất
    - Ready for next roll
 
 **Test Case 5: Integration with TeamFormation**

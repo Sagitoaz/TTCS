@@ -15,5 +15,7 @@ namespace TTCS.Meta.Gacha
         public string RewardType { get; set; }
         public int Amount { get; set; }
         public bool IsRare { get; set; }
+        public bool IsDuplicateConverted { get; set; }
+        public int ConvertedCurrencyAmount { get; set; }
     }
 }
