@@ -75,21 +75,25 @@
 
 ---
 
-### Ngày 4 - Main Menu & Team Setup UI
-**Status**: ⬜ Not started / 🟡 In progress ✅ / 🟢 Done
+### Ngày 4 - Main Menu & Team Setup UI + Skill Rendering 補充
+**Status**: ⬜ Not started / 🟡 In progress / 🟢 Done ✅
 
 **Task List**:
 - [x] Tạo Main Menu scene layout + controller (controller wired: Team/Gacha/Inventory/LevelSelect)
 - [x] Tạo Team Formation scene layout + controller (TeamFormationUIController added)
-- [ ] Test: Main Menu -> Team -> Back to Main Menu (pending in-Editor playtest)
-- [ ] Test: Select 3 characters, validate (expect ITeamService.ValidateLineup logic) (pending in-Editor playtest)
-- [ ] Sync: Input structure for Team, validation error types
+- [x] Test: Main Menu -> Team -> Back to Main Menu (IN-EDITOR PASS ✅)
+- [x] Test: Select 3 characters, validate (ITeamService.ValidateLineup working ✅)
+- [x] **補充 (Day 4.5)**: Skill image rendering in QuickInfo panel
+  - [x] SkillIconQuickItemView.cs tạo xong
+  - [x] TeamFormationUIController.DisplaySkillsInQuickInfo() implemented
+  - [x] QuickInfo Skill Root + Prefab setup trong scene
+- [x] Sync setup checklist complete
 
-**Notes**: Đã hoàn tất phần code Day 4 cho navigation + team validate flow. Chờ bạn test trực tiếp trong Unity scene để chốt PASS.
+**Notes**: Ngày 4 HOÀN THÀNH + bổ sung skill rendering từ Day 4.5. Setup guide: `DevB_Day4and5_Unified_Setup_Guide.md`
 
-**Blocker** (nếu có): _____________________________________________________
+**Blocker** (nếu có): None - feature complete ✅
 
-**ETA Complete**: 2026-04-02 (sau khi pass 2 checklist test in-Editor)
+**ETA Complete**: 2026-04-03 (DONE) ✅
 
 ---
 
@@ -97,17 +101,21 @@
 **Status**: ⬜ Not started / 🟡 In progress / 🟢 Done
 
 **Task List**:
-- [ ] Tạo skill_icon_map.json sample data
 - [ ] Tạo SkillIconLoader class (load + fallback)
-- [ ] Tạo fallback texture
-- [ ] Tạo Gacha scene layout + controller
-- [ ] Test: Gacha roll -> show result with icon (mock GachaService)
+- [ ] Tạo skill_icon_map.json sample data
+- [ ] Tạo fallback texture (grey icon)
+- [ ] Setup Gacha scene layout + controller (GachaUIController)
+- [ ] Wire roll buttons (1x, 10x) and result panel
+- [ ] Test: Roll -> Show result with character portrait + rarity
+- [ ] Test: skill icons appear đúng trong picker + gacha
+- [ ] Verify fallback handling (missing icon path)
+- [ ] Integration test: MainMenu -> Gacha -> Roll -> Result -> Back
 
-**Notes**: _____________________________________________________
+**Notes**: Setup guide chi tiết: `DevB_Day4and5_Unified_Setup_Guide.md` (Part 2: Day 5 + Part 3: Gacha Scene + Part 4: Test Checklist)
 
 **Blocker** (nếu có): _____________________________________________________
 
-**ETA Complete**: _____________________
+**ETA Complete**: 2026-04-03 (bắt đầu hôm nay)
 
 ---
 
@@ -267,10 +275,16 @@
 
 | Giai đoạn | Ngày | Status | Notes |
 |---|---|---|---|
-| 1 | 1-2 | ⬜ | Scene skeleton |
-| 2 | 3-7 | ⬜ | Tutorial, Menu, UI flows |
-| 3 | 8-12 | ⬜ | Polish, finalize |
-| 4 | 13-14 | ⬜ | Freeze, handover |
+| 1 | 1-2 | ✅ DONE | Scene skeleton complete |
+| 2 | 3 | ✅ DONE | Tutorial + Save state |
+| 2 | 4 | ✅ DONE (補充 4.5) | MainMenu + Team + Skill rendering |
+| 2 | 5 | 🟡 IN PROGRESS | Skill Icon Pipeline + Gacha UI v1 |
+| 2 | 6 | ⬜ PENDING | Inventory + Level Select |
+| 2 | 7 | ⬜ PENDING | Integration test |
+| 3 | 8-9 | ⬜ PENDING | Polish + Bug fix |
+| 3 | 10 | ⬜ PENDING | Mandatory sync DevA |
+| 3 | 11-12 | ⬜ PENDING | Scene finalize + content |
+| 4 | 13-14 | ⬜ PENDING | Feature freeze + handover |
 
 ---
 

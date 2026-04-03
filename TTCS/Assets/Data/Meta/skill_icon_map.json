@@ -1,14 +1,38 @@
 ﻿{
   "schemaVersion": "1",
-  "fallbackIconPath": "Icons/skill_default",
+  "fallbackIconPath": "Sprites/Skills/skill_default",
   "entries": [
     {
       "skillId": "skill_warrior_slash",
-      "iconPath": "Icons/Skills/warrior_slash"
+      "iconPath": "Sprites/Skills/skill_warrior_slash"
+    },
+    {
+      "skillId": "skill_warrior_power_strike",
+      "iconPath": "Sprites/Skills/skill_warrior_power_strike"
+    },
+    {
+      "skillId": "skill_warrior_guard",
+      "iconPath": "Sprites/Skills/skill_warrior_guard"
+    },
+    {
+      "skillId": "skill_warrior_taunt",
+      "iconPath": "Sprites/Skills/skill_warrior_taunt"
     },
     {
       "skillId": "skill_mage_fireball",
-      "iconPath": "Icons/Skills/mage_fireball"
+      "iconPath": "Sprites/Skills/skill_mage_fireball"
+    },
+    {
+      "skillId": "skill_mage_heal",
+      "iconPath": "Sprites/Skills/skill_mage_heal"
+    },
+    {
+      "skillId": "skill_mage_shield",
+      "iconPath": "Sprites/Skills/skill_mage_shield"
+    },
+    {
+      "skillId": "skill_mage_lightning",
+      "iconPath": "Sprites/Skills/skill_mage_lightning"
     }
   ]
 }

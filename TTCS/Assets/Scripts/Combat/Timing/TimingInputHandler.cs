@@ -35,7 +35,7 @@ namespace TTCS.Combat.Timing
         private void Awake()
         {
             // Thử tìm action "Guard" trong InputSystem
-            var inputActions = FindObjectOfType<PlayerInput>();
+            var inputActions = FindFirstObjectByType<PlayerInput>();
             if (inputActions != null)
             {
                 _guardAction = inputActions.actions.FindAction(_actionName, throwIfNotFound: false);

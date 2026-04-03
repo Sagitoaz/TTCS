@@ -7,7 +7,7 @@ namespace TTCS.Meta.Inventory
     public class SkillIconMapDataModel
     {
         public string schemaVersion = "1";
-        public string fallbackIconPath = "Icons/skill_default";
+        public string fallbackIconPath = "Sprites/Skills/skill_default";
         public List<SkillIconMapEntry> entries = new List<SkillIconMapEntry>();
     }
 

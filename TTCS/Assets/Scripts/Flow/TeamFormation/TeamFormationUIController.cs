@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using TMPro;
 using TTCS.Core.Data;
 using TTCS.Core.Save;
@@ -45,6 +46,9 @@ namespace TTCS.Flow.TeamFormation
         [SerializeField] private Transform _quickInfoSkillRoot;
         [SerializeField] private TeamFormationSkillQuickItemView _quickInfoSkillItemPrefab;
 
+        [Header("Skill Detail Panel (Day 4 補充)")]
+        [SerializeField] private SkillDetailPanelView _skillDetailPanel;
+
         [Serializable]
         public sealed class SlotView
         {
@@ -86,6 +90,7 @@ namespace TTCS.Flow.TeamFormation
 
         private int _activeSlotIndex = -1;
         private string _highlightedPickerCharacterId;
+        private string _openedSkillDetailId;
         private SortMode _sortMode = SortMode.LevelDesc;
         private string _roleFilter = "All";
         private List<CandidateInfo> _lastCandidates = new List<CandidateInfo>();
@@ -203,6 +208,7 @@ namespace TTCS.Flow.TeamFormation
         public void ClosePicker()
         {
             _highlightedPickerCharacterId = null;
+            HideSkillDetailPanel();
             ShowTeamPanel();
             RefreshSlotHighlights();
         }
@@ -738,7 +744,9 @@ namespace TTCS.Flow.TeamFormation
                     _quickInfoPortrait.color = new Color(1f, 1f, 1f, 0f);
                 }
 
-                // [SUSPENDED DAY 5] ClearQuickSkillItems();
+                ClearQuickSkillItems();
+                // 🟢 Day 4 補充: Hide skill detail panel
+                HideSkillDetailPanel();
                 return;
             }
 
@@ -770,11 +778,13 @@ namespace TTCS.Flow.TeamFormation
                 _quickInfoPortrait.color = sprite == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
             }
 
-            // [SUSPENDED DAY 5] RebuildQuickSkillItems(candidate.Data);
+            // 🟢 Day 4 補充: Build skill items with click handler
+            RebuildQuickSkillItems(candidate.Data);
         }
 
         private void RebuildQuickSkillItems(CharacterDataModel data)
         {
+            HideSkillDetailPanel();
             ClearQuickSkillItems();
             if (_quickInfoSkillRoot == null || _quickInfoSkillItemPrefab == null || data?.skills == null)
             {
@@ -793,10 +803,17 @@ namespace TTCS.Flow.TeamFormation
                 var skill = dataManager?.LoadSkill(skillId);
                 var iconPath = dataManager?.ResolveSkillIcon(skillId);
                 var icon = string.IsNullOrWhiteSpace(iconPath) ? null : Resources.Load<Sprite>(iconPath);
+                if (icon == null)
+                {
+                    Debug.LogWarning($"[TeamFormation] Failed to load skill icon '{skillId}' from Resources path '{iconPath}'. Expected file under Assets/Resources/{iconPath}.png (or .jpg/.jpeg).");
+                }
                 var name = skill?.nameKey ?? skillId;
+                var description = skill?.description ?? "No description available";
 
                 var item = Instantiate(_quickInfoSkillItemPrefab, _quickInfoSkillRoot);
-                item.Bind(icon, name);
+                item.Bind(icon, name, skillId, description);
+                // 🟢 Day 4 補充: Wire skill click event
+                item.OnSkillDetailClicked += OnSkillDetailClicked;
                 _spawnedSkillQuickItems.Add(item);
             }
         }
@@ -807,11 +824,104 @@ namespace TTCS.Flow.TeamFormation
             {
                 if (_spawnedSkillQuickItems[i] != null)
                 {
+                    _spawnedSkillQuickItems[i].OnSkillDetailClicked -= OnSkillDetailClicked;
                     Destroy(_spawnedSkillQuickItems[i].gameObject);
                 }
             }
 
             _spawnedSkillQuickItems.Clear();
+        }
+
+        // 🟢 Day 4 補充: Handle skill detail panel display
+        private void OnSkillDetailClicked(string skillId, string skillDescription, Vector3 clickPosition)
+        {
+            if (_skillDetailPanel == null || string.IsNullOrWhiteSpace(skillId))
+            {
+                return;
+            }
+
+            // Click lại cùng một skill thì toggle tắt panel.
+            if (string.Equals(_openedSkillDetailId, skillId, StringComparison.Ordinal))
+            {
+                HideSkillDetailPanel();
+                return;
+            }
+
+            var displayName = ResolveDataManager()?.LoadSkill(skillId)?.nameKey;
+            var skillData = ResolveDataManager()?.LoadSkill(skillId);
+            if (string.IsNullOrWhiteSpace(displayName))
+            {
+                displayName = skillId;
+            }
+
+            _skillDetailPanel.ShowSkillDetail(
+                displayName,
+                skillDescription,
+                FormatSkillDamage(skillData),
+                FormatSkillCooldown(skillData),
+                FormatSkillMana(skillData),
+                clickPosition);
+            _openedSkillDetailId = skillId;
+        }
+
+        private void HideSkillDetailPanel()
+        {
+            if (_skillDetailPanel != null)
+            {
+                _skillDetailPanel.Hide();
+            }
+
+            _openedSkillDetailId = null;
+        }
+
+        private static string FormatSkillDamage(SkillDataModel skillData)
+        {
+            var formula = skillData?.damage?.formula;
+            if (string.IsNullOrWhiteSpace(formula))
+            {
+                return "0% ATK";
+            }
+
+            var normalized = formula.Replace(" ", string.Empty);
+            var match = Regex.Match(normalized, @"^(?<stat>[A-Za-z_][A-Za-z0-9_]*)\*(?<multiplier>\d+(?:\.\d+)?)$");
+            if (!match.Success)
+            {
+                match = Regex.Match(normalized, @"^(?<multiplier>\d+(?:\.\d+)?)\*(?<stat>[A-Za-z_][A-Za-z0-9_]*)$");
+            }
+
+            if (match.Success)
+            {
+                var stat = match.Groups["stat"].Value.ToUpperInvariant();
+                if (double.TryParse(match.Groups["multiplier"].Value, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var multiplier))
+                {
+                    var percent = Math.Round(multiplier * 100d);
+                    return $"{percent}% {stat}";
+                }
+            }
+
+            return formula;
+        }
+
+        private static string FormatSkillCooldown(SkillDataModel skillData)
+        {
+            var cooldown = skillData?.cost?.cooldown;
+            if (cooldown == null)
+            {
+                return "Cooldown: -";
+            }
+
+            return $"Cooldown: {cooldown.Value}";
+        }
+
+        private static string FormatSkillMana(SkillDataModel skillData)
+        {
+            var mana = skillData?.cost?.mana;
+            if (mana == null)
+            {
+                return "Mana: -";
+            }
+
+            return $"Mana: {mana.Value}";
         }
 
         private void ApplyQuickInfoRarityStyle(string rarity)
