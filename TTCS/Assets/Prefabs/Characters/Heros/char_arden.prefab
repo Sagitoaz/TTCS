@@ -1373,7 +1373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cae8c35335af6664d8c49ebca20a13a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TTCS.Visual.CharacterView
-  EntityId: char_warrior
+  EntityId: char_arden
   _headAnchor: {fileID: 3491398269319108874}
   _hitAnchor: {fileID: 5696950608016758534}
 --- !u!95 &159215102193043636

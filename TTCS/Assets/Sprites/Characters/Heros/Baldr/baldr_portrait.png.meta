@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: 5640f66cb298d6340841af12d60800c5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4751811320053272354
+    second: baldr_portrait_0
+  - first:
+      213: 3357600716748473265
+    second: baldr_portrait_1
+  - first:
+      213: 3285678241673147092
+    second: baldr_portrait_2
+  - first:
+      213: 6243800193331461977
+    second: baldr_portrait_3
+  - first:
+      213: 8050627264922727940
+    second: baldr_portrait_4
+  - first:
+      213: -2671767471517171789
+    second: baldr_portrait_5
+  - first:
+      213: -4805930719795216972
+    second: baldr_portrait_6
+  - first:
+      213: -2392762732414142355
+    second: baldr_portrait_7
+  - first:
+      213: -4948557197014973261
+    second: baldr_portrait_8
+  - first:
+      213: -1679583826957321920
+    second: baldr_portrait_9
+  - first:
+      213: 3866757205863551883
+    second: baldr_portrait_10
+  - first:
+      213: -2284166142534486534
+    second: baldr_portrait_11
+  - first:
+      213: 7913394013344163146
+    second: baldr_portrait_12
+  - first:
+      213: 4329450360788146623
+    second: baldr_portrait_13
+  - first:
+      213: -8551849951201765279
+    second: baldr_portrait_14
+  - first:
+      213: 5216669466162485631
+    second: baldr_portrait_15
+  - first:
+      213: 2658497784333568375
+    second: baldr_portrait_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: baldr_portrait_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3839
+        width: 1316
+        height: 1921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed07b84d7cc2e0eb0800000000000000
+      internalID: -4751811320053272354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baldr_portrait_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1919
+        width: 1316
+        height: 1922
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b3c3630018989e20800000000000000
+      internalID: 3357600716748473265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baldr_portrait_2
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 3839
+        width: 1317
+        height: 1921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d27829d3f2199d20800000000000000
+      internalID: 3285678241673147092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baldr_portrait_3
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 0
+        width: 3370
+        height: 3841
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95f790cd13f66a650800000000000000
+      internalID: 6243800193331461977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baldr_portrait_4
+      rect:
+        serializedVersion: 2
+        x: 3199
+        y: 3839
+        width: 1317
+        height: 1921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4063bc8e7d299bf60800000000000000
+      internalID: 8050627264922727940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baldr_portrait_5
+      rect:
+        serializedVersion: 2
+        x: 4799
+        y: 3839
+        width: 1317
+        height: 1921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bf76c9e3a9fbead0800000000000000
+      internalID: -2671767471517171789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baldr_portrait_6
+      rect:
+        serializedVersion: 2
+        x: 4799
+        y: 1919
+        width: 1317
+        height: 1922
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bdf7772977ed4db0800000000000000
+      internalID: -4805930719795216972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baldr_portrait_7
+      rect:
+        serializedVersion: 2
+        x: 6399
+        y: 3839
+        width: 1317
+        height: 1921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6879a6e8f23bced0800000000000000
+      internalID: -2392762732414142355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baldr_portrait_8
+      rect:
+        serializedVersion: 2
+        x: 6399
+        y: 1161
+        width: 1317
+        height: 2680
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b44839a271335bb0800000000000000
+      internalID: -4948557197014973261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baldr_portrait_9
+      rect:
+        serializedVersion: 2
+        x: 7999
+        y: 3839
+        width: 1317
+        height: 1921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 049b7bf786be0b8e0800000000000000
+      internalID: -1679583826957321920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baldr_portrait_10
+      rect:
+        serializedVersion: 2
+        x: 7999
+        y: 1919
+        width: 1317
+        height: 1922
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b83dd28113b79a530800000000000000
+      internalID: 3866757205863551883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baldr_portrait_11
+      rect:
+        serializedVersion: 2
+        x: 9599
+        y: 3839
+        width: 1317
+        height: 1921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af5f142def20d40e0800000000000000
+      internalID: -2284166142534486534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baldr_portrait_12
+      rect:
+        serializedVersion: 2
+        x: 9599
+        y: 1919
+        width: 1317
+        height: 1922
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a45e41d9de502dd60800000000000000
+      internalID: 7913394013344163146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baldr_portrait_13
+      rect:
+        serializedVersion: 2
+        x: 11199
+        y: 3839
+        width: 1317
+        height: 1921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb9d67b2a2c451c30800000000000000
+      internalID: 4329450360788146623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baldr_portrait_14
+      rect:
+        serializedVersion: 2
+        x: 11199
+        y: 1919
+        width: 1317
+        height: 1922
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1685d2e67c9b15980800000000000000
+      internalID: -8551849951201765279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baldr_portrait_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1316
+        height: 1921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f79dd398d35556840800000000000000
+      internalID: 5216669466162485631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baldr_portrait_16
+      rect:
+        serializedVersion: 2
+        x: 5203
+        y: 19
+        width: 1450
+        height: 1902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7798d5746a1e4e420800000000000000
+      internalID: 2658497784333568375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      baldr_portrait_0: -4751811320053272354
+      baldr_portrait_1: 3357600716748473265
+      baldr_portrait_10: 3866757205863551883
+      baldr_portrait_11: -2284166142534486534
+      baldr_portrait_12: 7913394013344163146
+      baldr_portrait_13: 4329450360788146623
+      baldr_portrait_14: -8551849951201765279
+      baldr_portrait_15: 5216669466162485631
+      baldr_portrait_16: 2658497784333568375
+      baldr_portrait_2: 3285678241673147092
+      baldr_portrait_3: 6243800193331461977
+      baldr_portrait_4: 8050627264922727940
+      baldr_portrait_5: -2671767471517171789
+      baldr_portrait_6: -4805930719795216972
+      baldr_portrait_7: -2392762732414142355
+      baldr_portrait_8: -4948557197014973261
+      baldr_portrait_9: -1679583826957321920
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

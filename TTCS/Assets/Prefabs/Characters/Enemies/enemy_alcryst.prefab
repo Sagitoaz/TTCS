@@ -1720,7 +1720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a1302ae09af69245adf790202e59bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TTCS.Visual.EnemyView
-  EntityId: 
+  EntityId: enemy_alcryst
   _headAnchor: {fileID: 2540414383284529963}
   _hitAnchor: {fileID: 8829396238460392336}
   _telegraph: {fileID: 3180746200858048485}

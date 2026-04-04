@@ -41,6 +41,14 @@
     {
       "skillId": "skill_arden_shield_wall",
       "iconPath": "Icons/Skills/arden_shield_wall"
+    },
+    {
+      "skillId": "skill_alcryst_arrow_shot",
+      "iconPath": "Icons/Skills/alcryst_arrow_shot"
+    },
+    {
+      "skillId": "skill_alcryst_sky_piercer",
+      "iconPath": "Icons/Skills/alcryst_sky_piercer"
     }
   ]
 }
