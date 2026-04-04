@@ -465,9 +465,7 @@ GachaScene
     │   ├── TopBar
     │   │   ├── BackButton
     │   │   ├── PoolNameText
-    │   │   ├── PityText
-    │   │   ├── GoldText
-    │   │   └── GoldIcon (Image)
+    │   │   └── GoldText
     │   ├── BannerListPanel (left)
     │   │   └── BannerListRoot (VerticalLayoutGroup)
     │   │       └── BannerItemPrefab (GachaBannerListItemView)
@@ -475,8 +473,9 @@ GachaScene
     │   │   └── BannerBackgroundImage
     │   └── RollSection
     │       ├── RollOneButton
+    │       ├── RollOneCostText (TextMeshProUGUI)
     │       ├── RollTenButton
-    │       └── RollCostText
+    │       └── RollTenCostText (TextMeshProUGUI)
     └── ResultPanel (initially inactive)
         ├── ResultPortrait
         ├── ResultNameText
@@ -507,20 +506,25 @@ GachaScene
     - Add `Image` tên `BannerBackgroundImage` để hiển thị ảnh banner.
     - Ảnh banner load từ `bannerBackgroundPath` trong mỗi pool JSON.
 
-5. **RollOneButton**:
-   - Size: 200x60
-   - Text: "Roll 1x"
-   - Color: Blue
+5. **RollOneButton + RollOneCostText**:
+   - RollOneButton:
+     - Size: 200x60
+     - Text: "Roll 1x"
+     - Color: Blue
+   - RollOneCostText (TextMeshProUGUI gần button):
+     - Hiển thị giá roll 1x: `"160"` (hoặc giá tương ứng của pool)
+     - Update tự động mỗi khi banner được chọn
 
-6. **RollTenButton**:
-   - Size: 200x60
-   - Text: "Roll 10x"
-   - Color: Green
+6. **RollTenButton + RollTenCostText**:
+   - RollTenButton:
+     - Size: 200x60
+     - Text: "Roll 10x"
+     - Color: Green
+   - RollTenCostText (TextMeshProUGUI gần button):
+     - Hiển thị giá roll 10x: `"1600"` (hoặc giá tương ứng của pool)
+     - Update tự động mỗi khi banner được chọn
 
-7. **RollCostText**:
-    - Hiển thị cost runtime theo pool: `Cost 1x: X | Cost 10x: Y`
-
-8. **ResultPanel** (initially inactive):
+7. **ResultPanel** (initially inactive):
    - Anchor: Stretch, Size: Full canvas
    - Background: Semi-transparent black
    - Children:
@@ -533,38 +537,60 @@ GachaScene
         - **ResultNextButton** (Button mũi tên phải)
       - **ResultCloseButton** (Button, size 200x60, text "OK")
 
-9. **GoldIcon**:
-    - Nếu không có icon thật, script tự fallback icon vàng 1x1.
-    - Nếu có icon thật, đặt file vào `Resources` và script sẽ auto-load theo các path dự phòng.
-
 ### 3.3 Gán Reference vào GachaUIController
 
 1. Chọn `GachaManager` GameObject
 2. Inspector -> `GachaUIController` component
 3. Drag UI elements vào các fields:
-     - Back Button <- BackButton
-     - Pool Name Text <- PoolNameText
-     - Pity Text <- PityText
-     - Gold Text <- GoldText
-     - Gold Icon <- GoldIcon
-     - Banner List Root <- BannerListRoot
-     - Banner Item Prefab <- BannerItemPrefab
-     - Banner Background Image <- BannerBackgroundImage
-     - Roll One Button <- RollOneButton
-     - Roll Ten Button <- RollTenButton
-     - Roll Cost Text <- RollCostText
-     - (Optional) Roll Animator <- Animator trên panel roll
-     - Result Panel <- ResultPanel
-     - Result Portrait <- ResultPortrait
-     - Result Name Text <- ResultNameText
-     - Result Rarity Text <- ResultRarityText
-     - Result Role Text <- ResultRoleText
-     - Result Element Text <- ResultElementText
-     - Result Extra Text <- ResultExtraText
-     - Result Close Button <- ResultCloseButton
-     - Result Next Button <- ResultNextButton
 
-### 3.4 Runtime Notes (quan trọng)
+   **Top Bar:**
+   - Back Button <- BackButton
+   - Pool Name Text <- PoolNameText
+   - Gold Text <- GoldText
+
+   **Banner List (Left):**
+   - Banner List Root <- BannerListRoot
+   - Banner Item Prefab <- BannerItemPrefab
+
+   **Banner Preview (Right):**
+   - Banner Background Image <- BannerBackgroundImage
+
+   **Roll Actions:**
+   - Roll One Button <- RollOneButton
+   - Roll One Cost Text <- RollOneCostText
+   - Roll Ten Button <- RollTenButton
+   - Roll Ten Cost Text <- RollTenCostText
+
+   **Roll Animation:**
+   - Roll Animation Clip <- (AnimationClip asset từ `Assets/Animations/` - optional, để trống nếu chưa có)
+   - Roll Animator <- (Animator component trên GachaPanel nếu có animation)
+   - Roll Trigger <- giữ mặc định "Roll"
+   - Roll Reveal Delay <- 1.0 (giây đợi trước khi hiện result)
+
+   **Result Panel:**
+   - Result Panel <- ResultPanel
+   - Result Portrait <- ResultPortrait
+   - Result Name Text <- ResultNameText
+   - Result Rarity Text <- ResultRarityText
+   - Result Role Text <- ResultRoleText
+   - Result Element Text <- ResultElementText
+   - Result Extra Text <- ResultExtraText
+   - Result Close Button <- ResultCloseButton
+   - Result Next Button <- ResultNextButton
+
+### 3.4 Animation Setup (Optional)
+
+Nếu muốn thêm animation khi roll button được bấm:
+
+1. Tạo AnimationClip cho roll action (ví dụ: panel rotate, pulse, etc.)
+2. Drag clip vào trường **Roll Animation Clip** trong GachaUIController Inspector
+3. Đặt Animator component trên GachaPanel hoặc panel chứa animation
+4. Gán Animator vào trường **Roll Animator** trong Inspector
+5. Đảm bảo trigger name match với field **Roll Trigger** (mặc định: "Roll")
+
+Khi roll được bấm, script sẽ trigger animator với trigger name, đợi `Roll Reveal Delay` seconds, rồi hiển thị result.
+
+### 3.5 Runtime Notes (quan trọng)
 
 - `GachaUIController` gọi thật `IGachaService` (không mock).
 - Cần có `MetaServiceHub`, `SaveManager`, `DataManager` sẵn trong runtime.

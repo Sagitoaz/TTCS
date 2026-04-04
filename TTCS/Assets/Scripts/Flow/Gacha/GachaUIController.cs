@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Collections;
 using TMPro;
 using TTCS.Core.Data;
 using TTCS.Core.Save;
@@ -20,10 +19,7 @@ namespace TTCS.Flow.Gacha
 	{
 		[Header("Top Bar")]
 		[SerializeField] private Button _backButton;
-		[SerializeField] private TextMeshProUGUI _poolNameText;
-		[SerializeField] private TextMeshProUGUI _pityText;
-		[SerializeField] private TextMeshProUGUI _goldText;
-		[SerializeField] private Image _goldIcon;
+		
 
 		[Header("Banner List (Left)")]
 		[SerializeField] private Transform _bannerListRoot;
@@ -34,13 +30,9 @@ namespace TTCS.Flow.Gacha
 
 		[Header("Roll Actions")]
 		[SerializeField] private Button _rollOneButton;
+		[SerializeField] private TextMeshProUGUI _rollOneCostText;
 		[SerializeField] private Button _rollTenButton;
-		[SerializeField] private TextMeshProUGUI _rollCostText;
-
-		[Header("Roll Animation")]
-		[SerializeField] private Animator _rollAnimator;
-		[SerializeField] private string _rollTrigger = "Roll";
-		[SerializeField] private float _rollRevealDelay = 1.0f;
+		[SerializeField] private TextMeshProUGUI _rollTenCostText;
 
 		[Header("Result Panel")]
 		[SerializeField] private GameObject _resultPanel;
@@ -51,7 +43,7 @@ namespace TTCS.Flow.Gacha
 		[SerializeField] private TextMeshProUGUI _resultElementText;
 		[SerializeField] private TextMeshProUGUI _resultExtraText;
 		[SerializeField] private Button _resultCloseButton;
-		[SerializeField] private Button _resultNextButton;
+		
 
 		private IGachaService _gachaService;
 		private DataManager _dataManager;
@@ -61,6 +53,7 @@ namespace TTCS.Flow.Gacha
 		private string _selectedPoolId = "pool_standard";
 		private GachaRollResult _activeRollResult;
 		private int _activeResultIndex;
+		private bool _consumeFirstResultTap;
 
 		private void Start()
 		{
@@ -97,9 +90,30 @@ namespace TTCS.Flow.Gacha
 				_resultCloseButton.onClick.AddListener(OnResultCloseClicked);
 			}
 
-			if (_resultNextButton != null)
+		
+		}
+
+		private void Update()
+		{
+			if (_resultPanel == null || !_resultPanel.activeSelf)
 			{
-				_resultNextButton.onClick.AddListener(OnResultNextClicked);
+				return;
+			}
+
+			if (_activeRollResult == null || _activeRollResult.Rewards == null || _activeRollResult.Rewards.Count <= 1)
+			{
+				return;
+			}
+
+			if (Input.GetMouseButtonDown(0))
+			{
+				if (_consumeFirstResultTap)
+				{
+					_consumeFirstResultTap = false;
+					return;
+				}
+
+				OnResultNextByTap();
 			}
 		}
 
@@ -185,7 +199,11 @@ namespace TTCS.Flow.Gacha
 				return;
 			}
 
-			StartCoroutine(PlayRollAndShowResult(count));
+			var result = _gachaService.Roll(_selectedPoolId, count);
+			_gachaService.ApplyRollResult(result);
+
+			ShowRollResult(result, count);
+			RefreshPoolInfo();
 		}
 
 		private bool IsRollAllowed(int count)
@@ -228,30 +246,11 @@ namespace TTCS.Flow.Gacha
 			return true;
 		}
 
-		private IEnumerator PlayRollAndShowResult(int count)
-		{
-			if (_rollAnimator != null && !string.IsNullOrWhiteSpace(_rollTrigger))
-			{
-				_rollAnimator.SetTrigger(_rollTrigger);
-			}
-
-			var wait = _rollRevealDelay < 0f ? 0f : _rollRevealDelay;
-			if (wait > 0f)
-			{
-				yield return new WaitForSeconds(wait);
-			}
-
-			var result = _gachaService.Roll(_selectedPoolId, count);
-			_gachaService.ApplyRollResult(result);
-
-			ShowRollResult(result, count);
-			RefreshPoolInfo();
-		}
-
 		private void ShowRollResult(GachaRollResult result, int rollCount)
 		{
 			_activeRollResult = result;
 			_activeResultIndex = 0;
+			_consumeFirstResultTap = true;
 
 			SetResultPanelVisible(true);
 
@@ -267,10 +266,7 @@ namespace TTCS.Flow.Gacha
 					_resultPortrait.sprite = null;
 					_resultPortrait.color = new Color(1f, 1f, 1f, 0f);
 				}
-				if (_resultNextButton != null)
-				{
-					_resultNextButton.gameObject.SetActive(false);
-				}
+				
 				return;
 			}
 
@@ -331,10 +327,7 @@ namespace TTCS.Flow.Gacha
 
 			UpdateResultPortrait(reward);
 
-			if (_resultNextButton != null)
-			{
-				_resultNextButton.gameObject.SetActive(_activeResultIndex < _activeRollResult.Rewards.Count - 1);
-			}
+			
 		}
 
 		private void UpdateResultPortrait(GachaRollReward reward)
@@ -369,7 +362,7 @@ namespace TTCS.Flow.Gacha
 			}
 		}
 
-		private void OnResultNextClicked()
+		private void OnResultNextByTap()
 		{
 			if (_activeRollResult == null || _activeRollResult.Rewards == null)
 			{
@@ -387,6 +380,7 @@ namespace TTCS.Flow.Gacha
 		{
 			_activeRollResult = null;
 			_activeResultIndex = 0;
+			_consumeFirstResultTap = false;
 			SetResultPanelVisible(false);
 		}
 
@@ -419,7 +413,6 @@ namespace TTCS.Flow.Gacha
 
 		private void RefreshPoolInfo()
 		{
-			var poolInfo = _gachaService?.GetPoolInfo(_selectedPoolId) ?? new GachaPoolInfo(_selectedPoolId, 0, 10);
 			var pool = GetSelectedPool();
 
 			if (_saveManager != null && _saveManager.CurrentSave == null)
@@ -427,33 +420,19 @@ namespace TTCS.Flow.Gacha
 				_saveManager.EnsureCurrentSave(0);
 			}
 
-			if (_poolNameText != null)
+			
+
+			var oneCost = Math.Max(0, pool?.rollCostSingle ?? 160);
+			var tenCost = Math.Max(0, pool?.rollCostTen ?? 1600);
+
+			if (_rollOneCostText != null)
 			{
-				_poolNameText.text = string.IsNullOrWhiteSpace(pool?.nameKey) ? _selectedPoolId : pool.nameKey;
+				_rollOneCostText.text = $"{oneCost:N0}";
 			}
 
-			if (_pityText != null)
+			if (_rollTenCostText != null)
 			{
-				_pityText.text = $"Pity: {poolInfo.PityCount}/{Math.Max(1, poolInfo.PityThreshold)}";
-			}
-
-			if (_goldText != null)
-			{
-				_goldText.text = $"Gold: {(_saveManager?.CurrentSave?.gold ?? 0):N0}";
-			}
-
-			if (_goldIcon != null)
-			{
-				var icon = LoadGoldIconSprite();
-				_goldIcon.sprite = icon;
-				_goldIcon.color = icon == null ? new Color(1f, 0.85f, 0f, 1f) : Color.white;
-			}
-
-			if (_rollCostText != null)
-			{
-				var oneCost = Math.Max(0, pool?.rollCostSingle ?? 160);
-				var tenCost = Math.Max(0, pool?.rollCostTen ?? 1600);
-				_rollCostText.text = $"Cost 1x: {oneCost:N0} | Cost 10x: {tenCost:N0}";
+				_rollTenCostText.text = $"{tenCost:N0}";
 			}
 
 			if (_bannerBackgroundImage != null)
@@ -485,34 +464,6 @@ namespace TTCS.Flow.Gacha
 			}
 
 			return Resources.Load<Sprite>(bannerPath);
-		}
-
-		private static Sprite LoadGoldIconSprite()
-		{
-			var candidates = new[]
-			{
-				"UI/icon_gold",
-				"Icons/icon_gold",
-				"Icons/UI/icon_gold",
-				"Sprites/UI/icon_gold",
-				"Sprites/Items/item_gold",
-				"Items/item_gold",
-				"item_gold"
-			};
-
-			for (var i = 0; i < candidates.Length; i++)
-			{
-				var sprite = Resources.Load<Sprite>(candidates[i]);
-				if (sprite != null)
-				{
-					return sprite;
-				}
-			}
-
-			var tex = new Texture2D(1, 1, TextureFormat.RGBA32, false);
-			tex.SetPixel(0, 0, new Color(1f, 0.84f, 0f, 1f));
-			tex.Apply();
-			return Sprite.Create(tex, new Rect(0, 0, 1, 1), new Vector2(0.5f, 0.5f));
 		}
 
 		private static Color GetRarityColor(string rarity)

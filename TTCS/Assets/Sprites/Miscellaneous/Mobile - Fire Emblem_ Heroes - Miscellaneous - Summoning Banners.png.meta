@@ -135,6 +135,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -142,12 +155,12 @@ TextureImporter:
       name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 4823
-        height: 5531
+        x: 16
+        y: 4439
+        width: 1576
+        height: 1080
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -160,11 +173,319 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_1
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 4441
+        width: 1579
+        height: 1075
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ad00121d6c04c498eba0e0ccc85a11
+      internalID: 1173181283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_2
+      rect:
+        serializedVersion: 2
+        x: 3214
+        y: 4425
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12197fff779b7dd46af4e56338102577
+      internalID: 1296298535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3319
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb91e50038cfa84bad94e59024d1b44
+      internalID: -1469111554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_4
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 3319
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b34d51f5fea99b47b89088b3e65d179
+      internalID: 1647120645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_5
+      rect:
+        serializedVersion: 2
+        x: 3214
+        y: 3319
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c630dc161e5299e4e872462b277846a4
+      internalID: -1302296711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2213
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b13d3cbfbdef984ab5b4e9fa86c459d
+      internalID: 664768128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_7
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 2213
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 478cfe79c1534be43b665464bf5f94e0
+      internalID: -1546418348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_8
+      rect:
+        serializedVersion: 2
+        x: 3214
+        y: 2213
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55625fc5b5d446747bff6221bf960bb4
+      internalID: 147159114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1107
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2540d12b3917b46835d5f37d523a1c
+      internalID: 793040346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_10
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 1107
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8482eeada7f5204dbc72a2a7a965356
+      internalID: 919361234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_11
+      rect:
+        serializedVersion: 2
+        x: 3214
+        y: 1107
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1196af4a16d66845b09618d866e6325
+      internalID: -1362818100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a0b509721978e24ebb59f7808681857
+      internalID: 509119829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_13
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 1
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a601fd2266214244a9371ffb8b3822ec
+      internalID: -1785156754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_14
+      rect:
+        serializedVersion: 2
+        x: 3214
+        y: 1
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab2526ad9da4d474db7d093eaf689a0e
+      internalID: 254586512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e2b6b8c65b6e51d4d8fc2371c132e835
     internalID: 0
     vertices: []
     indices: 
@@ -172,9 +493,25 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1607.0,"y":1106.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_0: 3788580342138638891
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_1: 1173181283
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_10: 919361234
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_11: -1362818100
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_12: 509119829
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_13: -1785156754
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_14: 254586512
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_2: 1296298535
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_3: -1469111554
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_4: 1647120645
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_5: -1302296711
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_6: 664768128
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_7: -1546418348
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_8: 147159114
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_9: 793040346
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
