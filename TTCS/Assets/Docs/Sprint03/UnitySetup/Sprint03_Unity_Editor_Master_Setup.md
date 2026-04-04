@@ -2,31 +2,26 @@
 
 ## Mục tiêu
 Chạy setup một lần theo checklist này để:
-- Nạp đầy đủ manager/service cần cho Sprint03
-- Wire đúng flow combat reward bridge + save/progression
-- Có thể test full loop và bàn giao cho team
+- Hoàn tất đúng phần Dev A Sprint03 theo scene `TestCombatUI_devA`
+- Wire đủ meta services + reward flow
+- Làm đẹp màn `Victory/Defeat` bằng resource có sẵn trong project
 
-## A. Chuẩn bị project
+## A. Mở đúng scene và baseline
 1. Mở project `TTCS` bằng Unity Hub.
-2. Chờ compile/import xong hoàn toàn.
+2. Mở scene `Assets/Scenes/TestCombatUI_devA.unity`.
 3. Mở Console và clear log cũ.
+4. Chờ compile/import xong hoàn toàn.
 
-## B. Setup GameObjects bắt buộc trong scene
-Đảm bảo tồn tại các object:
-- `EventBus`
-- `DataManager`
-- `SaveManager`
-- `MetaServiceHub`
+## B. Xác nhận object/hierarchy bắt buộc (theo scene thực tế)
+Đảm bảo có các object:
 - `CombatSceneManager`
-- `CombatFlowController`
+- `CombatUIController`
 - `CombatBridge`
-- `CombatRewardBridge`
-- `AudioController`
-
-Nếu thiếu:
-1. Create Empty GameObject.
-2. Đặt đúng tên.
-3. Add đúng script component.
+- `CombatManagers`
+- `TimingSystem`
+- `PlayerSlots` (có `P1`, `P2`)
+- `EnemySlots` (có `E1`, `E2`)
+- `CombatCanvas` (có `ResultPanel`, `ReturnButton`)
 
 ## C. Kiểm tra dữ liệu Sprint03
 Trong Project panel, xác nhận có:
@@ -43,45 +38,57 @@ Và các file mẫu:
 - `item_potion.json`, `item_energy.json`
 - `skill_icon_map.json`
 
-## D. Khởi tạo save + service
-1. Enter Play mode.
-2. Gọi `SaveManager.NewGame()`.
-3. Xác nhận:
-- `schemaVersion = 1`
-- `tutorialCompleted = false`
-- `unlockedChapters` có `chapter_01`
-- `lineup` có nhân vật mặc định
-4. Trên `MetaServiceHub`, xác nhận service đã init:
-- Inventory
-- Gacha
-- Progression
-- Team
+## D. Setup CombatSceneManager (khớp scene này)
+1. Chọn `CombatSceneManager`.
+2. Verify:
+- `_defaultStageId = stage_01_tutorial`
+- `_defaultSeed = 42`
+- `_autoStartOnPlay = true`
+- `_defaultPartyIds = [char_warrior, char_mage]`
+- `_playerSlots = [P1, P2]`
+- `_enemySlots = [E1, E2]`
 
-## E. Smoke test nhanh
-1. Gắn `MetaServicesSmokeTest` vào object test.
-2. Chạy context menu `Run Meta Services Smoke Test`.
-3. Kỳ vọng PASS log trong Console.
+## E. Setup Result UI (Victory/Defeat) - bắt buộc làm
+1. Mở `CombatCanvas > ResultPanel`.
+2. Tạo `ResultCard` (Image), set sprite `Common_Window_0`.
+3. Tạo 2 object con trong `ResultCard`: `WinCard` và `LoseCard`.
+4. Set sprite:
+- `WinCard` dùng `Result_BG02`/`Result_BG03`
+- `LoseCard` dùng `Result_BG`
+5. Chọn `ReturnButton`:
+- Image sprite = `Common_Button_20` (hoặc 21/22)
+- Size gợi ý = `320 x 92`
+6. Chọn `ReturnButton/Text (TMP)`:
+- Text mặc định `Continue`
+- Font size `34`
 
-## F. Combat -> Reward -> Save flow
-1. Dùng `CombatSceneManager` khởi chạy combat.
-2. Kết thúc combat với victory.
-3. Kỳ vọng:
-- `CombatRewardBridge` log chạy.
-- Item reward được cộng.
-- Progress level được cập nhật.
-- Gacha progression feed được áp dụng.
-4. Gọi `Save(0)` rồi `Load(0)` để verify persistence.
+## F. Wire field Result mới trên CombatUIController
+1. Chọn object `CombatUIController`.
+2. Gán đầy đủ:
+- `_resultPanel` = `ResultPanel`
+- `_resultButton` = `ReturnButton`
+- `_resultButtonLabel` = `ReturnButton/Text (TMP)`
+- `_resultCardController` = component `ResultCardController` trên `ResultCard`
 
-## G. Build và kiểm thử
-1. Làm theo `01_Build_Instructions.md`.
-2. Chạy lần lượt:
-- `02_Unit_Test_Instructions.md`
-- `03_Integration_Test_Instructions.md`
-- `05_E2E_Test_Instructions.md`
-3. Benchmark theo `04_Performance_Test_Instructions.md`.
+## G. Play test nhanh (ngay trong scene này)
+1. Enter Play.
+2. Nhấn `V` để force victory.
+3. Verify:
+- Panel hiện fade in
+- `WinCard` hiện, `LoseCard` ẩn
+- `WinCard` animate xuất hiện + loop
+- Nút `Continue`
+4. Test defeat, verify:
+- `LoseCard` hiện, `WinCard` ẩn
+- `LoseCard` animate xuất hiện + loop
+- Nút `Retry`
 
 ## H. Tiêu chí hoàn tất
 - Không có compile error đỏ trong Unity Console.
-- Full loop chạy ổn: menu -> level -> combat -> reward -> save/load.
-- Không crash/null-reference ở reward bridge/meta services.
-- Checklist test đã pass theo summary.
+- Result screen không còn UI mặc định Unity.
+- Full loop Dev A chạy ổn: combat -> reward -> save/load.
+- Không null-reference ở `ProgressionService`, `CombatRewardBridge`, `CombatUIController`.
+
+## Tài liệu chi tiết thao tác
+- File chính: `06_Unity_Editor_Setup_Detailed.md`
+- Bản nhanh 1 trang: `08_Unity_Editor_Quick_Setup.md`

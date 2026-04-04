@@ -1,0 +1,79 @@
+{
+  "id": "skill_support_restoration",
+  "nameKey": "Skill_SupportRestoration",
+  "description": "Read a restorative verse to heal a single ally.",
+  "type": "heal",
+
+  "targetRule": {
+    "type": "single_ally",
+    "count": 1,
+    "filter": [],
+    "canTargetSelf": true
+  },
+
+  "cost": {
+    "mana": 30,
+    "cooldown": 2,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 1.7",
+    "element": "",
+    "canCrit": false,
+    "ignoreDefense": 0
+  },
+
+  "effects": [
+    {
+      "type": "heal",
+      "value": "ATK * 1.7",
+      "element": "",
+      "chance": 1.0,
+      "duration": 0
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 220,
+        "endMs": 430,
+        "type": "cast"
+      }
+    ],
+    "grades": {
+      "perfect": {
+        "threshold": 50,
+        "bonus": {
+          "healMultiplier": 1.25
+        }
+      },
+      "good": {
+        "threshold": 150,
+        "bonus": {
+          "healMultiplier": 1.1
+        }
+      },
+      "miss": {
+        "threshold": 999,
+        "penalty": {
+          "healMultiplier": 1.0
+        }
+      }
+    }
+  },
+
+  "actionCost": {
+    "timelineUnits": 110,
+    "description": "Focused single-target heal"
+  },
+
+  "visual": {
+    "animation": "support_restoration",
+    "vfxPrefab": "VFX/support_restoration",
+    "sfx": "SFX/support_restoration",
+    "cameraShake": 0.0
+  }
+}

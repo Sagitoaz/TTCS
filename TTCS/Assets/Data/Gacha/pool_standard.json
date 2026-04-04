@@ -7,6 +7,20 @@
   "rollCostTen": 1600,
   "entries": [
     {
+      "rewardId": "char_support",
+      "rewardType": "character",
+      "weight": 4,
+      "isRare": true,
+      "amount": 1
+    },
+    {
+      "rewardId": "char_arden",
+      "rewardType": "character",
+      "weight": 3,
+      "isRare": true,
+      "amount": 1
+    },
+    {
       "rewardId": "char_mage",
       "rewardType": "character",
       "weight": 5,

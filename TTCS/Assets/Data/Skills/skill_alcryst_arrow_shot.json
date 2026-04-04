@@ -1,0 +1,60 @@
+{
+  "id": "skill_alcryst_arrow_shot",
+  "nameKey": "Skill_AlcrystArrowShot",
+  "description": "Shoot a fast horizontal arrow at a single target.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "single_enemy",
+    "count": 1,
+    "filter": [],
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 0,
+    "cooldown": 0,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 1.25",
+    "element": "physical",
+    "canCrit": true,
+    "ignoreDefense": 0.05
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 1.25",
+      "element": "physical",
+      "chance": 1.0,
+      "duration": 0
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 180,
+        "endMs": 420,
+        "type": "shot"
+      }
+    ]
+  },
+
+  "actionCost": {
+    "timelineUnits": 95,
+    "description": "Fast ranged arrow"
+  },
+
+  "visual": {
+    "attackStyle": "ranged",
+    "animation": "alcryst_arrow_horizontal",
+    "vfxPrefab": "VFX/alcryst_arrow_trail",
+    "sfx": "SFX/alcryst_arrow_shot",
+    "cameraShake": 0.08
+  }
+}

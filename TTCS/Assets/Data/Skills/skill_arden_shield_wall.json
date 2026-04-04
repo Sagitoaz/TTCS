@@ -1,0 +1,79 @@
+{
+  "id": "skill_arden_shield_wall",
+  "nameKey": "Skill_ArdenShieldWall",
+  "description": "Plant your shield and project protection to an ally.",
+  "type": "buff",
+
+  "targetRule": {
+    "type": "single_ally",
+    "count": 1,
+    "filter": [],
+    "canTargetSelf": true
+  },
+
+  "cost": {
+    "mana": 30,
+    "cooldown": 3,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "",
+    "element": "",
+    "canCrit": false,
+    "ignoreDefense": 0
+  },
+
+  "effects": [
+    {
+      "type": "shield",
+      "value": "DEF * 1.9",
+      "element": "",
+      "chance": 1.0,
+      "duration": 2
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 180,
+        "endMs": 380,
+        "type": "cast"
+      }
+    ],
+    "grades": {
+      "perfect": {
+        "threshold": 55,
+        "bonus": {
+          "shieldMultiplier": 1.2
+        }
+      },
+      "good": {
+        "threshold": 160,
+        "bonus": {
+          "shieldMultiplier": 1.05
+        }
+      },
+      "miss": {
+        "threshold": 999,
+        "penalty": {
+          "shieldMultiplier": 1.0
+        }
+      }
+    }
+  },
+
+  "actionCost": {
+    "timelineUnits": 100,
+    "description": "Protective ally shield"
+  },
+
+  "visual": {
+    "animation": "arden_shield_raise",
+    "vfxPrefab": "VFX/arden_shield_wall",
+    "sfx": "SFX/arden_shield_wall",
+    "cameraShake": 0.0
+  }
+}
