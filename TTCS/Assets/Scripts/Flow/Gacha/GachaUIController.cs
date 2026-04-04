@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using TMPro;
 using TTCS.Core.Data;
 using TTCS.Core.Save;
@@ -19,6 +20,7 @@ namespace TTCS.Flow.Gacha
 	{
 		[Header("Top Bar")]
 		[SerializeField] private Button _backButton;
+		[SerializeField] private TextMeshProUGUI _goldText;
 		
 
 		[Header("Banner List (Left)")]
@@ -39,10 +41,12 @@ namespace TTCS.Flow.Gacha
 		[SerializeField] private Image _resultPortrait;
 		[SerializeField] private TextMeshProUGUI _resultNameText;
 		[SerializeField] private TextMeshProUGUI _resultRarityText;
-		[SerializeField] private TextMeshProUGUI _resultRoleText;
-		[SerializeField] private TextMeshProUGUI _resultElementText;
-		[SerializeField] private TextMeshProUGUI _resultExtraText;
+		[SerializeField] private Image _resultRoleIcon;
+		[SerializeField] private Image _resultElementIcon;
 		[SerializeField] private Button _resultCloseButton;
+		[SerializeField] private RectTransform _rarityStarRoot;
+		[SerializeField] private Image _rarityStarPrefab;
+		[SerializeField] private float _rarityStarRevealInterval = 0.08f;
 		
 
 		private IGachaService _gachaService;
@@ -54,6 +58,8 @@ namespace TTCS.Flow.Gacha
 		private GachaRollResult _activeRollResult;
 		private int _activeResultIndex;
 		private bool _consumeFirstResultTap;
+		private Coroutine _rarityStarRoutine;
+		private readonly List<GameObject> _spawnedRarityStars = new List<GameObject>();
 
 		private void Start()
 		{
@@ -236,10 +242,7 @@ namespace TTCS.Flow.Gacha
 			var cost = count >= 10 ? Math.Max(0, pool.rollCostTen) : Math.Max(0, pool.rollCostSingle) * count;
 			if (save.gold < cost)
 			{
-				if (_resultExtraText != null)
-				{
-					_resultExtraText.text = $"Not enough gold. Need {cost:N0}, current {save.gold:N0}.";
-				}
+				Debug.LogWarning($"[GachaUI] Not enough gold. Need {cost:N0}, current {save.gold:N0}.");
 				return false;
 			}
 
@@ -257,10 +260,14 @@ namespace TTCS.Flow.Gacha
 			if (result == null || result.Rewards == null || result.Rewards.Count == 0)
 			{
 				if (_resultNameText != null) _resultNameText.text = "No Reward";
-				if (_resultRarityText != null) _resultRarityText.text = "-";
-				if (_resultRoleText != null) _resultRoleText.text = "Role: -";
-				if (_resultElementText != null) _resultElementText.text = "Element: -";
-				if (_resultExtraText != null) _resultExtraText.text = $"Roll x{rollCount} | Pity: -";
+				if (_resultRarityText != null)
+				{
+					_resultRarityText.text = "-";
+					ResetResultRarityStyle();
+				}
+				SetResultIcon(_resultRoleIcon, null);
+				SetResultIcon(_resultElementIcon, null);
+				ClearSpawnedRarityStars();
 				if (_resultPortrait != null)
 				{
 					_resultPortrait.sprite = null;
@@ -304,26 +311,15 @@ namespace TTCS.Flow.Gacha
 			{
 				var rarity = character?.metadata?.rarity ?? (reward.IsRare ? "SSR" : "R");
 				_resultRarityText.text = rarity;
-				_resultRarityText.color = GetRarityColor(rarity);
+				ApplyResultRarityStyle(rarity);
+				StartRarityStarReveal(rarity);
 			}
 
-			if (_resultRoleText != null)
-			{
-				_resultRoleText.text = $"Role: {character?.metadata?.roleTag ?? "-"}";
-			}
+			var roleTag = character?.metadata?.roleTag ?? "-";
+			SetResultIcon(_resultRoleIcon, LoadRoleIconSprite(roleTag));
 
-			if (_resultElementText != null)
-			{
-				_resultElementText.text = $"Element: {character?.metadata?.element ?? "-"}";
-			}
-
-			if (_resultExtraText != null)
-			{
-				var duplicateSuffix = reward.IsDuplicateConverted
-					? $" | Duplicate -> +{reward.ConvertedCurrencyAmount} gold"
-					: string.Empty;
-				_resultExtraText.text = $"{_activeResultIndex + 1}/{_activeRollResult.Rewards.Count} | x{Math.Max(1, reward.Amount)}{duplicateSuffix}";
-			}
+			var elementTag = character?.metadata?.element ?? "-";
+			SetResultIcon(_resultElementIcon, LoadElementIconSprite(elementTag));
 
 			UpdateResultPortrait(reward);
 
@@ -378,6 +374,14 @@ namespace TTCS.Flow.Gacha
 
 		private void OnResultCloseClicked()
 		{
+			if (_rarityStarRoutine != null)
+			{
+				StopCoroutine(_rarityStarRoutine);
+				_rarityStarRoutine = null;
+			}
+
+			ClearSpawnedRarityStars();
+
 			_activeRollResult = null;
 			_activeResultIndex = 0;
 			_consumeFirstResultTap = false;
@@ -425,6 +429,11 @@ namespace TTCS.Flow.Gacha
 			var oneCost = Math.Max(0, pool?.rollCostSingle ?? 160);
 			var tenCost = Math.Max(0, pool?.rollCostTen ?? 1600);
 
+			if (_goldText != null)
+			{
+				_goldText.text = $"Gold: {(_saveManager?.CurrentSave?.gold ?? 0):N0}";
+			}
+
 			if (_rollOneCostText != null)
 			{
 				_rollOneCostText.text = $"{oneCost:N0}";
@@ -466,19 +475,209 @@ namespace TTCS.Flow.Gacha
 			return Resources.Load<Sprite>(bannerPath);
 		}
 
-		private static Color GetRarityColor(string rarity)
+		private void ApplyResultRarityStyle(string rarity)
 		{
+			if (_resultRarityText == null)
+			{
+				return;
+			}
+
+			_resultRarityText.enableVertexGradient = false;
+			_resultRarityText.colorGradient = default;
+
 			if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
 			{
-				return new Color(1f, 0.84f, 0f, 1f);
+				var topColor = HexToColor("#FFFFB3FF");
+				var bottomColor = HexToColor("#FFB300FF");
+				_resultRarityText.color = HexToColor("#FFD700");
+				_resultRarityText.enableVertexGradient = true;
+				_resultRarityText.colorGradient = new VertexGradient(topColor, topColor, bottomColor, bottomColor);
+				return;
 			}
 
 			if (string.Equals(rarity, "SR", StringComparison.OrdinalIgnoreCase))
 			{
-				return new Color(1f, 0.5f, 0f, 1f);
+				_resultRarityText.color = HexToColor("#FF007F");
+				return;
+			}
+
+			if (string.Equals(rarity, "R", StringComparison.OrdinalIgnoreCase))
+			{
+				_resultRarityText.color = HexToColor("#00F0FF");
+				return;
+			}
+
+			_resultRarityText.color = Color.white;
+		}
+
+		private void ResetResultRarityStyle()
+		{
+			if (_resultRarityText == null)
+			{
+				return;
+			}
+
+			_resultRarityText.enableVertexGradient = false;
+			_resultRarityText.colorGradient = default;
+			_resultRarityText.color = Color.white;
+		}
+
+		private static Color HexToColor(string hex)
+		{
+			if (ColorUtility.TryParseHtmlString(hex, out var color))
+			{
+				return color;
 			}
 
 			return Color.white;
+		}
+
+		private void StartRarityStarReveal(string rarity)
+		{
+			var starCount = GetRarityStarCount(rarity);
+
+			if (_rarityStarRoutine != null)
+			{
+				StopCoroutine(_rarityStarRoutine);
+			}
+
+			_rarityStarRoutine = StartCoroutine(PlayRarityStarsRoutine(starCount));
+		}
+
+		private IEnumerator PlayRarityStarsRoutine(int starCount)
+		{
+			ClearSpawnedRarityStars();
+
+			if (_rarityStarRoot == null || _rarityStarPrefab == null)
+			{
+				yield break;
+			}
+
+			var safeCount = Math.Max(0, starCount);
+			for (var i = 0; i < safeCount; i++)
+			{
+				var star = Instantiate(_rarityStarPrefab, _rarityStarRoot, false);
+				star.gameObject.SetActive(true);
+				_spawnedRarityStars.Add(star.gameObject);
+
+				var wait = _rarityStarRevealInterval < 0f ? 0f : _rarityStarRevealInterval;
+				if (wait > 0f)
+				{
+					yield return new WaitForSeconds(wait);
+				}
+			}
+
+			_rarityStarRoutine = null;
+		}
+
+		private void ClearSpawnedRarityStars()
+		{
+			for (var i = 0; i < _spawnedRarityStars.Count; i++)
+			{
+				var star = _spawnedRarityStars[i];
+				if (star != null)
+				{
+					Destroy(star);
+				}
+			}
+
+			_spawnedRarityStars.Clear();
+		}
+
+		private static int GetRarityStarCount(string rarity)
+		{
+			if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
+			{
+				return 5;
+			}
+
+			if (string.Equals(rarity, "SR", StringComparison.OrdinalIgnoreCase))
+			{
+				return 4;
+			}
+
+			if (string.Equals(rarity, "R", StringComparison.OrdinalIgnoreCase))
+			{
+				return 3;
+			}
+
+			return 1;
+		}
+
+		private static void SetResultIcon(Image target, Sprite sprite)
+		{
+			if (target == null)
+			{
+				return;
+			}
+
+			target.sprite = sprite;
+			target.color = sprite == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
+		}
+
+		private static Sprite LoadRoleIconSprite(string roleTag)
+		{
+			var key = NormalizeTag(roleTag);
+			if (string.IsNullOrEmpty(key))
+			{
+				return null;
+			}
+
+			var candidates = new[]
+			{
+				$"UI/Role/icon_role_{key}",
+				$"Icons/Role/icon_role_{key}",
+				$"Role/{key}",
+				$"UI/Role/{key}",
+				$"Icons/{key}"
+			};
+
+			for (var i = 0; i < candidates.Length; i++)
+			{
+				var sprite = Resources.Load<Sprite>(candidates[i]);
+				if (sprite != null)
+				{
+					return sprite;
+				}
+			}
+
+			return null;
+		}
+
+		private static Sprite LoadElementIconSprite(string elementTag)
+		{
+			var key = NormalizeTag(elementTag);
+			if (string.IsNullOrEmpty(key))
+			{
+				return null;
+			}
+
+			var candidates = new[]
+			{
+				$"UI/Element/icon_element_{key}",
+				$"Icons/Element/icon_element_{key}",
+				$"Element/{key}",
+				$"UI/Element/{key}",
+				$"Icons/{key}"
+			};
+
+			for (var i = 0; i < candidates.Length; i++)
+			{
+				var sprite = Resources.Load<Sprite>(candidates[i]);
+				if (sprite != null)
+				{
+					return sprite;
+				}
+			}
+
+			return null;
+		}
+
+		private static string NormalizeTag(string value)
+		{
+			return string.IsNullOrWhiteSpace(value)
+				? string.Empty
+				: value.Trim().ToLowerInvariant();
 		}
 
 		private void SetResultPanelVisible(bool visible)

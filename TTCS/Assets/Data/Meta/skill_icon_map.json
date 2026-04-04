@@ -34,5 +34,46 @@
       "skillId": "skill_mage_lightning",
       "iconPath": "Sprites/Skills/skill_mage_lightning"
     }
+    ,
+    {
+      "skillId": "skill_support_arcane_bolt",
+      "iconPath": "Sprites/Skills/support_arcane_bolt"
+    },
+    {
+      "skillId": "skill_support_restoration",
+      "iconPath": "Sprites/Skills/support_restoration"
+    },
+    {
+      "skillId": "skill_support_mystic_barrier",
+      "iconPath": "Sprites/Skills/support_mystic_barrier"
+    },
+    {
+      "skillId": "skill_support_astral_prayer",
+      "iconPath": "Sprites/Skills/support_astral_prayer"
+    },
+    {
+      "skillId": "skill_arden_sword_swing",
+      "iconPath": "Sprites/Skills/arden_sword_swing"
+    },
+    {
+      "skillId": "skill_arden_guard_breaker",
+      "iconPath": "Sprites/Skills/arden_guard_breaker"
+    },
+    {
+      "skillId": "skill_arden_iron_bulwark",
+      "iconPath": "Sprites/Skills/arden_iron_bulwark"
+    },
+    {
+      "skillId": "skill_arden_shield_wall",
+      "iconPath": "Sprites/Skills/arden_shield_wall"
+    },
+    {
+      "skillId": "skill_alcryst_arrow_shot",
+      "iconPath": "Sprites/Skills/alcryst_arrow_shot"
+    },
+    {
+      "skillId": "skill_alcryst_sky_piercer",
+      "iconPath": "Sprites/Skills/alcryst_sky_piercer"
+    }
   ]
 }

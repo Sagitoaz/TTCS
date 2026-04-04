@@ -1,0 +1,2353 @@
+fileFormatVersion: 2
+guid: 6ea2728a637c5b34091d8d7b14c3fd51
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2845962318401095305
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_0
+  - first:
+      213: 7761609823073472683
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_1
+  - first:
+      213: -2343948522074835844
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_2
+  - first:
+      213: 8726966384747274765
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_3
+  - first:
+      213: 5834266651506766143
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_4
+  - first:
+      213: -7196343749783547121
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_5
+  - first:
+      213: 3470234892817481696
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_6
+  - first:
+      213: 4558668245029643500
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_7
+  - first:
+      213: 2682013124647778614
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_8
+  - first:
+      213: 8240103856304072938
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_9
+  - first:
+      213: 3615256335930868904
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_10
+  - first:
+      213: -7691593959374448520
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_11
+  - first:
+      213: -7657820199263294281
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_12
+  - first:
+      213: 3753344889116174441
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_13
+  - first:
+      213: -5888731877111887123
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_14
+  - first:
+      213: 4022920855905980170
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_15
+  - first:
+      213: -5641439327184938463
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_16
+  - first:
+      213: -3921598124631401525
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_17
+  - first:
+      213: 6205267535863412602
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_18
+  - first:
+      213: -788947570152770606
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_19
+  - first:
+      213: 7626909573810717486
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_20
+  - first:
+      213: 8857247829699461943
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_21
+  - first:
+      213: 3808176157170737362
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_22
+  - first:
+      213: -3071557922508089612
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_23
+  - first:
+      213: -1483935445619760459
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_24
+  - first:
+      213: -3528217073528653376
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_25
+  - first:
+      213: -3977092757894579735
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_26
+  - first:
+      213: 719962924088416581
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_27
+  - first:
+      213: -2820894889160981691
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_28
+  - first:
+      213: -3090902769759877374
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_29
+  - first:
+      213: -11947785196073562
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_30
+  - first:
+      213: -3144954578300619513
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_31
+  - first:
+      213: 4084763153849037136
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_32
+  - first:
+      213: 6706580757009899845
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_33
+  - first:
+      213: 1690706650473906710
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_34
+  - first:
+      213: -2035603965982813184
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_35
+  - first:
+      213: -7967167461718725359
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_36
+  - first:
+      213: 7806312269172632960
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_37
+  - first:
+      213: -9111926509587208101
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_38
+  - first:
+      213: 8101594941600044518
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_39
+  - first:
+      213: 4339066622083898959
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_40
+  - first:
+      213: -7393381987996443242
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_41
+  - first:
+      213: 1583040110254505430
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_42
+  - first:
+      213: -7055312286961404106
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_43
+  - first:
+      213: 8192931722073007428
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_44
+  - first:
+      213: 6260767381873963943
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_45
+  - first:
+      213: 9093148884113840165
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_46
+  - first:
+      213: 6604379370698282050
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_47
+  - first:
+      213: -3541544180698873862
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_48
+  - first:
+      213: -4142520159665651455
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_49
+  - first:
+      213: 3774758020709869614
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_50
+  - first:
+      213: -135562622580923096
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_51
+  - first:
+      213: 2723542708392070142
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_52
+  - first:
+      213: 2024861182196322206
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_53
+  - first:
+      213: 7510133626231087540
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_54
+  - first:
+      213: -2418758895419203269
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_55
+  - first:
+      213: -2144776322577078897
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_56
+  - first:
+      213: -647606843600985180
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_57
+  - first:
+      213: -180270083382639496
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_58
+  - first:
+      213: 6552783532369367930
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_59
+  - first:
+      213: -2053590488193417530
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_60
+  - first:
+      213: 6708616892086898500
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_61
+  - first:
+      213: 2150134385681971887
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_62
+  - first:
+      213: 1010880431153187880
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_63
+  - first:
+      213: -1163107314048166858
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_64
+  - first:
+      213: -2595280902819964610
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_65
+  - first:
+      213: 1423854067654343636
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_66
+  - first:
+      213: 3322034241396399595
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_67
+  - first:
+      213: -8129839377878671259
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_68
+  - first:
+      213: 1663448371271008950
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_69
+  - first:
+      213: -2176451207095123081
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_70
+  - first:
+      213: 4138163346406433589
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_71
+  - first:
+      213: -5035200805308828886
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_72
+  - first:
+      213: 8824540298455390372
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_73
+  - first:
+      213: -8342039529714153069
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_74
+  - first:
+      213: 7802723714627041891
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_75
+  - first:
+      213: -6438862023301688209
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_76
+  - first:
+      213: 4117829908051094459
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_77
+  - first:
+      213: -7523391670500474111
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_78
+  - first:
+      213: -6066601184804256789
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_79
+  - first:
+      213: 5111277323308035174
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_80
+  - first:
+      213: 3038781937446588201
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_81
+  - first:
+      213: 3687218383777597418
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_82
+  - first:
+      213: -4877181961698645898
+    second: Mobile - Fire Emblem_ Heroes - UI - Blessing_83
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 1281
+        width: 226
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 986c17866a3ee7720800000000000000
+      internalID: 2845962318401095305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_1
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1280
+        width: 220
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba01a75e207c6bb60800000000000000
+      internalID: 7761609823073472683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_2
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 1281
+        width: 220
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c747de9ec3f987fd0800000000000000
+      internalID: -2343948522074835844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_3
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 1281
+        width: 220
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d02e2a180b96c1970800000000000000
+      internalID: 8726966384747274765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_4
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 1387
+        width: 117
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f31f7f7bb9a77f050800000000000000
+      internalID: 5834266651506766143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_5
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 1267
+        width: 117
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f039c88cc73712c90800000000000000
+      internalID: -7196343749783547121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_6
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 1387
+        width: 117
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ef3d89bf30c82030800000000000000
+      internalID: 3470234892817481696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_7
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 1267
+        width: 117
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce468d1bd94a34f30800000000000000
+      internalID: 4558668245029643500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_8
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 1387
+        width: 117
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 639f0991abc683520800000000000000
+      internalID: 2682013124647778614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_9
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 1267
+        width: 117
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae8a453accaba5270800000000000000
+      internalID: 8240103856304072938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_10
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 1387
+        width: 169
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a4c32bab78fb2230800000000000000
+      internalID: 3615256335930868904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_11
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 1267
+        width: 117
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87812f6bb08f14590800000000000000
+      internalID: -7691593959374448520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_12
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 1267
+        width: 117
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bca9150a15f9b590800000000000000
+      internalID: -7657820199263294281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_13
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 1268
+        width: 117
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9682c436a4f861430800000000000000
+      internalID: 3753344889116174441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_14
+      rect:
+        serializedVersion: 2
+        x: 1637
+        y: 1266
+        width: 117
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dea0a3fbe85074ea0800000000000000
+      internalID: -5888731877111887123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_15
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 1386
+        width: 117
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0f49cf343944d730800000000000000
+      internalID: 4022920855905980170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_16
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 1266
+        width: 117
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12a193152d495b1b0800000000000000
+      internalID: -5641439327184938463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_17
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1043
+        width: 220
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcbd18d784fa399c0800000000000000
+      internalID: -3921598124631401525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_18
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 1039
+        width: 220
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a77f66b62f98d1650800000000000000
+      internalID: 6205267535863412602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_19
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 1038
+        width: 220
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d3f2ae6d581d05f0800000000000000
+      internalID: -788947570152770606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_20
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 1036
+        width: 220
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e23830929d938d960800000000000000
+      internalID: 7626909573810717486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_21
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 1147
+        width: 117
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73306d039f34bea70800000000000000
+      internalID: 8857247829699461943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_22
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 1028
+        width: 117
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d02642d90c59d430800000000000000
+      internalID: 3808176157170737362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_23
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 1147
+        width: 117
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f65ed1e752af55d0800000000000000
+      internalID: -3071557922508089612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_24
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1027
+        width: 117
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b2293e0390086be0800000000000000
+      internalID: -1483935445619760459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_25
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 797
+        width: 220
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c93bd1d341490fc0800000000000000
+      internalID: -3528217073528653376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_26
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 1147
+        width: 117
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e93aee45378ec8c0800000000000000
+      internalID: -3977092757894579735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_27
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 1148
+        width: 117
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 549ddb50772ddf900800000000000000
+      internalID: 719962924088416581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_28
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 1027
+        width: 117
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54348d64b0b2ad8d0800000000000000
+      internalID: -2820894889160981691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_29
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 797
+        width: 220
+        height: 359
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2070135ae48ea15d0800000000000000
+      internalID: -3090902769759877374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_30
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 1147
+        width: 117
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ad098b7d8d85dff0800000000000000
+      internalID: -11947785196073562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_31
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 1148
+        width: 117
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70537a54970ea54d0800000000000000
+      internalID: -3144954578300619513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_32
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 1028
+        width: 117
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 051b6c8427effa830800000000000000
+      internalID: 4084763153849037136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_33
+      rect:
+        serializedVersion: 2
+        x: 1557
+        y: 797
+        width: 334
+        height: 359
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 541ab0f5aaf821d50800000000000000
+      internalID: 6706580757009899845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_34
+      rect:
+        serializedVersion: 2
+        x: 1637
+        y: 1147
+        width: 117
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61243e8adb8967710800000000000000
+      internalID: 1690706650473906710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_35
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 1147
+        width: 117
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 004d7306af410c3e0800000000000000
+      internalID: -2035603965982813184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_36
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 798
+        width: 220
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11d643ac76fee6190800000000000000
+      internalID: -7967167461718725359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_37
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 800
+        width: 220
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08deec136a7955c60800000000000000
+      internalID: 7806312269172632960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_38
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 798
+        width: 220
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b58e698dd1feb8180800000000000000
+      internalID: -9111926509587208101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_39
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 797
+        width: 220
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e51c20eca5ae6070800000000000000
+      internalID: 8101594941600044518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_40
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 798
+        width: 220
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4e901a7a16773c30800000000000000
+      internalID: 4339066622083898959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_41
+      rect:
+        serializedVersion: 2
+        x: 1557
+        y: 674
+        width: 117
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69d53b4f04e656990800000000000000
+      internalID: -7393381987996443242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_42
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 663
+        width: 218
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dd3aecc79618f510800000000000000
+      internalID: 1583040110254505430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_43
+      rect:
+        serializedVersion: 2
+        x: 1774
+        y: 787
+        width: 117
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 637773c0bde761e90800000000000000
+      internalID: -7055312286961404106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_44
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 730
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 445e0334ef323b170800000000000000
+      internalID: 8192931722073007428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_45
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 560
+        width: 220
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a333f943c6b2e650800000000000000
+      internalID: 6260767381873963943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_46
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 322
+        width: 222
+        height: 473
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52858578bba513e70800000000000000
+      internalID: 9093148884113840165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_47
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 321
+        width: 440
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2449360db0877ab50800000000000000
+      internalID: 6604379370698282050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_48
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 558
+        width: 220
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aff7711e458e9dec0800000000000000
+      internalID: -3541544180698873862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_49
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 15
+        width: 220
+        height: 781
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1010c30ecdfc286c0800000000000000
+      internalID: -4142520159665651455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_50
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 438
+        width: 563
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e28e7799b62a26430800000000000000
+      internalID: 3774758020709869614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_51
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 322
+        width: 220
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8256e3453826e1ef0800000000000000
+      internalID: -135562622580923096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_52
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 15
+        width: 220
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efb8050d9a7fbc520800000000000000
+      internalID: 2723542708392070142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_53
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 375
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9f0a4c5480c91c10800000000000000
+      internalID: 2024861182196322206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_54
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 375
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b1683f1eba593860800000000000000
+      internalID: 7510133626231087540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_55
+      rect:
+        serializedVersion: 2
+        x: 1452
+        y: 375
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b31e8398997de6ed0800000000000000
+      internalID: -2418758895419203269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_56
+      rect:
+        serializedVersion: 2
+        x: 1508
+        y: 375
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f85ef125c493c32e0800000000000000
+      internalID: -2144776322577078897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_57
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 375
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a32d05c10d3307f0800000000000000
+      internalID: -647606843600985180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_58
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 375
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8740954705d8f7df0800000000000000
+      internalID: -180270083382639496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_59
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 375
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a73d7e097e920fa50800000000000000
+      internalID: 6552783532369367930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_60
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 375
+        width: 47
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ce3c15d45e2083e0800000000000000
+      internalID: -2053590488193417530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_61
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 399
+        width: 122
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44f4603058bc91d50800000000000000
+      internalID: 6708616892086898500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_62
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 9
+        width: 223
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faa3de5f4dfc6dd10800000000000000
+      internalID: 2150134385681971887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_63
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 9
+        width: 220
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82c8741756e570e00800000000000000
+      internalID: 1010880431153187880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_64
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 11
+        width: 220
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 634108e6f00dbdfe0800000000000000
+      internalID: -1163107314048166858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_65
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 11
+        width: 220
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e399f0fe4c5bbfbd0800000000000000
+      internalID: -2595280902819964610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_66
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 319
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4db388a0bbb82c310800000000000000
+      internalID: 1423854067654343636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_67
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 319
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beddd1aaa8c3a1e20800000000000000
+      internalID: 3322034241396399595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_68
+      rect:
+        serializedVersion: 2
+        x: 1452
+        y: 319
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5602f88d8220d2f80800000000000000
+      internalID: -8129839377878671259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_69
+      rect:
+        serializedVersion: 2
+        x: 1508
+        y: 319
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b28fc7fa71c51710800000000000000
+      internalID: 1663448371271008950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_70
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 319
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77300229821bbc1e0800000000000000
+      internalID: -2176451207095123081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_71
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 319
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 533e81d73a5bd6930800000000000000
+      internalID: 4138163346406433589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_72
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 319
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a237ec29b8f5f1ab0800000000000000
+      internalID: -5035200805308828886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_73
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 319
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a89d83a5a0177a70800000000000000
+      internalID: 8824540298455390372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_74
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 235
+        width: 122
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3990f19ee3f1b3c80800000000000000
+      internalID: -8342039529714153069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_75
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 15
+        width: 220
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36a7cdab0e7d84c60800000000000000
+      internalID: 7802723714627041891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_76
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 15
+        width: 220
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f649957ba1194a6a0800000000000000
+      internalID: -6438862023301688209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_77
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 135
+        width: 122
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbb6dd2fb78752930800000000000000
+      internalID: 4117829908051094459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_78
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 9
+        width: 82
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 103cfa5e22b879790800000000000000
+      internalID: -7523391670500474111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_79
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 11
+        width: 91
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be347c95d5a1fcba0800000000000000
+      internalID: -6066601184804256789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_80
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 11
+        width: 91
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66ce84415a7eee640800000000000000
+      internalID: 5111277323308035174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_81
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 15
+        width: 67
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92f806b621ceb2a20800000000000000
+      internalID: 3038781937446588201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_82
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 15
+        width: 67
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae78a569591ab2330800000000000000
+      internalID: 3687218383777597418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Blessing_83
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 3
+        width: 122
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6786204a8d4c05cb0800000000000000
+      internalID: -4877181961698645898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_0: 2845962318401095305
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_1: 7761609823073472683
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_10: 3615256335930868904
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_11: -7691593959374448520
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_12: -7657820199263294281
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_13: 3753344889116174441
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_14: -5888731877111887123
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_15: 4022920855905980170
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_16: -5641439327184938463
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_17: -3921598124631401525
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_18: 6205267535863412602
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_19: -788947570152770606
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_2: -2343948522074835844
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_20: 7626909573810717486
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_21: 8857247829699461943
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_22: 3808176157170737362
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_23: -3071557922508089612
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_24: -1483935445619760459
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_25: -3528217073528653376
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_26: -3977092757894579735
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_27: 719962924088416581
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_28: -2820894889160981691
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_29: -3090902769759877374
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_3: 8726966384747274765
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_30: -11947785196073562
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_31: -3144954578300619513
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_32: 4084763153849037136
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_33: 6706580757009899845
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_34: 1690706650473906710
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_35: -2035603965982813184
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_36: -7967167461718725359
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_37: 7806312269172632960
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_38: -9111926509587208101
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_39: 8101594941600044518
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_4: 5834266651506766143
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_40: 4339066622083898959
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_41: -7393381987996443242
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_42: 1583040110254505430
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_43: -7055312286961404106
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_44: 8192931722073007428
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_45: 6260767381873963943
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_46: 9093148884113840165
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_47: 6604379370698282050
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_48: -3541544180698873862
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_49: -4142520159665651455
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_5: -7196343749783547121
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_50: 3774758020709869614
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_51: -135562622580923096
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_52: 2723542708392070142
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_53: 2024861182196322206
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_54: 7510133626231087540
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_55: -2418758895419203269
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_56: -2144776322577078897
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_57: -647606843600985180
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_58: -180270083382639496
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_59: 6552783532369367930
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_6: 3470234892817481696
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_60: -2053590488193417530
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_61: 6708616892086898500
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_62: 2150134385681971887
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_63: 1010880431153187880
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_64: -1163107314048166858
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_65: -2595280902819964610
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_66: 1423854067654343636
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_67: 3322034241396399595
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_68: -8129839377878671259
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_69: 1663448371271008950
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_7: 4558668245029643500
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_70: -2176451207095123081
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_71: 4138163346406433589
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_72: -5035200805308828886
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_73: 8824540298455390372
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_74: -8342039529714153069
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_75: 7802723714627041891
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_76: -6438862023301688209
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_77: 4117829908051094459
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_78: -7523391670500474111
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_79: -6066601184804256789
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_8: 2682013124647778614
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_80: 5111277323308035174
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_81: 3038781937446588201
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_82: 3687218383777597418
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_83: -4877181961698645898
+      Mobile - Fire Emblem_ Heroes - UI - Blessing_9: 8240103856304072938
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
