@@ -1,7 +1,10 @@
 ﻿{
   "id": "item_energy",
-  "nameKey": "item_energy_name",
+  "nameKey": "Energy Gem",
   "itemType": "consumable",
+  "iconPath": "Items/item_energy",
+  "effectType": "restore_energy",
+  "effectAmount": 50,
   "usableOutsideCombat": true,
   "stackable": true,
   "maxStack": 99,

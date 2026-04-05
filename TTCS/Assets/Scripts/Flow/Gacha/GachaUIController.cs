@@ -9,6 +9,9 @@ using TTCS.Meta;
 using TTCS.Meta.Gacha;
 using UnityEngine;
 using UnityEngine.UI;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
 
 namespace TTCS.Flow.Gacha
 {
@@ -111,7 +114,7 @@ namespace TTCS.Flow.Gacha
 				return;
 			}
 
-			if (Input.GetMouseButtonDown(0))
+			if (IsAdvanceResultInputPressed())
 			{
 				if (_consumeFirstResultTap)
 				{
@@ -121,6 +124,17 @@ namespace TTCS.Flow.Gacha
 
 				OnResultNextByTap();
 			}
+		}
+
+		private static bool IsAdvanceResultInputPressed()
+		{
+#if ENABLE_INPUT_SYSTEM
+			var mousePressed = Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame;
+			var touchPressed = Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame;
+			return mousePressed || touchPressed;
+#else
+			return Input.GetMouseButtonDown(0);
+#endif
 		}
 
 		private void BuildBannerList()
@@ -165,10 +179,13 @@ namespace TTCS.Flow.Gacha
 			{
 				var pool = _pools[i];
 				var item = Instantiate(_bannerItemPrefab, _bannerListRoot);
-				item.Bind(pool.id, string.IsNullOrWhiteSpace(pool.nameKey) ? pool.id : pool.nameKey, OnBannerSelected);
+				var bannerSprite = LoadBannerSprite(pool.bannerBackgroundPath);
+				item.Bind(pool.id, bannerSprite, OnBannerSelected);
 				item.SetSelected(i == 0);
 				_spawnedBannerItems.Add(item);
 			}
+
+			OnBannerSelected(_selectedPoolId);
 		}
 
 		private void ClearBannerItems()
@@ -349,6 +366,21 @@ namespace TTCS.Flow.Gacha
 				if (!string.IsNullOrWhiteSpace(portraitPath))
 				{
 					var sprite = _dataManager?.LoadCharacterPortraitSprite(portraitPath);
+					if (sprite != null)
+					{
+						_resultPortrait.sprite = sprite;
+						_resultPortrait.color = Color.white;
+					}
+				}
+				return;
+			}
+
+			if (string.Equals(reward.RewardType, "item", StringComparison.OrdinalIgnoreCase))
+			{
+				var item = _dataManager?.LoadItem(reward.RewardId);
+				if (!string.IsNullOrWhiteSpace(item?.iconPath))
+				{
+					var sprite = Resources.Load<Sprite>(item.iconPath);
 					if (sprite != null)
 					{
 						_resultPortrait.sprite = sprite;

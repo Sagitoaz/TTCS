@@ -1,7 +1,10 @@
 ﻿{
   "id": "item_potion",
-  "nameKey": "item_potion_name",
+  "nameKey": "Health Gem",
   "itemType": "consumable",
+  "iconPath": "Items/item_potion",
+  "effectType": "heal_hp",
+  "effectAmount": 100,
   "usableOutsideCombat": true,
   "stackable": true,
   "maxStack": 99,

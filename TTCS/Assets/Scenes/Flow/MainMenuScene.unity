@@ -1131,7 +1131,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4384727238251595521, guid: a0281af34666d60438e10492cb74b740, type: 3}
+  m_Sprite: {fileID: 322518732, guid: a0281af34666d60438e10492cb74b740, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1328,7 +1328,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4384727238251595521, guid: a0281af34666d60438e10492cb74b740, type: 3}
+  m_Sprite: {fileID: 322518732, guid: a0281af34666d60438e10492cb74b740, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2293,6 +2293,7 @@ MonoBehaviour:
   _gachaButton: {fileID: 38338465}
   _inventoryButton: {fileID: 804494268}
   _settingsButton: {fileID: 148516797}
+  _goldText: {fileID: 0}
 --- !u!4 &1495680487
 Transform:
   m_ObjectHideFlags: 0
@@ -2365,7 +2366,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4384727238251595521, guid: a0281af34666d60438e10492cb74b740, type: 3}
+  m_Sprite: {fileID: 322518732, guid: a0281af34666d60438e10492cb74b740, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2515,7 +2516,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4384727238251595521, guid: a0281af34666d60438e10492cb74b740, type: 3}
+  m_Sprite: {fileID: 322518732, guid: a0281af34666d60438e10492cb74b740, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

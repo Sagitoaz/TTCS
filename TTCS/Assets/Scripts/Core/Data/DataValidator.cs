@@ -194,6 +194,13 @@ namespace TTCS.Core.Data
                 DebugLogger.LogWarning($"[DataValidator] Item '{data.id}' has invalid maxStack", DebugLogger.LogCategory.Data);
                 return false;
             }
+            
+            if (string.Equals(data.itemType, "consumable",System.StringComparison.OrdinalIgnoreCase)
+                && data.effectAmount <= 0
+                && data.healAmount <= 0)
+            {
+                DebugLogger.LogWarning($"[DataValidator] Consumable item '{data.id}' has no effectAmount/healAmount", DebugLogger.LogCategory.Data);
+            }
 
             return true;
         }

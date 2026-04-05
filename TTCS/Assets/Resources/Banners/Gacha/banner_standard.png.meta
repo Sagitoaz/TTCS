@@ -1,58 +1,10 @@
 fileFormatVersion: 2
-guid: fbd2af0852f1a6a49a277eafacdbe65b
+guid: 341f3d73814580d48b264ccbdac8a9ae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4751811320053272354
-    second: baldr_portrait_0
-  - first:
-      213: 3357600716748473265
-    second: baldr_portrait_1
-  - first:
-      213: 3285678241673147092
-    second: baldr_portrait_2
-  - first:
-      213: 6243800193331461977
-    second: baldr_portrait_3
-  - first:
-      213: 8050627264922727940
-    second: baldr_portrait_4
-  - first:
-      213: -2671767471517171789
-    second: baldr_portrait_5
-  - first:
-      213: -4805930719795216972
-    second: baldr_portrait_6
-  - first:
-      213: -2392762732414142355
-    second: baldr_portrait_7
-  - first:
-      213: -4948557197014973261
-    second: baldr_portrait_8
-  - first:
-      213: -1679583826957321920
-    second: baldr_portrait_9
-  - first:
-      213: 3866757205863551883
-    second: baldr_portrait_10
-  - first:
-      213: -2284166142534486534
-    second: baldr_portrait_11
-  - first:
-      213: 7913394013344163146
-    second: baldr_portrait_12
-  - first:
-      213: 4329450360788146623
-    second: baldr_portrait_13
-  - first:
-      213: -8551849951201765279
-    second: baldr_portrait_14
-  - first:
-      213: 5216669466162485631
-    second: baldr_portrait_15
-  - first:
-      213: 2658497784333568375
-    second: baldr_portrait_16
+      213: 3788580342138638891
+    second: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -200,375 +152,331 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: baldr_portrait_0
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 4439
+        width: 1576
+        height: 1080
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2293389fbdb39430800000000000000
+      internalID: 3788580342138638891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_1
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 4441
+        width: 1579
+        height: 1075
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ad00121d6c04c498eba0e0ccc85a11
+      internalID: 1173181283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_2
+      rect:
+        serializedVersion: 2
+        x: 3214
+        y: 4425
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12197fff779b7dd46af4e56338102577
+      internalID: 1296298535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 3839
-        width: 1316
-        height: 1921
+        y: 3319
+        width: 1607
+        height: 1106
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ed07b84d7cc2e0eb0800000000000000
-      internalID: -4751811320053272354
+      spriteID: 5cb91e50038cfa84bad94e59024d1b44
+      internalID: -1469111554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: baldr_portrait_1
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_4
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 3319
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b34d51f5fea99b47b89088b3e65d179
+      internalID: 1647120645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_5
+      rect:
+        serializedVersion: 2
+        x: 3214
+        y: 3319
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c630dc161e5299e4e872462b277846a4
+      internalID: -1302296711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 1919
-        width: 1316
-        height: 1922
+        y: 2213
+        width: 1607
+        height: 1106
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1b3c3630018989e20800000000000000
-      internalID: 3357600716748473265
+      spriteID: 3b13d3cbfbdef984ab5b4e9fa86c459d
+      internalID: 664768128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: baldr_portrait_2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_7
       rect:
         serializedVersion: 2
-        x: 1599
-        y: 3839
-        width: 1317
-        height: 1921
+        x: 1607
+        y: 2213
+        width: 1607
+        height: 1106
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4d27829d3f2199d20800000000000000
-      internalID: 3285678241673147092
+      spriteID: 478cfe79c1534be43b665464bf5f94e0
+      internalID: -1546418348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: baldr_portrait_3
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_8
       rect:
         serializedVersion: 2
-        x: 1599
-        y: 0
-        width: 3370
-        height: 3841
+        x: 3214
+        y: 2213
+        width: 1607
+        height: 1106
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 95f790cd13f66a650800000000000000
-      internalID: 6243800193331461977
+      spriteID: 55625fc5b5d446747bff6221bf960bb4
+      internalID: 147159114
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: baldr_portrait_4
-      rect:
-        serializedVersion: 2
-        x: 3199
-        y: 3839
-        width: 1317
-        height: 1921
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4063bc8e7d299bf60800000000000000
-      internalID: 8050627264922727940
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baldr_portrait_5
-      rect:
-        serializedVersion: 2
-        x: 4799
-        y: 3839
-        width: 1317
-        height: 1921
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3bf76c9e3a9fbead0800000000000000
-      internalID: -2671767471517171789
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baldr_portrait_6
-      rect:
-        serializedVersion: 2
-        x: 4799
-        y: 1919
-        width: 1317
-        height: 1922
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4bdf7772977ed4db0800000000000000
-      internalID: -4805930719795216972
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baldr_portrait_7
-      rect:
-        serializedVersion: 2
-        x: 6399
-        y: 3839
-        width: 1317
-        height: 1921
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d6879a6e8f23bced0800000000000000
-      internalID: -2392762732414142355
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baldr_portrait_8
-      rect:
-        serializedVersion: 2
-        x: 6399
-        y: 1161
-        width: 1317
-        height: 2680
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3b44839a271335bb0800000000000000
-      internalID: -4948557197014973261
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baldr_portrait_9
-      rect:
-        serializedVersion: 2
-        x: 7999
-        y: 3839
-        width: 1317
-        height: 1921
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 049b7bf786be0b8e0800000000000000
-      internalID: -1679583826957321920
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baldr_portrait_10
-      rect:
-        serializedVersion: 2
-        x: 7999
-        y: 1919
-        width: 1317
-        height: 1922
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b83dd28113b79a530800000000000000
-      internalID: 3866757205863551883
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baldr_portrait_11
-      rect:
-        serializedVersion: 2
-        x: 9599
-        y: 3839
-        width: 1317
-        height: 1921
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: af5f142def20d40e0800000000000000
-      internalID: -2284166142534486534
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baldr_portrait_12
-      rect:
-        serializedVersion: 2
-        x: 9599
-        y: 1919
-        width: 1317
-        height: 1922
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a45e41d9de502dd60800000000000000
-      internalID: 7913394013344163146
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baldr_portrait_13
-      rect:
-        serializedVersion: 2
-        x: 11199
-        y: 3839
-        width: 1317
-        height: 1921
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fb9d67b2a2c451c30800000000000000
-      internalID: 4329450360788146623
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baldr_portrait_14
-      rect:
-        serializedVersion: 2
-        x: 11199
-        y: 1919
-        width: 1317
-        height: 1922
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1685d2e67c9b15980800000000000000
-      internalID: -8551849951201765279
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baldr_portrait_15
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_9
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1316
-        height: 1921
+        y: 1107
+        width: 1607
+        height: 1106
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f79dd398d35556840800000000000000
-      internalID: 5216669466162485631
+      spriteID: 5d2540d12b3917b46835d5f37d523a1c
+      internalID: 793040346
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: baldr_portrait_16
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_10
       rect:
         serializedVersion: 2
-        x: 5203
-        y: 19
-        width: 1450
-        height: 1902
+        x: 1607
+        y: 1107
+        width: 1607
+        height: 1106
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7798d5746a1e4e420800000000000000
-      internalID: 2658497784333568375
+      spriteID: d8482eeada7f5204dbc72a2a7a965356
+      internalID: 919361234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_11
+      rect:
+        serializedVersion: 2
+        x: 3214
+        y: 1107
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1196af4a16d66845b09618d866e6325
+      internalID: -1362818100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a0b509721978e24ebb59f7808681857
+      internalID: 509119829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_13
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 1
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a601fd2266214244a9371ffb8b3822ec
+      internalID: -1785156754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_14
+      rect:
+        serializedVersion: 2
+        x: 3214
+        y: 1
+        width: 1607
+        height: 1106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab2526ad9da4d474db7d093eaf689a0e
+      internalID: 254586512
       vertices: []
       indices: 
       edges: []
@@ -577,7 +485,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: e2b6b8c65b6e51d4d8fc2371c132e835
     internalID: 0
     vertices: []
     indices: 
@@ -585,25 +493,25 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1607.0,"y":1106.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      baldr_portrait_0: -4751811320053272354
-      baldr_portrait_1: 3357600716748473265
-      baldr_portrait_10: 3866757205863551883
-      baldr_portrait_11: -2284166142534486534
-      baldr_portrait_12: 7913394013344163146
-      baldr_portrait_13: 4329450360788146623
-      baldr_portrait_14: -8551849951201765279
-      baldr_portrait_15: 5216669466162485631
-      baldr_portrait_16: 2658497784333568375
-      baldr_portrait_2: 3285678241673147092
-      baldr_portrait_3: 6243800193331461977
-      baldr_portrait_4: 8050627264922727940
-      baldr_portrait_5: -2671767471517171789
-      baldr_portrait_6: -4805930719795216972
-      baldr_portrait_7: -2392762732414142355
-      baldr_portrait_8: -4948557197014973261
-      baldr_portrait_9: -1679583826957321920
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_0: 3788580342138638891
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_1: 1173181283
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_10: 919361234
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_11: -1362818100
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_12: 509119829
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_13: -1785156754
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_14: 254586512
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_2: 1296298535
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_3: -1469111554
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_4: 1647120645
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_5: -1302296711
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_6: 664768128
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_7: -1546418348
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_8: 147159114
+      Mobile - Fire Emblem_ Heroes - Miscellaneous - Summoning Banners_9: 793040346
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

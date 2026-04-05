@@ -1,5 +1,4 @@
 using System;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,37 +7,44 @@ namespace TTCS.Flow.Gacha
     public class GachaBannerListItemView : MonoBehaviour
     {
         [SerializeField] private Button _button;
-        [SerializeField] private TextMeshProUGUI _titleText;
-        [SerializeField] private Image _selectedBg;
+        [SerializeField] private Image _bannerImage;
+        [SerializeField] private GameObject _normalStateObject;
+
+        private Vector3 _baseScale;
 
         private string _poolId;
         private Action<string> _onClick;
 
         private void Awake()
         {
+            _baseScale = transform.localScale;
+
             if (_button != null)
             {
                 _button.onClick.AddListener(OnClicked);
             }
         }
 
-        public void Bind(string poolId, string title, Action<string> onClick)
+        public void Bind(string poolId, Sprite bannerSprite, Action<string> onClick)
         {
             _poolId = poolId;
             _onClick = onClick;
 
-            if (_titleText != null)
+            if (_bannerImage != null)
             {
-                _titleText.text = string.IsNullOrWhiteSpace(title) ? poolId : title;
+                _bannerImage.sprite = bannerSprite;
+                _bannerImage.color = bannerSprite == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
             }
         }
 
         public void SetSelected(bool selected)
         {
-            if (_selectedBg != null)
+            if (_normalStateObject != null)
             {
-                _selectedBg.gameObject.SetActive(selected);
+                _normalStateObject.SetActive(!selected);
             }
+
+            transform.localScale = selected ? _baseScale * 1.2f : _baseScale;
         }
 
         private void OnClicked()
