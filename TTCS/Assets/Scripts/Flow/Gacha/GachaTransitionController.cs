@@ -61,7 +61,7 @@ namespace TTCS.Flow.Gacha
         {
             shakePositionStrength = 18f,
             shakeRotationStrength = 8f,
-            zoomScale = 18f,
+            zoomScale = 1.18f,
             flashPeakAlpha = 1f,
             itemFlashPeakAlpha = 0.8f,
             anticipationMultiplier = 1.1f,
@@ -72,7 +72,7 @@ namespace TTCS.Flow.Gacha
         {
             shakePositionStrength = 14f,
             shakeRotationStrength = 6f,
-            zoomScale = 16f,
+            zoomScale = 1.14f,
             flashPeakAlpha = 0.9f,
             itemFlashPeakAlpha = 0.65f,
             anticipationMultiplier = 1f,
@@ -83,7 +83,7 @@ namespace TTCS.Flow.Gacha
         {
             shakePositionStrength = 10f,
             shakeRotationStrength = 4f,
-            zoomScale = 14f,
+            zoomScale = 1.1f,
             flashPeakAlpha = 0.75f,
             itemFlashPeakAlpha = 0.5f,
             anticipationMultiplier = 0.9f,
