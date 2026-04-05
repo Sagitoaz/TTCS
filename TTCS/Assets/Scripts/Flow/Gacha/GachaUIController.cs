@@ -47,9 +47,11 @@ namespace TTCS.Flow.Gacha
 		[SerializeField] private Image _resultRoleIcon;
 		[SerializeField] private Image _resultElementIcon;
 		[SerializeField] private Button _resultCloseButton;
+		[SerializeField] private RectTransform _resultCardRoot;
 		[SerializeField] private RectTransform _rarityStarRoot;
 		[SerializeField] private Image _rarityStarPrefab;
 		[SerializeField] private float _rarityStarRevealInterval = 0.08f;
+		[SerializeField] private GachaTransitionController _transitionController;
 		
 
 		private IGachaService _gachaService;
@@ -61,8 +63,11 @@ namespace TTCS.Flow.Gacha
 		private GachaRollResult _activeRollResult;
 		private int _activeResultIndex;
 		private bool _consumeFirstResultTap;
+		private bool _isResultItemTransitionPlaying;
 		private Coroutine _rarityStarRoutine;
 		private readonly List<GameObject> _spawnedRarityStars = new List<GameObject>();
+		private GachaRollResult _pendingRollResult;
+		private int _pendingRollCount;
 
 		private void Start()
 		{
@@ -72,9 +77,15 @@ namespace TTCS.Flow.Gacha
 			_saveManager?.EnsureCurrentSave(0);
 
 			WireButtons();
+			WireTransitionController();
 			BuildBannerList();
 			RefreshPoolInfo();
 			SetResultPanelVisible(false);
+		}
+
+		private void OnDestroy()
+		{
+			UnwireTransitionController();
 		}
 
 		private void WireButtons()
@@ -99,7 +110,30 @@ namespace TTCS.Flow.Gacha
 				_resultCloseButton.onClick.AddListener(OnResultCloseClicked);
 			}
 
-		
+		}
+
+		private void WireTransitionController()
+		{
+			if (_transitionController == null)
+			{
+				Debug.LogWarning("[GachaUI] TransitionController is not assigned. Roll/result will work but no transition effect.");
+				return;
+			}
+
+			_transitionController.OnSwapToResult += HandleSwapToResultScreen;
+			_transitionController.OnResultItemSwap += HandleResultItemSwap;
+			Debug.Log("[GachaUI] TransitionController wired successfully.");
+		}
+
+		private void UnwireTransitionController()
+		{
+			if (_transitionController == null)
+			{
+				return;
+			}
+
+			_transitionController.OnSwapToResult -= HandleSwapToResultScreen;
+			_transitionController.OnResultItemSwap -= HandleResultItemSwap;
 		}
 
 		private void Update()
@@ -109,7 +143,12 @@ namespace TTCS.Flow.Gacha
 				return;
 			}
 
-			if (_activeRollResult == null || _activeRollResult.Rewards == null || _activeRollResult.Rewards.Count <= 1)
+			if (_activeRollResult == null || _activeRollResult.Rewards == null || _activeRollResult.Rewards.Count == 0)
+			{
+				return;
+			}
+
+			if (_isResultItemTransitionPlaying)
 			{
 				return;
 			}
@@ -225,8 +264,90 @@ namespace TTCS.Flow.Gacha
 			var result = _gachaService.Roll(_selectedPoolId, count);
 			_gachaService.ApplyRollResult(result);
 
-			ShowRollResult(result, count);
+			if (_transitionController != null)
+			{
+				_pendingRollResult = result;
+				_pendingRollCount = count;
+				SetResultPanelVisible(false);
+
+				var rarityColor = ResolveRarityColorFromResult(result);
+				var rarityTag = ResolveRarityTagFromResult(result);
+				_transitionController.PlayGachaAnimation(rarityColor, rarityTag);
+			}
+			else
+			{
+				ShowRollResult(result, count);
+			}
+
 			RefreshPoolInfo();
+		}
+
+		private Color ResolveRarityColorFromResult(GachaRollResult result)
+		{
+			if (result?.Rewards == null || result.Rewards.Count == 0)
+			{
+				return Color.white;
+			}
+
+			var reward = result.Rewards[0];
+			var character = string.Equals(reward.RewardType, "character", StringComparison.OrdinalIgnoreCase)
+				? _dataManager?.LoadCharacter(reward.RewardId)
+				: null;
+			var rarity = character?.metadata?.rarity ?? (reward.IsRare ? "SSR" : "R");
+
+			if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
+			{
+				return HexToColor("#FFD700");
+			}
+
+			if (string.Equals(rarity, "SR", StringComparison.OrdinalIgnoreCase))
+			{
+				return HexToColor("#FF007F");
+			}
+
+			if (string.Equals(rarity, "R", StringComparison.OrdinalIgnoreCase))
+			{
+				return HexToColor("#00F0FF");
+			}
+
+			return Color.white;
+		}
+
+		private string ResolveRarityTagFromResult(GachaRollResult result)
+		{
+			if (result?.Rewards == null || result.Rewards.Count == 0)
+			{
+				return "R";
+			}
+
+			return ResolveRarityTagFromReward(result.Rewards[0]);
+		}
+
+		private void HandleSwapToResultScreen()
+		{
+			if (_pendingRollResult == null)
+			{
+				return;
+			}
+
+			ShowRollResult(_pendingRollResult, _pendingRollCount);
+			_pendingRollResult = null;
+			_pendingRollCount = 0;
+		}
+
+		private void HandleResultItemSwap()
+		{
+			_isResultItemTransitionPlaying = false;
+			if (_activeRollResult == null || _activeRollResult.Rewards == null)
+			{
+				return;
+			}
+
+			if (_activeResultIndex < _activeRollResult.Rewards.Count - 1)
+			{
+				_activeResultIndex++;
+				UpdateResultView();
+			}
 		}
 
 		private bool IsRollAllowed(int count)
@@ -330,6 +451,17 @@ namespace TTCS.Flow.Gacha
 				_resultRarityText.text = rarity;
 				ApplyResultRarityStyle(rarity);
 				StartRarityStarReveal(rarity);
+
+				if (_transitionController != null)
+				{
+					_transitionController.PlayResultCardEntrance(_resultCardRoot, rarity);
+					
+					// Play SSR seal effect for every SSR result
+					if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
+					{
+						_transitionController.PlaySsrSealEffectDirect();
+					}
+				}
 			}
 
 			var roleTag = character?.metadata?.roleTag ?? "-";
@@ -397,11 +529,87 @@ namespace TTCS.Flow.Gacha
 				return;
 			}
 
+			if (_activeResultIndex >= _activeRollResult.Rewards.Count - 1)
+			{
+				if (_transitionController != null)
+				{
+					_transitionController.ReturnToBannerScreen();
+				}
+
+				OnResultCloseClicked();
+				return;
+			}
+
+			if (_transitionController != null)
+			{
+				_isResultItemTransitionPlaying = true;
+				var nextReward = _activeRollResult.Rewards[_activeResultIndex + 1];
+				var rarityColor = ResolveRarityColorFromReward(nextReward);
+				var rarityTag = ResolveRarityTagFromReward(nextReward);
+				_transitionController.PlayResultItemTransition(rarityColor, rarityTag);
+				return;
+			}
+
 			if (_activeResultIndex < _activeRollResult.Rewards.Count - 1)
 			{
 				_activeResultIndex++;
 				UpdateResultView();
 			}
+		}
+
+		private Color ResolveRarityColorFromReward(GachaRollReward reward)
+		{
+			if (reward == null)
+			{
+				return Color.white;
+			}
+
+			var character = string.Equals(reward.RewardType, "character", StringComparison.OrdinalIgnoreCase)
+				? _dataManager?.LoadCharacter(reward.RewardId)
+				: null;
+			var rarity = character?.metadata?.rarity ?? (reward.IsRare ? "SSR" : "R");
+
+			if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
+			{
+				return HexToColor("#FFD700");
+			}
+
+			if (string.Equals(rarity, "SR", StringComparison.OrdinalIgnoreCase))
+			{
+				return HexToColor("#FF007F");
+			}
+
+			if (string.Equals(rarity, "R", StringComparison.OrdinalIgnoreCase))
+			{
+				return HexToColor("#00F0FF");
+			}
+
+			return Color.white;
+		}
+
+		private string ResolveRarityTagFromReward(GachaRollReward reward)
+		{
+			if (reward == null)
+			{
+				return "R";
+			}
+
+			var character = string.Equals(reward.RewardType, "character", StringComparison.OrdinalIgnoreCase)
+				? _dataManager?.LoadCharacter(reward.RewardId)
+				: null;
+			var rarity = character?.metadata?.rarity ?? (reward.IsRare ? "SSR" : "R");
+
+			if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
+			{
+				return "SSR";
+			}
+
+			if (string.Equals(rarity, "SR", StringComparison.OrdinalIgnoreCase))
+			{
+				return "SR";
+			}
+
+			return "R";
 		}
 
 		private void OnResultCloseClicked()
@@ -417,6 +625,16 @@ namespace TTCS.Flow.Gacha
 			_activeRollResult = null;
 			_activeResultIndex = 0;
 			_consumeFirstResultTap = false;
+			_isResultItemTransitionPlaying = false;
+			_pendingRollResult = null;
+			_pendingRollCount = 0;
+			
+			// Return to banner screen before hiding result panel
+			if (_transitionController != null)
+			{
+				_transitionController.ReturnToBannerScreen();
+			}
+			
 			SetResultPanelVisible(false);
 		}
 

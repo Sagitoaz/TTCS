@@ -460,11 +460,12 @@ Mở hoặc tạo scene: `Assets/Scenes/GachaScene.unity`
 GachaScene
 ├── GachaManager (Empty GameObject)
 │   └── (Add: GachaUIController component)
+├── GachaTransitionRoot (Empty GameObject)
+│   └── (Add: GachaTransitionController component)
 └── Canvas (Canvas)
     ├── GachaPanel
     │   ├── TopBar
     │   │   ├── BackButton
-    │   │   ├── PoolNameText
     │   │   └── GoldText
     │   ├── BannerListPanel (left)
     │   │   └── BannerListRoot (VerticalLayoutGroup)
@@ -480,11 +481,14 @@ GachaScene
         ├── ResultPortrait
         ├── ResultNameText
         ├── ResultRarityText
-        ├── ResultRoleText
-        ├── ResultElementText
-        ├── ResultExtraText
-        ├── ResultNextButton (arrow right)
+        ├── ResultRoleIcon
+        ├── ResultElementIcon
+        ├── RarityStarRoot (GridLayoutGroup)
+        │   └── RarityStarPrefab (Image)
         └── ResultCloseButton
+    ├── BannerScreen (toàn bộ UI banner trước khi swap)
+    ├── ResultScreen (container chứa ResultPanel)
+    └── FlashOverlay (Image full-screen, alpha=0, layer cao nhất)
 ```
 
 ### 3.2.2 Setup Components
@@ -529,13 +533,21 @@ GachaScene
    - Background: Semi-transparent black
    - Children:
       - **ResultPortrait** (Image, 300x400)
-      - **ResultNameText** (TextMeshProUGUI, size 400x80)
-        - **ResultRarityText** (TextMeshProUGUI, size 300x60)
-        - **ResultRoleText** (TextMeshProUGUI, size 300x50)
-        - **ResultElementText** (TextMeshProUGUI, size 300x50)
-      - **ResultExtraText** (TextMeshProUGUI, size 600x50)
-        - **ResultNextButton** (Button mũi tên phải)
+            - **ResultNameText** (TextMeshProUGUI, size 400x80)
+            - **ResultRarityText** (TextMeshProUGUI, size 300x60)
+            - **ResultRoleIcon** (Image)
+            - **ResultElementIcon** (Image)
+            - **RarityStarRoot** (RectTransform + GridLayoutGroup)
+                - **RarityStarPrefab** (Image prefab 1 sao)
       - **ResultCloseButton** (Button, size 200x60, text "OK")
+
+8. **Transition Overlay**:
+     - **BannerScreen**: container UI khi chưa vào result.
+     - **ResultScreen**: container UI result để swap screen.
+     - **FlashOverlay**: Image full-screen, alpha ban đầu = 0.
+    - **SsrSeal**: UI effect object (RectTransform) cho SSR đặc biệt.
+    - **SsrSealCanvasGroup**: CanvasGroup của SsrSeal để fade in/out.
+    - **ResultCardRoot**: RectTransform root của card result để animate pop-in.
 
 ### 3.3 Gán Reference vào GachaUIController
 
@@ -545,7 +557,6 @@ GachaScene
 
    **Top Bar:**
    - Back Button <- BackButton
-   - Pool Name Text <- PoolNameText
    - Gold Text <- GoldText
 
    **Banner List (Left):**
@@ -572,23 +583,54 @@ GachaScene
    - Result Portrait <- ResultPortrait
    - Result Name Text <- ResultNameText
    - Result Rarity Text <- ResultRarityText
-   - Result Role Text <- ResultRoleText
-   - Result Element Text <- ResultElementText
-   - Result Extra Text <- ResultExtraText
+    - Result Role Icon <- ResultRoleIcon
+    - Result Element Icon <- ResultElementIcon
+    - Result Card Root <- ResultCardRoot
+    - Rarity Star Root <- RarityStarRoot
+    - Rarity Star Prefab <- RarityStarPrefab
    - Result Close Button <- ResultCloseButton
-   - Result Next Button <- ResultNextButton
 
-### 3.4 Animation Setup (Optional)
+    **Transition:**
+    - Transition Controller <- GachaTransitionRoot (GachaTransitionController)
 
-Nếu muốn thêm animation khi roll button được bấm:
+4. Chọn `GachaTransitionRoot` -> `GachaTransitionController`:
+    - bannerScreen <- BannerScreen
+    - bannerImage <- BannerImage (RectTransform chính để shake/zoom)
+    - resultScreen <- ResultScreen
+    - flashImage <- FlashOverlay
 
-1. Tạo AnimationClip cho roll action (ví dụ: panel rotate, pulse, etc.)
-2. Drag clip vào trường **Roll Animation Clip** trong GachaUIController Inspector
-3. Đặt Animator component trên GachaPanel hoặc panel chứa animation
-4. Gán Animator vào trường **Roll Animator** trong Inspector
-5. Đảm bảo trigger name match với field **Roll Trigger** (mặc định: "Roll")
+    **SSR Special (optional nhưng khuyên dùng):**
+    - enableSsrSpecialEffects <- true
+    - enableSsrDoubleFlash <- true
+    - ssrSealTransform <- SsrSeal (RectTransform)
+    - ssrSealCanvasGroup <- CanvasGroup của SsrSeal
+    - sfxAudioSource <- AudioSource SFX (UI/Gacha)
+    - ssrStingerClip <- Audio clip SSR stinger
 
-Khi roll được bấm, script sẽ trigger animator với trigger name, đợi `Roll Reveal Delay` seconds, rồi hiển thị result.
+### 3.4 DOTween Transition Setup
+
+`GachaTransitionController` đã xử lý:
+
+1. Roll -> rung + zoom banner + flash -> swap sang result.
+2. Roll 10 -> click đổi item có flash transition giữa các item.
+3. Ở item cuối cùng -> click sẽ tự quay về banner panel.
+
+Chỉnh lực animation theo rarity tại `GachaTransitionController`:
+- `ssrPreset` mạnh nhất
+- `srPreset` trung bình
+- `rPreset` nhẹ nhất
+
+SSR special đã gồm:
+- Double flash signature
+- SSR seal effect (fade + scale + rotate)
+- SSR stinger audio
+- Result card entrance mạnh hơn với SSR
+
+Nếu không thấy hiệu ứng, kiểm tra Console các warning:
+- `[GachaUI] TransitionController is not assigned...`
+- `[GachaTransition] bannerImage is not assigned...`
+- `[GachaTransition] flashImage is not assigned...`
+- `[GachaTransition] ... ssrSeal ...` hoặc `sfxAudioSource/ssrStingerClip` chưa gán (nếu bật SSR special)
 
 ### 3.5 Runtime Notes (quan trọng)
 
@@ -597,7 +639,7 @@ Khi roll được bấm, script sẽ trigger animator với trigger name, đợi
 - Pity dùng chung mọi banner (`shared pity`).
 - Tiền roll dùng chung với `gold` trong save.
 - Nếu character trùng: convert sang gold theo rarity (SSR/SR/R).
-- `ResultNextButton` chỉ hiện khi còn reward tiếp theo trong roll 10.
+- Roll 10: click màn hình result để chuyển item tiếp theo; item cuối click sẽ quay về banner.
 - Pool data đặt tại `Assets/Data/Gacha/*.json`.
 
 ### 3.5 Data mẫu cho nhiều banner
