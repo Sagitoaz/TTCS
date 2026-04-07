@@ -26,6 +26,11 @@ namespace TTCS.Flow
         void OpenLevelSelect(string chapterId);
 
         /// <summary>
+        /// Opens character collection screen.
+        /// </summary>
+        void OpenCharacterCollection();
+
+        /// <summary>
         /// Enters combat with a specific level and player lineup snapshot.
         /// </summary>
         void EnterCombat(string levelId, IReadOnlyList<string> lineupSnapshot);

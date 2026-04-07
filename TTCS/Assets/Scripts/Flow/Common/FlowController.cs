@@ -24,6 +24,7 @@ namespace TTCS.Flow
         [SerializeField] private string _teamFormationSceneName = "TeamFormationScene";
         [SerializeField] private string _gachaSceneName = "GachaScene";
         [SerializeField] private string _inventorySceneName = "InventoryScene";
+        [SerializeField] private string _characterCollectionSceneName = "CharacterCollectionScene";
         [SerializeField] private string _levelSelectSceneName = "LevelSelectScene";
         [SerializeField] private string _combatSceneName = "CombatScene";
 
@@ -205,6 +206,13 @@ namespace TTCS.Flow
             Debug.Log("[Flow] Opening inventory scene");
             _flowStateManager.NavigateTo(_inventorySceneName);
             UnityEngine.SceneManagement.SceneManager.LoadScene(_inventorySceneName);
+        }
+
+        public void OpenCharacterCollection()
+        {
+            Debug.Log("[Flow] Opening character collection scene");
+            _flowStateManager.NavigateTo(_characterCollectionSceneName);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(_characterCollectionSceneName);
         }
 
         public void EnterCombat(string levelId, IReadOnlyList<string> lineupSnapshot)

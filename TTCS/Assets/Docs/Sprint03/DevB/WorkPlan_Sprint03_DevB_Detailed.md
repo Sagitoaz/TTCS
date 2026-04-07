@@ -5,6 +5,8 @@
 > **Thời gian**: 14 ngày (Giai đoạn 1: 2 ngày, Giai đoạn 2: 5 ngày, Giai đoạn 3: 5 ngày, Giai đoạn 4: 2 ngày)  
 > **Phụ thuộc từ Dev A**: Contract service (Progression/Team/Gacha/Inventory), Event definitions, Save schema migration API.
 
+> **Cập nhật tiến độ 2026-04-07**: Day 5 (Skill Icon Pipeline & Gacha UI v1) đã hoàn tất, test end-to-end pass.
+
 ---
 
 ## 🎯 Tóm tắt Trách nhiệm Dev B

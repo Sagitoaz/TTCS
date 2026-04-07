@@ -297,6 +297,8 @@ namespace TTCS.Core.Save
             data.characterExpValues ??= new System.Collections.Generic.List<int>();
             data.characterCurrentHpKeys ??= new System.Collections.Generic.List<string>();
             data.characterCurrentHpValues ??= new System.Collections.Generic.List<int>();
+            data.characterCurrentManaKeys ??= new System.Collections.Generic.List<string>();
+            data.characterCurrentManaValues ??= new System.Collections.Generic.List<int>();
             data.deployedCharacters ??= new System.Collections.Generic.List<string>();
             data.unlockedChapters ??= new System.Collections.Generic.List<string>();
             data.unlockedLevels ??= new System.Collections.Generic.List<string>();
@@ -332,6 +334,11 @@ namespace TTCS.Core.Save
                 {
                     var baseHp = Math.Max(1, character.baseStats?.hp ?? 1000);
                     data.SetCharacterCurrentHp(characterId, baseHp);
+                }
+
+                if (!data.characterCurrentManaKeys.Contains(characterId))
+                {
+                    data.SetCharacterCurrentMana(characterId, EstimateCharacterMaxMana(characterId, data.GetCharacterLevel(characterId)));
                 }
             }
 
@@ -370,6 +377,16 @@ namespace TTCS.Core.Save
                 data.SetCharacterCurrentHp("char_mage", mageHp);
             }
 
+            if (!data.characterCurrentManaKeys.Contains("char_warrior"))
+            {
+                data.SetCharacterCurrentMana("char_warrior", EstimateCharacterMaxMana("char_warrior", data.GetCharacterLevel("char_warrior")));
+            }
+
+            if (!data.characterCurrentManaKeys.Contains("char_mage"))
+            {
+                data.SetCharacterCurrentMana("char_mage", EstimateCharacterMaxMana("char_mage", data.GetCharacterLevel("char_mage")));
+            }
+
             if (data.lineup.Count == 0 && data.currentParty.Count > 0)
             {
                 data.lineup.AddRange(data.currentParty);
@@ -384,6 +401,33 @@ namespace TTCS.Core.Save
             {
                 data.unlockedChapters.Add("chapter_01");
             }
+        }
+
+        private static int EstimateCharacterMaxMana(string characterId, int level)
+        {
+            var dataManager = DataManager.Instance;
+            var character = dataManager?.LoadCharacter(characterId);
+            if (character == null)
+            {
+                return Math.Max(20, level * 5);
+            }
+
+            var maxSkillCost = 0;
+            if (character.skills != null)
+            {
+                for (var i = 0; i < character.skills.Count; i++)
+                {
+                    var skillId = character.skills[i];
+                    var skill = dataManager.LoadSkill(skillId);
+                    var manaCost = skill?.cost?.mana ?? 0;
+                    if (manaCost > maxSkillCost)
+                    {
+                        maxSkillCost = manaCost;
+                    }
+                }
+            }
+
+            return Math.Max(20, maxSkillCost * 3 + Math.Max(1, level) * 5);
         }
     }
 }

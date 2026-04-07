@@ -27,6 +27,8 @@ namespace TTCS.Core.Save
         public List<int> characterExpValues = new List<int>();
         public List<string> characterCurrentHpKeys = new List<string>();
         public List<int> characterCurrentHpValues = new List<int>();
+        public List<string> characterCurrentManaKeys = new List<string>();
+        public List<int> characterCurrentManaValues = new List<int>();
         public List<string> deployedCharacters = new List<string>();
 
         public List<string> clearedStages = new List<string>();
@@ -69,6 +71,26 @@ namespace TTCS.Core.Save
             {
                 characterCurrentHpKeys.Add(characterId);
                 characterCurrentHpValues.Add(hp);
+            }
+        }
+
+        public int GetCharacterCurrentMana(string characterId, int defaultMana)
+        {
+            int idx = characterCurrentManaKeys.IndexOf(characterId);
+            return idx >= 0 ? characterCurrentManaValues[idx] : defaultMana;
+        }
+
+        public void SetCharacterCurrentMana(string characterId, int mana)
+        {
+            int idx = characterCurrentManaKeys.IndexOf(characterId);
+            if (idx >= 0)
+            {
+                characterCurrentManaValues[idx] = mana;
+            }
+            else
+            {
+                characterCurrentManaKeys.Add(characterId);
+                characterCurrentManaValues.Add(mana);
             }
         }
 

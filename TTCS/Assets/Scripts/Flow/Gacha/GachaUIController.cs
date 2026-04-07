@@ -482,6 +482,7 @@ namespace TTCS.Flow.Gacha
 				return;
 			}
 
+			_resultPortrait.rectTransform.localScale = Vector3.one;
 			_resultPortrait.sprite = null;
 			_resultPortrait.color = new Color(1f, 1f, 1f, 0f);
 
@@ -493,6 +494,7 @@ namespace TTCS.Flow.Gacha
 			// Character reward: try to show portrait.
 			if (string.Equals(reward.RewardType, "character", StringComparison.OrdinalIgnoreCase))
 			{
+				_resultPortrait.rectTransform.localScale = Vector3.one;
 				var character = _dataManager?.LoadCharacter(reward.RewardId);
 				var portraitPath = character?.visual?.portraitPath;
 				if (!string.IsNullOrWhiteSpace(portraitPath))
@@ -509,6 +511,7 @@ namespace TTCS.Flow.Gacha
 
 			if (string.Equals(reward.RewardType, "item", StringComparison.OrdinalIgnoreCase))
 			{
+				_resultPortrait.rectTransform.localScale = Vector3.one * 0.6f;
 				var item = _dataManager?.LoadItem(reward.RewardId);
 				if (!string.IsNullOrWhiteSpace(item?.iconPath))
 				{

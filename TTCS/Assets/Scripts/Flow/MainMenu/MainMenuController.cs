@@ -15,6 +15,7 @@ namespace TTCS.Flow.MainMenu
         [SerializeField] private Button _teamButton;
         [SerializeField] private Button _gachaButton;
         [SerializeField] private Button _inventoryButton;
+        [SerializeField] private Button _characterCollectionButton;
         [SerializeField] private Button _settingsButton;
 
         [Header("Gold Display")]
@@ -50,6 +51,9 @@ namespace TTCS.Flow.MainMenu
             if (_inventoryButton != null)
                 _inventoryButton.onClick.AddListener(OnInventoryClicked);
 
+            if (_characterCollectionButton != null)
+                _characterCollectionButton.onClick.AddListener(OnCharacterCollectionClicked);
+
             if (_settingsButton != null)
                 _settingsButton.onClick.AddListener(OnSettingsClicked);
         }
@@ -76,6 +80,12 @@ namespace TTCS.Flow.MainMenu
         {
             Debug.Log("[MainMenu] Inventory button clicked");
             FlowController.Instance.OpenInventory();
+        }
+
+        private void OnCharacterCollectionClicked()
+        {
+            Debug.Log("[MainMenu] Character Collection button clicked");
+            FlowController.Instance.OpenCharacterCollection();
         }
 
         private void OnSettingsClicked()

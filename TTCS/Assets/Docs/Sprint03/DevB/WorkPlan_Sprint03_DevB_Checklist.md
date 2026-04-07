@@ -1,6 +1,6 @@
 # Sprint 3 - Daily Progress Checklist Dev B
 
-> **Ngày cập nhật lần cuối**: 2026-04-01 (Audit + update Day 1-3)  
+> **Ngày cập nhật lần cuối**: 2026-04-07 (Day 5 completed and verified)  
 > **Dev**: Dev B  
 > **Mục tiêu**: Theo dõi task hàng ngày, đánh dấu hoàn thành, lập danh sách blocker
 
@@ -98,24 +98,24 @@
 ---
 
 ### Ngày 5 - Skill Icon Pipeline & Gacha UI v1
-**Status**: ⬜ Not started / 🟡 In progress / 🟢 Done
+**Status**: ⬜ Not started / 🟡 In progress / 🟢 Done ✅
 
 **Task List**:
-- [ ] Tạo SkillIconLoader class (load + fallback)
-- [ ] Tạo skill_icon_map.json sample data
-- [ ] Tạo fallback texture (grey icon)
-- [ ] Setup Gacha scene layout + controller (GachaUIController)
-- [ ] Wire roll buttons (1x, 10x) and result panel
-- [ ] Test: Roll -> Show result with character portrait + rarity
-- [ ] Test: skill icons appear đúng trong picker + gacha
-- [ ] Verify fallback handling (missing icon path)
-- [ ] Integration test: MainMenu -> Gacha -> Roll -> Result -> Back
+- [x] Tạo SkillIconLoader class (load + fallback)
+- [x] Tạo skill_icon_map.json sample data
+- [x] Tạo fallback texture (grey icon)
+- [x] Setup Gacha scene layout + controller (GachaUIController)
+- [x] Wire roll buttons (1x, 10x) and result panel
+- [x] Test: Roll -> Show result with character portrait + rarity
+- [x] Test: skill icons appear đúng trong picker + gacha
+- [x] Verify fallback handling (missing icon path)
+- [x] Integration test: MainMenu -> Gacha -> Roll -> Result -> Back
 
 **Notes**: Setup guide chi tiết: `DevB_Day4and5_Unified_Setup_Guide.md` (Part 2: Day 5 + Part 3: Gacha Scene + Part 4: Test Checklist)
 
-**Blocker** (nếu có): _____________________________________________________
+**Blocker** (nếu có): None (resolved all Day 5 blockers)
 
-**ETA Complete**: 2026-04-03 (bắt đầu hôm nay)
+**ETA Complete**: 2026-04-07 (DONE)
 
 ---
 
@@ -123,24 +123,24 @@
 **Status**: ⬜ Not started / 🟡 In progress / 🟢 Done
 
 **Task List**:
-- [ ] Tạo Inventory scene layout + controller
-- [ ] Tạo Level Select scene layout + controller (mock data: 3 chapters x 3 levels)
-- [ ] Tạo Character Collection scene layout + controller
-- [ ] Tạo list ô vuông character card (avatar + rare badge góc phải trên)
-- [ ] Tạo search theo tên character
-- [ ] Tạo sort/filter rare asc/desc
-- [ ] Tạo sort/filter level asc/desc
-- [ ] Tạo detail panel khi click card (name, rare, level, portrait, stats, HP hiện tại, Mana hiện tại)
-- [ ] Tạo feed button tăng level character
-- [ ] Rule: mỗi lần level up thì hồi full HP + Mana
-- [ ] Test: Click level -> call EnterCombat()
-- [ ] Verify skill icon appear trong UI
+- [x] Tạo Inventory scene layout + controller
+- [x] Tạo Level Select scene layout + controller (mock data: 3 chapters x 3 levels)
+- [x] Tạo Character Collection scene layout + controller
+- [x] Tạo list ô vuông character card (avatar + rare badge góc phải trên)
+- [x] Tạo search theo tên character
+- [x] Tạo sort/filter rare asc/desc
+- [x] Tạo sort/filter level asc/desc
+- [x] Tạo detail panel khi click card (name, rare, level, portrait, stats, HP hiện tại, Mana hiện tại)
+- [x] Tạo feed button tăng level character
+- [x] Rule: mỗi lần level up thì hồi full HP + Mana
+- [x] Test: Click level -> call EnterCombat()
+- [x] Verify skill icon appear trong UI
 
-**Notes**: _____________________________________________________
+**Notes**: Day 6 code complete: InventoryUIController, LevelSelectUIController, CharacterCollectionUIController + SaveData mana persistence + MainMenu/Flow route CharacterCollection + setup guide `DevB_Day6_Unity_Setup_Guide.md`. Cần thao tác Unity Editor để gán prefab references theo guide.
 
-**Blocker** (nếu có): _____________________________________________________
+**Blocker** (nếu có): Không có blocker về code. Cần verify runtime trong Unity Play Mode.
 
-**ETA Complete**: _____________________
+**ETA Complete**: 2026-04-07 (CODE DONE)
 
 ---
 
