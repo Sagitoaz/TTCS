@@ -29,6 +29,8 @@ namespace TTCS.Core.Save
         public List<int> characterCurrentHpValues = new List<int>();
         public List<string> characterCurrentManaKeys = new List<string>();
         public List<int> characterCurrentManaValues = new List<int>();
+        public List<string> characterAccessoryKeys = new List<string>();
+        public List<string> characterAccessoryValues = new List<string>();
         public List<string> deployedCharacters = new List<string>();
 
         public List<string> clearedStages = new List<string>();
@@ -91,6 +93,26 @@ namespace TTCS.Core.Save
             {
                 characterCurrentManaKeys.Add(characterId);
                 characterCurrentManaValues.Add(mana);
+            }
+        }
+
+        public string GetEquippedAccessory(string characterId)
+        {
+            int idx = characterAccessoryKeys.IndexOf(characterId);
+            return idx >= 0 ? characterAccessoryValues[idx] : string.Empty;
+        }
+
+        public void SetEquippedAccessory(string characterId, string accessoryItemId)
+        {
+            int idx = characterAccessoryKeys.IndexOf(characterId);
+            if (idx >= 0)
+            {
+                characterAccessoryValues[idx] = accessoryItemId ?? string.Empty;
+            }
+            else
+            {
+                characterAccessoryKeys.Add(characterId);
+                characterAccessoryValues.Add(accessoryItemId ?? string.Empty);
             }
         }
 

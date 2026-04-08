@@ -1,6 +1,9 @@
 using System.Collections.Generic;
+using TTCS.Core.Data;
+using TTCS.Core.Save;
 using TTCS.Combat.Stats;
 using TTCS.Data;
+using TTCS.Meta.Inventory;
 
 namespace TTCS.Combat.Entities
 {
@@ -32,13 +35,22 @@ namespace TTCS.Combat.Entities
             // Tạo unique combat ID (model id + index để tránh duplicate khi có 2 cùng char)
             string combatId = instanceIndex > 0 ? $"{model.id}_{instanceIndex}" : model.id;
 
+            var hp = model.baseStats?.hp ?? 1000;
+            var atk = model.baseStats?.atk ?? 100;
+            var def = model.baseStats?.def ?? 80;
+            var spd = model.baseStats?.spd ?? 100;
+            var crit = model.baseStats?.crit ?? 0.05f;
+            var res = model.baseStats?.resist ?? 0f;
+
+            ApplyAccessoryBonuses(CharacterId, ref hp, ref atk, ref def, ref spd, ref crit, ref res);
+
             var stats = new EntityStats(
-                hp:   model.baseStats?.hp  ?? 1000,
-                atk:  model.baseStats?.atk ?? 100,
-                def:  model.baseStats?.def ?? 80,
-                spd:  model.baseStats?.spd ?? 100,
-                crit: model.baseStats?.crit ?? 0.05f,
-                res:  model.baseStats?.resist ?? 0f
+                hp:   hp,
+                atk:  atk,
+                def:  def,
+                spd:  spd,
+                crit: crit,
+                res:  res
             );
 
             Initialize(combatId, model.nameKey ?? model.id, stats, isPlayer: true);
@@ -50,5 +62,58 @@ namespace TTCS.Combat.Entities
 
         /// <summary>Kiểm tra nhân vật có sở hữu skill không</summary>
         public bool HasSkill(string skillId) => SkillIds.Contains(skillId);
+
+        private static void ApplyAccessoryBonuses(string characterId, ref int hp, ref int atk, ref int def, ref int spd, ref float crit, ref float res)
+        {
+            var save = SaveManager.Instance?.CurrentSave;
+            if (save == null)
+            {
+                return;
+            }
+
+            var accessoryItemId = save.GetEquippedAccessory(characterId);
+            if (string.IsNullOrWhiteSpace(accessoryItemId))
+            {
+                return;
+            }
+
+            var item = DataManager.Instance?.LoadItem(accessoryItemId);
+            if (item == null || !string.Equals(item.itemType, "accessory", System.StringComparison.OrdinalIgnoreCase))
+            {
+                return;
+            }
+
+            var bonuses = AccessoryStatUtility.GetBonuses(item);
+            for (var i = 0; i < bonuses.Count; i++)
+            {
+                var bonus = bonuses[i];
+                switch (bonus.StatKey)
+                {
+                    case "HP":
+                        hp += bonus.Amount;
+                        break;
+                    case "ATK":
+                        atk += bonus.Amount;
+                        break;
+                    case "DEF":
+                        def += bonus.Amount;
+                        break;
+                    case "SPD":
+                        spd += bonus.Amount;
+                        break;
+                    case "CRIT":
+                        crit += bonus.Amount * 0.01f;
+                        break;
+                    case "RES":
+                        res += bonus.Amount * 0.01f;
+                        break;
+                }
+            }
+
+            hp = UnityEngine.Mathf.Max(1, hp);
+            atk = UnityEngine.Mathf.Max(1, atk);
+            def = UnityEngine.Mathf.Max(0, def);
+            spd = UnityEngine.Mathf.Max(1, spd);
+        }
     }
 }

@@ -23,6 +23,26 @@ namespace TTCS.Meta.Inventory
         /// </summary>
         UseItemResult UseItem(string itemId, int quantity, string targetContext);
 
+        /// <summary>
+        /// Checks if an accessory can be equipped for a target character.
+        /// </summary>
+        bool CanEquipAccessory(string itemId, string characterId);
+
+        /// <summary>
+        /// Equips an accessory item to a character.
+        /// </summary>
+        UseItemResult EquipAccessory(string itemId, string characterId);
+
+        /// <summary>
+        /// Gets currently equipped accessory id of a character.
+        /// </summary>
+        string GetEquippedAccessory(string characterId);
+
+        /// <summary>
+        /// Unequips currently equipped accessory from a character.
+        /// </summary>
+        UseItemResult UnequipAccessory(string characterId);
+
         void AddItem(string itemId, int quantity);
     }
 

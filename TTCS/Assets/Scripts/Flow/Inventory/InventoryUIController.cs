@@ -17,22 +17,31 @@ namespace TTCS.Flow.Inventory
     {
         [Header("List")]
         [SerializeField] private Transform _itemListRoot;
-        [SerializeField] private GameObject _itemRowPrefab;
+        [SerializeField] private InventoryItemCellView _itemCellPrefab;
 
         [Header("Detail")]
+        [SerializeField] private Image _detailIconImage;
         [SerializeField] private TMP_Text _itemNameText;
+        [SerializeField] private TMP_Text _itemRarityText;
         [SerializeField] private TMP_Text _itemDescriptionText;
-        [SerializeField] private TMP_Text _itemQuantityText;
-        [SerializeField] private Button _useItemButton;
+        [SerializeField] private Image _detailFrameImageA;
+        [SerializeField] private Image _detailFrameImageB;
+        [SerializeField] private Image _detailGlowImage;
+        [SerializeField] private Image _accessoryBorderImage;
+        [SerializeField] private GameObject _accessoryStatRoot;
+        [SerializeField] private TMP_Text _accessoryStatTitleText;
+        [SerializeField] private Transform _accessoryStatLineRoot;
+        [SerializeField] private InventoryAccessoryStatLineView _accessoryStatLinePrefab;
+        [SerializeField] private TMP_Text _accessoryStatText;
         [SerializeField] private TMP_Text _feedbackText;
 
         [Header("Actions")]
         [SerializeField] private Button _backButton;
-        [SerializeField] private int _useQuantity = 1;
 
         public IInventoryService InventoryService { get; set; }
 
         private readonly List<GameObject> _spawnedRows = new List<GameObject>();
+        private readonly List<GameObject> _spawnedStatLines = new List<GameObject>();
         private ItemStack _selectedStack;
 
         private void Start()
@@ -40,11 +49,6 @@ namespace TTCS.Flow.Inventory
             var hub = MetaServiceHub.Instance;
             hub?.EnsureInitialized();
             InventoryService ??= hub?.InventoryService;
-
-            if (_useItemButton != null)
-            {
-                _useItemButton.onClick.AddListener(UseSelectedItem);
-            }
 
             if (_backButton != null)
             {
@@ -97,68 +101,43 @@ namespace TTCS.Flow.Inventory
             ShowFeedback($"Item not found: {itemId}");
         }
 
-        public void OnUseItemConfirmed(string itemId, int quantity)
-        {
-            if (InventoryService == null)
-            {
-                ShowFeedback("InventoryService is not available.");
-                return;
-            }
-
-            var result = InventoryService.UseItem(itemId, quantity, "menu");
-            ShowFeedback(result.Message);
-            DisplayItems();
-        }
-
         public void Back()
         {
             FlowController.Instance.OpenMainMenu();
         }
 
-        private void UseSelectedItem()
-        {
-            if (_selectedStack == null)
-            {
-                ShowFeedback("Please select an item first.");
-                return;
-            }
-
-            OnUseItemConfirmed(_selectedStack.itemId, Math.Max(1, _useQuantity));
-        }
-
         private void SpawnRow(ItemStack stack)
         {
-            if (_itemListRoot == null || _itemRowPrefab == null)
+            if (_itemListRoot == null || _itemCellPrefab == null)
             {
                 return;
             }
 
-            var row = Instantiate(_itemRowPrefab, _itemListRoot);
-            _spawnedRows.Add(row);
+            var cell = Instantiate(_itemCellPrefab, _itemListRoot);
+            _spawnedRows.Add(cell.gameObject);
 
-            var button = row.GetComponent<Button>();
-            if (button != null)
-            {
-                button.onClick.AddListener(() => OnItemClicked(stack.itemId));
-            }
-
-            var label = row.GetComponentInChildren<TMP_Text>();
-            if (label != null)
-            {
-                var itemData = DataManager.Instance?.LoadItem(stack.itemId);
-                var displayName = itemData?.nameKey ?? stack.itemId;
-                label.text = $"{displayName} x{stack.quantity}";
-            }
+            var itemData = DataManager.Instance?.LoadItem(stack.itemId);
+            var borderColor = GetRarityColor(itemData?.rarity);
+            var icon = LoadItemIcon(itemData?.iconPath);
+            cell.Bind(icon, stack.quantity, borderColor, () => OnItemClicked(stack.itemId));
         }
 
         private void SetDetail(ItemStack stack)
         {
             var hasSelection = stack != null;
             var itemData = hasSelection ? DataManager.Instance?.LoadItem(stack.itemId) : null;
+            var rarity = itemData?.rarity ?? "R";
+            var rarityColor = GetRarityColor(rarity);
 
             if (_itemNameText != null)
             {
                 _itemNameText.text = hasSelection ? (itemData?.nameKey ?? stack.itemId) : "-";
+            }
+
+            if (_itemRarityText != null)
+            {
+                _itemRarityText.text = hasSelection ? rarity : "-";
+                ApplyRarityTextStyle(_itemRarityText, rarity);
             }
 
             if (_itemDescriptionText != null)
@@ -169,19 +148,221 @@ namespace TTCS.Flow.Inventory
                 }
                 else
                 {
-                    _itemDescriptionText.text = $"Type: {itemData?.itemType ?? "unknown"}\nEffect: {itemData?.effectType ?? "none"} (+{itemData?.effectAmount ?? 0})";
+                    var description = !string.IsNullOrWhiteSpace(itemData?.description)
+                        ? itemData.description
+                        : $"Type: {itemData?.itemType ?? "unknown"}\nEffect: {itemData?.effectType ?? "none"} (+{itemData?.effectAmount ?? 0})";
+                    _itemDescriptionText.text = description;
                 }
             }
 
-            if (_itemQuantityText != null)
+            if (_detailIconImage != null)
             {
-                _itemQuantityText.text = hasSelection ? $"Qty: {stack.quantity}" : "Qty: -";
+                var icon = hasSelection ? LoadItemIcon(itemData?.iconPath) : null;
+                _detailIconImage.sprite = icon;
+                _detailIconImage.color = icon == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
             }
 
-            if (_useItemButton != null)
+            if (_detailFrameImageA != null)
             {
-                _useItemButton.interactable = hasSelection && InventoryService != null && InventoryService.CanUseItem(stack.itemId, "menu");
+                _detailFrameImageA.color = hasSelection ? rarityColor : Color.white;
             }
+
+            if (_detailFrameImageB != null)
+            {
+                _detailFrameImageB.color = hasSelection ? rarityColor : Color.white;
+            }
+
+            if (_detailGlowImage != null)
+            {
+                _detailGlowImage.color = hasSelection ? rarityColor : Color.white;
+            }
+
+            if (_accessoryBorderImage != null)
+            {
+                _accessoryBorderImage.color = hasSelection ? rarityColor : Color.white;
+            }
+
+            var isAccessory = hasSelection && string.Equals(itemData?.itemType, "accessory", StringComparison.OrdinalIgnoreCase);
+
+            if (_accessoryStatTitleText != null)
+            {
+                ApplyRarityTextStyle(_accessoryStatTitleText, hasSelection ? rarity : string.Empty);
+            }
+
+            var statLineCount = RebuildAccessoryStatLines(itemData, isAccessory);
+            var hasStatContent = isAccessory && (statLineCount > 0 || !string.IsNullOrWhiteSpace(itemData?.statDescription));
+
+            if (_accessoryStatRoot != null)
+            {
+                _accessoryStatRoot.SetActive(hasStatContent);
+            }
+
+            if (_accessoryStatText != null)
+            {
+                _accessoryStatText.text = isAccessory
+                    ? (string.IsNullOrWhiteSpace(itemData?.statDescription) ? "No stat description." : itemData.statDescription)
+                    : string.Empty;
+            }
+
+            UpdateDetailContentOrder(hasStatContent);
+
+        }
+
+        private int RebuildAccessoryStatLines(ItemDataModel itemData, bool isAccessory)
+        {
+            ClearAccessoryStatLines();
+            if (!isAccessory || _accessoryStatLineRoot == null || _accessoryStatLinePrefab == null)
+            {
+                return 0;
+            }
+
+            var bonuses = AccessoryStatUtility.GetBonuses(itemData);
+            for (var i = 0; i < bonuses.Count; i++)
+            {
+                var bonus = bonuses[i];
+                var line = Instantiate(_accessoryStatLinePrefab, _accessoryStatLineRoot);
+                _spawnedStatLines.Add(line.gameObject);
+
+                var iconPath = string.IsNullOrWhiteSpace(bonus.IconPath)
+                    ? AccessoryStatUtility.GetDefaultIconPath(bonus.StatKey)
+                    : bonus.IconPath;
+
+                var icon = LoadResourceSprite(iconPath);
+                line.Bind(AccessoryStatUtility.GetDisplayName(bonus.StatKey), icon, bonus.Amount);
+            }
+
+            return bonuses.Count;
+        }
+
+        private void UpdateDetailContentOrder(bool hasStatContent)
+        {
+            if (_itemDescriptionText == null || _accessoryStatRoot == null)
+            {
+                return;
+            }
+
+            var descriptionTransform = _itemDescriptionText.transform;
+            var statTransform = _accessoryStatRoot.transform;
+
+            if (descriptionTransform.parent == null || descriptionTransform.parent != statTransform.parent)
+            {
+                return;
+            }
+
+            if (hasStatContent)
+            {
+                var first = Math.Min(descriptionTransform.GetSiblingIndex(), statTransform.GetSiblingIndex());
+                statTransform.SetSiblingIndex(first);
+                descriptionTransform.SetSiblingIndex(first + 1);
+            }
+            else
+            {
+                descriptionTransform.SetAsFirstSibling();
+            }
+        }
+
+        private static Sprite LoadItemIcon(string iconPath)
+        {
+            if (string.IsNullOrWhiteSpace(iconPath))
+            {
+                return null;
+            }
+
+            return Resources.Load<Sprite>(iconPath);
+        }
+
+        private static Sprite LoadResourceSprite(string resourcePath)
+        {
+            if (string.IsNullOrWhiteSpace(resourcePath))
+            {
+                return null;
+            }
+
+            return Resources.Load<Sprite>(resourcePath);
+        }
+
+        private static Color GetRarityColor(string rarity)
+        {
+            if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
+            {
+                return HexToColor("#FFD700");
+            }
+
+            if (string.Equals(rarity, "SR", StringComparison.OrdinalIgnoreCase))
+            {
+                return HexToColor("#FF007F");
+            }
+
+            if (string.Equals(rarity, "R", StringComparison.OrdinalIgnoreCase))
+            {
+                return HexToColor("#00F0FF");
+            }
+
+            return Color.white;
+        }
+
+        private static void ApplyRarityTextStyle(TMP_Text rarityText, string rarity)
+        {
+            if (rarityText == null)
+            {
+                return;
+            }
+
+            if (rarityText is TextMeshProUGUI tmp)
+            {
+                tmp.enableVertexGradient = false;
+                tmp.colorGradient = default;
+            }
+
+            if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
+            {
+                // SSR: Gradient color - top corners #FFFFB3FF, bottom corners #FFB300FF
+                var topColor = HexToColor("#FFFFB3FF");
+                var bottomColor = HexToColor("#FFB300FF");
+                rarityText.color = HexToColor("#FFD700");
+
+                if (rarityText is TextMeshProUGUI textMesh)
+                {
+                    textMesh.enableVertexGradient = true;
+                    textMesh.colorGradient = new VertexGradient(topColor, topColor, bottomColor, bottomColor);
+                }
+
+                return;
+            }
+
+            if (string.Equals(rarity, "SR", StringComparison.OrdinalIgnoreCase))
+            {
+                rarityText.color = HexToColor("#FF007F");
+                return;
+            }
+
+            if (string.Equals(rarity, "R", StringComparison.OrdinalIgnoreCase))
+            {
+                rarityText.color = HexToColor("#00F0FF");
+                return;
+            }
+
+            rarityText.color = Color.white;
+        }
+
+        private static Color HexToColor(string hex)
+        {
+            var normalized = hex.Replace("#", string.Empty);
+            if (normalized.Length == 6)
+            {
+                normalized += "FF";
+            }
+
+            if (int.TryParse(normalized, System.Globalization.NumberStyles.HexNumber, null, out var result))
+            {
+                var r = (byte)((result >> 24) & 0xFF);
+                var g = (byte)((result >> 16) & 0xFF);
+                var b = (byte)((result >> 8) & 0xFF);
+                var a = (byte)(result & 0xFF);
+                return new Color(r / 255f, g / 255f, b / 255f, a / 255f);
+            }
+
+            return Color.white;
         }
 
         private void ShowFeedback(string message)
@@ -203,6 +384,19 @@ namespace TTCS.Flow.Inventory
             }
 
             _spawnedRows.Clear();
+        }
+
+        private void ClearAccessoryStatLines()
+        {
+            for (var i = 0; i < _spawnedStatLines.Count; i++)
+            {
+                if (_spawnedStatLines[i] != null)
+                {
+                    Destroy(_spawnedStatLines[i]);
+                }
+            }
+
+            _spawnedStatLines.Clear();
         }
     }
 }

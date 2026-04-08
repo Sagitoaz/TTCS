@@ -249,6 +249,9 @@ namespace TTCS.Core.Save
             data.unlockedStages.Add("stage_01_tutorial");
             data.unlockedChapters.Add("chapter_01");
             data.unlockedLevels.Add("chapter_01_level_01");
+            data.inventoryItems.Add(new SaveItemStack { itemId = "item_guardian_emblem", quantity = 1 });
+            data.inventoryItems.Add(new SaveItemStack { itemId = "item_potion", quantity = 3 });
+            data.inventoryItems.Add(new SaveItemStack { itemId = "item_energy", quantity = 2 });
 
             return data;
         }
@@ -299,6 +302,8 @@ namespace TTCS.Core.Save
             data.characterCurrentHpValues ??= new System.Collections.Generic.List<int>();
             data.characterCurrentManaKeys ??= new System.Collections.Generic.List<string>();
             data.characterCurrentManaValues ??= new System.Collections.Generic.List<int>();
+            data.characterAccessoryKeys ??= new System.Collections.Generic.List<string>();
+            data.characterAccessoryValues ??= new System.Collections.Generic.List<string>();
             data.deployedCharacters ??= new System.Collections.Generic.List<string>();
             data.unlockedChapters ??= new System.Collections.Generic.List<string>();
             data.unlockedLevels ??= new System.Collections.Generic.List<string>();
@@ -400,6 +405,11 @@ namespace TTCS.Core.Save
             if (data.unlockedChapters.Count == 0)
             {
                 data.unlockedChapters.Add("chapter_01");
+            }
+
+            if (!data.inventoryItems.Exists(i => i.itemId == "item_guardian_emblem"))
+            {
+                data.inventoryItems.Add(new SaveItemStack { itemId = "item_guardian_emblem", quantity = 1 });
             }
         }
 

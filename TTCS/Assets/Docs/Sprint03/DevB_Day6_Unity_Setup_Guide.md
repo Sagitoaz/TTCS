@@ -1,109 +1,171 @@
-# Sprint 03 - Day 6 Unity Setup Guide (Dev B)
+# Sprint 03 - Hướng Dẫn Setup Unity Ngày 6 (Dev B)
 
-Sprint: Sprint 03
-Developer: Dev B (Flow/UI)
-Scope Day 6: Inventory UI, Level Select wiring, Character Collection v1
+Sprint: Sprint 03  
+Developer: Dev B (Flow/UI)  
+Phạm vi Ngày 6: Inventory UI, Level Select wiring, Character Collection v1
 
-## 1. Scripts added for Day 6
+## 1. Các script đã thêm cho Ngày 6
 
 - Assets/Scripts/Flow/Inventory/InventoryUIController.cs
 - Assets/Scripts/Flow/LevelSelect/LevelSelectUIController.cs
 - Assets/Scripts/Flow/CharacterCollection/CharacterCollectionUIController.cs
 
-Related updates:
-- Assets/Scripts/Core/Save/SaveData.cs (current mana persistence)
-- Assets/Scripts/Core/Save/SaveManager.cs (default current mana initialization)
+Các cập nhật liên quan:
+- Assets/Scripts/Core/Save/SaveData.cs (lưu current mana)
+- Assets/Scripts/Core/Save/SaveManager.cs (khởi tạo giá trị current mana mặc định)
 - Assets/Scripts/Flow/Common/FlowController.cs (OpenCharacterCollection)
-- Assets/Scripts/Flow/Common/IFlowController.cs (OpenCharacterCollection contract)
-- Assets/Scripts/Flow/MainMenu/MainMenuController.cs (optional Character Collection button)
+- Assets/Scripts/Flow/Common/IFlowController.cs (contract OpenCharacterCollection)
+- Assets/Scripts/Flow/MainMenu/MainMenuController.cs (nút Character Collection tùy chọn)
 
-## 2. Inventory scene setup
+## 2. Setup scene Inventory
 
-Scene name suggestion: InventoryScene
+Tên scene đề xuất: InventoryScene
 
-1. Create an empty GameObject named InventoryUIRoot.
-2. Add component InventoryUIController to InventoryUIRoot.
-3. Build list area:
-- Create ScrollView content root and assign to Item List Root.
-- Create item row prefab with Button + TMP_Text child and assign to Item Row Prefab.
-4. Build detail area:
-- Add TMP_Text fields and assign to Item Name Text, Item Description Text, Item Quantity Text, Feedback Text.
-- Add Use button and assign to Use Item Button.
-5. Add Back button and assign to Back Button.
+1. Tạo GameObject rỗng tên InventoryUIRoot.
+2. Add component InventoryUIController vào InventoryUIRoot.
+3. Khu vực danh sách item:
+- Tạo ScrollView content root và gán vào Item List Root.
+- Tạo item prefab dạng ô vuông, có component InventoryItemCellView, gán vào Item Cell Prefab.
+- Bên trong prefab ô vuông, bind:
+  - Button
+  - Icon Image (avatar)
+  - Quantity TMP text (định dạng x2)
+  - Border Image (màu theo rarity)
+4. Khu vực detail item:
+- Thêm Image cho icon lớn và gán vào Detail Icon Image.
+- Thêm TMP_Text và gán:
+  - Item Name Text
+  - Item Rarity Text
+  - Item Description Text
+  - Accessory Stat Title Text
+  - Accessory Stat Text (text tóm tắt tùy chọn, có thể để trống nếu chỉ dùng stat line)
+  - Use Item Button Label
+  - Feedback Text
+- Thêm 3 Image field và gán:
+  - Detail Frame Image A
+  - Detail Frame Image B
+  - Detail Glow Image
+- Thêm Image cho viền riêng của accessory và gán vào Accessory Border Image.
+- Tạo 1 GameObject section cho accessory stats và gán vào Accessory Stat Root.
+- Gán màu cho viền của Accessory Stat Root giống màu viền rarity của item.
+- Gán màu cho Glow Image giống màu viền rarity của item.
+- Tạo stat line container bên trong Accessory Stat Root và gán vào Accessory Stat Line Root.
+- Tạo stat line prefab có component InventoryAccessoryStatLineView (Stat Name TMP_Text + Icon Image + Value TMP_Text), gán vào Accessory Stat Line Prefab.
+5. Thêm nút Back và gán vào Back Button.
+
+Sơ đồ Hierarchy ngắn cho phần Inventory Detail:
+
+```text
+InventoryUIRoot
+├── ItemListRoot (ScrollView)
+└── DetailRoot
+  ├── DetailIcon
+  ├── ItemNameText
+  ├── ItemRarityText
+  ├── AccessoryStatRoot
+  │   └── AccessoryStatLineRoot
+  │       └── AccessoryStatLinePrefab (lặp nhiều dòng)
+  └── ItemDescriptionText
+```
+
+Ghi nhớ thứ tự hiển thị:
+- Nếu item có stat, phần stat nằm trước description.
+- Nếu item không có stat, chỉ giữ description ở phía trên, không hiển thị khối stat.
+
 6. Play test:
-- Click item row to open detail.
-- Click Use Item to consume item using InventoryService.UseItem(..., "menu").
-- Click Back to return Main Menu.
+- Kiểm tra mỗi ô item hiển thị: icon, số lượng xN, màu viền theo rarity.
+- Click ô item để mở detail.
+- Kiểm tra Frame A/B và Glow đổi màu theo rarity.
+- Kiểm tra style text rarity:
+  - SSR: gradient + text vàng
+  - SR: #FF007F
+  - R: #00F0FF
+- Nếu là consumable: label nút là Use và action tiêu hao item.
+- Nếu là accessory: chỉ hiển thị thông tin, không có thao tác Equip trong Inventory.
+- Nếu là accessory: Accessory Stat Root phải hiển thị.
+- Nếu là accessory: mỗi bonus stat hiển thị theo từng dòng, có icon load từ Resources + giá trị tăng (ví dụ +120, +8).
+- Nếu có `Accessory Stat Text` thì đây chỉ là dòng summary; phần hiển thị chính vẫn là các stat line prefab.
+- `Accessory Stat Title Text` chỉ dùng làm tiêu đề cho khối stat và sẽ đổi màu theo rarity của item.
+- Thứ tự nội dung detail:
+  - Nếu có stat: khối stat phải nằm trên, description nằm dưới.
+  - Nếu không có stat: chỉ hiển thị description ở vị trí trên cùng, không cần khối stat.
+- Click Back để quay về Main Menu.
 
-## 3. Level Select scene setup
+## 3. Setup scene Level Select
 
-Scene name suggestion: LevelSelectScene
+Tên scene đề xuất: LevelSelectScene
 
-1. Create GameObject LevelSelectUIRoot.
+1. Tạo GameObject LevelSelectUIRoot.
 2. Add component LevelSelectUIController.
 3. Chapter tabs:
-- Create horizontal layout root and assign to Chapter Tab Root.
-- Create chapter tab prefab with Button + TMP_Text and assign to Chapter Tab Prefab.
+- Tạo horizontal layout root và gán vào Chapter Tab Root.
+- Tạo chapter tab prefab (Button + TMP_Text) và gán vào Chapter Tab Prefab.
 4. Level grid:
-- Create grid root and assign to Level Grid Root.
-- Create level card prefab with Button + TMP_Text and assign to Level Card Prefab.
-5. Assign Back button.
+- Tạo grid root và gán vào Level Grid Root.
+- Tạo level card prefab (Button + TMP_Text) và gán vào Level Card Prefab.
+5. Gán nút Back.
 6. Play test:
-- Verify chapter tabs render.
-- Verify each chapter shows level cards.
-- Click level card to call FlowController.EnterCombat(levelId, lineup).
+- Kiểm tra chapter tabs được render.
+- Kiểm tra mỗi chapter hiển thị level cards.
+- Click level card để gọi FlowController.EnterCombat(levelId, lineup).
 
-Notes:
-- If Data/Chapters or Data/Levels is missing, controller auto-falls back to mock 3 chapters x 3 levels.
+Ghi chú:
+- Nếu thiếu Data/Chapters hoặc Data/Levels, controller sẽ tự fallback mock data 3 chapter x 3 level.
 
-## 4. Character Collection scene setup
+## 4. Setup scene Character Collection
 
-Scene name suggestion: CharacterCollectionScene
+Tên scene đề xuất: CharacterCollectionScene
 
-1. Create GameObject CharacterCollectionUIRoot.
+1. Tạo GameObject CharacterCollectionUIRoot.
 2. Add component CharacterCollectionUIController.
-3. Card list:
-- Create grid root and assign to Card Grid Root.
-- Create card prefab with Button + TMP_Text and assign to Character Card Prefab.
-4. Search and sorting:
-- Add TMP_InputField and assign to Search Input.
-- Wire UI toggles/dropdowns to:
+3. Khu vực card list:
+- Tạo grid root và gán vào Card Grid Root.
+- Tạo card prefab (Button + TMP_Text) và gán vào Character Card Prefab.
+4. Search và sorting:
+- Thêm TMP_InputField và gán vào Search Input.
+- Wire UI toggle/dropdown đến:
   - OnSortRareChanged(bool ascending)
   - OnSortLevelChanged(bool ascending)
 5. Detail panel:
-- Assign Name/Rarity/Level/Stats/HP/Mana TMP_Text fields.
-- Assign Portrait Image and Skill Icon Image.
-6. Actions:
-- Assign Feed Button and Back Button.
-- Optionally assign Feedback Text.
+- Gán các TMP_Text cho Name/Rarity/Level/Stats/HP/Mana.
+- Gán Portrait Image và Skill Icon Image.
+6. Action:
+- Gán Feed Button và Back Button.
+- Feedback Text là tùy chọn (nếu có thì gán).
 
-## 5. Rule validation for Day 6
+## 5. Xác thực rule Ngày 6
 
-Implemented rule:
-- Every level-up from feed action restores full HP and full Mana.
+Rule đã implement:
+- Mỗi lần level-up từ feed action sẽ hồi đầy HP và Mana.
 
-How to verify:
-1. Open Character Collection scene.
-2. Select a character.
-3. Click Feed button.
-4. Confirm Level increments by 1 and HP/Mana both become current=max immediately.
+Cách verify:
+1. Mở scene Character Collection.
+2. Chọn 1 nhân vật.
+3. Bấm Feed.
+4. Xác nhận Level tăng 1 và HP/Mana đều về current = max ngay lập tức.
 
-## 6. Main Menu optional wiring
+Thêm bước verify inventory:
+1. Kiểm tra item_guardian_emblem xuất hiện trong inventory.
+2. Mở detail accessory và kiểm tra section stat được hiển thị.
+3. Xác nhận accessory trong Inventory chỉ để xem thông tin, không equip tại màn này.
 
-MainMenuController now supports optional Character Collection button:
+## 6. Wiring tùy chọn ở Main Menu
+
+MainMenuController hiện hỗ trợ nút Character Collection tùy chọn:
 - Field: Character Collection Button
-- If assigned, click will call FlowController.OpenCharacterCollection().
+- Nếu gán field này, khi click sẽ gọi FlowController.OpenCharacterCollection().
 
-If not assigned, no runtime error occurs.
+Nếu không gán, sẽ không phát sinh runtime error.
 
-## 7. Quick smoke checklist (Day 6)
+## 7. Quick smoke checklist (Ngày 6)
 
-- Inventory: list -> detail -> use item -> back works.
-- Level Select: chapter tab -> level card -> EnterCombat route works.
+- Inventory: list -> detail -> use (consumable) -> back hoạt động.
+- Inventory: accessory hiển thị đúng thông tin/stat line, không có equip action.
+- Level Select: chapter tab -> level card -> EnterCombat route hoạt động.
 - Character Collection:
-- list renders unlocked characters
-- search by name/id works
-- sort by rarity and level works
-- click card shows detail with HP/Mana
-- feed updates level and restores full HP/Mana
-- Main Menu optional button opens Character Collection scene.
+- render được unlocked characters
+- search theo tên/id hoạt động
+- sort theo rarity và level hoạt động
+- click card hiển thị detail HP/Mana
+- feed cập nhật level và hồi full HP/Mana
+- nút Character Collection trên Main Menu (nếu có gán) mở đúng scene.

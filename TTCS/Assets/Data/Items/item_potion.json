@@ -1,11 +1,16 @@
 ﻿{
   "id": "item_potion",
   "nameKey": "Health Gem",
+  "description": "Restores HP when consumed in menu.",
   "itemType": "consumable",
+  "rarity": "R",
   "iconPath": "Items/item_potion",
   "effectType": "heal_hp",
   "effectAmount": 100,
   "usableOutsideCombat": true,
+  "equippable": false,
+  "equipSlot": "",
+  "statDescription": "",
   "stackable": true,
   "maxStack": 99,
   "healAmount": 100
