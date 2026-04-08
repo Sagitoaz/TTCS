@@ -432,7 +432,7 @@ TextureImporter:
         width: 51
         height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -441,6 +441,28 @@ TextureImporter:
       bones: []
       spriteID: 94d5449a37b467d41a37903ff245ea95
       internalID: 322518732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Aether Raids_3
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 583
+        width: 585
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcb563a01b637104199953c731b96090
+      internalID: 2091575576
       vertices: []
       indices: 
       edges: []
@@ -464,6 +486,7 @@ TextureImporter:
       Mobile - Fire Emblem_ Heroes - UI - Aether Raids_0: -906332344182281243
       Mobile - Fire Emblem_ Heroes - UI - Aether Raids_1: -1086633828365601415
       Mobile - Fire Emblem_ Heroes - UI - Aether Raids_2: 322518732
+      Mobile - Fire Emblem_ Heroes - UI - Aether Raids_3: 2091575576
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
