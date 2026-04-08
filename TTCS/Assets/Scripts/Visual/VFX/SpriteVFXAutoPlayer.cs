@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace TTCS.Visual.VFX
 {
@@ -49,6 +50,7 @@ namespace TTCS.Visual.VFX
         [Header("Targets")]
         [SerializeField] private Transform _animatedRoot;
         [SerializeField] private Transform _fillTargetX;
+        [SerializeField] private Transform _fillTargetY;
         [SerializeField] private SpriteRenderer[] _renderers;
         [SerializeField] private bool _autoCollectRenderers = true;
 
@@ -75,7 +77,15 @@ namespace TTCS.Visual.VFX
         [SerializeField] private float _fillXFrom = 0f;
         [SerializeField] private float _fillXTo = 1f;
         [SerializeField] private AnimationCurve _fillXCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
-        [SerializeField] private bool _preserveFillTargetScaleSign = true;
+        [FormerlySerializedAs("_preserveFillTargetScaleSign")]
+        [SerializeField] private bool _preserveFillXScaleSign = true;
+
+        [Header("Fill Y (bottom-top reveal via scale.y)")]
+        [SerializeField] private bool _animateFillY = false;
+        [SerializeField] private float _fillYFrom = 0f;
+        [SerializeField] private float _fillYTo = 1f;
+        [SerializeField] private AnimationCurve _fillYCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+        [SerializeField] private bool _preserveFillYScaleSign = true;
 
         [Header("Sprite Color / Alpha")]
         [SerializeField] private bool _animateColor = false;
@@ -105,11 +115,13 @@ namespace TTCS.Visual.VFX
         }
 
         private Transform _root;
-        private Transform _fillRoot;
+        private Transform _fillRootX;
+        private Transform _fillRootY;
         private Vector3 _initialLocalPosition;
         private Vector3 _initialLocalScale;
         private Quaternion _initialLocalRotation;
-        private Vector3 _fillInitialLocalScale;
+        private Vector3 _fillXInitialLocalScale;
+        private Vector3 _fillYInitialLocalScale;
         private Coroutine _playRoutine;
         private MaterialPropertyBlock _mpb;
         private RendererState[] _rendererStates;
@@ -200,7 +212,8 @@ namespace TTCS.Visual.VFX
             float posT = Evaluate(_localPositionCurve, normalized);
             float scaleT = Evaluate(_localScaleCurve, normalized);
             float rotT = Evaluate(_rotationZCurve, normalized);
-            float fillT = Evaluate(_fillXCurve, normalized);
+            float fillXT = Evaluate(_fillXCurve, normalized);
+            float fillYT = Evaluate(_fillYCurve, normalized);
             float alphaT = Evaluate(_alphaCurve, normalized);
             float sortingT = Evaluate(_sortingOrderCurve, normalized);
 
@@ -216,13 +229,45 @@ namespace TTCS.Visual.VFX
                 _root.localRotation = Quaternion.Euler(0f, 0f, rz);
             }
 
-            if (_animateFillX && _fillRoot != null)
+            if ((_animateFillX || _animateFillY) && _fillRootX != null && _fillRootX == _fillRootY)
             {
-                float fill = Mathf.LerpUnclamped(_fillXFrom, _fillXTo, fillT);
-                Vector3 s = _fillInitialLocalScale;
-                float sign = _preserveFillTargetScaleSign ? Mathf.Sign(s.x == 0f ? 1f : s.x) : 1f;
-                s.x = Mathf.Abs(s.x) * fill * sign;
-                _fillRoot.localScale = s;
+                Vector3 s = _fillXInitialLocalScale;
+
+                if (_animateFillX)
+                {
+                    float fillX = Mathf.LerpUnclamped(_fillXFrom, _fillXTo, fillXT);
+                    float signX = _preserveFillXScaleSign ? Mathf.Sign(s.x == 0f ? 1f : s.x) : 1f;
+                    s.x = Mathf.Abs(s.x) * fillX * signX;
+                }
+
+                if (_animateFillY)
+                {
+                    float fillY = Mathf.LerpUnclamped(_fillYFrom, _fillYTo, fillYT);
+                    float signY = _preserveFillYScaleSign ? Mathf.Sign(s.y == 0f ? 1f : s.y) : 1f;
+                    s.y = Mathf.Abs(s.y) * fillY * signY;
+                }
+
+                _fillRootX.localScale = s;
+            }
+            else
+            {
+                if (_animateFillX && _fillRootX != null)
+                {
+                    float fillX = Mathf.LerpUnclamped(_fillXFrom, _fillXTo, fillXT);
+                    Vector3 s = _fillXInitialLocalScale;
+                    float signX = _preserveFillXScaleSign ? Mathf.Sign(s.x == 0f ? 1f : s.x) : 1f;
+                    s.x = Mathf.Abs(s.x) * fillX * signX;
+                    _fillRootX.localScale = s;
+                }
+
+                if (_animateFillY && _fillRootY != null)
+                {
+                    float fillY = Mathf.LerpUnclamped(_fillYFrom, _fillYTo, fillYT);
+                    Vector3 s = _fillYInitialLocalScale;
+                    float signY = _preserveFillYScaleSign ? Mathf.Sign(s.y == 0f ? 1f : s.y) : 1f;
+                    s.y = Mathf.Abs(s.y) * fillY * signY;
+                    _fillRootY.localScale = s;
+                }
             }
 
             if (_renderers == null || _renderers.Length == 0)
@@ -349,8 +394,11 @@ namespace TTCS.Visual.VFX
                 _root.localRotation = _initialLocalRotation;
             }
 
-            if (_fillRoot != null)
-                _fillRoot.localScale = _fillInitialLocalScale;
+            if (_fillRootX != null)
+                _fillRootX.localScale = _fillXInitialLocalScale;
+
+            if (_fillRootY != null && _fillRootY != _fillRootX)
+                _fillRootY.localScale = _fillYInitialLocalScale;
 
             if (_renderers != null)
             {
@@ -374,7 +422,8 @@ namespace TTCS.Visual.VFX
         private void CacheReferences()
         {
             _root = _animatedRoot != null ? _animatedRoot : transform;
-            _fillRoot = _fillTargetX != null ? _fillTargetX : _root;
+            _fillRootX = _fillTargetX != null ? _fillTargetX : _root;
+            _fillRootY = _fillTargetY != null ? _fillTargetY : _fillRootX;
 
             if (_autoCollectRenderers || _renderers == null || _renderers.Length == 0)
                 _renderers = GetComponentsInChildren<SpriteRenderer>(true);
@@ -389,8 +438,11 @@ namespace TTCS.Visual.VFX
                 _initialLocalRotation = _root.localRotation;
             }
 
-            if (_fillRoot != null)
-                _fillInitialLocalScale = _fillRoot.localScale;
+            if (_fillRootX != null)
+                _fillXInitialLocalScale = _fillRootX.localScale;
+
+            if (_fillRootY != null)
+                _fillYInitialLocalScale = _fillRootY.localScale;
 
             if (_renderers == null)
                 return;
