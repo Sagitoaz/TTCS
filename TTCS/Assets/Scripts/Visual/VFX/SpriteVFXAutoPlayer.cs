@@ -42,6 +42,7 @@ namespace TTCS.Visual.VFX
         [Header("Playback")]
         [SerializeField] private bool _playOnEnable = true;
         [SerializeField] private bool _autoDeactivateWhenFinished = true;
+        [SerializeField] private bool _hideRenderersWhenAnimatorDriven = true;
         [SerializeField] private bool _loop = false;
         [SerializeField] private bool _useUnscaledTime = false;
         [SerializeField] private float _startDelay = 0f;
@@ -76,6 +77,7 @@ namespace TTCS.Visual.VFX
         [SerializeField] private bool _animateFillX = false;
         [SerializeField] private float _fillXFrom = 0f;
         [SerializeField] private float _fillXTo = 1f;
+        [SerializeField] private bool _reverseFillX = false;
         [SerializeField] private AnimationCurve _fillXCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
         [FormerlySerializedAs("_preserveFillTargetScaleSign")]
         [SerializeField] private bool _preserveFillXScaleSign = true;
@@ -84,6 +86,7 @@ namespace TTCS.Visual.VFX
         [SerializeField] private bool _animateFillY = false;
         [SerializeField] private float _fillYFrom = 0f;
         [SerializeField] private float _fillYTo = 1f;
+        [SerializeField] private bool _reverseFillY = false;
         [SerializeField] private AnimationCurve _fillYCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
         [SerializeField] private bool _preserveFillYScaleSign = true;
 
@@ -161,6 +164,7 @@ namespace TTCS.Visual.VFX
         {
             CacheReferences();
             CacheInitialState();
+            SetRenderersEnabled(true);
             StopCurrentPlayback();
             _playRoutine = StartCoroutine(PlayRoutine());
         }
@@ -201,7 +205,18 @@ namespace TTCS.Visual.VFX
             _playRoutine = null;
 
             if (_autoDeactivateWhenFinished)
-                gameObject.SetActive(false);
+            {
+                if (_hideRenderersWhenAnimatorDriven && IsAnimatorDriven())
+                {
+                    // Avoid SetActive(false) fighting Animator activation tracks (can cause replay loop).
+                    SetRenderersEnabled(false);
+                    RestoreInitialState();
+                }
+                else
+                {
+                    gameObject.SetActive(false);
+                }
+            }
         }
 
         private void Apply(float normalized)
@@ -236,6 +251,8 @@ namespace TTCS.Visual.VFX
                 if (_animateFillX)
                 {
                     float fillX = Mathf.LerpUnclamped(_fillXFrom, _fillXTo, fillXT);
+                    if (_reverseFillX)
+                        fillX = Mathf.LerpUnclamped(_fillXTo, _fillXFrom, fillXT);
                     float signX = _preserveFillXScaleSign ? Mathf.Sign(s.x == 0f ? 1f : s.x) : 1f;
                     s.x = Mathf.Abs(s.x) * fillX * signX;
                 }
@@ -243,6 +260,8 @@ namespace TTCS.Visual.VFX
                 if (_animateFillY)
                 {
                     float fillY = Mathf.LerpUnclamped(_fillYFrom, _fillYTo, fillYT);
+                    if (_reverseFillY)
+                        fillY = Mathf.LerpUnclamped(_fillYTo, _fillYFrom, fillYT);
                     float signY = _preserveFillYScaleSign ? Mathf.Sign(s.y == 0f ? 1f : s.y) : 1f;
                     s.y = Mathf.Abs(s.y) * fillY * signY;
                 }
@@ -254,6 +273,8 @@ namespace TTCS.Visual.VFX
                 if (_animateFillX && _fillRootX != null)
                 {
                     float fillX = Mathf.LerpUnclamped(_fillXFrom, _fillXTo, fillXT);
+                    if (_reverseFillX)
+                        fillX = Mathf.LerpUnclamped(_fillXTo, _fillXFrom, fillXT);
                     Vector3 s = _fillXInitialLocalScale;
                     float signX = _preserveFillXScaleSign ? Mathf.Sign(s.x == 0f ? 1f : s.x) : 1f;
                     s.x = Mathf.Abs(s.x) * fillX * signX;
@@ -263,6 +284,8 @@ namespace TTCS.Visual.VFX
                 if (_animateFillY && _fillRootY != null)
                 {
                     float fillY = Mathf.LerpUnclamped(_fillYFrom, _fillYTo, fillYT);
+                    if (_reverseFillY)
+                        fillY = Mathf.LerpUnclamped(_fillYTo, _fillYFrom, fillYT);
                     Vector3 s = _fillYInitialLocalScale;
                     float signY = _preserveFillYScaleSign ? Mathf.Sign(s.y == 0f ? 1f : s.y) : 1f;
                     s.y = Mathf.Abs(s.y) * fillY * signY;
@@ -416,6 +439,24 @@ namespace TTCS.Visual.VFX
                     _mpb.Clear();
                     sr.SetPropertyBlock(_mpb);
                 }
+            }
+        }
+
+        private bool IsAnimatorDriven()
+        {
+            var animator = GetComponentInParent<Animator>();
+            return animator != null && animator.runtimeAnimatorController != null;
+        }
+
+        private void SetRenderersEnabled(bool enabled)
+        {
+            if (_renderers == null)
+                return;
+
+            for (int i = 0; i < _renderers.Length; i++)
+            {
+                if (_renderers[i] != null)
+                    _renderers[i].enabled = enabled;
             }
         }
 
