@@ -15,12 +15,12 @@
     {
       "statKey": "HP",
       "amount": 120,
-      "iconPath": "UI/Element/icon_element_light"
+      "iconPath": "UI/Stat/icon_hp"
     },
     {
       "statKey": "DEF",
       "amount": 8,
-      "iconPath": "UI/Role/icon_role_tank"
+      "iconPath": "UI/Stat/icon_def"
     }
   ],
   "stackable": false,
