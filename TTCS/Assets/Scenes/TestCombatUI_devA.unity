@@ -5969,9 +5969,7 @@ MonoBehaviour:
   _defaultStageId: stage_01_tutorial
   _defaultSeed: 42
   _autoStartOnPlay: 1
-  _defaultPartyIds:
-  - char_mage
-  - char_warrior
+  _defaultPartyIds: []
   _enemyDataAssets: []
   _spawnViewsOnInitialize: 1
   _playerSlots:
