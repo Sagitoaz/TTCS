@@ -26,8 +26,10 @@ namespace TTCS.Flow.Inventory
         [SerializeField] private TMP_Text _itemDescriptionText;
         [SerializeField] private Image _detailFrameImageA;
         [SerializeField] private Image _detailFrameImageB;
+        [SerializeField] private Image _detailBorderImage;
         [SerializeField] private Image _detailGlowImage;
         [SerializeField] private Image _accessoryBorderImage;
+        [SerializeField] private Image _accessoryGlowImage;
         [SerializeField] private GameObject _accessoryStatRoot;
         [SerializeField] private TMP_Text _accessoryStatTitleText;
         [SerializeField] private Transform _accessoryStatLineRoot;
@@ -172,14 +174,22 @@ namespace TTCS.Flow.Inventory
                 _detailFrameImageB.color = hasSelection ? rarityColor : Color.white;
             }
 
+            if(_detailBorderImage != null)
+            {
+                _detailBorderImage.color = hasSelection ? rarityColor: Color.white;
+            }
+            
             if (_detailGlowImage != null)
             {
                 _detailGlowImage.color = hasSelection ? rarityColor : Color.white;
             }
-
             if (_accessoryBorderImage != null)
             {
                 _accessoryBorderImage.color = hasSelection ? rarityColor : Color.white;
+            }
+            if(_accessoryGlowImage != null)
+            {
+                _accessoryGlowImage.color = hasSelection ? rarityColor: Color.white;            
             }
 
             var isAccessory = hasSelection && string.Equals(itemData?.itemType, "accessory", StringComparison.OrdinalIgnoreCase);

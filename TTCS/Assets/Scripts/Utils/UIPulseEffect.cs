@@ -15,12 +15,10 @@ public class UIPulseEffect : MonoBehaviour
     [Range(0f, 1f)] public float maxAlpha = 1.0f;
 
     private Image targetImage;
-    private Color baseColor;
 
     void Start()
     {
         targetImage = GetComponent<Image>();
-        baseColor = targetImage.color; // Lưu lại màu gốc bạn đã set trong Inspector
     }
 
     void Update()
@@ -32,8 +30,8 @@ public class UIPulseEffect : MonoBehaviour
         // Tính toán độ mờ (Alpha) hiện tại nằm giữa khoảng Min và Max
         float currentAlpha = Mathf.Lerp(minAlpha, maxAlpha, wave);
 
-        // Áp dụng Alpha mới vào màu của UI
-        Color newColor = baseColor;
+        // Giữ nguyên màu hiện tại từ controller, chỉ pulse alpha.
+        Color newColor = targetImage.color;
         newColor.a = currentAlpha;
         targetImage.color = newColor;
     }
