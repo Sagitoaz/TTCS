@@ -80,6 +80,12 @@ namespace TTCS.Flow.Inventory
             }
 
             ShowFeedback(string.Empty);
+
+            // Auto-select first item
+            if (items.Count > 0)
+            {
+                OnItemClicked(items[0].itemId);
+            }
         }
 
         public void OnItemClicked(string itemId)
