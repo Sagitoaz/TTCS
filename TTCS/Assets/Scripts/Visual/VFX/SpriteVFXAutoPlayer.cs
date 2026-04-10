@@ -241,7 +241,8 @@ namespace TTCS.Visual.VFX
             if (_animateRotationZ)
             {
                 float rz = Mathf.LerpUnclamped(_rotationZFrom, _rotationZTo, rotT);
-                _root.localRotation = Quaternion.Euler(0f, 0f, rz);
+                Vector3 baseEuler = _initialLocalRotation.eulerAngles;
+                _root.localRotation = Quaternion.Euler(baseEuler.x, baseEuler.y, rz);
             }
 
             if ((_animateFillX || _animateFillY) && _fillRootX != null && _fillRootX == _fillRootY)
