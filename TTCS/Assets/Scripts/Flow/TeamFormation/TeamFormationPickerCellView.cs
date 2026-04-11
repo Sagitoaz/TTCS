@@ -8,6 +8,7 @@ namespace TTCS.Flow.TeamFormation
     {
         [SerializeField] private Button _button;
         [SerializeField] private Image _portrait;
+        [SerializeField] private Image _borderImage;
         [SerializeField] private TextMeshProUGUI _nameText;
         [SerializeField] private TextMeshProUGUI _levelText;
         [SerializeField] private TextMeshProUGUI _rarityText;
@@ -24,7 +25,7 @@ namespace TTCS.Flow.TeamFormation
 
             if (_levelText != null)
             {
-                _levelText.text = $"Lv {level}";
+                _levelText.text = $"Lv.{level}";
             }
 
             if (_rarityText != null)
@@ -38,6 +39,13 @@ namespace TTCS.Flow.TeamFormation
                 _portrait.sprite = portrait;
                 _portrait.color = portrait == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
                 _portrait.preserveAspect = true;
+            }
+
+            if (_borderImage != null)
+            {
+                var borderSprite = LoadBorderImage(rarity);
+                _borderImage.sprite = borderSprite;
+                _borderImage.color = borderSprite == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
             }
         }
 
@@ -91,6 +99,19 @@ namespace TTCS.Flow.TeamFormation
 
             return Color.white;
         }
+
+        private static Sprite LoadBorderImage(string rarity)
+        {
+            if (string.IsNullOrWhiteSpace(rarity))
+            {
+                return null;
+            }
+
+            var normalized = rarity.ToLowerInvariant();
+            var borderPath = $"UI/Border/{normalized}_border";
+            return Resources.Load<Sprite>(borderPath);
+        }
+
 
         public void SetSelected(bool selected)
         {

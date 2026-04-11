@@ -43,6 +43,7 @@ namespace TTCS.Flow.TeamFormation
         [SerializeField] private TextMeshProUGUI _quickInfoRarityText;
         [SerializeField] private TextMeshProUGUI _quickInfoElementText;
         [SerializeField] private Image _quickInfoPortrait;
+        [SerializeField] private Image _quickInfoBorderImage;
         [SerializeField] private Transform _quickInfoSkillRoot;
         [SerializeField] private TeamFormationSkillQuickItemView _quickInfoSkillItemPrefab;
 
@@ -54,6 +55,7 @@ namespace TTCS.Flow.TeamFormation
         {
             public GameObject selectedHighlight;
             public Image portrait;
+            public Image borderImage;
             public TextMeshProUGUI nameText;
             public Slider hpSlider;
             public TextMeshProUGUI hpText;
@@ -440,7 +442,7 @@ namespace TTCS.Flow.TeamFormation
 
                 if (slotView.levelText != null)
                 {
-                    slotView.levelText.text = "Lv: -";
+                    slotView.levelText.text = "Lv.0";
                 }
 
                 if (slotView.portrait != null)
@@ -449,7 +451,11 @@ namespace TTCS.Flow.TeamFormation
                     slotView.portrait.color = new Color(1f, 1f, 1f, 0f);
                 }
 
-                return;
+                if (slotView.borderImage != null)
+                {
+                    slotView.borderImage.sprite = null;
+                    slotView.borderImage.color = new Color(1f, 1f, 1f, 0f);
+                }
             }
 
             var data = ResolveDataManager()?.LoadCharacter(characterId);
@@ -478,7 +484,7 @@ namespace TTCS.Flow.TeamFormation
 
             if (slotView.levelText != null)
             {
-                slotView.levelText.text = $"Lv: {level}";
+                slotView.levelText.text = $"Lv.{level}";
             }
 
             if (slotView.portrait != null)
@@ -488,6 +494,13 @@ namespace TTCS.Flow.TeamFormation
 
                 slotView.portrait.sprite = portrait;
                 slotView.portrait.color = portrait == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
+            }
+
+            if (slotView.borderImage != null)
+            {
+                var borderSprite = LoadBorderImage(data?.metadata?.rarity ?? "R");
+                slotView.borderImage.sprite = borderSprite;
+                slotView.borderImage.color = borderSprite == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
             }
         }
 
@@ -744,6 +757,12 @@ namespace TTCS.Flow.TeamFormation
                     _quickInfoPortrait.color = new Color(1f, 1f, 1f, 0f);
                 }
 
+                if (_quickInfoBorderImage != null)
+                {
+                    _quickInfoBorderImage.sprite = null;
+                    _quickInfoBorderImage.color = new Color(1f, 1f, 1f, 0f);
+                }
+
                 ClearQuickSkillItems();
                 // 🟢 Day 4 補充: Hide skill detail panel
                 HideSkillDetailPanel();
@@ -776,6 +795,13 @@ namespace TTCS.Flow.TeamFormation
                 var sprite = LoadPortrait(candidate.PortraitPath);
                 _quickInfoPortrait.sprite = sprite;
                 _quickInfoPortrait.color = sprite == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
+            }
+
+            if (_quickInfoBorderImage != null)
+            {
+                var borderSprite = LoadBorderImage(candidate.Rarity);
+                _quickInfoBorderImage.sprite = borderSprite;
+                _quickInfoBorderImage.color = borderSprite == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
             }
 
             // 🟢 Day 4 補充: Build skill items with click handler
@@ -979,6 +1005,18 @@ namespace TTCS.Flow.TeamFormation
             }
 
             return Color.white;
+        }
+
+        private static Sprite LoadBorderImage(string rarity)
+        {
+            if (string.IsNullOrWhiteSpace(rarity))
+            {
+                return null;
+            }
+
+            var normalized = rarity.ToLowerInvariant();
+            var borderPath = $"UI/Border/{normalized}_border";
+            return Resources.Load<Sprite>(borderPath);
         }
 
         private Sprite LoadPortrait(string portraitPath)

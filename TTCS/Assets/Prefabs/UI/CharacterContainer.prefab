@@ -737,6 +737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TTCS.Flow.TeamFormation.TeamFormationPickerCellView
   _button: {fileID: 3094015949283547717}
   _portrait: {fileID: 4306017613234717787}
+  _borderImage: {fileID: 3745999454442992067}
   _nameText: {fileID: 7724847242480329319}
   _levelText: {fileID: 4942808386836661205}
   _rarityText: {fileID: 7237823037830055192}

@@ -2123,18 +2123,21 @@ MonoBehaviour:
   _slotViews:
   - selectedHighlight: {fileID: 0}
     portrait: {fileID: 1033518817}
+    borderImage: {fileID: 0}
     nameText: {fileID: 927877952}
     hpSlider: {fileID: 1997532504}
     hpText: {fileID: 848885653}
     levelText: {fileID: 1437957678}
   - selectedHighlight: {fileID: 0}
     portrait: {fileID: 1936971035}
+    borderImage: {fileID: 0}
     nameText: {fileID: 855747331}
     hpSlider: {fileID: 232958826}
     hpText: {fileID: 1729021629}
     levelText: {fileID: 797561027}
   - selectedHighlight: {fileID: 0}
     portrait: {fileID: 1778099432}
+    borderImage: {fileID: 0}
     nameText: {fileID: 767587245}
     hpSlider: {fileID: 320827075}
     hpText: {fileID: 688866263}
@@ -2152,6 +2155,7 @@ MonoBehaviour:
   _quickInfoRarityText: {fileID: 992717904}
   _quickInfoElementText: {fileID: 712692855}
   _quickInfoPortrait: {fileID: 1387936285}
+  _quickInfoBorderImage: {fileID: 1686959595}
   _quickInfoSkillRoot: {fileID: 195315602}
   _quickInfoSkillItemPrefab: {fileID: 7179380076899872552, guid: 603c8637906208a4589acf147a560d18, type: 3}
   _skillDetailPanel: {fileID: 1606992196}
@@ -9311,7 +9315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7336140748965082688, guid: 16b5e7d21c8b3254daf842624e79eb02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 16b5e7d21c8b3254daf842624e79eb02, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
