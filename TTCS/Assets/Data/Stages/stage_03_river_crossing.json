@@ -1,0 +1,28 @@
+﻿{
+  "id": "stage_03_river_crossing",
+  "nameKey": "River Crossing",
+  "description": "Cross the narrow bridge while enemies pressure both flanks.",
+  "chapter": 1,
+  "order": 3,
+  "requirements": {
+    "minLevel": 3,
+    "prerequisiteStages": ["stage_02_forest_outpost"],
+    "unlockConditions": []
+  },
+  "encounters": [
+    { "wave": 1, "enemies": [ { "enemyId": "enemy_bandit", "level": 3, "position": 0 }, { "enemyId": "enemy_bandit", "level": 3, "position": 2 } ], "spawnDelay": 0 },
+    { "wave": 2, "enemies": [ { "enemyId": "enemy_alcryst", "level": 4, "position": 1 } ], "spawnDelay": 1.2 }
+  ],
+  "environment": { "modifiers": [], "hazards": ["slippery_ground"], "weatherEffect": "mist" },
+  "rewards": {
+    "firstClear": { "gold": 820, "exp": 500, "items": [] },
+    "repeatClear": { "gold": 165, "exp": 95, "items": [] },
+    "stars": [
+      { "condition": "clear_under_9_turns", "reward": { "gold": 130, "exp": 0, "items": [] } },
+      { "condition": "no_deaths", "reward": { "gold": 0, "exp": 130, "items": [] } },
+      { "condition": "trigger_3_counters", "reward": { "gold": 0, "exp": 0, "items": [] } }
+    ]
+  },
+  "theme": { "backgroundImage": "Stages/river_crossing", "musicTrack": "Music/battle_theme_02", "ambientSFX": "SFX/river_flow" },
+  "difficulty": { "rating": "normal", "recommendedLevel": 3, "recommendedPower": 1200 }
+}

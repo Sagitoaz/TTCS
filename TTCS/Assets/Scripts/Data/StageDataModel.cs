@@ -1,12 +1,8 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace TTCS.Data
 {
-    /// <summary>
-    /// 💜 Shared - JSON-serializable model cho stage data.
-    /// Dùng để deserialize từ Assets/Data/Stages/*.json
-    /// </summary>
     [Serializable]
     public class StageDataModel
     {
@@ -19,6 +15,8 @@ namespace TTCS.Data
         public List<StageEncounter> encounters;
         public StageEnvironment environment;
         public StageRewards rewards;
+        public StageTheme theme;
+        public StageDifficulty difficulty;
     }
 
     [Serializable]
@@ -56,12 +54,14 @@ namespace TTCS.Data
     [Serializable]
     public class StageRewards
     {
-        public StageRewardFirstClear firstClear;
+        public StageRewardGroup firstClear;
+        public StageRewardGroup repeatClear;
         public StageRewardRepeat repeat;
+        public List<StageStarReward> stars;
     }
 
     [Serializable]
-    public class StageRewardFirstClear
+    public class StageRewardGroup
     {
         public int gold;
         public int exp;
@@ -78,9 +78,32 @@ namespace TTCS.Data
     }
 
     [Serializable]
+    public class StageStarReward
+    {
+        public string condition;
+        public StageRewardGroup reward;
+    }
+
+    [Serializable]
     public class StageRewardItem
     {
         public string id;
         public int amount;
+    }
+
+    [Serializable]
+    public class StageTheme
+    {
+        public string backgroundImage;
+        public string musicTrack;
+        public string ambientSFX;
+    }
+
+    [Serializable]
+    public class StageDifficulty
+    {
+        public string rating;
+        public int recommendedLevel;
+        public int recommendedPower;
     }
 }

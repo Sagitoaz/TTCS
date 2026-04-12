@@ -3,6 +3,8 @@
   "nameKey": "Alcryst",
   "description": "An elite bow fighter who controls distance with precise horizontal shots and sky-cast volleys.",
   "type": "elite",
+  "element": "lightning",
+  "role": "bow",
 
   "baseStats": {
     "hp": 3200,

@@ -14,6 +14,8 @@ namespace TTCS.Data
         public string nameKey;
         public string description;
         public string type;         // "common", "elite", "boss"
+        public string element;      // "fire", "ice", "lightning", "dark", "light", "neutral"
+        public string role;         // "warrior", "mage", "support", "tank"
         public EnemyBaseStats baseStats;
         public EnemyResistances resistances;
         public List<EnemyMove> moveSet;

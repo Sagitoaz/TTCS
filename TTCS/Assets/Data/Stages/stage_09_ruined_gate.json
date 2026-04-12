@@ -1,0 +1,28 @@
+﻿{
+  "id": "stage_09_ruined_gate",
+  "nameKey": "Ruined Gate",
+  "description": "Breach the old fortress gate guarded by elite defenders.",
+  "chapter": 2,
+  "order": 4,
+  "requirements": {
+    "minLevel": 9,
+    "prerequisiteStages": ["stage_08_storm_watch"],
+    "unlockConditions": []
+  },
+  "encounters": [
+    { "wave": 1, "enemies": [ { "enemyId": "enemy_henry", "level": 9, "position": 0 }, { "enemyId": "enemy_bandit", "level": 9, "position": 2 } ], "spawnDelay": 0 },
+    { "wave": 2, "enemies": [ { "enemyId": "enemy_alcryst", "level": 10, "position": 1 }, { "enemyId": "enemy_henry", "level": 10, "position": 2 } ], "spawnDelay": 1.6 }
+  ],
+  "environment": { "modifiers": ["armor_break_zone"], "hazards": [], "weatherEffect": "dust" },
+  "rewards": {
+    "firstClear": { "gold": 1830, "exp": 1020, "items": [] },
+    "repeatClear": { "gold": 345, "exp": 205, "items": [] },
+    "stars": [
+      { "condition": "clear_under_7_turns", "reward": { "gold": 220, "exp": 0, "items": [] } },
+      { "condition": "no_deaths", "reward": { "gold": 0, "exp": 220, "items": [] } },
+      { "condition": "defeat_elite_first", "reward": { "gold": 0, "exp": 0, "items": [] } }
+    ]
+  },
+  "theme": { "backgroundImage": "Stages/ruined_gate", "musicTrack": "Music/battle_theme_05", "ambientSFX": "SFX/castle_wind" },
+  "difficulty": { "rating": "very_hard", "recommendedLevel": 9, "recommendedPower": 2680 }
+}

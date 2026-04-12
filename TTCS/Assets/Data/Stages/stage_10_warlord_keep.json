@@ -1,0 +1,28 @@
+﻿{
+  "id": "stage_10_warlord_keep",
+  "nameKey": "Warlord Keep",
+  "description": "Final assault on the keep defended by the warlord's best units.",
+  "chapter": 2,
+  "order": 5,
+  "requirements": {
+    "minLevel": 10,
+    "prerequisiteStages": ["stage_09_ruined_gate"],
+    "unlockConditions": []
+  },
+  "encounters": [
+    { "wave": 1, "enemies": [ { "enemyId": "enemy_alcryst", "level": 10, "position": 0 }, { "enemyId": "enemy_henry", "level": 10, "position": 1 } ], "spawnDelay": 0 },
+    { "wave": 2, "enemies": [ { "enemyId": "enemy_henry", "level": 11, "position": 1 }, { "enemyId": "enemy_alcryst", "level": 11, "position": 2 } ], "spawnDelay": 1.7 }
+  ],
+  "environment": { "modifiers": ["battle_frenzy"], "hazards": [], "weatherEffect": "ash" },
+  "rewards": {
+    "firstClear": { "gold": 2050, "exp": 1160, "items": [] },
+    "repeatClear": { "gold": 380, "exp": 225, "items": [] },
+    "stars": [
+      { "condition": "clear_under_7_turns", "reward": { "gold": 250, "exp": 0, "items": [] } },
+      { "condition": "no_deaths", "reward": { "gold": 0, "exp": 250, "items": [] } },
+      { "condition": "win_without_revive", "reward": { "gold": 0, "exp": 0, "items": [] } }
+    ]
+  },
+  "theme": { "backgroundImage": "Stages/warlord_keep", "musicTrack": "Music/battle_theme_05", "ambientSFX": "SFX/fortress_fire" },
+  "difficulty": { "rating": "very_hard", "recommendedLevel": 10, "recommendedPower": 3000 }
+}

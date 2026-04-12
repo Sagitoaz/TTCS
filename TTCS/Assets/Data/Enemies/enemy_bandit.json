@@ -3,6 +3,8 @@
   "nameKey": "Bandit",
   "description": "A common weak enemy found in early stages",
   "type": "common",
+  "element": "neutral",
+  "role": "warrior",
   
   "baseStats": {
     "hp": 1500,

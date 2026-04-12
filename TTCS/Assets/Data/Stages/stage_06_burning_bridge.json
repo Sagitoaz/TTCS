@@ -1,0 +1,28 @@
+﻿{
+  "id": "stage_06_burning_bridge",
+  "nameKey": "Burning Bridge",
+  "description": "Advance through flames while ranged enemies suppress your movement.",
+  "chapter": 2,
+  "order": 1,
+  "requirements": {
+    "minLevel": 6,
+    "prerequisiteStages": ["stage_05_bandit_camp"],
+    "unlockConditions": []
+  },
+  "encounters": [
+    { "wave": 1, "enemies": [ { "enemyId": "enemy_bandit", "level": 6, "position": 0 }, { "enemyId": "enemy_alcryst", "level": 6, "position": 2 } ], "spawnDelay": 0 },
+    { "wave": 2, "enemies": [ { "enemyId": "enemy_henry", "level": 7, "position": 1 } ], "spawnDelay": 1.4 }
+  ],
+  "environment": { "modifiers": ["burning_ground"], "hazards": [], "weatherEffect": "embers" },
+  "rewards": {
+    "firstClear": { "gold": 1300, "exp": 760, "items": [] },
+    "repeatClear": { "gold": 250, "exp": 150, "items": [] },
+    "stars": [
+      { "condition": "clear_under_8_turns", "reward": { "gold": 170, "exp": 0, "items": [] } },
+      { "condition": "no_deaths", "reward": { "gold": 0, "exp": 170, "items": [] } },
+      { "condition": "end_with_full_team", "reward": { "gold": 0, "exp": 0, "items": [] } }
+    ]
+  },
+  "theme": { "backgroundImage": "Stages/burning_bridge", "musicTrack": "Music/battle_theme_03", "ambientSFX": "SFX/fire_loop" },
+  "difficulty": { "rating": "hard", "recommendedLevel": 6, "recommendedPower": 1920 }
+}

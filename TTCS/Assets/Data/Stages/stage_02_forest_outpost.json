@@ -1,0 +1,28 @@
+﻿{
+  "id": "stage_02_forest_outpost",
+  "nameKey": "Forest Outpost",
+  "description": "Bandits patrol a ruined outpost on the forest edge.",
+  "chapter": 1,
+  "order": 2,
+  "requirements": {
+    "minLevel": 2,
+    "prerequisiteStages": ["stage_01_tutorial"],
+    "unlockConditions": []
+  },
+  "encounters": [
+    { "wave": 1, "enemies": [ { "enemyId": "enemy_bandit", "level": 2, "position": 0 }, { "enemyId": "enemy_bandit", "level": 2, "position": 2 } ], "spawnDelay": 0 },
+    { "wave": 2, "enemies": [ { "enemyId": "enemy_henry", "level": 3, "position": 1 } ], "spawnDelay": 1.2 }
+  ],
+  "environment": { "modifiers": [], "hazards": [], "weatherEffect": "none" },
+  "rewards": {
+    "firstClear": { "gold": 700, "exp": 420, "items": [] },
+    "repeatClear": { "gold": 140, "exp": 80, "items": [] },
+    "stars": [
+      { "condition": "clear_under_9_turns", "reward": { "gold": 120, "exp": 0, "items": [] } },
+      { "condition": "no_deaths", "reward": { "gold": 0, "exp": 120, "items": [] } },
+      { "condition": "keep_hp_above_50_percent", "reward": { "gold": 0, "exp": 0, "items": [] } }
+    ]
+  },
+  "theme": { "backgroundImage": "Stages/forest_outpost", "musicTrack": "Music/battle_theme_01", "ambientSFX": "SFX/forest_wind" },
+  "difficulty": { "rating": "easy", "recommendedLevel": 2, "recommendedPower": 980 }
+}

@@ -1,0 +1,28 @@
+﻿{
+  "id": "stage_05_bandit_camp",
+  "nameKey": "Bandit Camp",
+  "description": "Break the camp defenses and defeat the commander.",
+  "chapter": 1,
+  "order": 5,
+  "requirements": {
+    "minLevel": 5,
+    "prerequisiteStages": ["stage_04_rocky_pass"],
+    "unlockConditions": []
+  },
+  "encounters": [
+    { "wave": 1, "enemies": [ { "enemyId": "enemy_bandit", "level": 5, "position": 0 }, { "enemyId": "enemy_bandit", "level": 5, "position": 2 } ], "spawnDelay": 0 },
+    { "wave": 2, "enemies": [ { "enemyId": "enemy_henry", "level": 6, "position": 1 }, { "enemyId": "enemy_alcryst", "level": 6, "position": 2 } ], "spawnDelay": 1.4 }
+  ],
+  "environment": { "modifiers": ["burning_tents"], "hazards": [], "weatherEffect": "smoke" },
+  "rewards": {
+    "firstClear": { "gold": 1150, "exp": 680, "items": [] },
+    "repeatClear": { "gold": 220, "exp": 130, "items": [] },
+    "stars": [
+      { "condition": "clear_under_8_turns", "reward": { "gold": 160, "exp": 0, "items": [] } },
+      { "condition": "no_deaths", "reward": { "gold": 0, "exp": 160, "items": [] } },
+      { "condition": "use_2_or_less_heals", "reward": { "gold": 0, "exp": 0, "items": [] } }
+    ]
+  },
+  "theme": { "backgroundImage": "Stages/bandit_camp", "musicTrack": "Music/battle_theme_03", "ambientSFX": "SFX/campfire" },
+  "difficulty": { "rating": "normal", "recommendedLevel": 5, "recommendedPower": 1680 }
+}

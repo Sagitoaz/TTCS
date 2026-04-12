@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: 38ad45a4ab3d03141b093cd041b29297
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9182129445569987019
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_0
+  - first:
+      213: 4529290567348533983
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_1
+  - first:
+      213: -5106288764099298962
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_2
+  - first:
+      213: 8573506093409301904
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_3
+  - first:
+      213: 8583886020674036157
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_4
+  - first:
+      213: -293784653773154048
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_5
+  - first:
+      213: -1786629509165266459
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_6
+  - first:
+      213: 1342462170673735722
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_7
+  - first:
+      213: -7023281251590817144
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_8
+  - first:
+      213: -8299181253839318597
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_9
+  - first:
+      213: 8265722829221047915
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_10
+  - first:
+      213: -8030854480593624008
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_11
+  - first:
+      213: -8856368651126376634
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_12
+  - first:
+      213: -170775270888882406
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_13
+  - first:
+      213: -2875513891551159626
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_14
+  - first:
+      213: -8793228925327419717
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_15
+  - first:
+      213: -2831018917398746432
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_16
+  - first:
+      213: -5693580955678025606
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_17
+  - first:
+      213: 3017497186450143938
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_18
+  - first:
+      213: 3139523508508010613
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_19
+  - first:
+      213: -5417769245360036180
+    second: Mobile - Fire Emblem_ Heroes - UI - Chapters_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1129
+        width: 453
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53e75231be5829080800000000000000
+      internalID: -9182129445569987019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_1
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 1129
+        width: 453
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fda365716c54bde30800000000000000
+      internalID: 4529290567348533983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 971
+        width: 453
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e69fa4f5c61d229b0800000000000000
+      internalID: -5106288764099298962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_3
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 971
+        width: 453
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 095fe491e563bf670800000000000000
+      internalID: 8573506093409301904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 813
+        width: 453
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db1a7be3bd6102770800000000000000
+      internalID: 8583886020674036157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_5
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 813
+        width: 453
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 009d367f9644cebf0800000000000000
+      internalID: -293784653773154048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 655
+        width: 453
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e949f86ded9437e0800000000000000
+      internalID: -1786629509165266459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_7
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 655
+        width: 453
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2868674b3261a210800000000000000
+      internalID: 1342462170673735722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 497
+        width: 453
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88ab441a9ea488e90800000000000000
+      internalID: -7023281251590817144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_9
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 497
+        width: 453
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb1935ede9263dc80800000000000000
+      internalID: -8299181253839318597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 343
+        width: 450
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6eae879e1fb5b270800000000000000
+      internalID: 8265722829221047915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_11
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 343
+        width: 450
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 834ec51366cac8090800000000000000
+      internalID: -8030854480593624008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 189
+        width: 450
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 647f4b582abd71580800000000000000
+      internalID: -8856368651126376634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_13
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 189
+        width: 450
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1f3f32cbc841adf0800000000000000
+      internalID: -170775270888882406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_14
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 35
+        width: 450
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ba546bc95f1818d0800000000000000
+      internalID: -2875513891551159626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_15
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 85
+        width: 127
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb65b2581ec28f580800000000000000
+      internalID: -8793228925327419717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_16
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 95
+        width: 116
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ca69044b4336b8d0800000000000000
+      internalID: -2831018917398746432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_17
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 3
+        width: 116
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a78d1e469465cf0b0800000000000000
+      internalID: -5693580955678025606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_18
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 71
+        width: 206
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2caf91524bd40e920800000000000000
+      internalID: 3017497186450143938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_19
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 1
+        width: 109
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 578ab904ff3d19b20800000000000000
+      internalID: 3139523508508010613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Fire Emblem_ Heroes - UI - Chapters_20
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1
+        width: 109
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca6674f639730d4b0800000000000000
+      internalID: -5417769245360036180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_0: -9182129445569987019
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_1: 4529290567348533983
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_10: 8265722829221047915
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_11: -8030854480593624008
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_12: -8856368651126376634
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_13: -170775270888882406
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_14: -2875513891551159626
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_15: -8793228925327419717
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_16: -2831018917398746432
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_17: -5693580955678025606
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_18: 3017497186450143938
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_19: 3139523508508010613
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_2: -5106288764099298962
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_20: -5417769245360036180
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_3: 8573506093409301904
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_4: 8583886020674036157
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_5: -293784653773154048
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_6: -1786629509165266459
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_7: 1342462170673735722
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_8: -7023281251590817144
+      Mobile - Fire Emblem_ Heroes - UI - Chapters_9: -8299181253839318597
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

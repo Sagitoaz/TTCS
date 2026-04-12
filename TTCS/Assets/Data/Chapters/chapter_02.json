@@ -1,10 +1,14 @@
 ﻿{
   "id": "chapter_02",
-  "nameKey": "chapter_02_name",
+  "nameKey": "Chapter Two",
   "order": 2,
   "unlockRule": "required_total_stars",
   "requiredTotalStars": 5,
   "levelIds": [
-    "chapter_02_level_01"
+    "chapter_02_level_01",
+    "chapter_02_level_02",
+    "chapter_02_level_03",
+    "chapter_02_level_04",
+    "chapter_02_level_05"
   ]
 }

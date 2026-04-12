@@ -3,6 +3,8 @@
   "nameKey": "Henry",
   "description": "An elite enemy with powerful attacks and defensive capabilities",
   "type": "elite",
+  "element": "fire",
+  "role": "warrior",
   
   "baseStats": {
     "hp": 5000,

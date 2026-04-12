@@ -1,0 +1,28 @@
+﻿{
+  "id": "stage_07_dark_wood",
+  "nameKey": "Dark Wood",
+  "description": "Ambushes in thick fog force careful positioning and timing.",
+  "chapter": 2,
+  "order": 2,
+  "requirements": {
+    "minLevel": 7,
+    "prerequisiteStages": ["stage_06_burning_bridge"],
+    "unlockConditions": []
+  },
+  "encounters": [
+    { "wave": 1, "enemies": [ { "enemyId": "enemy_alcryst", "level": 7, "position": 0 }, { "enemyId": "enemy_bandit", "level": 7, "position": 1 } ], "spawnDelay": 0 },
+    { "wave": 2, "enemies": [ { "enemyId": "enemy_henry", "level": 8, "position": 2 } ], "spawnDelay": 1.5 }
+  ],
+  "environment": { "modifiers": ["reduced_vision"], "hazards": [], "weatherEffect": "fog" },
+  "rewards": {
+    "firstClear": { "gold": 1460, "exp": 840, "items": [] },
+    "repeatClear": { "gold": 280, "exp": 165, "items": [] },
+    "stars": [
+      { "condition": "clear_under_8_turns", "reward": { "gold": 180, "exp": 0, "items": [] } },
+      { "condition": "no_deaths", "reward": { "gold": 0, "exp": 180, "items": [] } },
+      { "condition": "avoid_status_effects", "reward": { "gold": 0, "exp": 0, "items": [] } }
+    ]
+  },
+  "theme": { "backgroundImage": "Stages/dark_wood", "musicTrack": "Music/battle_theme_04", "ambientSFX": "SFX/night_forest" },
+  "difficulty": { "rating": "hard", "recommendedLevel": 7, "recommendedPower": 2160 }
+}
