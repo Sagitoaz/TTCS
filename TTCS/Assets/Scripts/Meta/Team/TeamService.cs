@@ -86,6 +86,9 @@ namespace TTCS.Meta.Team
             save.currentParty.Clear();
             save.currentParty.AddRange(lineup);
 
+            var slotIndex = _saveManager.ActiveSlotIndex >= 0 ? _saveManager.ActiveSlotIndex : 0;
+            _saveManager.Save(slotIndex);
+
             DebugLogger.Log($"[TeamService] Saved lineup: {string.Join(",", lineup)}", DebugLogger.LogCategory.Save);
         }
     }

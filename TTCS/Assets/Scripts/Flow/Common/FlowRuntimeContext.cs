@@ -11,5 +11,14 @@ namespace TTCS.Flow
         public static string SelectedLevelId { get; set; }
         public static IReadOnlyList<string> SelectedLineupSnapshot { get; set; }
         public static CombatResult LastCombatResult { get; set; }
+
+        public static bool HasCombatLaunchData =>
+            !string.IsNullOrWhiteSpace(SelectedLevelId) && SelectedLineupSnapshot != null;
+
+        public static void ClearCombatLaunchData()
+        {
+            SelectedLevelId = null;
+            SelectedLineupSnapshot = null;
+        }
     }
 }

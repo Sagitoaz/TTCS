@@ -7,6 +7,7 @@ using TTCS.Combat.Timing;
 using TTCS.Core.Data;
 using TTCS.Data;
 using TTCS.Debugging;
+using TTCS.Flow;
 using TTCS.UI.Combat;
 using static TTCS.Debugging.DebugLogger;
 using TTCS.Core.Events;
@@ -90,7 +91,15 @@ namespace TTCS.Combat.Managers
         {
 
             if (_autoStartOnPlay)
+            {
                 StartCoroutine(InitializeCombat(_defaultStageId, _defaultPartyIds, _defaultSeed));
+                return;
+            }
+
+            if (FlowRuntimeContext.HasCombatLaunchData)
+            {
+                StartCoroutine(InitializeFromFlowContext());
+            }
         }
 
         #endregion
@@ -158,6 +167,29 @@ namespace TTCS.Combat.Managers
             CombatFlowController.Instance?.StartBattle(_playerTeam, _enemyTeam, seed);
 
             Log("CombatSceneManager: Combat started.", LogCategory.Combat);
+        }
+
+        private IEnumerator InitializeFromFlowContext()
+        {
+            var levelId = FlowRuntimeContext.SelectedLevelId;
+            var lineupSnapshot = FlowRuntimeContext.SelectedLineupSnapshot?.Where(id => !string.IsNullOrWhiteSpace(id)).ToList() ?? new List<string>();
+
+            if (string.IsNullOrWhiteSpace(levelId))
+            {
+                Log("CombatSceneManager: Missing selected level id in FlowRuntimeContext.", LogCategory.Combat);
+                yield break;
+            }
+
+            var levelData = DataManager.Instance?.LoadLevel(levelId);
+            var stageId = levelData?.stageId;
+            if (string.IsNullOrWhiteSpace(stageId))
+            {
+                Log($"CombatSceneManager: Could not resolve stage for level '{levelId}'.", LogCategory.Combat);
+                yield break;
+            }
+
+            yield return StartCoroutine(InitializeCombat(stageId, lineupSnapshot, _defaultSeed));
+            FlowRuntimeContext.ClearCombatLaunchData();
         }
 
         /// <summary>

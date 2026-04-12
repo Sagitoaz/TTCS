@@ -90,6 +90,8 @@ namespace TTCS.UI.Combat
         {
             Log("CombatUIController: Initializing UI...", LogCategory.UI);
 
+            EnsureCombatPanelsActive();
+
             // Build entity map
             _entityMap.Clear();
             foreach (var e in playerTeam)  if (e != null) _entityMap[e.ID] = e;
@@ -129,6 +131,16 @@ namespace TTCS.UI.Combat
             EventBus.Instance.Subscribe<TurnStartedEvent>(OnPlayerTurnStarted);
 
             Log("CombatUIController: UI initialized.", LogCategory.UI);
+        }
+
+        private void EnsureCombatPanelsActive()
+        {
+            if (_battleHUD != null) _battleHUD.gameObject.SetActive(true);
+            if (_skillButtonPanel != null) _skillButtonPanel.gameObject.SetActive(true);
+            if (_turnOrderDisplay != null) _turnOrderDisplay.gameObject.SetActive(true);
+            if (_actionResultDisplay != null) _actionResultDisplay.gameObject.SetActive(true);
+            if (_timingFeedbackUI != null) _timingFeedbackUI.gameObject.SetActive(true);
+            if (_resultPanel != null) _resultPanel.SetActive(false);
         }
 
         #endregion

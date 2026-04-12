@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TTCS.Combat.Entities;
 using TTCS.Combat.Managers;
 using TTCS.Core;
@@ -45,8 +46,11 @@ namespace TTCS.Combat
 
         private void Start()
         {
-            if (_autoStartOnPlay)
+            var activeSceneName = SceneManager.GetActiveScene().name;
+            if (_autoStartOnPlay && activeSceneName.Contains("TestCombat"))
+            {
                 StartTestCombat();
+            }
         }
 
         /// <summary>Call this from the Inspector Play button or from Start().</summary>

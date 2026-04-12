@@ -7671,8 +7671,11 @@ MonoBehaviour:
   _actionResultDisplay: {fileID: 808655593}
   _timingFeedbackUI: {fileID: 104738325}
   _resultPanel: {fileID: 558034748}
-  _resultText: {fileID: 1308282696}
   _resultButton: {fileID: 336647929}
+  _resultButtonLabel: {fileID: 0}
+  _resultCardController: {fileID: 0}
+  _victoryButtonLabel: Continue
+  _defeatButtonLabel: Retry
 --- !u!1 &1443287422
 GameObject:
   m_ObjectHideFlags: 0
@@ -11198,8 +11201,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2090620136}
-  - component: {fileID: 2090620140}
-  - component: {fileID: 2090620139}
   - component: {fileID: 2090620138}
   - component: {fileID: 2090620137}
   - component: {fileID: 2090620142}
@@ -11251,30 +11252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce1218f75bc5a43b7ed3f76e5d5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TTCS.Combat.Managers.TurnManager
---- !u!114 &2090620139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090620135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53446aaffdf0ac24eb6a71bdbecec482, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TTCS.Core.Save.SaveManager
---- !u!114 &2090620140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090620135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd710ac0bf0b1ae41ac7bda6dbf7a497, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TTCS.Core.Data.DataManager
 --- !u!114 &2090620141
 MonoBehaviour:
   m_ObjectHideFlags: 0
