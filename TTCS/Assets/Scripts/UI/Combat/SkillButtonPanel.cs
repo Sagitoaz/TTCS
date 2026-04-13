@@ -145,6 +145,16 @@ namespace TTCS.UI.Combat
             }
         }
 
+        /// <summary>
+        /// Update enemy list khi wave progression xảy ra (gọi từ CombatFlowController).
+        /// </summary>
+        public void UpdateEnemies(List<CombatEntity> newEnemies)
+        {
+            _enemies = newEnemies ?? new List<CombatEntity>();
+            ExitTargetSelectionMode(resetCamera: true, restoreButtons: true);
+            Log($"SkillButtonPanel: Updated enemies list to {_enemies.Count} entities.", LogCategory.UI);
+        }
+
         #endregion
 
         // ──────────────────────────────────────────────────────────────────

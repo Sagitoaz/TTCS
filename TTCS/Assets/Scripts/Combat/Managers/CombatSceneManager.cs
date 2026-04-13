@@ -165,7 +165,8 @@ namespace TTCS.Combat.Managers
             SpawnAndRegisterViews();
             yield return null;
 
-            CombatFlowController.Instance?.StartBattle(_playerTeam, _enemyTeam, seed);
+            // Pass stage data + wave index for progression
+            CombatFlowController.Instance?.StartBattle(_playerTeam, _enemyTeam, _currentStage, 0, "", seed);
 
             Log("CombatSceneManager: Combat started.", LogCategory.Combat);
         }
@@ -189,8 +190,70 @@ namespace TTCS.Combat.Managers
                 yield break;
             }
 
-            yield return StartCoroutine(InitializeCombat(stageId, lineupSnapshot, _defaultSeed));
+            // Store levelId to pass to CombatFlowController
+            var currentLevelId = levelId;
+            yield return StartCoroutine(InitializeCombat(stageId, lineupSnapshot, currentLevelId, _defaultSeed));
             FlowRuntimeContext.ClearCombatLaunchData();
+        }
+
+        /// <summary>
+        /// Overload với levelId để track stage completion.
+        /// </summary>
+        public IEnumerator InitializeCombat(string stageId, List<string> partyCharacterIds, string levelId, int seed = 0)
+        {
+            Log($"CombatSceneManager: Initializing stage '{stageId}' (level '{levelId}')...", LogCategory.Combat);
+
+            // ─── 1. Load stage data ───────────────────────────────────────
+            yield return null; // Frame gap cho DataManager init nếu cần
+
+            _currentStage = DataManager.Instance?.LoadStage(stageId);
+            if (_currentStage == null)
+            {
+                Log($"CombatSceneManager: Stage '{stageId}' không tìm thấy — dùng wave rỗng.", LogCategory.Combat);
+            }
+
+            // ─── 2. Tạo entities ──────────────────────────────────────────
+            _playerTeam = EntityFactory.CreateParty(partyCharacterIds);
+            if (_playerTeam == null || _playerTeam.Count == 0)
+            {
+                Log("CombatSceneManager: Party rỗng!", LogCategory.Combat);
+                yield break;
+            }
+
+            // Lấy wave đầu tiên từ stage, hoặc dùng default enemies
+            var enemyIds = GetFirstWaveEnemyIds(_currentStage);
+            _enemyTeam = EntityFactory.CreateWave(enemyIds);
+
+            // Gán AIBehavior từ EnemyData ScriptableObject cho từng enemy
+            foreach (var enemy in _enemyTeam)
+            {
+                var data = _enemyDataAssets.FirstOrDefault(d => d != null && d.id == enemy.EnemyTemplateId);
+                if (data != null && data.aiBehavior != null)
+                    enemy.Behavior = data.aiBehavior;
+            }
+
+            Log($"CombatSceneManager: {_playerTeam.Count} players, {_enemyTeam.Count} enemies.", LogCategory.Combat);
+
+            // ─── 3. Pre-register entities vào SkillManager ───────────────
+            // Cần làm trước khi HUD init để BattleHUD đọc được mana đúng (không bị 0)
+            var allies = _playerTeam.Cast<CombatEntity>().ToList();
+            var enemies = _enemyTeam.Cast<CombatEntity>().ToList();
+            if (SkillManager.Instance != null)
+            {
+                SkillManager.Instance.ResetCombat();
+                foreach (var e in allies.Concat(enemies))
+                    SkillManager.Instance.RegisterEntity(e.ID);
+            }
+
+            // ─── 4. Khởi tạo CombatUIController ──────────────────────────
+            CombatUIController.Instance?.Initialize(allies, enemies);
+            SpawnAndRegisterViews();
+            yield return null;
+
+            // Pass stage data + wave index + levelId for progression and saving
+            CombatFlowController.Instance?.StartBattle(_playerTeam, _enemyTeam, _currentStage, 0, levelId, seed);
+
+            Log("CombatSceneManager: Combat started.", LogCategory.Combat);
         }
 
         private List<string> ResolvePartyFromFlowOrSave()
@@ -411,6 +474,71 @@ namespace TTCS.Combat.Managers
         public StageDataModel GetCurrentStageData()
         {
             return _currentStage;
+        }
+
+        /// <summary>
+        /// Spawn enemies của wave tiếp theo (gọi từ CombatFlowController khi wave progression).
+        /// </summary>
+        public void SpawnWaveEnemies(List<Enemy> enemyList)
+        {
+            if (!_spawnViewsOnInitialize || enemyList == null || enemyList.Count == 0)
+                return;
+
+            // Clear previous enemy views
+            var enemyViews = _spawnedViews.FindAll(v => 
+            {
+                if (v == null) return false;
+                var view = v.GetComponent<CharacterView>();
+                return view != null && view is EnemyView;
+            });
+            foreach (var view in enemyViews)
+            {
+                _spawnedViews.Remove(view);
+                Destroy(view);
+            }
+
+            // Spawn new enemies
+            for (int i = 0; i < enemyList.Count; i++)
+            {
+                var entity = enemyList[i];
+                if (entity == null) continue;
+
+                var model = DataManager.Instance?.LoadEnemy(entity.EnemyTemplateId);
+                var slot = ResolveSlotTransform(_enemySlots, i);
+                if (slot == null)
+                    Log($"CombatSceneManager: Missing Enemy Slot index {i}, using fallback world position.", LogCategory.Combat);
+                var view = CharacterViewFactory.CreateEnemyView(model, slot);
+                if (view == null) continue;
+
+                view.EntityId = entity.ID;
+                if (slot != null)
+                    view.transform.localPosition = Vector3.zero;
+                else
+                    view.transform.position = ResolveFallbackWorldPosition(i, isPlayer: false);
+                _spawnedViews.Add(view.gameObject);
+
+                RegisterViewBindings(entity.ID, view, isPlayer: false);
+            }
+        }
+
+        /// <summary>
+        /// Lấy danh sách enemy IDs cho một wave cụ thể.
+        /// </summary>
+        public List<string> GetWaveEnemyIds(int waveIndex)
+        {
+            if (_currentStage?.encounters == null || waveIndex < 0 || waveIndex >= _currentStage.encounters.Count)
+                return new List<string>();
+
+            var wave = _currentStage.encounters[waveIndex];
+            if (wave?.enemies == null)
+                return new List<string>();
+
+            var ids = new List<string>();
+            foreach (var e in wave.enemies)
+                if (!string.IsNullOrEmpty(e?.enemyId))
+                    ids.Add(e.enemyId);
+
+            return ids;
         }
 
 

@@ -256,6 +256,60 @@ namespace TTCS.UI.Combat
             SubscribeEvents();
         }
 
+        /// <summary>
+        /// Update enemy slots khi wave progression xảy ra (gọi từ CombatUIController).
+        /// </summary>
+        public void UpdateEnemySlots(List<CombatEntity> newEnemies)
+        {
+            // Remove old enemy IDs from slot map
+            foreach (var oldEnemyId in _enemyEntityIds)
+            {
+                _slotMap.Remove(oldEnemyId);
+            }
+
+            // Clear old enemy data
+            _enemyEntityIds.Clear();
+            _targetingEnemyIds.Clear();
+            _enemyVisibleUntil.Clear();
+
+            // Reset all enemy slots
+            for (int i = 0; i < _enemySlots.Length; i++)
+            {
+                var slot = _enemySlots[i];
+                
+                if (i < newEnemies.Count && newEnemies[i] != null)
+                {
+                    Sprite portrait = ResolvePortraitSprite(newEnemies[i]);
+                    int maxMP = TTCS.Combat.Managers.SkillManager.Instance != null
+                        ? TTCS.Combat.Managers.SkillManager.Instance.GetMaxMana(newEnemies[i].ID)
+                        : 100;
+                    
+                    // Kill any running animations on the sliders
+                    if (slot.HPSlider != null)
+                        slot.HPSlider.DOKill();
+                    if (slot.HPDelayedSlider != null)
+                        slot.HPDelayedSlider.DOKill();
+                    
+                    // Reinitialize this slot with new enemy
+                    slot.Initialize(newEnemies[i], maxMP, portrait);
+                    _slotMap[newEnemies[i].ID] = slot;
+                    _enemyEntityIds.Add(newEnemies[i].ID);
+                    
+                    slot.SetVisible(false);
+                    if (slot.MPSlider != null)
+                        slot.MPSlider.gameObject.SetActive(false);
+                }
+                else
+                {
+                    // Hide unused slots
+                    if (slot.HPSlider != null)
+                        slot.HPSlider.gameObject.transform.parent.gameObject.SetActive(false);
+                }
+            }
+
+            Log($"BattleHUD: Updated enemy slots to {newEnemies.Count} enemies.", LogCategory.UI);
+        }
+
         private void InitGroup(List<CombatEntity> entities, HUDSlot[] slots, bool isEnemyGroup)
         {
             for (int i = 0; i < slots.Length; i++)

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TTCS.Core.Data;
+using TTCS.Combat.Stats;
 using TTCS.Data;
 using TTCS.Debugging;
 using static TTCS.Debugging.DebugLogger;
@@ -127,6 +128,57 @@ namespace TTCS.Combat.Entities
             }
 
             Log($"EntityFactory: Created wave of {enemies.Count} enemies", LogCategory.Combat);
+            return enemies;
+        }
+
+        /// <summary>Tạo danh sách Enemy từ danh sách ID + levels (dùng cho wave progression)</summary>
+        public static List<Enemy> CreateWave(IEnumerable<string> enemyIds, IEnumerable<int> enemyLevels)
+        {
+            var enemies = new List<Enemy>();
+            var enemyIdList = new List<string>(enemyIds ?? new List<string>());
+            var enemyLevelList = new List<int>(enemyLevels ?? new List<int>());
+            
+            for (int i = 0; i < enemyIdList.Count; i++)
+            {
+                var id = enemyIdList[i];
+                var level = i < enemyLevelList.Count ? enemyLevelList[i] : 1;
+                
+                var model = DataManager.Instance?.LoadEnemy(id);
+                if (model == null) continue;
+
+                // Tạo enemy theo pipeline hiện tại rồi scale stats theo level encounter.
+                var enemy = CreateEnemy(model, i);
+                if (enemy == null) continue;
+
+                int safeLevel = level > 0 ? level : 1;
+                float levelMultiplier = 1f + 0.2f * (safeLevel - 1); // Lv2 = +20%
+
+                int baseHp = model.baseStats?.hp ?? enemy.Health.MaxHP;
+                int baseAtk = model.baseStats?.atk ?? enemy.ATK;
+                int baseDef = model.baseStats?.def ?? enemy.DEF;
+                int baseSpd = model.baseStats?.spd ?? enemy.SPD;
+                float baseCrit = model.baseStats?.crit ?? enemy.CritRate;
+                float baseRes = model.baseStats?.resist ?? 0f;
+
+                int scaledHp = System.Math.Max(1, (int)System.Math.Round(baseHp * levelMultiplier));
+                int scaledAtk = System.Math.Max(1, (int)System.Math.Round(baseAtk * levelMultiplier));
+                int scaledDef = System.Math.Max(1, (int)System.Math.Round(baseDef * levelMultiplier));
+                int scaledSpd = System.Math.Max(1, (int)System.Math.Round(baseSpd * levelMultiplier));
+
+                enemy.Stats.SetBaseStats(new EntityStats(
+                    hp: scaledHp,
+                    atk: scaledAtk,
+                    def: scaledDef,
+                    spd: scaledSpd,
+                    crit: baseCrit,
+                    res: baseRes
+                ));
+                enemy.Health.SetMaxHP(scaledHp);
+                
+                enemies.Add(enemy);
+            }
+
+            Log($"EntityFactory: Created wave of {enemies.Count} enemies with levels", LogCategory.Combat);
             return enemies;
         }
     }

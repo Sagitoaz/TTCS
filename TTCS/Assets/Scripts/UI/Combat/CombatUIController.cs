@@ -133,6 +133,39 @@ namespace TTCS.UI.Combat
             Log("CombatUIController: UI initialized.", LogCategory.UI);
         }
 
+        /// <summary>
+        /// Update cached enemy list khi wave progression xảy ra (gọi từ CombatFlowController).
+        /// </summary>
+        public void UpdateEnemyList(List<CombatEntity> newEnemyTeam)
+        {
+                // Remove old enemy entries from entity map
+                foreach (var oldEnemy in _enemyList)
+                {
+                    if (oldEnemy != null && _entityMap.ContainsKey(oldEnemy.ID))
+                        _entityMap.Remove(oldEnemy.ID);
+                }
+
+                _enemyList = newEnemyTeam ?? new List<CombatEntity>();
+            
+                // Add new enemies to entity map
+                foreach (var entity in _enemyList)
+                {
+                    if (entity != null)
+                    {
+                        _entityMap[entity.ID] = entity;
+                        _turnOrderDisplay?.RegisterEntity(entity);
+                    }
+                }
+
+            // Update BattleHUD slots with new enemies
+            _battleHUD?.UpdateEnemySlots(_enemyList);
+
+            // Update SkillButtonPanel's enemy list for target selection
+            _skillButtonPanel?.UpdateEnemies(_enemyList);
+
+                Log($"CombatUIController: Updated enemy list to {_enemyList.Count} entities. Entity map now has {_entityMap.Count} total entries.", LogCategory.UI);
+        }
+
         private void EnsureCombatPanelsActive()
         {
             if (_battleHUD != null) _battleHUD.gameObject.SetActive(true);

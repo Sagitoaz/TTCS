@@ -8,6 +8,8 @@ using TTCS.Combat.Entities;
 using TTCS.Core.Data;
 using TTCS.Core.Events;
 using TTCS.Core.Utilities;
+using TTCS.Core.Save;
+using TTCS.Data;
 using TTCS.Debugging;
 using static TTCS.Debugging.DebugLogger;
 // CombatLogger is in TTCS.Combat — alias to avoid confusion with Unity.Debug
@@ -78,6 +80,11 @@ namespace TTCS.Combat.Managers
 
         private CombatEntity _currentActor;
 
+        // ─── Wave Progression ─────────────────────────────────────────────
+        private StageDataModel _currentStage;
+        private int _currentWaveIndex = 0;
+        private string _currentLevelId; // for save tracking
+
         // ─── Player Input ─────────────────────────────────────────────────
         private bool _playerInputReceived;
         private string _pendingSkillId;
@@ -125,6 +132,14 @@ namespace TTCS.Combat.Managers
         /// <param name="seed">RNG seed; 0 = random</param>
         public void StartBattle(List<Character> players, List<Enemy> enemies, int seed = 0)
         {
+            StartBattle(players, enemies, null, 0, "", seed);
+        }
+
+        /// <summary>
+        /// Extended StartBattle dengan stage data cho wave progression.
+        /// </summary>
+        public void StartBattle(List<Character> players, List<Enemy> enemies, StageDataModel stage, int waveIndex, string levelId, int seed = 0)
+        {
             if (IsBattleActive)
             {
                 Log("CombatFlowController: Battle already active — ignoring StartBattle call.", LogCategory.Combat);
@@ -139,6 +154,9 @@ namespace TTCS.Combat.Managers
 
             _playerTeam = players.Where(p => p != null).ToList();
             _enemyTeam = enemies?.Where(e => e != null).ToList() ?? new List<Enemy>();
+            _currentStage = stage;
+            _currentWaveIndex = waveIndex;
+            _currentLevelId = levelId;
 
             CurrentSeed = seed > 0 ? seed : UnityEngine.Random.Range(1, int.MaxValue);
 
@@ -184,7 +202,23 @@ namespace TTCS.Combat.Managers
             while (true)
             {
                 // Check victory/defeat BEFORE getting next actor
-                if (CheckVictory() || CheckDefeat()) break;
+                if (CheckVictory())
+                {
+                    bool hasNextWave = TryProgressToNextWave();
+                    if (hasNextWave)
+                    {
+                        // Wave tiếp theo đã load, continued to next iteration
+                        yield return new WaitForSeconds(1f);
+                        continue; // Continue battle loop with new wave
+                    }
+                    else
+                    {
+                        // Không còn wave, end battle
+                        break;
+                    }
+                }
+
+                if (CheckDefeat()) break;
 
                 // Get next actor from timeline
                 string actorId = TurnManager.Instance?.GetNextActor();
@@ -250,8 +284,7 @@ namespace TTCS.Combat.Managers
             }
 
             // ── Battle End ──────────────────────────────────────────────
-            bool victory = CheckVictory();
-            yield return EndBattle(victory);
+            yield return EndBattle(victory: CheckVictory());
         }
 
         // ─── Battle Initialization ────────────────────────────────────────
@@ -589,6 +622,70 @@ namespace TTCS.Combat.Managers
         private bool CheckDefeat() =>
             _playerTeam.Count > 0 && _playerTeam.All(p => p.IsDead);
 
+        /// <summary>
+        /// Thử load wave tiếp theo. Return true nếu có wave tiếp theo, false nếu stage kết thúc.
+        /// </summary>
+        private bool TryProgressToNextWave()
+        {
+            if (_currentStage == null || _currentStage.encounters == null)
+                return false;
+
+            _currentWaveIndex++;
+            if (_currentWaveIndex >= _currentStage.encounters.Count)
+            {
+                Log("CombatFlowController: No more waves — battle complete.", LogCategory.Combat);
+                return false; // Stage kết thúc
+            }
+
+            var nextWave = _currentStage.encounters[_currentWaveIndex];
+            if (nextWave?.enemies == null || nextWave.enemies.Count == 0)
+            {
+                Log($"CombatFlowController: Wave {_currentWaveIndex} is empty.", LogCategory.Combat);
+                return false;
+            }
+
+            Log($"CombatFlowController: Transitioning to wave {_currentWaveIndex + 1}...", LogCategory.Combat);
+
+            // Load enemies từ wave
+            var newEnemyIds = new List<string>();
+            var newEnemyLevels = new List<int>();
+            foreach (var e in nextWave.enemies)
+                if (!string.IsNullOrEmpty(e?.enemyId)) {
+                    newEnemyIds.Add(e.enemyId);
+                    newEnemyLevels.Add(e.level > 0 ? e.level : 1);
+                }
+
+            if (newEnemyIds.Count == 0)
+                return false;
+
+            // Tạo entities mới
+            var newEnemies = EntityFactory.CreateWave(newEnemyIds, newEnemyLevels);
+            if (newEnemies == null || newEnemies.Count == 0)
+                return false;
+
+            _enemyTeam = newEnemies;
+
+            // Cập nhật allEntities
+            _allEntities.RemoveAll(e => !e.IsPlayer);
+            _allEntities.AddRange(_enemyTeam.Cast<CombatEntity>());
+
+            // Register với TurnManager
+            foreach (var enemy in _enemyTeam)
+            {
+                TurnManager.Instance?.RegisterEntity(enemy.ID, enemy.SPD);
+                SkillManager.Instance?.RegisterEntity(enemy.ID);
+            }
+
+            // Spawn views
+            CombatSceneManager.Instance?.SpawnWaveEnemies(_enemyTeam);
+
+            // Update UI with new enemies
+            CombatUIController.Instance?.UpdateEnemyList(_enemyTeam.Cast<CombatEntity>().ToList());
+
+            Log($"CombatFlowController: Wave {_currentWaveIndex + 1} loaded — {newEnemies.Count} enemies.", LogCategory.Combat);
+            return true;
+        }
+
         private IEnumerator EndBattle(bool victory)
         {
             _state = CombatState.BattleEnd;
@@ -597,11 +694,34 @@ namespace TTCS.Combat.Managers
             Log($"CombatFlowController: Battle ended — {result}", LogCategory.Combat);
             CombatLogger.LogCombatResult(victory, TurnNumber);
 
+            // Save stage completion if victory and we have level/stage info
+            if (victory && !string.IsNullOrEmpty(_currentLevelId))
+            {
+                SaveStageCompletion(_currentLevelId);
+            }
+
             EventBus.Instance.Publish(new CombatEndedEvent(victory));
 
             yield return new WaitForSeconds(0.5f);
 
             _state = CombatState.Idle;
+        }
+
+        private void SaveStageCompletion(string levelId)
+        {
+            var saveManager = SaveManager.Instance;
+            if (saveManager?.CurrentSave == null)
+                return;
+
+            var save = saveManager.CurrentSave;
+            var levelProgress = save.GetLevelProgress(levelId);
+            if (levelProgress != null)
+            {
+                levelProgress.isCleared = true;
+                save.SetLevelProgress(levelProgress);
+                saveManager.Save(0); // Save to slot 0
+                Log($"CombatFlowController: Stage completion saved for level '{levelId}'.", LogCategory.Combat);
+            }
         }
 
         // ─── Helpers ──────────────────────────────────────────────────────
