@@ -86,7 +86,7 @@
   },
 
   "visual": {
-    "portraitPath": "Characters/Enemy/alcryst_portrait",
+    "portraitPath": "Characters/alcryst_portrait",
     "spritePath": "Enemies/alcryst_sprite",
     "animatorController": "Enemies/alcryst_animator",
     "scale": 1.0

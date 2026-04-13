@@ -134,13 +134,13 @@ namespace TTCS.Flow.LevelSelect
             button.onClick.AddListener(() => OnLevelClicked(levelId, levelState));
 
             // Disable if locked
-            if (!levelState.IsUnlocked)
+            if (_progressionService != null && !_progressionService.CanEnterLevel(levelId))
                 button.interactable = false;
         }
 
         private void OnLevelClicked(string levelId, LevelState levelState)
         {
-            if (!levelState.IsUnlocked)
+            if (_progressionService != null && !_progressionService.CanEnterLevel(levelId))
             {
                 Debug.LogWarning($"[LevelSelect] Cannot enter locked level: {levelId}");
                 return;

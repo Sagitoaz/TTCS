@@ -35,12 +35,22 @@ namespace TTCS.Combat.Entities
             // Tạo unique combat ID (model id + index để tránh duplicate khi có 2 cùng char)
             string combatId = instanceIndex > 0 ? $"{model.id}_{instanceIndex}" : model.id;
 
+            var savedLevel = SaveManager.Instance?.CurrentSave?.GetCharacterLevel(CharacterId) ?? 0;
+            var baseLevel = model.baseStats?.level ?? 1;
+            var level = System.Math.Max(1, savedLevel > 0 ? savedLevel : baseLevel);
+
             var hp = model.baseStats?.hp ?? 1000;
             var atk = model.baseStats?.atk ?? 100;
             var def = model.baseStats?.def ?? 80;
             var spd = model.baseStats?.spd ?? 100;
             var crit = model.baseStats?.crit ?? 0.05f;
             var res = model.baseStats?.resist ?? 0f;
+
+            // Scale stats theo level (giống logic progression UI).
+            hp += (model.growthCurve?.hpPerLevel ?? 0) * (level - 1);
+            atk += (model.growthCurve?.atkPerLevel ?? 0) * (level - 1);
+            def += (model.growthCurve?.defPerLevel ?? 0) * (level - 1);
+            spd += (model.growthCurve?.spdPerLevel ?? 0) * (level - 1);
 
             ApplyAccessoryBonuses(CharacterId, ref hp, ref atk, ref def, ref spd, ref crit, ref res);
 

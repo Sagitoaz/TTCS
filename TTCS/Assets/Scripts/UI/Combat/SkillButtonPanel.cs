@@ -199,6 +199,7 @@ namespace TTCS.UI.Combat
         {
             var targets = new List<string>();
             string rule = skill.targetRule?.type ?? "single_enemy";
+            bool canTargetSelf = skill.targetRule?.canTargetSelf ?? false;
 
             switch (rule)
             {
@@ -207,13 +208,36 @@ namespace TTCS.UI.Combat
                         if (e != null && !e.IsDead) targets.Add(e.ID);
                     break;
 
+                case "all_allies":
+                    foreach (var ally in _allies)
+                    {
+                        if (ally == null || ally.IsDead) continue;
+                        if (!canTargetSelf && ally.ID == _currentEntityId) continue;
+                        targets.Add(ally.ID);
+                    }
+                    break;
+
                 case "self":
                     targets.Add(_currentEntityId);
                     break;
 
                 case "single_ally":
-                    // Mặc định target bản thân — UI nâng cao có thể override sau
-                    targets.Add(_currentEntityId);
+                    // Nếu skill cho phép target self thì ưu tiên bản thân, ngược lại chọn ally còn sống đầu tiên.
+                    if (canTargetSelf)
+                    {
+                        targets.Add(_currentEntityId);
+                    }
+                    else
+                    {
+                        foreach (var ally in _allies)
+                        {
+                            if (ally != null && !ally.IsDead && ally.ID != _currentEntityId)
+                            {
+                                targets.Add(ally.ID);
+                                break;
+                            }
+                        }
+                    }
                     break;
 
                 case "single_enemy":
@@ -245,7 +269,7 @@ namespace TTCS.UI.Combat
             if (skill == null) return;
 
             string rule = skill.targetRule?.type ?? "single_enemy";
-            _targetCandidates = BuildTargetCandidates(rule);
+            _targetCandidates = BuildTargetCandidates(skill);
 
             if (_targetCandidates.Count == 0)
             {
@@ -273,16 +297,29 @@ namespace TTCS.UI.Combat
             Log($"SkillButtonPanel: Enter target selection for '{skillId}' ({rule})", LogCategory.UI);
         }
 
-        private List<CombatEntity> BuildTargetCandidates(string rule)
+        private List<CombatEntity> BuildTargetCandidates(SkillDataModel skill)
         {
             var candidates = new List<CombatEntity>();
+            var rule = skill?.targetRule?.type ?? "single_enemy";
+            bool canTargetSelf = skill?.targetRule?.canTargetSelf ?? false;
 
             if (rule == "single_ally")
             {
                 foreach (var ally in _allies)
                 {
                     if (ally == null || ally.IsDead) continue;
-                    if (ally.ID == _currentEntityId) continue;
+                    if (!canTargetSelf && ally.ID == _currentEntityId) continue;
+                    candidates.Add(ally);
+                }
+                return candidates;
+            }
+
+            if (rule == "all_allies")
+            {
+                foreach (var ally in _allies)
+                {
+                    if (ally == null || ally.IsDead) continue;
+                    if (!canTargetSelf && ally.ID == _currentEntityId) continue;
                     candidates.Add(ally);
                 }
                 return candidates;
@@ -507,7 +544,7 @@ namespace TTCS.UI.Combat
 
             var target = _targetCandidates[_currentTargetIndex];
             var worldPos = GetTargetFocusWorldPosition(target?.ID);
-            _cameraTargetPosition = new Vector3(
+            var desiredPosition = new Vector3(
                 worldPos.x + _cameraOffset.x,
                 worldPos.y + _cameraOffset.y,
                 _mainCamera.transform.position.z
@@ -516,7 +553,41 @@ namespace TTCS.UI.Combat
             if (_mainCamera.orthographic)
             {
                 _cameraTargetSize = _cameraSelectionSize;
+                _cameraTargetPosition = ClampCameraToBattleBounds(desiredPosition, _cameraTargetSize);
             }
+            else
+            {
+                _cameraTargetPosition = desiredPosition;
+            }
+        }
+
+        private Vector3 ClampCameraToBattleBounds(Vector3 desiredPosition, float orthographicSize)
+        {
+            if (_mainCamera == null)
+            {
+                return desiredPosition;
+            }
+
+            var sceneManager = CombatSceneManager.Instance;
+            var min = sceneManager != null
+                ? Vector2.Min(sceneManager.GetBattlefieldMinBound(), sceneManager.GetBattlefieldMaxBound())
+                : new Vector2(-8f, -4f);
+            var max = sceneManager != null
+                ? Vector2.Max(sceneManager.GetBattlefieldMinBound(), sceneManager.GetBattlefieldMaxBound())
+                : new Vector2(8f, 4f);
+
+            float halfHeight = Mathf.Max(0f, orthographicSize);
+            float halfWidth = halfHeight * _mainCamera.aspect;
+
+            float minX = min.x + halfWidth;
+            float maxX = max.x - halfWidth;
+            float minY = min.y + halfHeight;
+            float maxY = max.y - halfHeight;
+
+            float clampedX = minX > maxX ? (min.x + max.x) * 0.5f : Mathf.Clamp(desiredPosition.x, minX, maxX);
+            float clampedY = minY > maxY ? (min.y + max.y) * 0.5f : Mathf.Clamp(desiredPosition.y, minY, maxY);
+
+            return new Vector3(clampedX, clampedY, desiredPosition.z);
         }
 
         private Vector3 GetTargetFocusWorldPosition(string entityId)
@@ -535,11 +606,18 @@ namespace TTCS.UI.Combat
         {
             if (_mainCamera == null || !_hasCachedCameraState) return;
 
-            _mainCamera.transform.position = Vector3.Lerp(
+            var nextPosition = Vector3.Lerp(
                 _mainCamera.transform.position,
                 _cameraTargetPosition,
                 Time.deltaTime * _cameraFocusLerpSpeed
             );
+
+            if (_mainCamera.orthographic)
+            {
+                nextPosition = ClampCameraToBattleBounds(nextPosition, _mainCamera.orthographicSize);
+            }
+
+            _mainCamera.transform.position = nextPosition;
 
             if (_mainCamera.orthographic)
             {
@@ -548,6 +626,12 @@ namespace TTCS.UI.Combat
                     _cameraTargetSize,
                     Time.deltaTime * _cameraFocusLerpSpeed
                 );
+
+                var clampedPosition = ClampCameraToBattleBounds(_mainCamera.transform.position, _mainCamera.orthographicSize);
+                _mainCamera.transform.position = new Vector3(
+                    clampedPosition.x,
+                    clampedPosition.y,
+                    _mainCamera.transform.position.z);
             }
         }
 

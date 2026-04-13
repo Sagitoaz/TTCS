@@ -80,6 +80,10 @@ namespace TTCS.Combat.Managers
         [SerializeField] private List<Transform> _playerSlots = new List<Transform>();
         [SerializeField] private List<Transform> _enemySlots = new List<Transform>();
 
+        [Header("Battlefield Camera Bounds")]
+        [SerializeField] private Vector2 _battlefieldMin = new Vector2(-8f, -4f);
+        [SerializeField] private Vector2 _battlefieldMax = new Vector2(8f, 4f);
+
         // ─── Runtime State ────────────────────────────────────────────────
         private List<Character> _playerTeam = new();
         private List<Enemy> _enemyTeam = new();
@@ -474,6 +478,16 @@ namespace TTCS.Combat.Managers
         public StageDataModel GetCurrentStageData()
         {
             return _currentStage;
+        }
+
+        public Vector2 GetBattlefieldMinBound()
+        {
+            return _battlefieldMin;
+        }
+
+        public Vector2 GetBattlefieldMaxBound()
+        {
+            return _battlefieldMax;
         }
 
         /// <summary>

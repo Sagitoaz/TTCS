@@ -11,6 +11,7 @@ using TTCS.Core.Utilities;
 using TTCS.Core.Save;
 using TTCS.Data;
 using TTCS.Debugging;
+using TTCS.Meta;
 using static TTCS.Debugging.DebugLogger;
 // CombatLogger is in TTCS.Combat — alias to avoid confusion with Unity.Debug
 using CombatLogger = TTCS.Combat.CombatLogger;
@@ -713,12 +714,31 @@ namespace TTCS.Combat.Managers
             if (saveManager?.CurrentSave == null)
                 return;
 
+            var hub = MetaServiceHub.Instance;
+            hub?.EnsureInitialized();
+            var progression = hub?.ProgressionService;
+
+            // TODO: thay bằng sao thật khi hệ thống star condition hoàn thiện.
+            const int temporaryStarsOnVictory = 3;
+
+            if (progression != null)
+            {
+                progression.MarkLevelCompleted(levelId, temporaryStarsOnVictory, score: 0);
+                progression.TryUnlockNextContent();
+                saveManager.Save(saveManager.ActiveSlotIndex);
+                Log($"CombatFlowController: Progression updated for level '{levelId}' (stars={temporaryStarsOnVictory}).", LogCategory.Combat);
+                return;
+            }
+
             var save = saveManager.CurrentSave;
             var levelProgress = save.GetLevelProgress(levelId);
             if (levelProgress != null)
             {
                 levelProgress.isCleared = true;
+                levelProgress.stars = System.Math.Max(levelProgress.stars, temporaryStarsOnVictory);
                 save.SetLevelProgress(levelProgress);
+                if (!save.unlockedLevels.Contains(levelId))
+                    save.unlockedLevels.Add(levelId);
                 saveManager.Save(0); // Save to slot 0
                 Log($"CombatFlowController: Stage completion saved for level '{levelId}'.", LogCategory.Combat);
             }

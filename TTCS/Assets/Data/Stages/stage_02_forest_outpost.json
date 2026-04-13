@@ -10,7 +10,7 @@
     "unlockConditions": []
   },
   "encounters": [
-    { "wave": 1, "enemies": [ { "enemyId": "enemy_bandit", "level": 2, "position": 0 }, { "enemyId": "enemy_bandit", "level": 2, "position": 2 } ], "spawnDelay": 0 },
+    { "wave": 1, "enemies": [ { "enemyId": "enemy_alcryst", "level": 2, "position": 0 }, { "enemyId": "enemy_bandit", "level": 2, "position": 2 } ], "spawnDelay": 0 },
     { "wave": 2, "enemies": [ { "enemyId": "enemy_henry", "level": 3, "position": 1 } ], "spawnDelay": 1.2 }
   ],
   "environment": { "modifiers": [], "hazards": [], "weatherEffect": "none" },

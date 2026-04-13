@@ -60,7 +60,13 @@ namespace TTCS.Meta.Progression
                 return true;
             }
 
-            return save.GetTotalStarsInChapter(levelData.chapterId) >= levelData.requiredStarsToUnlock;
+            if (save.GetTotalStarsInChapter(levelData.chapterId) >= levelData.requiredStarsToUnlock)
+            {
+                return true;
+            }
+
+            // Fallback tạm thời khi hệ thống sao chưa hoàn thiện: mở theo tiến trình tuần tự trong chapter.
+            return HasSequentialUnlockByPreviousLevel(save, levelData);
         }
 
         public void MarkLevelCompleted(string levelId, int stars, int score)
@@ -156,7 +162,8 @@ namespace TTCS.Meta.Progression
                     }
 
                     if (level.requiredStarsToUnlock > 0 &&
-                        save.GetTotalStarsInChapter(level.chapterId) < level.requiredStarsToUnlock)
+                        save.GetTotalStarsInChapter(level.chapterId) < level.requiredStarsToUnlock &&
+                        !HasSequentialUnlockByPreviousLevel(save, level))
                     {
                         continue;
                     }
@@ -170,6 +177,38 @@ namespace TTCS.Meta.Progression
                 anyUnlocked: chaptersUnlocked > 0 || levelsUnlocked > 0,
                 chaptersUnlocked: chaptersUnlocked,
                 levelsUnlocked: levelsUnlocked);
+        }
+
+        private static bool HasSequentialUnlockByPreviousLevel(SaveData save, LevelDataModel level)
+        {
+            if (save == null || level == null)
+            {
+                return false;
+            }
+
+            if (level.order <= 1)
+            {
+                return true;
+            }
+
+            var allLevels = DataManager.Instance?.GetAllLevels();
+            if (allLevels == null)
+            {
+                return false;
+            }
+
+            var previousLevel = allLevels
+                .Where(l => l != null && string.Equals(l.chapterId, level.chapterId, StringComparison.Ordinal) && l.order < level.order)
+                .OrderByDescending(l => l.order)
+                .FirstOrDefault();
+
+            if (previousLevel == null || string.IsNullOrWhiteSpace(previousLevel.id))
+            {
+                return false;
+            }
+
+            var prevProgress = save.GetLevelProgress(previousLevel.id);
+            return prevProgress.isCleared || save.unlockedLevels.Contains(previousLevel.id);
         }
 
         public bool IsTutorialCompleted()
