@@ -1242,7 +1242,7 @@ Transform:
   m_GameObject: {fileID: 5662424032878910738}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.83126, y: 0.104, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1288,6 +1288,8 @@ MonoBehaviour:
   EntityId: char_warrior
   _headAnchor: {fileID: 6261222191522194414}
   _hitAnchor: {fileID: 2102767990744854080}
+  _enableColorHighlight: 0
+  _highlightColor: {r: 1, g: 1, b: 0.55, a: 1}
 --- !u!95 &6961942324070236603
 Animator:
   serializedVersion: 7
@@ -1325,6 +1327,10 @@ MonoBehaviour:
   _lungeDistance: 0.5
   _lungeSpeed: 0.12
   _returnSpeed: 0.22
+  _meleeStopDistance: 0.9
+  _attackEndWaitTimeout: 2.5
+  _postAttackReturnDelay: 0.1
+  _useParentAsMotionRoot: 1
   _whiteFlashDuration: 0.07
   _redTintDuration: 0.1
 --- !u!1 &6190621090121808138
