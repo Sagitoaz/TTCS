@@ -37,6 +37,13 @@ namespace TTCS.Visual
         [Tooltip("Điểm giữa body — vị trí spawn VFX khi bị hit")]
         [SerializeField] private Transform _hitAnchor;
 
+        [Header("Visual Highlight")]
+        [Tooltip("Bật nếu muốn đổi màu toàn thân khi là current actor.")]
+        [SerializeField] private bool _enableColorHighlight = false;
+
+        [Tooltip("Màu highlight khi _enableColorHighlight = true.")]
+        [SerializeField] private Color _highlightColor = new Color(1f, 1f, 0.55f, 1f);
+
         // ─── Cached ───────────────────────────────────────────────────────
         private SpriteRenderer[]  _allRenderers;
         private CharacterAnimator _animator;
@@ -78,7 +85,10 @@ namespace TTCS.Visual
         /// </summary>
         public void SetHighlight(bool active)
         {
-            Color tint = active ? new Color(1f, 1f, 0.55f) : Color.white;
+            if (!_enableColorHighlight)
+                return;
+
+            Color tint = active ? _highlightColor : Color.white;
             SetAllPartsColor(tint);
         }
 
