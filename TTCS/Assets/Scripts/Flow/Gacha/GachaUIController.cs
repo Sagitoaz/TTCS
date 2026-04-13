@@ -50,6 +50,8 @@ namespace TTCS.Flow.Gacha
 		[SerializeField] private RectTransform _resultCardRoot;
 		[SerializeField] private RectTransform _rarityStarRoot;
 		[SerializeField] private Image _rarityStarPrefab;
+		[SerializeField] private Sprite _rarityUrStarSprite;
+		[SerializeField] private string _rarityUrStarResourcePath = "UI/Star/star_ur";
 		[SerializeField] private float _rarityStarRevealInterval = 0.08f;
 		[SerializeField] private GachaTransitionController _transitionController;
 		
@@ -294,6 +296,11 @@ namespace TTCS.Flow.Gacha
 				? _dataManager?.LoadCharacter(reward.RewardId)
 				: null;
 			var rarity = character?.metadata?.rarity ?? (reward.IsRare ? "SSR" : "R");
+
+			if (string.Equals(rarity, "UR", StringComparison.OrdinalIgnoreCase))
+			{
+				return HexToColor("#E61919");
+			}
 
 			if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
 			{
@@ -572,6 +579,11 @@ namespace TTCS.Flow.Gacha
 				: null;
 			var rarity = character?.metadata?.rarity ?? (reward.IsRare ? "SSR" : "R");
 
+			if (string.Equals(rarity, "UR", StringComparison.OrdinalIgnoreCase))
+			{
+				return HexToColor("#E61919");
+			}
+
 			if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
 			{
 				return HexToColor("#FFD700");
@@ -600,7 +612,15 @@ namespace TTCS.Flow.Gacha
 			var character = string.Equals(reward.RewardType, "character", StringComparison.OrdinalIgnoreCase)
 				? _dataManager?.LoadCharacter(reward.RewardId)
 				: null;
-			var rarity = character?.metadata?.rarity ?? (reward.IsRare ? "SSR" : "R");
+			var item = !string.Equals(reward.RewardType, "character", StringComparison.OrdinalIgnoreCase)
+				? _dataManager?.LoadItem(reward.RewardId)
+				: null;
+			var rarity = character?.metadata?.rarity ?? item?.rarity ?? (reward.IsRare ? "SSR" : "R");
+
+			if (string.Equals(rarity, "UR", StringComparison.OrdinalIgnoreCase))
+			{
+				return "UR";
+			}
 
 			if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
 			{
@@ -738,6 +758,16 @@ namespace TTCS.Flow.Gacha
 			_resultRarityText.enableVertexGradient = false;
 			_resultRarityText.colorGradient = default;
 
+			if (string.Equals(rarity, "UR", StringComparison.OrdinalIgnoreCase))
+			{
+				var topColor = HexToColor("#E61919");
+				var bottomColor = HexToColor("#3D0000");
+				_resultRarityText.color = topColor;
+				_resultRarityText.enableVertexGradient = true;
+				_resultRarityText.colorGradient = new VertexGradient(topColor, topColor, bottomColor, bottomColor);
+				return;
+			}
+
 			if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
 			{
 				var topColor = HexToColor("#FFFFB3FF");
@@ -794,10 +824,10 @@ namespace TTCS.Flow.Gacha
 				StopCoroutine(_rarityStarRoutine);
 			}
 
-			_rarityStarRoutine = StartCoroutine(PlayRarityStarsRoutine(starCount));
+			_rarityStarRoutine = StartCoroutine(PlayRarityStarsRoutine(starCount, rarity));
 		}
 
-		private IEnumerator PlayRarityStarsRoutine(int starCount)
+		private IEnumerator PlayRarityStarsRoutine(int starCount, string rarity)
 		{
 			ClearSpawnedRarityStars();
 
@@ -810,6 +840,14 @@ namespace TTCS.Flow.Gacha
 			for (var i = 0; i < safeCount; i++)
 			{
 				var star = Instantiate(_rarityStarPrefab, _rarityStarRoot, false);
+				if (star != null && string.Equals(rarity, "UR", StringComparison.OrdinalIgnoreCase))
+				{
+					var urSprite = ResolveUrStarSprite();
+					if (urSprite != null)
+					{
+						star.sprite = urSprite;
+					}
+				}
 				star.gameObject.SetActive(true);
 				_spawnedRarityStars.Add(star.gameObject);
 
@@ -839,6 +877,11 @@ namespace TTCS.Flow.Gacha
 
 		private static int GetRarityStarCount(string rarity)
 		{
+			if (string.Equals(rarity, "UR", StringComparison.OrdinalIgnoreCase))
+			{
+				return 6;
+			}
+
 			if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
 			{
 				return 5;
@@ -855,6 +898,21 @@ namespace TTCS.Flow.Gacha
 			}
 
 			return 1;
+		}
+
+		private Sprite ResolveUrStarSprite()
+		{
+			if (_rarityUrStarSprite != null)
+			{
+				return _rarityUrStarSprite;
+			}
+
+			if (!string.IsNullOrWhiteSpace(_rarityUrStarResourcePath))
+			{
+				return Resources.Load<Sprite>(_rarityUrStarResourcePath);
+			}
+
+			return null;
 		}
 
 		private static void SetResultIcon(Image target, Sprite sprite)

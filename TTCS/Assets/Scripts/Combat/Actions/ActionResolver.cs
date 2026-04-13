@@ -210,6 +210,8 @@ namespace TTCS.Combat.Actions
                 "heal_regen"
                     or "heal" => new HealEffect(intensity, duration),
                 "shield" => new ShieldEffect(intensity, duration),
+                "crit_up"
+                    or "crit_rate_up" => new CritRateBuffEffect(intensity > 1f ? intensity / 100f : intensity, duration),
                 "stun" => new StunEffect(duration),
                 _ => null
             };

@@ -960,6 +960,16 @@ namespace TTCS.Flow.TeamFormation
             _quickInfoRarityText.enableVertexGradient = false;
             _quickInfoRarityText.colorGradient = default;
 
+            if (string.Equals(rarity, "UR", StringComparison.OrdinalIgnoreCase))
+            {
+                var topColor = HexToColor("#E61919");
+                var bottomColor = HexToColor("#3D0000");
+                _quickInfoRarityText.color = topColor;
+                _quickInfoRarityText.enableVertexGradient = true;
+                _quickInfoRarityText.colorGradient = new VertexGradient(topColor, topColor, bottomColor, bottomColor);
+                return;
+            }
+
             if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
             {
                 var topColor = HexToColor("#FFFFB3FF");

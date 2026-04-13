@@ -152,6 +152,11 @@ namespace TTCS.Meta.Gacha
 
         private static int GetDuplicateCurrencyByRarity(string rarity)
         {
+            if (string.Equals(rarity, "UR", StringComparison.OrdinalIgnoreCase))
+            {
+                return 3500;
+            }
+
             if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
             {
                 return 2000;

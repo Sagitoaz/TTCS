@@ -355,6 +355,11 @@ namespace TTCS.Flow.CharacterCollection
 
         private static int RarityWeight(string rarity)
         {
+            if (string.Equals(rarity, "UR", StringComparison.OrdinalIgnoreCase))
+            {
+                return 4;
+            }
+
             if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
             {
                 return 3;

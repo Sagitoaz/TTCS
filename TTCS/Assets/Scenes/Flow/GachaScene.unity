@@ -1552,7 +1552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &752135061
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1769,6 +1769,8 @@ MonoBehaviour:
   _resultCardRoot: {fileID: 653295096}
   _rarityStarRoot: {fileID: 1525540153}
   _rarityStarPrefab: {fileID: 979234683700623349, guid: e8cc8d459b285784ea90d5007bee311f, type: 3}
+  _rarityUrStarSprite: {fileID: 0}
+  _rarityUrStarResourcePath: UI/Star/star_ur
   _rarityStarRevealInterval: 0.08
   _transitionController: {fileID: 1826643663}
 --- !u!4 &974643672
@@ -2483,8 +2485,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 238, y: 294}
-  m_SizeDelta: {x: 514.489, y: 100}
+  m_AnchoredPosition: {x: 318.13, y: 294}
+  m_SizeDelta: {x: 674.74, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1525540154
 MonoBehaviour:
@@ -3042,6 +3044,15 @@ MonoBehaviour:
     anticipationMultiplier: 1.1
     zoomMultiplier: 1
     revealMultiplier: 1.1
+  urPreset:
+    shakePositionStrength: 22
+    shakeRotationStrength: 10
+    zoomScale: 1.22
+    flashPeakAlpha: 1
+    itemFlashPeakAlpha: 0.9
+    anticipationMultiplier: 1.2
+    zoomMultiplier: 1.05
+    revealMultiplier: 1.2
   srPreset:
     shakePositionStrength: 0
     shakeRotationStrength: 0

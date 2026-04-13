@@ -86,7 +86,7 @@ namespace TTCS.Visual
         private static readonly int HashHurt     = Animator.StringToHash("Hurt");
         private static readonly int HashDeath    = Animator.StringToHash("Death");
         private static readonly int HashVictory  = Animator.StringToHash("Victory");
-        private static readonly int HashSkill    = Animator.StringToHash("SkillCast");
+        private static readonly int HashSkill    = Animator.StringToHash("Skillcast");
 
         // ─── Lifecycle ────────────────────────────────────────────────────
         private void Awake()
@@ -413,6 +413,19 @@ namespace TTCS.Visual
         /// </summary>
         public void PlaySkillCast(string skillId = "")
         {
+            _originalLocalPos = transform.localPosition;
+            _hitFrameNotified = false;
+            _actionSequence?.Kill();
+
+            _actionSequence = DOTween.Sequence()
+                .AppendInterval(Mathf.Max(0.32f, _lungeSpeed + 0.20f))
+                .OnComplete(() =>
+                {
+                    NotifyAttackHitFrame();
+                    transform.localPosition = _originalLocalPos;
+                    OnAnimationComplete?.Invoke();
+                });
+
             _animator.SetTrigger(HashSkill);
         }
 

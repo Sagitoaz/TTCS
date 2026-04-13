@@ -7,6 +7,13 @@
   "rollCostTen": 1600,
   "entries": [
     {
+      "rewardId": "char_baldr",
+      "rewardType": "character",
+      "weight": 1,
+      "isRare": true,
+      "amount": 1
+    },
+    {
       "rewardId": "char_support",
       "rewardType": "character",
       "weight": 4,

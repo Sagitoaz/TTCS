@@ -1,0 +1,61 @@
+{
+  "id": "pool_baldr_limited.json",
+  "nameKey": "Raise of the God of Sun",
+  "bannerBackgroundPath": "Banners/Gacha/banner_baldr",
+  "pityThreshold": 80,
+  "rollCostSingle": 400,
+  "rollCostTen": 3600,
+  "entries": [
+    {
+      "rewardId": "char_baldr",
+      "rewardType": "character",
+      "weight": 2,
+      "isRare": true,
+      "amount": 1
+    },
+    {
+      "rewardId": "char_mage",
+      "rewardType": "character",
+      "weight": 7,
+      "isRare": true,
+      "amount": 1
+    },
+    {
+      "rewardId": "char_support",
+      "rewardType": "character",
+      "weight": 7,
+      "isRare": true,
+      "amount": 1
+    },
+    {
+      "rewardId": "item_potion",
+      "rewardType": "item",
+      "weight": 60,
+      "isRare": false,
+      "amount": 2
+    },
+    {
+      "rewardId": "item_energy",
+      "rewardType": "item",
+      "weight": 30,
+      "isRare": false,
+      "amount": 1
+    }
+    ,
+    {
+      "rewardId": "item_guardian_emblem",
+      "rewardType": "item",
+      "weight": 15,
+      "isRare": false,
+      "amount": 1
+    }
+    ,
+    {
+      "rewardId": "item_heart_of_phoenix",
+      "rewardType": "item",
+      "weight": 5,
+      "isRare": true,
+      "amount": 1
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": "skill_baldr_crit_oath",
+  "nameKey": "Solar Oath",
+  "description": "Empower self with solar focus, increasing crit rate by 50% for 3 turns.",
+  "type": "buff",
+
+  "targetRule": {
+    "type": "self",
+    "count": 1,
+    "filter": [],
+    "canTargetSelf": true
+  },
+
+  "cost": {
+    "mana": 35,
+    "cooldown": 3,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "",
+    "element": "",
+    "canCrit": false,
+    "ignoreDefense": 0
+  },
+
+  "effects": [
+    {
+      "type": "crit_up",
+      "value": "0.5",
+      "element": "",
+      "chance": 1.0,
+      "duration": 3
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": false,
+    "windows": [],
+    "grades": {}
+  },
+
+  "actionCost": {
+    "timelineUnits": 90,
+    "description": "Self empowerment"
+  },
+
+  "visual": {
+    "animation": "baldr_crit_oath",
+    "vfxPrefab": "VFX/baldr_crit_oath",
+    "sfx": "SFX/baldr_crit_oath",
+    "cameraShake": 0.0
+  }
+}

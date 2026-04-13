@@ -53,7 +53,16 @@ namespace TTCS.Flow.TeamFormation
         {
             if (_rarityText == null) return;
 
-            if (string.Equals(rarity, "SSR", System.StringComparison.OrdinalIgnoreCase))
+            if(string.Equals(rarity, "UR", System.StringComparison.OrdinalIgnoreCase)){
+                var topColor = HexToColor("#E61919");
+                var bottomColor = HexToColor("#3D0000");
+                _rarityText.color = topColor;
+                _rarityText.enableVertexGradient = true;
+                _rarityText.colorGradient = new VertexGradient(topColor, topColor, bottomColor, bottomColor);
+                return;
+            }
+
+            else if (string.Equals(rarity, "SSR", System.StringComparison.OrdinalIgnoreCase))
             {
                 // SSR: Gradient color - top corners #FFFFB3FF, bottom corners #FFB300FF
                 Color topColor = HexToColor("#FFFFB3FF");

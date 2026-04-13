@@ -2,10 +2,11 @@
   "id": "pool_limited_mage",
   "nameKey": "Limited Mage Banner",
   "bannerBackgroundPath": "Banners/Gacha/banner_limited_mage",
-  "pityThreshold": 10,
+  "pityThreshold": 80,
   "rollCostSingle": 200,
   "rollCostTen": 2000,
   "entries": [
+    
     {
       "rewardId": "char_mage",
       "rewardType": "character",

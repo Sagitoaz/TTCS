@@ -164,8 +164,9 @@ namespace TTCS.Combat.Managers
 
             var skill = DataManager.Instance?.LoadSkill(e.SkillId);
             string skillType = skill?.type ?? "attack";
+            bool useSkillCastAnimation = ShouldUseSkillCast(skill);
             bool isSupportSkill = skillType == "heal" || skillType == "buff";
-            bool isAttackSkill = skillType == "attack" || skillType == "debuff";
+            bool isAttackSkill = (skillType == "attack" || skillType == "debuff") && !useSkillCastAnimation;
             bool isMeleeAttack = isAttackSkill && ShouldUseMeleeMovement(skill, targetViews.Count);
 
            
@@ -175,6 +176,9 @@ namespace TTCS.Combat.Managers
 
             if (isSupportSkill)
                 StartCoroutine(RunTrackedActionSequence(e.CasterId, PlaySupportSequence(attackerView, targetViews)));
+            else if (useSkillCastAnimation)
+                StartCoroutine(RunTrackedActionSequence(e.CasterId,
+                    PlayAttackSequence(attackerView, targetViews, useMeleeMovement: false, skill, useSkillCastAnimation: true)));
             else if (isMeleeAttack)
                 StartCoroutine(RunTrackedActionSequence(e.CasterId,
                     PlayAttackSequence(attackerView, targetViews, useMeleeMovement: true, skill)));
@@ -243,7 +247,7 @@ namespace TTCS.Combat.Managers
         ///   2. Chờ OnAttackHitFrame event (timeout 2.5s)
         ///   3. Targets PlayHurt cùng lúc
         /// </summary>
-        private IEnumerator PlayAttackSequence(CharacterView attacker, List<CharacterView> targets, bool useMeleeMovement, TTCS.Data.SkillDataModel skill)
+        private IEnumerator PlayAttackSequence(CharacterView attacker, List<CharacterView> targets, bool useMeleeMovement, TTCS.Data.SkillDataModel skill, bool useSkillCastAnimation = false)
         {
             bool hitFrameReceived = false;
             bool animationComplete = false;
@@ -265,7 +269,9 @@ namespace TTCS.Combat.Managers
                 attacker.Animator.OnAnimationComplete += OnAnimationComplete;
             }
 
-            if (useMeleeMovement && targets.Count > 0)
+            if (useSkillCastAnimation)
+                attacker.Animator?.PlaySkillCast(skill?.id);
+            else if (useMeleeMovement && targets.Count > 0)
                 attacker.Animator?.PlayAttackMelee(GetMeleeApproachPosition(targets));
             else
                 attacker.Animator?.PlayAttackInPlace();
@@ -400,6 +406,13 @@ namespace TTCS.Combat.Managers
             }
 
             return true;
+        }
+
+        private static bool ShouldUseSkillCast(TTCS.Data.SkillDataModel skill)
+        {
+            var animationName = skill?.visual?.animation;
+            return !string.IsNullOrWhiteSpace(animationName)
+                   && animationName.IndexOf("skillcast", StringComparison.OrdinalIgnoreCase) >= 0;
         }
 
         private static Vector3 GetMeleeApproachPosition(List<CharacterView> targets)

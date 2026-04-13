@@ -68,6 +68,17 @@ namespace TTCS.Flow.Gacha
             zoomMultiplier = 1f,
             revealMultiplier = 1.1f
         };
+        public RarityTransitionPreset urPreset = new RarityTransitionPreset
+        {
+            shakePositionStrength = 22f,
+            shakeRotationStrength = 10f,
+            zoomScale = 1.22f,
+            flashPeakAlpha = 1f,
+            itemFlashPeakAlpha = 0.9f,
+            anticipationMultiplier = 1.2f,
+            zoomMultiplier = 1.05f,
+            revealMultiplier = 1.2f
+        };
         public RarityTransitionPreset srPreset = new RarityTransitionPreset
         {
             shakePositionStrength = 14f,
@@ -145,9 +156,10 @@ namespace TTCS.Flow.Gacha
             KillTweens();
             CacheInitialBannerTransform();
             var preset = GetPreset(rarityTag);
-            var isSsr = string.Equals(rarityTag, "SSR", StringComparison.OrdinalIgnoreCase);
+            var isPremium = string.Equals(rarityTag, "SSR", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(rarityTag, "UR", StringComparison.OrdinalIgnoreCase);
 
-            Debug.Log($"[GachaTransition] PlayGachaAnimation called with rarityTag='{rarityTag}', isSsr={isSsr}, enableSsrSpecialEffects={enableSsrSpecialEffects}");
+            Debug.Log($"[GachaTransition] PlayGachaAnimation called with rarityTag='{rarityTag}', isPremium={isPremium}, enableSsrSpecialEffects={enableSsrSpecialEffects}");
 
             if (resultScreen != null)
             {
@@ -191,7 +203,7 @@ namespace TTCS.Flow.Gacha
                 _mainSequence.Join(flashImage.DOFade(peakAlpha, zoom));
             }
 
-            if (isSsr && enableSsrSpecialEffects)
+            if (isPremium && enableSsrSpecialEffects)
             {
                 _mainSequence.AppendCallback(PlaySsrStinger);
 
@@ -287,6 +299,11 @@ namespace TTCS.Flow.Gacha
 
         private RarityTransitionPreset GetPreset(string rarityTag)
         {
+            if (string.Equals(rarityTag, "UR", StringComparison.OrdinalIgnoreCase))
+            {
+                return urPreset ?? new RarityTransitionPreset();
+            }
+
             if (string.Equals(rarityTag, "SSR", StringComparison.OrdinalIgnoreCase))
             {
                 return ssrPreset ?? new RarityTransitionPreset();
@@ -338,6 +355,13 @@ namespace TTCS.Flow.Gacha
             if (_sealSequence != null && _sealSequence.IsActive())
             {
                 _sealSequence.Kill();
+            }
+
+            // Force-hide seal immediately when killing tweens to prevent persistence on rapid clicks
+            if (ssrSealCanvasGroup != null)
+            {
+                ssrSealCanvasGroup.alpha = 0f;
+                ssrSealCanvasGroup.gameObject.SetActive(false);
             }
 
             if (_resultCardTween != null && _resultCardTween.IsActive())
