@@ -8,9 +8,11 @@ using TTCS.Core.Data;
 using TTCS.Data;
 using TTCS.Debugging;
 using TTCS.Flow;
+using TTCS.Meta;
 using TTCS.UI.Combat;
 using static TTCS.Debugging.DebugLogger;
 using TTCS.Core.Events;
+using TTCS.Core.Save;
 using UnityEngine.InputSystem;
 using TTCS.Visual;
 
@@ -89,16 +91,15 @@ namespace TTCS.Combat.Managers
 
         private void Start()
         {
+            if (FlowRuntimeContext.HasCombatLaunchData)
+            {
+                StartCoroutine(InitializeFromFlowContext());
+                return;
+            }
 
             if (_autoStartOnPlay)
             {
                 StartCoroutine(InitializeCombat(_defaultStageId, _defaultPartyIds, _defaultSeed));
-                return;
-            }
-
-            if (FlowRuntimeContext.HasCombatLaunchData)
-            {
-                StartCoroutine(InitializeFromFlowContext());
             }
         }
 
@@ -172,7 +173,7 @@ namespace TTCS.Combat.Managers
         private IEnumerator InitializeFromFlowContext()
         {
             var levelId = FlowRuntimeContext.SelectedLevelId;
-            var lineupSnapshot = FlowRuntimeContext.SelectedLineupSnapshot?.Where(id => !string.IsNullOrWhiteSpace(id)).ToList() ?? new List<string>();
+            var lineupSnapshot = ResolvePartyFromFlowOrSave();
 
             if (string.IsNullOrWhiteSpace(levelId))
             {
@@ -190,6 +191,43 @@ namespace TTCS.Combat.Managers
 
             yield return StartCoroutine(InitializeCombat(stageId, lineupSnapshot, _defaultSeed));
             FlowRuntimeContext.ClearCombatLaunchData();
+        }
+
+        private List<string> ResolvePartyFromFlowOrSave()
+        {
+            var fromFlow = FlowRuntimeContext.SelectedLineupSnapshot?.Where(id => !string.IsNullOrWhiteSpace(id)).ToList();
+            if (fromFlow != null && fromFlow.Count > 0)
+            {
+                Log($"CombatSceneManager: Using lineup from flow context ({fromFlow.Count} members).", LogCategory.Combat);
+                return fromFlow;
+            }
+
+            var hub = MetaServiceHub.Instance;
+            hub?.EnsureInitialized();
+            var fromTeamService = hub?.TeamService?.GetCurrentLineup()?.Where(id => !string.IsNullOrWhiteSpace(id)).ToList();
+            if (fromTeamService != null && fromTeamService.Count > 0)
+            {
+                Log($"CombatSceneManager: Using lineup from TeamService ({fromTeamService.Count} members).", LogCategory.Combat);
+                return fromTeamService;
+            }
+
+            var save = SaveManager.Instance?.CurrentSave;
+            var fromSave = save?.lineup?.Where(id => !string.IsNullOrWhiteSpace(id)).ToList();
+            if (fromSave != null && fromSave.Count > 0)
+            {
+                Log($"CombatSceneManager: Using lineup from save.lineup ({fromSave.Count} members).", LogCategory.Combat);
+                return fromSave;
+            }
+
+            var fromCurrentParty = save?.currentParty?.Where(id => !string.IsNullOrWhiteSpace(id)).ToList();
+            if (fromCurrentParty != null && fromCurrentParty.Count > 0)
+            {
+                Log($"CombatSceneManager: Using lineup from save.currentParty ({fromCurrentParty.Count} members).", LogCategory.Combat);
+                return fromCurrentParty;
+            }
+
+            Log("CombatSceneManager: No lineup found in flow/save, fallback to default party.", LogCategory.Combat);
+            return new List<string>(_defaultPartyIds);
         }
 
         /// <summary>
