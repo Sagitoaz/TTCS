@@ -136,7 +136,10 @@ namespace TTCS.UI.Combat
                 if (i < _skillModels.Count && _skillModels[i] != null)
                 {
                     var skill = _skillModels[i];
-                    _buttons[i].Setup(skill.id, skill.nameKey ?? skill.id, skill.cost?.mana ?? 0, this);
+                    var iconPath = DataManager.Instance?.ResolveSkillIcon(skill.id);
+                    var iconSprite = string.IsNullOrWhiteSpace(iconPath) ? null : Resources.Load<Sprite>(iconPath);
+
+                    _buttons[i].Setup(skill.id, skill.nameKey ?? skill.id, skill.cost?.mana ?? 0, iconSprite, this);
                 }
                 else
                 {

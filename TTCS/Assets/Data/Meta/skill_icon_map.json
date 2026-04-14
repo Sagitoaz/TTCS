@@ -74,6 +74,22 @@
     {
       "skillId": "skill_alcryst_sky_piercer",
       "iconPath": "Sprites/Skills/alcryst_sky_piercer"
+    },
+    {
+      "skillId": "skill_baldr_crit_oath",
+      "iconPath": "Sprites/Skills/baldr_crit_oath"
+    },
+    {
+      "skillId": "skill_baldr_ragnarok_dawn",
+      "iconPath": "Sprites/Skills/baldr_ragnarok_dawn"
+    },
+    {
+      "skillId": "skill_baldr_solar_cleave",
+      "iconPath": "Sprites/Skills/baldr_solar_cleave"
+    },
+    {
+      "skillId": "skill_baldr_sun_slash",
+      "iconPath": "Sprites/Skills/baldr_sun_slash"
     }
   ]
 }

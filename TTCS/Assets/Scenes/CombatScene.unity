@@ -7057,6 +7057,50 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7733123680199471265, guid: e14d4d56f00c8d844b7baa848cd7b27d, type: 3}
   m_PrefabInstance: {fileID: 8924067286617912597}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1411393434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1411393436}
+  - component: {fileID: 1411393435}
+  m_Layer: 0
+  m_Name: RngService
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1411393435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411393434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466ee2e54b41c164385cd4802236d70c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TTCS.Core.Utilities.RNGService
+--- !u!4 &1411393436
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411393434}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 318.06607, y: 78.83758, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1411875431
 GameObject:
   m_ObjectHideFlags: 0
@@ -10611,7 +10655,6 @@ GameObject:
   - component: {fileID: 2090620138}
   - component: {fileID: 2090620137}
   - component: {fileID: 2090620142}
-  - component: {fileID: 2090620141}
   - component: {fileID: 2090620143}
   m_Layer: 0
   m_Name: CombatManagers
@@ -10659,18 +10702,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce1218f75bc5a43b7ed3f76e5d5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TTCS.Combat.Managers.TurnManager
---- !u!114 &2090620141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090620135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 466ee2e54b41c164385cd4802236d70c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TTCS.Core.Utilities.RNGService
 --- !u!114 &2090620142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11093,3 +11124,4 @@ SceneRoots:
   - {fileID: 1965830873}
   - {fileID: 1208723521}
   - {fileID: 1148383958}
+  - {fileID: 1411393436}

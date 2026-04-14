@@ -291,11 +291,7 @@ namespace TTCS.Flow.Gacha
 				return Color.white;
 			}
 
-			var reward = result.Rewards[0];
-			var character = string.Equals(reward.RewardType, "character", StringComparison.OrdinalIgnoreCase)
-				? _dataManager?.LoadCharacter(reward.RewardId)
-				: null;
-			var rarity = character?.metadata?.rarity ?? (reward.IsRare ? "SSR" : "R");
+			var rarity = ResolveRewardRarity(result.Rewards[0]);
 
 			if (string.Equals(rarity, "UR", StringComparison.OrdinalIgnoreCase))
 			{
@@ -454,7 +450,7 @@ namespace TTCS.Flow.Gacha
 
 			if (_resultRarityText != null)
 			{
-				var rarity = character?.metadata?.rarity ?? (reward.IsRare ? "SSR" : "R");
+				var rarity = ResolveRewardRarity(reward);
 				_resultRarityText.text = rarity;
 				ApplyResultRarityStyle(rarity);
 				StartRarityStarReveal(rarity);
@@ -574,10 +570,7 @@ namespace TTCS.Flow.Gacha
 				return Color.white;
 			}
 
-			var character = string.Equals(reward.RewardType, "character", StringComparison.OrdinalIgnoreCase)
-				? _dataManager?.LoadCharacter(reward.RewardId)
-				: null;
-			var rarity = character?.metadata?.rarity ?? (reward.IsRare ? "SSR" : "R");
+			var rarity = ResolveRewardRarity(reward);
 
 			if (string.Equals(rarity, "UR", StringComparison.OrdinalIgnoreCase))
 			{
@@ -609,13 +602,7 @@ namespace TTCS.Flow.Gacha
 				return "R";
 			}
 
-			var character = string.Equals(reward.RewardType, "character", StringComparison.OrdinalIgnoreCase)
-				? _dataManager?.LoadCharacter(reward.RewardId)
-				: null;
-			var item = !string.Equals(reward.RewardType, "character", StringComparison.OrdinalIgnoreCase)
-				? _dataManager?.LoadItem(reward.RewardId)
-				: null;
-			var rarity = character?.metadata?.rarity ?? item?.rarity ?? (reward.IsRare ? "SSR" : "R");
+			var rarity = ResolveRewardRarity(reward);
 
 			if (string.Equals(rarity, "UR", StringComparison.OrdinalIgnoreCase))
 			{
@@ -633,6 +620,32 @@ namespace TTCS.Flow.Gacha
 			}
 
 			return "R";
+		}
+
+		private string ResolveRewardRarity(GachaRollReward reward)
+		{
+			if (reward == null)
+			{
+				return "R";
+			}
+
+			var character = string.Equals(reward.RewardType, "character", StringComparison.OrdinalIgnoreCase)
+				? _dataManager?.LoadCharacter(reward.RewardId)
+				: null;
+			if (!string.IsNullOrWhiteSpace(character?.metadata?.rarity))
+			{
+				return character.metadata.rarity;
+			}
+
+			var item = string.Equals(reward.RewardType, "item", StringComparison.OrdinalIgnoreCase)
+				? _dataManager?.LoadItem(reward.RewardId)
+				: null;
+			if (!string.IsNullOrWhiteSpace(item?.rarity))
+			{
+				return item.rarity;
+			}
+
+			return reward.IsRare ? "SSR" : "R";
 		}
 
 		private void OnResultCloseClicked()

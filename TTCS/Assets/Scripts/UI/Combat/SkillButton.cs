@@ -34,12 +34,19 @@ namespace TTCS.UI.Combat
         /// <summary>
         /// Setup button với skill data. Gọi một lần khi panel initialize.
         /// </summary>
-        public void Setup(string skillId, string skillName, int manaCost, SkillButtonPanel panel)
+        public void Setup(string skillId, string skillName, int manaCost, Sprite iconSprite, SkillButtonPanel panel)
         {
             _skillId = skillId;
             _panel   = panel;
 
             _manaCostText.text = manaCost > 0 ? manaCost.ToString() : "—";
+
+            if (_icon != null)
+            {
+                _icon.sprite = iconSprite;
+                _icon.color = iconSprite != null ? _enabledAlpha : _disabledAlpha;
+            }
+
             _button.onClick.RemoveAllListeners();
             _button.onClick.AddListener(OnClick);
 
