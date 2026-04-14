@@ -8,6 +8,7 @@ using TMPro;
 using TTCS.Combat.Entities;
 using TTCS.Core.Data;
 using TTCS.Core.Events;
+using TTCS.Core.Save;
 using TTCS.Data;
 using TTCS.Debugging;
 using static TTCS.Debugging.DebugLogger;
@@ -30,6 +31,11 @@ namespace TTCS.UI.Combat
             public Slider          HPDelayedSlider;
             public Slider          MPSlider;
             public Image           PortraitImage;
+            public TextMeshProUGUI LevelText;
+            public Image           RoleIconImage;
+            public Image           ElementIconImage;
+            public Image           RarityBorderImage;
+            public Image           RarityBackgroundImage;
             public TextMeshProUGUI HPText;
             public CanvasGroup    SlotGroup;
 
@@ -73,6 +79,65 @@ namespace TTCS.UI.Combat
                     root.SetActive(true);
             }
 
+            public void SetAllyMetadata(int level, string rarity, Sprite roleIcon, Sprite elementIcon, Sprite borderSprite, Sprite backgroundSprite, Color borderColor, Color backgroundColor)
+            {
+                if (LevelText != null)
+                    LevelText.text = $"Lv.{Mathf.Max(1, level)}";
+
+                SetOptionalIcon(RoleIconImage, roleIcon);
+                SetOptionalIcon(ElementIconImage, elementIcon);
+
+
+                if (RarityBorderImage != null)
+                {
+                    if (borderSprite != null)
+                    {
+                        RarityBorderImage.sprite = borderSprite;
+                        RarityBorderImage.color = Color.white;
+                    }
+                    else
+                    {
+                        RarityBorderImage.color = borderColor;
+                    }
+                }
+
+                if (RarityBackgroundImage != null)
+                {
+                    if (backgroundSprite != null)
+                    {
+                        RarityBackgroundImage.sprite = backgroundSprite;
+                        RarityBackgroundImage.color = Color.white;
+                    }
+                    else
+                    {
+                        RarityBackgroundImage.color = backgroundColor;
+                    }
+                }
+            }
+
+            public void ClearAllyMetadata()
+            {
+                if (LevelText != null)
+                    LevelText.text = string.Empty;
+
+                SetOptionalIcon(RoleIconImage, null);
+                SetOptionalIcon(ElementIconImage, null);
+
+                
+
+                if (RarityBorderImage != null)
+                {
+                    RarityBorderImage.sprite = null;
+                    RarityBorderImage.color = Color.white;
+                }
+
+                if (RarityBackgroundImage != null)
+                {
+                    RarityBackgroundImage.sprite = null;
+                    RarityBackgroundImage.color = new Color(1f, 1f, 1f, 0.25f);
+                }
+            }
+
             private void EnsureDelayedHpSlider()
             {
                 if (HPDelayedSlider != null || HPSlider == null)
@@ -106,6 +171,15 @@ namespace TTCS.UI.Combat
                 var nav = slider.navigation;
                 nav.mode = Navigation.Mode.None;
                 slider.navigation = nav;
+            }
+
+            private static void SetOptionalIcon(Image target, Sprite sprite)
+            {
+                if (target == null)
+                    return;
+
+                target.sprite = sprite;
+                target.color = sprite == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
             }
 
             public void AnimateHP(float newPercent)
@@ -292,6 +366,7 @@ namespace TTCS.UI.Combat
                     
                     // Reinitialize this slot with new enemy
                     slot.Initialize(newEnemies[i], maxMP, portrait);
+                    slot.ClearAllyMetadata();
                     _slotMap[newEnemies[i].ID] = slot;
                     _enemyEntityIds.Add(newEnemies[i].ID);
                     
@@ -316,16 +391,26 @@ namespace TTCS.UI.Combat
             {
                 if (i < entities.Count && entities[i] != null)
                 {
-                    Sprite portrait = ResolvePortraitSprite(entities[i]);
+                    var entity = entities[i];
+                    Sprite portrait = ResolvePortraitSprite(entity);
                     int maxMP = TTCS.Combat.Managers.SkillManager.Instance != null
-                        ? TTCS.Combat.Managers.SkillManager.Instance.GetMaxMana(entities[i].ID)
+                        ? TTCS.Combat.Managers.SkillManager.Instance.GetMaxMana(entity.ID)
                         : 100;
-                    slots[i].Initialize(entities[i], maxMP, portrait);
-                    _slotMap[entities[i].ID] = slots[i];
+                    slots[i].Initialize(entity, maxMP, portrait);
+                    _slotMap[entity.ID] = slots[i];
+
+                    if (!isEnemyGroup)
+                    {
+                        ApplyAllySlotMetadata(slots[i], entity);
+                    }
+                    else
+                    {
+                        slots[i].ClearAllyMetadata();
+                    }
 
                     if (isEnemyGroup)
                     {
-                        _enemyEntityIds.Add(entities[i].ID);
+                        _enemyEntityIds.Add(entity.ID);
                         slots[i].SetVisible(false);
                         // Bỏ hiển thị thanh mana của enemy
                         if (slots[i].MPSlider != null)
@@ -534,6 +619,222 @@ namespace TTCS.UI.Combat
                 LogWarning($"BattleHUD: Could not load portrait sprite from 'Assets/Sprites/Characters' or Resources path '{portraitPath}' for entity '{entity.ID}'.", LogCategory.UI);
 
             return sprite;
+        }
+
+        private void ApplyAllySlotMetadata(HUDSlot slot, CombatEntity entity)
+        {
+            if (slot == null || entity == null)
+            {
+                return;
+            }
+
+            if (!(entity is Character character) || DataManager.Instance == null)
+            {
+                slot.ClearAllyMetadata();
+                return;
+            }
+
+            var data = DataManager.Instance.LoadCharacter(character.CharacterId);
+            if (data == null)
+            {
+                slot.ClearAllyMetadata();
+                return;
+            }
+
+            var level = ResolveCharacterLevel(character, data);
+            var rarity = data.metadata?.rarity ?? "R";
+            var roleIcon = LoadRoleIconSprite(data.metadata?.roleTag);
+            var elementIcon = LoadElementIconSprite(data.metadata?.element);
+            var borderSprite = LoadRarityBorderSprite(rarity);
+            var backgroundSprite = LoadRarityBackgroundSprite(rarity);
+
+            slot.SetAllyMetadata(
+                level,
+                rarity,
+                roleIcon,
+                elementIcon,
+                borderSprite,
+                backgroundSprite,
+                GetRarityBorderColor(rarity),
+                GetRarityBackgroundColor(rarity));
+        }
+
+        private static int ResolveCharacterLevel(Character character, CharacterDataModel data)
+        {
+            var baseLevel = data?.baseStats?.level ?? 1;
+            var saveLevel = SaveManager.Instance?.CurrentSave?.GetCharacterLevel(character.CharacterId) ?? 0;
+            return Mathf.Max(1, saveLevel > 0 ? saveLevel : baseLevel);
+        }
+
+        private static Sprite LoadRoleIconSprite(string roleTag)
+        {
+            var key = NormalizeTag(roleTag);
+            if (string.IsNullOrWhiteSpace(key))
+            {
+                return null;
+            }
+
+            var candidates = new[]
+            {
+                $"UI/Role/icon_role_{key}",
+                $"Icons/Role/icon_role_{key}",
+                $"Role/{key}",
+                $"UI/Role/{key}",
+                $"Icons/{key}"
+            };
+
+            for (var i = 0; i < candidates.Length; i++)
+            {
+                var sprite = Resources.Load<Sprite>(candidates[i]);
+                if (sprite != null)
+                {
+                    return sprite;
+                }
+            }
+
+            return null;
+        }
+
+        private static Sprite LoadElementIconSprite(string elementTag)
+        {
+            var key = NormalizeTag(elementTag);
+            if (string.IsNullOrWhiteSpace(key))
+            {
+                return null;
+            }
+
+            var candidates = new[]
+            {
+                $"UI/Element/icon_element_{key}",
+                $"Icons/Element/icon_element_{key}",
+                $"Element/{key}",
+                $"UI/Element/{key}",
+                $"Icons/{key}"
+            };
+
+            for (var i = 0; i < candidates.Length; i++)
+            {
+                var sprite = Resources.Load<Sprite>(candidates[i]);
+                if (sprite != null)
+                {
+                    return sprite;
+                }
+            }
+
+            return null;
+        }
+
+        private static Sprite LoadRarityBorderSprite(string rarity)
+        {
+            var key = NormalizeTag(rarity);
+            var candidates = string.IsNullOrWhiteSpace(key)
+                ? new[] { "UI/Border/common_border" }
+                : new[]
+                {
+                    $"UI/Border/{key}_border",
+                    "UI/Border/common_border"
+                };
+
+            for (var i = 0; i < candidates.Length; i++)
+            {
+                var sprite = Resources.Load<Sprite>(candidates[i]);
+                if (sprite != null)
+                {
+                    return sprite;
+                }
+            }
+
+            return null;
+        }
+
+        private static Sprite LoadRarityBackgroundSprite(string rarity)
+        {
+            var key = NormalizeTag(rarity);
+            var candidates = string.IsNullOrWhiteSpace(key)
+                ? new[] { "UI/Border/common_bg" }
+                : new[]
+                {
+                    $"UI/Border/{key}_bg",
+                    "UI/Border/common_bg"
+                };
+
+            for (var i = 0; i < candidates.Length; i++)
+            {
+                var sprite = Resources.Load<Sprite>(candidates[i]);
+                if (sprite != null)
+                {
+                    return sprite;
+                }
+            }
+
+            return null;
+        }
+
+        private static Color GetRarityBorderColor(string rarity)
+        {
+            if (string.Equals(rarity, "UR", StringComparison.OrdinalIgnoreCase))
+            {
+                return HexToColor("#E61919");
+            }
+
+            if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
+            {
+                return HexToColor("#FFD700");
+            }
+
+            if (string.Equals(rarity, "SR", StringComparison.OrdinalIgnoreCase))
+            {
+                return HexToColor("#FF007F");
+            }
+
+            if (string.Equals(rarity, "R", StringComparison.OrdinalIgnoreCase))
+            {
+                return HexToColor("#00F0FF");
+            }
+
+            return Color.white;
+        }
+
+        private static Color GetRarityBackgroundColor(string rarity)
+        {
+            if (string.Equals(rarity, "UR", StringComparison.OrdinalIgnoreCase))
+            {
+                return HexToColor("#3D0000AA");
+            }
+
+            if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
+            {
+                return HexToColor("#FFB30066");
+            }
+
+            if (string.Equals(rarity, "SR", StringComparison.OrdinalIgnoreCase))
+            {
+                return HexToColor("#FF007F66");
+            }
+
+            if (string.Equals(rarity, "R", StringComparison.OrdinalIgnoreCase))
+            {
+                return HexToColor("#00F0FF66");
+            }
+
+            return new Color(1f, 1f, 1f, 0.25f);
+        }
+
+        private static string NormalizeTag(string value)
+        {
+            return string.IsNullOrWhiteSpace(value)
+                ? string.Empty
+                : value.Trim().ToLowerInvariant();
+        }
+
+        private static Color HexToColor(string hex)
+        {
+            if (ColorUtility.TryParseHtmlString(hex, out var color))
+            {
+                return color;
+            }
+
+            return Color.white;
         }
 
         private Sprite LoadSpriteFromResourcesPath(string rawPath)
