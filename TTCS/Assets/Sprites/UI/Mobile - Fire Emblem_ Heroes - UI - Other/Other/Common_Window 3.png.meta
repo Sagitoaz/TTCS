@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5ee1af6675e2b114ab4d4a37e50102df
+guid: c86f2860b1448404faee31ba8aad56df
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -346,12 +346,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 23
-        width: 150
-        height: 1129
+        y: 25
+        width: 75
+        height: 1124
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 3}
       customData: 
       outline: []
       physicsShape: []
@@ -367,13 +367,13 @@ TextureImporter:
       name: Common_Window_8
       rect:
         serializedVersion: 2
-        x: 155
-        y: 18
+        x: 153
+        y: 23
         width: 150
         height: 1129
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 46, y: 40, z: 43, w: 39}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -473,6 +473,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Common_Window 3_0
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 25
+        width: 66
+        height: 1121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f506edc9e4e313449c1efd23a21b412
+      internalID: 445826985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -487,6 +509,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Common_Window 3_0: 445826985
       Common_Window_0: -7359840223984170133
       Common_Window_1: -5677784457399223451
       Common_Window_10: -7679533863351407902

@@ -318,6 +318,30 @@ Nếu team muốn, có thể dùng file này như baseline thực thi ngay, và 
 - [x] `Sprint03_Standardization_Agreement.md` đã được 2 dev chốt và ký xác nhận nội bộ.
 - [x] Giai đoạn 1 (khóa contract/schema/route) đã hoàn tất qua `Sprint03_Phase1_Kickoff_Package.md`.
 - [ ] Ownership/branch đã tạo xong (thực hiện ngay khi bắt đầu code).
+
+---
+
+## 11) Quy trình cập nhật & thay đổi gần đây
+
+### Quy trình cập nhật
+- Với mỗi bug fix Flow/UI, cập nhật ngay vào mục này theo format: `ngày - khu vực - thay đổi - tác động`.
+- Nếu thay đổi ảnh hưởng Unity setup (scene/prefab/inspector), bắt buộc tạo thêm file `DevB_*_Setup_Guide.md`.
+- Chỉ đánh dấu checklist Done khi đã pass compile và xác nhận không regress flow cũ.
+
+### Thay đổi gần đây
+
+#### 2026-04-15 - Gacha + Animation stabilization
+- Khu vực: Character animation trigger mapping.
+- Thay đổi: Đồng bộ trigger skill cast theo convention `Skillcast` để tương thích animator controller.
+- Tác động: Tránh fallback sai qua animation attack khi cast skill.
+
+- Khu vực: Gacha rarity display.
+- Thay đổi: Sửa cấu hình pool cho guardian emblem và cập nhật resolve rarity để đọc item rarity metadata.
+- Tác động: `item_guardian_emblem` hiển thị đúng rarity SR, không còn sai thành SSR.
+
+- Khu vực: Gacha SSR seal transition.
+- Thay đổi: Force-hide SSR seal trong đường KillTweens để reset triệt để khi người chơi roll nhanh.
+- Tác động: Loại bỏ hiện tượng seal bị lưu ảnh/không mất ở lần roll kế tiếp.
 - [ ] Sync ngày 3 đã hoàn thành.
 - [ ] Integration ngày 7 pass.
 - [ ] Integration ngày 10 pass.
