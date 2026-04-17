@@ -24,12 +24,11 @@ namespace TTCS.Flow.Inventory
         [SerializeField] private TMP_Text _itemNameText;
         [SerializeField] private TMP_Text _itemRarityText;
         [SerializeField] private TMP_Text _itemDescriptionText;
+        [SerializeField] private Image _detailBackgroundImage;
         [SerializeField] private Image _detailFrameImageA;
         [SerializeField] private Image _detailFrameImageB;
         [SerializeField] private Image _detailBorderImage;
-        [SerializeField] private Image _detailGlowImage;
-        [SerializeField] private Image _accessoryBorderImage;
-        [SerializeField] private Image _accessoryGlowImage;
+    
         [SerializeField] private GameObject _accessoryStatRoot;
         [SerializeField] private TMP_Text _accessoryStatTitleText;
         [SerializeField] private Transform _accessoryStatLineRoot;
@@ -101,6 +100,7 @@ namespace TTCS.Flow.Inventory
                 if (string.Equals(items[i].itemId, itemId, StringComparison.Ordinal))
                 {
                     _selectedStack = items[i];
+                    UpdateSelectedCellState(itemId);
                     SetDetail(_selectedStack);
                     return;
                 }
@@ -125,17 +125,40 @@ namespace TTCS.Flow.Inventory
             _spawnedRows.Add(cell.gameObject);
 
             var itemData = DataManager.Instance?.LoadItem(stack.itemId);
-            var borderColor = GetRarityColor(itemData?.rarity);
+            var rarity = itemData?.rarity ?? string.Empty;
             var icon = LoadItemIcon(itemData?.iconPath);
-            cell.Bind(icon, stack.quantity, borderColor, () => OnItemClicked(stack.itemId));
+            cell.Bind(icon, stack.quantity, rarity, stack.itemId, () => OnItemClicked(stack.itemId));
+        }
+
+        private void UpdateSelectedCellState(string selectedItemId)
+        {
+            for (var i = 0; i < _spawnedRows.Count; i++)
+            {
+                var row = _spawnedRows[i];
+                if (row == null)
+                {
+                    continue;
+                }
+
+                var cell = row.GetComponent<InventoryItemCellView>();
+                if (cell == null)
+                {
+                    continue;
+                }
+
+                var isSelected = string.Equals(cell.ItemId, selectedItemId, StringComparison.Ordinal);
+                cell.SetSelected(isSelected);
+            }
         }
 
         private void SetDetail(ItemStack stack)
         {
             var hasSelection = stack != null;
             var itemData = hasSelection ? DataManager.Instance?.LoadItem(stack.itemId) : null;
-            var rarity = itemData?.rarity ?? "R";
-            var rarityColor = GetRarityColor(rarity);
+            var rarity = hasSelection ? (itemData?.rarity ?? "R") : "common";
+            var rarityColor = hasSelection ? GetRarityColor(rarity) : Color.white;
+            var borderSprite = LoadRarityBorderSprite(rarity);
+            var bgSprite = LoadRarityBackgroundSprite(rarity);
 
             if (_itemNameText != null)
             {
@@ -170,32 +193,26 @@ namespace TTCS.Flow.Inventory
                 _detailIconImage.color = icon == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
             }
 
+            if (_detailBackgroundImage != null)
+            {
+                _detailBackgroundImage.sprite = bgSprite;
+                _detailBackgroundImage.color = Color.white;
+            }
+
             if (_detailFrameImageA != null)
             {
-                _detailFrameImageA.color = hasSelection ? rarityColor : Color.white;
+                _detailFrameImageA.color = rarityColor;
             }
 
             if (_detailFrameImageB != null)
             {
-                _detailFrameImageB.color = hasSelection ? rarityColor : Color.white;
+                _detailFrameImageB.color = rarityColor;
             }
 
             if(_detailBorderImage != null)
             {
-                _detailBorderImage.color = hasSelection ? rarityColor: Color.white;
-            }
-            
-            if (_detailGlowImage != null)
-            {
-                _detailGlowImage.color = hasSelection ? rarityColor : Color.white;
-            }
-            if (_accessoryBorderImage != null)
-            {
-                _accessoryBorderImage.color = hasSelection ? rarityColor : Color.white;
-            }
-            if(_accessoryGlowImage != null)
-            {
-                _accessoryGlowImage.color = hasSelection ? rarityColor: Color.white;            
+                _detailBorderImage.sprite = borderSprite;
+                _detailBorderImage.color = Color.white;
             }
 
             var isAccessory = hasSelection && string.Equals(itemData?.itemType, "accessory", StringComparison.OrdinalIgnoreCase);
@@ -315,6 +332,38 @@ namespace TTCS.Flow.Inventory
             }
 
             return Color.white;
+        }
+
+        private static Sprite LoadRarityBorderSprite(string rarity)
+        {
+            var key = NormalizeRarityKey(rarity);
+            var sprite = LoadResourceSprite($"UI/Border/{key}_border");
+            return sprite ?? LoadResourceSprite("UI/Border/common_border");
+        }
+
+        private static Sprite LoadRarityBackgroundSprite(string rarity)
+        {
+            var key = NormalizeRarityKey(rarity);
+            var sprite = LoadResourceSprite($"UI/Border/{key}_bg");
+            return sprite ?? LoadResourceSprite("UI/Border/common_bg");
+        }
+
+        private static string NormalizeRarityKey(string rarity)
+        {
+            if (string.IsNullOrWhiteSpace(rarity))
+            {
+                return "common";
+            }
+
+            var key = rarity.Trim().ToLowerInvariant();
+            return key switch
+            {
+                "ssr" => "ssr",
+                "sr" => "sr",
+                "r" => "r",
+                "ur" => "ur",
+                _ => "common"
+            };
         }
 
         private static void ApplyRarityTextStyle(TMP_Text rarityText, string rarity)
