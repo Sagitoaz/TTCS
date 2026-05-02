@@ -619,18 +619,18 @@ namespace TTCS.Flow.TeamFormation
 
                 var baseHp = Math.Max(1, data.baseStats?.hp ?? 1000);
                 var hp = save.GetCharacterCurrentHp(characterId, baseHp);
-                Debug.Log($"[TeamFormation] {characterId}: HP={hp}, baseHP={baseHp}");
+                
                 
                 if (hp <= 0)
                 {
-                    Debug.Log($"[TeamFormation] {characterId} is dead (HP <= 0), skipping");
+                   
                     continue;
                 }
 
                 var role = data.metadata?.roleTag ?? "Unknown";
                 if (!IsRoleAllowed(role))
                 {
-                    Debug.Log($"[TeamFormation] {characterId} role {role} not allowed by filter {_roleFilter}");
+                   
                     continue;
                 }
 

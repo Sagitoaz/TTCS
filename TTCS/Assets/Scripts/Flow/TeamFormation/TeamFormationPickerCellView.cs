@@ -9,7 +9,8 @@ namespace TTCS.Flow.TeamFormation
         [SerializeField] private Button _button;
         [SerializeField] private Image _portrait;
         [SerializeField] private Image _borderImage;
-        [SerializeField] private TextMeshProUGUI _nameText;
+
+        [SerializeField] private Image _bgImage;
         [SerializeField] private TextMeshProUGUI _levelText;
         [SerializeField] private TextMeshProUGUI _rarityText;
         [SerializeField] private GameObject _highlight;
@@ -18,11 +19,6 @@ namespace TTCS.Flow.TeamFormation
 
         public void Bind(string nameText, int level, string rarity, Sprite portrait)
         {
-            if (_nameText != null)
-            {
-                _nameText.text = nameText;
-            }
-
             if (_levelText != null)
             {
                 _levelText.text = $"Lv.{level}";
@@ -46,6 +42,13 @@ namespace TTCS.Flow.TeamFormation
                 var borderSprite = LoadBorderImage(rarity);
                 _borderImage.sprite = borderSprite;
                 _borderImage.color = borderSprite == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
+            }
+            
+            if (_bgImage != null)
+            {
+                var bgSprite = LoadBgImage(rarity);
+                _bgImage.sprite = bgSprite;
+                _bgImage.color = bgSprite == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
             }
         }
 
@@ -119,6 +122,18 @@ namespace TTCS.Flow.TeamFormation
             var normalized = rarity.ToLowerInvariant();
             var borderPath = $"UI/Border/{normalized}_border";
             return Resources.Load<Sprite>(borderPath);
+        }
+
+        private static Sprite LoadBgImage(string rarity)
+        {
+            if (string.IsNullOrWhiteSpace(rarity))
+            {
+                return null;
+            }
+
+            var normalized = rarity.ToLowerInvariant();
+            var bgPath = $"UI/Border/{normalized}_bg";
+            return Resources.Load<Sprite>(bgPath);
         }
 
 
