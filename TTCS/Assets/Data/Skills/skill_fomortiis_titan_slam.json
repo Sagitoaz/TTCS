@@ -61,9 +61,6 @@
   "visual": {
     "attackStyle": "melee",
     "animation": "fomortiis_titan_slam",
-    "vfxPrefab": "VFX/fomortiis_titan_slam",
-    "sfx": "SFX/fomortiis_ground_slam",
     "cameraShake": 0.42
   }
 }
-

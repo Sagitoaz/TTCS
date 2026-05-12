@@ -54,9 +54,6 @@
   "visual": {
     "attackStyle": "melee",
     "animation": "fomortiis_crushing_fist",
-    "vfxPrefab": "VFX/fomortiis_crushing_fist",
-    "sfx": "SFX/fomortiis_fist_impact",
     "cameraShake": 0.28
   }
 }
-

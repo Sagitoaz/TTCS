@@ -46,8 +46,6 @@
 
   "visual": {
     "animation": "knight_guard",
-    "vfxPrefab": "VFX/knight_guard_effect",
-    "sfx": "SFX/shield_raise",
     "cameraShake": 0
   }
 }

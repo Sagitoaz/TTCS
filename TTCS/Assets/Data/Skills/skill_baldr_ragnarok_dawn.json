@@ -79,9 +79,7 @@
 
   "visual": {
     "attackStyle": "ranged",
-    "animation": "baldr_Skillcast",
-    "vfxPrefab": "VFX/baldr_ragnarok_dawn",
-    "sfx": "SFX/baldr_ragnarok_dawn",
+    "animation": "baldr_ragnarok_dawn_skillcast",
     "cameraShake": 0.35
   }
 }

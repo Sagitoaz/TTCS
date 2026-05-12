@@ -54,8 +54,6 @@
 
   "visual": {
     "animation": "warrior_taunt",
-    "vfxPrefab": "VFX/taunt_effect",
-    "sfx": "SFX/warrior_battle_cry",
     "cameraShake": 0.05
   }
 }

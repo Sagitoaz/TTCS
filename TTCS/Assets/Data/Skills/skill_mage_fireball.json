@@ -80,8 +80,6 @@
   "visual": {
     "attackStyle": "ranged",
     "animation": "mage_cast_fireball",
-    "vfxPrefab": "VFX/fireball_explosion",
-    "sfx": "SFX/fire_whoosh",
     "cameraShake": 0.3
   }
 }

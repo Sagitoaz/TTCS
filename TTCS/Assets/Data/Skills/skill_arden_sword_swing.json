@@ -73,8 +73,6 @@
   "visual": {
     "attackStyle": "melee",
     "animation": "arden_sword_swing",
-    "vfxPrefab": "VFX/arden_sword_swing",
-    "sfx": "SFX/arden_sword_swing",
     "cameraShake": 0.18
   }
 }

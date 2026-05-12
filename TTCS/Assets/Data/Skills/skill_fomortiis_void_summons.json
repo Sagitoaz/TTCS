@@ -60,10 +60,7 @@
 
   "visual": {
     "attackStyle": "ranged",
-    "animation": "fomortiis_void_summons",
-    "vfxPrefab": "VFX/fomortiis_void_summons",
-    "sfx": "SFX/fomortiis_void_summons",
+    "animation": "fomortiis_void_summons_skillcast",
     "cameraShake": 0.32
   }
 }
-

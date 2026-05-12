@@ -61,9 +61,6 @@
   "visual": {
     "attackStyle": "ranged",
     "animation": "hodr_eclipse_barrage_cast",
-    "vfxPrefab": "VFX/hodr_eclipse_barrage",
-    "sfx": "SFX/hodr_eclipse_barrage",
     "cameraShake": 0.2
   }
 }
-

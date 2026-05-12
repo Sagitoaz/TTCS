@@ -52,8 +52,6 @@
   "visual": {
     "attackStyle": "ranged",
     "animation": "knight_rage",
-    "vfxPrefab": "VFX/knight_rage_effect",
-    "sfx": "SFX/dark_energy_burst",
     "cameraShake": 0.35
   }
 }

@@ -61,9 +61,6 @@
   "visual": {
     "attackStyle": "ranged",
     "animation": "hodr_piercing_round_cast",
-    "vfxPrefab": "VFX/hodr_piercing_round",
-    "sfx": "SFX/hodr_charged_shot",
     "cameraShake": 0.18
   }
 }
-

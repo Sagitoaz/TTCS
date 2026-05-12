@@ -81,8 +81,6 @@
   "visual": {
     "attackStyle": "melee",
     "animation": "arden_guard_breaker",
-    "vfxPrefab": "VFX/arden_guard_breaker",
-    "sfx": "SFX/arden_heavy_cleave",
     "cameraShake": 0.3
   }
 }

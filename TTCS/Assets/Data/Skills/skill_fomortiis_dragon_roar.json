@@ -60,10 +60,7 @@
 
   "visual": {
     "attackStyle": "ranged",
-    "animation": "fomortiis_dragon_roar",
-    "vfxPrefab": "VFX/fomortiis_dragon_roar",
-    "sfx": "SFX/fomortiis_roar",
+    "animation": "fomortiis_dragon_roar_skillcast",
     "cameraShake": 0.36
   }
 }
-

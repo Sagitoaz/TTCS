@@ -54,9 +54,6 @@
   "visual": {
     "attackStyle": "ranged",
     "animation": "hodr_quick_shot",
-    "vfxPrefab": "VFX/hodr_quick_shot",
-    "sfx": "SFX/hodr_gunshot",
     "cameraShake": 0.06
   }
 }
-

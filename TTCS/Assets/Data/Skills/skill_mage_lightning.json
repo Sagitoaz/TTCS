@@ -81,8 +81,6 @@
   "visual": {
     "attackStyle": "ranged",
     "animation": "mage_lightning",
-    "vfxPrefab": "VFX/lightning_effect",
-    "sfx": "SFX/thunder_strike",
     "cameraShake": 0.4
   }
 }

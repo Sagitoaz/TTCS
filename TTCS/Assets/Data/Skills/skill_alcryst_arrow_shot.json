@@ -53,8 +53,6 @@
   "visual": {
     "attackStyle": "ranged",
     "animation": "alcryst_arrow_horizontal",
-    "vfxPrefab": "VFX/alcryst_arrow_trail",
-    "sfx": "SFX/alcryst_arrow_shot",
     "cameraShake": 0.08
   }
 }

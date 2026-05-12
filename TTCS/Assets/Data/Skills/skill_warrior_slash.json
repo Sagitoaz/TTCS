@@ -47,8 +47,6 @@
   "visual": {
     "attackStyle": "melee",
     "animation": "warrior_slash",
-    "vfxPrefab": "VFX/slash_effect",
-    "sfx": "SFX/sword_swing",
     "cameraShake": 0.1
   }
 }

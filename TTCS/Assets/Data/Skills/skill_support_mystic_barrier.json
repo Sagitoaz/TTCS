@@ -47,8 +47,6 @@
 
   "visual": {
     "animation": "support_mystic_barrier",
-    "vfxPrefab": "VFX/support_mystic_barrier",
-    "sfx": "SFX/support_mystic_barrier",
     "cameraShake": 0.0
   }
 }

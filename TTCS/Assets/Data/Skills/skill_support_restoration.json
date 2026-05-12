@@ -72,8 +72,6 @@
 
   "visual": {
     "animation": "support_restoration",
-    "vfxPrefab": "VFX/support_restoration",
-    "sfx": "SFX/support_restoration",
     "cameraShake": 0.0
   }
 }

@@ -85,8 +85,6 @@ namespace TTCS.Data
     {
         public string attackStyle;  // "melee" or "ranged" (optional)
         public string animation;
-        public string vfxPrefab;
-        public string sfx;
         public float cameraShake;
         public float freeFrame;     // optional hit-stop duration (seconds)
     }
