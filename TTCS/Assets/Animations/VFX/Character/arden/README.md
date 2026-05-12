@@ -1,0 +1,1 @@
+Arden use the attack vfx of warrior and shield vfx off mage
