@@ -70,8 +70,12 @@ namespace TTCS.Flow.CharacterCollection
         [Header("Detail - Equipment")]
         [SerializeField] private Button _equipAccessoryButton;
         [SerializeField] private Image _equippedAccessoryIcon;
-        [SerializeField] private TMP_Text _equippedAccessoryNameText;
-        [SerializeField] private TMP_Text _equippedAccessoryRarityText;
+
+        [Header("Detail - Equipment - Actions")]
+        [SerializeField] private GameObject _accessoryActionPanel;
+        [SerializeField] private Button _accessoryActionEquipButton;
+        [SerializeField] private Button _accessoryActionUnequipButton;
+
         [SerializeField] private AccessoryEquipPickerPanel _accessoryPicker;
 
         private readonly List<TeamFormationPickerCellView> _spawnedSlots = new List<TeamFormationPickerCellView>();
@@ -110,6 +114,8 @@ namespace TTCS.Flow.CharacterCollection
 
             WireUiEvents();
             ShowListPanel();
+
+            SetAccessoryActionPanelVisible(false);
         }
 
         public void BackToMenu()
@@ -161,7 +167,17 @@ namespace TTCS.Flow.CharacterCollection
 
             if (_equipAccessoryButton != null)
             {
-                _equipAccessoryButton.onClick.AddListener(OnEquipAccessoryClicked);
+                _equipAccessoryButton.onClick.AddListener(OnAccessoryActionRequested);
+            }
+
+            if (_accessoryActionEquipButton != null)
+            {
+                _accessoryActionEquipButton.onClick.AddListener(OnAccessoryEquipOptionSelected);
+            }
+
+            if (_accessoryActionUnequipButton != null)
+            {
+                _accessoryActionUnequipButton.onClick.AddListener(OnAccessoryUnequipOptionSelected);
             }
         }
 
@@ -274,7 +290,7 @@ namespace TTCS.Flow.CharacterCollection
 
         private static List<string> BuildSortOptions()
         {
-            return new List<string> { "Level (High → Low)", "Level (Low → High)" };
+            return new List<string> { "Level DESC", "Level ASC" };
         }
 
         private static List<string> BuildDistinctOptions(IEnumerable<string> values, string allLabel)
@@ -440,6 +456,8 @@ namespace TTCS.Flow.CharacterCollection
                 _skillDetailPanel.Hide();
             }
 
+            SetAccessoryActionPanelVisible(false);
+
             RefreshRosterAndFilters();
         }
 
@@ -454,6 +472,8 @@ namespace TTCS.Flow.CharacterCollection
             {
                 _detailPanel.SetActive(true);
             }
+
+            SetAccessoryActionPanelVisible(false);
 
             RefreshDetail(characterId);
         }
@@ -484,6 +504,7 @@ namespace TTCS.Flow.CharacterCollection
             if (_rarityText != null)
             {
                 _rarityText.text = rarity;
+                ApplyRarityTextStyle(_rarityText, rarity);
             }
 
             SetOptionalIcon(_roleIconImage, LoadRoleIconSprite(role));
@@ -503,32 +524,32 @@ namespace TTCS.Flow.CharacterCollection
 
             if (_hpText != null)
             {
-                _hpText.text = $"HP: {entry.CurrentHp}/{stats.MaxHp}";
+                _hpText.text = $"HP:{entry.CurrentHp}/{stats.MaxHp}";
             }
 
             if (_manaText != null)
             {
-                _manaText.text = $"Mana: {entry.CurrentMana}/{entry.MaxMana}";
+                _manaText.text = $"Mana:{entry.CurrentMana}/{entry.MaxMana}";
             }
 
             if (_atkText != null)
             {
-                _atkText.text = stats.ATK.ToString();
+                _atkText.text = $"ATK:{stats.ATK}";
             }
 
             if (_defText != null)
             {
-                _defText.text = stats.DEF.ToString();
+                _defText.text = $"DEF:{stats.DEF}";
             }
 
             if (_spdText != null)
             {
-                _spdText.text = stats.SPD.ToString();
+                _spdText.text = $"SPD:{stats.SPD}";
             }
 
             if (_critText != null)
             {
-                _critText.text = $"{Mathf.RoundToInt(stats.CritRate * 100f)}%";
+                _critText.text = $"Crit:{Mathf.RoundToInt(stats.CritRate * 100f)}%";
             }
 
             
@@ -656,7 +677,43 @@ namespace TTCS.Flow.CharacterCollection
                 targetPosition: anchorPosition);
         }
 
-        private void OnEquipAccessoryClicked()
+        private void OnAccessoryActionRequested()
+        {
+            if (string.IsNullOrWhiteSpace(_selectedCharacterId) || _inventoryService == null)
+            {
+                return;
+            }
+
+            if (_accessoryActionPanel == null)
+            {
+                OpenAccessoryPicker();
+                return;
+            }
+
+            SetAccessoryActionPanelVisible(!_accessoryActionPanel.activeSelf);
+        }
+
+        private void OnAccessoryEquipOptionSelected()
+        {
+            SetAccessoryActionPanelVisible(false);
+            OpenAccessoryPicker();
+        }
+
+        private void OnAccessoryUnequipOptionSelected()
+        {
+            SetAccessoryActionPanelVisible(false);
+
+            if (string.IsNullOrWhiteSpace(_selectedCharacterId) || _inventoryService == null)
+            {
+                return;
+            }
+
+            _inventoryService.UnequipAccessory(_selectedCharacterId);
+            RefreshRosterAndFilters();
+            RefreshDetail(_selectedCharacterId);
+        }
+
+        private void OpenAccessoryPicker()
         {
             if (_accessoryPicker == null || _inventoryService == null)
             {
@@ -676,6 +733,14 @@ namespace TTCS.Flow.CharacterCollection
                     RefreshRosterAndFilters();
                     RefreshDetail(_selectedCharacterId);
                 });
+        }
+
+        private void SetAccessoryActionPanelVisible(bool visible)
+        {
+            if (_accessoryActionPanel != null)
+            {
+                _accessoryActionPanel.SetActive(visible);
+            }
         }
 
         private void RefreshAccessorySlot(string characterId)
@@ -704,15 +769,9 @@ namespace TTCS.Flow.CharacterCollection
                 _equippedAccessoryIcon.preserveAspect = true;
             }
 
-            if (_equippedAccessoryNameText != null)
-            {
-                _equippedAccessoryNameText.text = item?.nameKey ?? equippedItemId;
-            }
+           
 
-            if (_equippedAccessoryRarityText != null)
-            {
-                _equippedAccessoryRarityText.text = rarity;
-            }
+           
         }
 
         private void SetAccessorySlotEmpty()
@@ -723,15 +782,9 @@ namespace TTCS.Flow.CharacterCollection
                 _equippedAccessoryIcon.color = new Color(1f, 1f, 1f, 0f);
             }
 
-            if (_equippedAccessoryNameText != null)
-            {
-                _equippedAccessoryNameText.text = "-";
-            }
+            
 
-            if (_equippedAccessoryRarityText != null)
-            {
-                _equippedAccessoryRarityText.text = "-";
-            }
+            
         }
 
         private static string ReadDropdownValue(TMP_Dropdown dropdown, string fallback)
@@ -863,7 +916,11 @@ namespace TTCS.Flow.CharacterCollection
         {
             if (_nameText != null) _nameText.text = "-";
             if (_levelText != null) _levelText.text = "Lv.-";
-            if (_rarityText != null) _rarityText.text = "-";
+            if (_rarityText != null)
+            {
+                _rarityText.text = "-";
+                ApplyRarityTextStyle(_rarityText, string.Empty);
+            }
             SetOptionalIcon(_roleIconImage, null);
             SetOptionalIcon(_elementIconImage, null);
             if (_hpText != null) _hpText.text = "HP: -";
@@ -899,6 +956,74 @@ namespace TTCS.Flow.CharacterCollection
             {
                 _skillDetailPanel.Hide();
             }
+        }
+
+        private static void ApplyRarityTextStyle(TMP_Text rarityText, string rarity)
+        {
+            if (rarityText == null)
+            {
+                return;
+            }
+
+            if (rarityText is TextMeshProUGUI tmp)
+            {
+                tmp.enableVertexGradient = false;
+                tmp.colorGradient = default;
+            }
+
+            if (string.Equals(rarity, "UR", StringComparison.OrdinalIgnoreCase))
+            {
+                var topColor = HexToColor("#E61919");
+                var bottomColor = HexToColor("#3D0000");
+                rarityText.color = topColor;
+
+                if (rarityText is TextMeshProUGUI textMesh)
+                {
+                    textMesh.enableVertexGradient = true;
+                    textMesh.colorGradient = new VertexGradient(topColor, topColor, bottomColor, bottomColor);
+                }
+
+                return;
+            }
+
+            if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
+            {
+                var topColor = HexToColor("#FFFFB3FF");
+                var bottomColor = HexToColor("#FFB300FF");
+                rarityText.color = HexToColor("#FFD700");
+
+                if (rarityText is TextMeshProUGUI textMesh)
+                {
+                    textMesh.enableVertexGradient = true;
+                    textMesh.colorGradient = new VertexGradient(topColor, topColor, bottomColor, bottomColor);
+                }
+
+                return;
+            }
+
+            if (string.Equals(rarity, "SR", StringComparison.OrdinalIgnoreCase))
+            {
+                rarityText.color = HexToColor("#FF007F");
+                return;
+            }
+
+            if (string.Equals(rarity, "R", StringComparison.OrdinalIgnoreCase))
+            {
+                rarityText.color = HexToColor("#00F0FF");
+                return;
+            }
+
+            rarityText.color = Color.white;
+        }
+
+        private static Color HexToColor(string hex)
+        {
+            if (ColorUtility.TryParseHtmlString(hex, out var color))
+            {
+                return color;
+            }
+
+            return Color.white;
         }
 
         private static void SetOptionalIcon(Image target, Sprite sprite)

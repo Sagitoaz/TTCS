@@ -21,17 +21,16 @@ namespace TTCS.Flow.CharacterCollection
 
         [Header("Selection Detail")]
         [SerializeField] private GameObject _detailRoot;
-        [SerializeField] private Image _iconImage;
+    
         [SerializeField] private TMP_Text _nameText;
         [SerializeField] private TMP_Text _rarityText;
-        [SerializeField] private TMP_Text _descriptionText;
+        
 
         [SerializeField] private Transform _statLineRoot;
         [SerializeField] private InventoryAccessoryStatLineView _statLinePrefab;
 
         [Header("Actions")]
         [SerializeField] private Button _closeButton;
-        [SerializeField] private Button _unequipButton;
         [SerializeField] private Button _confirmButton;
         [SerializeField] private TMP_Text _feedbackText;
 
@@ -53,11 +52,6 @@ namespace TTCS.Flow.CharacterCollection
             if (_confirmButton != null)
             {
                 _confirmButton.onClick.AddListener(ConfirmEquip);
-            }
-
-            if (_unequipButton != null)
-            {
-                _unequipButton.onClick.AddListener(Unequip);
             }
 
             HideInternal();
@@ -177,31 +171,6 @@ namespace TTCS.Flow.CharacterCollection
             }
         }
 
-        private void Unequip()
-        {
-            if (_inventoryService == null)
-            {
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(_characterId))
-            {
-                ShowFeedback("Character is required.");
-                return;
-            }
-
-            var result = _inventoryService.UnequipAccessory(_characterId);
-            ShowFeedback(result.Message);
-
-            if (result.Success)
-            {
-                _selectedItemId = string.Empty;
-                _onChanged?.Invoke();
-                RebuildList();
-                SetDetail(null);
-            }
-        }
-
         private void SetDetail(ItemDataModel item)
         {
             var hasItem = item != null;
@@ -213,29 +182,22 @@ namespace TTCS.Flow.CharacterCollection
 
             if (!hasItem)
             {
-                if (_iconImage != null)
-                {
-                    _iconImage.sprite = null;
-                    _iconImage.color = new Color(1f, 1f, 1f, 0f);
-                }
+                
 
                 if (_nameText != null) _nameText.text = "-";
-                if (_rarityText != null) _rarityText.text = "-";
-                if (_descriptionText != null) _descriptionText.text = string.Empty;
+                if (_rarityText != null)
+                {
+                    _rarityText.text = "-";
+                    ApplyRarityTextStyle(_rarityText, string.Empty);
+                }
+                
 
                 ClearStatLines();
                 if (_confirmButton != null) _confirmButton.interactable = false;
-                if (_unequipButton != null) _unequipButton.interactable = true;
                 return;
             }
 
-            if (_iconImage != null)
-            {
-                var icon = !string.IsNullOrWhiteSpace(item.iconPath) ? Resources.Load<Sprite>(item.iconPath) : null;
-                _iconImage.sprite = icon;
-                _iconImage.color = icon == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
-                _iconImage.preserveAspect = true;
-            }
+            
 
             if (_nameText != null)
             {
@@ -244,26 +206,18 @@ namespace TTCS.Flow.CharacterCollection
 
             if (_rarityText != null)
             {
-                _rarityText.text = item.rarity ?? "R";
+                var rarity = item.rarity ?? "R";
+                _rarityText.text = rarity;
+                ApplyRarityTextStyle(_rarityText, rarity);
             }
 
-            if (_descriptionText != null)
-            {
-                _descriptionText.text = !string.IsNullOrWhiteSpace(item.description)
-                    ? item.description
-                    : (string.IsNullOrWhiteSpace(item.statDescription) ? string.Empty : item.statDescription);
-            }
+            
 
             RebuildStatLines(item);
 
             if (_confirmButton != null)
             {
                 _confirmButton.interactable = true;
-            }
-
-            if (_unequipButton != null)
-            {
-                _unequipButton.interactable = true;
             }
         }
 
@@ -315,6 +269,74 @@ namespace TTCS.Flow.CharacterCollection
             {
                 gameObject.SetActive(true);
             }
+        }
+
+        private static void ApplyRarityTextStyle(TMP_Text rarityText, string rarity)
+        {
+            if (rarityText == null)
+            {
+                return;
+            }
+
+            if (rarityText is TextMeshProUGUI tmp)
+            {
+                tmp.enableVertexGradient = false;
+                tmp.colorGradient = default;
+            }
+
+            if (string.Equals(rarity, "UR", StringComparison.OrdinalIgnoreCase))
+            {
+                var topColor = HexToColor("#E61919");
+                var bottomColor = HexToColor("#3D0000");
+                rarityText.color = topColor;
+
+                if (rarityText is TextMeshProUGUI textMesh)
+                {
+                    textMesh.enableVertexGradient = true;
+                    textMesh.colorGradient = new VertexGradient(topColor, topColor, bottomColor, bottomColor);
+                }
+
+                return;
+            }
+
+            if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
+            {
+                var topColor = HexToColor("#FFFFB3FF");
+                var bottomColor = HexToColor("#FFB300FF");
+                rarityText.color = HexToColor("#FFD700");
+
+                if (rarityText is TextMeshProUGUI textMesh)
+                {
+                    textMesh.enableVertexGradient = true;
+                    textMesh.colorGradient = new VertexGradient(topColor, topColor, bottomColor, bottomColor);
+                }
+
+                return;
+            }
+
+            if (string.Equals(rarity, "SR", StringComparison.OrdinalIgnoreCase))
+            {
+                rarityText.color = HexToColor("#FF007F");
+                return;
+            }
+
+            if (string.Equals(rarity, "R", StringComparison.OrdinalIgnoreCase))
+            {
+                rarityText.color = HexToColor("#00F0FF");
+                return;
+            }
+
+            rarityText.color = Color.white;
+        }
+
+        private static Color HexToColor(string hex)
+        {
+            if (ColorUtility.TryParseHtmlString(hex, out var color))
+            {
+                return color;
+            }
+
+            return Color.white;
         }
 
         private void HideInternal()

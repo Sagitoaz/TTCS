@@ -23,7 +23,9 @@ Tạo 3 phần UI chính:
 Flow:
 - Vào scene: mở **List Panel**, ẩn **Detail Panel**
 - Click 1 slot nhân vật: mở **Detail Panel**, ẩn **List Panel**
-- Click nút equip: mở **Accessory Equip Picker Panel**
+- Click ô trang bị: hiện 2 lựa chọn **Equip** / **Unequip**
+  - Equip: mở **Accessory Equip Picker Panel**
+  - Unequip: tháo trang bị đang đeo
 
 ## 3) Setup List Panel
 
@@ -89,12 +91,15 @@ Lưu ý:
 
 ### 4.4. Equipment slot (Accessory)
 
-Tạo UI cho 1 ô accessory đang equip + nút mở picker:
+Tạo UI cho 1 ô accessory đang equip + panel lựa chọn:
 
-- Button Equip: `Button`
+- Button (ô trang bị): `Button`
 - Equipped icon: `Image`
-- Equipped name: `TMP_Text`
-- Equipped rarity: `TMP_Text`
+
+Action panel (hiện khi bấm ô trang bị):
+- Root: `GameObject`
+- Equip option: `Button`
+- Unequip option: `Button`
 
 ## 5) Setup Accessory Equip Picker Panel
 
@@ -115,14 +120,13 @@ Yêu cầu cell prefab có:
 ### 5.2. Selection detail + stat lines
 
 - Detail root: `GameObject` (bật/tắt khi có item)
-- Icon/Name/Rarity/Description: `Image` + `TMP_Text`
+- Name/Rarity/Description: `TMP_Text`
 - Stat line root: `Transform`
 - Stat line prefab: `TTCS.Flow.Inventory.InventoryAccessoryStatLineView`
 
 ### 5.3. Buttons
 
 - Close: đóng picker
-- Unequip: tháo accessory đang đeo
 - Confirm: equip accessory đã chọn
 
 ## 6) Gắn reference trong Inspector
@@ -159,7 +163,7 @@ Chọn GameObject có script `TTCS.Flow.CharacterCollection.CharacterCollectionU
 **Detail - Right**
 - Name/Level → `_nameText`, `_levelText`
 - Level progress → `_levelProgressSlider`, `_levelProgressText`
-- Rarity/Role/Element → `_rarityText`, `_roleText`, `_elementText`
+- Rarity → `_rarityText`
 
 Role/Element icon
 - `_roleIconImage`, `_elementIconImage`
@@ -177,7 +181,9 @@ Role/Element icon
 
 **Detail - Equipment**
 - Equip button → `_equipAccessoryButton`
-- Equipped icon/name/rarity → `_equippedAccessoryIcon`, `_equippedAccessoryNameText`, `_equippedAccessoryRarityText`
+- Equipped icon → `_equippedAccessoryIcon`
+- Action panel root → `_accessoryActionPanel`
+- Action buttons → `_accessoryActionEquipButton`, `_accessoryActionUnequipButton`
 - Picker panel reference → `_accessoryPicker` (AccessoryEquipPickerPanel)
 
 ### 6.2. AccessoryEquipPickerPanel
@@ -188,9 +194,9 @@ Chọn GameObject có script `TTCS.Flow.CharacterCollection.AccessoryEquipPicker
 - List root → `_listRoot`
 - Cell prefab → `_cellPrefab` (InventoryItemCellView)
 - Detail root → `_detailRoot`
-- Icon/Name/Rarity/Description → `_iconImage`, `_nameText`, `_rarityText`, `_descriptionText`
+- Name/Rarity/Description → `_nameText`, `_rarityText`, `_descriptionText`
 - Stat line root/prefab → `_statLineRoot`, `_statLinePrefab` (InventoryAccessoryStatLineView)
-- Close/Unequip/Confirm buttons → `_closeButton`, `_unequipButton`, `_confirmButton`
+- Close/Confirm buttons → `_closeButton`, `_confirmButton`
 - Feedback text (optional) → `_feedbackText`
 
 ## 7) Dữ liệu item cần đúng để equip
@@ -214,4 +220,4 @@ Stat accessory lấy từ:
 - Click equip mở picker
 - Click accessory: cell selected effect bật + detail/stat hiện
 - Confirm: accessory equip vào nhân vật, picker đóng, detail stats cập nhật
-- Unequip: tháo accessory, detail stats cập nhật
+- Unequip: bấm ô trang bị → chọn Unequip, detail stats cập nhật
