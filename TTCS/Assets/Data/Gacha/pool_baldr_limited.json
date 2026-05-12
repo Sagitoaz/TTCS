@@ -14,6 +14,13 @@
       "amount": 1
     },
     {
+      "rewardId": "char_hodr",
+      "rewardType": "character",
+      "weight": 2,
+      "isRare": true,
+      "amount": 1
+    },
+    {
       "rewardId": "char_mage",
       "rewardType": "character",
       "weight": 7,

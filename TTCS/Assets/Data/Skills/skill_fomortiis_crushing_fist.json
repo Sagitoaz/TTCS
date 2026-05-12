@@ -1,0 +1,62 @@
+{
+  "id": "skill_fomortiis_crushing_fist",
+  "nameKey": "Crushing Fist",
+  "description": "A raw physical punch from Fomortiis' massive claw.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "single_enemy",
+    "count": 1,
+    "filter": [],
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 0,
+    "cooldown": 0,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 1.35",
+    "element": "physical",
+    "canCrit": true,
+    "ignoreDefense": 0.08
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 1.35",
+      "element": "physical",
+      "chance": 1.0,
+      "duration": 0
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 280,
+        "endMs": 520,
+        "type": "hit"
+      }
+    ],
+    "grades": {}
+  },
+
+  "actionCost": {
+    "timelineUnits": 110,
+    "description": "Heavy basic boss punch"
+  },
+
+  "visual": {
+    "attackStyle": "melee",
+    "animation": "fomortiis_crushing_fist",
+    "vfxPrefab": "VFX/fomortiis_crushing_fist",
+    "sfx": "SFX/fomortiis_fist_impact",
+    "cameraShake": 0.28
+  }
+}
+

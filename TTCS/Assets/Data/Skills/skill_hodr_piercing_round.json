@@ -1,0 +1,69 @@
+{
+  "id": "skill_hodr_piercing_round",
+  "nameKey": "Piercing Round",
+  "description": "Hodr steadies her firearm and casts a charged shot that pierces armor.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "single_enemy",
+    "count": 1,
+    "filter": [],
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 18,
+    "cooldown": 2,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 2.05",
+    "element": "dark",
+    "canCrit": true,
+    "ignoreDefense": 0.24
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 2.05",
+      "element": "dark",
+      "chance": 1.0,
+      "duration": 0
+    },
+    {
+      "type": "debuff",
+      "value": "def:-10%",
+      "element": "dark",
+      "chance": 0.6,
+      "duration": 2
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 360,
+        "endMs": 650,
+        "type": "cast"
+      }
+    ],
+    "grades": {}
+  },
+
+  "actionCost": {
+    "timelineUnits": 125,
+    "description": "Charged armor-piercing shot"
+  },
+
+  "visual": {
+    "attackStyle": "ranged",
+    "animation": "hodr_piercing_round_cast",
+    "vfxPrefab": "VFX/hodr_piercing_round",
+    "sfx": "SFX/hodr_charged_shot",
+    "cameraShake": 0.18
+  }
+}
+

@@ -1,0 +1,69 @@
+{
+  "id": "skill_hodr_eclipse_barrage",
+  "nameKey": "Eclipse Barrage",
+  "description": "Hodr channels dark light into her firearm and releases a powerful barrage.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "all_enemies",
+    "count": -1,
+    "filter": [],
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 32,
+    "cooldown": 4,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 1.75",
+    "element": "dark",
+    "canCrit": true,
+    "ignoreDefense": 0.12
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 1.75",
+      "element": "dark",
+      "chance": 1.0,
+      "duration": 0
+    },
+    {
+      "type": "debuff",
+      "value": "spd:-12%",
+      "element": "dark",
+      "chance": 0.65,
+      "duration": 2
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 420,
+        "endMs": 760,
+        "type": "cast"
+      }
+    ],
+    "grades": {}
+  },
+
+  "actionCost": {
+    "timelineUnits": 150,
+    "description": "Dark firearm area cast"
+  },
+
+  "visual": {
+    "attackStyle": "ranged",
+    "animation": "hodr_eclipse_barrage_cast",
+    "vfxPrefab": "VFX/hodr_eclipse_barrage",
+    "sfx": "SFX/hodr_eclipse_barrage",
+    "cameraShake": 0.2
+  }
+}
+

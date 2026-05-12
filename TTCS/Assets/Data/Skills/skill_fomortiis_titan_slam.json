@@ -1,0 +1,69 @@
+{
+  "id": "skill_fomortiis_titan_slam",
+  "nameKey": "Titan Slam",
+  "description": "Fomortiis hammers the ground with both fists, crushing the front line.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "all_enemies",
+    "count": -1,
+    "filter": [],
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 0,
+    "cooldown": 2,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 1.15",
+    "element": "physical",
+    "canCrit": true,
+    "ignoreDefense": 0.05
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 1.15",
+      "element": "physical",
+      "chance": 1.0,
+      "duration": 0
+    },
+    {
+      "type": "stun",
+      "value": "1",
+      "element": "",
+      "chance": 0.12,
+      "duration": 1
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 380,
+        "endMs": 700,
+        "type": "slam"
+      }
+    ],
+    "grades": {}
+  },
+
+  "actionCost": {
+    "timelineUnits": 135,
+    "description": "Slow area physical slam"
+  },
+
+  "visual": {
+    "attackStyle": "melee",
+    "animation": "fomortiis_titan_slam",
+    "vfxPrefab": "VFX/fomortiis_titan_slam",
+    "sfx": "SFX/fomortiis_ground_slam",
+    "cameraShake": 0.42
+  }
+}
+

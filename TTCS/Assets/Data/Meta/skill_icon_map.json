@@ -90,6 +90,38 @@
     {
       "skillId": "skill_baldr_sun_slash",
       "iconPath": "Sprites/Skills/baldr_sun_slash"
+    },
+    {
+      "skillId": "skill_fomortiis_crushing_fist",
+      "iconPath": "Sprites/Skills/fomortiis_crushing_fist"
+    },
+    {
+      "skillId": "skill_fomortiis_titan_slam",
+      "iconPath": "Sprites/Skills/fomortiis_titan_slam"
+    },
+    {
+      "skillId": "skill_fomortiis_dragon_roar",
+      "iconPath": "Sprites/Skills/fomortiis_dragon_roar"
+    },
+    {
+      "skillId": "skill_fomortiis_void_summons",
+      "iconPath": "Sprites/Skills/fomortiis_void_summons"
+    },
+    {
+      "skillId": "skill_hodr_quick_shot",
+      "iconPath": "Sprites/Skills/hodr_quick_shot"
+    },
+    {
+      "skillId": "skill_hodr_double_tap",
+      "iconPath": "Sprites/Skills/hodr_double_tap"
+    },
+    {
+      "skillId": "skill_hodr_piercing_round",
+      "iconPath": "Sprites/Skills/hodr_piercing_round"
+    },
+    {
+      "skillId": "skill_hodr_eclipse_barrage",
+      "iconPath": "Sprites/Skills/hodr_eclipse_barrage"
     }
   ]
 }
