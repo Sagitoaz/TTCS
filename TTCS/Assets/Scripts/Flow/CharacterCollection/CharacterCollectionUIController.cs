@@ -70,6 +70,7 @@ namespace TTCS.Flow.CharacterCollection
         [Header("Detail - Equipment")]
         [SerializeField] private Button _equipAccessoryButton;
         [SerializeField] private Image _equippedAccessoryIcon;
+        [SerializeField] private Sprite _emptyAccessoryIconSprite;
 
         [Header("Detail - Equipment - Actions")]
         [SerializeField] private GameObject _accessoryActionPanel;
@@ -211,7 +212,8 @@ namespace TTCS.Flow.CharacterCollection
                 var exp = _save.GetCharacterExp(id);
 
                 var computed = ComputeCharacterStats(data, level, id);
-                var maxMana = ComputeMaxMana(data, level);
+                var baseMaxMana = ComputeMaxMana(data, level);
+                var maxMana = Mathf.Max(0, baseMaxMana + GetAccessoryFlatBonus(id, "MANA"));
                 var currentHp = _save.GetCharacterCurrentHp(id, computed.MaxHp);
                 var currentMana = _save.GetCharacterCurrentMana(id, maxMana);
 
@@ -522,6 +524,10 @@ namespace TTCS.Flow.CharacterCollection
             entry.MaxHp = stats.MaxHp;
             entry.CurrentHp = Mathf.Clamp(entry.CurrentHp, 0, stats.MaxHp);
 
+            var baseMaxMana = ComputeMaxMana(entry.Data, entry.Level);
+            entry.MaxMana = Mathf.Max(0, baseMaxMana + GetAccessoryFlatBonus(entry.CharacterId, "MANA"));
+            entry.CurrentMana = Mathf.Clamp(entry.CurrentMana, 0, entry.MaxMana);
+
             if (_hpText != null)
             {
                 _hpText.text = $"HP:{entry.CurrentHp}/{stats.MaxHp}";
@@ -760,7 +766,6 @@ namespace TTCS.Flow.CharacterCollection
 
             var item = DataManager.Instance?.LoadItem(equippedItemId);
             var icon = item != null && !string.IsNullOrWhiteSpace(item.iconPath) ? Resources.Load<Sprite>(item.iconPath) : null;
-            var rarity = item?.rarity ?? "R";
 
             if (_equippedAccessoryIcon != null)
             {
@@ -778,8 +783,9 @@ namespace TTCS.Flow.CharacterCollection
         {
             if (_equippedAccessoryIcon != null)
             {
-                _equippedAccessoryIcon.sprite = null;
-                _equippedAccessoryIcon.color = new Color(1f, 1f, 1f, 0f);
+                _equippedAccessoryIcon.sprite = _emptyAccessoryIconSprite;
+                _equippedAccessoryIcon.color = _emptyAccessoryIconSprite == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
+                _equippedAccessoryIcon.preserveAspect = true;
             }
 
             
@@ -910,6 +916,40 @@ namespace TTCS.Flow.CharacterCollection
             }
 
             return Math.Max(20, maxSkillCost * 3 + Math.Max(1, level) * 5);
+        }
+
+        private static int GetAccessoryFlatBonus(string characterId, string statKey)
+        {
+            var save = SaveManager.Instance?.CurrentSave;
+            if (save == null || string.IsNullOrWhiteSpace(characterId))
+            {
+                return 0;
+            }
+
+            var accessoryItemId = save.GetEquippedAccessory(characterId);
+            if (string.IsNullOrWhiteSpace(accessoryItemId))
+            {
+                return 0;
+            }
+
+            var item = DataManager.Instance?.LoadItem(accessoryItemId);
+            if (item == null)
+            {
+                return 0;
+            }
+
+            var targetKey = AccessoryStatUtility.NormalizeStatKey(statKey);
+            var bonuses = AccessoryStatUtility.GetBonuses(item);
+            var total = 0;
+            for (var i = 0; i < bonuses.Count; i++)
+            {
+                if (string.Equals(bonuses[i].StatKey, targetKey, StringComparison.OrdinalIgnoreCase))
+                {
+                    total += bonuses[i].Amount;
+                }
+            }
+
+            return total;
         }
 
         private void ClearDetail()

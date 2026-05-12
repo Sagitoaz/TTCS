@@ -70,7 +70,21 @@ namespace TTCS.Flow.CharacterCollection
             RebuildList();
 
             var equipped = _inventoryService != null ? _inventoryService.GetEquippedAccessory(_characterId) : string.Empty;
-            if (!string.IsNullOrWhiteSpace(equipped))
+            var canPreselectEquipped = false;
+            if (!string.IsNullOrWhiteSpace(equipped) && _inventoryService != null)
+            {
+                var stacks = _inventoryService.GetItems();
+                for (var i = 0; i < stacks.Count; i++)
+                {
+                    if (stacks[i] != null && string.Equals(stacks[i].itemId, equipped, StringComparison.Ordinal) && stacks[i].quantity > 0)
+                    {
+                        canPreselectEquipped = true;
+                        break;
+                    }
+                }
+            }
+
+            if (canPreselectEquipped)
             {
                 SelectItem(equipped);
             }

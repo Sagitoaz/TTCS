@@ -95,6 +95,7 @@ Tạo UI cho 1 ô accessory đang equip + panel lựa chọn:
 
 - Button (ô trang bị): `Button`
 - Equipped icon: `Image`
+- (Optional) Empty icon sprite: `Sprite` (placeholder khi chưa equip)
 
 Action panel (hiện khi bấm ô trang bị):
 - Root: `GameObject`
@@ -182,6 +183,7 @@ Role/Element icon
 **Detail - Equipment**
 - Equip button → `_equipAccessoryButton`
 - Equipped icon → `_equippedAccessoryIcon`
+- Empty icon sprite (optional) → `_emptyAccessoryIconSprite`
 - Action panel root → `_accessoryActionPanel`
 - Action buttons → `_accessoryActionEquipButton`, `_accessoryActionUnequipButton`
 - Picker panel reference → `_accessoryPicker` (AccessoryEquipPickerPanel)
