@@ -61,7 +61,7 @@
   },
 
   "visual": {
-    "animation": "warrior_guard",
+    "animation": "warrior_guard_skillcast",
     "cameraShake": 0.0
   }
 }

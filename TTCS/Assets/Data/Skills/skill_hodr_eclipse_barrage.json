@@ -59,7 +59,7 @@
 
   "visual": {
     "attackStyle": "ranged",
-    "animation": "hodr_eclipse_barrage_cast",
+    "animation": "hodr_eclipse_barrage_cast_skillcast",
     "cameraShake": 0.2
   }
 }

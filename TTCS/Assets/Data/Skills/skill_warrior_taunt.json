@@ -52,7 +52,7 @@
   },
 
   "visual": {
-    "animation": "warrior_taunt",
+    "animation": "warrior_taunt_skillcast",
     "cameraShake": 0.05
   }
 }

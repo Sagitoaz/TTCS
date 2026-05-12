@@ -79,7 +79,7 @@
 
   "visual": {
     "attackStyle": "ranged",
-    "animation": "mage_lightning",
+    "animation": "mage_lightning_skillcast",
     "cameraShake": 0.4
   }
 }
