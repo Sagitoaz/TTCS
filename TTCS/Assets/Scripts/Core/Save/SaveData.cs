@@ -56,6 +56,27 @@ namespace TTCS.Core.Save
             return idx >= 0 ? characterLevelValues[idx] : 1;
         }
 
+        public int GetCharacterExp(string characterId)
+        {
+            int idx = characterExpKeys.IndexOf(characterId);
+            return idx >= 0 ? characterExpValues[idx] : 0;
+        }
+
+        public void SetCharacterExp(string characterId, int exp)
+        {
+            exp = exp < 0 ? 0 : exp;
+            int idx = characterExpKeys.IndexOf(characterId);
+            if (idx >= 0)
+            {
+                characterExpValues[idx] = exp;
+            }
+            else
+            {
+                characterExpKeys.Add(characterId);
+                characterExpValues.Add(exp);
+            }
+        }
+
         public int GetCharacterCurrentHp(string characterId, int defaultHp)
         {
             int idx = characterCurrentHpKeys.IndexOf(characterId);

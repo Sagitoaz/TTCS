@@ -5,267 +5,481 @@ using TMPro;
 using TTCS.Core.Data;
 using TTCS.Core.Save;
 using TTCS.Data;
+using TTCS.Flow.TeamFormation;
+using TTCS.Meta;
+using TTCS.Meta.Inventory;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace TTCS.Flow.CharacterCollection
 {
-    /// <summary>
-    /// Day 6 - Character collection screen controller.
-    /// Supports search, sorting, detail panel and feed-level action.
-    /// </summary>
     public class CharacterCollectionUIController : MonoBehaviour
     {
-        [Header("List")]
-        [SerializeField] private Transform _cardGridRoot;
-        [SerializeField] private GameObject _characterCardPrefab;
+        [Header("Panels")]
+        [SerializeField] private GameObject _listPanel;
+        [SerializeField] private GameObject _detailPanel;
 
-        [Header("Search")]
+        [Header("List")]
+        [SerializeField] private Transform _listRoot;
+        [SerializeField] private TeamFormationPickerCellView _characterSlotPrefab;
+        [SerializeField] private TMP_Text _listFeedbackText;
+
+        [Header("List - Search")]
         [SerializeField] private TMP_InputField _searchInput;
 
-        [Header("Detail")]
+        [Header("List - Filters")]
+        [SerializeField] private TMP_Dropdown _rarityDropdown;
+        [SerializeField] private TMP_Dropdown _roleDropdown;
+        [SerializeField] private TMP_Dropdown _elementDropdown;
+
+        [Header("List - Sort")]
+        [SerializeField] private TMP_Dropdown _sortDropdown;
+
+        [Header("List - Actions")]
+        [SerializeField] private Button _backToMenuButton;
+
+        [Header("Detail - Actions")]
+        [SerializeField] private Button _backToListButton;
+
+        [Header("Detail - Left")]
+        [SerializeField] private Image _portraitImage;
+
+        [Header("Detail - Right")]
         [SerializeField] private TMP_Text _nameText;
-        [SerializeField] private TMP_Text _rarityText;
         [SerializeField] private TMP_Text _levelText;
-        [SerializeField] private TMP_Text _statsText;
+        [SerializeField] private Slider _levelProgressSlider;
+        [SerializeField] private TMP_Text _levelProgressText;
+        [SerializeField] private TMP_Text _rarityText;
+        [SerializeField] private Image _roleIconImage;
+        [SerializeField] private Image _elementIconImage;
+
+        [Header("Detail - Stats")]
         [SerializeField] private TMP_Text _hpText;
         [SerializeField] private TMP_Text _manaText;
-        [SerializeField] private Image _portraitImage;
-        [SerializeField] private Image _skillIconImage;
+        [SerializeField] private TMP_Text _atkText;
+        [SerializeField] private TMP_Text _defText;
+        [SerializeField] private TMP_Text _spdText;
+        [SerializeField] private TMP_Text _critText;
+        [SerializeField] private TMP_Text _resistText;
+        [SerializeField] private TMP_Text _statsSummaryText;
 
-        [Header("Actions")]
-        [SerializeField] private Button _feedButton;
-        [SerializeField] private Button _backButton;
-        [SerializeField] private TMP_Text _feedbackText;
+        [Header("Detail - Skills")]
+        [SerializeField] private Transform _skillRoot;
+        [SerializeField] private TeamFormationSkillQuickItemView _skillItemPrefab;
+        [SerializeField] private SkillDetailPanelView _skillDetailPanel;
 
-        private readonly List<CharacterCardViewModel> _allCharacters = new List<CharacterCardViewModel>();
-        private readonly List<GameObject> _spawnedCards = new List<GameObject>();
+        [Header("Detail - Equipment")]
+        [SerializeField] private Button _equipAccessoryButton;
+        [SerializeField] private Image _equippedAccessoryIcon;
+        [SerializeField] private TMP_Text _equippedAccessoryNameText;
+        [SerializeField] private TMP_Text _equippedAccessoryRarityText;
+        [SerializeField] private AccessoryEquipPickerPanel _accessoryPicker;
+
+        private readonly List<TeamFormationPickerCellView> _spawnedSlots = new List<TeamFormationPickerCellView>();
+        private readonly List<string> _spawnedSlotCharacterIds = new List<string>();
+        private readonly List<TeamFormationSkillQuickItemView> _spawnedSkillItems = new List<TeamFormationSkillQuickItemView>();
+        private readonly List<CharacterEntry> _characters = new List<CharacterEntry>();
 
         private SaveManager _saveManager;
-        private string _keyword = string.Empty;
-        private bool _sortRareAscending = false;
-        private bool _sortLevelAscending = false;
+        private SaveData _save;
+        private IInventoryService _inventoryService;
+
         private string _selectedCharacterId;
+
+        private string _keyword = string.Empty;
+        private string _rarityFilter = "All";
+        private string _roleFilter = "All";
+        private string _elementFilter = "All";
+
+        private SortMode _sortMode = SortMode.LevelDesc;
+
+        private enum SortMode
+        {
+            LevelDesc = 0,
+            LevelAsc = 1
+        }
 
         private void Start()
         {
             _saveManager = SaveManager.Instance;
             _saveManager?.EnsureCurrentSave(0);
+            _save = _saveManager?.CurrentSave;
+
+            var hub = MetaServiceHub.Instance;
+            hub?.EnsureInitialized();
+            _inventoryService = hub?.InventoryService;
+
+            WireUiEvents();
+            ShowListPanel();
+        }
+
+        public void BackToMenu()
+        {
+            FlowController.Instance.OpenMainMenu();
+        }
+
+        public void BackToList()
+        {
+            ShowListPanel();
+        }
+
+        private void WireUiEvents()
+        {
+            if (_backToMenuButton != null)
+            {
+                _backToMenuButton.onClick.AddListener(BackToMenu);
+            }
+
+            if (_backToListButton != null)
+            {
+                _backToListButton.onClick.AddListener(BackToList);
+            }
 
             if (_searchInput != null)
             {
                 _searchInput.onValueChanged.AddListener(OnSearchChanged);
             }
 
-            if (_feedButton != null)
+            if (_rarityDropdown != null)
             {
-                _feedButton.onClick.AddListener(OnFeedCurrentCharacter);
+                _rarityDropdown.onValueChanged.AddListener(_ => OnFilterChanged());
             }
 
-            if (_backButton != null)
+            if (_roleDropdown != null)
             {
-                _backButton.onClick.AddListener(Back);
+                _roleDropdown.onValueChanged.AddListener(_ => OnFilterChanged());
             }
 
-            DisplayUnlockedCharacters();
+            if (_elementDropdown != null)
+            {
+                _elementDropdown.onValueChanged.AddListener(_ => OnFilterChanged());
+            }
+
+            if (_sortDropdown != null)
+            {
+                _sortDropdown.onValueChanged.AddListener(_ => OnFilterChanged());
+            }
+
+            if (_equipAccessoryButton != null)
+            {
+                _equipAccessoryButton.onClick.AddListener(OnEquipAccessoryClicked);
+            }
         }
 
-        public void DisplayUnlockedCharacters()
+        private void RefreshRosterAndFilters()
         {
-            _allCharacters.Clear();
+            _save = _saveManager?.CurrentSave;
+            _characters.Clear();
 
-            var save = _saveManager?.CurrentSave;
-            if (save == null)
+            if (_save == null)
             {
-                ShowFeedback("Save is not available.");
-                RenderCards();
+                SetListFeedback("Save is not available.");
+                RebuildCharacterList();
                 return;
             }
 
-            for (var i = 0; i < save.unlockedCharacters.Count; i++)
+            for (var i = 0; i < _save.unlockedCharacters.Count; i++)
             {
-                var characterId = save.unlockedCharacters[i];
-                if (string.IsNullOrWhiteSpace(characterId))
+                var id = _save.unlockedCharacters[i];
+                if (string.IsNullOrWhiteSpace(id))
                 {
                     continue;
                 }
 
-                var data = DataManager.Instance?.LoadCharacter(characterId);
+                var data = DataManager.Instance?.LoadCharacter(id);
                 if (data == null)
                 {
                     continue;
                 }
 
-                var level = save.GetCharacterLevel(characterId);
-                var maxHp = ComputeMaxHp(data, level);
-                var maxMana = ComputeMaxMana(data, level);
-                var currentHp = save.GetCharacterCurrentHp(characterId, maxHp);
-                var currentMana = save.GetCharacterCurrentMana(characterId, maxMana);
+                var level = Math.Max(1, _save.GetCharacterLevel(id));
+                var exp = _save.GetCharacterExp(id);
 
-                _allCharacters.Add(new CharacterCardViewModel
+                var computed = ComputeCharacterStats(data, level, id);
+                var maxMana = ComputeMaxMana(data, level);
+                var currentHp = _save.GetCharacterCurrentHp(id, computed.MaxHp);
+                var currentMana = _save.GetCharacterCurrentMana(id, maxMana);
+
+                _characters.Add(new CharacterEntry
                 {
-                    CharacterId = characterId,
+                    CharacterId = id,
                     Data = data,
-                    Level = Math.Max(1, level),
-                    MaxHp = maxHp,
-                    MaxMana = maxMana,
-                    CurrentHp = Mathf.Clamp(currentHp, 0, maxHp),
-                    CurrentMana = Mathf.Clamp(currentMana, 0, maxMana)
+                    Level = level,
+                    Exp = Math.Max(0, exp),
+                    CurrentHp = Mathf.Clamp(currentHp, 0, computed.MaxHp),
+                    MaxHp = computed.MaxHp,
+                    CurrentMana = Mathf.Clamp(currentMana, 0, maxMana),
+                    MaxMana = maxMana
                 });
             }
 
-            if (_allCharacters.Count > 0 && string.IsNullOrWhiteSpace(_selectedCharacterId))
+            InitializeFilterDropdownOptions(preserveSelection: true);
+
+            if (_characters.Count > 0 && string.IsNullOrWhiteSpace(_selectedCharacterId))
             {
-                _selectedCharacterId = _allCharacters[0].CharacterId;
+                _selectedCharacterId = _characters[0].CharacterId;
             }
 
-            RenderCards();
-            RefreshDetail(_selectedCharacterId);
-            ShowFeedback(string.Empty);
+            SetListFeedback(_characters.Count == 0 ? "No unlocked characters." : string.Empty);
+            RebuildCharacterList();
         }
 
-        public void OnSearchChanged(string keyword)
+        private void InitializeFilterDropdownOptions(bool preserveSelection)
+        {
+            InitializeDropdown(_rarityDropdown, BuildRarityOptions(), preserveSelection);
+            InitializeDropdown(_roleDropdown, BuildDistinctOptions(_characters.Select(c => c.Data?.metadata?.roleTag), "All"), preserveSelection);
+            InitializeDropdown(_elementDropdown, BuildDistinctOptions(_characters.Select(c => c.Data?.metadata?.element), "All"), preserveSelection);
+            InitializeDropdown(_sortDropdown, BuildSortOptions(), preserveSelection);
+        }
+
+        private static void InitializeDropdown(TMP_Dropdown dropdown, List<string> options, bool preserveSelection)
+        {
+            if (dropdown == null)
+            {
+                return;
+            }
+
+            var previous = preserveSelection ? ReadDropdownValue(dropdown, "All") : "All";
+
+            dropdown.ClearOptions();
+            if (options == null || options.Count == 0)
+            {
+                dropdown.AddOptions(new List<string> { "All" });
+            }
+            else
+            {
+                dropdown.AddOptions(options);
+            }
+
+            var nextIndex = 0;
+            if (preserveSelection && dropdown.options != null)
+            {
+                for (var i = 0; i < dropdown.options.Count; i++)
+                {
+                    if (string.Equals(dropdown.options[i].text, previous, StringComparison.OrdinalIgnoreCase))
+                    {
+                        nextIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            dropdown.value = nextIndex;
+            dropdown.RefreshShownValue();
+        }
+
+        private static List<string> BuildRarityOptions()
+        {
+            return new List<string> { "All", "UR", "SSR", "SR", "R" };
+        }
+
+        private static List<string> BuildSortOptions()
+        {
+            return new List<string> { "Level (High → Low)", "Level (Low → High)" };
+        }
+
+        private static List<string> BuildDistinctOptions(IEnumerable<string> values, string allLabel)
+        {
+            var options = new List<string> { allLabel };
+            if (values == null)
+            {
+                return options;
+            }
+
+            var distinct = values
+                .Where(v => !string.IsNullOrWhiteSpace(v))
+                .Select(v => v.Trim())
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .OrderBy(v => v, StringComparer.OrdinalIgnoreCase)
+                .ToList();
+
+            options.AddRange(distinct);
+            return options;
+        }
+
+        private void OnSearchChanged(string keyword)
         {
             _keyword = keyword ?? string.Empty;
-            RenderCards();
+            RebuildCharacterList();
         }
 
-        public void OnSortRareChanged(bool ascending)
+        private void OnFilterChanged()
         {
-            _sortRareAscending = ascending;
-            RenderCards();
+            _rarityFilter = ReadDropdownValue(_rarityDropdown, "All");
+            _roleFilter = ReadDropdownValue(_roleDropdown, "All");
+            _elementFilter = ReadDropdownValue(_elementDropdown, "All");
+
+            _sortMode = ReadSortMode(_sortDropdown);
+
+            RebuildCharacterList();
         }
 
-        public void OnSortLevelChanged(bool ascending)
+        private static SortMode ReadSortMode(TMP_Dropdown dropdown)
         {
-            _sortLevelAscending = ascending;
-            RenderCards();
-        }
-
-        public void OnCharacterCardClicked(string characterId)
-        {
-            _selectedCharacterId = characterId;
-            RefreshDetail(characterId);
-        }
-
-        public void OnFeedButtonClicked(string characterId)
-        {
-            var save = _saveManager?.CurrentSave;
-            if (save == null)
+            if (dropdown == null)
             {
-                ShowFeedback("Save is not available.");
-                return;
+                return SortMode.LevelDesc;
             }
 
-            var vm = _allCharacters.FirstOrDefault(c => string.Equals(c.CharacterId, characterId, StringComparison.Ordinal));
-            if (vm == null)
-            {
-                ShowFeedback("Character not found.");
-                return;
-            }
-
-            var nextLevel = vm.Level + 1;
-            save.SetCharacterLevel(vm.CharacterId, nextLevel);
-
-            // Day 6 rule: level-up always restores full HP + Mana.
-            var nextMaxHp = ComputeMaxHp(vm.Data, nextLevel);
-            var nextMaxMana = ComputeMaxMana(vm.Data, nextLevel);
-            save.SetCharacterCurrentHp(vm.CharacterId, nextMaxHp);
-            save.SetCharacterCurrentMana(vm.CharacterId, nextMaxMana);
-
-            if (_saveManager.ActiveSlotIndex >= 0)
-            {
-                _saveManager.Save(_saveManager.ActiveSlotIndex);
-            }
-
-            DisplayUnlockedCharacters();
-            RefreshDetail(vm.CharacterId);
-            ShowFeedback($"{vm.Data.nameKey ?? vm.CharacterId} reached level {nextLevel}. HP/Mana restored.");
+            var idx = dropdown.value;
+            return idx == 1 ? SortMode.LevelAsc : SortMode.LevelDesc;
         }
 
-        public void Back()
+        private void RebuildCharacterList()
         {
-            FlowController.Instance.OpenMainMenu();
-        }
+            ClearSpawnedSlots();
 
-        private void OnFeedCurrentCharacter()
-        {
-            if (string.IsNullOrWhiteSpace(_selectedCharacterId))
-            {
-                ShowFeedback("Please choose a character first.");
-                return;
-            }
-
-            OnFeedButtonClicked(_selectedCharacterId);
-        }
-
-        private void RenderCards()
-        {
-            ClearSpawnedCards();
-
-            if (_cardGridRoot == null || _characterCardPrefab == null)
+            if (_listRoot == null || _characterSlotPrefab == null)
             {
                 return;
             }
 
-            var source = FilterAndSort();
-            for (var i = 0; i < source.Count; i++)
+            var filtered = ApplyFilters(_characters);
+            for (var i = 0; i < filtered.Count; i++)
             {
-                var vm = source[i];
-                var go = Instantiate(_characterCardPrefab, _cardGridRoot);
-                _spawnedCards.Add(go);
+                var entry = filtered[i];
+                var instance = Instantiate(_characterSlotPrefab, _listRoot);
+                _spawnedSlots.Add(instance);
+                _spawnedSlotCharacterIds.Add(entry.CharacterId);
 
-                var button = go.GetComponent<Button>();
-                if (button != null)
+                var portrait = DataManager.Instance?.LoadCharacterPortraitSprite(entry.Data.visual?.portraitPath ?? entry.Data.visual?.spritePath);
+                var rarity = entry.Data.metadata?.rarity ?? "R";
+                instance.Bind(entry.Data.nameKey ?? entry.CharacterId, entry.Level, rarity, portrait);
+
+                if (instance.Button != null)
                 {
-                    var id = vm.CharacterId;
-                    button.onClick.AddListener(() => OnCharacterCardClicked(id));
+                    var id = entry.CharacterId;
+                    instance.Button.onClick.RemoveAllListeners();
+                    instance.Button.onClick.AddListener(() => OnCharacterSlotClicked(id));
                 }
 
-                var rarity = vm.Data.metadata?.rarity ?? "R";
-                SetText(go, $"{vm.Data.nameKey ?? vm.CharacterId}\nLv.{vm.Level} | {rarity}");
+                instance.SetSelected(string.Equals(entry.CharacterId, _selectedCharacterId, StringComparison.Ordinal));
             }
         }
 
-        private List<CharacterCardViewModel> FilterAndSort()
+        private List<CharacterEntry> ApplyFilters(List<CharacterEntry> source)
         {
-            var query = _allCharacters.AsEnumerable();
+            if (source == null)
+            {
+                return new List<CharacterEntry>();
+            }
 
+            var query = source.AsEnumerable();
             if (!string.IsNullOrWhiteSpace(_keyword))
             {
                 var lowered = _keyword.Trim().ToLowerInvariant();
                 query = query.Where(c =>
-                    (c.Data.nameKey ?? string.Empty).ToLowerInvariant().Contains(lowered) ||
-                    c.CharacterId.ToLowerInvariant().Contains(lowered));
+                    (c.Data?.nameKey ?? string.Empty).ToLowerInvariant().Contains(lowered) ||
+                    (c.CharacterId ?? string.Empty).ToLowerInvariant().Contains(lowered));
             }
 
-            IOrderedEnumerable<CharacterCardViewModel> ordered = _sortRareAscending
-                ? query.OrderBy(c => RarityWeight(c.Data.metadata?.rarity))
-                : query.OrderByDescending(c => RarityWeight(c.Data.metadata?.rarity));
+            if (!string.IsNullOrWhiteSpace(_rarityFilter) && !string.Equals(_rarityFilter, "All", StringComparison.OrdinalIgnoreCase))
+            {
+                query = query.Where(c => string.Equals(c.Data?.metadata?.rarity, _rarityFilter, StringComparison.OrdinalIgnoreCase));
+            }
 
-            ordered = _sortLevelAscending
-                ? ordered.ThenBy(c => c.Level)
-                : ordered.ThenByDescending(c => c.Level);
+            if (!string.IsNullOrWhiteSpace(_roleFilter) && !string.Equals(_roleFilter, "All", StringComparison.OrdinalIgnoreCase))
+            {
+                query = query.Where(c => string.Equals(c.Data?.metadata?.roleTag, _roleFilter, StringComparison.OrdinalIgnoreCase));
+            }
 
-            return ordered.ToList();
+            if (!string.IsNullOrWhiteSpace(_elementFilter) && !string.Equals(_elementFilter, "All", StringComparison.OrdinalIgnoreCase))
+            {
+                query = query.Where(c => string.Equals(c.Data?.metadata?.element, _elementFilter, StringComparison.OrdinalIgnoreCase));
+            }
+
+            IOrderedEnumerable<CharacterEntry> ordered = _sortMode == SortMode.LevelAsc
+                ? query.OrderBy(c => c.Level)
+                : query.OrderByDescending(c => c.Level);
+
+            return ordered
+                .ThenBy(c => c.Data?.nameKey ?? c.CharacterId)
+                .ToList();
+        }
+
+        private void OnCharacterSlotClicked(string characterId)
+        {
+            if (string.IsNullOrWhiteSpace(characterId))
+            {
+                return;
+            }
+
+            _selectedCharacterId = characterId;
+            UpdateListSelectionHighlight();
+            ShowDetailPanel(characterId);
+        }
+
+        private void UpdateListSelectionHighlight()
+        {
+            for (var i = 0; i < _spawnedSlots.Count; i++)
+            {
+                var slot = _spawnedSlots[i];
+                if (slot == null)
+                {
+                    continue;
+                }
+
+                var id = i >= 0 && i < _spawnedSlotCharacterIds.Count ? _spawnedSlotCharacterIds[i] : string.Empty;
+                slot.SetSelected(string.Equals(id, _selectedCharacterId, StringComparison.Ordinal));
+            }
+        }
+
+        private void ShowListPanel()
+        {
+            if (_listPanel != null)
+            {
+                _listPanel.SetActive(true);
+            }
+
+            if (_detailPanel != null)
+            {
+                _detailPanel.SetActive(false);
+            }
+
+            if (_skillDetailPanel != null)
+            {
+                _skillDetailPanel.Hide();
+            }
+
+            RefreshRosterAndFilters();
+        }
+
+        private void ShowDetailPanel(string characterId)
+        {
+            if (_listPanel != null)
+            {
+                _listPanel.SetActive(false);
+            }
+
+            if (_detailPanel != null)
+            {
+                _detailPanel.SetActive(true);
+            }
+
+            RefreshDetail(characterId);
         }
 
         private void RefreshDetail(string characterId)
         {
-            var vm = _allCharacters.FirstOrDefault(c => string.Equals(c.CharacterId, characterId, StringComparison.Ordinal));
-            if (vm == null)
+            var entry = _characters.FirstOrDefault(c => string.Equals(c.CharacterId, characterId, StringComparison.Ordinal));
+            if (entry == null || entry.Data == null)
             {
-                SetDetailEmpty();
+                ClearDetail();
                 return;
             }
 
-            var rarity = vm.Data.metadata?.rarity ?? "R";
-            var baseStats = vm.Data.baseStats;
-            var growth = vm.Data.growthCurve;
+            var rarity = entry.Data.metadata?.rarity ?? "R";
+            var role = entry.Data.metadata?.roleTag ?? string.Empty;
+            var element = entry.Data.metadata?.element ?? string.Empty;
 
             if (_nameText != null)
             {
-                _nameText.text = vm.Data.nameKey ?? vm.CharacterId;
+                _nameText.text = entry.Data.nameKey ?? entry.CharacterId;
+            }
+
+            if (_levelText != null)
+            {
+                _levelText.text = $"Lv.{entry.Level}";
             }
 
             if (_rarityText != null)
@@ -273,111 +487,364 @@ namespace TTCS.Flow.CharacterCollection
                 _rarityText.text = rarity;
             }
 
-            if (_levelText != null)
-            {
-                _levelText.text = $"Level {vm.Level}";
-            }
-
-            if (_statsText != null)
-            {
-                var atk = ComputeScaledStat(baseStats?.atk ?? 0, growth?.atkPerLevel ?? 0, vm.Level);
-                var def = ComputeScaledStat(baseStats?.def ?? 0, growth?.defPerLevel ?? 0, vm.Level);
-                var spd = ComputeScaledStat(baseStats?.spd ?? 0, growth?.spdPerLevel ?? 0, vm.Level);
-                _statsText.text = $"ATK {atk}  DEF {def}  SPD {spd}";
-            }
-
-            if (_hpText != null)
-            {
-                _hpText.text = $"HP: {vm.CurrentHp}/{vm.MaxHp}";
-            }
-
-            if (_manaText != null)
-            {
-                _manaText.text = $"Mana: {vm.CurrentMana}/{vm.MaxMana}";
-            }
+            SetOptionalIcon(_roleIconImage, LoadRoleIconSprite(role));
+            SetOptionalIcon(_elementIconImage, LoadElementIconSprite(element));
 
             if (_portraitImage != null)
             {
-                var sprite = DataManager.Instance?.LoadCharacterPortraitSprite(vm.Data.visual?.portraitPath ?? vm.Data.visual?.spritePath);
-                _portraitImage.sprite = sprite;
-                _portraitImage.color = sprite == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
+                var portrait = DataManager.Instance?.LoadCharacterPortraitSprite(entry.Data.visual?.portraitPath ?? entry.Data.visual?.spritePath);
+                _portraitImage.sprite = portrait;
+                _portraitImage.color = portrait == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
+                _portraitImage.preserveAspect = true;
             }
 
-            if (_skillIconImage != null)
-            {
-                _skillIconImage.sprite = ResolvePrimarySkillIcon(vm.Data);
-                _skillIconImage.color = _skillIconImage.sprite == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
-            }
-
-            if (_feedButton != null)
-            {
-                _feedButton.interactable = true;
-            }
-        }
-
-        private void SetDetailEmpty()
-        {
-            if (_nameText != null)
-            {
-                _nameText.text = "-";
-            }
-
-            if (_rarityText != null)
-            {
-                _rarityText.text = "-";
-            }
-
-            if (_levelText != null)
-            {
-                _levelText.text = "Level -";
-            }
-
-            if (_statsText != null)
-            {
-                _statsText.text = "ATK -  DEF -  SPD -";
-            }
+            var stats = ComputeCharacterStats(entry.Data, entry.Level, entry.CharacterId);
+            entry.MaxHp = stats.MaxHp;
+            entry.CurrentHp = Mathf.Clamp(entry.CurrentHp, 0, stats.MaxHp);
 
             if (_hpText != null)
             {
-                _hpText.text = "HP: -";
+                _hpText.text = $"HP: {entry.CurrentHp}/{stats.MaxHp}";
             }
 
             if (_manaText != null)
             {
-                _manaText.text = "Mana: -";
+                _manaText.text = $"Mana: {entry.CurrentMana}/{entry.MaxMana}";
             }
 
-            if (_feedButton != null)
+            if (_atkText != null)
             {
-                _feedButton.interactable = false;
+                _atkText.text = stats.ATK.ToString();
+            }
+
+            if (_defText != null)
+            {
+                _defText.text = stats.DEF.ToString();
+            }
+
+            if (_spdText != null)
+            {
+                _spdText.text = stats.SPD.ToString();
+            }
+
+            if (_critText != null)
+            {
+                _critText.text = $"{Mathf.RoundToInt(stats.CritRate * 100f)}%";
+            }
+
+            if (_resistText != null)
+            {
+                _resistText.text = $"{Mathf.RoundToInt(stats.Resist * 100f)}%";
+            }
+
+            if (_statsSummaryText != null)
+            {
+                _statsSummaryText.text = $"ATK {stats.ATK}  DEF {stats.DEF}  SPD {stats.SPD}";
+            }
+
+            RefreshLevelProgress(entry);
+            RebuildSkillPanel(entry);
+            RefreshAccessorySlot(entry.CharacterId);
+        }
+
+        private void RefreshLevelProgress(CharacterEntry entry)
+        {
+            if (entry == null)
+            {
+                return;
+            }
+
+            var expToNext = GetExpToNextLevel(entry.Level);
+            expToNext = Math.Max(1, expToNext);
+            var current = Math.Max(0, entry.Exp);
+            current = Math.Min(current, expToNext);
+
+            if (_levelProgressSlider != null)
+            {
+                _levelProgressSlider.minValue = 0;
+                _levelProgressSlider.maxValue = expToNext;
+                _levelProgressSlider.value = current;
+            }
+
+            if (_levelProgressText != null)
+            {
+                _levelProgressText.text = $"{current}/{expToNext}";
             }
         }
 
-        private static int RarityWeight(string rarity)
+        private void RebuildSkillPanel(CharacterEntry entry)
         {
-            if (string.Equals(rarity, "UR", StringComparison.OrdinalIgnoreCase))
+            ClearSpawnedSkillItems();
+            if (_skillRoot == null || _skillItemPrefab == null || entry?.Data == null)
             {
-                return 4;
+                return;
             }
 
-            if (string.Equals(rarity, "SSR", StringComparison.OrdinalIgnoreCase))
+            if (entry.Data.skills == null)
             {
-                return 3;
+                return;
             }
 
-            if (string.Equals(rarity, "SR", StringComparison.OrdinalIgnoreCase))
+            for (var i = 0; i < entry.Data.skills.Count; i++)
             {
-                return 2;
-            }
+                var skillId = entry.Data.skills[i];
+                if (string.IsNullOrWhiteSpace(skillId))
+                {
+                    continue;
+                }
 
-            return 1;
+                var skill = DataManager.Instance?.LoadSkill(skillId);
+                var iconPath = DataManager.Instance?.ResolveSkillIcon(skillId);
+                var icon = LoadSpriteFromResourcesPath(iconPath);
+                var name = skill?.nameKey ?? skillId;
+                var desc = skill?.description ?? string.Empty;
+
+                var item = Instantiate(_skillItemPrefab, _skillRoot);
+                _spawnedSkillItems.Add(item);
+                item.Bind(icon, name, skillId, desc);
+                item.OnSkillDetailClicked = OnSkillDetailClicked;
+            }
         }
 
-        private static int ComputeMaxHp(CharacterDataModel data, int level)
+        private static Sprite LoadSpriteFromResourcesPath(string rawPath)
         {
-            var baseValue = Math.Max(1, data.baseStats?.hp ?? 1);
-            var perLevel = Math.Max(0, data.growthCurve?.hpPerLevel ?? 0);
-            return ComputeScaledStat(baseValue, perLevel, level);
+            if (string.IsNullOrWhiteSpace(rawPath))
+            {
+                return null;
+            }
+
+            var resourcePath = rawPath.Replace("\\", "/").Trim();
+            if (resourcePath.StartsWith("Assets/Resources/", StringComparison.OrdinalIgnoreCase))
+            {
+                resourcePath = resourcePath.Substring("Assets/Resources/".Length);
+            }
+
+            if (resourcePath.StartsWith("Resources/", StringComparison.OrdinalIgnoreCase))
+            {
+                resourcePath = resourcePath.Substring("Resources/".Length);
+            }
+
+            if (resourcePath.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ||
+                resourcePath.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
+                resourcePath.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase))
+            {
+                resourcePath = System.IO.Path.ChangeExtension(resourcePath, null);
+            }
+
+            return Resources.Load<Sprite>(resourcePath);
+        }
+
+        private void OnSkillDetailClicked(string skillId, string description, Vector3 anchorPosition)
+        {
+            if (_skillDetailPanel == null)
+            {
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(skillId))
+            {
+                _skillDetailPanel.Hide();
+                return;
+            }
+
+            var skill = DataManager.Instance?.LoadSkill(skillId);
+            var name = skill?.nameKey ?? skillId;
+            var desc = !string.IsNullOrWhiteSpace(skill?.description) ? skill.description : (description ?? string.Empty);
+            var dmg = !string.IsNullOrWhiteSpace(skill?.damage?.formula) ? skill.damage.formula : "-";
+            var cd = $"{Math.Max(0, skill?.cost?.cooldown ?? 0)}";
+            var mana = $"{Math.Max(0, skill?.cost?.mana ?? 0)}";
+
+            _skillDetailPanel.ShowSkillDetail(
+                skillName: name,
+                skillDescription: desc,
+                damageText: dmg,
+                cooldownText: cd,
+                manaText: mana,
+                targetPosition: anchorPosition);
+        }
+
+        private void OnEquipAccessoryClicked()
+        {
+            if (_accessoryPicker == null || _inventoryService == null)
+            {
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(_selectedCharacterId))
+            {
+                return;
+            }
+
+            _accessoryPicker.Open(
+                characterId: _selectedCharacterId,
+                inventoryService: _inventoryService,
+                onChanged: () =>
+                {
+                    RefreshRosterAndFilters();
+                    RefreshDetail(_selectedCharacterId);
+                });
+        }
+
+        private void RefreshAccessorySlot(string characterId)
+        {
+            if (_inventoryService == null || string.IsNullOrWhiteSpace(characterId))
+            {
+                SetAccessorySlotEmpty();
+                return;
+            }
+
+            var equippedItemId = _inventoryService.GetEquippedAccessory(characterId);
+            if (string.IsNullOrWhiteSpace(equippedItemId))
+            {
+                SetAccessorySlotEmpty();
+                return;
+            }
+
+            var item = DataManager.Instance?.LoadItem(equippedItemId);
+            var icon = item != null && !string.IsNullOrWhiteSpace(item.iconPath) ? Resources.Load<Sprite>(item.iconPath) : null;
+            var rarity = item?.rarity ?? "R";
+
+            if (_equippedAccessoryIcon != null)
+            {
+                _equippedAccessoryIcon.sprite = icon;
+                _equippedAccessoryIcon.color = icon == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
+                _equippedAccessoryIcon.preserveAspect = true;
+            }
+
+            if (_equippedAccessoryNameText != null)
+            {
+                _equippedAccessoryNameText.text = item?.nameKey ?? equippedItemId;
+            }
+
+            if (_equippedAccessoryRarityText != null)
+            {
+                _equippedAccessoryRarityText.text = rarity;
+            }
+        }
+
+        private void SetAccessorySlotEmpty()
+        {
+            if (_equippedAccessoryIcon != null)
+            {
+                _equippedAccessoryIcon.sprite = null;
+                _equippedAccessoryIcon.color = new Color(1f, 1f, 1f, 0f);
+            }
+
+            if (_equippedAccessoryNameText != null)
+            {
+                _equippedAccessoryNameText.text = "-";
+            }
+
+            if (_equippedAccessoryRarityText != null)
+            {
+                _equippedAccessoryRarityText.text = "-";
+            }
+        }
+
+        private static string ReadDropdownValue(TMP_Dropdown dropdown, string fallback)
+        {
+            if (dropdown == null || dropdown.options == null || dropdown.options.Count == 0)
+            {
+                return fallback;
+            }
+
+            var idx = Mathf.Clamp(dropdown.value, 0, dropdown.options.Count - 1);
+            var label = dropdown.options[idx]?.text;
+            return string.IsNullOrWhiteSpace(label) ? fallback : label;
+        }
+
+        private static int GetExpToNextLevel(int level)
+        {
+            level = Math.Max(1, level);
+            return 100 + level * 50;
+        }
+
+        private CharacterComputedStats ComputeCharacterStats(CharacterDataModel data, int level, string characterId)
+        {
+            level = Math.Max(1, level);
+
+            var baseHp = Math.Max(1, data.baseStats?.hp ?? 1);
+            var baseAtk = Math.Max(1, data.baseStats?.atk ?? 1);
+            var baseDef = Math.Max(0, data.baseStats?.def ?? 0);
+            var baseSpd = Math.Max(1, data.baseStats?.spd ?? 1);
+
+            var hp = ComputeScaledStat(baseHp, Math.Max(0, data.growthCurve?.hpPerLevel ?? 0), level);
+            var atk = ComputeScaledStat(baseAtk, Math.Max(0, data.growthCurve?.atkPerLevel ?? 0), level);
+            var def = ComputeScaledStat(baseDef, Math.Max(0, data.growthCurve?.defPerLevel ?? 0), level);
+            var spd = ComputeScaledStat(baseSpd, Math.Max(0, data.growthCurve?.spdPerLevel ?? 0), level);
+
+            var crit = Mathf.Max(0f, data.baseStats?.crit ?? 0.05f);
+            var res = Mathf.Max(0f, data.baseStats?.resist ?? 0f);
+
+            ApplyAccessoryBonuses(characterId, ref hp, ref atk, ref def, ref spd, ref crit, ref res);
+
+            return new CharacterComputedStats
+            {
+                MaxHp = hp,
+                ATK = atk,
+                DEF = def,
+                SPD = spd,
+                CritRate = crit,
+                Resist = res
+            };
+        }
+
+        private static void ApplyAccessoryBonuses(string characterId, ref int hp, ref int atk, ref int def, ref int spd, ref float crit, ref float res)
+        {
+            var save = SaveManager.Instance?.CurrentSave;
+            if (save == null || string.IsNullOrWhiteSpace(characterId))
+            {
+                return;
+            }
+
+            var accessoryItemId = save.GetEquippedAccessory(characterId);
+            if (string.IsNullOrWhiteSpace(accessoryItemId))
+            {
+                return;
+            }
+
+            var item = DataManager.Instance?.LoadItem(accessoryItemId);
+            if (item == null || !string.Equals(item.itemType, "accessory", StringComparison.OrdinalIgnoreCase))
+            {
+                return;
+            }
+
+            var bonuses = AccessoryStatUtility.GetBonuses(item);
+            for (var i = 0; i < bonuses.Count; i++)
+            {
+                var bonus = bonuses[i];
+                switch (bonus.StatKey)
+                {
+                    case "HP":
+                        hp += bonus.Amount;
+                        break;
+                    case "ATK":
+                        atk += bonus.Amount;
+                        break;
+                    case "DEF":
+                        def += bonus.Amount;
+                        break;
+                    case "SPD":
+                        spd += bonus.Amount;
+                        break;
+                    case "CRIT":
+                        crit += bonus.Amount * 0.01f;
+                        break;
+                    case "RES":
+                        res += bonus.Amount * 0.01f;
+                        break;
+                }
+            }
+
+            hp = Mathf.Max(1, hp);
+            atk = Mathf.Max(1, atk);
+            def = Mathf.Max(0, def);
+            spd = Mathf.Max(1, spd);
+        }
+
+        private static int ComputeScaledStat(int baseValue, int perLevel, int level)
+        {
+            return Math.Max(1, baseValue + Math.Max(0, level - 1) * perLevel);
         }
 
         private static int ComputeMaxMana(CharacterDataModel data, int level)
@@ -399,85 +866,180 @@ namespace TTCS.Flow.CharacterCollection
             return Math.Max(20, maxSkillCost * 3 + Math.Max(1, level) * 5);
         }
 
-        private static int ComputeScaledStat(int baseValue, int perLevel, int level)
+        private void ClearDetail()
         {
-            return Math.Max(1, baseValue + Math.Max(0, level - 1) * perLevel);
+            if (_nameText != null) _nameText.text = "-";
+            if (_levelText != null) _levelText.text = "Lv.-";
+            if (_rarityText != null) _rarityText.text = "-";
+            SetOptionalIcon(_roleIconImage, null);
+            SetOptionalIcon(_elementIconImage, null);
+            if (_hpText != null) _hpText.text = "HP: -";
+            if (_manaText != null) _manaText.text = "Mana: -";
+            if (_atkText != null) _atkText.text = "-";
+            if (_defText != null) _defText.text = "-";
+            if (_spdText != null) _spdText.text = "-";
+            if (_critText != null) _critText.text = "-";
+            if (_resistText != null) _resistText.text = "-";
+            if (_statsSummaryText != null) _statsSummaryText.text = string.Empty;
+            if (_portraitImage != null)
+            {
+                _portraitImage.sprite = null;
+                _portraitImage.color = new Color(1f, 1f, 1f, 0f);
+            }
+
+            if (_levelProgressSlider != null)
+            {
+                _levelProgressSlider.minValue = 0;
+                _levelProgressSlider.maxValue = 1;
+                _levelProgressSlider.value = 0;
+            }
+
+            if (_levelProgressText != null)
+            {
+                _levelProgressText.text = "0/0";
+            }
+
+            ClearSpawnedSkillItems();
+            SetAccessorySlotEmpty();
+
+            if (_skillDetailPanel != null)
+            {
+                _skillDetailPanel.Hide();
+            }
         }
 
-        private static Sprite ResolvePrimarySkillIcon(CharacterDataModel character)
+        private static void SetOptionalIcon(Image target, Sprite sprite)
         {
-            if (character?.skills == null || character.skills.Count == 0)
-            {
-                return null;
-            }
-
-            var skillId = character.skills[0];
-            var path = DataManager.Instance?.ResolveSkillIcon(skillId);
-            if (string.IsNullOrWhiteSpace(path))
-            {
-                return null;
-            }
-
-            var resourcePath = path.Replace("\\", "/").Replace("Assets/Resources/", string.Empty).Replace("Resources/", string.Empty);
-            if (resourcePath.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
-            {
-                resourcePath = resourcePath.Substring(0, resourcePath.Length - 4);
-            }
-
-            return Resources.Load<Sprite>(resourcePath);
-        }
-
-        private static void SetText(GameObject root, string value)
-        {
-            if (root == null)
+            if (target == null)
             {
                 return;
             }
 
-            var tmp = root.GetComponentInChildren<TMP_Text>();
-            if (tmp != null)
-            {
-                tmp.text = value;
-                return;
-            }
-
-            var legacy = root.GetComponentInChildren<Text>();
-            if (legacy != null)
-            {
-                legacy.text = value;
-            }
+            target.sprite = sprite;
+            target.color = sprite == null ? new Color(1f, 1f, 1f, 0f) : Color.white;
+            target.preserveAspect = true;
         }
 
-        private void ClearSpawnedCards()
+        private static Sprite LoadRoleIconSprite(string roleTag)
         {
-            for (var i = 0; i < _spawnedCards.Count; i++)
+            var key = NormalizeTag(roleTag);
+            if (string.IsNullOrWhiteSpace(key))
             {
-                if (_spawnedCards[i] != null)
+                return null;
+            }
+
+            var candidates = new[]
+            {
+                $"UI/Role/icon_role_{key}",
+                $"Icons/Role/icon_role_{key}",
+                $"Role/{key}",
+                $"UI/Role/{key}",
+                $"Icons/{key}"
+            };
+
+            for (var i = 0; i < candidates.Length; i++)
+            {
+                var sprite = Resources.Load<Sprite>(candidates[i]);
+                if (sprite != null)
                 {
-                    Destroy(_spawnedCards[i]);
+                    return sprite;
                 }
             }
 
-            _spawnedCards.Clear();
+            return null;
         }
 
-        private void ShowFeedback(string message)
+        private static Sprite LoadElementIconSprite(string elementTag)
         {
-            if (_feedbackText != null)
+            var key = NormalizeTag(elementTag);
+            if (string.IsNullOrWhiteSpace(key))
             {
-                _feedbackText.text = message;
+                return null;
+            }
+
+            var candidates = new[]
+            {
+                $"UI/Element/icon_element_{key}",
+                $"Icons/Element/icon_element_{key}",
+                $"Element/{key}",
+                $"UI/Element/{key}",
+                $"Icons/{key}"
+            };
+
+            for (var i = 0; i < candidates.Length; i++)
+            {
+                var sprite = Resources.Load<Sprite>(candidates[i]);
+                if (sprite != null)
+                {
+                    return sprite;
+                }
+            }
+
+            return null;
+        }
+
+        private static string NormalizeTag(string value)
+        {
+            return string.IsNullOrWhiteSpace(value)
+                ? string.Empty
+                : value.Trim().ToLowerInvariant();
+        }
+
+        private void ClearSpawnedSlots()
+        {
+            for (var i = 0; i < _spawnedSlots.Count; i++)
+            {
+                if (_spawnedSlots[i] != null)
+                {
+                    Destroy(_spawnedSlots[i].gameObject);
+                }
+            }
+
+            _spawnedSlots.Clear();
+            _spawnedSlotCharacterIds.Clear();
+        }
+
+        private void ClearSpawnedSkillItems()
+        {
+            for (var i = 0; i < _spawnedSkillItems.Count; i++)
+            {
+                if (_spawnedSkillItems[i] != null)
+                {
+                    Destroy(_spawnedSkillItems[i].gameObject);
+                }
+            }
+
+            _spawnedSkillItems.Clear();
+        }
+
+        private void SetListFeedback(string message)
+        {
+            if (_listFeedbackText != null)
+            {
+                _listFeedbackText.text = message ?? string.Empty;
             }
         }
 
-        private sealed class CharacterCardViewModel
+        private sealed class CharacterEntry
         {
             public string CharacterId;
             public CharacterDataModel Data;
             public int Level;
+            public int Exp;
             public int CurrentHp;
             public int MaxHp;
             public int CurrentMana;
             public int MaxMana;
+        }
+
+        private struct CharacterComputedStats
+        {
+            public int MaxHp;
+            public int ATK;
+            public int DEF;
+            public int SPD;
+            public float CritRate;
+            public float Resist;
         }
     }
 }
