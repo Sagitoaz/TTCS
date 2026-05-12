@@ -3593,6 +3593,7 @@ GameObject:
   - component: {fileID: 7672479613932019624}
   - component: {fileID: 2465111959182902083}
   - component: {fileID: 1735837451930146562}
+  - component: {fileID: 8509782556344151686}
   m_Layer: 0
   m_Name: char_warrior
   m_TagString: Untagged
@@ -3703,6 +3704,100 @@ MonoBehaviour:
   _useParentAsMotionRoot: 1
   _whiteFlashDuration: 0.07
   _redTintDuration: 0.1
+--- !u!114 &8509782556344151686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4351005507158813650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1549c19146be6d04f80d7e15b03111bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TTCS.Visual.VFX.CharacterSkillTargetVFXController
+  _ownerView: {fileID: 7672479613932019624}
+  _skills:
+  - skillId: skill_warrior_slash
+    layers:
+    - label: skill_warrior_slash
+      prefab: {fileID: 332245191359654440, guid: 17c1b9bb43da92f48b56e15ebb9d87ea, type: 3}
+      spawnMode: 0
+      delay: 0
+      lifetime: 0.3
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0
+      travelCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 4
+      rotateTowardTravelDirection: 0
+  - skillId: skill_warrior_power_strike
+    layers:
+    - label: skill_warrior_power_strike
+      prefab: {fileID: 332245191359654440, guid: 17c1b9bb43da92f48b56e15ebb9d87ea, type: 3}
+      spawnMode: 0
+      delay: 0
+      lifetime: 0.3
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0
+      travelCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      rotateTowardTravelDirection: 0
+  - skillId: skill_warrior_guard
+    layers:
+    - label: skill_warrior_guard
+      prefab: {fileID: 2363631185364571513, guid: 34c24331b2c669c4896fda17f410bf6e, type: 3}
+      spawnMode: 0
+      delay: 0
+      lifetime: 0.3
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0
+      travelCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      rotateTowardTravelDirection: 0
+  - skillId: skill_warrior_taunt
+    layers:
+    - label: skill_warrior_taunt
+      prefab: {fileID: 2363631185364571513, guid: 34c24331b2c669c4896fda17f410bf6e, type: 3}
+      spawnMode: 0
+      delay: 0
+      lifetime: 0.3
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0
+      travelCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      rotateTowardTravelDirection: 0
 --- !u!1 &4386958181473923013
 GameObject:
   m_ObjectHideFlags: 0
