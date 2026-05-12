@@ -60,8 +60,7 @@ namespace TTCS.Flow.CharacterCollection
         [SerializeField] private TMP_Text _defText;
         [SerializeField] private TMP_Text _spdText;
         [SerializeField] private TMP_Text _critText;
-        [SerializeField] private TMP_Text _resistText;
-        [SerializeField] private TMP_Text _statsSummaryText;
+
 
         [Header("Detail - Skills")]
         [SerializeField] private Transform _skillRoot;
@@ -532,15 +531,9 @@ namespace TTCS.Flow.CharacterCollection
                 _critText.text = $"{Mathf.RoundToInt(stats.CritRate * 100f)}%";
             }
 
-            if (_resistText != null)
-            {
-                _resistText.text = $"{Mathf.RoundToInt(stats.Resist * 100f)}%";
-            }
+            
 
-            if (_statsSummaryText != null)
-            {
-                _statsSummaryText.text = $"ATK {stats.ATK}  DEF {stats.DEF}  SPD {stats.SPD}";
-            }
+            
 
             RefreshLevelProgress(entry);
             RebuildSkillPanel(entry);
@@ -879,8 +872,8 @@ namespace TTCS.Flow.CharacterCollection
             if (_defText != null) _defText.text = "-";
             if (_spdText != null) _spdText.text = "-";
             if (_critText != null) _critText.text = "-";
-            if (_resistText != null) _resistText.text = "-";
-            if (_statsSummaryText != null) _statsSummaryText.text = string.Empty;
+            
+            
             if (_portraitImage != null)
             {
                 _portraitImage.sprite = null;

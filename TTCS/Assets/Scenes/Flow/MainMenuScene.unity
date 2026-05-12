@@ -2292,6 +2292,7 @@ MonoBehaviour:
   _teamButton: {fileID: 1425850247}
   _gachaButton: {fileID: 38338465}
   _inventoryButton: {fileID: 804494268}
+  _characterCollectionButton: {fileID: 177559625}
   _settingsButton: {fileID: 148516797}
   _goldText: {fileID: 0}
 --- !u!4 &1495680487

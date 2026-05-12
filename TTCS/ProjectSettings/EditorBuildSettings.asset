@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Flow/TeamFormationScene.unity
     guid: 3133863edb9e482459b3f57b9b2dfa48
+  - enabled: 1
+    path: Assets/Scenes/Flow/CharacterCollectionScene.unity
+    guid: cccf38452c9296a41b08e4d2b133704b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
