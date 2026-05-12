@@ -32,9 +32,8 @@
       "duration": 0
     },
     {
-      "type": "debuff",
-      "value": "spd:-12%",
-      "element": "dark",
+      "type": "burn",
+      "value": "30",
       "chance": 0.65,
       "duration": 2
     }

@@ -25,11 +25,10 @@
 
   "effects": [
     {
-      "type": "buff_def",
-      "value": "0.5",
-      "element": "",
-      "chance": 1.0,
-      "duration": 1
+      "type": "shield",
+      "value": "200",
+      "duration": 1,
+      "chance": 1.0
     }
   ],
 

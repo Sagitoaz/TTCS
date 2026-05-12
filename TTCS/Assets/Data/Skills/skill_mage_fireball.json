@@ -31,11 +31,10 @@
       "chance": 1.0
     },
     {
-      "type": "status_effect",
-      "effectId": "effect_burn",
+      "type": "burn",
+      "value": "50",
       "duration": 3,
-      "chance": 0.6,
-      "stacks": 1
+      "chance": 0.6
     }
   ],
   

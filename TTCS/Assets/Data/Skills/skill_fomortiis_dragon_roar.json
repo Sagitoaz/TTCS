@@ -32,11 +32,10 @@
       "duration": 0
     },
     {
-      "type": "debuff",
-      "value": "def:-12%",
-      "element": "dark",
+      "type": "stun",
+      "value": "1",
       "chance": 0.75,
-      "duration": 2
+      "duration": 1
     }
   ],
 

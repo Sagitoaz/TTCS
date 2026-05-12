@@ -27,16 +27,8 @@
     {
       "type": "shield",
       "value": "DEF * 1.5",
-      "element": "",
-      "chance": 1.0,
-      "duration": 1
-    },
-    {
-      "type": "buff_def",
-      "value": "0.3",
-      "element": "",
-      "chance": 1.0,
-      "duration": 1
+      "duration": 1,
+      "chance": 1.0
     }
   ],
 

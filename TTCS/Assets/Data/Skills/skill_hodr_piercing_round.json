@@ -32,9 +32,8 @@
       "duration": 0
     },
     {
-      "type": "debuff",
-      "value": "def:-10%",
-      "element": "dark",
+      "type": "bleed",
+      "value": "25",
       "chance": 0.6,
       "duration": 2
     }
