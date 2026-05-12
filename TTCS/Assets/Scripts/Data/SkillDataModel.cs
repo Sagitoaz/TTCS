@@ -28,7 +28,6 @@ namespace TTCS.Data
     {
         public string type;         // "single_enemy", "all_enemies", "single_ally", "self"
         public int count;
-        public List<string> filter;
         public bool canTargetSelf;
     }
 

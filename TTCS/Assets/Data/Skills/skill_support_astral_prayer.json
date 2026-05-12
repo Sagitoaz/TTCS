@@ -7,7 +7,6 @@
   "targetRule": {
     "type": "all_allies",
     "count": 3,
-    "filter": [],
     "canTargetSelf": false
   },
 

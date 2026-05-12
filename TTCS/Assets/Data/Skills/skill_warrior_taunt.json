@@ -7,7 +7,6 @@
   "targetRule": {
     "type": "all_enemies",
     "count": -1,
-    "filter": [],
     "canTargetSelf": false
   },
 
