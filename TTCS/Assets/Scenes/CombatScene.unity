@@ -9283,6 +9283,7 @@ MonoBehaviour:
   _pauseContinueButton: {fileID: 1758253788}
   _pauseRetryButton: {fileID: 1829704077}
   _pauseExitButton: {fileID: 1818538543}
+  _combatItemCellPrefab: {fileID: 2225280552561077813, guid: 08b719092bfcb8744ab85926a9d15557, type: 3}
   _resultPanel: {fileID: 1644431932}
   _resultButton: {fileID: 1644431931}
   _resultButtonLabel: {fileID: 1644431930}

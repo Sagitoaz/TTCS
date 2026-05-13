@@ -8214,6 +8214,7 @@ MonoBehaviour:
   _turnOrderDisplay: {fileID: 217673079}
   _actionResultDisplay: {fileID: 808655593}
   _timingFeedbackUI: {fileID: 104738325}
+  _combatItemCellPrefab: {fileID: 2225280552561077813, guid: 08b719092bfcb8744ab85926a9d15557, type: 3}
   _resultPanel: {fileID: 1644431932}
   _resultButton: {fileID: 1644431931}
   _resultButtonLabel: {fileID: 1644431930}

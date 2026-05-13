@@ -38,11 +38,6 @@ namespace TTCS.Meta.Inventory
                 return false;
             }
 
-            if (!string.Equals(targetContext, "menu", StringComparison.OrdinalIgnoreCase))
-            {
-                return false;
-            }
-
             var save = _saveManager.CurrentSave;
             if (save == null)
             {
@@ -51,6 +46,18 @@ namespace TTCS.Meta.Inventory
 
             var itemData = DataManager.Instance?.LoadItem(itemId);
             if (itemData != null && !string.Equals(itemData.itemType, "consumable", StringComparison.OrdinalIgnoreCase))
+            {
+                return false;
+            }
+
+            var isMenuContext = string.Equals(targetContext, "menu", StringComparison.OrdinalIgnoreCase);
+            var isCombatContext = string.Equals(targetContext, "combat", StringComparison.OrdinalIgnoreCase);
+            if (!isMenuContext && !isCombatContext)
+            {
+                return false;
+            }
+
+            if (isMenuContext && itemData != null && !itemData.usableOutsideCombat)
             {
                 return false;
             }
@@ -87,6 +94,8 @@ namespace TTCS.Meta.Inventory
             DebugLogger.Log(
                 $"[InventoryService] UseItem itemId='{itemId}' quantity={quantity} context='{targetContext}'",
                 DebugLogger.LogCategory.Save);
+
+            PersistSave();
 
             return UseItemResult.Ok(quantity, "Item consumed.");
         }

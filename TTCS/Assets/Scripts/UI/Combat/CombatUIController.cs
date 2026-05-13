@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
@@ -12,8 +13,11 @@ using static TTCS.Debugging.DebugLogger;
 using TTCS.Combat.Timing;
 using TTCS.Combat.Managers;
 using TTCS.Flow;
+using TTCS.Flow.Inventory;
 using TTCS.Flow.LevelSelect;
 using TTCS.Data;
+using TTCS.Meta;
+using TTCS.Meta.Inventory;
 
 namespace TTCS.UI.Combat
 {
@@ -75,6 +79,9 @@ namespace TTCS.UI.Combat
         [SerializeField] private Button _pauseRetryButton;
         [SerializeField] private Button _pauseExitButton;
 
+        [Header("Combat Item UI")]
+        [SerializeField] private InventoryItemCellView _combatItemCellPrefab;
+
         [Header("Result Screen")]
         [SerializeField] private GameObject          _resultPanel;
         [SerializeField] private Button              _resultButton;
@@ -104,6 +111,16 @@ namespace TTCS.UI.Combat
 
         private bool _isPaused;
         private float _previousTimeScale = 1f;
+        private Button _combatItemButton;
+        private GameObject _combatItemPanel;
+        private RectTransform _combatItemListContent;
+        private TMP_Text _combatItemNameText;
+        private TMP_Text _combatItemDescriptionText;
+        private TMP_Text _combatItemInfoText;
+        private Button _combatItemUseButton;
+        private Button _combatItemCancelButton;
+        private readonly List<GameObject> _spawnedCombatItemViews = new List<GameObject>();
+        private string _selectedCombatItemId;
 
         // ─── Entity Position Registry ─────────────────────────────────────
         /// <summary>Mapping entityId → World Transform (set bởi Dev B CharacterView).</summary>
@@ -132,6 +149,8 @@ namespace TTCS.UI.Combat
             Log("CombatUIController: Initializing UI...", LogCategory.UI);
 
             EnsureCombatPanelsActive();
+            EnsureCombatItemUI();
+            HideCombatItemPanel();
 
             // Build entity map
             _entityMap.Clear();
@@ -198,6 +217,7 @@ namespace TTCS.UI.Combat
             }
 
             SetPaused(false);
+            RefreshCombatItemButtonState();
             TimingSystem.Instance.OnTimingResult += ShowTimingResult;
 
             EventBus.Instance.Subscribe<CombatEndedEvent>(OnCombatEnded);
@@ -325,11 +345,480 @@ namespace TTCS.UI.Combat
                 // Lượt của enemy — ẩn panel
                 _skillButtonPanel?.Hide();
                 _battleHUD?.EndEnemyTargeting();
+                HideCombatItemPanel();
+                RefreshCombatItemButtonState();
                 return;
             }
 
             _skillButtonPanel?.Initialize(character.ID, character.SkillIds, _enemyList, _allyList);
             _skillButtonPanel?.ShowForTurn();
+            RefreshCombatItemButtonState();
+        }
+
+        private void EnsureCombatItemUI()
+        {
+            if (_combatItemButton != null && _combatItemPanel != null)
+            {
+                return;
+            }
+
+            var root = transform.parent as RectTransform;
+            if (root == null)
+            {
+                return;
+            }
+
+            _combatItemButton = CreateActionButton(root, "ItemButton", "Item", new Vector2(-300f, 90f), OnCombatItemButtonClicked);
+            _combatItemPanel = CreateItemPanel(root);
+            HideCombatItemPanel();
+        }
+
+        private Button CreateActionButton(RectTransform parent, string objectName, string label, Vector2 anchoredPosition, Action onClick)
+        {
+            var buttonObject = new GameObject(objectName, typeof(RectTransform), typeof(Image), typeof(Button));
+            buttonObject.transform.SetParent(parent, false);
+
+            var rect = buttonObject.GetComponent<RectTransform>();
+            rect.anchorMin = new Vector2(1f, 0f);
+            rect.anchorMax = new Vector2(1f, 0f);
+            rect.pivot = new Vector2(1f, 0f);
+            rect.anchoredPosition = anchoredPosition;
+            rect.sizeDelta = new Vector2(180f, 56f);
+
+            var image = buttonObject.GetComponent<Image>();
+            image.color = new Color(0.12f, 0.16f, 0.23f, 0.96f);
+
+            var button = buttonObject.GetComponent<Button>();
+            var colors = button.colors;
+            colors.normalColor = Color.white;
+            colors.highlightedColor = new Color(0.92f, 0.92f, 0.92f, 1f);
+            colors.pressedColor = new Color(0.75f, 0.75f, 0.75f, 1f);
+            colors.disabledColor = new Color(1f, 1f, 1f, 0.45f);
+            button.colors = colors;
+            if (onClick != null)
+            {
+                button.onClick.AddListener(() => onClick());
+            }
+
+            CreateButtonLabel(buttonObject.transform, label);
+            return button;
+        }
+
+        private GameObject CreateItemPanel(RectTransform parent)
+        {
+            var panelObject = new GameObject("CombatItemPanel", typeof(RectTransform), typeof(Image), typeof(CanvasGroup));
+            panelObject.transform.SetParent(parent, false);
+
+            var panelRect = panelObject.GetComponent<RectTransform>();
+            panelRect.anchorMin = new Vector2(0.5f, 0.5f);
+            panelRect.anchorMax = new Vector2(0.5f, 0.5f);
+            panelRect.pivot = new Vector2(0.5f, 0.5f);
+            panelRect.sizeDelta = new Vector2(840f, 460f);
+
+            var panelImage = panelObject.GetComponent<Image>();
+            panelImage.color = new Color(0.06f, 0.08f, 0.12f, 0.96f);
+
+            var layoutRoot = new GameObject("Layout", typeof(RectTransform), typeof(HorizontalLayoutGroup));
+            layoutRoot.transform.SetParent(panelObject.transform, false);
+            var layoutRect = layoutRoot.GetComponent<RectTransform>();
+            layoutRect.anchorMin = new Vector2(0f, 0f);
+            layoutRect.anchorMax = new Vector2(1f, 1f);
+            layoutRect.offsetMin = new Vector2(20f, 20f);
+            layoutRect.offsetMax = new Vector2(-20f, -20f);
+
+            var horizontal = layoutRoot.GetComponent<HorizontalLayoutGroup>();
+            horizontal.spacing = 20f;
+            horizontal.childForceExpandHeight = true;
+            horizontal.childForceExpandWidth = false;
+            horizontal.childControlHeight = true;
+            horizontal.childControlWidth = true;
+
+            var listPanel = CreatePanelSection(layoutRoot.transform, "ListSection", 320f);
+            var detailPanel = CreatePanelSection(layoutRoot.transform, "DetailSection", -1f);
+
+            CreateTextBlock(listPanel.transform, "Title", "Items", 28, TextAlignmentOptions.TopLeft, Color.white, 16f, 16f, 16f, 34f);
+
+            var scrollObject = new GameObject("ScrollView", typeof(RectTransform), typeof(Image), typeof(Mask), typeof(ScrollRect));
+            scrollObject.transform.SetParent(listPanel.transform, false);
+            var scrollRectTransform = scrollObject.GetComponent<RectTransform>();
+            scrollRectTransform.anchorMin = new Vector2(0f, 0f);
+            scrollRectTransform.anchorMax = new Vector2(1f, 1f);
+            scrollRectTransform.offsetMin = new Vector2(16f, 16f);
+            scrollRectTransform.offsetMax = new Vector2(-16f, -52f);
+
+            var scrollImage = scrollObject.GetComponent<Image>();
+            scrollImage.color = new Color(1f, 1f, 1f, 0.04f);
+            scrollObject.GetComponent<Mask>().showMaskGraphic = false;
+
+            var contentObject = new GameObject("Content", typeof(RectTransform), typeof(VerticalLayoutGroup), typeof(ContentSizeFitter));
+            contentObject.transform.SetParent(scrollObject.transform, false);
+            _combatItemListContent = contentObject.GetComponent<RectTransform>();
+            _combatItemListContent.anchorMin = new Vector2(0f, 1f);
+            _combatItemListContent.anchorMax = new Vector2(1f, 1f);
+            _combatItemListContent.pivot = new Vector2(0.5f, 1f);
+            _combatItemListContent.anchoredPosition = Vector2.zero;
+            _combatItemListContent.sizeDelta = new Vector2(0f, 0f);
+
+            var listLayout = contentObject.GetComponent<VerticalLayoutGroup>();
+            listLayout.spacing = 10f;
+            listLayout.padding = new RectOffset(0, 0, 0, 0);
+            listLayout.childControlHeight = false;
+            listLayout.childControlWidth = true;
+            listLayout.childForceExpandHeight = false;
+            listLayout.childForceExpandWidth = true;
+
+            var fitter = contentObject.GetComponent<ContentSizeFitter>();
+            fitter.horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
+            fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+
+            var scrollRect = scrollObject.GetComponent<ScrollRect>();
+            scrollRect.viewport = scrollRectTransform;
+            scrollRect.content = _combatItemListContent;
+            scrollRect.horizontal = false;
+            scrollRect.vertical = true;
+
+            _combatItemNameText = CreateTextBlock(detailPanel.transform, "ItemName", "Select an item", 30, TextAlignmentOptions.TopLeft, Color.white, 18f, 18f, 18f, 40f);
+            _combatItemDescriptionText = CreateTextBlock(detailPanel.transform, "Description", "Choose an item to preview its combat effect.", 22, TextAlignmentOptions.TopLeft, new Color(0.9f, 0.95f, 1f, 0.95f), 18f, 76f, 18f, 120f);
+            _combatItemInfoText = CreateTextBlock(detailPanel.transform, "Info", string.Empty, 20, TextAlignmentOptions.TopLeft, new Color(0.55f, 0.88f, 1f, 1f), 18f, 208f, 18f, 120f);
+
+            _combatItemUseButton = CreateActionButton(detailPanel.transform as RectTransform, "UseButton", "Use", new Vector2(-18f, 18f), OnCombatItemUseClicked);
+            var useRect = _combatItemUseButton.GetComponent<RectTransform>();
+            useRect.anchorMin = new Vector2(1f, 0f);
+            useRect.anchorMax = new Vector2(1f, 0f);
+            useRect.pivot = new Vector2(1f, 0f);
+            useRect.sizeDelta = new Vector2(160f, 52f);
+
+            _combatItemCancelButton = CreateActionButton(detailPanel.transform as RectTransform, "CancelButton", "Cancel", new Vector2(-194f, 18f), HideCombatItemPanel);
+            var cancelRect = _combatItemCancelButton.GetComponent<RectTransform>();
+            cancelRect.anchorMin = new Vector2(1f, 0f);
+            cancelRect.anchorMax = new Vector2(1f, 0f);
+            cancelRect.pivot = new Vector2(1f, 0f);
+            cancelRect.sizeDelta = new Vector2(160f, 52f);
+
+            return panelObject;
+        }
+
+        private GameObject CreatePanelSection(Transform parent, string objectName, float preferredWidth)
+        {
+            var section = new GameObject(objectName, typeof(RectTransform), typeof(Image), typeof(LayoutElement));
+            section.transform.SetParent(parent, false);
+
+            var image = section.GetComponent<Image>();
+            image.color = new Color(1f, 1f, 1f, 0.05f);
+
+            var layoutElement = section.GetComponent<LayoutElement>();
+            if (preferredWidth > 0f)
+            {
+                layoutElement.preferredWidth = preferredWidth;
+                layoutElement.minWidth = preferredWidth;
+            }
+            else
+            {
+                layoutElement.flexibleWidth = 1f;
+            }
+
+            return section;
+        }
+
+        private void CreateButtonLabel(Transform parent, string value)
+        {
+            var textObject = new GameObject("Label", typeof(RectTransform), typeof(TextMeshProUGUI));
+            textObject.transform.SetParent(parent, false);
+
+            var rect = textObject.GetComponent<RectTransform>();
+            rect.anchorMin = new Vector2(0f, 0f);
+            rect.anchorMax = new Vector2(1f, 1f);
+            rect.offsetMin = Vector2.zero;
+            rect.offsetMax = Vector2.zero;
+
+            var text = textObject.GetComponent<TextMeshProUGUI>();
+            text.text = value;
+            text.fontSize = 26;
+            text.alignment = TextAlignmentOptions.Center;
+            text.color = Color.white;
+            text.enableAutoSizing = false;
+            text.font = TMP_Settings.defaultFontAsset;
+            text.raycastTarget = false;
+        }
+
+        private TMP_Text CreateTextBlock(Transform parent, string objectName, string value, int fontSize, TextAlignmentOptions alignment, Color color, float left, float top, float right, float height)
+        {
+            var textObject = new GameObject(objectName, typeof(RectTransform), typeof(TextMeshProUGUI));
+            textObject.transform.SetParent(parent, false);
+
+            var rect = textObject.GetComponent<RectTransform>();
+            rect.anchorMin = new Vector2(0f, 1f);
+            rect.anchorMax = new Vector2(1f, 1f);
+            rect.pivot = new Vector2(0.5f, 1f);
+            rect.offsetMin = new Vector2(left, -top - height);
+            rect.offsetMax = new Vector2(-right, -top);
+
+            var text = textObject.GetComponent<TextMeshProUGUI>();
+            text.text = value;
+            text.fontSize = fontSize;
+            text.alignment = alignment;
+            text.color = color;
+            text.enableAutoSizing = false;
+            text.font = TMP_Settings.defaultFontAsset;
+            text.raycastTarget = false;
+            return text;
+        }
+
+        private void OnCombatItemButtonClicked()
+        {
+            var flow = CombatFlowController.Instance;
+            if (_combatItemPanel == null || flow == null || !flow.IsPlayerTurn())
+            {
+                return;
+            }
+
+            RebuildCombatItemList();
+            _combatItemPanel.SetActive(true);
+            RefreshCombatItemButtonState();
+        }
+
+        private void HideCombatItemPanel()
+        {
+            if (_combatItemPanel != null)
+            {
+                _combatItemPanel.SetActive(false);
+            }
+
+            _selectedCombatItemId = null;
+        }
+
+        private void RebuildCombatItemList()
+        {
+            ClearSpawned(_spawnedCombatItemViews);
+            _selectedCombatItemId = null;
+
+            if (_combatItemListContent == null || _combatItemCellPrefab == null)
+            {
+                SetCombatItemDetail(null, "Combat item UI is not configured.");
+                return;
+            }
+
+            var actor = CombatFlowController.Instance?.GetCurrentActor() as Character;
+            var inventory = GetInventoryService();
+            var items = inventory?.GetItems();
+            if (actor == null || items == null || items.Count == 0)
+            {
+                SetCombatItemDetail(null, "No combat item available.");
+                return;
+            }
+
+            for (var i = 0; i < items.Count; i++)
+            {
+                var stack = items[i];
+                var itemData = DataManager.Instance?.LoadItem(stack.itemId);
+                if (itemData == null)
+                {
+                    continue;
+                }
+
+                if (!inventory.CanUseItem(stack.itemId, "combat"))
+                {
+                    continue;
+                }
+
+                var cell = Instantiate(_combatItemCellPrefab, _combatItemListContent);
+                var layout = cell.gameObject.GetComponent<LayoutElement>() ?? cell.gameObject.AddComponent<LayoutElement>();
+                layout.preferredHeight = 96f;
+                layout.minHeight = 96f;
+                layout.flexibleWidth = 1f;
+
+                var icon = LoadResourceSprite(itemData.iconPath);
+                cell.Bind(icon, stack.quantity, itemData.rarity, stack.itemId, () => OnCombatItemSelected(stack.itemId));
+                _spawnedCombatItemViews.Add(cell.gameObject);
+            }
+
+            if (_spawnedCombatItemViews.Count == 0)
+            {
+                SetCombatItemDetail(null, "No consumable can be used right now.");
+                return;
+            }
+
+            var firstCell = _spawnedCombatItemViews[0].GetComponent<InventoryItemCellView>();
+            OnCombatItemSelected(firstCell != null ? firstCell.ItemId : null);
+        }
+
+        private void OnCombatItemSelected(string itemId)
+        {
+            _selectedCombatItemId = itemId;
+            for (var i = 0; i < _spawnedCombatItemViews.Count; i++)
+            {
+                var cell = _spawnedCombatItemViews[i].GetComponent<InventoryItemCellView>();
+                if (cell != null)
+                {
+                    cell.SetSelected(string.Equals(cell.ItemId, itemId, StringComparison.Ordinal));
+                }
+            }
+
+            SetCombatItemDetail(itemId, null);
+        }
+
+        private void SetCombatItemDetail(string itemId, string fallbackMessage)
+        {
+            var actor = CombatFlowController.Instance?.GetCurrentActor() as Character;
+            var itemData = !string.IsNullOrWhiteSpace(itemId) ? DataManager.Instance?.LoadItem(itemId) : null;
+
+            if (_combatItemNameText != null)
+            {
+                _combatItemNameText.text = itemData != null ? itemData.nameKey : "Select an item";
+            }
+
+            if (_combatItemDescriptionText != null)
+            {
+                _combatItemDescriptionText.text = itemData != null
+                    ? BuildCombatItemDescription(itemData)
+                    : "Choose an item from the list.";
+            }
+
+            var previewText = string.Empty;
+            var canUse = actor != null && itemData != null && TryBuildCombatItemPreview(actor, itemData, out previewText);
+            if (!canUse && string.IsNullOrWhiteSpace(previewText))
+            {
+                previewText = fallbackMessage ?? "This item cannot be used right now.";
+            }
+
+            if (_combatItemInfoText != null)
+            {
+                _combatItemInfoText.text = previewText;
+            }
+
+            if (_combatItemUseButton != null)
+            {
+                _combatItemUseButton.interactable = canUse;
+            }
+        }
+
+        private static string BuildCombatItemDescription(ItemDataModel itemData)
+        {
+            if (itemData == null)
+            {
+                return string.Empty;
+            }
+
+            if (!string.IsNullOrWhiteSpace(itemData.description))
+            {
+                return itemData.description;
+            }
+
+            return $"Effect: {itemData.effectType} (+{Mathf.Max(itemData.effectAmount, itemData.healAmount)})";
+        }
+
+        private bool TryBuildCombatItemPreview(Character actor, ItemDataModel itemData, out string previewText)
+        {
+            previewText = string.Empty;
+            if (actor == null || itemData == null)
+            {
+                return false;
+            }
+
+            var amount = Mathf.Max(itemData.effectAmount, itemData.healAmount);
+            var effectType = (itemData.effectType ?? string.Empty).Trim().ToLowerInvariant();
+
+            switch (effectType)
+            {
+                case "heal_hp":
+                    if (actor.Health.CurrentHP >= actor.Health.MaxHP)
+                    {
+                        previewText = "HP is already full.";
+                        return false;
+                    }
+
+                    previewText = $"After use: restore {amount} HP to the acting character and end this turn.";
+                    return amount > 0;
+
+                case "restore_energy":
+                case "restore_mana":
+                    var skillManager = SkillManager.Instance;
+                    if (skillManager == null)
+                    {
+                        previewText = "Mana system is unavailable.";
+                        return false;
+                    }
+
+                    if (skillManager.GetMana(actor.ID) >= skillManager.GetMaxMana(actor.ID))
+                    {
+                        previewText = "Mana is already full.";
+                        return false;
+                    }
+
+                    previewText = $"After use: restore {amount} mana to the acting character and end this turn.";
+                    return amount > 0;
+
+                default:
+                    previewText = $"Unsupported combat effect: {itemData.effectType}";
+                    return false;
+            }
+        }
+
+        private void OnCombatItemUseClicked()
+        {
+            if (string.IsNullOrWhiteSpace(_selectedCombatItemId))
+            {
+                return;
+            }
+
+            CombatFlowController.Instance?.SubmitPlayerItemUse(_selectedCombatItemId);
+            if (_combatItemButton != null)
+            {
+                _combatItemButton.interactable = false;
+            }
+            HideCombatItemPanel();
+            RefreshCombatItemButtonState();
+        }
+
+        private void RefreshCombatItemButtonState()
+        {
+            if (_combatItemButton == null)
+            {
+                return;
+            }
+
+            var flow = CombatFlowController.Instance;
+            var actor = flow?.GetCurrentActor() as Character;
+            var inventory = GetInventoryService();
+            var canShow = flow != null
+                && flow.IsPlayerTurn()
+                && actor != null
+                && HasAnyCombatItem(actor, inventory);
+
+            _combatItemButton.gameObject.SetActive(actor != null);
+            _combatItemButton.interactable = canShow;
+        }
+
+        private bool HasAnyCombatItem(Character actor, IInventoryService inventory)
+        {
+            var items = inventory?.GetItems();
+            if (actor == null || items == null)
+            {
+                return false;
+            }
+
+            for (var i = 0; i < items.Count; i++)
+            {
+                var itemData = DataManager.Instance?.LoadItem(items[i].itemId);
+                if (itemData == null || !inventory.CanUseItem(items[i].itemId, "combat"))
+                {
+                    continue;
+                }
+
+                if (TryBuildCombatItemPreview(actor, itemData, out _))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private static IInventoryService GetInventoryService()
+        {
+            var hub = MetaServiceHub.Instance;
+            hub?.EnsureInitialized();
+            return hub?.InventoryService;
         }
 
         #endregion
@@ -342,6 +831,8 @@ namespace TTCS.UI.Combat
             if (_resultPanel == null) return;
 
             SetPaused(false);
+            HideCombatItemPanel();
+            RefreshCombatItemButtonState();
 
             _resultPanel.SetActive(true);
             ApplyResultVisual(e.Victory);

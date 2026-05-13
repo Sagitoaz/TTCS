@@ -13,6 +13,7 @@ using TTCS.Core.Progression;
 using TTCS.Data;
 using TTCS.Debugging;
 using TTCS.Meta;
+using TTCS.Meta.Inventory;
 using static TTCS.Debugging.DebugLogger;
 // CombatLogger is in TTCS.Combat — alias to avoid confusion with Unity.Debug
 using CombatLogger = TTCS.Combat.CombatLogger;
@@ -91,6 +92,7 @@ namespace TTCS.Combat.Managers
         private bool _playerInputReceived;
         private string _pendingSkillId;
         private List<string> _pendingTargetIds;
+        private string _pendingItemId;
 
         // ─── Battle Metadata ─────────────────────────────────────────────
         public int CurrentSeed { get; private set; }
@@ -180,6 +182,26 @@ namespace TTCS.Combat.Managers
 
             _pendingSkillId = skillId;
             _pendingTargetIds = new List<string>(targetIds ?? new List<string>());
+            _playerInputReceived = true;
+        }
+
+        public void SubmitPlayerItemUse(string itemId)
+        {
+            if (_state != CombatState.PlayerTurn)
+            {
+                Log("SubmitPlayerItemUse called outside PlayerTurn state - ignored.", LogCategory.Combat);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(itemId))
+            {
+                Log("SubmitPlayerItemUse called with empty itemId - ignored.", LogCategory.Combat);
+                return;
+            }
+
+            _pendingSkillId = null;
+            _pendingTargetIds = null;
+            _pendingItemId = itemId;
             _playerInputReceived = true;
         }
 
@@ -342,6 +364,7 @@ namespace TTCS.Combat.Managers
             _playerInputReceived = false;
             _pendingSkillId = null;
             _pendingTargetIds = null;
+            _pendingItemId = null;
 
             Log($"CombatFlowController: Player turn — '{player.ID}' waiting for input.", LogCategory.Combat);
 
@@ -398,6 +421,10 @@ namespace TTCS.Combat.Managers
                 }
 
                 yield return ExecuteAction(player, _pendingSkillId, _pendingTargetIds, playerTimingGrade);
+            }
+            else if (!string.IsNullOrEmpty(_pendingItemId))
+            {
+                yield return UseCombatItem(player, _pendingItemId);
             }
         }
 
@@ -558,6 +585,125 @@ namespace TTCS.Combat.Managers
                 $"targets: {string.Join(", ", targets.Select(t => t.ID))}");
 
             yield return WaitForActionAnimation(actor.ID);
+        }
+
+        private IEnumerator UseCombatItem(Character actor, string itemId)
+        {
+            _state = CombatState.ExecutingAction;
+            _lastActionCost = TTCS.Core.Constants.ITEM_TURN_COST;
+
+            var itemData = DataManager.Instance?.LoadItem(itemId);
+            if (actor == null || itemData == null)
+            {
+                Log($"UseCombatItem: invalid actor/item. actor='{actor?.ID}' item='{itemId}'", LogCategory.Combat);
+                yield break;
+            }
+
+            var hub = MetaServiceHub.Instance;
+            hub?.EnsureInitialized();
+            var inventory = hub?.InventoryService;
+            if (inventory == null)
+            {
+                Log("UseCombatItem: InventoryService is unavailable.", LogCategory.Combat);
+                yield break;
+            }
+
+            if (!TryPreviewCombatItemEffect(actor, itemData, out var previewMessage))
+            {
+                Log($"UseCombatItem: '{itemId}' cannot be used now - {previewMessage}", LogCategory.Combat);
+                yield break;
+            }
+
+            var consumeResult = inventory.UseItem(itemId, 1, "combat");
+            if (!consumeResult.Success)
+            {
+                Log($"UseCombatItem: consume failed for '{itemId}' - {consumeResult.Message}", LogCategory.Combat);
+                yield break;
+            }
+
+            ApplyCombatItemEffect(actor, itemData);
+            EventBus.Instance.Publish(new ActionExecutedEvent(actor.ID, $"ITEM:{itemId}", actor.ID));
+            CombatLogger.LogAction(TurnNumber, actor.ID, $"ITEM:{itemId}", previewMessage);
+
+            yield return new WaitForSeconds(0.15f);
+        }
+
+        private bool TryPreviewCombatItemEffect(Character actor, ItemDataModel itemData, out string message)
+        {
+            message = "Item has no usable combat effect.";
+            if (actor == null || itemData == null)
+            {
+                return false;
+            }
+
+            var effectType = (itemData.effectType ?? string.Empty).Trim().ToLowerInvariant();
+            var amount = Mathf.Max(itemData.effectAmount, itemData.healAmount);
+            if (amount <= 0)
+            {
+                return false;
+            }
+
+            switch (effectType)
+            {
+                case "heal_hp":
+                    if (actor.Health.CurrentHP >= actor.Health.MaxHP)
+                    {
+                        message = "HP is already full.";
+                        return false;
+                    }
+
+                    message = $"Restore {amount} HP.";
+                    return true;
+
+                case "restore_energy":
+                case "restore_mana":
+                    var skillManager = SkillManager.Instance;
+                    if (skillManager == null)
+                    {
+                        message = "Mana system is unavailable.";
+                        return false;
+                    }
+
+                    if (skillManager.GetMana(actor.ID) >= skillManager.GetMaxMana(actor.ID))
+                    {
+                        message = "Mana is already full.";
+                        return false;
+                    }
+
+                    message = $"Restore {amount} mana.";
+                    return true;
+
+                default:
+                    message = $"Unsupported combat effect: {itemData.effectType}";
+                    return false;
+            }
+        }
+
+        private static void ApplyCombatItemEffect(Character actor, ItemDataModel itemData)
+        {
+            if (actor == null || itemData == null)
+            {
+                return;
+            }
+
+            var effectType = (itemData.effectType ?? string.Empty).Trim().ToLowerInvariant();
+            var amount = Mathf.Max(itemData.effectAmount, itemData.healAmount);
+            if (amount <= 0)
+            {
+                return;
+            }
+
+            switch (effectType)
+            {
+                case "heal_hp":
+                    actor.Health.Heal(amount, itemData.id);
+                    break;
+
+                case "restore_energy":
+                case "restore_mana":
+                    SkillManager.Instance?.RestoreMana(actor.ID, amount);
+                    break;
+            }
         }
 
         private IEnumerator WaitForActionHitFrame(string actorId)
