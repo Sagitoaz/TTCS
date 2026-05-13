@@ -34,6 +34,7 @@ namespace TTCS.Flow
         private IInventoryService _inventoryService;
         private FlowStateManager _flowStateManager;
         private NavigationController _navigationController;
+        private SceneTransitionController _sceneTransitionController;
         private bool _startupRouteDone;
 
         private static FlowController _instance;
@@ -69,6 +70,12 @@ namespace TTCS.Flow
             if (_navigationController == null)
             {
                 _navigationController = gameObject.AddComponent<NavigationController>();
+            }
+
+            _sceneTransitionController = GetComponent<SceneTransitionController>();
+            if (_sceneTransitionController == null)
+            {
+                _sceneTransitionController = gameObject.AddComponent<SceneTransitionController>();
             }
         }
 
@@ -162,7 +169,7 @@ namespace TTCS.Flow
             {
                 Debug.Log("[Flow] Entering tutorial scene (first-time player)");
                 _flowStateManager.NavigateTo(_tutorialSceneName);
-                UnityEngine.SceneManagement.SceneManager.LoadScene(_tutorialSceneName);
+                _sceneTransitionController.LoadScene(_tutorialSceneName);
                 return true;
             }
             else
@@ -176,7 +183,7 @@ namespace TTCS.Flow
         {
             Debug.Log("[Flow] Opening main menu");
             _flowStateManager.NavigateTo(_mainMenuSceneName);
-            UnityEngine.SceneManagement.SceneManager.LoadScene(_mainMenuSceneName);
+            _sceneTransitionController.LoadScene(_mainMenuSceneName);
         }
 
         public void OpenLevelSelect(string chapterId)
@@ -184,35 +191,35 @@ namespace TTCS.Flow
             Debug.Log($"[Flow] Opening level select for chapter: {chapterId}");
             FlowRuntimeContext.SelectedChapterId = string.IsNullOrWhiteSpace(chapterId) ? "chapter_01" : chapterId;
             _flowStateManager.NavigateTo(_levelSelectSceneName);
-            UnityEngine.SceneManagement.SceneManager.LoadScene(_levelSelectSceneName);
+            _sceneTransitionController.LoadScene(_levelSelectSceneName);
         }
 
         public void OpenTeamSelection()
         {
             Debug.Log("[Flow] Opening team formation scene");
             _flowStateManager.NavigateTo(_teamFormationSceneName);
-            UnityEngine.SceneManagement.SceneManager.LoadScene(_teamFormationSceneName);
+            _sceneTransitionController.LoadScene(_teamFormationSceneName);
         }
 
         public void OpenGacha()
         {
             Debug.Log("[Flow] Opening gacha scene");
             _flowStateManager.NavigateTo(_gachaSceneName);
-            UnityEngine.SceneManagement.SceneManager.LoadScene(_gachaSceneName);
+            _sceneTransitionController.LoadScene(_gachaSceneName);
         }
 
         public void OpenInventory()
         {
             Debug.Log("[Flow] Opening inventory scene");
             _flowStateManager.NavigateTo(_inventorySceneName);
-            UnityEngine.SceneManagement.SceneManager.LoadScene(_inventorySceneName);
+            _sceneTransitionController.LoadScene(_inventorySceneName);
         }
 
         public void OpenCharacterCollection()
         {
             Debug.Log("[Flow] Opening character collection scene");
             _flowStateManager.NavigateTo(_characterCollectionSceneName);
-            UnityEngine.SceneManagement.SceneManager.LoadScene(_characterCollectionSceneName);
+            _sceneTransitionController.LoadScene(_characterCollectionSceneName);
         }
 
         public void EnterCombat(string levelId, IReadOnlyList<string> lineupSnapshot)
@@ -222,7 +229,7 @@ namespace TTCS.Flow
             FlowRuntimeContext.SelectedLineupSnapshot = lineupSnapshot;
             _flowStateManager.NavigateTo(_combatSceneName);
             EventBus.Instance.Publish(new LevelEnteredEvent(levelId));
-            UnityEngine.SceneManagement.SceneManager.LoadScene(_combatSceneName);
+            _sceneTransitionController.LoadScene(_combatSceneName);
         }
 
         public void HandleCombatResult(CombatResult result)

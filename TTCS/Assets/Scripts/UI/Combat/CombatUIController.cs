@@ -296,11 +296,23 @@ namespace TTCS.UI.Combat
 
         /// <summary>
         /// Xử lý nút trên result screen — reload scene hiện tại (Sprint 2).
-        /// Khi Main Menu hoàn thiện (Sprint 3+), thay bằng SceneManager.LoadScene("MainMenu").
+        /// Ưu tiên đi qua FlowController/SceneTransitionController để có transition nhất quán.
         /// </summary>
         private void OnResultButtonClicked()
         {
             var scene = SceneManager.GetActiveScene();
+            var flow = TTCS.Flow.FlowController.Instance;
+            if (flow != null)
+            {
+                // Keep current scene name; transition controller handles async load.
+                var transition = flow.GetComponent<TTCS.Flow.SceneTransitionController>();
+                if (transition != null)
+                {
+                    transition.LoadScene(scene.name);
+                    return;
+                }
+            }
+
             SceneManager.LoadScene(scene.buildIndex);
         }
 
