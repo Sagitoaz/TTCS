@@ -38,12 +38,15 @@ namespace TTCS.UI.Combat
             public Image           RarityBorderImage;
             public Image           RarityBackgroundImage;
             public TextMeshProUGUI HPText;
+            public TextMeshProUGUI ShieldText;
+            public Image           ShieldOverlayImage;
             public CanvasGroup    SlotGroup;
             public RectTransform   EffectRoot;
 
             private float _maxHP = 1f;
             private float _maxMP = 1f;
             private float _lastHPPercent = 1f;
+            private int _currentShield;
             private readonly List<GameObject> _spawnedEffectIcons = new List<GameObject>();
 
             public void Initialize(CombatEntity entity, int maxMP, Sprite portraitSprite)
@@ -74,6 +77,7 @@ namespace TTCS.UI.Combat
                 }
 
                 SetHPText(entity.HPPercent);
+                SetShield(entity.Health.Shield);
                 SlotGroup.alpha = 1f;
                 if (SlotRectTransform != null)
                     SlotRectTransform.localScale = Vector3.one;
@@ -214,6 +218,7 @@ namespace TTCS.UI.Combat
                 }
 
                 SetHPText(newPercent);
+                UpdateShieldOverlay();
             }
 
             public void AnimateMP(int currentMana, int maxMana)
@@ -262,7 +267,15 @@ namespace TTCS.UI.Combat
                 }
 
                 SetHPText(0f);
+                SetShield(0);
                 SlotGroup.DOFade(0.4f, 0.5f).SetDelay(0.2f);
+            }
+
+            public void SetShield(int shieldAmount)
+            {
+                _currentShield = Mathf.Max(0, shieldAmount);
+                SetShieldText(_currentShield);
+                UpdateShieldOverlay();
             }
 
             public void SetEffectIcons(IReadOnlyList<string> effectIds, Func<string, Sprite> spriteResolver)
@@ -354,6 +367,41 @@ namespace TTCS.UI.Combat
             {
                 if (HPText != null)
                     HPText.text = $"{Mathf.RoundToInt(percent * _maxHP)}/{Mathf.RoundToInt(_maxHP)}";
+            }
+
+            private void SetShieldText(int shieldAmount)
+            {
+                if (ShieldText == null)
+                    return;
+
+                ShieldText.text = shieldAmount > 0 ? $"+{shieldAmount}" : string.Empty;
+                ShieldText.gameObject.SetActive(shieldAmount > 0);
+            }
+
+            private void UpdateShieldOverlay()
+            {
+                if (ShieldOverlayImage == null)
+                    return;
+
+                var rect = ShieldOverlayImage.rectTransform;
+                if (rect == null)
+                    return;
+
+                var hpPercent = Mathf.Clamp01(_lastHPPercent);
+                var shieldPercent = _maxHP > 0f ? Mathf.Clamp01(_currentShield / _maxHP) : 0f;
+                var effectiveEnd = Mathf.Clamp01(hpPercent + shieldPercent);
+                var showOverlay = _currentShield > 0 && effectiveEnd > 0f;
+
+                ShieldOverlayImage.gameObject.SetActive(showOverlay);
+                if (!showOverlay)
+                    return;
+
+                // RPG-style overlay: shield covers the current HP segment, then extends into
+                // the remaining effective HP area instead of appearing only as a thin add-on.
+                rect.anchorMin = new Vector2(0f, rect.anchorMin.y);
+                rect.anchorMax = new Vector2(effectiveEnd, rect.anchorMax.y);
+                rect.offsetMin = new Vector2(0f, rect.offsetMin.y);
+                rect.offsetMax = new Vector2(0f, rect.offsetMax.y);
             }
 
             private RectTransform SlotRectTransform => HPSlider != null
@@ -1096,6 +1144,7 @@ namespace TTCS.UI.Combat
             bus.Subscribe<ManaChangedEvent>(OnManaChanged);
             bus.Subscribe<TurnStartedEvent>(OnTurnStarted);
             bus.Subscribe<TurnEndedEvent>(OnTurnEnded);
+            bus.Subscribe<ShieldChangedEvent>(OnShieldChanged);
             bus.Subscribe<StatusEffectAppliedEvent>(OnStatusEffectApplied);
             bus.Subscribe<StatusEffectRemovedEvent>(OnStatusEffectRemoved);
             
@@ -1110,6 +1159,7 @@ namespace TTCS.UI.Combat
             bus.Unsubscribe<ManaChangedEvent>(OnManaChanged);
             bus.Unsubscribe<TurnStartedEvent>(OnTurnStarted);
             bus.Unsubscribe<TurnEndedEvent>(OnTurnEnded);
+            bus.Unsubscribe<ShieldChangedEvent>(OnShieldChanged);
             bus.Unsubscribe<StatusEffectAppliedEvent>(OnStatusEffectApplied);
             bus.Unsubscribe<StatusEffectRemovedEvent>(OnStatusEffectRemoved);
             
@@ -1172,6 +1222,14 @@ namespace TTCS.UI.Combat
 
             if (_slotMap.TryGetValue(e.EntityId, out var slot))
                 slot.AnimateMP(e.CurrentMana, e.MaxMana);
+        }
+
+        private void OnShieldChanged(ShieldChangedEvent e)
+        {
+            if (e == null || !_slotMap.TryGetValue(e.EntityId, out var slot))
+                return;
+
+            slot.SetShield(e.CurrentShield);
         }
 
         private void OnStatusEffectApplied(StatusEffectAppliedEvent e)

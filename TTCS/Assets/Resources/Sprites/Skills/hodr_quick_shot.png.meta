@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6aa28c1eef8ce8c42a657b83b2e3eb73
+guid: 8962ea6182fa4824092083cfd059d9f0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6374978861374636847
-    second: fomortiis_portrait 1(1)(1)(1)_0
+      213: -4469389915377378270
+    second: skill_hodr_quick_shot_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fomortiis_portrait 1(1)(1)(1)_0
+      name: skill_hodr_quick_shot_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 0
-        width: 730
-        height: 1785
+        x: 3
+        y: 1
+        width: 68
+        height: 71
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f230cd29f79787850800000000000000
-      internalID: 6374978861374636847
+      spriteID: 22cd7334d8989f1c0800000000000000
+      internalID: -4469389915377378270
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 914ce4522acb42344bb8dd8047910e28
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      fomortiis_portrait 1(1)(1)(1)_0: 6374978861374636847
+      skill_hodr_quick_shot_0: -4469389915377378270
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

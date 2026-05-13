@@ -60,6 +60,7 @@ namespace TTCS.Combat.Components
             if (rawDamage <= 0 || IsDead) return 0;
 
             int remaining = rawDamage;
+            bool shieldChanged = false;
 
             // Hấp thụ qua shield trước
             if (_shield > 0)
@@ -67,7 +68,11 @@ namespace TTCS.Combat.Components
                 int absorbed = Mathf.Min(_shield, remaining);
                 _shield    -= absorbed;
                 remaining  -= absorbed;
+                shieldChanged = absorbed > 0;
             }
+
+            if (shieldChanged)
+                PublishShieldChanged();
 
             if (remaining <= 0) return 0;
 
@@ -104,17 +109,31 @@ namespace TTCS.Combat.Components
         // ─── Shield ──────────────────────────────────────────────────────
         public void AddShield(int amount)
         {
-            if (amount > 0) _shield += amount;
+            if (amount <= 0) return;
+
+            _shield += amount;
+            PublishShieldChanged();
         }
 
         public void RemoveShield(int amount)
         {
+            if (amount <= 0) return;
+
             _shield = Mathf.Max(0, _shield - amount);
+            PublishShieldChanged();
         }
 
         public void ClearShield()
         {
+            if (_shield <= 0) return;
+
             _shield = 0;
+            PublishShieldChanged();
+        }
+
+        private void PublishShieldChanged()
+        {
+            EventBus.Instance.Publish(new ShieldChangedEvent(_entityId, _shield));
         }
     }
 }
