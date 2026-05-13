@@ -24,6 +24,8 @@ Pause dùng `Time.timeScale = 0` để dừng combat loop.
 - Tạo 1 Horizontal Scroll/Content (RectTransform) trong Result Panel → kéo vào `_victoryRewardContent`
 - Kéo prefab `TTCS.Flow.LevelSelect.LevelRewardItemView` vào `_victoryRewardItemViewPrefab`
 
+`CombatUIController` chỉ instantiate item vào content; mọi căn chỉnh layout/spacing/size bạn chỉnh trong Unity Editor.
+
 Nếu không set 2 field trên thì combat vẫn chạy bình thường, chỉ là không hiện danh sách reward.
 
 ## Result Team Progress (Level + EXP)

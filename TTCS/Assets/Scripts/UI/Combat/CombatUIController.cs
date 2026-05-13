@@ -420,13 +420,11 @@ namespace TTCS.UI.Combat
 
             if (!victory)
             {
-                ResizeHorizontalContent(_victoryRewardContent, _victoryRewardItemViewPrefab.GetComponent<RectTransform>(), 0, _victoryRewardSpacing, _victoryRewardPaddingLeftRight);
                 return;
             }
 
             if (CombatSceneManager.Instance == null || !CombatSceneManager.Instance.TryGetLastGrantedRewards(out var gold, out var exp, out var items))
             {
-                ResizeHorizontalContent(_victoryRewardContent, _victoryRewardItemViewPrefab.GetComponent<RectTransform>(), 0, _victoryRewardSpacing, _victoryRewardPaddingLeftRight);
                 return;
             }
 
@@ -438,8 +436,6 @@ namespace TTCS.UI.Combat
                 _spawnedVictoryRewardViews.Add(view.gameObject);
                 view.Bind(reward.Rarity, reward.Icon, reward.Label);
             }
-
-            ResizeHorizontalContent(_victoryRewardContent, _victoryRewardItemViewPrefab.GetComponent<RectTransform>(), rewards.Count, _victoryRewardSpacing, _victoryRewardPaddingLeftRight);
         }
 
         private void RefreshResultTeamProgress()
