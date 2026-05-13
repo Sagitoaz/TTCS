@@ -1,0 +1,64 @@
+{
+  "id": "skill_fomortiis_dragon_roar",
+  "nameKey": "Dragon Roar",
+  "description": "A dark magical roar that shakes every enemy and weakens their resolve.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "all_enemies",
+    "count": -1,
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 20,
+    "cooldown": 3,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 1.45",
+    "element": "dark",
+    "canCrit": false,
+    "ignoreDefense": 0.12
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 1.45",
+      "element": "dark",
+      "chance": 1.0,
+      "duration": 0
+    },
+    {
+      "type": "stun",
+      "value": "1",
+      "chance": 0.75,
+      "duration": 1
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 420,
+        "endMs": 760,
+        "type": "cast"
+      }
+    ],
+    "grades": {}
+  },
+
+  "actionCost": {
+    "timelineUnits": 145,
+    "description": "Boss dark roar cast"
+  },
+
+  "visual": {
+    "attackStyle": "ranged",
+    "animation": "fomortiis_dragon_roar_skillcast",
+    "cameraShake": 0.36
+  }
+}

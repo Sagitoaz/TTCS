@@ -25,12 +25,7 @@
   
   "moveSet": [
     {
-      "skillId": "skill_knight_slash",
-      "weight": 50,
-      "conditions": []
-    },
-    {
-      "skillId": "skill_knight_guard",
+      "skillId": "skill_henry_guard",
       "weight": 30,
       "conditions": [
         {
@@ -40,7 +35,7 @@
       ]
     },
     {
-      "skillId": "skill_knight_rage",
+      "skillId": "skill_henry_rage",
       "weight": 40,
       "conditions": [
         {

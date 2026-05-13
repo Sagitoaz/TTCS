@@ -7,7 +7,6 @@
   "targetRule": {
     "type": "all_enemies",
     "count": -1,
-    "filter": [],
     "canTargetSelf": false
   },
 
@@ -24,22 +23,7 @@
     "ignoreDefense": 0
   },
 
-  "effects": [
-    {
-      "type": "taunt",
-      "value": "1",
-      "element": "",
-      "chance": 1.0,
-      "duration": 1
-    },
-    {
-      "type": "debuff_atk",
-      "value": "0.15",
-      "element": "",
-      "chance": 0.5,
-      "duration": 1
-    }
-  ],
+  "effects": [],
 
   "timing": {
     "hasTimingWindow": false,
@@ -53,9 +37,7 @@
   },
 
   "visual": {
-    "animation": "warrior_taunt",
-    "vfxPrefab": "VFX/taunt_effect",
-    "sfx": "SFX/warrior_battle_cry",
+    "animation": "warrior_taunt_skillcast",
     "cameraShake": 0.05
   }
 }

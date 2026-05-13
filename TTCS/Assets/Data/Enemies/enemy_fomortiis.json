@@ -1,0 +1,113 @@
+{
+  "id": "enemy_fomortiis",
+  "nameKey": "Fomortiis",
+  "description": "A colossal dragon boss whose fists shatter armor and whose dark roar calls ruin from the void.",
+  "type": "boss",
+  "element": "dark",
+  "role": "dragon_boss",
+
+  "baseStats": {
+    "hp": 12500,
+    "atk": 470,
+    "def": 310,
+    "spd": 70,
+    "crit": 0.12,
+    "resist": 0.45
+  },
+
+  "resistances": {
+    "physical": 0.25,
+    "fire": 0.15,
+    "ice": 0.05,
+    "lightning": 0.0,
+    "dark": 0.5
+  },
+
+  "moveSet": [
+    {
+      "skillId": "skill_fomortiis_crushing_fist",
+      "weight": 45,
+      "conditions": []
+    },
+    {
+      "skillId": "skill_fomortiis_titan_slam",
+      "weight": 30,
+      "conditions": []
+    },
+    {
+      "skillId": "skill_fomortiis_dragon_roar",
+      "weight": 25,
+      "conditions": [
+        {
+          "type": "turn_count",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "skillId": "skill_fomortiis_void_summons",
+      "weight": 35,
+      "conditions": [
+        {
+          "type": "hp_below",
+          "value": 0.55
+        }
+      ]
+    }
+  ],
+
+  "phases": [
+    {
+      "phaseId": 1,
+      "hpRange": [1.0, 0.55],
+      "moves": ["crushing_fist", "titan_slam", "dragon_roar"],
+      "weights": [50, 30, 20],
+      "behavior": "boss_brutal"
+    },
+    {
+      "phaseId": 2,
+      "hpRange": [0.55, 0.0],
+      "moves": ["crushing_fist", "titan_slam", "dragon_roar", "void_summons"],
+      "weights": [30, 25, 25, 35],
+      "behavior": "boss_enraged_summoner"
+    }
+  ],
+
+  "telegraph": {
+    "cueType": "visual_and_sfx",
+    "duration": 1.45,
+    "animationKey": "fomortiis_boss_telegraph"
+  },
+
+  "aiProfile": {
+    "aggression": 0.9,
+    "targetPriority": ["highest_threat", "lowest_hp"],
+    "useSkillsWisely": true,
+    "retreatThreshold": 0.0
+  },
+
+  "rewards": {
+    "expBase": 600,
+    "goldBase": 850,
+    "drops": [
+      {
+        "itemId": "item_guardian_emblem",
+        "dropChance": 0.18,
+        "amount": 1
+      },
+      {
+        "itemId": "item_heart_of_phoenix",
+        "dropChance": 0.08,
+        "amount": 1
+      }
+    ]
+  },
+
+  "visual": {
+    "portraitPath": "Characters/fomortiis_portrait",
+    "spritePath": "Enemies/fomortiis_sprite",
+    "animatorController": "Enemies/fomortiis_animator",
+    "scale": 2.2
+  }
+}
+

@@ -7,7 +7,6 @@
   "targetRule": {
     "type": "single_enemy",
     "count": 1,
-    "filter": [],
     "canTargetSelf": false
   },
 
@@ -64,8 +63,6 @@
   "visual": {
     "attackStyle": "melee",
     "animation": "warrior_power_strike",
-    "vfxPrefab": "VFX/power_strike_effect",
-    "sfx": "SFX/heavy_sword_swing",
     "cameraShake": 0.3
   }
 }

@@ -1317,6 +1317,7 @@ GameObject:
   - component: {fileID: 8215860237660710769}
   - component: {fileID: 159215102193043636}
   - component: {fileID: 7998551873715948659}
+  - component: {fileID: 747733884893923964}
   m_Layer: 0
   m_Name: char_arden
   m_TagString: Untagged
@@ -1421,6 +1422,100 @@ MonoBehaviour:
   _useParentAsMotionRoot: 1
   _whiteFlashDuration: 0.07
   _redTintDuration: 0.1
+--- !u!114 &747733884893923964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5674202963645588919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1549c19146be6d04f80d7e15b03111bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TTCS.Visual.VFX.CharacterSkillTargetVFXController
+  _ownerView: {fileID: 8215860237660710769}
+  _skills:
+  - skillId: skill_arden_guard_breaker
+    layers:
+    - label: skill_arden_guard_breaker
+      prefab: {fileID: 332245191359654440, guid: 17c1b9bb43da92f48b56e15ebb9d87ea, type: 3}
+      spawnMode: 0
+      delay: 0
+      lifetime: 0.3
+      casterAnchor: 0
+      targetAnchor: 0
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0
+      travelCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      rotateTowardTravelDirection: 0
+  - skillId: skill_arden_iron_bulwark
+    layers:
+    - label: skill_arden_iron_bulwark
+      prefab: {fileID: 105195855172187938, guid: 889b9d418678f444fad20807fa6a7026, type: 3}
+      spawnMode: 0
+      delay: 0
+      lifetime: 0.3
+      casterAnchor: 0
+      targetAnchor: 0
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0
+      travelCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      rotateTowardTravelDirection: 0
+  - skillId: skill_arden_shield_wall
+    layers:
+    - label: skill_arden_shield_wall
+      prefab: {fileID: 105195855172187938, guid: 889b9d418678f444fad20807fa6a7026, type: 3}
+      spawnMode: 0
+      delay: 0
+      lifetime: 0.3
+      casterAnchor: 0
+      targetAnchor: 0
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0
+      travelCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      rotateTowardTravelDirection: 0
+  - skillId: skill_arden_sword_swing
+    layers:
+    - label: skill_arden_sword_swing
+      prefab: {fileID: 332245191359654440, guid: 17c1b9bb43da92f48b56e15ebb9d87ea, type: 3}
+      spawnMode: 0
+      delay: 0
+      lifetime: 0.3
+      casterAnchor: 0
+      targetAnchor: 0
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0
+      travelCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      rotateTowardTravelDirection: 0
 --- !u!1 &5824246663975959282
 GameObject:
   m_ObjectHideFlags: 0

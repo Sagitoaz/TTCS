@@ -1,14 +1,13 @@
 {
   "id": "skill_baldr_crit_oath",
-  "nameKey": "Solar Oath",
-  "description": "Empower self with solar focus, increasing crit rate by 50% for 3 turns.",
-  "type": "buff",
+  "nameKey": "Solar Strike",
+  "description": "A decisive melee strike infused with solar energy, cutting down enemies with overwhelming force.",
+  "type": "attack",
 
   "targetRule": {
-    "type": "self",
+    "type": "single_enemy",
     "count": 1,
-    "filter": [],
-    "canTargetSelf": true
+    "canTargetSelf": false
   },
 
   "cost": {
@@ -18,37 +17,41 @@
   },
 
   "damage": {
-    "formula": "",
-    "element": "",
-    "canCrit": false,
-    "ignoreDefense": 0
+    "formula": "ATK * 1.3",
+    "element": "light",
+    "canCrit": true,
+    "ignoreDefense": 0.1
   },
 
   "effects": [
     {
-      "type": "crit_up",
-      "value": "0.5",
-      "element": "",
+      "type": "damage",
+      "value": "ATK * 1.3",
+      "element": "light",
       "chance": 1.0,
-      "duration": 3
+      "duration": 0
     }
   ],
 
   "timing": {
-    "hasTimingWindow": false,
-    "windows": [],
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 450,
+        "endMs": 850
+      }
+    ],
     "grades": {}
   },
 
   "actionCost": {
-    "timelineUnits": 90,
-    "description": "Self empowerment"
+    "timelineUnits": 110,
+    "description": "Strong melee attack"
   },
 
   "visual": {
+    "attackStyle": "melee",
     "animation": "baldr_crit_oath",
-    "vfxPrefab": "VFX/baldr_crit_oath",
-    "sfx": "SFX/baldr_crit_oath",
     "cameraShake": 0.0
   }
 }

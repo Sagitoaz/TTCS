@@ -1,0 +1,1 @@
+Bandit use the attack vfx of warrior

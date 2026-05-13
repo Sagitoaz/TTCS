@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 922832897466025928}
   - component: {fileID: 3331593649262865715}
   - component: {fileID: 7121774396314946161}
+  - component: {fileID: 3364517677270543257}
   m_Layer: 0
   m_Name: enemy_bandit
   m_TagString: Untagged
@@ -113,6 +114,40 @@ MonoBehaviour:
   _useParentAsMotionRoot: 1
   _whiteFlashDuration: 0.07
   _redTintDuration: 0.1
+--- !u!114 &3364517677270543257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193208960967802719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1549c19146be6d04f80d7e15b03111bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TTCS.Visual.VFX.CharacterSkillTargetVFXController
+  _ownerView: {fileID: 3331593649262865715}
+  _skills:
+  - skillId: skill_bandit_strike
+    layers:
+    - label: skill_bandit_strike
+      prefab: {fileID: 332245191359654440, guid: 17c1b9bb43da92f48b56e15ebb9d87ea, type: 3}
+      spawnMode: 0
+      delay: 0
+      lifetime: 0.3
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0
+      travelCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      rotateTowardTravelDirection: 0
 --- !u!1 &1224073280832478483
 GameObject:
   m_ObjectHideFlags: 0

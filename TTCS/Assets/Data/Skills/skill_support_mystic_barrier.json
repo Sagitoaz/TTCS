@@ -7,7 +7,6 @@
   "targetRule": {
     "type": "single_ally",
     "count": 1,
-    "filter": [],
     "canTargetSelf": true
   },
 
@@ -46,9 +45,7 @@
   },
 
   "visual": {
-    "animation": "support_mystic_barrier",
-    "vfxPrefab": "VFX/support_mystic_barrier",
-    "sfx": "SFX/support_mystic_barrier",
+    "animation": "support_mystic_barrier_skillcast",
     "cameraShake": 0.0
   }
 }

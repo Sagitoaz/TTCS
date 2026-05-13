@@ -2826,6 +2826,7 @@ GameObject:
   - component: {fileID: 6350209191241197115}
   - component: {fileID: 2522930856243171885}
   - component: {fileID: 8170900326373642277}
+  - component: {fileID: 8918542438541359665}
   m_Layer: 0
   m_Name: enemy_henry
   m_TagString: Untagged
@@ -2935,6 +2936,60 @@ MonoBehaviour:
   _useParentAsMotionRoot: 1
   _whiteFlashDuration: 0.07
   _redTintDuration: 0.1
+--- !u!114 &8918542438541359665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7348428991577930513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1549c19146be6d04f80d7e15b03111bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TTCS.Visual.VFX.CharacterSkillTargetVFXController
+  _ownerView: {fileID: 2522930856243171885}
+  _skills:
+  - skillId: skill_henry_guard
+    layers:
+    - label: skill_henry_guard
+      prefab: {fileID: 105195855172187938, guid: 889b9d418678f444fad20807fa6a7026, type: 3}
+      spawnMode: 0
+      delay: 0
+      lifetime: 0.3
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0
+      travelCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      rotateTowardTravelDirection: 0
+  - skillId: skill_henry_rage
+    layers:
+    - label: skill_henry_rage
+      prefab: {fileID: 2925679929008768620, guid: 50147dfa065569a4eb208d8bcf6df0b2, type: 3}
+      spawnMode: 0
+      delay: 0
+      lifetime: 0.3
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0
+      travelCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      rotateTowardTravelDirection: 0
 --- !u!1 &7472848652762386557
 GameObject:
   m_ObjectHideFlags: 0

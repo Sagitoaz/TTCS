@@ -1,0 +1,65 @@
+{
+  "id": "skill_fomortiis_void_summons",
+  "nameKey": "Void Summons",
+  "description": "Fomortiis tears open the void and calls shadow claws to strike his enemies.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "all_enemies",
+    "count": -1,
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 35,
+    "cooldown": 4,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 1.8",
+    "element": "dark",
+    "canCrit": false,
+    "ignoreDefense": 0.18
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 1.8",
+      "element": "dark",
+      "chance": 1.0,
+      "duration": 0
+    },
+    {
+      "type": "burn",
+      "value": "90",
+      "element": "dark",
+      "chance": 0.45,
+      "duration": 2
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 520,
+        "endMs": 900,
+        "type": "summon"
+      }
+    ],
+    "grades": {}
+  },
+
+  "actionCost": {
+    "timelineUnits": 165,
+    "description": "High-impact dark summon cast"
+  },
+
+  "visual": {
+    "attackStyle": "ranged",
+    "animation": "fomortiis_void_summons_skillcast",
+    "cameraShake": 0.32
+  }
+}

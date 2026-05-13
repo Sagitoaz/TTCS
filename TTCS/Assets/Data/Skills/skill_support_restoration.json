@@ -7,7 +7,6 @@
   "targetRule": {
     "type": "single_ally",
     "count": 1,
-    "filter": [],
     "canTargetSelf": true
   },
 
@@ -71,9 +70,7 @@
   },
 
   "visual": {
-    "animation": "support_restoration",
-    "vfxPrefab": "VFX/support_restoration",
-    "sfx": "SFX/support_restoration",
+    "animation": "support_restoration_skillcast",
     "cameraShake": 0.0
   }
 }

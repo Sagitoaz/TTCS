@@ -16,3 +16,4 @@ Thư mục này là điểm vào duy nhất cho toàn bộ setup/build/test thao
 - `06_Unity_Editor_Setup_Detailed.md`
 - `07_Build_Test_Summary.md`
 - `08_Unity_Editor_Quick_Setup.md`
+- `09_Skill_Target_VFX_Spawner_Setup.md`

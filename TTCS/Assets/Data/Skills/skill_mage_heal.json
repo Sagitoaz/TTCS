@@ -7,7 +7,6 @@
   "targetRule": {
     "type": "single_ally",
     "count": 1,
-    "filter": [],
     "canTargetSelf": true
   },
 
@@ -72,8 +71,6 @@
 
   "visual": {
     "animation": "mage_heal",
-    "vfxPrefab": "VFX/heal_effect",
-    "sfx": "SFX/heal_cast",
     "cameraShake": 0.0
   }
 }

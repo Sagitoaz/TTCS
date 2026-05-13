@@ -7,7 +7,6 @@
   "targetRule": {
     "type": "all_enemies",
     "count": -1,
-    "filter": [],
     "canTargetSelf": false
   },
 
@@ -80,9 +79,7 @@
 
   "visual": {
     "attackStyle": "ranged",
-    "animation": "mage_lightning",
-    "vfxPrefab": "VFX/lightning_effect",
-    "sfx": "SFX/thunder_strike",
+    "animation": "mage_lightning_skillcast",
     "cameraShake": 0.4
   }
 }

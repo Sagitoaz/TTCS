@@ -1,0 +1,58 @@
+{
+  "id": "skill_hodr_quick_shot",
+  "nameKey": "Quick Shot",
+  "description": "Hodr fires a clean standard shot at one target.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "single_enemy",
+    "count": 1,
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 0,
+    "cooldown": 0,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 1.2",
+    "element": "physical",
+    "canCrit": true,
+    "ignoreDefense": 0.08
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 1.2",
+      "element": "physical",
+      "chance": 1.0,
+      "duration": 0
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 150,
+        "endMs": 360,
+        "type": "shot"
+      }
+    ],
+    "grades": {}
+  },
+
+  "actionCost": {
+    "timelineUnits": 90,
+    "description": "Fast firearm basic shot"
+  },
+
+  "visual": {
+    "attackStyle": "ranged",
+    "animation": "hodr_quick_shot",
+    "cameraShake": 0.06
+  }
+}

@@ -7,7 +7,6 @@
   "targetRule": {
     "type": "all_allies",
     "count": 3,
-    "filter": [],
     "canTargetSelf": false
   },
 
@@ -79,8 +78,6 @@
 
   "visual": {
     "animation": "support_astral_prayer",
-    "vfxPrefab": "VFX/support_astral_prayer",
-    "sfx": "SFX/support_astral_prayer",
     "cameraShake": 0.0
   }
 }

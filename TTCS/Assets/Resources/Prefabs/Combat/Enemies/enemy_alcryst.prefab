@@ -4839,6 +4839,7 @@ GameObject:
   - component: {fileID: 7132870232419746039}
   - component: {fileID: 389919659887332747}
   - component: {fileID: 7506464871263761933}
+  - component: {fileID: 5732493309573421657}
   m_Layer: 0
   m_Name: enemy_alcryst
   m_TagString: Untagged
@@ -4948,6 +4949,78 @@ MonoBehaviour:
   _useParentAsMotionRoot: 1
   _whiteFlashDuration: 0.07
   _redTintDuration: 0.1
+--- !u!114 &5732493309573421657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5369552681275426377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1549c19146be6d04f80d7e15b03111bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TTCS.Visual.VFX.CharacterSkillTargetVFXController
+  _ownerView: {fileID: 389919659887332747}
+  _skills:
+  - skillId: skill_alcryst_arrow_shot
+    layers:
+    - label: skill_alcryst_arrow_shot
+      prefab: {fileID: 2108967025874348692, guid: 3cd0b4a395e27864bbce6ad035563f63, type: 3}
+      spawnMode: 1
+      delay: 0
+      lifetime: 0
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0.3
+      travelCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotateTowardTravelDirection: 0
+  - skillId: skill_alcryst_sky_piercer
+    layers:
+    - label: skill_alcryst_sky_piercer
+      prefab: {fileID: 4586323232362230727, guid: 338e4e090f35b3f45ac154a138272960, type: 3}
+      spawnMode: 0
+      delay: 0
+      lifetime: 0.3
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0.3
+      travelCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      rotateTowardTravelDirection: 0
 --- !u!1 &5460454663702470394
 GameObject:
   m_ObjectHideFlags: 0

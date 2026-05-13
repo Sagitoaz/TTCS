@@ -7,7 +7,6 @@
   "targetRule": {
     "type": "single_enemy",
     "count": 1,
-    "filter": [],
     "canTargetSelf": false
   },
 
@@ -73,8 +72,6 @@
   "visual": {
     "attackStyle": "ranged",
     "animation": "support_arcane_bolt",
-    "vfxPrefab": "VFX/support_arcane_bolt",
-    "sfx": "SFX/support_arcane_bolt",
     "cameraShake": 0.15
   }
 }

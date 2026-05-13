@@ -7,7 +7,6 @@
   "targetRule": {
     "type": "single_enemy",
     "count": 1,
-    "filter": [],
     "canTargetSelf": false
   },
   
@@ -32,11 +31,10 @@
       "chance": 1.0
     },
     {
-      "type": "status_effect",
-      "effectId": "effect_burn",
+      "type": "burn",
+      "value": "50",
       "duration": 3,
-      "chance": 0.6,
-      "stacks": 1
+      "chance": 0.6
     }
   ],
   
@@ -79,9 +77,7 @@
   
   "visual": {
     "attackStyle": "ranged",
-    "animation": "mage_cast_fireball",
-    "vfxPrefab": "VFX/fireball_explosion",
-    "sfx": "SFX/fire_whoosh",
+    "animation": "mage_cast_fireball_skillcast",
     "cameraShake": 0.3
   }
 }

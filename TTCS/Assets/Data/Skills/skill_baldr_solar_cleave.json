@@ -7,7 +7,6 @@
   "targetRule": {
     "type": "all_enemies",
     "count": 3,
-    "filter": [],
     "canTargetSelf": false
   },
 
@@ -72,9 +71,7 @@
 
   "visual": {
     "attackStyle": "melee",
-    "animation": "baldr_solar_cleave",
-    "vfxPrefab": "VFX/baldr_solar_cleave",
-    "sfx": "SFX/baldr_solar_cleave",
+    "animation": "baldr_solar_cleave_skillcast",
     "cameraShake": 0.22
   }
 }

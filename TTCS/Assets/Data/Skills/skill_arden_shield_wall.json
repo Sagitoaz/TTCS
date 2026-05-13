@@ -7,7 +7,6 @@
   "targetRule": {
     "type": "single_ally",
     "count": 1,
-    "filter": [],
     "canTargetSelf": true
   },
 
@@ -71,9 +70,7 @@
   },
 
   "visual": {
-    "animation": "arden_shield_raise",
-    "vfxPrefab": "VFX/arden_shield_wall",
-    "sfx": "SFX/arden_shield_wall",
+    "animation": "arden_shield_raise_skillcast",
     "cameraShake": 0.0
   }
 }

@@ -7,7 +7,6 @@
   "targetRule": {
     "type": "single_enemy",
     "count": 1,
-    "filter": [],
     "canTargetSelf": false
   },
 
@@ -55,8 +54,6 @@
   "visual": {
     "attackStyle": "melee",
     "animation": "baldr_sun_slash",
-    "vfxPrefab": "VFX/baldr_sun_slash",
-    "sfx": "SFX/baldr_sun_slash",
     "cameraShake": 0.15
   }
 }

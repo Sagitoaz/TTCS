@@ -7,7 +7,6 @@
   "targetRule": {
     "type": "single_ally",
     "count": 1,
-    "filter": [],
     "canTargetSelf": true
   },
 
@@ -47,8 +46,6 @@
 
   "visual": {
     "animation": "mage_shield",
-    "vfxPrefab": "VFX/mage_shield_effect",
-    "sfx": "SFX/shield_cast",
     "cameraShake": 0.0
   }
 }

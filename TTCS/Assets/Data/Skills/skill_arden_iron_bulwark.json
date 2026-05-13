@@ -7,7 +7,6 @@
   "targetRule": {
     "type": "self",
     "count": 1,
-    "filter": [],
     "canTargetSelf": true
   },
 
@@ -46,9 +45,7 @@
   },
 
   "visual": {
-    "animation": "arden_shield_raise",
-    "vfxPrefab": "VFX/arden_iron_bulwark",
-    "sfx": "SFX/arden_shield_raise",
+    "animation": "arden_shield_raise_skillcast",
     "cameraShake": 0.0
   }
 }
