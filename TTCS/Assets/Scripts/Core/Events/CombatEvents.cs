@@ -148,6 +148,19 @@ namespace TTCS.Core.Events
         }
     }
 
+    /// <summary>Event khi shield của entity thay đổi.</summary>
+    public class ShieldChangedEvent : GameEvent
+    {
+        public string EntityId { get; private set; }
+        public int CurrentShield { get; private set; }
+
+        public ShieldChangedEvent(string entityId, int currentShield)
+        {
+            EntityId = entityId;
+            CurrentShield = currentShield;
+        }
+    }
+
     /// <summary>Event khi entity chết</summary>
     public class EntityDeathEvent : GameEvent
     {
