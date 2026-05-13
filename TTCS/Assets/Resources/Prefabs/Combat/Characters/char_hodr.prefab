@@ -8748,6 +8748,7 @@ GameObject:
   - component: {fileID: 8677483262081591384}
   - component: {fileID: 710468535752564768}
   - component: {fileID: 7280032425623682491}
+  - component: {fileID: 2130009467703962003}
   m_Layer: 0
   m_Name: char_hodr
   m_TagString: Untagged
@@ -8855,6 +8856,280 @@ MonoBehaviour:
   _useParentAsMotionRoot: 1
   _whiteFlashDuration: 0.07
   _redTintDuration: 0.1
+--- !u!114 &2130009467703962003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8486539682671175495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1549c19146be6d04f80d7e15b03111bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TTCS.Visual.VFX.CharacterSkillTargetVFXController
+  _ownerView: {fileID: 8677483262081591384}
+  _skills:
+  - skillId: skill_hodr_double_tap
+    layers:
+    - label: skill_hodr_double_tap
+      prefab: {fileID: 344568536299306778, guid: 5e2c60527787e0440b67607574b10a7d, type: 3}
+      spawnMode: 1
+      delay: 0
+      lifetime: 0.01
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0.3
+      travelCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotateTowardTravelDirection: 0
+  - skillId: skill_hodr_eclipse_barrage
+    layers:
+    - label: skill_hodr_eclipse_barrage
+      prefab: {fileID: 344568536299306778, guid: 5e2c60527787e0440b67607574b10a7d, type: 3}
+      spawnMode: 1
+      delay: 0
+      lifetime: 0.01
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0.3
+      travelCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotateTowardTravelDirection: 0
+    - label: skill_hodr_eclipse_barrage_bloom
+      prefab: {fileID: 2756557532557146770, guid: a885a1f840bd8194b9c55eaaf29e5476, type: 3}
+      spawnMode: 0
+      delay: 0.3
+      lifetime: 0.3
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: -0.5, z: 0}
+      parentToTarget: 0
+      travelDuration: 0.3
+      travelCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotateTowardTravelDirection: 0
+  - skillId: skill_hodr_piercing_round
+    layers:
+    - label: skill_hodr_piercing_round
+      prefab: {fileID: 4692147822293872424, guid: 9a1d6f50d8f7e99499470c16d479de30, type: 3}
+      spawnMode: 1
+      delay: 0
+      lifetime: 0.01
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0.3
+      travelCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotateTowardTravelDirection: 0
+    - label: skill_hodr_piercing_round_bloom
+      prefab: {fileID: 2756557532557146770, guid: a885a1f840bd8194b9c55eaaf29e5476, type: 3}
+      spawnMode: 0
+      delay: 0.3
+      lifetime: 0.3
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: -0.5, z: 0}
+      parentToTarget: 0
+      travelDuration: 0.3
+      travelCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotateTowardTravelDirection: 0
+  - skillId: skill_hodr_quick_shot
+    layers:
+    - label: skill_hodr_quick_shot
+      prefab: {fileID: 344568536299306778, guid: 5e2c60527787e0440b67607574b10a7d, type: 3}
+      spawnMode: 1
+      delay: 0
+      lifetime: 0.01
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0.3
+      travelCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotateTowardTravelDirection: 0
+    - label: skill_hodr_quick_shot2
+      prefab: {fileID: 344568536299306778, guid: 5e2c60527787e0440b67607574b10a7d, type: 3}
+      spawnMode: 1
+      delay: 0.05
+      lifetime: 0.01
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: -0.5, z: 0}
+      parentToTarget: 0
+      travelDuration: 0.3
+      travelCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotateTowardTravelDirection: 0
 --- !u!1 &8893907411538553706
 GameObject:
   m_ObjectHideFlags: 0
