@@ -9,6 +9,7 @@ using TTCS.Core.Data;
 using TTCS.Core.Events;
 using TTCS.Core.Utilities;
 using TTCS.Core.Save;
+using TTCS.Core.Progression;
 using TTCS.Data;
 using TTCS.Debugging;
 using TTCS.Meta;
@@ -695,10 +696,30 @@ namespace TTCS.Combat.Managers
             Log($"CombatFlowController: Battle ended — {result}", LogCategory.Combat);
             CombatLogger.LogCombatResult(victory, TurnNumber);
 
-            // Save stage completion if victory and we have level/stage info
-            if (victory && !string.IsNullOrEmpty(_currentLevelId))
+            // Resolve levelId (Flow combat has it; editor/default combat may not).
+            var resolvedLevelId = _currentLevelId;
+            if (string.IsNullOrWhiteSpace(resolvedLevelId))
             {
-                SaveStageCompletion(_currentLevelId);
+                var stageId = _currentStage?.id ?? string.Empty;
+                resolvedLevelId = DataManager.Instance?.ResolveLevelIdByStageId(stageId) ?? stageId;
+            }
+
+            // Compute first-clear BEFORE saving progress.
+            var save = SaveManager.Instance?.CurrentSave;
+            var wasClearedBefore = save != null && !string.IsNullOrWhiteSpace(resolvedLevelId)
+                ? save.GetLevelProgress(resolvedLevelId).isCleared
+                : false;
+
+            // Save stage completion if victory
+            if (victory && !string.IsNullOrWhiteSpace(resolvedLevelId))
+            {
+                SaveStageCompletion(resolvedLevelId);
+            }
+
+            // Apply stage rewards (victory only)
+            if (victory)
+            {
+                ApplyVictoryRewards(resolvedLevelId, wasClearedBefore);
             }
 
             EventBus.Instance.Publish(new CombatEndedEvent(victory));
@@ -706,6 +727,132 @@ namespace TTCS.Combat.Managers
             yield return new WaitForSeconds(0.5f);
 
             _state = CombatState.Idle;
+        }
+
+        private void ApplyVictoryRewards(string levelId, bool wasClearedBefore)
+        {
+            var sceneMgr = CombatSceneManager.Instance;
+            if (sceneMgr != null && sceneMgr.RewardsAppliedThisBattle)
+            {
+                return;
+            }
+
+            var saveManager = SaveManager.Instance;
+            var save = saveManager?.CurrentSave;
+            if (save == null)
+            {
+                return;
+            }
+
+            var stage = sceneMgr != null ? sceneMgr.GetCurrentStageData() : _currentStage;
+            var rewards = stage?.rewards;
+            if (rewards == null)
+            {
+                sceneMgr?.SetLastGrantedRewards(0, 0, null, wasFirstClear: !wasClearedBefore);
+                return;
+            }
+
+            var wasFirstClear = !wasClearedBefore;
+            var grantedGold = 0;
+            var grantedExp = 0;
+            var grantedItems = new List<StageRewardItem>();
+
+            StageRewardGroup group = null;
+            if (wasFirstClear && rewards.firstClear != null)
+            {
+                group = rewards.firstClear;
+            }
+            else if (rewards.repeatClear != null)
+            {
+                group = rewards.repeatClear;
+            }
+
+            if (group != null)
+            {
+                grantedGold = group.gold > 0 ? group.gold : 0;
+                grantedExp = group.exp > 0 ? group.exp : 0;
+
+                if (group.items != null)
+                {
+                    foreach (var item in group.items)
+                    {
+                        if (item == null || string.IsNullOrWhiteSpace(item.id))
+                        {
+                            continue;
+                        }
+
+                        var amount = item.amount <= 0 ? 1 : item.amount;
+                        grantedItems.Add(new StageRewardItem { id = item.id, amount = amount });
+                    }
+                }
+            }
+            else if (rewards.repeat != null)
+            {
+                if (rewards.repeat.goldMax > 0)
+                {
+                    var min = Mathf.Max(0, rewards.repeat.goldMin);
+                    var max = Mathf.Max(min, rewards.repeat.goldMax);
+                    grantedGold = UnityEngine.Random.Range(min, max + 1);
+                }
+
+                if (rewards.repeat.expMax > 0)
+                {
+                    var min = Mathf.Max(0, rewards.repeat.expMin);
+                    var max = Mathf.Max(min, rewards.repeat.expMax);
+                    grantedExp = UnityEngine.Random.Range(min, max + 1);
+                }
+            }
+
+            if (grantedGold > 0)
+            {
+                save.gold += grantedGold;
+            }
+
+            if (grantedExp > 0)
+            {
+                // Stage exp currently maps to account totalExp.
+                save.totalExp += grantedExp;
+
+                // Also grant exp to each character in the battle party.
+                // SaveData stores exp as progress towards next level (not cumulative).
+                var grantedCharacterIds = new HashSet<string>();
+                for (var i = 0; i < _playerTeam.Count; i++)
+                {
+                    var characterId = _playerTeam[i]?.CharacterId;
+                    if (string.IsNullOrWhiteSpace(characterId))
+                    {
+                        continue;
+                    }
+
+                    if (!grantedCharacterIds.Add(characterId))
+                    {
+                        continue;
+                    }
+
+                    CharacterProgression.ApplyExp(save, characterId, grantedExp);
+                }
+            }
+
+            var hub = MetaServiceHub.Instance;
+            hub?.EnsureInitialized();
+            var inventory = hub?.InventoryService;
+            if (inventory != null && grantedItems.Count > 0)
+            {
+                foreach (var item in grantedItems)
+                {
+                    inventory.AddItem(item.id, item.amount);
+                }
+            }
+
+            sceneMgr?.SetLastGrantedRewards(grantedGold, grantedExp, grantedItems, wasFirstClear);
+
+            var slot = saveManager != null ? saveManager.ActiveSlotIndex : 0;
+            if (slot < 0) slot = 0;
+            saveManager?.Save(slot);
+
+            DebugLogger.Log(
+                $"[CombatFlowController] Victory rewards applied levelId='{levelId}' firstClear={wasFirstClear} gold={grantedGold} exp={grantedExp} items={grantedItems.Count}",
+                DebugLogger.LogCategory.Save);
         }
 
         private void SaveStageCompletion(string levelId)

@@ -17,13 +17,6 @@
         { "enemyId": "enemy_bandit", "level": 1, "position": 1 }
       ],
       "spawnDelay": 0
-    },
-    {
-      "wave": 2,
-      "enemies": [
-        { "enemyId": "enemy_bandit", "level": 2, "position": 1 }
-      ],
-      "spawnDelay": 1.0
     }
   ],
   "environment": {

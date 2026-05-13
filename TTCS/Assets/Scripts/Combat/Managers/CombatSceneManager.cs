@@ -90,6 +90,42 @@ namespace TTCS.Combat.Managers
         private StageDataModel _currentStage;
         private readonly List<GameObject> _spawnedViews = new List<GameObject>();
 
+        // Rewards granted on the most recent victory (for result UI).
+        private bool _rewardsAppliedThisBattle;
+        private int _lastGrantedGold;
+        private int _lastGrantedExp;
+        private bool _lastGrantedWasFirstClear;
+        private List<StageRewardItem> _lastGrantedItems;
+
+        public bool RewardsAppliedThisBattle => _rewardsAppliedThisBattle;
+        public bool LastGrantedWasFirstClear => _lastGrantedWasFirstClear;
+
+        public void ResetGrantedRewardsCache()
+        {
+            _rewardsAppliedThisBattle = false;
+            _lastGrantedGold = 0;
+            _lastGrantedExp = 0;
+            _lastGrantedWasFirstClear = false;
+            _lastGrantedItems = null;
+        }
+
+        public void SetLastGrantedRewards(int gold, int exp, List<StageRewardItem> items, bool wasFirstClear)
+        {
+            _rewardsAppliedThisBattle = true;
+            _lastGrantedGold = gold < 0 ? 0 : gold;
+            _lastGrantedExp = exp < 0 ? 0 : exp;
+            _lastGrantedWasFirstClear = wasFirstClear;
+            _lastGrantedItems = items;
+        }
+
+        public bool TryGetLastGrantedRewards(out int gold, out int exp, out IReadOnlyList<StageRewardItem> items)
+        {
+            gold = _lastGrantedGold;
+            exp = _lastGrantedExp;
+            items = _lastGrantedItems;
+            return _rewardsAppliedThisBattle;
+        }
+
         // ──────────────────────────────────────────────────────────────────
         #region Unity Lifecycle
 
@@ -121,6 +157,8 @@ namespace TTCS.Combat.Managers
         public IEnumerator InitializeCombat(string stageId, List<string> partyCharacterIds, int seed = 0)
         {
             Log($"CombatSceneManager: Initializing stage '{stageId}'...", LogCategory.Combat);
+
+            ResetGrantedRewardsCache();
 
             // ─── 1. Load stage data ───────────────────────────────────────
             yield return null; // Frame gap cho DataManager init nếu cần
@@ -179,6 +217,8 @@ namespace TTCS.Combat.Managers
         {
             var levelId = FlowRuntimeContext.SelectedLevelId;
             var lineupSnapshot = ResolvePartyFromFlowOrSave();
+
+            ResetGrantedRewardsCache();
 
             if (string.IsNullOrWhiteSpace(levelId))
             {

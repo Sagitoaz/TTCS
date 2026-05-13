@@ -33,6 +33,12 @@ namespace TTCS.Meta.Progression
                 return;
             }
 
+            // Rewards are now applied by CombatFlowController. Avoid double grant if this bridge exists in scene.
+            if (CombatSceneManager.Instance != null && CombatSceneManager.Instance.RewardsAppliedThisBattle)
+            {
+                return;
+            }
+
             var stage = CombatSceneManager.Instance?.GetCurrentStageData();
             var stageId = stage?.id ?? string.Empty;
             var levelId = DataManager.Instance?.ResolveLevelIdByStageId(stageId) ?? stageId;

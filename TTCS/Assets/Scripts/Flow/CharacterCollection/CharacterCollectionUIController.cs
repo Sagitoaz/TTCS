@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using TTCS.Core.Data;
+using TTCS.Core.Progression;
 using TTCS.Core.Save;
 using TTCS.Data;
 using TTCS.Flow.TeamFormation;
@@ -807,8 +808,7 @@ namespace TTCS.Flow.CharacterCollection
 
         private static int GetExpToNextLevel(int level)
         {
-            level = Math.Max(1, level);
-            return 100 + level * 50;
+            return CharacterProgression.GetExpToNextLevel(level);
         }
 
         private CharacterComputedStats ComputeCharacterStats(CharacterDataModel data, int level, string characterId)

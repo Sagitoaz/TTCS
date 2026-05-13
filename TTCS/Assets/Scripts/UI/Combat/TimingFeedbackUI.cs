@@ -133,8 +133,27 @@ namespace TTCS.UI.Combat
             // Screen shake qua Camera (chỉ khi Camera.main tồn tại)
             if (Camera.main != null)
             {
+                var camTransform = Camera.main.transform;
+                var originalLocalPos = camTransform.localPosition;
                 Vector3 shakeStrength = new Vector3(0.5f, 0.5f, 0f);
-                _sequence.Join(Camera.main.transform.DOShakePosition(_missDuration, shakeStrength, 15, 90f));
+                _sequence.Join(
+                    camTransform.DOShakePosition(_missDuration, shakeStrength, 15, 90f)
+                        .SetUpdate(true)
+                        .OnComplete(() =>
+                        {
+                            if (camTransform != null)
+                            {
+                                camTransform.localPosition = originalLocalPos;
+                            }
+                        })
+                        .OnKill(() =>
+                        {
+                            if (camTransform != null)
+                            {
+                                camTransform.localPosition = originalLocalPos;
+                            }
+                        })
+                );
             }
                 
             _sequence.AppendInterval(_missDuration);

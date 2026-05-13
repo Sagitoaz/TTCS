@@ -60,6 +60,8 @@ namespace TTCS.Combat.Managers
         private readonly HashSet<string> _runningActionCasters = new HashSet<string>();
         private readonly HashSet<string> _hitFrameReachedCasters = new HashSet<string>();
         private Tween _cameraShakeTween;
+        private Transform _cameraShakeTransform;
+        private Vector3 _cameraShakeOriginalLocalPos;
 
         /// <summary>
         /// Đăng ký CharacterView — gọi từ CombatSceneManager sau khi spawn.
@@ -466,14 +468,46 @@ namespace TTCS.Combat.Managers
             if (cam == null)
                 return;
 
-            _cameraShakeTween?.Kill();
+            // If a previous shake was killed mid-way, ensure we restore the camera
+            // to its pre-shake position to avoid drift.
+            if (_cameraShakeTween != null)
+            {
+                _cameraShakeTween.Kill();
+                if (_cameraShakeTransform != null)
+                {
+                    _cameraShakeTransform.localPosition = _cameraShakeOriginalLocalPos;
+                }
+                _cameraShakeTween = null;
+                _cameraShakeTransform = null;
+            }
 
             float duration = Mathf.Lerp(0.08f, 0.22f, Mathf.InverseLerp(0.05f, 0.45f, strength));
             int vibrato = Mathf.RoundToInt(Mathf.Lerp(8f, 18f, Mathf.InverseLerp(0.05f, 0.45f, strength)));
             Vector3 shake = new Vector3(strength, strength * 0.7f, 0f);
 
-            _cameraShakeTween = cam.transform.DOShakePosition(duration, shake, vibrato, 90f, false, true)
-                .SetUpdate(true);
+            _cameraShakeTransform = cam.transform;
+            _cameraShakeOriginalLocalPos = _cameraShakeTransform.localPosition;
+
+            _cameraShakeTween = _cameraShakeTransform.DOShakePosition(duration, shake, vibrato, 90f, false, true)
+                .SetUpdate(true)
+                .OnComplete(() =>
+                {
+                    if (_cameraShakeTransform != null)
+                    {
+                        _cameraShakeTransform.localPosition = _cameraShakeOriginalLocalPos;
+                    }
+                    _cameraShakeTween = null;
+                    _cameraShakeTransform = null;
+                })
+                .OnKill(() =>
+                {
+                    if (_cameraShakeTransform != null)
+                    {
+                        _cameraShakeTransform.localPosition = _cameraShakeOriginalLocalPos;
+                    }
+                    _cameraShakeTween = null;
+                    _cameraShakeTransform = null;
+                });
         }
     }
 }
