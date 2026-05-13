@@ -301,6 +301,27 @@ namespace TTCS.UI.Combat
                 : 0f;
         }
 
+        public List<string> GetEntityActiveEffectIds(string entityId)
+        {
+            if (!_entityMap.TryGetValue(entityId, out var entity) || entity?.Effects == null)
+            {
+                return new List<string>();
+            }
+
+            var effects = entity.Effects.GetActiveEffects();
+            var result = new List<string>(effects.Count);
+            for (var i = 0; i < effects.Count; i++)
+            {
+                var effectId = effects[i]?.EffectId;
+                if (!string.IsNullOrWhiteSpace(effectId))
+                {
+                    result.Add(effectId);
+                }
+            }
+
+            return result;
+        }
+
         public void BeginEnemyTargetingHUD(List<string> candidateEnemyIds, string currentTargetId)
         {
             _battleHUD?.BeginEnemyTargeting(candidateEnemyIds, currentTargetId);

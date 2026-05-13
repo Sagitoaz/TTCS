@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using TTCS.Combat.Entities;
+using TTCS.Combat.Effects;
 using TTCS.Core.Data;
 using TTCS.Core.Events;
 using TTCS.Core.Save;
@@ -38,10 +39,12 @@ namespace TTCS.UI.Combat
             public Image           RarityBackgroundImage;
             public TextMeshProUGUI HPText;
             public CanvasGroup    SlotGroup;
+            public RectTransform   EffectRoot;
 
             private float _maxHP = 1f;
             private float _maxMP = 1f;
             private float _lastHPPercent = 1f;
+            private readonly List<GameObject> _spawnedEffectIcons = new List<GameObject>();
 
             public void Initialize(CombatEntity entity, int maxMP, Sprite portraitSprite)
             {
@@ -77,6 +80,8 @@ namespace TTCS.UI.Combat
                 var root = SlotRootObject;
                 if (root != null)
                     root.SetActive(true);
+
+                ClearEffectIcons();
             }
 
             public void SetAllyMetadata(int level, string rarity, Sprite roleIcon, Sprite elementIcon, Sprite borderSprite, Sprite backgroundSprite, Color borderColor, Color backgroundColor)
@@ -260,6 +265,91 @@ namespace TTCS.UI.Combat
                 SlotGroup.DOFade(0.4f, 0.5f).SetDelay(0.2f);
             }
 
+            public void SetEffectIcons(IReadOnlyList<string> effectIds, Func<string, Sprite> spriteResolver)
+            {
+                EnsureEffectRoot();
+                ClearEffectIcons();
+
+                if (EffectRoot == null || effectIds == null || effectIds.Count == 0)
+                {
+                    return;
+                }
+
+                var displayed = new HashSet<string>();
+                for (var i = 0; i < effectIds.Count; i++)
+                {
+                    var effectId = effectIds[i];
+                    if (string.IsNullOrWhiteSpace(effectId) || !displayed.Add(effectId))
+                    {
+                        continue;
+                    }
+
+                    var sprite = spriteResolver != null ? spriteResolver(effectId) : null;
+                    if (sprite == null)
+                    {
+                        continue;
+                    }
+
+                    var iconObject = new GameObject($"Effect_{effectId}", typeof(RectTransform), typeof(Image));
+                    iconObject.transform.SetParent(EffectRoot, false);
+
+                    var rect = iconObject.GetComponent<RectTransform>();
+                    rect.sizeDelta = new Vector2(28f, 28f);
+
+                    var image = iconObject.GetComponent<Image>();
+                    image.sprite = sprite;
+                    image.color = Color.white;
+                    image.preserveAspect = true;
+
+                    _spawnedEffectIcons.Add(iconObject);
+                }
+            }
+
+            private void EnsureEffectRoot()
+            {
+                if (EffectRoot != null)
+                {
+                    return;
+                }
+
+                var root = SlotRootObject;
+                if (root == null)
+                {
+                    return;
+                }
+
+                var effectRootObject = new GameObject("EffectRoot", typeof(RectTransform), typeof(HorizontalLayoutGroup));
+                effectRootObject.transform.SetParent(root.transform, false);
+
+                EffectRoot = effectRootObject.GetComponent<RectTransform>();
+                EffectRoot.anchorMin = new Vector2(1f, 1f);
+                EffectRoot.anchorMax = new Vector2(1f, 1f);
+                EffectRoot.pivot = new Vector2(1f, 1f);
+                EffectRoot.anchoredPosition = new Vector2(-8f, -8f);
+                EffectRoot.sizeDelta = new Vector2(140f, 32f);
+
+                var layout = effectRootObject.GetComponent<HorizontalLayoutGroup>();
+                layout.spacing = 4f;
+                layout.childAlignment = TextAnchor.MiddleRight;
+                layout.childControlWidth = false;
+                layout.childControlHeight = false;
+                layout.childForceExpandWidth = false;
+                layout.childForceExpandHeight = false;
+            }
+
+            private void ClearEffectIcons()
+            {
+                for (var i = 0; i < _spawnedEffectIcons.Count; i++)
+                {
+                    if (_spawnedEffectIcons[i] != null)
+                    {
+                        UnityEngine.Object.Destroy(_spawnedEffectIcons[i]);
+                    }
+                }
+
+                _spawnedEffectIcons.Clear();
+            }
+
             private void SetHPText(float percent)
             {
                 if (HPText != null)
@@ -294,11 +384,14 @@ namespace TTCS.UI.Combat
         private readonly HashSet<string> _enemyEntityIds = new();
         private readonly HashSet<string> _targetingEnemyIds = new();
         private readonly Dictionary<string, float> _enemyVisibleUntil = new();
+        private readonly HashSet<string> _missingEffectIconWarnings = new();
         private bool _isEnemyTargetingActive;
         private string _currentTargetEnemyId;
         private bool _isEnemyTurnActive;
         private string _enemyTurnActorId;
         private Canvas _rootCanvas;
+
+        private const string EffectIconResourceFolder = "UI/Effects";
 
         // ──────────────────────────────────────────────────────────────────
         #region Initialization
@@ -326,6 +419,7 @@ namespace TTCS.UI.Combat
 
             InitGroup(allies,  _allySlots, isEnemyGroup: false);
             InitGroup(enemies, _enemySlots, isEnemyGroup: true);
+            RefreshAllEffectIcons();
 
             SubscribeEvents();
         }
@@ -369,6 +463,7 @@ namespace TTCS.UI.Combat
                     slot.ClearAllyMetadata();
                     _slotMap[newEnemies[i].ID] = slot;
                     _enemyEntityIds.Add(newEnemies[i].ID);
+                    RefreshEffectIcons(newEnemies[i].ID);
                     
                     slot.SetVisible(false);
                     if (slot.MPSlider != null)
@@ -407,6 +502,8 @@ namespace TTCS.UI.Combat
                     {
                         slots[i].ClearAllyMetadata();
                     }
+
+                    RefreshEffectIcons(entity.ID);
 
                     if (isEnemyGroup)
                     {
@@ -935,6 +1032,56 @@ namespace TTCS.UI.Combat
             return path;
         }
 
+        private void RefreshAllEffectIcons()
+        {
+            foreach (var entry in _slotMap)
+            {
+                RefreshEffectIcons(entry.Key);
+            }
+        }
+
+        private void RefreshEffectIcons(string entityId)
+        {
+            if (string.IsNullOrWhiteSpace(entityId) || !_slotMap.TryGetValue(entityId, out var slot))
+            {
+                return;
+            }
+
+            var effectIds = CombatUIController.Instance?.GetEntityActiveEffectIds(entityId);
+            slot.SetEffectIcons(effectIds, LoadEffectIconSprite);
+        }
+
+        private Sprite LoadEffectIconSprite(string effectId)
+        {
+            if (string.IsNullOrWhiteSpace(effectId))
+            {
+                return null;
+            }
+
+            var normalized = NormalizeTag(effectId);
+            var candidates = new[]
+            {
+                $"{EffectIconResourceFolder}/{normalized}",
+                $"{EffectIconResourceFolder}/effect_{normalized}"
+            };
+
+            for (var i = 0; i < candidates.Length; i++)
+            {
+                var sprite = Resources.Load<Sprite>(candidates[i]);
+                if (sprite != null)
+                {
+                    return sprite;
+                }
+            }
+
+            if (_missingEffectIconWarnings.Add(normalized))
+            {
+                LogWarning($"BattleHUD: Missing effect icon for '{effectId}'. Put sprite at Resources/{EffectIconResourceFolder}/{normalized}.png", LogCategory.UI);
+            }
+
+            return null;
+        }
+
         #endregion
 
         // ──────────────────────────────────────────────────────────────────
@@ -949,6 +1096,8 @@ namespace TTCS.UI.Combat
             bus.Subscribe<ManaChangedEvent>(OnManaChanged);
             bus.Subscribe<TurnStartedEvent>(OnTurnStarted);
             bus.Subscribe<TurnEndedEvent>(OnTurnEnded);
+            bus.Subscribe<StatusEffectAppliedEvent>(OnStatusEffectApplied);
+            bus.Subscribe<StatusEffectRemovedEvent>(OnStatusEffectRemoved);
             
         }
 
@@ -961,6 +1110,8 @@ namespace TTCS.UI.Combat
             bus.Unsubscribe<ManaChangedEvent>(OnManaChanged);
             bus.Unsubscribe<TurnStartedEvent>(OnTurnStarted);
             bus.Unsubscribe<TurnEndedEvent>(OnTurnEnded);
+            bus.Unsubscribe<StatusEffectAppliedEvent>(OnStatusEffectApplied);
+            bus.Unsubscribe<StatusEffectRemovedEvent>(OnStatusEffectRemoved);
             
         }
 
@@ -999,7 +1150,10 @@ namespace TTCS.UI.Combat
         private void OnEntityDeath(EntityDeathEvent e)
         {
             if (_slotMap.TryGetValue(e.EntityId, out var slot))
+            {
                 slot.SetDead();
+                slot.SetEffectIcons(null, LoadEffectIconSprite);
+            }
 
             _enemyVisibleUntil.Remove(e.EntityId);
             if (_enemyTurnActorId == e.EntityId)
@@ -1018,6 +1172,16 @@ namespace TTCS.UI.Combat
 
             if (_slotMap.TryGetValue(e.EntityId, out var slot))
                 slot.AnimateMP(e.CurrentMana, e.MaxMana);
+        }
+
+        private void OnStatusEffectApplied(StatusEffectAppliedEvent e)
+        {
+            RefreshEffectIcons(e != null ? e.TargetId : null);
+        }
+
+        private void OnStatusEffectRemoved(StatusEffectRemovedEvent e)
+        {
+            RefreshEffectIcons(e != null ? e.TargetId : null);
         }
 
         

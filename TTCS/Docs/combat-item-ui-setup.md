@@ -120,6 +120,33 @@ Code sẽ tự dựng các object này khi `CombatUIController.Initialize()` đ�
 - Chưa có target ally/enemy cho item
 - Chưa có animation riêng cho dùng item
 
+## 10. Effect icon path
+
+HUD effect icon hiện được load từ `Resources`.
+
+Đặt sprite tại:
+
+- `Assets/Resources/UI/Effects/`
+
+Tên file nên map trực tiếp theo `EffectId` của status effect. Ví dụ:
+
+- `Assets/Resources/UI/Effects/burn.png`
+- `Assets/Resources/UI/Effects/bleed.png`
+- `Assets/Resources/UI/Effects/shield.png`
+- `Assets/Resources/UI/Effects/stun.png`
+- `Assets/Resources/UI/Effects/heal_regen.png`
+- `Assets/Resources/UI/Effects/crit_up.png`
+
+Code cũng có fallback thứ hai:
+
+- `Assets/Resources/UI/Effects/effect_<effectId>.png`
+
+Ví dụ:
+
+- `Assets/Resources/UI/Effects/effect_burn.png`
+
+Ưu tiên dùng tên trùng `EffectId` để đỡ rối.
+
 Nếu cần bước tiếp theo hợp lý nhất là:
 
 - cho item chọn target ally
