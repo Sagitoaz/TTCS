@@ -3887,6 +3887,7 @@ GameObject:
   - component: {fileID: 4707118053683177190}
   - component: {fileID: 6343557970490527566}
   - component: {fileID: 788969683884725777}
+  - component: {fileID: 7689859039945408749}
   m_Layer: 0
   m_Name: enemy_fomortiis
   m_TagString: Untagged
@@ -3991,6 +3992,118 @@ MonoBehaviour:
   _useParentAsMotionRoot: 1
   _whiteFlashDuration: 0.07
   _redTintDuration: 0.1
+--- !u!114 &7689859039945408749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3458810281703725752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1549c19146be6d04f80d7e15b03111bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TTCS.Visual.VFX.CharacterSkillTargetVFXController
+  _ownerView: {fileID: 6343557970490527566}
+  _skills:
+  - skillId: skill_fomortiis_crushing_fist
+    layers:
+    - label: Puch
+      prefab: {fileID: 5497530086890951931, guid: f2e8e10068e693542b81042e0d334e21, type: 3}
+      spawnMode: 0
+      delay: 0
+      lifetime: 0.3
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0
+      travelCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      rotateTowardTravelDirection: 0
+  - skillId: skill_fomortiis_dragon_roar
+    layers:
+    - label: VoidSummon
+      prefab: {fileID: 4494506714882511559, guid: c1dd475cfe74e9e49964d9501e9394d0, type: 3}
+      spawnMode: 0
+      delay: 0
+      lifetime: 0.4
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0
+      travelCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      rotateTowardTravelDirection: 0
+  - skillId: skill_fomortiis_titan_slam
+    layers:
+    - label: Slam
+      prefab: {fileID: 1095470763657058582, guid: eccea160db68cb94e946ebac8ea27724, type: 3}
+      spawnMode: 0
+      delay: 0
+      lifetime: 0.4
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0
+      travelCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      rotateTowardTravelDirection: 0
+  - skillId: skill_fomortiis_void_summons
+    layers:
+    - label: Slam
+      prefab: {fileID: 1095470763657058582, guid: eccea160db68cb94e946ebac8ea27724, type: 3}
+      spawnMode: 0
+      delay: 0
+      lifetime: 0.4
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0
+      travelCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      rotateTowardTravelDirection: 0
+    - label: VoidSummon
+      prefab: {fileID: 4494506714882511559, guid: c1dd475cfe74e9e49964d9501e9394d0, type: 3}
+      spawnMode: 0
+      delay: 0
+      lifetime: 0.4
+      casterAnchor: 2
+      targetAnchor: 2
+      startOffset: {x: 0, y: 0, z: 0}
+      targetOffset: {x: 0, y: 0, z: 0}
+      parentToTarget: 0
+      travelDuration: 0
+      travelCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      rotateTowardTravelDirection: 0
 --- !u!1 &3731382981841840348
 GameObject:
   m_ObjectHideFlags: 0
