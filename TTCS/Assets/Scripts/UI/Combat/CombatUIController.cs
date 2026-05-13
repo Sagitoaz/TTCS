@@ -55,6 +55,7 @@ namespace TTCS.UI.Combat
         [SerializeField] private TurnOrderDisplay     _turnOrderDisplay;
         [SerializeField] private ActionResultDisplay  _actionResultDisplay;
         [SerializeField] private TimingFeedbackUI     _timingFeedbackUI;
+        [SerializeField] private SkillCastPortraitPanel _skillCastPortraitPanel;
 
         [Header("Result Screen")]
         [SerializeField] private GameObject          _resultPanel;
@@ -173,6 +174,7 @@ namespace TTCS.UI.Combat
             if (_turnOrderDisplay != null) _turnOrderDisplay.gameObject.SetActive(true);
             if (_actionResultDisplay != null) _actionResultDisplay.gameObject.SetActive(true);
             if (_timingFeedbackUI != null) _timingFeedbackUI.gameObject.SetActive(true);
+            if (_skillCastPortraitPanel != null) _skillCastPortraitPanel.gameObject.SetActive(true);
             if (_resultPanel != null) _resultPanel.SetActive(false);
         }
 
