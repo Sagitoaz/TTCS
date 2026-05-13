@@ -4224,7 +4224,7 @@ MonoBehaviour:
       prefab: {fileID: 5690312810267262381, guid: db4e53a1d11509648a7b354c79bd8b45, type: 3}
       spawnMode: 0
       delay: 0
-      lifetime: 0.3
+      lifetime: 0.5
       casterAnchor: 2
       targetAnchor: 2
       startOffset: {x: 0, y: 0, z: 0}

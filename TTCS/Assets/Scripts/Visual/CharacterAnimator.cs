@@ -140,7 +140,7 @@ namespace TTCS.Visual
                 .OnComplete(() =>
                 {
                     // Fallback: fire hit frame nếu Animation Event chưa kích hoạt
-                    NotifyAttackHitFrame();
+                    //NotifyAttackHitFrame();
                     motionRoot.position = motionRootStartWorld;
                     OnAnimationComplete?.Invoke();
                 });
@@ -203,7 +203,7 @@ namespace TTCS.Visual
                 .Append(motionRoot.DOMove(startWorldPos, _returnSpeed).SetEase(Ease.InOutQuad))
                 .OnComplete(() =>
                 {
-                    NotifyAttackHitFrame();
+                    //NotifyAttackHitFrame();
                     motionRoot.position = startWorldPos;
                     OnAnimationComplete?.Invoke();
                 });
@@ -270,7 +270,7 @@ namespace TTCS.Visual
                 .AppendInterval(_lungeSpeed + 0.12f)
                 .OnComplete(() =>
                 {
-                    NotifyAttackHitFrame();
+                    //NotifyAttackHitFrame();
                     transform.localPosition = _originalLocalPos;
                     OnAnimationComplete?.Invoke();
                 });
@@ -328,7 +328,7 @@ namespace TTCS.Visual
         private IEnumerator HitFrameFallback(float delay)
         {
             yield return new WaitForSeconds(delay);
-            NotifyAttackHitFrame();
+            //NotifyAttackHitFrame();
         }
 
         // ─── HURT ─────────────────────────────────────────────────────────
@@ -421,7 +421,7 @@ namespace TTCS.Visual
                 .AppendInterval(Mathf.Max(0.32f, _lungeSpeed + 0.20f))
                 .OnComplete(() =>
                 {
-                    NotifyAttackHitFrame();
+                    //NotifyAttackHitFrame();
                     transform.localPosition = _originalLocalPos;
                     OnAnimationComplete?.Invoke();
                 });

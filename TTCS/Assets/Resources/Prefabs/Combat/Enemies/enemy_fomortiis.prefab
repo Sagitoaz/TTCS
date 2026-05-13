@@ -3965,7 +3965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a1302ae09af69245adf790202e59bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TTCS.Visual.EnemyView
-  EntityId: 
+  EntityId: enemy_fomortiis
   _headAnchor: {fileID: 8015531599819911987}
   _hitAnchor: {fileID: 2303963406898253029}
   _enableColorHighlight: 0

@@ -8808,7 +8808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cae8c35335af6664d8c49ebca20a13a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TTCS.Visual.CharacterView
-  EntityId: char_baldr
+  EntityId: char_hodr
   _headAnchor: {fileID: 6716665989118784736}
   _hitAnchor: {fileID: 4759752631402466585}
   _enableColorHighlight: 0

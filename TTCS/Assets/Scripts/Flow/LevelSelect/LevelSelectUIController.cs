@@ -360,6 +360,22 @@ namespace TTCS.Flow.LevelSelect
             }
 
             var lineup = MetaServiceHub.Instance?.TeamService?.GetCurrentLineup() ?? new List<string>();
+           if(MetaServiceHub.Instance == null)
+            {
+                Debug.LogWarning("[LevelSelectUI] MetaServiceHub not available; cannot retrieve team lineup.");
+            }
+             else if (MetaServiceHub.Instance.TeamService == null)
+            {
+                Debug.LogWarning("[LevelSelectUI] TeamService not available; cannot retrieve team lineup.");
+            }
+             else if (lineup.Count == 0)
+            {
+                Debug.LogWarning("[LevelSelectUI] Team lineup is empty; combat may be difficult.");
+            }
+            else
+            {
+                Debug.Log($"[LevelSelectUI] Entering combat for level {_selectedLevel.id} with lineup: {string.Join(", ", lineup)}");
+            }
             FlowController.Instance.EnterCombat(_selectedLevel.id, lineup);
         }
 

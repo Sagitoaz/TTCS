@@ -5996,9 +5996,10 @@ MonoBehaviour:
   _defaultSeed: 42
   _autoStartOnPlay: 1
   _defaultPartyIds:
-  - char_baldr
+  - char_hodr
   _enemyDataAssets:
   - {fileID: 11400000, guid: 857178a8675bc924999b317822015c58, type: 2}
+  - {fileID: 11400000, guid: 4260ff2c0d646894e8cfeef039d7fb29, type: 2}
   _spawnViewsOnInitialize: 1
   _playerSlots:
   - {fileID: 1841432877}

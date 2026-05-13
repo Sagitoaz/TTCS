@@ -294,7 +294,7 @@ namespace TTCS.UI.Combat
                     iconObject.transform.SetParent(EffectRoot, false);
 
                     var rect = iconObject.GetComponent<RectTransform>();
-                    rect.sizeDelta = new Vector2(28f, 28f);
+                    rect.sizeDelta = new Vector2(84f, 84f);
 
                     var image = iconObject.GetComponent<Image>();
                     image.sprite = sprite;
