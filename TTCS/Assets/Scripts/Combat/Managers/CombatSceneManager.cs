@@ -131,7 +131,7 @@ namespace TTCS.Combat.Managers
 
         private void Start()
         {
-            if (FlowRuntimeContext.HasCombatLaunchData)
+            if (!string.IsNullOrWhiteSpace(FlowRuntimeContext.SelectedLevelId))
             {
                 StartCoroutine(InitializeFromFlowContext());
                 return;

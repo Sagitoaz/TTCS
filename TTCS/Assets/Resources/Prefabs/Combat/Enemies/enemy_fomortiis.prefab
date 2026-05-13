@@ -4031,7 +4031,7 @@ MonoBehaviour:
     - label: VoidSummon
       prefab: {fileID: 4494506714882511559, guid: c1dd475cfe74e9e49964d9501e9394d0, type: 3}
       spawnMode: 0
-      delay: 0
+      delay: 0.5
       lifetime: 0.4
       casterAnchor: 2
       targetAnchor: 2
@@ -4071,7 +4071,7 @@ MonoBehaviour:
     - label: Slam
       prefab: {fileID: 1095470763657058582, guid: eccea160db68cb94e946ebac8ea27724, type: 3}
       spawnMode: 0
-      delay: 0
+      delay: 0.5
       lifetime: 0.4
       casterAnchor: 2
       targetAnchor: 2
@@ -4089,7 +4089,7 @@ MonoBehaviour:
     - label: VoidSummon
       prefab: {fileID: 4494506714882511559, guid: c1dd475cfe74e9e49964d9501e9394d0, type: 3}
       spawnMode: 0
-      delay: 0
+      delay: 0.5
       lifetime: 0.4
       casterAnchor: 2
       targetAnchor: 2

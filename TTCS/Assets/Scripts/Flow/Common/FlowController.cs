@@ -224,9 +224,44 @@ namespace TTCS.Flow
 
         public void EnterCombat(string levelId, IReadOnlyList<string> lineupSnapshot)
         {
-            Debug.Log($"[Flow] Entering combat: levelId={levelId}, lineup count={lineupSnapshot.Count}");
+            if (string.IsNullOrWhiteSpace(levelId))
+            {
+                Debug.LogWarning("[Flow] EnterCombat aborted: levelId is empty.");
+                return;
+            }
+
+            var safeLineup = new List<string>();
+            if (lineupSnapshot != null)
+            {
+                for (var i = 0; i < lineupSnapshot.Count; i++)
+                {
+                    var id = lineupSnapshot[i];
+                    if (!string.IsNullOrWhiteSpace(id))
+                    {
+                        safeLineup.Add(id);
+                    }
+                }
+            }
+
+            if (safeLineup.Count == 0)
+            {
+                var currentLineup = _teamService?.GetCurrentLineup();
+                if (currentLineup != null)
+                {
+                    for (var i = 0; i < currentLineup.Count; i++)
+                    {
+                        var id = currentLineup[i];
+                        if (!string.IsNullOrWhiteSpace(id))
+                        {
+                            safeLineup.Add(id);
+                        }
+                    }
+                }
+            }
+
+            Debug.Log($"[Flow] Entering combat: levelId={levelId}, lineup count={safeLineup.Count}");
             FlowRuntimeContext.SelectedLevelId = levelId;
-            FlowRuntimeContext.SelectedLineupSnapshot = lineupSnapshot;
+            FlowRuntimeContext.SelectedLineupSnapshot = safeLineup;
             _flowStateManager.NavigateTo(_combatSceneName);
             EventBus.Instance.Publish(new LevelEnteredEvent(levelId));
             _sceneTransitionController.LoadScene(_combatSceneName);

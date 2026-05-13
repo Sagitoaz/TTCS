@@ -53,6 +53,14 @@ Chọn object:
 Kiểm tra field sau trong Inspector:
 
 - `Combat Item Cell Prefab`
+- `Combat Item Button`
+- `Combat Item Panel`
+- `Combat Item List Content`
+- `Combat Item Detail Panel`
+- `Combat Item Name Text`
+- `Combat Item Description Text`
+- `Combat Item Use Button`
+- `Combat Item Cancel Button`
 
 Field này phải trỏ tới:
 
@@ -60,13 +68,21 @@ Field này phải trỏ tới:
 
 Scene `CombatScene.unity` và `CombatScene 1.unity` đã được cập nhật reference này trong file scene. Dù vậy vẫn nên mở Inspector kiểm tra lại sau khi Unity reimport.
 
+> Lưu ý: Từ bản cập nhật này, combat item UI **không còn được tạo bằng code runtime** nữa. Bạn cần tự dựng UI trong Hierarchy (hoặc tạo prefab riêng) và kéo thả reference vào `CombatUIController`.
+
 ## 5. Setup cho scene combat mới
 
 Nếu bạn tạo một combat scene mới, cần làm các bước sau:
 
 1. Thêm `CombatUIController` vào canvas combat như scene hiện tại.
 2. Gán toàn bộ các field cũ của `CombatUIController` như trước.
-3. Gán thêm field mới:
+3. Dựng UI cho combat item (tạo tay trong scene hoặc prefab), sau đó gán các field trong group **Combat Item UI**:
+   - `Combat Item Button` (Button mở panel)
+   - `Combat Item Panel` (root panel)
+   - `Combat Item List Content` (RectTransform content của list)
+   - `Combat Item Detail Panel` (GameObject root của phần detail; nên SetActive = false lúc đầu)
+   - `Combat Item Name Text` / `Description Text` (TMP_Text)
+   - `Combat Item Use Button` / `Cancel Button`
    - `Combat Item Cell Prefab` -> `Assets/Prefabs/UI/ItemPrefab.prefab`
 4. Đảm bảo trong scene có:
    - `CombatFlowController`
@@ -79,16 +95,37 @@ Nếu thiếu các manager trên, item button có thể hiện nhưng không con
 
 ## 6. Lưu ý về UI
 
-Panel item combat hiện được tạo bằng code runtime trong `CombatUIController`.
+Combat item UI hiện **setup thủ công trong Unity Editor**. `CombatUIController` chỉ:
 
-Điều đó có nghĩa là trong Hierarchy bạn không cần tạo tay:
+- đọc các reference từ Inspector
+- tự gắn listener cho `Button.onClick`
+- tự populate list bằng cách `Instantiate(Combat Item Cell Prefab)` vào `Combat Item List Content`
 
-- item button
-- item panel
-- scroll view
-- detail panel
+Ngoài ra, `Detail Panel` sẽ **chỉ hiện khi player click chọn 1 item** (không auto-select item đầu tiên khi mở panel).
 
-Code sẽ tự dựng các object này khi `CombatUIController.Initialize()` được gọi.
+### Gợi ý cấu trúc Hierarchy (tối giản)
+
+Bạn có thể dựng theo cấu trúc sau (tên GameObject không bắt buộc, miễn đúng component/reference):
+
+- `Canvas`
+   - `CombatUIController` (script)
+   - `CombatItemButton` (Button)
+   - `CombatItemPanel` (GameObject, mặc định SetActive = false)
+      - `ListSection`
+         - `Scroll View` (ScrollRect)
+            - `Viewport`
+               - `Content` (RectTransform + VerticalLayoutGroup + ContentSizeFitter)
+      - `DetailItemPanel` (GameObject, mặc định SetActive = false)
+         - `ItemName` (TextMeshProUGUI)
+         - `Description` (TextMeshProUGUI)
+         - `UseButton` (Button)
+         - `CancelButton` (Button)
+
+### Các component nên có
+
+- `CombatItemPanel`: nên có `CanvasGroup` (tuỳ bạn dùng animate/fade sau này)
+- `Content`: `VerticalLayoutGroup` + `ContentSizeFitter (Vertical: PreferredSize)` để list tự giãn
+- `Scroll View`: set `Horizontal = false`, `Vertical = true`
 
 ## 7. Cách test nhanh trong Editor
 

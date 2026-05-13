@@ -8913,7 +8913,7 @@ MonoBehaviour:
     - label: skill_hodr_eclipse_barrage
       prefab: {fileID: 344568536299306778, guid: 5e2c60527787e0440b67607574b10a7d, type: 3}
       spawnMode: 1
-      delay: 0
+      delay: 0.5
       lifetime: 0.01
       casterAnchor: 2
       targetAnchor: 2
@@ -8949,7 +8949,7 @@ MonoBehaviour:
     - label: skill_hodr_eclipse_barrage_bloom
       prefab: {fileID: 2756557532557146770, guid: a885a1f840bd8194b9c55eaaf29e5476, type: 3}
       spawnMode: 0
-      delay: 0.3
+      delay: 0.8
       lifetime: 0.3
       casterAnchor: 2
       targetAnchor: 2
@@ -8987,7 +8987,7 @@ MonoBehaviour:
     - label: skill_hodr_piercing_round
       prefab: {fileID: 4692147822293872424, guid: 9a1d6f50d8f7e99499470c16d479de30, type: 3}
       spawnMode: 1
-      delay: 0
+      delay: 0.5
       lifetime: 0.01
       casterAnchor: 2
       targetAnchor: 2
@@ -9023,7 +9023,7 @@ MonoBehaviour:
     - label: skill_hodr_piercing_round_bloom
       prefab: {fileID: 2756557532557146770, guid: a885a1f840bd8194b9c55eaaf29e5476, type: 3}
       spawnMode: 0
-      delay: 0.3
+      delay: 0.8
       lifetime: 0.3
       casterAnchor: 2
       targetAnchor: 2

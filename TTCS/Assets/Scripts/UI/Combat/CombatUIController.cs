@@ -16,6 +16,7 @@ using TTCS.Flow;
 using TTCS.Flow.Inventory;
 using TTCS.Flow.LevelSelect;
 using TTCS.Data;
+using TTCS.Core.Save;
 using TTCS.Meta;
 using TTCS.Meta.Inventory;
 
@@ -51,6 +52,7 @@ namespace TTCS.UI.Combat
         {
             if (_instance == this)
             {
+                CombatFlowController.Instance?.AbortActiveBattle("Combat UI destroyed.");
                 _instance = null;
                 EventBus.Instance?.Unsubscribe<CombatEndedEvent>(OnCombatEnded);
                 EventBus.Instance?.Unsubscribe<TurnStartedEvent>(OnPlayerTurnStarted);
@@ -80,6 +82,14 @@ namespace TTCS.UI.Combat
         [SerializeField] private Button _pauseExitButton;
 
         [Header("Combat Item UI")]
+        [SerializeField] private Button _combatItemButton;
+        [SerializeField] private GameObject _combatItemPanel;
+        [SerializeField] private RectTransform _combatItemListContent;
+        [SerializeField] private GameObject _combatItemDetailPanel;
+        [SerializeField] private TMP_Text _combatItemNameText;
+        [SerializeField] private TMP_Text _combatItemDescriptionText;
+        [SerializeField] private Button _combatItemUseButton;
+        [SerializeField] private Button _combatItemCancelButton;
         [SerializeField] private InventoryItemCellView _combatItemCellPrefab;
 
         [Header("Result Screen")]
@@ -111,14 +121,6 @@ namespace TTCS.UI.Combat
 
         private bool _isPaused;
         private float _previousTimeScale = 1f;
-        private Button _combatItemButton;
-        private GameObject _combatItemPanel;
-        private RectTransform _combatItemListContent;
-        private TMP_Text _combatItemNameText;
-        private TMP_Text _combatItemDescriptionText;
-        private TMP_Text _combatItemInfoText;
-        private Button _combatItemUseButton;
-        private Button _combatItemCancelButton;
         private readonly List<GameObject> _spawnedCombatItemViews = new List<GameObject>();
         private string _selectedCombatItemId;
 
@@ -151,6 +153,7 @@ namespace TTCS.UI.Combat
             EnsureCombatPanelsActive();
             EnsureCombatItemUI();
             HideCombatItemPanel();
+            SetCombatItemDetailVisible(false);
 
             // Build entity map
             _entityMap.Clear();
@@ -367,6 +370,7 @@ namespace TTCS.UI.Combat
                 _skillButtonPanel?.Hide();
                 _battleHUD?.EndEnemyTargeting();
                 HideCombatItemPanel();
+                SetCombatItemDetailVisible(false);
                 RefreshCombatItemButtonState();
                 return;
             }
@@ -378,211 +382,30 @@ namespace TTCS.UI.Combat
 
         private void EnsureCombatItemUI()
         {
-            if (_combatItemButton != null && _combatItemPanel != null)
+            if (_combatItemButton != null)
             {
-                return;
+                _combatItemButton.onClick.RemoveAllListeners();
+                _combatItemButton.onClick.AddListener(OnCombatItemButtonClicked);
             }
 
-            var root = transform.parent as RectTransform;
-            if (root == null)
+            if (_combatItemUseButton != null)
             {
-                return;
+                _combatItemUseButton.onClick.RemoveAllListeners();
+                _combatItemUseButton.onClick.AddListener(OnCombatItemUseClicked);
             }
 
-            _combatItemButton = CreateActionButton(root, "ItemButton", "Item", new Vector2(-300f, 90f), OnCombatItemButtonClicked);
-            _combatItemPanel = CreateItemPanel(root);
-            HideCombatItemPanel();
-        }
-
-        private Button CreateActionButton(RectTransform parent, string objectName, string label, Vector2 anchoredPosition, Action onClick)
-        {
-            var buttonObject = new GameObject(objectName, typeof(RectTransform), typeof(Image), typeof(Button));
-            buttonObject.transform.SetParent(parent, false);
-
-            var rect = buttonObject.GetComponent<RectTransform>();
-            rect.anchorMin = new Vector2(1f, 0f);
-            rect.anchorMax = new Vector2(1f, 0f);
-            rect.pivot = new Vector2(1f, 0f);
-            rect.anchoredPosition = anchoredPosition;
-            rect.sizeDelta = new Vector2(180f, 56f);
-
-            var image = buttonObject.GetComponent<Image>();
-            image.color = new Color(0.12f, 0.16f, 0.23f, 0.96f);
-
-            var button = buttonObject.GetComponent<Button>();
-            var colors = button.colors;
-            colors.normalColor = Color.white;
-            colors.highlightedColor = new Color(0.92f, 0.92f, 0.92f, 1f);
-            colors.pressedColor = new Color(0.75f, 0.75f, 0.75f, 1f);
-            colors.disabledColor = new Color(1f, 1f, 1f, 0.45f);
-            button.colors = colors;
-            if (onClick != null)
+            if (_combatItemCancelButton != null)
             {
-                button.onClick.AddListener(() => onClick());
+                _combatItemCancelButton.onClick.RemoveAllListeners();
+                _combatItemCancelButton.onClick.AddListener(HideCombatItemPanel);
             }
 
-            CreateButtonLabel(buttonObject.transform, label);
-            return button;
-        }
-
-        private GameObject CreateItemPanel(RectTransform parent)
-        {
-            var panelObject = new GameObject("CombatItemPanel", typeof(RectTransform), typeof(Image), typeof(CanvasGroup));
-            panelObject.transform.SetParent(parent, false);
-
-            var panelRect = panelObject.GetComponent<RectTransform>();
-            panelRect.anchorMin = new Vector2(0.5f, 0.5f);
-            panelRect.anchorMax = new Vector2(0.5f, 0.5f);
-            panelRect.pivot = new Vector2(0.5f, 0.5f);
-            panelRect.sizeDelta = new Vector2(840f, 460f);
-
-            var panelImage = panelObject.GetComponent<Image>();
-            panelImage.color = new Color(0.06f, 0.08f, 0.12f, 0.96f);
-
-            var layoutRoot = new GameObject("Layout", typeof(RectTransform), typeof(HorizontalLayoutGroup));
-            layoutRoot.transform.SetParent(panelObject.transform, false);
-            var layoutRect = layoutRoot.GetComponent<RectTransform>();
-            layoutRect.anchorMin = new Vector2(0f, 0f);
-            layoutRect.anchorMax = new Vector2(1f, 1f);
-            layoutRect.offsetMin = new Vector2(20f, 20f);
-            layoutRect.offsetMax = new Vector2(-20f, -20f);
-
-            var horizontal = layoutRoot.GetComponent<HorizontalLayoutGroup>();
-            horizontal.spacing = 20f;
-            horizontal.childForceExpandHeight = true;
-            horizontal.childForceExpandWidth = false;
-            horizontal.childControlHeight = true;
-            horizontal.childControlWidth = true;
-
-            var listPanel = CreatePanelSection(layoutRoot.transform, "ListSection", 320f);
-            var detailPanel = CreatePanelSection(layoutRoot.transform, "DetailSection", -1f);
-
-            CreateTextBlock(listPanel.transform, "Title", "Items", 28, TextAlignmentOptions.TopLeft, Color.white, 16f, 16f, 16f, 34f);
-
-            var scrollObject = new GameObject("ScrollView", typeof(RectTransform), typeof(Image), typeof(Mask), typeof(ScrollRect));
-            scrollObject.transform.SetParent(listPanel.transform, false);
-            var scrollRectTransform = scrollObject.GetComponent<RectTransform>();
-            scrollRectTransform.anchorMin = new Vector2(0f, 0f);
-            scrollRectTransform.anchorMax = new Vector2(1f, 1f);
-            scrollRectTransform.offsetMin = new Vector2(16f, 16f);
-            scrollRectTransform.offsetMax = new Vector2(-16f, -52f);
-
-            var scrollImage = scrollObject.GetComponent<Image>();
-            scrollImage.color = new Color(1f, 1f, 1f, 0.04f);
-            scrollObject.GetComponent<Mask>().showMaskGraphic = false;
-
-            var contentObject = new GameObject("Content", typeof(RectTransform), typeof(VerticalLayoutGroup), typeof(ContentSizeFitter));
-            contentObject.transform.SetParent(scrollObject.transform, false);
-            _combatItemListContent = contentObject.GetComponent<RectTransform>();
-            _combatItemListContent.anchorMin = new Vector2(0f, 1f);
-            _combatItemListContent.anchorMax = new Vector2(1f, 1f);
-            _combatItemListContent.pivot = new Vector2(0.5f, 1f);
-            _combatItemListContent.anchoredPosition = Vector2.zero;
-            _combatItemListContent.sizeDelta = new Vector2(0f, 0f);
-
-            var listLayout = contentObject.GetComponent<VerticalLayoutGroup>();
-            listLayout.spacing = 10f;
-            listLayout.padding = new RectOffset(0, 0, 0, 0);
-            listLayout.childControlHeight = false;
-            listLayout.childControlWidth = true;
-            listLayout.childForceExpandHeight = false;
-            listLayout.childForceExpandWidth = true;
-
-            var fitter = contentObject.GetComponent<ContentSizeFitter>();
-            fitter.horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
-            fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
-
-            var scrollRect = scrollObject.GetComponent<ScrollRect>();
-            scrollRect.viewport = scrollRectTransform;
-            scrollRect.content = _combatItemListContent;
-            scrollRect.horizontal = false;
-            scrollRect.vertical = true;
-
-            _combatItemNameText = CreateTextBlock(detailPanel.transform, "ItemName", "Select an item", 30, TextAlignmentOptions.TopLeft, Color.white, 18f, 18f, 18f, 40f);
-            _combatItemDescriptionText = CreateTextBlock(detailPanel.transform, "Description", "Choose an item to preview its combat effect.", 22, TextAlignmentOptions.TopLeft, new Color(0.9f, 0.95f, 1f, 0.95f), 18f, 76f, 18f, 120f);
-            _combatItemInfoText = CreateTextBlock(detailPanel.transform, "Info", string.Empty, 20, TextAlignmentOptions.TopLeft, new Color(0.55f, 0.88f, 1f, 1f), 18f, 208f, 18f, 120f);
-
-            _combatItemUseButton = CreateActionButton(detailPanel.transform as RectTransform, "UseButton", "Use", new Vector2(-18f, 18f), OnCombatItemUseClicked);
-            var useRect = _combatItemUseButton.GetComponent<RectTransform>();
-            useRect.anchorMin = new Vector2(1f, 0f);
-            useRect.anchorMax = new Vector2(1f, 0f);
-            useRect.pivot = new Vector2(1f, 0f);
-            useRect.sizeDelta = new Vector2(160f, 52f);
-
-            _combatItemCancelButton = CreateActionButton(detailPanel.transform as RectTransform, "CancelButton", "Cancel", new Vector2(-194f, 18f), HideCombatItemPanel);
-            var cancelRect = _combatItemCancelButton.GetComponent<RectTransform>();
-            cancelRect.anchorMin = new Vector2(1f, 0f);
-            cancelRect.anchorMax = new Vector2(1f, 0f);
-            cancelRect.pivot = new Vector2(1f, 0f);
-            cancelRect.sizeDelta = new Vector2(160f, 52f);
-
-            return panelObject;
-        }
-
-        private GameObject CreatePanelSection(Transform parent, string objectName, float preferredWidth)
-        {
-            var section = new GameObject(objectName, typeof(RectTransform), typeof(Image), typeof(LayoutElement));
-            section.transform.SetParent(parent, false);
-
-            var image = section.GetComponent<Image>();
-            image.color = new Color(1f, 1f, 1f, 0.05f);
-
-            var layoutElement = section.GetComponent<LayoutElement>();
-            if (preferredWidth > 0f)
+            if (_combatItemPanel != null)
             {
-                layoutElement.preferredWidth = preferredWidth;
-                layoutElement.minWidth = preferredWidth;
-            }
-            else
-            {
-                layoutElement.flexibleWidth = 1f;
+                _combatItemPanel.SetActive(false);
             }
 
-            return section;
-        }
-
-        private void CreateButtonLabel(Transform parent, string value)
-        {
-            var textObject = new GameObject("Label", typeof(RectTransform), typeof(TextMeshProUGUI));
-            textObject.transform.SetParent(parent, false);
-
-            var rect = textObject.GetComponent<RectTransform>();
-            rect.anchorMin = new Vector2(0f, 0f);
-            rect.anchorMax = new Vector2(1f, 1f);
-            rect.offsetMin = Vector2.zero;
-            rect.offsetMax = Vector2.zero;
-
-            var text = textObject.GetComponent<TextMeshProUGUI>();
-            text.text = value;
-            text.fontSize = 26;
-            text.alignment = TextAlignmentOptions.Center;
-            text.color = Color.white;
-            text.enableAutoSizing = false;
-            text.font = TMP_Settings.defaultFontAsset;
-            text.raycastTarget = false;
-        }
-
-        private TMP_Text CreateTextBlock(Transform parent, string objectName, string value, int fontSize, TextAlignmentOptions alignment, Color color, float left, float top, float right, float height)
-        {
-            var textObject = new GameObject(objectName, typeof(RectTransform), typeof(TextMeshProUGUI));
-            textObject.transform.SetParent(parent, false);
-
-            var rect = textObject.GetComponent<RectTransform>();
-            rect.anchorMin = new Vector2(0f, 1f);
-            rect.anchorMax = new Vector2(1f, 1f);
-            rect.pivot = new Vector2(0.5f, 1f);
-            rect.offsetMin = new Vector2(left, -top - height);
-            rect.offsetMax = new Vector2(-right, -top);
-
-            var text = textObject.GetComponent<TextMeshProUGUI>();
-            text.text = value;
-            text.fontSize = fontSize;
-            text.alignment = alignment;
-            text.color = color;
-            text.enableAutoSizing = false;
-            text.font = TMP_Settings.defaultFontAsset;
-            text.raycastTarget = false;
-            return text;
+            SetCombatItemDetailVisible(false);
         }
 
         private void OnCombatItemButtonClicked()
@@ -595,6 +418,7 @@ namespace TTCS.UI.Combat
 
             RebuildCombatItemList();
             _combatItemPanel.SetActive(true);
+            SetCombatItemDetailVisible(false);
             RefreshCombatItemButtonState();
         }
 
@@ -606,12 +430,29 @@ namespace TTCS.UI.Combat
             }
 
             _selectedCombatItemId = null;
+            SetCombatItemDetailVisible(false);
+        }
+
+        private void SetCombatItemDetailVisible(bool visible)
+        {
+            if (_combatItemDetailPanel != null)
+            {
+                _combatItemDetailPanel.SetActive(visible);
+            }
+
+            if (!visible)
+            {
+                if (_combatItemNameText != null) _combatItemNameText.text = "Select an item";
+                if (_combatItemDescriptionText != null) _combatItemDescriptionText.text = "Choose an item from the list.";
+                if (_combatItemUseButton != null) _combatItemUseButton.interactable = false;
+            }
         }
 
         private void RebuildCombatItemList()
         {
             ClearSpawned(_spawnedCombatItemViews);
             _selectedCombatItemId = null;
+            SetCombatItemDetailVisible(false);
 
             if (_combatItemListContent == null || _combatItemCellPrefab == null)
             {
@@ -659,8 +500,7 @@ namespace TTCS.UI.Combat
                 return;
             }
 
-            var firstCell = _spawnedCombatItemViews[0].GetComponent<InventoryItemCellView>();
-            OnCombatItemSelected(firstCell != null ? firstCell.ItemId : null);
+            // Do not auto-select — detail panel shows only after the player clicks an item.
         }
 
         private void OnCombatItemSelected(string itemId)
@@ -676,6 +516,7 @@ namespace TTCS.UI.Combat
             }
 
             SetCombatItemDetail(itemId, null);
+            SetCombatItemDetailVisible(!string.IsNullOrWhiteSpace(itemId));
         }
 
         private void SetCombatItemDetail(string itemId, string fallbackMessage)
@@ -683,16 +524,10 @@ namespace TTCS.UI.Combat
             var actor = CombatFlowController.Instance?.GetCurrentActor() as Character;
             var itemData = !string.IsNullOrWhiteSpace(itemId) ? DataManager.Instance?.LoadItem(itemId) : null;
 
-            if (_combatItemNameText != null)
+            if (string.IsNullOrWhiteSpace(itemId) || itemData == null)
             {
-                _combatItemNameText.text = itemData != null ? itemData.nameKey : "Select an item";
-            }
-
-            if (_combatItemDescriptionText != null)
-            {
-                _combatItemDescriptionText.text = itemData != null
-                    ? BuildCombatItemDescription(itemData)
-                    : "Choose an item from the list.";
+                SetCombatItemDetailVisible(false);
+                return;
             }
 
             var previewText = string.Empty;
@@ -702,9 +537,20 @@ namespace TTCS.UI.Combat
                 previewText = fallbackMessage ?? "This item cannot be used right now.";
             }
 
-            if (_combatItemInfoText != null)
+            if (_combatItemNameText != null)
             {
-                _combatItemInfoText.text = previewText;
+                _combatItemNameText.text = itemData != null ? itemData.nameKey : "Select an item";
+            }
+
+            if (_combatItemDescriptionText != null)
+            {
+                var baseDescription = itemData != null
+                    ? BuildCombatItemDescription(itemData)
+                    : "Choose an item from the list.";
+
+                _combatItemDescriptionText.text = string.IsNullOrWhiteSpace(previewText)
+                    ? baseDescription
+                    : $"{baseDescription}\n\n{previewText}";
             }
 
             if (_combatItemUseButton != null)
@@ -853,6 +699,7 @@ namespace TTCS.UI.Combat
 
             SetPaused(false);
             HideCombatItemPanel();
+            SetCombatItemDetailVisible(false);
             RefreshCombatItemButtonState();
 
             _resultPanel.SetActive(true);
@@ -1021,12 +868,14 @@ namespace TTCS.UI.Combat
         private void OnPauseRetryClicked()
         {
             SetPaused(false);
+            CombatFlowController.Instance?.AbortActiveBattle("Pause retry requested.");
             OnRetryClicked();
         }
 
         private void OnPauseExitClicked()
         {
             SetPaused(false);
+            CombatFlowController.Instance?.AbortActiveBattle("Pause exit to level select requested.");
 
             var flow = FlowController.Instance;
             if (flow != null)
@@ -1194,15 +1043,12 @@ namespace TTCS.UI.Combat
         private void OnRetryClicked()
         {
             var flow = FlowController.Instance;
-            if (flow != null && !string.IsNullOrWhiteSpace(_lastLevelId))
-            {
-                var lineup = FlowRuntimeContext.SelectedLineupSnapshot;
-                if (lineup == null)
-                {
-                    lineup = new List<string>();
-                }
 
-                flow.EnterCombat(_lastLevelId, lineup);
+            var resolvedLevelId = ResolveLevelIdForRetry();
+            if (flow != null && !string.IsNullOrWhiteSpace(resolvedLevelId))
+            {
+                var lineup = ResolveLineupSnapshotForRetry();
+                flow.EnterCombat(resolvedLevelId, lineup);
                 return;
             }
 
@@ -1218,6 +1064,104 @@ namespace TTCS.UI.Combat
             }
 
             SceneManager.LoadScene(scene.buildIndex);
+        }
+
+        private string ResolveLevelIdForRetry()
+        {
+            if (!string.IsNullOrWhiteSpace(_lastLevelId))
+            {
+                return _lastLevelId;
+            }
+
+            if (!string.IsNullOrWhiteSpace(FlowRuntimeContext.SelectedLevelId))
+            {
+                return FlowRuntimeContext.SelectedLevelId;
+            }
+
+            var stageId = CombatSceneManager.Instance?.GetCurrentStageData()?.id;
+            if (string.IsNullOrWhiteSpace(stageId))
+            {
+                return string.Empty;
+            }
+
+            return DataManager.Instance?.ResolveLevelIdByStageId(stageId) ?? stageId;
+        }
+
+        private static List<string> ResolveLineupSnapshotForRetry()
+        {
+            // Prefer flow context snapshot (if provided).
+            var snapshot = FlowRuntimeContext.SelectedLineupSnapshot;
+            var fromFlow = new List<string>();
+            if (snapshot != null)
+            {
+                foreach (var id in snapshot)
+                {
+                    if (!string.IsNullOrWhiteSpace(id))
+                    {
+                        fromFlow.Add(id);
+                    }
+                }
+            }
+
+            if (fromFlow.Count > 0)
+            {
+                return fromFlow;
+            }
+
+            // Fallback to current lineup / save.
+            var hub = MetaServiceHub.Instance;
+            hub?.EnsureInitialized();
+            var teamLineup = hub?.TeamService?.GetCurrentLineup();
+            var fromTeam = new List<string>();
+            if (teamLineup != null)
+            {
+                foreach (var id in teamLineup)
+                {
+                    if (!string.IsNullOrWhiteSpace(id))
+                    {
+                        fromTeam.Add(id);
+                    }
+                }
+            }
+
+            if (fromTeam.Count > 0)
+            {
+                return fromTeam;
+            }
+
+            var save = SaveManager.Instance?.CurrentSave;
+            var fromSave = new List<string>();
+            var saveLineup = save?.lineup;
+            if (saveLineup != null)
+            {
+                foreach (var id in saveLineup)
+                {
+                    if (!string.IsNullOrWhiteSpace(id))
+                    {
+                        fromSave.Add(id);
+                    }
+                }
+            }
+
+            if (fromSave.Count > 0)
+            {
+                return fromSave;
+            }
+
+            var fromCurrentParty = new List<string>();
+            var currentParty = save?.currentParty;
+            if (currentParty != null)
+            {
+                foreach (var id in currentParty)
+                {
+                    if (!string.IsNullOrWhiteSpace(id))
+                    {
+                        fromCurrentParty.Add(id);
+                    }
+                }
+            }
+
+            return fromCurrentParty;
         }
 
         /// <summary>

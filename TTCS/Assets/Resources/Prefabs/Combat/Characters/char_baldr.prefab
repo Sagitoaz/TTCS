@@ -8210,7 +8210,7 @@ MonoBehaviour:
     - label: skillcast
       prefab: {fileID: 5506043484987893920, guid: 3cb54b4bf8b2ffe48be1eb6ad6c3e8ab, type: 3}
       spawnMode: 1
-      delay: 0
+      delay: 1.9
       lifetime: 0.01
       casterAnchor: 2
       targetAnchor: 2
@@ -8246,7 +8246,7 @@ MonoBehaviour:
     - label: bloom
       prefab: {fileID: 2403469482062933321, guid: 80eb4da4e724a2f47bee8f846802414e, type: 3}
       spawnMode: 0
-      delay: 0.3
+      delay: 2.2
       lifetime: 0.3
       casterAnchor: 2
       targetAnchor: 2
@@ -8266,7 +8266,7 @@ MonoBehaviour:
     - label: skillcast
       prefab: {fileID: 5506043484987893920, guid: 3cb54b4bf8b2ffe48be1eb6ad6c3e8ab, type: 3}
       spawnMode: 1
-      delay: 0
+      delay: 1.9
       lifetime: 0.01
       casterAnchor: 2
       targetAnchor: 2
@@ -8302,7 +8302,7 @@ MonoBehaviour:
     - label: bloom
       prefab: {fileID: 2403469482062933321, guid: 80eb4da4e724a2f47bee8f846802414e, type: 3}
       spawnMode: 0
-      delay: 0.3
+      delay: 2.2
       lifetime: 0.3
       casterAnchor: 2
       targetAnchor: 2

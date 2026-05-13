@@ -12,6 +12,7 @@ using TTCS.Core.Save;
 using TTCS.Core.Progression;
 using TTCS.Data;
 using TTCS.Debugging;
+using TTCS.Flow;
 using TTCS.Meta;
 using TTCS.Meta.Inventory;
 using static TTCS.Debugging.DebugLogger;
@@ -146,8 +147,7 @@ namespace TTCS.Combat.Managers
         {
             if (IsBattleActive)
             {
-                Log("CombatFlowController: Battle already active — ignoring StartBattle call.", LogCategory.Combat);
-                return;
+                AbortActiveBattle("StartBattle called while another battle is still active.");
             }
 
             if (players == null || players.Count == 0)
@@ -165,6 +165,48 @@ namespace TTCS.Combat.Managers
             CurrentSeed = seed > 0 ? seed : UnityEngine.Random.Range(1, int.MaxValue);
 
             StartCoroutine(CombatLoop());
+        }
+
+        /// <summary>
+        /// Force-stop current battle loop and reset runtime state.
+        /// This is required when leaving combat scene mid-battle (e.g. pause -> exit to level select).
+        /// </summary>
+        public void AbortActiveBattle(string reason = null)
+        {
+            if (!IsBattleActive && _state == CombatState.Idle)
+            {
+                return;
+            }
+
+            StopAllCoroutines();
+
+            _playerTeam.Clear();
+            _enemyTeam.Clear();
+            _allEntities.Clear();
+            _currentActor = null;
+            _currentStage = null;
+            _currentWaveIndex = 0;
+            _currentLevelId = string.Empty;
+
+            _playerInputReceived = false;
+            _pendingSkillId = null;
+            _pendingTargetIds = null;
+            _pendingItemId = null;
+            _lastActionCost = 100;
+            _pendingTimingGrade = TimingGrade.Miss;
+
+            FlowRuntimeContext.ClearCombatLaunchData();
+
+            _state = CombatState.Idle;
+
+            if (string.IsNullOrWhiteSpace(reason))
+            {
+                Log("CombatFlowController: Active battle aborted and state reset.", LogCategory.Combat);
+            }
+            else
+            {
+                Log($"CombatFlowController: Active battle aborted. Reason: {reason}", LogCategory.Combat);
+            }
         }
 
         // ─── Player Input API ─────────────────────────────────────────────

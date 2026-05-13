@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -65,10 +66,6 @@ namespace TTCS.Flow.LevelSelect
 
         private void Start()
         {
-            var hub = MetaServiceHub.Instance;
-            hub?.EnsureInitialized();
-            ProgressionService ??= hub?.ProgressionService;
-
             if (_backButton != null)
             {
                 _backButton.onClick.AddListener(BackToMainMenu);
@@ -77,6 +74,40 @@ namespace TTCS.Flow.LevelSelect
             if (_fightButton != null)
             {
                 _fightButton.onClick.AddListener(OnFightClicked);
+            }
+
+            StartCoroutine(InitializeWhenReady());
+        }
+
+        private IEnumerator InitializeWhenReady()
+        {
+            var hub = MetaServiceHub.Instance;
+            hub?.EnsureInitialized();
+
+            const int maxWaitFrames = 120;
+            var waited = 0;
+            while (waited < maxWaitFrames)
+            {
+                var dataReady = DataManager.Instance != null && DataManager.Instance.IsLoaded;
+                ProgressionService ??= hub?.ProgressionService;
+
+                if (dataReady && ProgressionService != null)
+                {
+                    break;
+                }
+
+                waited++;
+                yield return null;
+            }
+
+            if (DataManager.Instance == null || !DataManager.Instance.IsLoaded)
+            {
+                Debug.LogWarning("[LevelSelectUI] DataManager not ready; level data may be missing.");
+            }
+
+            if (ProgressionService == null)
+            {
+                Debug.LogWarning("[LevelSelectUI] ProgressionService not ready; unlock states may be missing.");
             }
 
             BuildSources();

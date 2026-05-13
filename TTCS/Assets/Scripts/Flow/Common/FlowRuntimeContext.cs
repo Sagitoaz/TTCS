@@ -13,7 +13,7 @@ namespace TTCS.Flow
         public static CombatResult LastCombatResult { get; set; }
 
         public static bool HasCombatLaunchData =>
-            !string.IsNullOrWhiteSpace(SelectedLevelId) && SelectedLineupSnapshot != null;
+            !string.IsNullOrWhiteSpace(SelectedLevelId);
 
         public static void ClearCombatLaunchData()
         {
