@@ -83,9 +83,8 @@ netDamage = ATK * skillMult * (1 - defFactor) * critBonus
 | File | Loại | Mô tả |
 |------|------|-------|
 | `skill_goblin_strike.json` | attack, single | ATK×1.0, timing window 150–500ms |
-| `skill_knight_slash.json` | attack, single | ATK×1.2, armor pen 10%, window 300–700ms |
-| `skill_knight_guard.json` | buff, self | +50% DEF, cooldown 3 |
-| `skill_knight_rage.json` | attack, all | ATK×1.5 dark, armor pen 20%, cooldown 4, window 500–1000ms |
+| `skill_henry_guard.json` | buff, self | +50% DEF, cooldown 3 |
+| `skill_henry_rage.json` | attack, all | ATK×1.5 dark, armor pen 20%, cooldown 4, window 500–1000ms |
 
 ---
 

@@ -332,9 +332,8 @@ private IEnumerator PlayTelegraph(string enemyId, float duration)
 | File | Type | Target | Formula | Cooldown |
 |------|------|--------|---------|----------|
 | `skill_goblin_strike.json` | attack | single_enemy | ATK×1.0 | 0 |
-| `skill_knight_slash.json` | attack | single_enemy | ATK×1.2, 10% armor pen | 0 |
-| `skill_knight_guard.json` | buff | self | +50% DEF, duration 1 | 3 |
-| `skill_knight_rage.json` | attack | all_enemies | ATK×1.5 dark, 20% armor pen | 4 |
+| `skill_henry_guard.json` | buff | self | +50% DEF, duration 1 | 3 |
+| `skill_henry_rage.json` | attack | all_enemies | ATK×1.5 dark, 20% armor pen | 4 |
 
 ---
 
