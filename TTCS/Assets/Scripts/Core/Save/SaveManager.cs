@@ -9,6 +9,8 @@ namespace TTCS.Core.Save
 {
     public class SaveManager : MonoBehaviour
     {
+        public const int PrimarySlotIndex = 0;
+
         private static SaveManager _instance;
         public static SaveManager Instance
         {
@@ -26,7 +28,7 @@ namespace TTCS.Core.Save
         public SaveData CurrentSave { get; private set; }
         public int ActiveSlotIndex { get; private set; } = -1;
 
-        private const int MaxSlots = 3;
+        private const int MaxSlots = 1;
         private const string SavePrefix = "ttcs_save_slot_";
         private const string SaveExt = ".json";
         private const int CurrentSchemaVersion = 1;
@@ -54,6 +56,8 @@ namespace TTCS.Core.Save
 
         public SaveData EnsureCurrentSave(int fallbackSlotIndex = 0)
         {
+            fallbackSlotIndex = NormalizeSlotIndex(fallbackSlotIndex);
+
             if (CurrentSave != null)
             {
                 EnsureSaveDefaults(CurrentSave);
@@ -77,6 +81,7 @@ namespace TTCS.Core.Save
 
         public void Save(int slotIndex = 0)
         {
+            slotIndex = NormalizeSlotIndex(slotIndex);
             if (!ValidateSlotIndex(slotIndex))
             {
                 return;
@@ -97,6 +102,7 @@ namespace TTCS.Core.Save
             {
                 string json = JsonUtility.ToJson(CurrentSave, prettyPrint: true);
                 File.WriteAllText(GetFilePath(slotIndex), json);
+                ActiveSlotIndex = slotIndex;
 
                 DebugLogger.Log($"[SaveManager] Saved to slot {slotIndex}.", DebugLogger.LogCategory.Save);
                 EventBus.Instance.Publish(new GameSavedEvent(slotIndex));
@@ -109,6 +115,7 @@ namespace TTCS.Core.Save
 
         public SaveData Load(int slotIndex = 0)
         {
+            slotIndex = NormalizeSlotIndex(slotIndex);
             if (!ValidateSlotIndex(slotIndex))
             {
                 return null;
@@ -154,6 +161,7 @@ namespace TTCS.Core.Save
 
         public void DeleteSave(int slotIndex)
         {
+            slotIndex = NormalizeSlotIndex(slotIndex);
             if (!ValidateSlotIndex(slotIndex))
             {
                 return;
@@ -175,11 +183,13 @@ namespace TTCS.Core.Save
 
         public bool HasSaveData(int slotIndex)
         {
+            slotIndex = NormalizeSlotIndex(slotIndex);
             return ValidateSlotIndex(slotIndex) && File.Exists(GetFilePath(slotIndex));
         }
 
         public SaveSlot GetSlotInfo(int slotIndex)
         {
+            slotIndex = NormalizeSlotIndex(slotIndex);
             if (!ValidateSlotIndex(slotIndex))
             {
                 return SaveSlot.Empty(slotIndex);
@@ -216,6 +226,19 @@ namespace TTCS.Core.Save
         private string GetFilePath(int slotIndex)
         {
             return Path.Combine(Application.persistentDataPath, $"{SavePrefix}{slotIndex}{SaveExt}");
+        }
+
+        private int NormalizeSlotIndex(int slotIndex)
+        {
+            if (slotIndex == PrimarySlotIndex)
+            {
+                return slotIndex;
+            }
+
+            DebugLogger.LogWarning(
+                $"[SaveManager] Requested slot {slotIndex}, but the game is currently limited to a single slot. Redirecting to slot {PrimarySlotIndex}.",
+                DebugLogger.LogCategory.Save);
+            return PrimarySlotIndex;
         }
 
         private bool ValidateSlotIndex(int slotIndex)

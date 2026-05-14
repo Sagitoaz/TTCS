@@ -134,11 +134,7 @@ namespace TTCS.Flow
             }
 
             _startupRouteDone = true;
-
-            if (!TryEnterTutorial())
-            {
-                OpenMainMenu();
-            }
+            OpenMainMenu();
         }
 
         private void InitializeServices()
