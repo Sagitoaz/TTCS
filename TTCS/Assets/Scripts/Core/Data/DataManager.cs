@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -43,7 +43,19 @@ namespace TTCS.Core.Data
         private SkillIconMapDataModel _skillIconMap;
 
         public bool IsLoaded { get; private set; }
-        private const string DataRoot = "Data";
+
+        // ─── Path constants ───────────────────────────────────────────────
+        /// <summary>
+        /// Path dưới Resources/ — phải đặt JSON files vào Assets/Resources/Data/...
+        /// Đây là cách duy nhất để data được đóng gói vào build.
+        /// </summary>
+        private const string ResourcesDataRoot = "Data";
+
+        /// <summary>
+        /// Fallback path dùng trong Editor (Application.dataPath = Assets/).
+        /// Cho phép load thẳng từ Assets/Data/ khi chạy Play Mode mà không cần copy sang Resources.
+        /// </summary>
+        private const string EditorDataRoot = "Data";
         private const string SpriteRoot = "Sprites";
         private const string CharacterSpriteFolder = "Characters";
 
@@ -237,8 +249,23 @@ namespace TTCS.Core.Data
 
         private void LoadSkillIconMap()
         {
-            string filePath = Path.Combine(Application.dataPath, DataRoot, "Meta", "skill_icon_map.json");
-            _skillIconMap = ReadJsonFile<SkillIconMapDataModel>(filePath);
+            // Thử Resources trước (hoạt động trong cả Editor và build)
+            var resourcePath = $"{ResourcesDataRoot}/Meta/skill_icon_map";
+            var textAsset = Resources.Load<TextAsset>(resourcePath);
+            if (textAsset != null)
+            {
+                _skillIconMap = ParseJson<SkillIconMapDataModel>(textAsset.text, "skill_icon_map");
+            }
+
+#if UNITY_EDITOR
+            // Fallback: đọc thẳng từ Assets/Data/ khi chạy trong Editor
+            if (_skillIconMap == null)
+            {
+                string filePath = Path.Combine(Application.dataPath, EditorDataRoot, "Meta", "skill_icon_map.json");
+                _skillIconMap = ReadJsonFileFromDisk<SkillIconMapDataModel>(filePath);
+            }
+#endif
+
             if (_skillIconMap == null)
             {
                 _skillIconMap = new SkillIconMapDataModel();
@@ -252,7 +279,30 @@ namespace TTCS.Core.Data
 
         private void LoadFolder<T>(string subfolder, DataCache<T> cache, Func<T, bool> validator) where T : class
         {
-            string folderPath = Path.Combine(Application.dataPath, DataRoot, subfolder);
+            // ── Ưu tiên 1: Load từ Resources/Data/<subfolder>/ (hoạt động trong build) ──
+            string resourceFolder = $"{ResourcesDataRoot}/{subfolder}";
+            var textAssets = Resources.LoadAll<TextAsset>(resourceFolder);
+            if (textAssets != null && textAssets.Length > 0)
+            {
+                foreach (var ta in textAssets)
+                {
+                    T data = ParseJson<T>(ta.text, ta.name);
+                    if (data == null || !validator(data)) continue;
+
+                    string id = GetIdField(data);
+                    if (string.IsNullOrEmpty(id))
+                    {
+                        DebugLogger.LogWarning($"[DataManager] Could not read 'id' from Resources asset '{ta.name}'", DebugLogger.LogCategory.Data);
+                        continue;
+                    }
+                    cache.Set(id, data);
+                }
+                return; // Resources loaded successfully
+            }
+
+#if UNITY_EDITOR
+            // ── Fallback Editor: Load từ Assets/Data/<subfolder>/ ──
+            string folderPath = Path.Combine(Application.dataPath, EditorDataRoot, subfolder);
             if (!Directory.Exists(folderPath))
             {
                 DebugLogger.LogWarning($"[DataManager] Data folder not found: {folderPath}", DebugLogger.LogCategory.Data);
@@ -262,11 +312,8 @@ namespace TTCS.Core.Data
             string[] files = Directory.GetFiles(folderPath, "*.json");
             foreach (string filePath in files)
             {
-                T data = ReadJsonFile<T>(filePath);
-                if (data == null || !validator(data))
-                {
-                    continue;
-                }
+                T data = ReadJsonFileFromDisk<T>(filePath);
+                if (data == null || !validator(data)) continue;
 
                 string id = GetIdField(data);
                 if (string.IsNullOrEmpty(id))
@@ -274,9 +321,11 @@ namespace TTCS.Core.Data
                     DebugLogger.LogWarning($"[DataManager] Could not read 'id' from {Path.GetFileName(filePath)}", DebugLogger.LogCategory.Data);
                     continue;
                 }
-
                 cache.Set(id, data);
             }
+#else
+            DebugLogger.LogWarning($"[DataManager] No Resources data found for folder '{subfolder}'. Make sure JSON files are under Assets/Resources/Data/{subfolder}/", DebugLogger.LogCategory.Data);
+#endif
         }
 
         private T GetOrLoad<T>(string id, string subfolder, DataCache<T> cache, Func<T, bool> validator) where T : class
@@ -286,8 +335,23 @@ namespace TTCS.Core.Data
                 return cache.Get(id);
             }
 
-            string filePath = Path.Combine(Application.dataPath, DataRoot, subfolder, $"{id}.json");
-            T data = ReadJsonFile<T>(filePath);
+            // Thử Resources trước
+            string resourcePath = $"{ResourcesDataRoot}/{subfolder}/{id}";
+            var textAsset = Resources.Load<TextAsset>(resourcePath);
+            if (textAsset != null)
+            {
+                T resData = ParseJson<T>(textAsset.text, id);
+                if (resData != null && validator(resData))
+                {
+                    cache.Set(id, resData);
+                    return resData;
+                }
+            }
+
+#if UNITY_EDITOR
+            // Fallback Editor: đọc từ Assets/Data/
+            string filePath = Path.Combine(Application.dataPath, EditorDataRoot, subfolder, $"{id}.json");
+            T data = ReadJsonFileFromDisk<T>(filePath);
             if (data == null || !validator(data))
             {
                 return null;
@@ -295,9 +359,26 @@ namespace TTCS.Core.Data
 
             cache.Set(id, data);
             return data;
+#else
+            return null;
+#endif
         }
 
-        private T ReadJsonFile<T>(string filePath) where T : class
+        private T ParseJson<T>(string json, string sourceName) where T : class
+        {
+            try
+            {
+                return JsonUtility.FromJson<T>(json);
+            }
+            catch (Exception e)
+            {
+                DebugLogger.LogError($"[DataManager] Failed to parse '{sourceName}': {e.Message}", DebugLogger.LogCategory.Data);
+                return null;
+            }
+        }
+
+#if UNITY_EDITOR
+        private T ReadJsonFileFromDisk<T>(string filePath) where T : class
         {
             try
             {
@@ -316,6 +397,7 @@ namespace TTCS.Core.Data
                 return null;
             }
         }
+#endif
 
         private static string GetIdField<T>(T obj) where T : class
         {
