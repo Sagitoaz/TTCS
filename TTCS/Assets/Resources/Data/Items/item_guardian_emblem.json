@@ -1,0 +1,29 @@
+﻿{
+  "id": "item_guardian_emblem",
+  "nameKey": "Guardian Emblem",
+  "description": "A defensive accessory that stabilizes frontline units.",
+  "itemType": "accessory",
+  "rarity": "SR",
+  "iconPath": "Items/item_guardian_emblem",
+  "effectType": "equip_passive",
+  "effectAmount": 0,
+  "usableOutsideCombat": true,
+  "equippable": true,
+  "equipSlot": "accessory",
+  "statDescription": "+400 HP, +25 DEF",
+  "statBonuses": [
+    {
+      "statKey": "HP",
+      "amount": 400,
+      "iconPath": "UI/Stat/icon_hp"
+    },
+    {
+      "statKey": "DEF",
+      "amount": 25,
+      "iconPath": "UI/Stat/icon_def"
+    }
+  ],
+  "stackable": false,
+  "maxStack": 1,
+  "healAmount": 0
+}

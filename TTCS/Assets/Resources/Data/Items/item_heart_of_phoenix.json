@@ -1,0 +1,34 @@
+﻿{
+  "id": "item_heart_of_phoenix",
+  "nameKey": "Heart of Phoenix",
+  "description": "A mystical accessory that radiates eternal flames, granting the wearer extraordinary power and resilience.",
+  "itemType": "accessory",
+  "rarity": "SSR",
+  "iconPath": "Items/item_heart_of_phoenix",
+  "effectType": "equip_passive",
+  "effectAmount": 0,
+  "usableOutsideCombat": true,
+  "equippable": true,
+  "equipSlot": "accessory",
+  "statDescription": "+600 HP, +45 ATK, +8% CRIT",
+  "statBonuses": [
+    {
+      "statKey": "HP",
+      "amount": 600,
+      "iconPath": "UI/Stat/icon_hp"
+    },
+    {
+      "statKey": "ATK",
+      "amount": 45,
+      "iconPath": "UI/Stat/icon_atk"
+    },
+    {
+      "statKey": "CRIT",
+      "amount": 8,
+      "iconPath": "UI/Stat/icon_crit"
+    }
+  ],
+  "stackable": false,
+  "maxStack": 1,
+  "healAmount": 0
+}

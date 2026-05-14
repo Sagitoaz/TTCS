@@ -754,7 +754,9 @@ namespace TTCS.UI.Combat
             if (_portraitCache.TryGetValue(cacheKey, out var cachedSprite))
                 return cachedSprite;
 
-            var sprite = LoadCharacterPortraitFromProjectPath(portraitPath);
+            var sprite = DataManager.Instance.LoadCharacterPortraitSprite(portraitPath);
+            if (sprite == null)
+                sprite = LoadCharacterPortraitFromProjectPath(portraitPath);
             if (sprite == null)
                 sprite = LoadSpriteFromResourcesPath(portraitPath);
 

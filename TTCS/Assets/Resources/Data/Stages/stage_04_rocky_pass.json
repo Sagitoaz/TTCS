@@ -1,0 +1,28 @@
+﻿{
+  "id": "stage_04_rocky_pass",
+  "nameKey": "Rocky Pass",
+  "description": "Fight through a narrow pass where elite units hold high ground.",
+  "chapter": 1,
+  "order": 4,
+  "requirements": {
+    "minLevel": 4,
+    "prerequisiteStages": ["stage_03_river_crossing"],
+    "unlockConditions": []
+  },
+  "encounters": [
+    { "wave": 1, "enemies": [ { "enemyId": "enemy_bandit", "level": 4, "position": 0 }, { "enemyId": "enemy_henry", "level": 4, "position": 1 } ], "spawnDelay": 0 },
+    { "wave": 2, "enemies": [ { "enemyId": "enemy_alcryst", "level": 5, "position": 2 } ], "spawnDelay": 1.3 }
+  ],
+  "environment": { "modifiers": [], "hazards": ["falling_rocks"], "weatherEffect": "windy" },
+  "rewards": {
+    "firstClear": { "gold": 960, "exp": 580, "items": [] },
+    "repeatClear": { "gold": 190, "exp": 110, "items": [] },
+    "stars": [
+      { "condition": "clear_under_8_turns", "reward": { "gold": 140, "exp": 0, "items": [] } },
+      { "condition": "no_deaths", "reward": { "gold": 0, "exp": 140, "items": [] } },
+      { "condition": "take_less_than_3_hits", "reward": { "gold": 0, "exp": 0, "items": [] } }
+    ]
+  },
+  "theme": { "backgroundImage": "Stages/rocky_pass", "musicTrack": "Music/battle_theme_02", "ambientSFX": "SFX/mountain_wind" },
+  "difficulty": { "rating": "normal", "recommendedLevel": 4, "recommendedPower": 1420 }
+}

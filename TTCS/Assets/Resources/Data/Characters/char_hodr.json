@@ -1,0 +1,56 @@
+{
+  "id": "char_hodr",
+  "nameKey": "Hodr",
+  "description": "A calm gunner bound to Baldr by fate, fighting from the shadow of the sun with precise firearm techniques.",
+
+  "metadata": {
+    "rarity": "UR",
+    "factionTag": "Celestial",
+    "roleTag": "Marksman",
+    "element": "Dark"
+  },
+
+  "baseStats": {
+    "level": 1,
+    "hp": 2850,
+    "atk": 420,
+    "def": 135,
+    "spd": 178,
+    "crit": 0.28,
+    "critDmg": 1.9,
+    "resist": 0.24
+  },
+
+  "growthCurve": {
+    "hpPerLevel": 125,
+    "atkPerLevel": 20,
+    "defPerLevel": 6,
+    "spdPerLevel": 3
+  },
+
+  "skills": [
+    "skill_hodr_quick_shot",
+    "skill_hodr_double_tap",
+    "skill_hodr_piercing_round",
+    "skill_hodr_eclipse_barrage"
+  ],
+
+  "passive": {
+    "id": "passive_hodr_shadow_of_baldr",
+    "nameKey": "Passive_ShadowOfBaldr",
+    "description": "When Baldr is in the same party, Hodr gains 10% crit rate. Hodr's Dark attacks also mark targets hit by Baldr for 1 turn."
+  },
+
+  "visual": {
+    "spritePath": "Characters/hodr_sprite",
+    "portraitPath": "Characters/hodr_portrait",
+    "animatorController": "Characters/hodr_animator"
+  },
+
+  "aiHints": {
+    "priority": "offense",
+    "preferredTargets": ["lowest_hp", "highest_threat"],
+    "defensiveThreshold": 0.3
+  }
+}
+

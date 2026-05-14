@@ -1,0 +1,17 @@
+﻿{
+  "id": "item_energy",
+  "nameKey": "Energy Gem",
+  "description": "Restores energy in menu interactions.",
+  "itemType": "consumable",
+  "rarity": "R",
+  "iconPath": "Items/item_energy",
+  "effectType": "restore_energy",
+  "effectAmount": 50,
+  "usableOutsideCombat": true,
+  "equippable": false,
+  "equipSlot": "",
+  "statDescription": "",
+  "stackable": true,
+  "maxStack": 99,
+  "healAmount": 0
+}

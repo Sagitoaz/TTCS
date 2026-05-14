@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: d745ca5121e3087499e06212ecf9cd04
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7266557283183153132
+    second: hodr_sprite_0
+  - first:
+      213: 5527655980715869315
+    second: hodr_sprite_1
+  - first:
+      213: -6340506672371190614
+    second: hodr_sprite_2
+  - first:
+      213: -8975820471192335347
+    second: hodr_sprite_3
+  - first:
+      213: -487626857785135436
+    second: hodr_sprite_4
+  - first:
+      213: -4477191576168233912
+    second: hodr_sprite_5
+  - first:
+      213: 7300085345874634832
+    second: hodr_sprite_6
+  - first:
+      213: 8057646314847233514
+    second: hodr_sprite_7
+  - first:
+      213: -1378052372073638348
+    second: hodr_sprite_8
+  - first:
+      213: -7910628626672366842
+    second: hodr_sprite_9
+  - first:
+      213: 3524037725780777
+    second: hodr_sprite_10
+  - first:
+      213: 5402099231068183886
+    second: hodr_sprite_11
+  - first:
+      213: -7484472284220148404
+    second: hodr_sprite_12
+  - first:
+      213: 7524164493953322715
+    second: hodr_sprite_13
+  - first:
+      213: -7528979655546347866
+    second: hodr_sprite_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hodr_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 3839
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cefc824695ff7d460800000000000000
+      internalID: 7266557283183153132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 1898
+        y: 3836
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3840223e3dd26bc40800000000000000
+      internalID: 5527655980715869315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 3499
+        y: 3839
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa4325166cef108a0800000000000000
+      internalID: -6340506672371190614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 5099
+        y: 3839
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0cc6ee56da7f6380800000000000000
+      internalID: -8975820471192335347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 6699
+        y: 3839
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bee6c6d4f99b39f0800000000000000
+      internalID: -487626857785135436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 8299
+        y: 3839
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8440f1f8bf1ddd1c0800000000000000
+      internalID: -4477191576168233912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 9899
+        y: 3839
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05864eec1fc1f4560800000000000000
+      internalID: 7300085345874634832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 30
+        width: 3369
+        height: 3787
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae56432d1a282df60800000000000000
+      internalID: 8057646314847233514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 3457
+        y: 0
+        width: 1555
+        height: 1921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4369aa83bac20ece0800000000000000
+      internalID: -1378052372073638348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 3499
+        y: 1919
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60b48252d2dc73290800000000000000
+      internalID: -7910628626672366842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 5051
+        y: 1161
+        width: 478
+        height: 760
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92bf1d8f7158c0000800000000000000
+      internalID: 3524037725780777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_sprite_11
+      rect:
+        serializedVersion: 2
+        x: 5099
+        y: 1919
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4dda3d01ac18fa40800000000000000
+      internalID: 5402099231068183886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_sprite_12
+      rect:
+        serializedVersion: 2
+        x: 6699
+        y: 1919
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c453dc7ac10d12890800000000000000
+      internalID: -7484472284220148404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_sprite_13
+      rect:
+        serializedVersion: 2
+        x: 8299
+        y: 1919
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdec1b51eb33b6860800000000000000
+      internalID: 7524164493953322715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_sprite_14
+      rect:
+        serializedVersion: 2
+        x: 9899
+        y: 1919
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ae540eb4e0b38790800000000000000
+      internalID: -7528979655546347866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      hodr_sprite_0: 7266557283183153132
+      hodr_sprite_1: 5527655980715869315
+      hodr_sprite_10: 3524037725780777
+      hodr_sprite_11: 5402099231068183886
+      hodr_sprite_12: -7484472284220148404
+      hodr_sprite_13: 7524164493953322715
+      hodr_sprite_14: -7528979655546347866
+      hodr_sprite_2: -6340506672371190614
+      hodr_sprite_3: -8975820471192335347
+      hodr_sprite_4: -487626857785135436
+      hodr_sprite_5: -4477191576168233912
+      hodr_sprite_6: 7300085345874634832
+      hodr_sprite_7: 8057646314847233514
+      hodr_sprite_8: -1378052372073638348
+      hodr_sprite_9: -7910628626672366842
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

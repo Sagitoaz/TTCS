@@ -1,0 +1,84 @@
+{
+  "id": "skill_baldr_ragnarok_dawn",
+  "nameKey": "Ragnarok Dawn",
+  "description": "Gather celestial energy and unleash a cataclysmic dawn blade that burns all enemies.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "all_enemies",
+    "count": 3,
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 100,
+    "cooldown": 5,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 3.6",
+    "element": "light",
+    "canCrit": true,
+    "ignoreDefense": 0.15
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 3.6",
+      "element": "light",
+      "chance": 1.0,
+      "duration": 0
+    },
+    {
+      "type": "burn",
+      "value": "95",
+      "element": "light",
+      "chance": 1.0,
+      "duration": 3
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 340,
+        "endMs": 610,
+        "type": "cast"
+      }
+    ],
+    "grades": {
+      "perfect": {
+        "threshold": 70,
+        "bonus": {
+          "damageMultiplier": 1.25
+        }
+      },
+      "good": {
+        "threshold": 180,
+        "bonus": {
+          "damageMultiplier": 1.1
+        }
+      },
+      "miss": {
+        "threshold": 999,
+        "penalty": {
+          "damageMultiplier": 1.0
+        }
+      }
+    }
+  },
+
+  "actionCost": {
+    "timelineUnits": 145,
+    "description": "Ultimate AoE execution"
+  },
+
+  "visual": {
+    "attackStyle": "ranged",
+    "animation": "baldr_ragnarok_dawn_skillcast",
+    "cameraShake": 0.35
+  }
+}

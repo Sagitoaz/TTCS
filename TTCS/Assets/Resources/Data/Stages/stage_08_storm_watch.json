@@ -1,0 +1,28 @@
+﻿{
+  "id": "stage_08_storm_watch",
+  "nameKey": "Storm Watch",
+  "description": "Lightning strikes and elite archers pressure your frontline.",
+  "chapter": 2,
+  "order": 3,
+  "requirements": {
+    "minLevel": 8,
+    "prerequisiteStages": ["stage_07_dark_wood"],
+    "unlockConditions": []
+  },
+  "encounters": [
+    { "wave": 1, "enemies": [ { "enemyId": "enemy_alcryst", "level": 8, "position": 0 }, { "enemyId": "enemy_alcryst", "level": 8, "position": 2 } ], "spawnDelay": 0 },
+    { "wave": 2, "enemies": [ { "enemyId": "enemy_henry", "level": 9, "position": 1 } ], "spawnDelay": 1.5 }
+  ],
+  "environment": { "modifiers": ["shock_chance"], "hazards": [], "weatherEffect": "thunderstorm" },
+  "rewards": {
+    "firstClear": { "gold": 1640, "exp": 930, "items": [] },
+    "repeatClear": { "gold": 310, "exp": 185, "items": [] },
+    "stars": [
+      { "condition": "clear_under_7_turns", "reward": { "gold": 200, "exp": 0, "items": [] } },
+      { "condition": "no_deaths", "reward": { "gold": 0, "exp": 200, "items": [] } },
+      { "condition": "interrupt_enemy_skill_2_times", "reward": { "gold": 0, "exp": 0, "items": [] } }
+    ]
+  },
+  "theme": { "backgroundImage": "Stages/storm_watch", "musicTrack": "Music/battle_theme_04", "ambientSFX": "SFX/thunder" },
+  "difficulty": { "rating": "hard", "recommendedLevel": 8, "recommendedPower": 2420 }
+}

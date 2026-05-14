@@ -1,0 +1,85 @@
+{
+  "id": "skill_arden_guard_breaker",
+  "nameKey": "Guard Breaker",
+  "description": "Drive a crushing cleave that can stagger the target.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "single_enemy",
+    "count": 1,
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 20,
+    "cooldown": 2,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 2.0",
+    "element": "physical",
+    "canCrit": true,
+    "ignoreDefense": 0.15
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 2.0",
+      "element": "physical",
+      "chance": 1.0,
+      "duration": 0
+    },
+    {
+      "type": "stun",
+      "value": "1",
+      "element": "",
+      "chance": 0.2,
+      "duration": 1
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 300,
+        "endMs": 560,
+        "type": "hit"
+      }
+    ],
+    "grades": {
+      "perfect": {
+        "threshold": 60,
+        "bonus": {
+          "damageMultiplier": 1.25,
+          "effectChanceBonus": 0.1
+        }
+      },
+      "good": {
+        "threshold": 170,
+        "bonus": {
+          "damageMultiplier": 1.05
+        }
+      },
+      "miss": {
+        "threshold": 999,
+        "penalty": {
+          "damageMultiplier": 1.0
+        }
+      }
+    }
+  },
+
+  "actionCost": {
+    "timelineUnits": 125,
+    "description": "Heavy cleave"
+  },
+
+  "visual": {
+    "attackStyle": "melee",
+    "animation": "arden_guard_breaker",
+    "cameraShake": 0.3
+  }
+}

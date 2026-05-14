@@ -1,0 +1,57 @@
+{
+  "id": "skill_baldr_crit_oath",
+  "nameKey": "Solar Strike",
+  "description": "A decisive melee strike infused with solar energy, cutting down enemies with overwhelming force.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "single_enemy",
+    "count": 1,
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 35,
+    "cooldown": 3,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 1.3",
+    "element": "light",
+    "canCrit": true,
+    "ignoreDefense": 0.1
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 1.3",
+      "element": "light",
+      "chance": 1.0,
+      "duration": 0
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 450,
+        "endMs": 850
+      }
+    ],
+    "grades": {}
+  },
+
+  "actionCost": {
+    "timelineUnits": 110,
+    "description": "Strong melee attack"
+  },
+
+  "visual": {
+    "attackStyle": "melee",
+    "animation": "baldr_crit_oath",
+    "cameraShake": 0.0
+  }
+}

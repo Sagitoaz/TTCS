@@ -1,0 +1,70 @@
+{
+  "id": "skill_hodr_double_tap",
+  "nameKey": "Double Tap",
+  "description": "Hodr fires two controlled shots in quick succession.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "single_enemy",
+    "count": 1,
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 0,
+    "cooldown": 1,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 1.45",
+    "element": "physical",
+    "canCrit": true,
+    "ignoreDefense": 0.08
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 0.72",
+      "element": "physical",
+      "chance": 1.0,
+      "duration": 0
+    },
+    {
+      "type": "damage",
+      "value": "ATK * 0.73",
+      "element": "physical",
+      "chance": 1.0,
+      "duration": 0
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 140,
+        "endMs": 330,
+        "type": "shot"
+      },
+      {
+        "startMs": 430,
+        "endMs": 620,
+        "type": "shot"
+      }
+    ],
+    "grades": {}
+  },
+
+  "actionCost": {
+    "timelineUnits": 105,
+    "description": "Two-hit firearm attack"
+  },
+
+  "visual": {
+    "attackStyle": "ranged",
+    "animation": "hodr_double_tap",
+    "cameraShake": 0.08
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "char_baldr",
+  "nameKey": "Baldr",
+  "description": "Sun god of the celestial realm, wielder of the supreme dawn blade.",
+
+  "metadata": {
+    "rarity": "UR",
+    "factionTag": "Celestial",
+    "roleTag": "Warrior",
+    "element": "Light"
+  },
+
+  "baseStats": {
+    "level": 1,
+    "hp": 4200,
+    "atk": 560,
+    "def": 260,
+    "spd": 165,
+    "crit": 0.34,
+    "critDmg": 2.1,
+    "resist": 0.38
+  },
+
+  "growthCurve": {
+    "hpPerLevel": 190,
+    "atkPerLevel": 24,
+    "defPerLevel": 11,
+    "spdPerLevel": 2
+  },
+
+  "skills": [
+    "skill_baldr_sun_slash",
+    "skill_baldr_crit_oath",
+    "skill_baldr_solar_cleave",
+    "skill_baldr_ragnarok_dawn"
+  ],
+
+  "passive": {
+    "id": "passive_baldr_solar_sovereign",
+    "nameKey": "Passive_SolarSovereign",
+    "description": "Increase all Light damage by 15% and reduce incoming debuff duration by 1 turn."
+  },
+
+  "visual": {
+    "spritePath": "Characters/baldr_sprite",
+    "portraitPath": "Characters/baldr_portrait",
+    "animatorController": "Characters/baldr_animator"
+  },
+
+  "aiHints": {
+    "priority": "offense",
+    "preferredTargets": ["lowest_hp", "highest_threat"],
+    "defensiveThreshold": 0.25
+  }
+}

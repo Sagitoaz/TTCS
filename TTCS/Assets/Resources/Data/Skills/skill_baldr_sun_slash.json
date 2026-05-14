@@ -1,0 +1,59 @@
+{
+  "id": "skill_baldr_sun_slash",
+  "nameKey": "Sun Slash",
+  "description": "A radiant basic slash that scorches the target.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "single_enemy",
+    "count": 1,
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 0,
+    "cooldown": 0,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 1.25",
+    "element": "light",
+    "canCrit": true,
+    "ignoreDefense": 0
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 1.25",
+      "element": "light",
+      "chance": 1.0,
+      "duration": 0
+    },
+    {
+      "type": "burn",
+      "value": "65",
+      "element": "light",
+      "chance": 1.0,
+      "duration": 2
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": false,
+    "windows": [],
+    "grades": {}
+  },
+
+  "actionCost": {
+    "timelineUnits": 95,
+    "description": "Fast empowered basic attack"
+  },
+
+  "visual": {
+    "attackStyle": "melee",
+    "animation": "baldr_sun_slash",
+    "cameraShake": 0.15
+  }
+}

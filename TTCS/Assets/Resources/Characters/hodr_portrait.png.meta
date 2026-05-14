@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 5d0ff4fce85a9194d8eab321ea38c8fd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3345285696134769035
+    second: hodr_portrait_0
+  - first:
+      213: -2973492373646630306
+    second: hodr_portrait_1
+  - first:
+      213: -539104588468652565
+    second: hodr_portrait_2
+  - first:
+      213: -5418125786352803332
+    second: hodr_portrait_3
+  - first:
+      213: -4824449691496531757
+    second: hodr_portrait_4
+  - first:
+      213: 7107290576400907231
+    second: hodr_portrait_5
+  - first:
+      213: -1371033213974109482
+    second: hodr_portrait_6
+  - first:
+      213: 1181881054847003009
+    second: hodr_portrait_7
+  - first:
+      213: 5248396532982148972
+    second: hodr_portrait_8
+  - first:
+      213: -6296979275296538415
+    second: hodr_portrait_9
+  - first:
+      213: 7966123534548888113
+    second: hodr_portrait_10
+  - first:
+      213: -517686335890996837
+    second: hodr_portrait_11
+  - first:
+      213: 1180885756991002148
+    second: hodr_portrait_12
+  - first:
+      213: -1469334855409968089
+    second: hodr_portrait_13
+  - first:
+      213: 8336605220143109650
+    second: hodr_portrait_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hodr_portrait_0
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 3839
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57611b922682391d0800000000000000
+      internalID: -3345285696134769035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_portrait_1
+      rect:
+        serializedVersion: 2
+        x: 1898
+        y: 3836
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e52a57eb0780cb6d0800000000000000
+      internalID: -2973492373646630306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_portrait_2
+      rect:
+        serializedVersion: 2
+        x: 3499
+        y: 3839
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be5fa8bab37b488f0800000000000000
+      internalID: -539104588468652565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_portrait_3
+      rect:
+        serializedVersion: 2
+        x: 5099
+        y: 3839
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf1ae04cd43fec4b0800000000000000
+      internalID: -5418125786352803332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_portrait_4
+      rect:
+        serializedVersion: 2
+        x: 6699
+        y: 3839
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d83b9d019c1c0db0800000000000000
+      internalID: -4824449691496531757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_portrait_5
+      rect:
+        serializedVersion: 2
+        x: 8299
+        y: 3839
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdb7bd98f1b22a260800000000000000
+      internalID: 7107290576400907231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_portrait_6
+      rect:
+        serializedVersion: 2
+        x: 9899
+        y: 3839
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d2afc15e8c19fce0800000000000000
+      internalID: -1371033213974109482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_portrait_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 30
+        width: 3369
+        height: 3787
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1896be8be82e66010800000000000000
+      internalID: 1181881054847003009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_portrait_8
+      rect:
+        serializedVersion: 2
+        x: 3457
+        y: 0
+        width: 1555
+        height: 1921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6feacce6dc06d840800000000000000
+      internalID: 5248396532982148972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_portrait_9
+      rect:
+        serializedVersion: 2
+        x: 3499
+        y: 1919
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d004f146b2ac98a0800000000000000
+      internalID: -6296979275296538415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_portrait_10
+      rect:
+        serializedVersion: 2
+        x: 5051
+        y: 1161
+        width: 478
+        height: 760
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13a6aa9f52b5d8e60800000000000000
+      internalID: 7966123534548888113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_portrait_11
+      rect:
+        serializedVersion: 2
+        x: 5099
+        y: 1919
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b91c424350fc0d8f0800000000000000
+      internalID: -517686335890996837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_portrait_12
+      rect:
+        serializedVersion: 2
+        x: 6699
+        y: 1919
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42654c1e659536010800000000000000
+      internalID: 1180885756991002148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_portrait_13
+      rect:
+        serializedVersion: 2
+        x: 8299
+        y: 1919
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72c503fdbbfdb9be0800000000000000
+      internalID: -1469334855409968089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hodr_portrait_14
+      rect:
+        serializedVersion: 2
+        x: 9899
+        y: 1919
+        width: 974
+        height: 1898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2161c4b474291b370800000000000000
+      internalID: 8336605220143109650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      hodr_portrait_0: -3345285696134769035
+      hodr_portrait_1: -2973492373646630306
+      hodr_portrait_10: 7966123534548888113
+      hodr_portrait_11: -517686335890996837
+      hodr_portrait_12: 1180885756991002148
+      hodr_portrait_13: -1469334855409968089
+      hodr_portrait_14: 8336605220143109650
+      hodr_portrait_2: -539104588468652565
+      hodr_portrait_3: -5418125786352803332
+      hodr_portrait_4: -4824449691496531757
+      hodr_portrait_5: 7107290576400907231
+      hodr_portrait_6: -1371033213974109482
+      hodr_portrait_7: 1181881054847003009
+      hodr_portrait_8: 5248396532982148972
+      hodr_portrait_9: -6296979275296538415
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

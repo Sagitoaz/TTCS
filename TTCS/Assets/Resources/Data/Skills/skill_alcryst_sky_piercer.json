@@ -1,0 +1,64 @@
+{
+  "id": "skill_alcryst_sky_piercer",
+  "nameKey": "Skill_AlcrystSkyPiercer",
+  "description": "Cast a vertical sky shot that rains arrows onto all enemies.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "all_enemies",
+    "count": -1,
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 25,
+    "cooldown": 3,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 1.6",
+    "element": "physical",
+    "canCrit": false,
+    "ignoreDefense": 0.1
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 1.6",
+      "element": "physical",
+      "chance": 1.0,
+      "duration": 0
+    },
+    {
+      "type": "stun",
+      "value": "1",
+      "element": "",
+      "chance": 0.15,
+      "duration": 1
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 300,
+        "endMs": 620,
+        "type": "cast"
+      }
+    ]
+  },
+
+  "actionCost": {
+    "timelineUnits": 130,
+    "description": "Charged sky-cast volley"
+  },
+
+  "visual": {
+    "attackStyle": "ranged",
+    "animation": "alcryst_sky_shot_cast_skillcast",
+    "cameraShake": 0.2
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "skill_bandit_strike",
+  "nameKey": "Skill_Banditstrike",
+  "description": "The Bandit lunges forward with a clumsy but swift scratch.",
+  "type": "attack",
+
+  "targetRule": {
+    "type": "single_enemy",
+    "count": 1,
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 0,
+    "cooldown": 0,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 1.0",
+    "element": "physical",
+    "canCrit": true,
+    "ignoreDefense": 0
+  },
+
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 1.0",
+      "element": "physical",
+      "chance": 1.0,
+      "duration": 0
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 150,
+        "endMs": 500
+      }
+    ]
+  },
+
+  "actionCost": {
+    "timelineUnits": 90,
+    "description": "Fast attack"
+  },
+
+  "visual": {
+    "attackStyle": "melee",
+    "animation": "Bandit_strike",
+    "cameraShake": 0.05
+  }
+}

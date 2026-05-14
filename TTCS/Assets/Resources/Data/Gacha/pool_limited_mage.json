@@ -1,0 +1,45 @@
+﻿{
+  "id": "pool_limited_mage",
+  "nameKey": "Limited Mage Banner",
+  "bannerBackgroundPath": "Banners/Gacha/banner_limited_mage",
+  "pityThreshold": 80,
+  "rollCostSingle": 200,
+  "rollCostTen": 1800,
+  "entries": [
+    {
+      "rewardId": "char_mage",
+      "rewardType": "character",
+      "weight": 7,
+      "isRare": true,
+      "amount": 1
+    },
+    {
+      "rewardId": "char_support",
+      "rewardType": "character",
+      "weight": 4,
+      "isRare": true,
+      "amount": 1
+    },
+    {
+      "rewardId": "item_guardian_emblem",
+      "rewardType": "item",
+      "weight": 10,
+      "isRare": true,
+      "amount": 1
+    },
+    {
+      "rewardId": "item_potion",
+      "rewardType": "item",
+      "weight": 55,
+      "isRare": false,
+      "amount": 2
+    },
+    {
+      "rewardId": "item_energy",
+      "rewardType": "item",
+      "weight": 24,
+      "isRare": false,
+      "amount": 1
+    }
+  ]
+}

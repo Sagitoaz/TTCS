@@ -1,0 +1,83 @@
+{
+  "id": "skill_support_astral_prayer",
+  "nameKey": "Astral Prayer",
+  "description": "Invoke an astral prayer to heal all allies and apply a short regeneration effect.",
+  "type": "heal",
+
+  "targetRule": {
+    "type": "all_allies",
+    "count": 3,
+    "canTargetSelf": false
+  },
+
+  "cost": {
+    "mana": 45,
+    "cooldown": 4,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "ATK * 1.25",
+    "element": "",
+    "canCrit": false,
+    "ignoreDefense": 0
+  },
+
+  "effects": [
+    {
+      "type": "heal",
+      "value": "ATK * 1.25",
+      "element": "",
+      "chance": 1.0,
+      "duration": 0
+    },
+    {
+      "type": "heal_regen",
+      "value": "40",
+      "element": "",
+      "chance": 1.0,
+      "duration": 2
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 300,
+        "endMs": 550,
+        "type": "cast"
+      }
+    ],
+    "grades": {
+      "perfect": {
+        "threshold": 60,
+        "bonus": {
+          "healMultiplier": 1.2
+        }
+      },
+      "good": {
+        "threshold": 170,
+        "bonus": {
+          "healMultiplier": 1.05
+        }
+      },
+      "miss": {
+        "threshold": 999,
+        "penalty": {
+          "healMultiplier": 1.0
+        }
+      }
+    }
+  },
+
+  "actionCost": {
+    "timelineUnits": 125,
+    "description": "Team-wide recovery prayer"
+  },
+
+  "visual": {
+    "animation": "support_astral_prayer",
+    "cameraShake": 0.0
+  }
+}

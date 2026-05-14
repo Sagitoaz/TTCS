@@ -1,0 +1,51 @@
+{
+  "id": "skill_warrior_slash",
+  "nameKey": "BasicSlash",
+  "description": "A basic sword attack",
+  "type": "attack",
+  
+  "targetRule": {
+    "type": "single_enemy",
+    "count": 1,
+    "canTargetSelf": false
+  },
+  
+  "cost": {
+    "mana": 0,
+    "cooldown": 0,
+    "limitPerFight": -1
+  },
+  
+  "damage": {
+    "formula": "ATK * 1.0",
+    "element": "physical",
+    "canCrit": true,
+    "ignoreDefense": 0
+  },
+  
+  "effects": [
+    {
+      "type": "damage",
+      "value": "ATK * 1.0",
+      "element": "physical",
+      "chance": 1.0
+    }
+  ],
+  
+  "timing": {
+    "hasTimingWindow": false,
+    "windows": [],
+    "grades": {}
+  },
+  
+  "actionCost": {
+    "timelineUnits": 100,
+    "description": "Standard action"
+  },
+  
+  "visual": {
+    "attackStyle": "melee",
+    "animation": "warrior_slash",
+    "cameraShake": 0.1
+  }
+}

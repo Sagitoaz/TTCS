@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 19b955742f2a59940b9e24d0764c7fd6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5246903892456486972
+    second: alcryst_sprite_0
+  - first:
+      213: -1447794205360816700
+    second: alcryst_sprite_1
+  - first:
+      213: -3225759633735656278
+    second: alcryst_sprite_2
+  - first:
+      213: -4874675820898417992
+    second: alcryst_sprite_3
+  - first:
+      213: -2210028659125034116
+    second: alcryst_sprite_4
+  - first:
+      213: -5681413478957884567
+    second: alcryst_sprite_5
+  - first:
+      213: -3722451074736917587
+    second: alcryst_sprite_6
+  - first:
+      213: 1664574082953141593
+    second: alcryst_sprite_7
+  - first:
+      213: -5405938969294709129
+    second: alcryst_sprite_8
+  - first:
+      213: 5264469514582343706
+    second: alcryst_sprite_9
+  - first:
+      213: 8536741734320173157
+    second: alcryst_sprite_10
+  - first:
+      213: -5540760417667981525
+    second: alcryst_sprite_11
+  - first:
+      213: 3990881206581617747
+    second: alcryst_sprite_12
+  - first:
+      213: 1621098609657403279
+    second: alcryst_sprite_13
+  - first:
+      213: 7726676260607482571
+    second: alcryst_sprite_14
+  - first:
+      213: -904868892998112214
+    second: alcryst_sprite_15
+  - first:
+      213: 7980627560575439906
+    second: alcryst_sprite_16
+  - first:
+      213: -7494105115834244042
+    second: alcryst_sprite_17
+  - first:
+      213: -8190379772418426142
+    second: alcryst_sprite_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: alcryst_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 2219
+        width: 808
+        height: 1856
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c7448785b04f27b0800000000000000
+      internalID: -5246903892456486972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alcryst_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 1773
+        y: 2304
+        width: 1595
+        height: 1577
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd799947d668ebe0800000000000000
+      internalID: -1447794205360816700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alcryst_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 2142
+        width: 198
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aac546434bccb33d0800000000000000
+      internalID: -3225759633735656278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alcryst_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 2179
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b20a240b2ca95cb0800000000000000
+      internalID: -4874675820898417992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alcryst_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 2141
+        width: 66
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c736b6dc4a66451e0800000000000000
+      internalID: -2210028659125034116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alcryst_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 299
+        width: 1497
+        height: 1881
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96b5994da809721b0800000000000000
+      internalID: -5681413478957884567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alcryst_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 2111
+        width: 51
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da3f88c4872375cc0800000000000000
+      internalID: -3722451074736917587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alcryst_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 2132
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95d5eb42f41c91710800000000000000
+      internalID: 1664574082953141593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alcryst_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 2129
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77e5fb9362f3af4b0800000000000000
+      internalID: -5405938969294709129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alcryst_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 1911
+        width: 414
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a10cd8391272f0940800000000000000
+      internalID: 5264469514582343706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alcryst_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1980
+        width: 217
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 560f765b069987670800000000000000
+      internalID: 8536741734320173157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alcryst_sprite_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 356
+        width: 1748
+        height: 1716
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2fda5f91c34b13b0800000000000000
+      internalID: -5540760417667981525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alcryst_sprite_12
+      rect:
+        serializedVersion: 2
+        x: 1779
+        y: 1648
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35464131055726730800000000000000
+      internalID: 3990881206581617747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alcryst_sprite_13
+      rect:
+        serializedVersion: 2
+        x: 1724
+        y: 1251
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f875286b89c4f7610800000000000000
+      internalID: 1621098609657403279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alcryst_sprite_14
+      rect:
+        serializedVersion: 2
+        x: 3302
+        y: 746
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcad3ff0f1baa3b60800000000000000
+      internalID: 7726676260607482571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alcryst_sprite_15
+      rect:
+        serializedVersion: 2
+        x: 3337
+        y: 738
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2ceb8839824173f0800000000000000
+      internalID: -904868892998112214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alcryst_sprite_16
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 351
+        width: 324
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2249ac0bb72e0ce60800000000000000
+      internalID: 7980627560575439906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alcryst_sprite_17
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 0
+        width: 436
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63423454a179ff790800000000000000
+      internalID: -7494105115834244042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alcryst_sprite_18
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 0
+        width: 546
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ea7471ddfce55e80800000000000000
+      internalID: -8190379772418426142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      alcryst_sprite_0: -5246903892456486972
+      alcryst_sprite_1: -1447794205360816700
+      alcryst_sprite_10: 8536741734320173157
+      alcryst_sprite_11: -5540760417667981525
+      alcryst_sprite_12: 3990881206581617747
+      alcryst_sprite_13: 1621098609657403279
+      alcryst_sprite_14: 7726676260607482571
+      alcryst_sprite_15: -904868892998112214
+      alcryst_sprite_16: 7980627560575439906
+      alcryst_sprite_17: -7494105115834244042
+      alcryst_sprite_18: -8190379772418426142
+      alcryst_sprite_2: -3225759633735656278
+      alcryst_sprite_3: -4874675820898417992
+      alcryst_sprite_4: -2210028659125034116
+      alcryst_sprite_5: -5681413478957884567
+      alcryst_sprite_6: -3722451074736917587
+      alcryst_sprite_7: 1664574082953141593
+      alcryst_sprite_8: -5405938969294709129
+      alcryst_sprite_9: 5264469514582343706
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

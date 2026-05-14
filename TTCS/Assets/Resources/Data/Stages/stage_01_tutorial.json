@@ -1,0 +1,56 @@
+﻿{
+  "id": "stage_01_tutorial",
+  "nameKey": "Tutorial Battle",
+  "description": "A tutorial stage to introduce basic combat mechanics",
+  "chapter": 1,
+  "order": 1,
+  "requirements": {
+    "minLevel": 1,
+    "prerequisiteStages": [],
+    "unlockConditions": []
+  },
+  "encounters": [
+    {
+      "wave": 1,
+      "enemies": [
+        { "enemyId": "enemy_bandit", "level": 1, "position": 0 },
+        { "enemyId": "enemy_bandit", "level": 1, "position": 1 }
+      ],
+      "spawnDelay": 0
+    }
+  ],
+  "environment": {
+    "modifiers": [],
+    "hazards": [],
+    "weatherEffect": "none"
+  },
+  "rewards": {
+    "firstClear": {
+      "gold": 500,
+      "exp": 300,
+      "items": [
+        { "id": "item_beginner_sword", "amount": 1 }
+      ]
+    },
+    "repeatClear": {
+      "gold": 100,
+      "exp": 50,
+      "items": []
+    },
+    "stars": [
+      { "condition": "clear_under_10_turns", "reward": { "gold": 100, "exp": 0, "items": [] } },
+      { "condition": "no_deaths", "reward": { "gold": 0, "exp": 100, "items": [] } },
+      { "condition": "use_only_basic_attacks", "reward": { "gold": 0, "exp": 0, "items": [ { "id": "item_skill_scroll", "amount": 1 } ] } }
+    ]
+  },
+  "theme": {
+    "backgroundImage": "Stages/forest_bg",
+    "musicTrack": "Music/battle_theme_01",
+    "ambientSFX": "SFX/forest_wind"
+  },
+  "difficulty": {
+    "rating": "easy",
+    "recommendedLevel": 1,
+    "recommendedPower": 800
+  }
+}

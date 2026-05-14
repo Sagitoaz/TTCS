@@ -172,23 +172,13 @@ namespace TTCS.Core.Data
 
             var normalized = NormalizePortraitPath(portraitPath);
 
-            // Backward-compatible: allow loading from Resources if available.
-            var resourcePath = normalized.Replace("\\", "/");
-            if (resourcePath.StartsWith("Assets/", StringComparison.OrdinalIgnoreCase))
+            foreach (var resourcePath in BuildResourceSpriteCandidates(portraitPath, normalized))
             {
-                resourcePath = resourcePath.Substring("Assets/".Length);
-            }
-
-            if (resourcePath.StartsWith("Resources/", StringComparison.OrdinalIgnoreCase))
-            {
-                resourcePath = resourcePath.Substring("Resources/".Length);
-            }
-
-            resourcePath = Path.ChangeExtension(resourcePath, null)?.Replace("\\", "/");
-            var resourceSprite = Resources.Load<Sprite>(resourcePath);
-            if (resourceSprite != null)
-            {
-                return resourceSprite;
+                var resourceSprite = Resources.Load<Sprite>(resourcePath);
+                if (resourceSprite != null)
+                {
+                    return resourceSprite;
+                }
             }
 
 #if UNITY_EDITOR
@@ -245,6 +235,47 @@ namespace TTCS.Core.Data
             }
 
             return $"Assets/{SpriteRoot}/{CharacterSpriteFolder}/{path}";
+        }
+
+        private static IEnumerable<string> BuildResourceSpriteCandidates(string rawPath, string normalizedPath)
+        {
+            foreach (var path in NormalizeResourceCandidate(rawPath))
+                yield return path;
+
+            foreach (var path in NormalizeResourceCandidate(normalizedPath))
+                yield return path;
+
+            var raw = Path.ChangeExtension(rawPath.Replace("\\", "/").Trim(), null)?.Replace("\\", "/") ?? rawPath;
+            if (raw.StartsWith("Characters/", StringComparison.OrdinalIgnoreCase)
+                || raw.StartsWith("Enemies/", StringComparison.OrdinalIgnoreCase))
+            {
+                yield return $"{SpriteRoot}/{raw}";
+            }
+
+            var fileName = Path.GetFileName(raw);
+            if (!string.IsNullOrWhiteSpace(fileName))
+            {
+                yield return $"{SpriteRoot}/{CharacterSpriteFolder}/{fileName}";
+                yield return $"{SpriteRoot}/Enemies/{fileName}";
+            }
+        }
+
+        private static IEnumerable<string> NormalizeResourceCandidate(string rawPath)
+        {
+            if (string.IsNullOrWhiteSpace(rawPath))
+                yield break;
+
+            var path = rawPath.Replace("\\", "/").Trim();
+            if (path.StartsWith("Assets/Resources/", StringComparison.OrdinalIgnoreCase))
+                path = path.Substring("Assets/Resources/".Length);
+            else if (path.StartsWith("Assets/", StringComparison.OrdinalIgnoreCase))
+                path = path.Substring("Assets/".Length);
+            else if (path.StartsWith("Resources/", StringComparison.OrdinalIgnoreCase))
+                path = path.Substring("Resources/".Length);
+
+            path = Path.ChangeExtension(path, null)?.Replace("\\", "/") ?? path;
+            if (!string.IsNullOrWhiteSpace(path))
+                yield return path;
         }
 
         private void LoadSkillIconMap()

@@ -141,7 +141,11 @@ namespace TTCS.UI.Combat
             if (string.IsNullOrWhiteSpace(portraitPath))
                 return null;
 
-            var sprite = LoadCharacterPortraitFromProjectPath(portraitPath);
+            var sprite = DataManager.Instance.LoadCharacterPortraitSprite(portraitPath);
+            if (sprite != null)
+                return sprite;
+
+            sprite = LoadCharacterPortraitFromProjectPath(portraitPath);
             if (sprite != null)
                 return sprite;
 

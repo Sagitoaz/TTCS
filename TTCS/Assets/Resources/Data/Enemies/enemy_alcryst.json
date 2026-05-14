@@ -1,0 +1,74 @@
+﻿{
+  "id": "enemy_alcryst",
+  "nameKey": "Alcryst",
+  "description": "An elite bow fighter who controls distance with precise horizontal shots and sky-cast volleys.",
+  "type": "elite",
+  "element": "lightning",
+  "role": "bow",
+
+  "baseStats": {
+    "hp": 3000,
+    "atk": 450,
+    "def": 100,
+    "spd": 138,
+    "crit": 0.16,
+    "resist": 0.18
+  },
+
+  "resistances": {
+    "physical": 0.05,
+    "fire": 0.0,
+    "ice": 0.0,
+    "lightning": -0.10,
+    "dark": 0.08
+  },
+
+  "moveSet": [
+    { "skillId": "skill_alcryst_arrow_shot", "weight": 70, "conditions": [] },
+    {
+      "skillId": "skill_alcryst_sky_piercer",
+      "weight": 30,
+      "conditions": [{ "type": "turn_count", "value": 2 }]
+    }
+  ],
+
+  "phases": [
+    {
+      "phaseId": 1,
+      "hpRange": [1.0, 0.0],
+      "moves": ["arrow_shot", "sky_piercer"],
+      "weights": [70, 30],
+      "behavior": "aggressive_ranged"
+    }
+  ],
+
+  "telegraph": {
+    "enabled": true,
+    "defaultDuration": 1.0,
+    "cueType": "visual_and_sfx",
+    "overrideByCue": { "sky_cast": 1.35 }
+  },
+
+  "aiProfile": {
+    "aggression": 0.75,
+    "targetPriority": ["lowest_hp", "random"],
+    "useSkillsWisely": true,
+    "retreatThreshold": 0.0
+  },
+
+  "loot": {
+    "guaranteed": [
+      { "type": "currency", "id": "gold", "amount": [80, 150] }
+    ],
+    "possible": [
+      { "type": "item", "id": "item_energy", "chance": 0.20, "amount": [1, 1] }
+    ]
+  },
+
+  "visual": {
+    "portraitPath": "Characters/alcryst_portrait",
+    "spritePath": "Enemies/alcryst_sprite",
+    "animatorController": "Enemies/alcryst_animator",
+    "scale": 1.0
+  }
+}

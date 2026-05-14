@@ -1,0 +1,76 @@
+{
+  "id": "skill_mage_heal",
+  "nameKey": "Heal",
+  "description": "Channel arcane energy to restore HP of a single ally.",
+  "type": "heal",
+
+  "targetRule": {
+    "type": "single_ally",
+    "count": 1,
+    "canTargetSelf": true
+  },
+
+  "cost": {
+    "mana": 35,
+    "cooldown": 2,
+    "limitPerFight": -1
+  },
+
+  "damage": {
+    "formula": "",
+    "element": "",
+    "canCrit": false,
+    "ignoreDefense": 0
+  },
+
+  "effects": [
+    {
+      "type": "heal",
+      "value": "ATK * 1.8",
+      "element": "",
+      "chance": 1.0,
+      "duration": 0
+    }
+  ],
+
+  "timing": {
+    "hasTimingWindow": true,
+    "windows": [
+      {
+        "startMs": 250,
+        "endMs": 500,
+        "type": "cast"
+      }
+    ],
+    "grades": {
+      "perfect": {
+        "threshold": 50,
+        "bonus": {
+          "healMultiplier": 1.3
+        }
+      },
+      "good": {
+        "threshold": 150,
+        "bonus": {
+          "healMultiplier": 1.1
+        }
+      },
+      "miss": {
+        "threshold": 999,
+        "penalty": {
+          "healMultiplier": 1.0
+        }
+      }
+    }
+  },
+
+  "actionCost": {
+    "timelineUnits": 110,
+    "description": "Healing spell"
+  },
+
+  "visual": {
+    "animation": "mage_heal",
+    "cameraShake": 0.0
+  }
+}

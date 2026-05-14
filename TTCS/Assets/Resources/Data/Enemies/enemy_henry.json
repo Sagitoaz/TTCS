@@ -1,0 +1,87 @@
+﻿{
+  "id": "enemy_henry",
+  "nameKey": "Henry",
+  "description": "An elite enemy with powerful attacks and defensive capabilities",
+  "type": "elite",
+  "element": "fire",
+  "role": "warrior",
+  
+  "baseStats": {
+    "hp": 4200,
+    "atk": 550,
+    "def": 150,
+    "spd": 100,
+    "crit": 0.12,
+    "resist": 0.22
+  },
+  
+  "resistances": {
+    "physical": 0.12,
+    "fire": -0.25,
+    "ice": 0.0,
+    "lightning": 0.08,
+    "dark": 0.35
+  },
+  
+  "moveSet": [
+    {
+      "skillId": "skill_henry_guard",
+      "weight": 30,
+      "conditions": [{ "type": "hp_below", "value": 0.5 }]
+    },
+    {
+      "skillId": "skill_henry_rage",
+      "weight": 40,
+      "conditions": [{ "type": "hp_below", "value": 0.6 }]
+    }
+  ],
+  
+  "phases": [
+    {
+      "phaseId": 1,
+      "hpRange": [1.0, 0.6],
+      "moves": ["slash", "guard"],
+      "weights": [70, 30],
+      "behavior": "balanced"
+    },
+    {
+      "phaseId": 2,
+      "hpRange": [0.6, 0.0],
+      "moves": ["slash", "guard", "rage"],
+      "weights": [30, 30, 40],
+      "behavior": "aggressive"
+    }
+  ],
+  
+  "telegraph": {
+    "enabled": true,
+    "defaultDuration": 1.2,
+    "cueType": "visual_and_sfx",
+    "overrideByCue": { "counter": 1.5 }
+  },
+  
+  "aiProfile": {
+    "aggression": 0.7,
+    "targetPriority": ["lowest_hp", "highest_threat"],
+    "useSkillsWisely": true,
+    "retreatThreshold": 0.0
+  },
+  
+  "loot": {
+    "guaranteed": [
+      { "type": "currency", "id": "gold", "amount": [110, 200] },
+      { "type": "currency", "id": "exp", "amount": [160, 160] }
+    ],
+    "possible": [
+      { "type": "item", "id": "item_dark_sword", "chance": 0.15, "amount": [1, 1] },
+      { "type": "item", "id": "item_rare_gem", "chance": 0.05, "amount": [1, 2] }
+    ]
+  },
+  
+  "visual": {
+    "portraitPath": "Characters/henry_portrait",
+    "spritePath": "Enemies/henry_sprite",
+    "animatorController": "Enemies/henry_animator",
+    "scale": 1.3
+  }
+}

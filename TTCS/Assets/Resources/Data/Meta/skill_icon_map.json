@@ -1,0 +1,127 @@
+﻿{
+  "schemaVersion": "1",
+  "fallbackIconPath": "Sprites/Skills/skill_default",
+  "entries": [
+    {
+      "skillId": "skill_warrior_slash",
+      "iconPath": "Sprites/Skills/skill_warrior_slash"
+    },
+    {
+      "skillId": "skill_warrior_power_strike",
+      "iconPath": "Sprites/Skills/skill_warrior_power_strike"
+    },
+    {
+      "skillId": "skill_warrior_guard",
+      "iconPath": "Sprites/Skills/skill_warrior_guard"
+    },
+    {
+      "skillId": "skill_warrior_taunt",
+      "iconPath": "Sprites/Skills/skill_warrior_taunt"
+    },
+    {
+      "skillId": "skill_mage_fireball",
+      "iconPath": "Sprites/Skills/skill_mage_fireball"
+    },
+    {
+      "skillId": "skill_mage_heal",
+      "iconPath": "Sprites/Skills/skill_mage_heal"
+    },
+    {
+      "skillId": "skill_mage_shield",
+      "iconPath": "Sprites/Skills/skill_mage_shield"
+    },
+    {
+      "skillId": "skill_mage_lightning",
+      "iconPath": "Sprites/Skills/skill_mage_lightning"
+    }
+    ,
+    {
+      "skillId": "skill_support_arcane_bolt",
+      "iconPath": "Sprites/Skills/support_arcane_bolt"
+    },
+    {
+      "skillId": "skill_support_restoration",
+      "iconPath": "Sprites/Skills/support_restoration"
+    },
+    {
+      "skillId": "skill_support_mystic_barrier",
+      "iconPath": "Sprites/Skills/support_mystic_barrier"
+    },
+    {
+      "skillId": "skill_support_astral_prayer",
+      "iconPath": "Sprites/Skills/support_astral_prayer"
+    },
+    {
+      "skillId": "skill_arden_sword_swing",
+      "iconPath": "Sprites/Skills/arden_sword_swing"
+    },
+    {
+      "skillId": "skill_arden_guard_breaker",
+      "iconPath": "Sprites/Skills/arden_guard_breaker"
+    },
+    {
+      "skillId": "skill_arden_iron_bulwark",
+      "iconPath": "Sprites/Skills/arden_iron_bulwark"
+    },
+    {
+      "skillId": "skill_arden_shield_wall",
+      "iconPath": "Sprites/Skills/arden_shield_wall"
+    },
+    {
+      "skillId": "skill_alcryst_arrow_shot",
+      "iconPath": "Sprites/Skills/alcryst_arrow_shot"
+    },
+    {
+      "skillId": "skill_alcryst_sky_piercer",
+      "iconPath": "Sprites/Skills/alcryst_sky_piercer"
+    },
+    {
+      "skillId": "skill_baldr_crit_oath",
+      "iconPath": "Sprites/Skills/baldr_crit_oath"
+    },
+    {
+      "skillId": "skill_baldr_ragnarok_dawn",
+      "iconPath": "Sprites/Skills/baldr_ragnarok_dawn"
+    },
+    {
+      "skillId": "skill_baldr_solar_cleave",
+      "iconPath": "Sprites/Skills/baldr_solar_cleave"
+    },
+    {
+      "skillId": "skill_baldr_sun_slash",
+      "iconPath": "Sprites/Skills/baldr_sun_slash"
+    },
+    {
+      "skillId": "skill_fomortiis_crushing_fist",
+      "iconPath": "Sprites/Skills/fomortiis_crushing_fist"
+    },
+    {
+      "skillId": "skill_fomortiis_titan_slam",
+      "iconPath": "Sprites/Skills/fomortiis_titan_slam"
+    },
+    {
+      "skillId": "skill_fomortiis_dragon_roar",
+      "iconPath": "Sprites/Skills/fomortiis_dragon_roar"
+    },
+    {
+      "skillId": "skill_fomortiis_void_summons",
+      "iconPath": "Sprites/Skills/fomortiis_void_summons"
+    },
+    {
+      "skillId": "skill_hodr_quick_shot",
+      "iconPath": "Sprites/Skills/hodr_quick_shot"
+    },
+    {
+      "skillId": "skill_hodr_double_tap",
+      "iconPath": "Sprites/Skills/hodr_double_tap"
+    },
+    {
+      "skillId": "skill_hodr_piercing_round",
+      "iconPath": "Sprites/Skills/hodr_piercing_round"
+    },
+    {
+      "skillId": "skill_hodr_eclipse_barrage",
+      "iconPath": "Sprites/Skills/hodr_eclipse_barrage"
+    }
+  ]
+}
