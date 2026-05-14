@@ -70,6 +70,8 @@ namespace TTCS.Flow.MainMenu
         {
             if (_currentIndex >= _panelSprites.Count - 1)
             {
+                // Ở trang cuối → đóng panel
+                Close();
                 return;
             }
 
@@ -111,6 +113,14 @@ namespace TTCS.Flow.MainMenu
 
         private void RefreshView()
         {
+            if (_panelSprites == null || _panelSprites.Count == 0)
+            {
+                if (_backButton != null) _backButton.interactable = false;
+                if (_continueButton != null) _continueButton.interactable = false;
+                if (_pageIndicatorText != null) _pageIndicatorText.text = "1 / 1";
+                return;
+            }
+
             if (_tutorialImage != null)
             {
                 var hasSprite = _currentIndex >= 0 && _currentIndex < _panelSprites.Count;
@@ -118,25 +128,29 @@ namespace TTCS.Flow.MainMenu
                 _tutorialImage.sprite = hasSprite ? _panelSprites[_currentIndex] : null;
             }
 
+            var isFirst = _currentIndex <= 0;
+            var isLast  = _currentIndex >= _panelSprites.Count - 1;
+
             if (_backButton != null)
             {
-                _backButton.interactable = _currentIndex > 0;
+                _backButton.interactable = !isFirst;
             }
 
+            // Continue luôn interactable: ở trang cuối nó đóng panel thay vì bị disable
             if (_continueButton != null)
             {
-                _continueButton.interactable = _currentIndex < _panelSprites.Count - 1;
+                _continueButton.interactable = true;
             }
 
             if (_continueButtonText != null)
             {
-                _continueButtonText.text = "Continue";
+                _continueButtonText.text = isLast ? "Finish" : "Continue";
             }
 
             if (_pageIndicatorText != null)
             {
-                var pageCount = Mathf.Max(1, _panelSprites.Count);
-                _pageIndicatorText.text = $"{Mathf.Clamp(_currentIndex + 1, 1, pageCount)} / {pageCount}";
+                var pageCount = _panelSprites.Count;
+                _pageIndicatorText.text = $"{_currentIndex + 1} / {pageCount}";
             }
         }
 

@@ -16,19 +16,22 @@ namespace TTCS.Flow.MainMenu
         [SerializeField] private GameObject _mainMenuRoot;
 
 
-        [Header("Start Menu")]
+        [Header("Start Menu Buttons")]
         [SerializeField] private Button _continueButton;
         [SerializeField] private Button _newGameButton;
         [SerializeField] private Button _tutorialButton;
         [SerializeField] private Button _startMenuSettingsButton;
         [SerializeField] private Button _exitGameButton;
 
+        [Header("Main Menu Buttons")]
         [SerializeField] private Button _playButton;
         [SerializeField] private Button _teamButton;
         [SerializeField] private Button _gachaButton;
         [SerializeField] private Button _inventoryButton;
         [SerializeField] private Button _characterCollectionButton;
-        [SerializeField] private Button _settingsButton;
+        [SerializeField] private Button _settingsButton;       // Settings trong Start Menu (cũ)
+        [SerializeField] private Button _mainMenuSettingsButton; // Settings trong Main Menu (mới)
+
 
         [Header("Gold Display")]
         [SerializeField] private TextMeshProUGUI _goldText;
@@ -38,6 +41,10 @@ namespace TTCS.Flow.MainMenu
         [SerializeField] private SettingsPanelController _settingsPanelController;
 
         private SaveManager _saveManager;
+
+        // Track panel caller để Settings biết quay về đâu khi đóng
+        private enum CallerPanel { None, StartMenu, MainMenu }
+        private CallerPanel _settingsCaller;
 
         private void Start()
         {
@@ -74,7 +81,7 @@ namespace TTCS.Flow.MainMenu
                 _tutorialButton.onClick.AddListener(OnTutorialClicked);
 
             if (_startMenuSettingsButton != null)
-                _startMenuSettingsButton.onClick.AddListener(OnSettingsClicked);
+                _startMenuSettingsButton.onClick.AddListener(OnSettingsFromStartMenu);
 
             if (_exitGameButton != null)
                 _exitGameButton.onClick.AddListener(OnExitGameClicked);
@@ -94,8 +101,13 @@ namespace TTCS.Flow.MainMenu
             if (_characterCollectionButton != null)
                 _characterCollectionButton.onClick.AddListener(OnCharacterCollectionClicked);
 
+            // Nút Settings cũ trong Start Menu (nếu còn dùng)
             if (_settingsButton != null)
-                _settingsButton.onClick.AddListener(OnSettingsClicked);
+                _settingsButton.onClick.AddListener(OnSettingsFromStartMenu);
+
+            // Nút Settings mới trong Main Menu
+            if (_mainMenuSettingsButton != null)
+                _mainMenuSettingsButton.onClick.AddListener(OnSettingsFromMainMenu);
         }
 
         private void OnContinueClicked()
@@ -172,10 +184,37 @@ namespace TTCS.Flow.MainMenu
             FlowController.Instance.OpenCharacterCollection();
         }
 
-        private void OnSettingsClicked()
+        private void OnSettingsFromStartMenu()
         {
-            Debug.Log("[MainMenu] Settings button clicked");
-            _settingsPanelController?.Open();
+            Debug.Log("[MainMenu] Settings opened from Start Menu");
+            _settingsCaller = CallerPanel.StartMenu;
+            // Ẩn Start Menu khi Settings mở để tránh UI chồng chéo
+            SetRootActive(_startMenuRoot, false);
+            _settingsPanelController?.Open(OnSettingsClosed);
+        }
+
+        private void OnSettingsFromMainMenu()
+        {
+            Debug.Log("[MainMenu] Settings opened from Main Menu");
+            _settingsCaller = CallerPanel.MainMenu;
+            // Ẩn Main Menu khi Settings mở
+            SetRootActive(_mainMenuRoot, false);
+            _settingsPanelController?.Open(OnSettingsClosed);
+        }
+
+        private void OnSettingsClosed()
+        {
+            Debug.Log($"[MainMenu] Settings closed, returning to: {_settingsCaller}");
+            switch (_settingsCaller)
+            {
+                case CallerPanel.StartMenu:
+                    SetRootActive(_startMenuRoot, true);
+                    break;
+                case CallerPanel.MainMenu:
+                    SetRootActive(_mainMenuRoot, true);
+                    break;
+            }
+            _settingsCaller = CallerPanel.None;
         }
 
         private void OnExitGameClicked()

@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using TTCS.Audio;
 using UnityEngine;
@@ -26,6 +27,7 @@ namespace TTCS.Flow.MainMenu
 
         private bool _initialized;
         private bool _openedExplicitly;
+        private Action _onCloseCallback;
 
         private void Awake()
         {
@@ -44,8 +46,18 @@ namespace TTCS.Flow.MainMenu
 
         public void Open()
         {
+            Open(null);
+        }
+
+        /// <summary>
+        /// Mở Settings panel. Khi đóng lại sẽ gọi <paramref name="onClose"/> callback.
+        /// Dùng để biết phải quay về panel nào (Start Menu hay Main Menu).
+        /// </summary>
+        public void Open(Action onClose)
+        {
             EnsureInitialized();
             _openedExplicitly = true;
+            _onCloseCallback = onClose;
             RefreshFromAudio();
             SetPanelVisible(true);
         }
@@ -55,6 +67,10 @@ namespace TTCS.Flow.MainMenu
             EnsureInitialized();
             _openedExplicitly = false;
             SetPanelVisible(false);
+
+            var callback = _onCloseCallback;
+            _onCloseCallback = null;
+            callback?.Invoke();
         }
 
         private void EnsureInitialized()
