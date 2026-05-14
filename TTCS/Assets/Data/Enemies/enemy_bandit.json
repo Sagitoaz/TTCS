@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "enemy_bandit",
   "nameKey": "Bandit",
   "description": "A common weak enemy found in early stages",
@@ -7,12 +7,12 @@
   "role": "warrior",
   
   "baseStats": {
-    "hp": 1500,
-    "atk": 180,
-    "def": 80,
-    "spd": 110,
+    "hp": 1600,
+    "atk": 195,
+    "def": 85,
+    "spd": 100,
     "crit": 0.05,
-    "resist": 0.10
+    "resist": 0.08
   },
   
   "resistances": {
@@ -24,19 +24,14 @@
   },
   
   "moveSet": [
-    {
-      "skillId": "skill_bandit_strike",
-      "weight": 100,
-      "conditions": []
-    }
-    
+    { "skillId": "skill_bandit_strike", "weight": 100, "conditions": [] }
   ],
   
   "phases": [
     {
       "phaseId": 1,
       "hpRange": [1.0, 0.0],
-      "moves": [ "strike"],
+      "moves": ["strike"],
       "weights": [100],
       "behavior": "cowardly"
     }
@@ -58,19 +53,10 @@
   
   "loot": {
     "guaranteed": [
-      {
-        "type": "currency",
-        "id": "gold",
-        "amount": [20, 40]
-      }
+      { "type": "currency", "id": "gold", "amount": [20, 45] }
     ],
     "possible": [
-      {
-        "type": "item",
-        "id": "item_health_potion",
-        "chance": 0.2,
-        "amount": [1, 1]
-      }
+      { "type": "item", "id": "item_health_potion", "chance": 0.18, "amount": [1, 1] }
     ]
   },
   

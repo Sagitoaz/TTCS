@@ -6,12 +6,12 @@
   "rarity": "R",
   "iconPath": "Items/item_potion",
   "effectType": "heal_hp",
-  "effectAmount": 100,
+  "effectAmount": 600,
   "usableOutsideCombat": true,
   "equippable": false,
   "equipSlot": "",
   "statDescription": "",
   "stackable": true,
   "maxStack": 99,
-  "healAmount": 100
+  "healAmount": 600
 }
