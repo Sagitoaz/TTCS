@@ -115,13 +115,13 @@ namespace TTCS.Combat.Managers
 
         [Header("Guard Timing Window")]
         [Tooltip("Duration của timing window khi enemy tấn công (giây)")]
-        [SerializeField] private float _guardWindowDuration = 1.5f;
+        [SerializeField] private float _guardWindowDuration = 1.2f;
 
-        [Tooltip("Perfect threshold (ms) — input trong khoảng này = Perfect")]
-        [SerializeField] private float _perfectThresholdMs = 500f;
+        [Tooltip("Perfect threshold (giây từ điểm lý tưởng) — 0.08s = 80ms")]
+        [SerializeField] private float _perfectThresholdSec = 0.08f;
 
-        [Tooltip("Good threshold (ms)")]
-        [SerializeField] private float _goodThresholdMs = 800f;
+        [Tooltip("Good threshold (giây từ điểm lý tưởng) — 0.20s = 200ms")]
+        [SerializeField] private float _goodThresholdSec = 0.20f;
 
         [Header("Opening Turn")]
         [Tooltip("If enabled, the first player in party order always gets the opening turn.")]
@@ -450,8 +450,8 @@ namespace TTCS.Combat.Managers
                     var window = new TimingWindow(
                         openTime: Time.time,
                         duration: _guardWindowDuration,
-                        perfectThreshold: _perfectThresholdMs,
-                        goodThreshold: _goodThresholdMs);
+                        perfectThreshold: _perfectThresholdSec,
+                        goodThreshold: _goodThresholdSec);
 
                     TimingSystem.Instance.OpenWindow(window);
                     yield return new WaitUntil(() => gradeReceived);
@@ -543,8 +543,8 @@ namespace TTCS.Combat.Managers
                     var window = new TimingWindow(
                         openTime: Time.time,
                         duration: _guardWindowDuration,
-                        perfectThreshold: _perfectThresholdMs,
-                        goodThreshold: _goodThresholdMs);
+                        perfectThreshold: _perfectThresholdSec,
+                        goodThreshold: _goodThresholdSec);
 
                     TimingSystem.Instance.OpenWindow(window);
 

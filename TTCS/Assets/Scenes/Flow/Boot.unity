@@ -466,20 +466,38 @@ MonoBehaviour:
   _healSFX: {fileID: 8300000, guid: d59a588b1c1b56f40ae136d0fd0f3936, type: 3}
   _deathSFX: {fileID: 8300000, guid: 2c830ae74a2183645a35d268353306dc, type: 3}
   _skillCastSFX: {fileID: 8300000, guid: 35ef5b58008ced340a445a2a475afa23, type: 3}
-  _perfectSFX: {fileID: 0}
-  _goodSFX: {fileID: 0}
-  _missSFX: {fileID: 0}
+  _perfectSFX: {fileID: 8300000, guid: 8fb53acf1e8829841a80d7534e774838, type: 3}
+  _goodSFX: {fileID: 8300000, guid: 8fb53acf1e8829841a80d7534e774838, type: 3}
+  _missSFX: {fileID: 8300000, guid: a0f8f1026eb4cf34fa7c90c22b267a5e, type: 3}
   _uiClickSFX: {fileID: 8300000, guid: 12f6d5e665057c9489c9edf7ece4869d, type: 3}
   _uiConfirmSFX: {fileID: 8300000, guid: c70e03605c9d16c4cbf9ddf064319967, type: 3}
-  _uiCancelSFX: {fileID: 0}
-  _uiBackSFX: {fileID: 0}
+  _uiCancelSFX: {fileID: 8300000, guid: c70e03605c9d16c4cbf9ddf064319967, type: 3}
+  _uiBackSFX: {fileID: 8300000, guid: c70e03605c9d16c4cbf9ddf064319967, type: 3}
   _uiHoverSFX: {fileID: 0}
   _uiPopupOpenSFX: {fileID: 0}
   _uiPopupCloseSFX: {fileID: 0}
-  _combatBGM: {fileID: 0}
-  _victoryBGM: {fileID: 0}
-  _defeatBGM: {fileID: 0}
-  _sceneBgmEntries: []
+  _combatBGM: {fileID: 8300000, guid: 3767979b23241de428d2577099f5f47f, type: 3}
+  _victoryBGM: {fileID: 8300000, guid: 54ca3991210cb1f42b3ad94323cf7517, type: 3}
+  _defeatBGM: {fileID: 8300000, guid: 54ca3991210cb1f42b3ad94323cf7517, type: 3}
+  _sceneBgmEntries:
+  - sceneName: MainMenuScene
+    clip: {fileID: 8300000, guid: bb7b562043e18af45bb5d74da24dd491, type: 3}
+    loop: 1
+  - sceneName: LevelSelectScene
+    clip: {fileID: 8300000, guid: bb7b562043e18af45bb5d74da24dd491, type: 3}
+    loop: 1
+  - sceneName: GachaScene
+    clip: {fileID: 8300000, guid: bb7b562043e18af45bb5d74da24dd491, type: 3}
+    loop: 1
+  - sceneName: InventoryScene
+    clip: {fileID: 8300000, guid: bb7b562043e18af45bb5d74da24dd491, type: 3}
+    loop: 1
+  - sceneName: TeamFormationScene
+    clip: {fileID: 8300000, guid: bb7b562043e18af45bb5d74da24dd491, type: 3}
+    loop: 1
+  - sceneName: CharacterCollectionScene
+    clip: {fileID: 8300000, guid: bb7b562043e18af45bb5d74da24dd491, type: 3}
+    loop: 1
   _masterVolume: 1
   _sfxVolume: 1
   _uiVolume: 1

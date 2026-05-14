@@ -189,6 +189,9 @@ namespace TTCS.Combat.Timing
 
             Log($"TimingSystem: Window closed → {grade}.", LogCategory.Combat);
 
+            // Phát sound tương ứng với kết quả timing
+            TTCS.Audio.AudioController.Instance?.PlayTimingResult(grade);
+
             // Hiển thị feedback UI
             CombatUIController.Instance?.ShowTimingResult(grade);
 

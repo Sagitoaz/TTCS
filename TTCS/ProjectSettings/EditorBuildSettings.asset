@@ -6,26 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/Flow/Boot.unity
+    guid: 70dc30c89c87a984889c288d3ec04c47
   - enabled: 1
     path: Assets/Scenes/CombatScene.unity
     guid: b8b1a7901f6e4a2448003a6c289f3932
   - enabled: 1
-    path: Assets/Scenes/Flow/Boot.unity
-    guid: 70dc30c89c87a984889c288d3ec04c47
-  - enabled: 1
-    path: Assets/Scenes/Flow/TutorialScene.unity
-    guid: d4cbe32d1f9ce804ebf05145ccc9ed4d
+    path: Assets/Scenes/MainMenu.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
     path: Assets/Scenes/Flow/MainMenuScene.unity
     guid: 4563c5586d75a4c4e8ae5299c06d3694
   - enabled: 1
     path: Assets/Scenes/Flow/LevelSelectScene.unity
     guid: 06a549f859671024a91ec93fc6605913
-  - enabled: 1
-    path: Assets/Scenes/Flow/CombatResultScene.unity
-    guid: 8a08c3f6d9ee14f4982a62dae2ec4343
   - enabled: 1
     path: Assets/Scenes/Flow/GachaScene.unity
     guid: a09bb9997ea4eb54e9b06b2f551074ad

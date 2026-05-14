@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using UnityEngine;
 using TTCS.Core.Events;
@@ -370,25 +370,15 @@ namespace TTCS.Core.Save
                 }
             }
 
-            // Ensure test characters are available for day 4 testing.
+            // Đảm bảo char_warrior luôn có trong tài khoản (starter mặc định)
             if (!data.unlockedCharacters.Contains("char_warrior"))
             {
                 data.unlockedCharacters.Add("char_warrior");
             }
 
-            if (!data.unlockedCharacters.Contains("char_mage"))
-            {
-                data.unlockedCharacters.Add("char_mage");
-            }
-
             if (!data.characterLevelKeys.Contains("char_warrior"))
             {
                 data.SetCharacterLevel("char_warrior", 1);
-            }
-
-            if (!data.characterLevelKeys.Contains("char_mage"))
-            {
-                data.SetCharacterLevel("char_mage", 1);
             }
 
             if (!data.characterCurrentHpKeys.Contains("char_warrior"))
@@ -398,21 +388,9 @@ namespace TTCS.Core.Save
                 data.SetCharacterCurrentHp("char_warrior", warriorHp);
             }
 
-            if (!data.characterCurrentHpKeys.Contains("char_mage"))
-            {
-                var mage = DataManager.Instance?.LoadCharacter("char_mage");
-                var mageHp = Math.Max(1, mage?.baseStats?.hp ?? 2000);
-                data.SetCharacterCurrentHp("char_mage", mageHp);
-            }
-
             if (!data.characterCurrentManaKeys.Contains("char_warrior"))
             {
                 data.SetCharacterCurrentMana("char_warrior", EstimateCharacterMaxMana("char_warrior", data.GetCharacterLevel("char_warrior")));
-            }
-
-            if (!data.characterCurrentManaKeys.Contains("char_mage"))
-            {
-                data.SetCharacterCurrentMana("char_mage", EstimateCharacterMaxMana("char_mage", data.GetCharacterLevel("char_mage")));
             }
 
             if (data.lineup.Count == 0 && data.currentParty.Count > 0)
