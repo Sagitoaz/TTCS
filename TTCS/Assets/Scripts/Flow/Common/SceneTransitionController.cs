@@ -17,7 +17,7 @@ namespace TTCS.Flow
 
         [Header("Timings")]
         [SerializeField] private float _irisDuration = 0.35f;
-        [SerializeField] private float _minPanelSeconds = 3f;
+        [SerializeField] private float _minPanelSeconds = 2f;
         [SerializeField] private float _postLoadHoldSeconds = 0f;
 
         [Header("Advice")]

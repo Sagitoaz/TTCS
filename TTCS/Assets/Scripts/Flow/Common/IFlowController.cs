@@ -9,11 +9,6 @@ namespace TTCS.Flow
     /// </summary>
     public interface IFlowController
     {
-        /// <summary>
-        /// Attempts to enter tutorial. Returns true if tutorial was entered, false if bypassed.
-        /// Call this from boot to show tutorial for first-time players.
-        /// </summary>
-        bool TryEnterTutorial();
 
         /// <summary>
         /// Opens main menu from any scene.

@@ -31,9 +31,5 @@ namespace TTCS.Flow
             return CurrentScene;
         }
 
-        public bool TryEnterTutorial()
-        {
-            return UnityEngine.PlayerPrefs.GetInt("TutorialCompleted", 0) != 1;
-        }
     }
 }

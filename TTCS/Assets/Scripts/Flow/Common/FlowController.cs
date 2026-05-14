@@ -19,7 +19,6 @@ namespace TTCS.Flow
     public class FlowController : MonoBehaviour, IFlowController
     {
         [SerializeField] private string _bootSceneName = "Boot";
-        [SerializeField] private string _tutorialSceneName = "TutorialScene";
         [SerializeField] private string _mainMenuSceneName = "MainMenuScene";
         [SerializeField] private string _teamFormationSceneName = "TeamFormationScene";
         [SerializeField] private string _gachaSceneName = "GachaScene";
@@ -79,15 +78,6 @@ namespace TTCS.Flow
             }
         }
 
-        private void OnEnable()
-        {
-            EventBus.Instance.Subscribe<TutorialCompletedEvent>(OnTutorialCompleted);
-        }
-
-        private void OnDisable()
-        {
-            EventBus.Instance.Unsubscribe<TutorialCompletedEvent>(OnTutorialCompleted);
-        }
 
         private void Start()
         {
@@ -155,25 +145,6 @@ namespace TTCS.Flow
             Debug.Log("[Flow] FlowController initialized with DevA services from MetaServiceHub");
         }
 
-        public bool TryEnterTutorial()
-        {
-            bool tutorialCompleted = _progressionService != null
-                ? _progressionService.IsTutorialCompleted()
-                : PlayerPrefs.GetInt("TutorialCompleted", 0) == 1;
-
-            if (!tutorialCompleted)
-            {
-                Debug.Log("[Flow] Entering tutorial scene (first-time player)");
-                _flowStateManager.NavigateTo(_tutorialSceneName);
-                _sceneTransitionController.LoadScene(_tutorialSceneName);
-                return true;
-            }
-            else
-            {
-                Debug.Log("[Flow] Tutorial already completed, skipping");
-                return false;
-            }
-        }
 
         public void OpenMainMenu()
         {
@@ -288,21 +259,5 @@ namespace TTCS.Flow
             OpenLevelSelect(FlowRuntimeContext.SelectedChapterId);
         }
 
-        private void OnTutorialCompleted(TutorialCompletedEvent eventData)
-        {
-            if (_progressionService != null)
-            {
-                _progressionService.MarkTutorialCompleted();
-            }
-            else
-            {
-                // Fallback while save integration is not ready in specific boot order cases.
-                PlayerPrefs.SetInt("TutorialCompleted", 1);
-                PlayerPrefs.Save();
-            }
-
-            Debug.Log($"[Flow] Tutorial completion received (skipped={eventData.Skipped})");
-            OpenMainMenu();
-        }
     }
 }
