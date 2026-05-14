@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "skill_fomortiis_dragon_roar",
   "nameKey": "Dragon Roar",
   "description": "A dark magical roar that shakes every enemy and weakens their resolve.",
@@ -34,7 +34,7 @@
     {
       "type": "stun",
       "value": "1",
-      "chance": 0.75,
+      "chance": 0.28,
       "duration": 1
     }
   ],
@@ -62,3 +62,4 @@
     "cameraShake": 0.36
   }
 }
+

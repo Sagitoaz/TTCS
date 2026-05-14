@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "enemy_henry",
   "nameKey": "Henry",
   "description": "An elite enemy with powerful attacks and defensive capabilities",
@@ -7,42 +7,32 @@
   "role": "warrior",
   
   "baseStats": {
-    "hp": 5000,
-    "atk": 320,
-    "def": 200,
+    "hp": 4200,
+    "atk": 275,
+    "def": 150,
     "spd": 100,
-    "crit": 0.15,
-    "resist": 0.30
+    "crit": 0.12,
+    "resist": 0.22
   },
   
   "resistances": {
-    "physical": 0.2,
-    "fire": -0.3,
+    "physical": 0.12,
+    "fire": -0.25,
     "ice": 0.0,
-    "lightning": 0.1,
-    "dark": 0.5
+    "lightning": 0.08,
+    "dark": 0.35
   },
   
   "moveSet": [
     {
       "skillId": "skill_henry_guard",
       "weight": 30,
-      "conditions": [
-        {
-          "type": "hp_below",
-          "value": 0.5
-        }
-      ]
+      "conditions": [{ "type": "hp_below", "value": 0.5 }]
     },
     {
       "skillId": "skill_henry_rage",
       "weight": 40,
-      "conditions": [
-        {
-          "type": "hp_below",
-          "value": 0.6
-        }
-      ]
+      "conditions": [{ "type": "hp_below", "value": 0.6 }]
     }
   ],
   
@@ -67,9 +57,7 @@
     "enabled": true,
     "defaultDuration": 1.2,
     "cueType": "visual_and_sfx",
-    "overrideByCue": {
-      "counter": 1.5
-    }
+    "overrideByCue": { "counter": 1.5 }
   },
   
   "aiProfile": {
@@ -81,30 +69,12 @@
   
   "loot": {
     "guaranteed": [
-      {
-        "type": "currency",
-        "id": "gold",
-        "amount": [100, 200]
-      },
-      {
-        "type": "currency",
-        "id": "exp",
-        "amount": [150, 150]
-      }
+      { "type": "currency", "id": "gold", "amount": [110, 200] },
+      { "type": "currency", "id": "exp", "amount": [160, 160] }
     ],
     "possible": [
-      {
-        "type": "item",
-        "id": "item_dark_sword",
-        "chance": 0.15,
-        "amount": [1, 1]
-      },
-      {
-        "type": "item",
-        "id": "item_rare_gem",
-        "chance": 0.05,
-        "amount": [1, 2]
-      }
+      { "type": "item", "id": "item_dark_sword", "chance": 0.15, "amount": [1, 1] },
+      { "type": "item", "id": "item_rare_gem", "chance": 0.05, "amount": [1, 2] }
     ]
   },
   

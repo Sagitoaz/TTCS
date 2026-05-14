@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "skill_fomortiis_void_summons",
   "nameKey": "Void Summons",
   "description": "Fomortiis tears open the void and calls shadow claws to strike his enemies.",
@@ -35,7 +35,7 @@
       "type": "burn",
       "value": "90",
       "element": "dark",
-      "chance": 0.45,
+      "chance": 0.32,
       "duration": 2
     }
   ],
@@ -63,3 +63,4 @@
     "cameraShake": 0.32
   }
 }
+

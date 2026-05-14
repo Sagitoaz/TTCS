@@ -1,0 +1,122 @@
+@startuml save_data
+title TTCS - Cấu trúc dữ liệu lưu trữ (Save System)
+
+skinparam classAttributeIconSize 0
+skinparam classFontStyle bold
+skinparam packageStyle rectangle
+
+' ─── Manager ──────────────────────────────────────────────────────────────────
+class SaveManager <<Singleton>> {
+  - _instance : SaveManager
+  + Instance : SaveManager
+  + CurrentSave : SaveData
+  --
+  + EnsureCurrentSave(slotIndex : int)
+  + SaveGame() : void
+  + LoadGame() : bool
+  + DeleteSave() : void
+}
+
+' ─── Root save object ─────────────────────────────────────────────────────────
+class SaveData {
+  ' Schema
+  + schemaVersion : int
+  ' Player state
+  + playerLevel : int
+  + totalExp : int
+  + gold : int
+  + isNewGame : bool
+  + lastSavedTimestamp : string
+  ' Settings
+  + bgmVolume : float
+  + sfxVolume : float
+  ' Progression flags
+  + tutorialCompleted : bool
+  --
+  ' Character roster
+  + unlockedCharacters : List<string>
+  + currentParty : List<string>
+  + lineup : List<string>
+  + deployedCharacters : List<string>
+  ' Character parallel-key maps
+  + characterLevelKeys : List<string>
+  + characterLevelValues : List<int>
+  + characterExpKeys : List<string>
+  + characterExpValues : List<int>
+  + characterCurrentHpKeys : List<string>
+  + characterCurrentHpValues : List<int>
+  + characterCurrentManaKeys : List<string>
+  + characterCurrentManaValues : List<int>
+  + characterAccessoryKeys : List<string>
+  + characterAccessoryValues : List<string>
+  ' Stage / Chapter unlock
+  + unlockedChapters : List<string>
+  + unlockedLevels : List<string>
+  + unlockedStages : List<string>
+  + clearedStages : List<string>
+  + stageFirstClearKeys : List<string>
+  + stageFirstClearValues : List<bool>
+  --
+  + GetCharacterLevel(characterId : string) : int
+  + SetCharacterLevel(characterId : string, level : int) : void
+  + GetCharacterExp(characterId : string) : int
+  + SetCharacterExp(characterId : string, exp : int) : void
+  + GetCharacterCurrentHp(characterId : string, defaultHp : int) : int
+  + SetCharacterCurrentHp(characterId : string, hp : int) : void
+  + GetCharacterCurrentMana(characterId : string, defaultMana : int) : int
+  + SetCharacterCurrentMana(characterId : string, mana : int) : void
+  + GetEquippedAccessory(characterId : string) : string
+  + SetEquippedAccessory(characterId : string, itemId : string) : void
+  + IsCharacterDeployed(characterId : string) : bool
+  + SetCharacterDeployed(characterId : string, deployed : bool) : void
+  + IsFirstClear(stageId : string) : bool
+  + MarkFirstClear(stageId : string) : void
+  + GetPityCount(poolId : string) : int
+  + SetPityCount(poolId : string, pityCount : int) : void
+  + GetLevelProgress(levelId : string) : SaveLevelProgress
+  + SetLevelProgress(progress : SaveLevelProgress) : void
+  + GetTotalStars() : int
+  + GetTotalStarsInChapter(chapterId : string) : int
+}
+
+' ─── Embedded sub-records ─────────────────────────────────────────────────────
+class SaveLevelProgress {
+  + levelId : string
+  + isCleared : bool
+  + stars : int
+  + bestScore : int
+}
+
+class SaveItemStack {
+  + itemId : string
+  + quantity : int
+}
+
+class SavePityState {
+  + poolId : string
+  + pityCount : int
+}
+
+' ─── Relationships ────────────────────────────────────────────────────────────
+
+SaveManager "1" --> "1" SaveData : manages / serializes >
+
+SaveData "1" *-- "0..*" SaveLevelProgress : levelProgress\n(tiến trình từng màn) >
+SaveData "1" *-- "0..*" SaveItemStack      : inventoryItems\n(kho đồ) >
+SaveData "1" *-- "0..*" SavePityState      : gachaPity\n(pity counter từng pool) >
+
+note right of SaveData
+  Dữ liệu nhân vật (HP, Level, Mana,
+  Accessory) được lưu dưới dạng
+  **parallel key-value lists** thay vì
+  Dictionary<> để tương thích với
+  Unity JsonUtility serialization.
+end note
+
+note bottom of SaveManager
+  Game hiện tại chỉ dùng **1 save slot**
+  (slotIndex = 0). EnsureCurrentSave()
+  tự tạo save mới nếu chưa tồn tại.
+end note
+
+@enduml

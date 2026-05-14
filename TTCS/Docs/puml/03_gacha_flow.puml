@@ -1,0 +1,65 @@
+@startuml gacha_flow
+title TTCS - Luồng Gacha
+
+actor       "Người chơi"          as Player
+
+boundary    "GachaUIController\n(Màn hình Gacha)"  as GachaUI
+boundary    "GachaTransitionController\n(Hiệu ứng chuyển cảnh)" as TransCtrl
+
+control     "GachaService\n(Xử lý logic quay)"     as GachaSvc
+control     "SaveManager"                            as SaveMgr
+
+entity      "GachaPoolDataModel\n(Dữ liệu pool/banner)" as PoolData
+entity      "GachaRollResult\n(Kết quả quay)"           as RollResult
+entity      "SaveData\n(Dữ liệu lưu)"                    as SaveData
+
+== Khởi tạo màn hình ==
+Player    ->  GachaUI   : Mở màn hình Gacha
+GachaUI   ->  GachaSvc  : GetAllGachaPools()
+GachaSvc  ->  PoolData  : Đọc pool_standard, pool_limited,...
+PoolData  --> GachaSvc  : List<GachaPoolDataModel>
+GachaSvc  --> GachaUI   : Danh sách pool
+GachaUI   ->  SaveMgr   : CurrentSave.gold
+SaveMgr   --> GachaUI   : Số Gold hiện tại
+GachaUI   ->  Player    : Hiển thị banner list + chi phí Roll
+
+== Chọn Banner ==
+Player    ->  GachaUI   : Chọn banner (poolId)
+GachaUI   ->  PoolData  : LoadBannerSprite(bannerPath)
+GachaUI   ->  Player    : Cập nhật ảnh nền, chi phí Roll x1/x10
+
+== Thực hiện Roll ==
+Player    ->  GachaUI   : Nhấn Roll x1 hoặc Roll x10
+GachaUI   ->  SaveMgr   : Kiểm tra gold >= cost?
+alt Không đủ Gold
+    SaveMgr --> GachaUI : Từ chối
+    GachaUI -->  Player : Thông báo thiếu Gold
+else Đủ Gold
+    GachaUI   ->  GachaSvc : Roll(poolId, count)
+    GachaSvc  ->  GachaSvc : Tính pity, RNG chọn phần thưởng
+    GachaSvc  -->  GachaUI : GachaRollResult
+    GachaUI   ->  GachaSvc : ApplyRollResult(result)
+    GachaSvc  ->  SaveData : Trừ Gold, thêm nhân vật/item\ncập nhật pityCount
+    GachaUI   ->  TransCtrl : PlayGachaAnimation(rarityColor, rarityTag)
+    TransCtrl -->  GachaUI : OnSwapToResult callback
+end
+
+== Hiển thị kết quả ==
+GachaUI   ->  RollResult : Đọc danh sách Rewards
+GachaUI   ->  Player     : Hiển thị phần thưởng đầu tiên\n(portrait, tên, rarity, ngôi sao)
+
+loop Tap qua từng phần thưởng
+    Player    ->  GachaUI   : Tap màn hình
+    GachaUI   ->  TransCtrl : PlayResultItemTransition(nextRarityColor)
+    TransCtrl --> GachaUI   : OnResultItemSwap callback
+    GachaUI   ->  RollResult : rewards[index++]
+    GachaUI   ->  Player     : Cập nhật thẻ kết quả
+end
+
+== Đóng kết quả ==
+Player    ->  GachaUI   : Nhấn đóng / tap phần thưởng cuối
+GachaUI   ->  TransCtrl : ReturnToBannerScreen()
+GachaUI   ->  SaveMgr   : Lưu save
+GachaUI   ->  Player    : Trở về màn hình Banner
+
+@enduml

@@ -1,0 +1,38 @@
+@startuml combat_flow
+title TTCS - Luồng chiến đấu (Combat Flow)
+
+[*] --> Idle
+
+Idle --> Initializing : StartBattle()
+Initializing --> CheckVictory : InitBattle() done
+
+CheckVictory --> PlayerTurn : Actor là Player
+CheckVictory --> EnemyTurn : Actor là Enemy
+CheckVictory --> BattleEnd : Tất cả Enemy đã chết
+CheckVictory --> BattleEnd : Toàn bộ Player đã chết
+
+state PlayerTurn {
+  [*] --> WaitingInput
+  WaitingInput --> TimingWindowOpen : Player chọn Skill (tấn công)
+  TimingWindowOpen --> GradeReceived : Player nhấn đúng lúc (Perfect/Good/Miss)
+  WaitingInput --> ExecuteItem : Player dùng Item
+  GradeReceived --> ExecuteSkill
+  ExecuteSkill --> [*]
+  ExecuteItem --> [*]
+}
+
+state EnemyTurn {
+  [*] --> AIDecide
+  AIDecide --> OpenGuardWindow : Skill là tấn công
+  OpenGuardWindow --> GradeGuard : Player nhấn (Guard)
+  AIDecide --> ExecuteEnemySkill
+  GradeGuard --> ExecuteEnemySkill
+  ExecuteEnemySkill --> [*]
+}
+
+PlayerTurn --> PostAction : Action done
+EnemyTurn --> PostAction : Action done
+PostAction --> EndTurn
+EndTurn --> CheckVictory : Tiếp lượt mới
+BattleEnd --> [*]
+@enduml

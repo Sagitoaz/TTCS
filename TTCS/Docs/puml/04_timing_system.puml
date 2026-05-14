@@ -1,0 +1,69 @@
+@startuml timing_system
+title TTCS - Timing System (Canh nhịp)
+
+actor       "Người chơi"                   as Player
+
+boundary    "TimingWindowUI\n(Thanh đếm ngược)" as WinUI
+boundary    "TimingFeedbackUI\n(Hiển thị kết quả)" as FeedbackUI
+boundary    "CombatUIController\n(HUD Chiến đấu)"   as CombatUI
+
+control     "CombatFlowController\n(Vòng lặp chiến đấu)" as CFC
+control     "TimingSystem\n(Quản lý timing window)"       as TS
+control     "TimingInputHandler\n(Bắt input)"             as TIH
+control     "ActionResolver\n(Tính sát thương)"           as AR
+
+entity      "TimingWindow\n(Thông số window)"  as TW
+entity      "TimingGrade\n(Perfect/Good/Miss)" as TG
+
+== Enemy tấn công – Player Guard ==
+
+CFC        ->  TS        : OpenWindow(duration=1.5s,\nperfectMs=500, goodMs=800)
+TS         ->  TW        : Tạo TimingWindow mới
+TS         ->  WinUI     : OnWindowOpened(duration)
+WinUI      ->  Player    : Hiển thị thanh countdown thu hẹp dần
+
+alt Player nhấn đúng lúc
+    Player  ->  TIH      : Nhấn phím / Tap màn hình
+    TIH     ->  TS       : RegisterInput(Time.time)
+    TS      ->  TW       : EvaluateInput(inputTime)
+    TW      -->  TS      : TimingGrade (Perfect hoặc Good)
+    TS      ->  WinUI    : Đóng thanh countdown
+    TS      ->  FeedbackUI : ShowTimingResult(grade)
+    FeedbackUI ->  Player : Hiển thị "PERFECT!" / "GOOD!"
+    TS      ->  CFC      : OnTimingResult(Perfect/Good)
+    CFC     ->  AR       : Resolve(actor, targets, skill,\nguard=Perfect) → giảm sát thương nhận
+else Không nhấn / nhấn ngoài window
+    TS      ->  TS       : Window timeout → Miss
+    TS      ->  WinUI    : Đóng thanh countdown
+    TS      ->  FeedbackUI : ShowTimingResult(Miss)
+    FeedbackUI ->  Player : Hiển thị "MISS"
+    TS      ->  CFC      : OnTimingResult(Miss)
+    CFC     ->  AR       : Resolve(actor, targets, skill,\nguard=Miss) → nhận nguyên sát thương
+end
+
+AR         -->  CombatUI : Cập nhật HP, floating text
+
+== Player tấn công – Timing boost ==
+
+CFC        ->  TS        : OpenWindow(duration, perfectMs, goodMs)
+TS         ->  WinUI     : OnWindowOpened(duration)
+WinUI      ->  Player    : Hiển thị thanh timing tấn công
+
+alt Canh đúng nhịp
+    Player  ->  TIH      : Nhấn phím / Tap
+    TIH     ->  TS       : RegisterInput(Time.time)
+    TS      ->  TW       : EvaluateInput() → Perfect/Good
+    TS      ->  CFC      : OnTimingResult(Perfect)
+    CFC     ->  AR       : Resolve(player, enemies, skill,\ngrade=Perfect) → tăng sát thương ra
+else Bỏ lỡ
+    TS      ->  CFC      : OnTimingResult(Miss)
+    CFC     ->  AR       : Resolve(grade=Miss) → sát thương bình thường
+end
+
+note right of TS
+  Input Buffer: nếu Player nhấn
+  trước khi window mở <= 60ms,
+  vẫn được tính (anti-latency)
+end note
+
+@enduml

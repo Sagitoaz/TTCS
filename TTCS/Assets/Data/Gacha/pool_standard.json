@@ -2,9 +2,9 @@
   "id": "pool_standard",
   "nameKey": "Standard Banner",
   "bannerBackgroundPath": "Banners/Gacha/banner_standard",
-  "pityThreshold": 10,
+  "pityThreshold": 60,
   "rollCostSingle": 160,
-  "rollCostTen": 1600,
+  "rollCostTen": 1440,
   "entries": [
     {
       "rewardId": "char_baldr",
@@ -16,42 +16,49 @@
     {
       "rewardId": "char_hodr",
       "rewardType": "character",
-      "weight": 3,
+      "weight": 2,
       "isRare": true,
       "amount": 1
     },
     {
       "rewardId": "char_support",
       "rewardType": "character",
-      "weight": 4,
+      "weight": 3,
       "isRare": true,
       "amount": 1
     },
     {
       "rewardId": "char_arden",
       "rewardType": "character",
-      "weight": 15,
+      "weight": 10,
       "isRare": true,
       "amount": 1
     },
     {
       "rewardId": "char_mage",
       "rewardType": "character",
-      "weight": 5,
+      "weight": 4,
+      "isRare": true,
+      "amount": 1
+    },
+    {
+      "rewardId": "item_guardian_emblem",
+      "rewardType": "item",
+      "weight": 8,
       "isRare": true,
       "amount": 1
     },
     {
       "rewardId": "item_potion",
       "rewardType": "item",
-      "weight": 70,
+      "weight": 55,
       "isRare": false,
       "amount": 2
     },
     {
       "rewardId": "item_energy",
       "rewardType": "item",
-      "weight": 25,
+      "weight": 17,
       "isRare": false,
       "amount": 1
     }

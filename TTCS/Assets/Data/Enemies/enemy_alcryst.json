@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "enemy_alcryst",
   "nameKey": "Alcryst",
   "description": "An elite bow fighter who controls distance with precise horizontal shots and sky-cast volleys.",
@@ -7,37 +7,28 @@
   "role": "bow",
 
   "baseStats": {
-    "hp": 3200,
-    "atk": 290,
-    "def": 130,
-    "spd": 145,
-    "crit": 0.18,
-    "resist": 0.22
+    "hp": 3000,
+    "atk": 245,
+    "def": 100,
+    "spd": 138,
+    "crit": 0.16,
+    "resist": 0.18
   },
 
   "resistances": {
     "physical": 0.05,
     "fire": 0.0,
     "ice": 0.0,
-    "lightning": -0.1,
-    "dark": 0.1
+    "lightning": -0.10,
+    "dark": 0.08
   },
 
   "moveSet": [
-    {
-      "skillId": "skill_alcryst_arrow_shot",
-      "weight": 70,
-      "conditions": []
-    },
+    { "skillId": "skill_alcryst_arrow_shot", "weight": 70, "conditions": [] },
     {
       "skillId": "skill_alcryst_sky_piercer",
       "weight": 30,
-      "conditions": [
-        {
-          "type": "turn_count",
-          "value": 2
-        }
-      ]
+      "conditions": [{ "type": "turn_count", "value": 2 }]
     }
   ],
 
@@ -55,9 +46,7 @@
     "enabled": true,
     "defaultDuration": 1.0,
     "cueType": "visual_and_sfx",
-    "overrideByCue": {
-      "sky_cast": 1.35
-    }
+    "overrideByCue": { "sky_cast": 1.35 }
   },
 
   "aiProfile": {
@@ -69,19 +58,10 @@
 
   "loot": {
     "guaranteed": [
-      {
-        "type": "currency",
-        "id": "gold",
-        "amount": [80, 140]
-      }
+      { "type": "currency", "id": "gold", "amount": [80, 150] }
     ],
     "possible": [
-      {
-        "type": "item",
-        "id": "item_energy",
-        "chance": 0.22,
-        "amount": [1, 1]
-      }
+      { "type": "item", "id": "item_energy", "chance": 0.20, "amount": [1, 1] }
     ]
   },
 

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "enemy_fomortiis",
   "nameKey": "Fomortiis",
   "description": "A colossal dragon boss whose fists shatter armor and whose dark roar calls ruin from the void.",
@@ -7,68 +7,50 @@
   "role": "dragon_boss",
 
   "baseStats": {
-    "hp": 12500,
-    "atk": 470,
-    "def": 310,
-    "spd": 70,
-    "crit": 0.12,
-    "resist": 0.45
+    "hp": 9500,
+    "atk": 360,
+    "def": 180,
+    "spd": 62,
+    "crit": 0.10,
+    "resist": 0.30
   },
 
   "resistances": {
-    "physical": 0.25,
-    "fire": 0.15,
+    "physical": 0.15,
+    "fire": 0.08,
     "ice": 0.05,
     "lightning": 0.0,
-    "dark": 0.5
+    "dark": 0.40
   },
 
   "moveSet": [
-    {
-      "skillId": "skill_fomortiis_crushing_fist",
-      "weight": 45,
-      "conditions": []
-    },
-    {
-      "skillId": "skill_fomortiis_titan_slam",
-      "weight": 30,
-      "conditions": []
-    },
+    { "skillId": "skill_fomortiis_crushing_fist", "weight": 45, "conditions": [] },
+    { "skillId": "skill_fomortiis_titan_slam", "weight": 30, "conditions": [] },
     {
       "skillId": "skill_fomortiis_dragon_roar",
       "weight": 25,
-      "conditions": [
-        {
-          "type": "turn_count",
-          "value": 2
-        }
-      ]
+      "conditions": [{ "type": "turn_count", "value": 3 }]
     },
     {
       "skillId": "skill_fomortiis_void_summons",
       "weight": 35,
-      "conditions": [
-        {
-          "type": "hp_below",
-          "value": 0.55
-        }
-      ]
+      "conditions": [{ "type": "hp_below", "value": 0.50 }]
     }
   ],
 
   "phases": [
     {
       "phaseId": 1,
-      "hpRange": [1.0, 0.55],
+      "hpRange": [1.0, 0.50],
       "moves": ["crushing_fist", "titan_slam", "dragon_roar"],
-      "weights": [50, 30, 20],
+      "weights": [55, 30, 15],
       "behavior": "boss_brutal"
     },
     {
       "phaseId": 2,
-      "hpRange": [0.55, 0.0],
+      "hpRange": [0.50, 0.0],
       "moves": ["crushing_fist", "titan_slam", "dragon_roar", "void_summons"],
-      "weights": [30, 25, 25, 35],
+      "weights": [25, 20, 20, 35],
       "behavior": "boss_enraged_summoner"
     }
   ],
@@ -87,19 +69,11 @@
   },
 
   "rewards": {
-    "expBase": 600,
-    "goldBase": 850,
+    "expBase": 750,
+    "goldBase": 950,
     "drops": [
-      {
-        "itemId": "item_guardian_emblem",
-        "dropChance": 0.18,
-        "amount": 1
-      },
-      {
-        "itemId": "item_heart_of_phoenix",
-        "dropChance": 0.08,
-        "amount": 1
-      }
+      { "itemId": "item_guardian_emblem", "dropChance": 0.30, "amount": 1 },
+      { "itemId": "item_heart_of_phoenix", "dropChance": 0.08, "amount": 1 }
     ]
   },
 
@@ -110,4 +84,3 @@
     "scale": 2.2
   }
 }
-

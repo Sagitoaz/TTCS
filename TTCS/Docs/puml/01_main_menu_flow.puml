@@ -1,0 +1,116 @@
+@startuml main_menu_flow
+title TTCS - Luồng Main Menu (Start Menu + Main Menu)
+
+actor       "Người chơi"                        as Player
+
+boundary    "MainMenuController\n[Start Menu Panel]"  as StartPanel
+boundary    "MainMenuController\n[Main Menu Panel]"   as MainPanel
+boundary    "TutorialPanelSequenceController\n(Slideshow hướng dẫn)" as TutPanel
+boundary    "SettingsPanelController\n(Panel cài đặt âm thanh)"      as SettingsPanel
+boundary    "SceneTransitionController\n(Hiệu ứng iris wipe)"        as TransCtrl
+
+control     "SaveManager\n(Quản lý lưu trữ)"   as SaveMgr
+control     "FlowController\n(Điều hướng scene)" as FlowCtrl
+
+entity      "SaveData\n(Dữ liệu game)"          as SaveData
+
+== Khởi động game ==
+
+[->         StartPanel  : Scene load xong → Start()
+StartPanel  ->  SaveMgr : Kiểm tra HasSaveData(slot 0)
+alt Chưa có save (lần đầu chơi)
+    SaveMgr --> StartPanel : false → nút Continue bị vô hiệu
+else Đã có save
+    SaveMgr --> StartPanel : true → nút Continue khả dụng
+end
+StartPanel  ->  Player  : Hiển thị Start Menu Panel\n(Continue / New Game / Hướng dẫn / Settings / Exit)
+
+== Nút Continue ==
+
+Player      ->  StartPanel  : Nhấn Continue
+StartPanel  ->  SaveMgr     : Load(slot 0)
+SaveMgr     ->  SaveData    : Đọc file JSON
+SaveData    --> SaveMgr     : SaveData object
+SaveMgr     --> StartPanel  : CurrentSave sẵn sàng
+StartPanel  ->  TransCtrl   : PlayIrisTransition(callback: ShowMainMenu)
+TransCtrl   ->  StartPanel  : Iris-wipe animation xong → callback
+StartPanel  ->  StartPanel  : Ẩn StartMenuRoot
+StartPanel  ->  MainPanel   : Hiện MainMenuRoot + RefreshGoldUI
+
+== Nút New Game ==
+
+Player      ->  StartPanel  : Nhấn New Game
+StartPanel  ->  SaveMgr     : NewGame() → khởi tạo SaveData mặc định
+SaveMgr     ->  SaveData    : Ghi save mới (slot 0)
+StartPanel  ->  TransCtrl   : PlayIrisTransition(callback: ShowMainMenu)
+TransCtrl   ->  StartPanel  : callback sau animation
+StartPanel  ->  MainPanel   : Hiện MainMenuRoot
+
+== Nút Hướng dẫn ==
+
+Player      ->  StartPanel  : Nhấn Hướng dẫn
+StartPanel  ->  TutPanel    : Open()
+TutPanel    ->  Player      : Hiển thị slide đầu tiên\n(ảnh + số trang "1 / N")
+
+loop Lật slide
+    alt Nhấn Continue (→ trang tiếp)
+        Player  ->  TutPanel : Nhấn Continue
+        TutPanel -> TutPanel : _currentIndex++
+        TutPanel -> Player   : Cập nhật ảnh + số trang
+    else Nhấn Back (← trang trước)
+        Player  ->  TutPanel : Nhấn Back
+        TutPanel -> TutPanel : _currentIndex--
+        TutPanel -> Player   : Cập nhật ảnh + số trang
+    else Nhấn Exit / trang cuối
+        Player  ->  TutPanel : Nhấn Exit
+        TutPanel -> TutPanel : Close()
+        TutPanel -> Player   : Ẩn panel, quay về Start Menu
+    end
+end
+
+== Nút Settings (từ Start Menu) ==
+
+Player      ->  StartPanel  : Nhấn Settings
+StartPanel  ->  SettingsPanel : Open()
+SettingsPanel -> SettingsPanel : Đọc volume từ AudioController
+SettingsPanel -> Player       : Hiển thị slider Master/SFX/UI/BGM
+
+loop Chỉnh âm thanh
+    Player  ->  SettingsPanel : Kéo slider
+    SettingsPanel -> SettingsPanel : SetMasterVolume / SetSFXVolume...
+    SettingsPanel -> Player       : Cập nhật nhãn % volume
+end
+
+Player      ->  SettingsPanel : Nhấn Close
+SettingsPanel -> Player       : Ẩn panel
+
+== Nút Exit Game ==
+
+Player      ->  StartPanel  : Nhấn Exit
+StartPanel  ->  StartPanel  : Application.Quit()\n(hoặc EditorApplication.isPlaying=false trong Editor)
+
+== Main Menu Panel (sau khi vào game) ==
+
+MainPanel   ->  Player  : Hiển thị Main Menu\n(Gold hiện tại + các nút điều hướng)
+
+alt Nhấn Play
+    Player  ->  MainPanel : Play
+    MainPanel -> FlowCtrl : OpenLevelSelect("chapter_01")
+else Nhấn Team
+    Player  ->  MainPanel : Team
+    MainPanel -> FlowCtrl : OpenTeamSelection()
+else Nhấn Gacha
+    Player  ->  MainPanel : Gacha
+    MainPanel -> FlowCtrl : OpenGacha()
+else Nhấn Inventory
+    Player  ->  MainPanel : Inventory
+    MainPanel -> FlowCtrl : OpenInventory()
+else Nhấn Character Collection
+    Player  ->  MainPanel : Character Collection
+    MainPanel -> FlowCtrl : OpenCharacterCollection()
+else Nhấn Settings
+    Player  ->  MainPanel   : Settings
+    MainPanel -> SettingsPanel : Open()
+end
+
+@enduml
