@@ -1,0 +1,77 @@
+@startuml character_collection
+title TTCS - Quản lý nhân vật (Character Collection)
+
+actor       "Người chơi"                         as Player
+
+boundary    "CharacterCollectionUIController\n(Màn hình danh sách nhân vật)" as CollUI
+boundary    "AccessoryEquipPickerPanel\n(Chọn phụ kiện)"                      as AccPicker
+
+control     "DataManager\n(Quản lý dữ liệu game)"    as DataMgr
+control     "InventoryService\n(Quản lý kho đồ)"     as InvSvc
+control     "SaveManager\n(Lưu trữ)"                  as SaveMgr
+
+entity      "CharacterDataModel\n(Dữ liệu nhân vật)"  as CharData
+entity      "SkillDataModel\n(Dữ liệu kỹ năng)"       as SkillData
+entity      "ItemDataModel\n(Dữ liệu phụ kiện)"       as ItemData
+entity      "SaveData\n(Trạng thái nhân vật lưu)"     as SaveData
+
+== Mở màn hình danh sách ==
+
+Player      ->  CollUI   : Mở Character Collection
+CollUI      ->  SaveMgr  : CurrentSave.unlockedCharacters
+SaveMgr     ->  SaveData : Đọc danh sách ID đã mở khóa
+SaveData    --> CollUI   : List<characterId>
+CollUI      ->  DataMgr  : LoadCharacter(id) × N
+DataMgr     ->  CharData : Đọc JSON từ cache
+CharData    --> CollUI   : CharacterDataModel × N
+CollUI      ->  Player   : Hiển thị lưới nhân vật\n(lọc Rarity / Role / Element / Tên,\nsắp xếp theo Level)
+
+== Xem chi tiết nhân vật ==
+
+Player      ->  CollUI   : Chọn một nhân vật
+CollUI      ->  DataMgr  : LoadCharacter(characterId)
+DataMgr     --> CollUI   : CharacterDataModel (stats, skills[])
+CollUI      ->  DataMgr  : LoadSkill(skillId) × M
+DataMgr     ->  SkillData : Đọc skill JSON
+SkillData   --> CollUI   : SkillDataModel × M
+CollUI      ->  SaveData : GetCharacterLevel, GetCharacterCurrentHp,\nGetCharacterCurrentMana, GetCharacterExp
+CollUI      ->  InvSvc   : GetEquippedAccessory(characterId)
+InvSvc      --> CollUI   : equippedItemId (hoặc rỗng)
+CollUI      ->  DataMgr  : LoadItem(equippedItemId)
+DataMgr     ->  ItemData : Đọc item JSON
+ItemData    --> CollUI   : ItemDataModel (stat bonuses)
+CollUI      ->  Player   : Hiển thị panel chi tiết:\nPortrait, Lv, Rarity, Stats,\nEXP bar, Skills, Accessory slot
+
+== Xem chi tiết kỹ năng ==
+
+Player      ->  CollUI   : Nhấn vào một kỹ năng
+CollUI      ->  DataMgr  : LoadSkill(skillId)
+DataMgr     --> CollUI   : SkillDataModel
+CollUI      ->  Player   : Popup Skill Detail\n(tên, mô tả, công thức, CD, mana)
+
+== Trang bị phụ kiện ==
+
+Player      ->  CollUI   : Nhấn Equip Accessory
+CollUI      ->  AccPicker : Open(characterId, inventoryService)
+AccPicker   ->  InvSvc   : GetItems() – lấy danh sách accessory
+InvSvc      --> AccPicker : List<ItemStack> (accessory only)
+AccPicker   ->  DataMgr  : LoadItem(itemId) × K
+DataMgr     --> AccPicker : ItemDataModel (stat bonuses, icon)
+AccPicker   ->  Player   : Hiển thị danh sách phụ kiện có thể trang bị
+
+Player      ->  AccPicker : Chọn phụ kiện
+AccPicker   ->  InvSvc   : EquipAccessory(characterId, itemId)
+InvSvc      ->  SaveData : SetEquippedAccessory(characterId, itemId)
+AccPicker   --> CollUI   : onChanged callback
+
+CollUI      ->  DataMgr  : Reload character + item
+CollUI      ->  Player   : Cập nhật lại panel chi tiết\n(stats mới có bonus phụ kiện)
+
+== Tháo phụ kiện ==
+
+Player      ->  CollUI   : Nhấn Unequip
+CollUI      ->  InvSvc   : UnequipAccessory(characterId)
+InvSvc      ->  SaveData : SetEquippedAccessory(characterId, "")
+CollUI      ->  Player   : Cập nhật accessory slot về trống
+
+@enduml

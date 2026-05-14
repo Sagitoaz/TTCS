@@ -1,0 +1,77 @@
+@startuml system_overview
+title TTCS - Tổng quan hệ thống
+
+package "MainMenu Scene\n(1 scene duy nhất)" {
+  [MainMenuController] as MMC
+  note right of MMC
+    Quản lý 2 panel con:
+    - _startMenuRoot
+    - _mainMenuRoot
+  end note
+  [TutorialPanelSequenceController]
+  [SettingsPanelController]
+}
+
+package "Flow Màn hình (Scene riêng)" {
+  [LevelSelectUIController]
+  [TeamFormationUIController]
+  [GachaUIController]
+  [InventoryUIController]
+  [CharacterCollectionUIController]
+}
+
+package "Combat Scene" {
+  [CombatFlowController]
+  [TurnManager]
+  [SkillManager]
+  [TimingSystem]
+  [AIController]
+  [ActionResolver]
+}
+
+package "Core Systems (DontDestroyOnLoad)" {
+  [DataManager]
+  [SaveManager]
+  [EventBus]
+  [RNGService]
+  [FlowController]
+  [SceneTransitionController]
+}
+
+package "Data (JSON files)" {
+  [Characters]
+  [Skills]
+  [Enemies]
+  [Levels / Chapters]
+  [Items]
+  [GachaPools]
+}
+
+MMC --> [LevelSelectUIController]       : Play → OpenLevelSelect
+MMC --> [TeamFormationUIController]     : Team → OpenTeamSelection
+MMC --> [GachaUIController]            : Gacha → OpenGacha
+MMC --> [InventoryUIController]        : Inventory → OpenInventory
+MMC --> [CharacterCollectionUIController] : Collection → OpenCharacterCollection
+MMC --> [TutorialPanelSequenceController] : Hướng dẫn
+MMC --> [SettingsPanelController]      : Settings
+
+[LevelSelectUIController] --> [CombatFlowController] : Bắt đầu trận đấu
+
+[CombatFlowController] --> [TurnManager]
+[CombatFlowController] --> [SkillManager]
+[CombatFlowController] --> [TimingSystem]
+[CombatFlowController] --> [AIController]
+[CombatFlowController] --> [ActionResolver]
+
+[DataManager] --> [Characters]
+[DataManager] --> [Skills]
+[DataManager] --> [Enemies]
+[DataManager] --> [Levels / Chapters]
+[DataManager] --> [Items]
+[DataManager] --> [GachaPools]
+
+[FlowController] ..> MMC
+[FlowController] ..> [LevelSelectUIController]
+[SaveManager] ..> MMC
+[EventBus] ..> [CombatFlowController]
+@enduml
