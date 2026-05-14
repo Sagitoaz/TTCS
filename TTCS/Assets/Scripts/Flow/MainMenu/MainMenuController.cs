@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -16,8 +15,6 @@ namespace TTCS.Flow.MainMenu
         [SerializeField] private GameObject _startMenuRoot;
         [SerializeField] private GameObject _mainMenuRoot;
 
-        [Header("Transition")]
-        [SerializeField] private float _transitionDuration = 0.4f;
 
         [Header("Start Menu")]
         [SerializeField] private Button _continueButton;
@@ -41,17 +38,11 @@ namespace TTCS.Flow.MainMenu
         [SerializeField] private SettingsPanelController _settingsPanelController;
 
         private SaveManager _saveManager;
-        private CanvasGroup _startMenuCanvasGroup;
-        private CanvasGroup _mainMenuCanvasGroup;
-        private Coroutine _transitionCoroutine;
 
         private void Start()
         {
             Debug.Log("[MainMenu] Main menu loaded");
             _saveManager = SaveManager.Instance;
-
-            _startMenuCanvasGroup = GetOrAddCanvasGroup(_startMenuRoot);
-            _mainMenuCanvasGroup = GetOrAddCanvasGroup(_mainMenuRoot);
 
             WireButtons();
             RefreshEntryState();
@@ -240,19 +231,6 @@ namespace TTCS.Flow.MainMenu
             SetRootActive(_startMenuRoot, true);
             SetRootActive(_mainMenuRoot, false);
             _settingsPanelController?.Close();
-
-            if (_startMenuCanvasGroup != null)
-            {
-                _startMenuCanvasGroup.alpha = 1f;
-                _startMenuCanvasGroup.interactable = true;
-                _startMenuCanvasGroup.blocksRaycasts = true;
-            }
-            if (_mainMenuCanvasGroup != null)
-            {
-                _mainMenuCanvasGroup.alpha = 0f;
-                _mainMenuCanvasGroup.interactable = false;
-                _mainMenuCanvasGroup.blocksRaycasts = false;
-            }
         }
 
         private void ShowMainMenu()
@@ -262,23 +240,10 @@ namespace TTCS.Flow.MainMenu
             SetRootActive(_mainMenuRoot, true);
             RefreshGoldUI();
             RefreshEntryState();
-
-            if (_startMenuCanvasGroup != null)
-            {
-                _startMenuCanvasGroup.alpha = 0f;
-                _startMenuCanvasGroup.interactable = false;
-                _startMenuCanvasGroup.blocksRaycasts = false;
-            }
-            if (_mainMenuCanvasGroup != null)
-            {
-                _mainMenuCanvasGroup.alpha = 1f;
-                _mainMenuCanvasGroup.interactable = true;
-                _mainMenuCanvasGroup.blocksRaycasts = true;
-            }
         }
 
         /// <summary>
-        /// Fades out the Start Menu then fades in the Main Menu.
+        /// Switches to the Main Menu panel using the SceneTransitionController iris-wipe.
         /// </summary>
         private void TransitionToMainMenu()
         {
@@ -286,66 +251,16 @@ namespace TTCS.Flow.MainMenu
             RefreshGoldUI();
             RefreshEntryState();
 
-            if (_transitionCoroutine != null)
-                StopCoroutine(_transitionCoroutine);
-
-            _transitionCoroutine = StartCoroutine(CrossFadeToMainMenu());
-        }
-
-        private IEnumerator CrossFadeToMainMenu()
-        {
-            // Make sure both panels are visible so they can be faded
-            SetRootActive(_startMenuRoot, true);
-            SetRootActive(_mainMenuRoot, true);
-
-            // Set starting alpha states
-            if (_startMenuCanvasGroup != null)
+            var stc = FlowController.Instance?.GetComponent<SceneTransitionController>();
+            if (stc != null)
             {
-                _startMenuCanvasGroup.alpha = 1f;
-                _startMenuCanvasGroup.interactable = false;
-                _startMenuCanvasGroup.blocksRaycasts = false;
+                stc.PlayIrisTransition(ShowMainMenu);
             }
-            if (_mainMenuCanvasGroup != null)
+            else
             {
-                _mainMenuCanvasGroup.alpha = 0f;
-                _mainMenuCanvasGroup.interactable = false;
-                _mainMenuCanvasGroup.blocksRaycasts = false;
+                // Fallback: no transition controller found, switch instantly.
+                ShowMainMenu();
             }
-
-            // Cross-fade
-            float elapsed = 0f;
-            float duration = Mathf.Max(0.01f, _transitionDuration);
-            while (elapsed < duration)
-            {
-                elapsed += Time.deltaTime;
-                float t = Mathf.Clamp01(elapsed / duration);
-
-                if (_startMenuCanvasGroup != null)
-                    _startMenuCanvasGroup.alpha = 1f - t;
-                if (_mainMenuCanvasGroup != null)
-                    _mainMenuCanvasGroup.alpha = t;
-
-                yield return null;
-            }
-
-            // Finalise
-            SetRootActive(_startMenuRoot, false);
-
-            if (_startMenuCanvasGroup != null)
-            {
-                _startMenuCanvasGroup.alpha = 0f;
-                _startMenuCanvasGroup.interactable = false;
-                _startMenuCanvasGroup.blocksRaycasts = false;
-            }
-            if (_mainMenuCanvasGroup != null)
-            {
-                _mainMenuCanvasGroup.alpha = 1f;
-                _mainMenuCanvasGroup.interactable = true;
-                _mainMenuCanvasGroup.blocksRaycasts = true;
-            }
-
-            _settingsPanelController?.Close();
-            _transitionCoroutine = null;
         }
 
         private void EnsureSessionReady()
@@ -360,15 +275,6 @@ namespace TTCS.Flow.MainMenu
             {
                 target.SetActive(active);
             }
-        }
-
-        private static CanvasGroup GetOrAddCanvasGroup(GameObject target)
-        {
-            if (target == null) return null;
-            var cg = target.GetComponent<CanvasGroup>();
-            if (cg == null)
-                cg = target.AddComponent<CanvasGroup>();
-            return cg;
         }
     }
 }

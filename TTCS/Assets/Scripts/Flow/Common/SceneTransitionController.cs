@@ -84,6 +84,45 @@ namespace TTCS.Flow
             StartCoroutine(LoadSceneRoutine(sceneName));
         }
 
+        /// <summary>
+        /// Plays Iris In → <paramref name="onMidpoint"/> callback → Iris Out.
+        /// Use this to switch panels inside the same scene with the same iris-wipe feel.
+        /// The callback fires when the screen is fully black (before iris opens again).
+        /// </summary>
+        public void PlayIrisTransition(Action onMidpoint)
+        {
+            if (_isTransitioning)
+            {
+                // Fallback: just run the callback immediately if already transitioning.
+                onMidpoint?.Invoke();
+                return;
+            }
+
+            StartCoroutine(IrisTransitionRoutine(onMidpoint));
+        }
+
+        private IEnumerator IrisTransitionRoutine(Action onMidpoint)
+        {
+            _isTransitioning = true;
+            EnsureUiBuilt();
+
+            // Iris In (close)
+            SetIrisVisible(true);
+            yield return AnimateIris(from: 1.2f, to: 0f, _irisDuration);
+
+            // Midpoint — switch panels while screen is black
+            onMidpoint?.Invoke();
+
+            // Small hold so the panel has a frame to re-layout before opening
+            yield return null;
+
+            // Iris Out (open)
+            yield return AnimateIris(from: 0f, to: 1.2f, _irisDuration);
+            SetIrisVisible(false);
+
+            _isTransitioning = false;
+        }
+
         private IEnumerator LoadSceneRoutine(string sceneName)
         {
             _isTransitioning = true;
